@@ -44,10 +44,12 @@ class Airport extends Model
     }
 
 
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class,'user_id');
     }
+
     public function area(): BelongsTo
     {
         return $this->belongsTo(Area::class,'area_id');
@@ -56,7 +58,6 @@ class Airport extends Model
     {
         return $this->belongsTo(Country::class,'country_id');
     }
-
 
     public function planes(): HasMany
     {

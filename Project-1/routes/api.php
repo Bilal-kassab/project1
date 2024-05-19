@@ -245,7 +245,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('show_room/{id}','show');
                 Route::post('update_rooms','update');
                 Route::get('delete_room/{id}','destroy');
-                Route::get('get_all_room/{id}','index');
+                Route::post('get_all_room/{id}','index');
                 Route::get('get_my_rooms','get_My_Rooms');
                 Route::post('change_status_room','change_status_room');
                 Route::post('booking_room','booking_room');

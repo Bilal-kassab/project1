@@ -330,7 +330,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "Airport2@gmail.com",
+											"value": "Airport@gmail.com",
 											"type": "text"
 										},
 										{
@@ -7387,7 +7387,7 @@
 						"bearer": [
 							{
 								"key": "token",
-								"value": "2|Haftv1xGOa4RBRLpo8ZtGrN9MSjKkBIRu4PWHpHnae9b9b7e",
+								"value": "5|40PLAGhqYAlLVi6wbAPiv3E0NoauCqBfvmj7g3Kn0c5c22a0",
 								"type": "string"
 							}
 						]
@@ -8219,7 +8219,7 @@
 								{
 									"name": "get-ALL_ROOM",
 									"request": {
-										"method": "GET",
+										"method": "POST",
 										"header": [
 											{
 												"key": "Accept",
@@ -8227,8 +8227,23 @@
 												"type": "text"
 											}
 										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "start_date",
+													"value": "2024-5-20",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-05-29",
+													"type": "text"
+												}
+											]
+										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/get_all_room/1",
+											"raw": "http://127.0.0.1:8000/api/admin/get_all_room/3",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -8241,7 +8256,7 @@
 												"api",
 												"admin",
 												"get_all_room",
-												"1"
+												"3"
 											]
 										}
 									},

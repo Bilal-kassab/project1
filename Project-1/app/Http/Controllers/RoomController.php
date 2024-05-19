@@ -5,87 +5,107 @@ namespace App\Http\Controllers;
 use App\Models\BookingRoom;
 use App\Models\Hotel;
 use App\Models\Room;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Auth;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Validation\Rule;
-use Illuminate\Validation\Rules\Exists;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class RoomController extends Controller
 {
 
-    public function index($id)
-    {
-        try{
-            $capacity_2_price=0;
-            $capacity_4_price=0;
-            $capacity_6_price=0;
-            $capacity_2_count=Room::query()->where([
-                 ['capacity', '=', 2],
-                 ['status', '=', 0],
-                 ['hotel_id',$id],
-             ])->count();
-             if($capacity_2_count!=0){
-            $capacity_2_price=Room::query()->where([
-                ['capacity', '=', 2],
-                ['status', '=', 0],
-                ['hotel_id',$id],
-            ])->get('price')[0]['price'];
-             }
-            $capacity_4_count=Room::query()->where([
-                ['capacity', '=', 4],
-                ['status', '=', 0],
-                ['hotel_id',$id],
-            ])->count();
-                if($capacity_4_count!=0){
-                    $capacity_4_price=Room::query()->where([
-                        ['capacity', '=', 4],
-                        ['status', '=', 0],
-                        ['hotel_id',$id],
-                    ])->get('price')[0]['price'];
+    // public function index($id)
+    // {
+    //     try{
+    //         $capacity_2_price=0;
+    //         $capacity_4_price=0;
+    //         $capacity_6_price=0;
+    //         $capacity_2_count=Room::query()->where([
+    //              ['capacity', '=', 2],
+    //              ['status', '=', 0],
+    //              ['hotel_id',$id],
+    //          ])->count();
+    //          if($capacity_2_count!=0){
+    //         $capacity_2_price=Room::query()->where([
+    //             ['capacity', '=', 2],
+    //             ['status', '=', 0],
+    //             ['hotel_id',$id],
+    //         ])->get('price')[0]['price'];
+    //          }
+    //         $capacity_4_count=Room::query()->where([
+    //             ['capacity', '=', 4],
+    //             ['status', '=', 0],
+    //             ['hotel_id',$id],
+    //         ])->count();
+    //             if($capacity_4_count!=0){
+    //                 $capacity_4_price=Room::query()->where([
+    //                     ['capacity', '=', 4],
+    //                     ['status', '=', 0],
+    //                     ['hotel_id',$id],
+    //                 ])->get('price')[0]['price'];
 
-                }
+    //             }
 
-        $capacity_6_count=Room::query()->where([
-            ['capacity', '=', 6],
-            ['status', '=', 0],
-            ['hotel_id',$id],
-        ])->count();
-        if($capacity_6_count!=0){
-                    $capacity_6_price=Room::query()->where([
-                    ['capacity', '=', 6],
-                    ['status', '=', 0],
-                    ['hotel_id',$id],
-                ])->get('price')[0]['price'];
-        }
+    //     $capacity_6_count=Room::query()->where([
+    //         ['capacity', '=', 6],
+    //         ['status', '=', 0],
+    //         ['hotel_id',$id],
+    //     ])->count();
+    //     if($capacity_6_count!=0){
+    //                 $capacity_6_price=Room::query()->where([
+    //                 ['capacity', '=', 6],
+    //                 ['status', '=', 0],
+    //                 ['hotel_id',$id],
+    //             ])->get('price')[0]['price'];
+    //     }
 
-       $data=[
-        'capacity_2'=>[
-            'count'=>$capacity_2_count,
-            'price'=>$capacity_2_price
-        ],
-        'capacity_4'=>[
-            'count'=>$capacity_4_count,
-            'price'=>$capacity_4_price
-        ],
-        'capacity_6'=>[
-            'count'=>$capacity_6_count,
-            'price'=>$capacity_6_price
-        ],
-       ];
+    //    $data=[
+    //     'capacity_2'=>[
+    //         'count'=>$capacity_2_count,
+    //         'price'=>$capacity_2_price
+    //     ],
+    //     'capacity_4'=>[
+    //         'count'=>$capacity_4_count,
+    //         'price'=>$capacity_4_price
+    //     ],
+    //     'capacity_6'=>[
+    //         'count'=>$capacity_6_count,
+    //         'price'=>$capacity_6_price
+    //     ],
+    //    ];
 
-        }catch(Exception $e){
-            return response()->json([
-                'message'=>$e->getMessage(),
-            ]);
-        }
-        return response()->json([
-            'data'=>$data,
-        ],200);
+    //     }catch(Exception $e){
+    //         return response()->json([
+    //             'message'=>$e->getMessage(),
+    //         ]);
+    //     }
+    //     return response()->json([
+    //         'data'=>$data,
+    //     ],200);
 
+    // }
+
+    public function index(Request $request,$id){
+        $date=Carbon::now()->format('Y-m-d');
+        $validatedData =Validator::make($request->all(),[
+            //'hotel_id'=>'required|numeric|exists:hotels,id',
+            //'capacity'=>'required|numeric',
+            'start_date'=>"required|date|after_or_equal:$date",
+            'end_date'=>'required|date|after_or_equal:start_date',
+       ]);
+       if( $validatedData->fails() ){
+           return response()->json([
+               'message'=> $validatedData->errors()->first(),
+           ],422);
+       }
+       $start=$request->start_date;
+       $end=$request->end_date;
+
+         return response()->json([
+            'data'=>Room::available($start,$end)->where('hotel_id',$id)->get(),
+            // 'data'=>Room::whereDoesntHave('bookingss')->where('hotel_id',$id)->get(),
+         ]);
     }
     public function get_My_Rooms()
     {
@@ -251,7 +271,7 @@ class RoomController extends Controller
 
     public function booking_room(Request $request)
     {
-   
+
             $date=Carbon::now()->format('Y-m-d');
             $validatedData =Validator::make($request->all(),[
                 'book_id'=>'required|numeric|exists:bookings,id',

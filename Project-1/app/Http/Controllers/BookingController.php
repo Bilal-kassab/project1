@@ -59,9 +59,6 @@ class BookingController extends Controller
             'trip_name'=>'required|string',
             'price'=>'required|numeric',
             'number_of_people'=>'required|min:3|numeric',
-
-            
-
             'start_date'=>"required|date|after_or_equal:$date",
             'end_date'=>'required|date|after_or_equal:end_date',
             'trip_note'=>'string',
