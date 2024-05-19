@@ -32,10 +32,10 @@ class Room extends Model
     public function scopeAvailable($query, $start, $end)
     {
         return $query->whereDoesntHave('bookingss', function ($query) use ($start, $end) {
-             $query->where('start_date','<=',$end)
-                   ->where('end_date','>=',$start);
-                // $query->where('id',1);
-        });
+                                    $query->where('start_date','<=',$end)
+                                        ->where('end_date','>=',$start);
+                                        // $query->where('id',1);
+                                });
     }
 
 }

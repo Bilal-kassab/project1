@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Bank;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -22,7 +23,9 @@ class SuperAdminSeeder extends Seeder
             'is_approved'=>true
         ]);
         $superAdmin->assignRole('Super Admin');
-
+        Bank::create([
+            'email'=>$superAdmin->email
+        ]);
         // Creating Admin
         $admin = User::create([
             'name' => 'Trip manger',

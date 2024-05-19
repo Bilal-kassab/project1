@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bank;
 use App\Models\ConfirmCode;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -45,6 +46,11 @@ class UserController extends Controller
         #######################
 
         $user->save();
+
+        $bank=Bank::create([
+            'email'=>$user->email,
+        ]);
+
         $token = $user->createToken('token')->plainTextToken;
 
         $registerUserData['code']=mt_rand(100000,999999);
