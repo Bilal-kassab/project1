@@ -330,7 +330,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "Airport@gmail.com",
+											"value": "SA@gmail.com",
 											"type": "text"
 										},
 										{
@@ -8343,37 +8343,11 @@
 							]
 						},
 						{
-							"name": "Get_All_Hotel",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/get_all_Hotel",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"get_all_Hotel"
-									]
-								}
-							},
-							"response": [
+							"name": "Hotel job",
+							"item": [
 								{
 									"name": "Get_All_Hotel",
-									"originalRequest": {
+									"request": {
 										"method": "GET",
 										"header": [
 											{
@@ -8399,81 +8373,45 @@
 											]
 										}
 									},
-									"_postman_previewlanguage": "Text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						},
-						{
-							"name": "Add_hotel",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
+									"response": [
 										{
-											"key": "name",
-											"value": "Hotel",
-											"type": "text"
-										},
-										{
-											"key": "area_id",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "number_rooms",
-											"value": "10",
-											"type": "text"
-										},
-										{
-											"key": "stars",
-											"value": "4",
-											"type": "text"
-										},
-										{
-											"key": "user_id",
-											"value": "3",
-											"type": "text"
-										},
-										{
-											"key": "images[0]",
-											"type": "file",
-											"src": [],
-											"disabled": true
+											"name": "Get_All_Hotel",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/get_all_Hotel",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"get_all_Hotel"
+													]
+												}
+											},
+											"_postman_previewlanguage": "Text",
+											"header": [],
+											"cookie": [],
+											"body": ""
 										}
 									]
 								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/add_hotel",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"add_hotel"
-									]
-								}
-							},
-							"response": [
 								{
 									"name": "Add_hotel",
-									"originalRequest": {
+									"request": {
 										"method": "POST",
 										"header": [
 											{
@@ -8487,7 +8425,7 @@
 											"formdata": [
 												{
 													"key": "name",
-													"value": "hotel 7",
+													"value": "Hotel",
 													"type": "text"
 												},
 												{
@@ -8496,7 +8434,7 @@
 													"type": "text"
 												},
 												{
-													"key": "rooms",
+													"key": "number_rooms",
 													"value": "10",
 													"type": "text"
 												},
@@ -8507,13 +8445,14 @@
 												},
 												{
 													"key": "user_id",
-													"value": "1",
+													"value": "3",
 													"type": "text"
 												},
 												{
 													"key": "images[0]",
 													"type": "file",
-													"src": "/E:/BMW/20210302_205610.jpg"
+													"src": [],
+													"disabled": true
 												}
 											]
 										},
@@ -8534,76 +8473,80 @@
 											]
 										}
 									},
-									"_postman_previewlanguage": "Text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						},
-						{
-							"name": "update_hotel",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
+									"response": [
 										{
-											"key": "name",
-											"value": "hotel_update",
-											"type": "text"
-										},
-										{
-											"key": "area_id",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "user_id",
-											"value": "3",
-											"type": "text"
-										},
-										{
-											"key": "number_rooms",
-											"value": "11",
-											"type": "text"
-										},
-										{
-											"key": "stars",
-											"value": "5",
-											"type": "text"
+											"name": "Add_hotel",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "hotel 7",
+															"type": "text"
+														},
+														{
+															"key": "area_id",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "rooms",
+															"value": "10",
+															"type": "text"
+														},
+														{
+															"key": "stars",
+															"value": "4",
+															"type": "text"
+														},
+														{
+															"key": "user_id",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "images[0]",
+															"type": "file",
+															"src": "/E:/BMW/20210302_205610.jpg"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/add_hotel",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"add_hotel"
+													]
+												}
+											},
+											"_postman_previewlanguage": "Text",
+											"header": [],
+											"cookie": [],
+											"body": ""
 										}
 									]
 								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/update_hotel/1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"update_hotel",
-										"1"
-									]
-								}
-							},
-							"response": [
 								{
 									"name": "update_hotel",
-									"originalRequest": {
+									"request": {
 										"method": "POST",
 										"header": [
 											{
@@ -8617,21 +8560,21 @@
 											"formdata": [
 												{
 													"key": "name",
-													"value": "hotel_updated",
+													"value": "hotel_update",
 													"type": "text"
 												},
 												{
 													"key": "area_id",
-													"value": "2",
+													"value": "1",
 													"type": "text"
 												},
 												{
 													"key": "user_id",
-													"value": "2",
+													"value": "3",
 													"type": "text"
 												},
 												{
-													"key": "rooms",
+													"key": "number_rooms",
 													"value": "11",
 													"type": "text"
 												},
@@ -8643,7 +8586,7 @@
 											]
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/update_hotel/1",
+											"raw": "http://127.0.0.1:8000/api/admin/update_hotel/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -8654,74 +8597,81 @@
 											"port": "8000",
 											"path": [
 												"api",
+												"admin",
 												"update_hotel",
 												"1"
 											]
 										}
 									},
-									"_postman_previewlanguage": "Text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						},
-						{
-							"name": "update_Image_Hotel",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "",
-										"value": "",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
+									"response": [
 										{
-											"key": "image",
-											"type": "file",
-											"src": [
-												"E:\\BMW\\FB_IMG_1607168800753.jpg",
-												"/E:/BMW/FB_IMG_1606402097015.jpg"
-											]
-										},
-										{
-											"key": "image_id",
-											"value": "1",
-											"type": "text"
+											"name": "update_hotel",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "hotel_updated",
+															"type": "text"
+														},
+														{
+															"key": "area_id",
+															"value": "2",
+															"type": "text"
+														},
+														{
+															"key": "user_id",
+															"value": "2",
+															"type": "text"
+														},
+														{
+															"key": "rooms",
+															"value": "11",
+															"type": "text"
+														},
+														{
+															"key": "stars",
+															"value": "5",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/update_hotel/1",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"update_hotel",
+														"1"
+													]
+												}
+											},
+											"_postman_previewlanguage": "Text",
+											"header": [],
+											"cookie": [],
+											"body": ""
 										}
 									]
 								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/change-exist-hotel-image",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"change-exist-hotel-image"
-									]
-								}
-							},
-							"response": [
 								{
 									"name": "update_Image_Hotel",
-									"originalRequest": {
+									"request": {
 										"method": "POST",
 										"header": [
 											{
@@ -8771,48 +8721,77 @@
 											]
 										}
 									},
-									"_postman_previewlanguage": "Text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						},
-						{
-							"name": "show_hotel",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show_hotel/1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"show_hotel",
-										"1"
+									"response": [
+										{
+											"name": "update_Image_Hotel",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "",
+														"value": "",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "image",
+															"type": "file",
+															"src": [
+																"E:\\BMW\\FB_IMG_1607168800753.jpg",
+																"/E:/BMW/FB_IMG_1606402097015.jpg"
+															]
+														},
+														{
+															"key": "image_id",
+															"value": "1",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/change-exist-hotel-image",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"change-exist-hotel-image"
+													]
+												}
+											},
+											"_postman_previewlanguage": "Text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
 									]
-								}
-							},
-							"response": [
+								},
 								{
 									"name": "show_hotel",
-									"originalRequest": {
+									"request": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
 										"url": {
 											"raw": "http://127.0.0.1:8000/api/admin/show_hotel/1",
 											"protocol": "http",
@@ -8831,55 +8810,40 @@
 											]
 										}
 									},
-									"_postman_previewlanguage": "Text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						},
-						{
-							"name": "search_Hotel_by_stars",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
+									"response": [
 										{
-											"key": "stars",
-											"value": "5",
-											"type": "text"
+											"name": "show_hotel",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/show_hotel/1",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"show_hotel",
+														"1"
+													]
+												}
+											},
+											"_postman_previewlanguage": "Text",
+											"header": [],
+											"cookie": [],
+											"body": ""
 										}
 									]
 								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/search_Hotel_by_stars",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"search_Hotel_by_stars"
-									]
-								}
-							},
-							"response": [
 								{
 									"name": "search_Hotel_by_stars",
-									"originalRequest": {
+									"request": {
 										"method": "POST",
 										"header": [
 											{
@@ -8915,64 +8879,64 @@
 											]
 										}
 									},
-									"_postman_previewlanguage": "Text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						},
-						{
-							"name": "search_Hotel_by_name",
-							"protocolProfileBehavior": {
-								"disabledSystemHeaders": {
-									"connection": true,
-									"accept-encoding": true,
-									"accept": true,
-									"user-agent": true,
-									"host": true
-								}
-							},
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
+									"response": [
 										{
-											"key": "name",
-											"value": "hot",
-											"type": "text"
+											"name": "search_Hotel_by_stars",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "stars",
+															"value": "5",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/search_Hotel_by_stars",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"search_Hotel_by_stars"
+													]
+												}
+											},
+											"_postman_previewlanguage": "Text",
+											"header": [],
+											"cookie": [],
+											"body": ""
 										}
 									]
 								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/search_Hotel_by_name",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"search_Hotel_by_name"
-									]
-								}
-							},
-							"response": [
 								{
 									"name": "search_Hotel_by_name",
-									"originalRequest": {
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"connection": true,
+											"accept-encoding": true,
+											"accept": true,
+											"user-agent": true,
+											"host": true
+										}
+									},
+									"request": {
 										"method": "POST",
 										"header": [
 											{
@@ -9008,85 +8972,94 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
+									"response": [
 										{
-											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:19:28 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:19:28 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
+											"name": "search_Hotel_by_name",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "hot",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/search_Hotel_by_name",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"search_Hotel_by_name"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Tue, 16 Apr 2024 11:19:28 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 16 Apr 2024 11:19:28 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"hotel_updat\",\n            \"rooms\": 11,\n            \"stars\": \"5.00\",\n            \"area_id\": 2,\n            \"user_id\": 2,\n            \"country_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 1,\n                    \"image\": \"HotelImages/1713266114.jpg\"\n                }\n            ],\n            \"area\": {\n                \"id\": 2,\n                \"country_id\": 1,\n                \"name\": \"Aleppo\"\n            },\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"Admin\",\n                \"email\": \"Admin@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
 										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"hotel_updat\",\n            \"rooms\": 11,\n            \"stars\": \"5.00\",\n            \"area_id\": 2,\n            \"user_id\": 2,\n            \"country_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 1,\n                    \"image\": \"HotelImages/1713266114.jpg\"\n                }\n            ],\n            \"area\": {\n                \"id\": 2,\n                \"country_id\": 1,\n                \"name\": \"Aleppo\"\n            },\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"Admin\",\n                \"email\": \"Admin@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
-							"name": "Get_ALL_Hotel_By_Area",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/get_Hotel_By_Area/1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"get_Hotel_By_Area",
-										"1"
 									]
-								}
-							},
-							"response": [
+								},
 								{
 									"name": "Get_ALL_Hotel_By_Area",
-									"originalRequest": {
+									"request": {
 										"method": "GET",
 										"header": [
 											{
@@ -9096,7 +9069,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/Get_Hotel_By_Area/1",
+											"raw": "http://127.0.0.1:8000/api/admin/get_Hotel_By_Area/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -9108,98 +9081,104 @@
 											"path": [
 												"api",
 												"admin",
-												"Get_Hotel_By_Area",
+												"get_Hotel_By_Area",
 												"1"
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
+									"response": [
 										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:48:24 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:48:24 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
+											"name": "Get_ALL_Hotel_By_Area",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/Get_Hotel_By_Area/1",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"Get_Hotel_By_Area",
+														"1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 16 Apr 2024 11:48:24 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 16 Apr 2024 11:48:24 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"hotel 1\",\n            \"stars\": \"4.00\",\n            \"rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 1,\n            \"images\": [],\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
 										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"hotel 1\",\n            \"stars\": \"4.00\",\n            \"rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 1,\n            \"images\": [],\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
-							"name": "Get_All_Hotel_By_Country",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/get_Hotel_By_Country/1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"get_Hotel_By_Country",
-										"1"
 									]
-								}
-							},
-							"response": [
+								},
 								{
 									"name": "Get_All_Hotel_By_Country",
-									"originalRequest": {
+									"request": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/Get_Hotel_By_Country/1",
+											"raw": "http://127.0.0.1:8000/api/admin/get_Hotel_By_Country/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -9211,88 +9190,88 @@
 											"path": [
 												"api",
 												"admin",
-												"Get_Hotel_By_Country",
+												"get_Hotel_By_Country",
 												"1"
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
+									"response": [
 										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:48:44 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:48:44 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "56"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
+											"name": "Get_All_Hotel_By_Country",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/Get_Hotel_By_Country/1",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"Get_Hotel_By_Country",
+														"1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 16 Apr 2024 11:48:44 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 16 Apr 2024 11:48:44 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "56"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"hotel 1\",\n            \"stars\": \"4.00\",\n            \"rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 1,\n            \"images\": [],\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
 										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"hotel 1\",\n            \"stars\": \"4.00\",\n            \"rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 1,\n            \"images\": [],\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
-							"name": "delete_hotel",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/delete_hotel/1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"delete_hotel",
-										"1"
 									]
-								}
-							},
-							"response": [
+								},
 								{
 									"name": "delete_hotel",
-									"originalRequest": {
+									"request": {
 										"method": "GET",
 										"header": [],
 										"url": {
@@ -9313,103 +9292,83 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
+									"response": [
 										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:34:24 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:34:24 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"delete done!!\"\n}"
-								}
-							]
-						},
-						{
-							"name": "change_visible",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "id",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "visible",
-											"value": "0",
-											"type": "text"
+											"name": "delete_hotel",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/delete_hotel/1",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"delete_hotel",
+														"1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 16 Apr 2024 11:34:24 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 16 Apr 2024 11:34:24 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"delete done!!\"\n}"
 										}
 									]
 								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/change_visible",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"change_visible"
-									]
-								}
-							},
-							"response": [
 								{
 									"name": "change_visible",
-									"originalRequest": {
+									"request": {
 										"method": "POST",
 										"header": [
 											{
@@ -9450,53 +9409,99 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
+									"response": [
 										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 06 May 2024 07:57:41 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 06 May 2024 07:57:41 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "57"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
+											"name": "change_visible",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "id",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "visible",
+															"value": "0",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/change_visible",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"change_visible"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 06 May 2024 07:57:41 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 06 May 2024 07:57:41 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "57"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"hotel 1\",\n        \"number_rooms\": 10,\n        \"country_id\": 1,\n        \"area_id\": 1,\n        \"stars\": \"4.00\",\n        \"visible\": \"0\",\n        \"created_at\": \"2024-05-06T07:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T07:57:10.000000Z\"\n    }\n}"
 										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"hotel 1\",\n        \"number_rooms\": 10,\n        \"country_id\": 1,\n        \"area_id\": 1,\n        \"stars\": \"4.00\",\n        \"visible\": \"0\",\n        \"created_at\": \"2024-05-06T07:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T07:57:10.000000Z\"\n    }\n}"
+									]
 								}
 							]
 						}
@@ -9525,7 +9530,7 @@
 					]
 				},
 				{
-					"name": "booking",
+					"name": "Static Book",
 					"item": [
 						{
 							"name": "New Request",
@@ -9563,6 +9568,11 @@
 											"type": "text"
 										},
 										{
+											"key": "hotel_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
 											"key": "trip_name",
 											"value": "to france",
 											"type": "text"
@@ -9574,17 +9584,22 @@
 										},
 										{
 											"key": "number_of_people",
-											"value": "5",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "trip_capacity",
+											"value": "2",
 											"type": "text"
 										},
 										{
 											"key": "start_date",
-											"value": "2024-5-24",
+											"value": "2024-5-30",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-5-29",
+											"value": "2024-5-6",
 											"type": "text"
 										},
 										{
@@ -9603,24 +9618,13 @@
 											"type": "text"
 										},
 										{
-											"key": "plane_trips[0]",
+											"key": "plane_trip",
 											"value": "1",
 											"type": "text"
 										},
 										{
-											"key": "plane_trips_away[0]",
+											"key": "plane_trip_away",
 											"value": "3",
-											"type": "text"
-										},
-										{
-											"key": "hotel_id[0]",
-											"value": "3",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "trip size",
-											"value": "",
 											"type": "text"
 										}
 									]
@@ -9642,7 +9646,159 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "store_booking_admin",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "source_trip_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "destination_trip_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "hotel_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "trip_name",
+													"value": "to france",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "100",
+													"type": "text"
+												},
+												{
+													"key": "number_of_people",
+													"value": "10",
+													"type": "text"
+												},
+												{
+													"key": "trip_capacity",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "start_date",
+													"value": "2024-5-30",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-5-6",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend ",
+													"type": "text"
+												},
+												{
+													"key": "places[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "places[1]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip_away",
+													"value": "3",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/Add_booking_Admin",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"Add_booking_Admin"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 19 May 2024 14:41:39 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 19 May 2024 14:41:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 13,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"100.00\",\n            \"number_of_people\": 10,\n            \"trip_capacity\": 2,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-05-06\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"places\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Eiffel Tower\",\n                    \"place_price\": \"20.00\",\n                    \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                    \"images\": []\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Musée du Louvre\",\n                    \"place_price\": \"20.00\",\n                    \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                    \"images\": []\n                }\n            ],\n            \"plane_trips\": [\n                {\n                    \"id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 3,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 40,\n                    \"flight_date\": \"2024-05-15\",\n                    \"landing_date\": \"2024-05-20\",\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    }\n                },\n                {\n                    \"id\": 3,\n                    \"airport_source_id\": 3,\n                    \"airport_destination_id\": 1,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 40,\n                    \"flight_date\": \"2024-05-15\",\n                    \"landing_date\": \"2024-05-20\",\n                    \"airport_source\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
 						},
 						{
 							"name": "New Request",
@@ -9674,7 +9830,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "2|yFQHDhGRg4IxljGsNk8EHR6FXuyrSIfP2WkHBoSNdd7deb16",
+						"value": "1|QYd6CP7bjgi5blyHAflZsOU8dOZQVV6s6YlEqNzba7d54f88",
 						"type": "string"
 					}
 				]

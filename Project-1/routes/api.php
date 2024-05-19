@@ -13,6 +13,7 @@ use App\Http\Controllers\HotelController;
 use App\Http\Controllers\PlaneController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\StaticBookController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -249,17 +250,12 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('get_my_rooms','get_My_Rooms');
                 Route::post('change_status_room','change_status_room');
                 Route::post('booking_room','booking_room');
-
-
             });
 
-            Route::controller(BookingController::class)->group(function(){
+            Route::controller(StaticBookController::class)->group(function(){
                 Route::post('Add_booking_Admin','store_Admin');
                 Route::get('All_booking','index');
-                Route::post('Add_booking_User','store_User');
                 Route::get('show_booking/{id}','show');
-
-
             });
         });
 

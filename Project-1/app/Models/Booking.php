@@ -19,6 +19,7 @@ class Booking extends Model
         'price',
         'number_of_people',
         'start_date',
+        'trip_capacity',
         'end_date',
         'stars',
         'trip_note',
