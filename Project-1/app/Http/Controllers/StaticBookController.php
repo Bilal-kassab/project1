@@ -159,13 +159,13 @@ class StaticBookController extends Controller
                                     'plane_trips.airport_destination:id,name',
                                 ])->where('id',$booking->id)->get();
         return response()->json([
-            'data'=>$static_book[0]['plane_trips'][0]
+            'data'=>$static_book
         ],200);
     }
 
 
 
-    
+
     public function update_Admin(Request $request,$id)
     {
         try{
