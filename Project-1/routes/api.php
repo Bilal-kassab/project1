@@ -254,8 +254,9 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
 
             Route::controller(StaticBookController::class)->group(function(){
                 Route::post('Add_booking_Admin','store_Admin');
-                Route::get('All_booking','index');
-                Route::get('show_booking/{id}','show');
+                Route::post('edit-static-trip/{id}','update_Admin');
+                Route::get('all-static-trip','index');
+                Route::get('show-static-trip/{id}','showStaticTrip');
             });
         });
 

@@ -5,7 +5,7 @@ namespace App\Http\Requests\Trip;
 use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
-class DynamicTripRequest extends FormRequest
+class UpdateStaticTripRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +24,17 @@ class DynamicTripRequest extends FormRequest
     {
         $date=Carbon::now()->format('Y-m-d');
         return [
-            'source_trip_id'=>'required|exists:countries,id',
-            'destination_trip_id'=>'required|exists:countries,id',
-            'start_date'=>"required|date|after_or_equal:$date",
-            'end_date'=>'required|date|after_or_equal:start_date',
             'trip_name'=>'string',
-            'number_of_people'=>'required|min:1|numeric',
+            'price'=>'numeric',
+            'hotel_id'=>'exists:hotels,id',
+            'number_of_people'=>'min:1|numeric',
+            'start_date'=>"date|after_or_equal:$date",
+            'end_date'=>'date|after_or_equal:end_date',
             'trip_note'=>'string',
-            'place_id'=>'array|min:1',
-            'place_id.*'=>'required|exists:places,id',
-            'plane_trip_id'=>'exists:plane_trips,id',
-            'hotel-id'=>'exists:hotels,id',
+            'places'=>'array|min:1',
+            'places.*'=>"exists:places,id",
+            'plane_trip'=>"exists:plane_trips,id",
+            'plane_trip_away'=>'exists:plane_trips,id',
         ];
     }
 

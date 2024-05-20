@@ -42,6 +42,12 @@ class Booking extends Model
     {
         return $this->belongsToMany(Room::class,'booking_rooms','book_id','room_id');
     }
+    public function scopeAvailableRooms($query)
+    {
+        return $query->withCount(['rooms' => function ($query) {
+                $query->where('user_id',null);
+        } ]);
+    }
 
     public function plane_trips():BelongsToMany
     {

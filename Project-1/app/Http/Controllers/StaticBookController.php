@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Trip\DynamicTripRequest;
 use App\Http\Requests\Trip\StoreStaticTripRequest;
+use App\Http\Requests\Trip\UpdateStaticTripRequest;
 use App\Models\Booking;
 use App\Models\BookingRoom;
 use App\Models\BookPlace;
@@ -35,7 +36,13 @@ class StaticBookController extends Controller
     {
         try{
             return response()->json([
-                'data'=>Booking::where('type','static')->get(),
+                'data'=>Booking::with(['places:id,name,place_price,text','places.images:id,image',
+                                        'plane_trips:id,airport_source_id,airport_destination_id,current_price,available_seats,flight_date,landing_date',
+                                        'plane_trips.airport_source:id,name',
+                                        'plane_trips.airport_destination:id,name',
+                                    ])
+                                    ->AvailableRooms()
+                                    ->get(),
             ],200);
         }catch(Exception $e){
             return response()->json([
@@ -62,9 +69,7 @@ class StaticBookController extends Controller
             'plane_trip'=>$request->plane_trip,
             'plane_trip_away'=>$request->plane_trip_away,
         ];
-
         $static_book=$this->bookrepository->store_Admin($data);
-
         if($static_book === 1){
             return response()->json([
                 'message'=>'there is not enough room in this hotel',
@@ -89,67 +94,62 @@ class StaticBookController extends Controller
             'data'=>$static_book
         ],200);
     }
-
-
-
-
-    public function update_Admin(Request $request,$id)
+    public function update_Admin(UpdateStaticTripRequest $request,$id)
     {
-        try{
-            $booking= Booking::findOrFail($id);
-            if(auth()->id() != $booking->user_id)
-            {
-                return response()->json([
-                    'message'=>'You do not have the permission'
-                ],200);
-            }
-        }catch(\Exception $e){
+        $data=[
+            'hotel_id'=>$request->hotel_id,
+            'trip_name'=>$request->trip_name,
+            'price'=>$request->price,
+            'number_of_people'=>$request->number_of_people,
+            'trip_capacity'=>$request->trip_capacity,
+            'start_date'=>$request->start_date,
+            'end_date'=>$request->end_date,
+            'trip_note'=>$request->trip_note,
+            'places'=>$request->places,
+            'plane_trip'=>$request->plane_trip,
+            'plane_trip_away'=>$request->plane_trip_away,
+        ];
+        $edit=$this->bookrepository->editAdmin($data,$id);
+        if($edit === 1){
             return response()->json([
-                'message'=> 'Not found',
+                'message'=>'there is not enough room in this hotel',
+            ],400);
+        }
+        if($edit === 2){
+            return response()->json([
+                'message' => 'the seats of the going trip plane lower than number of person'
+            ], 400);
+        }
+        if($edit === 3){
+            return response()->json([
+                'message' => 'the seats of the return trip plane lower than number of person'
+            ], 400);
+        }
+        if($edit === 4)
+        {
+            return response()->json([
+                'message'=>'updated failed'
             ],404);
         }
-        $date=Carbon::now()->format('Y-m-d');
-        $validator = Validator::make($request->all(), [
-            'source_trip_id'=>'required|exists:countries,id',
-            'destination_trip_id'=>'required|exists:countries,id',
-            'trip_name'=>'required|string',
-            'price'=>'required|numeric',
-            'number_of_people'=>'required|min:1|numeric',
-            'start_date'=>"required|date|unique:bookings,start_date|after_or_equal:$date",
-            'end_date'=>'required|date|after_or_equal:end_date',
-            'trip_note'=>'required|string',
-          ]);
-
-          if($validator->fails()){
-              return response()->json([
-                  'message'=> $validator->errors()->first(),
-              ],422);
-          }
-
-          $booking->source_trip_id = $request->source_trip_id;
-          $booking->destination_trip_id = $request->destination_trip_id;
-          $booking->trip_name = $request->trip_name;
-          $booking->price = $request->price;
-          $booking->number_of_people = $request->number_of_people;
-          $booking->start_date = $request->start_date;
-          $booking->end_date = $request->end_date;
-          $booking->trip_note = $request->trip_note;
-          $booking->save();
-          return response()->json([
+        return response()->json([
             'message'=> 'booking has been updated successfully',
-            'data'=>booking::with('country:id,name','area:id,name','user:id,name,email,image,position')
-                            ->select('id','name','user_id','area_id','country_id')
-                            ->where('id',$booking->id)
-                            ->get(),
+            'data'=>$edit,
           ],200);
-
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Booking $booking)
+    public function showStaticTrip($id)
     {
-        //
+        $trip=$this->bookrepository->showStaticTrip($id);
+        if($trip===1)
+        {
+            return response()->json([
+                'message'=>'Not Found'
+            ],404);
+        }
+        return response()->json([
+            'data'=>$trip
+        ],404);
+
     }
+
 }

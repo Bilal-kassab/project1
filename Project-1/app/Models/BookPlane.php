@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class BookPlane extends Model
 {
@@ -17,7 +18,7 @@ class BookPlane extends Model
         'created_at',
         'updated_at',
     ];
-    
+
     public function plane_trip():BelongsToMany
     {
         return $this->belongsToMany(PlaneTrip::class,'plane_trip_id');

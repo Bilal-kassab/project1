@@ -40,4 +40,17 @@ class StoreStaticTripRequest extends FormRequest
             'plane_trip_away'=>'required|exists:plane_trips,id',
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    // public function messages(): array
+    // {
+    //     return [
+    //         'title.required' => 'A title is required',
+    //         'body.required' => 'A message is required',
+    //     ];
+    // }
 }
