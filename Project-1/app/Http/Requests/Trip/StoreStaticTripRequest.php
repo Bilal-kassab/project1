@@ -26,7 +26,7 @@ class StoreStaticTripRequest extends FormRequest
         return [
             'source_trip_id'=>'required|exists:countries,id',
             'destination_trip_id'=>'required|exists:countries,id',
-            'hotel_id'=>'required|exists:hotels,id',
+            'hotel_id'=>'exists:hotels,id',
             'trip_name'=>'required|string',
             'price'=>'required|numeric',
             'number_of_people'=>'required|min:3|numeric',

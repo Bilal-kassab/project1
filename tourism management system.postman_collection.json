@@ -9559,7 +9559,8 @@
 										{
 											"key": "hotel_id",
 											"value": "1",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "trip_name",
@@ -9583,12 +9584,12 @@
 										},
 										{
 											"key": "start_date",
-											"value": "2024-5-30",
+											"value": "2024-05-30",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-6-6",
+											"value": "2024-06-06",
 											"type": "text"
 										},
 										{
@@ -9804,11 +9805,6 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "hotel_id",
-											"value": "3",
-											"type": "text"
-										},
-										{
 											"key": "trip_name",
 											"value": "to france",
 											"type": "text"
@@ -9820,17 +9816,17 @@
 										},
 										{
 											"key": "number_of_people",
-											"value": "100",
+											"value": "25",
 											"type": "text"
 										},
 										{
 											"key": "start_date",
-											"value": "2024-5-30",
+											"value": "2024-06-07",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-6-6",
+											"value": "2024-06-08",
 											"type": "text"
 										},
 										{
@@ -9861,7 +9857,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/5",
+									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/2",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -9874,7 +9870,7 @@
 										"api",
 										"admin",
 										"edit-static-trip",
-										"5"
+										"2"
 									]
 								}
 							},
@@ -10074,7 +10070,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/7",
+									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/2",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -10087,7 +10083,7 @@
 										"api",
 										"admin",
 										"show-static-trip",
-										"7"
+										"2"
 									]
 								}
 							},
@@ -10101,7 +10097,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|7xrXvs2ettHIHJX0LZI0dHk4DcgJUVTaARW5RN3H6f5bb71d",
+						"value": "1|uwgG497W1XqnyBryymfx8pR1RX9UHQDCW9pTScKCd21b973f",
 						"type": "string"
 					}
 				]

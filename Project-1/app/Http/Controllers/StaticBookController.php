@@ -97,7 +97,7 @@ class StaticBookController extends Controller
     public function update_Admin(UpdateStaticTripRequest $request,$id)
     {
         $data=[
-            'hotel_id'=>$request->hotel_id,
+           // 'hotel_id'=>$request->hotel_id,
             'trip_name'=>$request->trip_name,
             'price'=>$request->price,
             'number_of_people'=>$request->number_of_people,
