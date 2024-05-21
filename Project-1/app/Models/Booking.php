@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Booking extends Model
 {
@@ -42,11 +43,16 @@ class Booking extends Model
     {
         return $this->belongsToMany(Room::class,'booking_rooms','book_id','room_id');
     }
+
     public function scopeAvailableRooms($query)
     {
         return $query->withCount(['rooms' => function ($query) {
                 $query->where('user_id',null);
         } ]);
+    }
+    public function scopeHotel($id)
+    {
+        return Hotel::where('id',$id)->first();
     }
 
     public function plane_trips():BelongsToMany
@@ -58,4 +64,7 @@ class Booking extends Model
         return $this->belongsToMany(Place::class,'book_places','book_id','place_id');
     }
 
+
+
 }
+

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\StaticBookController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,9 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
 
-    return Carbon::now()->format('Y-m-d');
+   // return Carbon::now()->format('Y-m-d');
+   $i=(3/2);
+   return ++$i;
 });
 
 
@@ -34,5 +37,10 @@ Route::prefix('admin')->group(function () {
         Route::get('show_country/{id}','show');
         Route::get('get_all_country','index');
     });
+});
+
+Route::controller(StaticBookController::class)->group(function(){
+
+    Route::get('show-static-trip/{id}','showStaticTrip');
 });
 

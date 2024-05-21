@@ -97,10 +97,10 @@ class StaticBookController extends Controller
     public function update_Admin(UpdateStaticTripRequest $request,$id)
     {
         $data=[
-           // 'hotel_id'=>$request->hotel_id,
+            'hotel_id'=>$request->hotel_id,
             'trip_name'=>$request->trip_name,
             'price'=>$request->price,
-            'number_of_people'=>$request->number_of_people,
+            'number_of_people'=>$request->add_new_people,
             'trip_capacity'=>$request->trip_capacity,
             'start_date'=>$request->start_date,
             'end_date'=>$request->end_date,
@@ -139,16 +139,34 @@ class StaticBookController extends Controller
 
     public function showStaticTrip($id)
     {
-        $trip=$this->bookrepository->showStaticTrip($id);
-        if($trip===1)
-        {
-            return response()->json([
-                'message'=>'Not Found'
-            ],404);
-        }
+        // $trip=$this->bookrepository->showStaticTrip($id);
+        // if($trip===1)
+        // {
+        //     return response()->json([
+        //         'message'=>'Not Found'
+        //     ],404);
+        // }
+        $book=Booking::where('type','static')
+                        ->AvailableRooms()
+                        ->where('id',$id)
+                        ->first();
+        $data=[
+            'static_trip'=>$book,
+            'places'=>$book->places,
+            'plane_trip'=>$book->plane_trips,
+             'hotel'=>Booking::whereHas('rooms.hotel')->with('rooms.hotel')->where('id',$id)->first()->rooms->first()['hotel']['name']
+        ];
         return response()->json([
-            'data'=>$trip
-        ],404);
+            'data'=>Booking::where('type','static')
+                                ->with(['places:id,name,place_price,text','places.images:id,image',
+                                'plane_trips:id,airport_source_id,airport_destination_id,current_price,available_seats,flight_date,landing_date',
+                                'plane_trips.airport_source:id,name',
+                                'plane_trips.airport_destination:id,name',
+                            ])
+                            ->AvailableRooms()
+                            ->where('id',$id)
+                            ->get(),
+        ],200);
 
     }
 

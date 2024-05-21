@@ -261,4 +261,5 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
         });
 
 
-});
+    });
+   

@@ -113,7 +113,8 @@ class BookRepository implements BookRepositoryInterface
 
     public function editAdmin($request,$id)
     {
-        try{
+        try
+        {
             $booking= Booking::findOrFail($id);
             if(auth()->id() != $booking->user_id)
             {
@@ -122,103 +123,107 @@ class BookRepository implements BookRepositoryInterface
                 ],200);
             }
 
-        // to check if there are an enough rooms in this hotel
-        if(($request['start_date'] != $booking['start_date']) || ($request['end_date'] != $booking['end_date']) || ($request['number_of_people'] != $booking['number_of_people'])
-            && sizeof($booking->rooms)>0
-        )
-        {
-            $hotel_id=$booking->rooms[0]['hotel_id'];
+            // to check if there are an enough rooms in this hotel
             $bookRoomCount=BookingRoom::where('book_id',$booking['id'])->count();
-            $room_count = $request['number_of_people'] / $booking['trip_capacity'];
+            $numberOfOldSeat=$booking['number_of_people'];
+            if(($request['start_date'] == $booking['start_date']) && ($request['end_date'] == $booking['end_date'])){
+                $bookRoomCount=0;
+                $numberOfOldSeat=0;
+            }
+
+                $room_count = $request['number_of_people'] / $booking['trip_capacity'];
             if ($request['number_of_people'] % $booking['trip_capacity'] > 0) $room_count++;
-            $rooms = Room::available($request['start_date'], $request['end_date'])
-                        ->where('hotel_id', $hotel_id)#####
-                        ->where('capacity', $booking['trip_capacity'])
-                        ->count();
-            if ($rooms+$bookRoomCount < $room_count) {
-               return 1;
+
+                $rooms = Room::available($request['start_date'], $request['end_date'])
+                                ->where('hotel_id', $request['hotel_id'])
+                                ->where('capacity', $booking['trip_capacity'])
+                                ->count();
+            if ($rooms < $room_count+$bookRoomCount) {
+                return 1;
             }
-            ##### delete old booking room
-              $bookRoom=BookingRoom::where('book_id',$booking['id'])->delete();
-
-            // // rooms
-            $rooms = Room::available($request['start_date'], $request['end_date'])
-                            ->where('hotel_id', $hotel_id)#####
-                            ->where('capacity', $booking['trip_capacity'])
-                            ->get();
-            for ($i = 0; $i < $room_count; $i++) {
-                BookingRoom::create([
-                    'book_id' => $booking->id,
-                    'room_id' => $rooms[$i]['id'],
-                    'current_price' => $rooms[$i]['price'],
-                    'start_date' => $request['start_date'],
-                    'end_date' => $request['end_date']
-                ]);
+            if(($request['start_date'] != $booking['start_date']) || ($request['end_date'] != $booking['end_date']))
+            {
+                ##### delete old booking room
+                $bookRoom=BookingRoom::where('book_id',$booking['id'])->delete();
             }
-        }
+                // // rooms
+                $rooms = Room::available($request['start_date'], $request['end_date'])
+                                ->where('hotel_id', $request['hotel_id'])#####
+                                ->where('capacity', $booking['trip_capacity'])
+                                ->get();
+                for ($i = 0; $i < $room_count+$bookRoomCount; $i++) {
+                    BookingRoom::create([
+                        'book_id' => $booking->id,
+                        'room_id' => $rooms[$i]['id'],
+                        'current_price' => $rooms[$i]['price'],
+                        'start_date' => $request['start_date'],
+                        'end_date' => $request['end_date']
+                    ]);
+                }
 
-        $plane_trip = PlaneTrip::where('id', $request['plane_trip'])->first();
-        if ($plane_trip['available_seats'] >= $request['number_of_people']) {
-            $plane_trip['available_seats'] -= $request['number_of_people'];
-            $plane_trip->save();
-        } else {
-            return 2;
-        }
+            $plane_trip = PlaneTrip::where('id', $request['plane_trip'])->first();
+            if ($plane_trip['available_seats'] >= $request['number_of_people']+$numberOfOldSeat) {
+                $plane_trip['available_seats'] -= $request['number_of_people']+$numberOfOldSeat;
+                $plane_trip->save();
+            } else {
+                return 2;
+            }
 
-        $plane_trip_away = PlaneTrip::where('id', $request['plane_trip_away'])->first();
-        if ($plane_trip_away['available_seats'] >= $request['number_of_people']) {
-            $plane_trip_away['available_seats'] -= $request['number_of_people'];
-            $plane_trip_away->save();
-        } else {
-            return 3;
-        }
-        ##### update the seats in this trip
-        $bookplane=$booking->plane_trips;
-        $bookplane[0]['available_seats']+=$booking['number_of_people'];
-        $bookplane[1]['available_seats']+=$booking['number_of_people'];
-        $bookplane[0]->save();
-        $bookplane[1]->save();
-        BookPlane::where('book_id',$booking['id'])->delete();
-
-
-        $booking->trip_name = $request['trip_name']?? $booking['trip_name'];
-        $booking->price = $request['price']?? $booking['price'];
-        $booking->number_of_people = $request['number_of_people']?? $booking['number_of_people'];
-        $booking->start_date = $request['start_date']?? $booking['start_date'];
-        $booking->end_date = $request['end_date']?? $booking['end_date'];
-        $booking->trip_note = $request['trip_note']?? $booking['trip_note'];
-        $booking->save();
+            $plane_trip_away = PlaneTrip::where('id', $request['plane_trip_away'])->first();
+            if ($plane_trip_away['available_seats'] >= $request['number_of_people']+$numberOfOldSeat) {
+                $plane_trip_away['available_seats'] -= $request['number_of_people']+$numberOfOldSeat;
+                $plane_trip_away->save();
+            } else {
+                return 3;
+            }
+            ##### update the seats in this trip
+            $bookplane=$booking->plane_trips;
+            $bookplane[0]['available_seats']+=$numberOfOldSeat;
+            $bookplane[1]['available_seats']+=$numberOfOldSeat;
+            $bookplane[0]->save();
+            $bookplane[1]->save();
+            BookPlane::where('book_id',$booking['id'])->delete();
 
 
-        $book_place=BookPlace::where('book_id',$booking['id'])->delete();
-        foreach ($request['places'] as $place) {
-            $book_place = BookPlace::create([
+            $booking->trip_name = $request['trip_name']?? $booking['trip_name'];
+            $booking->price = $request['price']?? $booking['price'];
+            $booking->number_of_people = $request['number_of_people']+$booking['number_of_people'];
+            $booking->start_date = $request['start_date']?? $booking['start_date'];
+            $booking->end_date = $request['end_date']?? $booking['end_date'];
+            $booking->trip_note = $request['trip_note']?? $booking['trip_note'];
+            $booking->save();
+
+            if($request['places'] != null){
+                foreach ($request['places'] as $place) {
+                    $book_place=BookPlace::firstOrCreate(
+                    [
+                        'place_id' => $place,
+                        'book_id' => $booking->id,
+                        'current_price' => Place::where('id', $place)->first()->place_price,
+                    ]);
+
+                }
+            }
+
+            // go away
+            $book_plane = BookPlane::create([
                 'book_id' => $booking->id,
-                'place_id' => $place,
-                'current_price' => Place::where('id', $place)->first()->place_price,
+                'plane_trip_id' => $request['plane_trip'],
             ]);
 
+            // back away
+            $book_plane_away = BookPlane::create([
+                'book_id' => $booking->id,
+                'plane_trip_id' => $request['plane_trip_away'],
+            ]);
+
+
+        }catch(Exception $e){
+            //return 4;
+            return response()->json([
+                'message'=>$e->getMessage()
+            ]);
         }
-
-        // go away
-        $book_plane = BookPlane::create([
-            'book_id' => $booking->id,
-            'plane_trip_id' => $request['plane_trip'],
-        ]);
-
-        // back away
-        $book_plane_away = BookPlane::create([
-            'book_id' => $booking->id,
-            'plane_trip_id' => $request['plane_trip_away'],
-        ]);
-
-
-    }catch(\Exception $e){
-        //return 4;
-        return response()->json([
-            'message'=>$e->getMessage()
-        ]);
-    }
           return Booking::with(['places:id,name,place_price,text','places.images:id,image',
                                         'plane_trips:id,airport_source_id,airport_destination_id,current_price,available_seats,flight_date,landing_date',
                                         'plane_trips.airport_source:id,name',
@@ -238,6 +243,7 @@ class BookRepository implements BookRepositoryInterface
                                  'plane_trips.airport_destination:id,name',
                              ])
                              ->AvailableRooms()
+                             //->hotel()
                              ->where('id',$id)
                              ->get();
         }catch(Exception $e)

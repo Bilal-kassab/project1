@@ -31,7 +31,7 @@ class StoreStaticTripRequest extends FormRequest
             'price'=>'required|numeric',
             'number_of_people'=>'required|min:3|numeric',
             'trip_capacity'=>'required|numeric',
-            'start_date'=>"required|date|after_or_equal:$date",
+            'start_date'=>"required|exists:plane_trips,flight_date|date|after_or_equal:$date",
             'end_date'=>'required|date|after_or_equal:start_date',
             'trip_note'=>'string',
             'places'=>'array|min:1',
