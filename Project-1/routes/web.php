@@ -42,5 +42,6 @@ Route::prefix('admin')->group(function () {
 Route::controller(StaticBookController::class)->group(function(){
 
     Route::get('show-static-trip/{id}','showStaticTrip');
+    Route::get('all-static-trip','index');
 });
 

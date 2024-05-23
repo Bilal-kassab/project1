@@ -35,14 +35,9 @@ class StaticBookController extends Controller
     public function index()
     {
         try{
+            $static_trips=$this->bookrepository->index();
             return response()->json([
-                'data'=>Booking::with(['places:id,name,place_price,text','places.images:id,image',
-                                        'plane_trips:id,airport_source_id,airport_destination_id,current_price,available_seats,flight_date,landing_date',
-                                        'plane_trips.airport_source:id,name',
-                                        'plane_trips.airport_destination:id,name',
-                                    ])
-                                    ->AvailableRooms()
-                                    ->get(),
+                'data'=>$static_trips
             ],200);
         }catch(Exception $e){
             return response()->json([

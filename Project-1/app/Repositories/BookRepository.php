@@ -292,4 +292,15 @@ class BookRepository implements BookRepositoryInterface
 
         return $static_trip;
     }
+
+    public function index()
+    {
+        $static_book=Booking::where('type','static')
+                             ->AvailableRooms()
+                             ->select('id','trip_name','price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
+                             ->get();
+        return $static_book;
+
+    }
+
 }

@@ -29,7 +29,7 @@ class Place extends Model
     {
         return $this->BelongsToMany(Category::class,'place_categories');
     }
-    
+
     public function area(): BelongsTo
     {
         return $this->belongsTo(Area::class,'area_id');
@@ -44,6 +44,10 @@ class Place extends Model
     {
         return $this->belongsToMany(User::class,'favorites','place_id','user_id');
     }
+    public function comments():BelongsToMany
+    {
+        return $this->belongsToMany(Comment::class,'comments','place_id','user_id');
+    }
 
     public function favorites():HasMany
     {
@@ -53,6 +57,6 @@ class Place extends Model
     {
         return $this->belongsToMany(Booking::class,'book_places','place_id');
     }
-    
+
 
 }
