@@ -130,7 +130,9 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
 
 Route::post('admin-login',[AdminController::class,'login'])->middleware('approve-admin');
 Route::post('add-admin',[AdminController::class,'addAdmin']);
-
+Route::controller(RoleController::class)->group(function () {
+    Route::get('get-all-roles','getAllRoles');
+});
 Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel admin|Airport admin|Admin']],function(){
 
         Route::controller(AdminController::class)->group(function () {
@@ -139,6 +141,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
             Route::post('change-profile-photo','changeProfilePhoto');
             Route::post('filter','filter');
             Route::get('get-admin/{id}','getAdmin');
+            Route::get('admins-requests','adminsRequests');
             Route::get('get-admis-for-role/{id}','getAdmisForRole');
             Route::post('delete-profile-photo','deleteProfilePhoto');
             Route::post('approve-user','approveUser');
@@ -147,7 +150,6 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
 
 
         Route::controller(RoleController::class)->group(function () {
-            Route::get('get-all-roles','getAllRoles');
             Route::get('get-all-permission','getAllPermission');
             Route::get('get-all-permission-for-role/{id}','getAllPermissionForRole');
             Route::post('add-role','addRole');
@@ -268,4 +270,4 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
 
 
     });
-   
+

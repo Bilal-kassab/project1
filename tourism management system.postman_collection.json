@@ -330,7 +330,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "SA@gmail.com",
+											"value": "Airport@gmail.com",
 											"type": "text"
 										},
 										{
@@ -1241,11 +1241,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 15 May 2024 15:40:49 GMT"
+											"value": "Thu, 23 May 2024 20:09:40 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 15 May 2024 15:40:49 GMT"
+											"value": "Thu, 23 May 2024 20:09:40 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1277,7 +1277,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"User\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Trip manger\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Hotel admin\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Airport admin\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Admin\"\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Trip manger\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Hotel admin\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Airport admin\"\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -1735,6 +1735,111 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"Admin\",\n            \"email\": \"Airport4@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": 1,\n            \"is_approved\": 0,\n            \"roles\": [\n                {\n                    \"name\": \"Airport admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 7,\n                        \"role_id\": 5\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Admin\",\n            \"email\": \"Airport2@gmail.com\",\n            \"phone_number\": \"1234567890123\",\n            \"image\": null,\n            \"position\": 1,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"name\": \"Airport admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 6,\n                        \"role_id\": 5\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": null,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"name\": \"Airport admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 4,\n                        \"role_id\": 5\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Hotel admin\",\n            \"email\": \"Hotel@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": null,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"name\": \"Hotel admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 3,\n                        \"role_id\": 4\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Super Admin 2\",\n            \"email\": \"SA@gmail.com\",\n            \"phone_number\": \"00000000000\",\n            \"image\": null,\n            \"position\": 2,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"name\": \"Super Admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 1,\n                        \"role_id\": 1\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Trip manger\",\n            \"email\": \"Trip@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": null,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"name\": \"Trip manger\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 2,\n                        \"role_id\": 3\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"name\": \"User\",\n            \"email\": \"User@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": null,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"name\": \"User\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 5,\n                        \"role_id\": 2\n                    }\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Admins Requests",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admins-requests",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admins-requests"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "admins-requests",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admins-requests",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admins-requests"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 23 May 2024 20:08:32 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 23 May 2024 20:08:32 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"phone_number\": null,\n            \"email_verified_at\": null,\n            \"image\": null,\n            \"position\": null,\n            \"is_approved\": 0,\n            \"created_at\": \"2024-05-23T12:28:57.000000Z\",\n            \"updated_at\": \"2024-05-23T12:28:57.000000Z\"\n        }\n    ]\n}"
 								}
 							]
 						}
@@ -5796,12 +5901,12 @@
 												},
 												{
 													"key": "flight_date",
-													"value": "2024-5-30",
+													"value": "2024-06-07",
 													"type": "text"
 												},
 												{
 													"key": "landing_date",
-													"value": "2024-6-6",
+													"value": "2024-06-08",
 													"type": "text"
 												}
 											]
@@ -5968,7 +6073,7 @@
 												},
 												{
 													"key": "flight_date",
-													"value": "2024-5-20",
+													"value": "2024-5-23",
 													"type": "text"
 												}
 											]
@@ -7382,16 +7487,6 @@
 							]
 						}
 					],
-					"auth": {
-						"type": "bearer",
-						"bearer": [
-							{
-								"key": "token",
-								"value": "3|0oR9rIdeCDNDH1rDfS25aNN8NjCOWo3jO4GgbMMG364ee4db",
-								"type": "string"
-							}
-						]
-					},
 					"event": [
 						{
 							"listen": "prerequest",
@@ -9558,9 +9653,8 @@
 										},
 										{
 											"key": "hotel_id",
-											"value": "1",
-											"type": "text",
-											"disabled": true
+											"value": "3",
+											"type": "text"
 										},
 										{
 											"key": "trip_name",
@@ -9568,28 +9662,28 @@
 											"type": "text"
 										},
 										{
-											"key": "price",
-											"value": "100",
+											"key": "ratio",
+											"value": "0",
 											"type": "text"
 										},
 										{
 											"key": "number_of_people",
-											"value": "10",
+											"value": "12",
 											"type": "text"
 										},
 										{
 											"key": "trip_capacity",
-											"value": "4",
+											"value": "6",
 											"type": "text"
 										},
 										{
 											"key": "start_date",
-											"value": "2024-05-30",
+											"value": "2024-05-25",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-06-06",
+											"value": "2024-06-20",
 											"type": "text"
 										},
 										{
@@ -9609,12 +9703,12 @@
 										},
 										{
 											"key": "plane_trip",
-											"value": "1",
+											"value": "2",
 											"type": "text"
 										},
 										{
 											"key": "plane_trip_away",
-											"value": "3",
+											"value": "4",
 											"type": "text"
 										}
 									]
@@ -9805,6 +9899,11 @@
 									"mode": "formdata",
 									"formdata": [
 										{
+											"key": "hotel_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
 											"key": "trip_name",
 											"value": "to france",
 											"type": "text"
@@ -9815,18 +9914,18 @@
 											"type": "text"
 										},
 										{
-											"key": "number_of_people",
-											"value": "25",
+											"key": "add_new_people",
+											"value": "0",
 											"type": "text"
 										},
 										{
 											"key": "start_date",
-											"value": "2024-06-07",
+											"value": "2024-05-29",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-06-08",
+											"value": "2024-06-10",
 											"type": "text"
 										},
 										{
@@ -9836,7 +9935,7 @@
 										},
 										{
 											"key": "places[0]",
-											"value": "1",
+											"value": "3",
 											"type": "text"
 										},
 										{
@@ -9845,8 +9944,13 @@
 											"type": "text"
 										},
 										{
+											"key": "places[2]",
+											"value": "3",
+											"type": "text"
+										},
+										{
 											"key": "plane_trip",
-											"value": "2",
+											"value": "1",
 											"type": "text"
 										},
 										{
@@ -9857,7 +9961,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/2",
+									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/1",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -9870,7 +9974,7 @@
 										"api",
 										"admin",
 										"edit-static-trip",
-										"2"
+										"1"
 									]
 								}
 							},
@@ -10070,7 +10174,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/2",
+									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/1",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -10083,7 +10187,7 @@
 										"api",
 										"admin",
 										"show-static-trip",
-										"2"
+										"1"
 									]
 								}
 							},
@@ -10097,7 +10201,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|uwgG497W1XqnyBryymfx8pR1RX9UHQDCW9pTScKCd21b973f",
+						"value": "1|HOzwCzboUvPoKtG90PUtd0RDmeLeXamVUzLpQwkB96582f4c",
 						"type": "string"
 					}
 				]

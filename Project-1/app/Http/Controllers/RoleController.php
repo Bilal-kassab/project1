@@ -18,7 +18,8 @@ class RoleController extends Controller
 
 
     public function getAllRoles(){
-        $roles = Role::orderBy('id', 'asc')->where('name','!=','Super Admin')->get(['id','name']);
+        $roles = Role::orderBy('id', 'asc')->where([['name','!=','Super Admin'],['name','!=','User'],['name','!=','Admin']])->
+                                            get(['id','name']);
         return response()->json([
             "data"=> $roles
         ]);

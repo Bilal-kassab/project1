@@ -326,4 +326,16 @@ class AdminController extends Controller
         ],200);
     }
 
+    public function adminsRequests()
+    {
+        // $admins=User::query()->where();
+        $user=User::whereHas("roles", function($q) {
+            $q->whereIn("name", ["Trip manger","Hotel admin",'Airport admin']);
+            })->where('is_approved',false)->get();
+
+            return response()->json([
+                'data'=>$user
+            ],200);
+    }
+
 }
