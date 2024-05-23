@@ -236,16 +236,55 @@ class BookRepository implements BookRepositoryInterface
     public function showStaticTrip($id)
     {
         try{
-            $static_trip=Booking::where('type','static')
-                                 ->with(['places:id,name,place_price,text','places.images:id,image',
-                                 'plane_trips:id,airport_source_id,airport_destination_id,current_price,available_seats,flight_date,landing_date',
-                                 'plane_trips.airport_source:id,name',
-                                 'plane_trips.airport_destination:id,name',
-                             ])
-                             ->AvailableRooms()
-                             //->hotel()
-                             ->where('id',$id)
-                             ->get();
+            $book=Booking::where('type','static')
+                        ->AvailableRooms()
+                        ->findOrFail($id);
+
+            $bookData=[
+                'id'=>$book['id'],
+                'source_trip_id'=>$book['source_trip_id'],
+                'destination_trip_id'=>$book['destination_trip_id'],
+                'trip_name'=>$book['trip_name'],
+                'price'=>$book['price'],
+                'number_of_people'=>$book['number_of_people'],
+                'trip_capacity'=>$book['trip_capacity'],
+                'start_date'=>$book['start_date'],
+                'end_date'=>$book['end_date'],
+                'stars'=>$book['stars'],
+                'trip_note'=>$book['trip_note'],
+                'type'=>$book['type'],
+                'rooms_count'=>$book['rooms_count'],
+            ];
+
+            $going_trip=[
+                'airport_source'=>[
+                    'id'=>$book->plane_trips[0]->airport_source->id?? null,
+                    'name'=>$book->plane_trips[0]->airport_source->name?? null,
+                ]??null,
+                'airport_destination'=>[
+                    'id'=>$book->plane_trips[0]->airport_destination->id?? null,
+                    'name'=>$book->plane_trips[0]->airport_destination->name?? null,
+                ]??null,
+            ];
+            $return_trip=[
+                'airport_source'=>[
+                    'id'=>$book->plane_trips[1]->airport_source->id?? null,
+                    'name'=>$book->plane_trips[1]->airport_source->name?? null,
+                ]??null,
+                'airport_destination'=>[
+                    'id'=>$book->plane_trips[1]->airport_destination->id?? null,
+                    'name'=>$book->plane_trips[1]->airport_destination->name?? null,
+                ]??null,
+            ];
+            $static_trip=[
+                'static_trip'=>$bookData,
+                'source_trip'=>$book->source_trip,
+                'destination_trip'=>$book->destination_trip,
+                'places'=>$book->places,
+                'going_trip'=>$going_trip,
+                'return_trip'=>$return_trip,
+                'hotel'=>$book->rooms?->first()['hotel']['name']?? null
+            ];
         }catch(Exception $e)
         {
             return 1;

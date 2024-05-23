@@ -139,34 +139,56 @@ class StaticBookController extends Controller
 
     public function showStaticTrip($id)
     {
-        // $trip=$this->bookrepository->showStaticTrip($id);
-        // if($trip===1)
-        // {
-        //     return response()->json([
-        //         'message'=>'Not Found'
-        //     ],404);
-        // }
+        $trip=$this->bookrepository->showStaticTrip($id);
+        if($trip===1)
+        {
+            return response()->json([
+                'message'=>'Not Found'
+            ],404);
+        }
+
         $book=Booking::where('type','static')
                         ->AvailableRooms()
-                        ->where('id',$id)
-                        ->first();
-        $data=[
-            'static_trip'=>$book,
-            'places'=>$book->places,
-            'plane_trip'=>$book->plane_trips,
-             'hotel'=>Booking::whereHas('rooms.hotel')->with('rooms.hotel')->where('id',$id)->first()->rooms->first()['hotel']['name']
+                        ->findOrFail($id);
+
+        $bookData=[
+            'id'=>$book['id'],
+            'source_trip_id'=>$book['source_trip_id'],
+            'destination_trip_id'=>$book['destination_trip_id'],
+            'trip_name'=>$book['trip_name'],
+            'price'=>$book['price'],
+            'number_of_people'=>$book['number_of_people'],
+            'trip_capacity'=>$book['trip_capacity'],
+            'start_date'=>$book['start_date'],
+            'end_date'=>$book['end_date'],
+            'stars'=>$book['stars'],
+            'trip_note'=>$book['trip_note'],
+            'type'=>$book['type'],
+            'rooms_count'=>$book['rooms_count'],
         ];
-        return response()->json([
-            'data'=>Booking::where('type','static')
-                                ->with(['places:id,name,place_price,text','places.images:id,image',
-                                'plane_trips:id,airport_source_id,airport_destination_id,current_price,available_seats,flight_date,landing_date',
-                                'plane_trips.airport_source:id,name',
-                                'plane_trips.airport_destination:id,name',
-                            ])
-                            ->AvailableRooms()
-                            ->where('id',$id)
-                            ->get(),
-        ],200);
+
+        $going_trip=[
+            'airport_source'=>[
+                'id'=>$book->plane_trips[0]->airport_source->id?? null,
+                'name'=>$book->plane_trips[0]->airport_source->name?? null,
+            ]??null,
+            'airport_destination'=>[
+                'id'=>$book->plane_trips[0]->airport_destination->id?? null,
+                'name'=>$book->plane_trips[0]->airport_destination->name?? null,
+            ]??null,
+        ];
+        $return_trip=[
+            'airport_source'=>[
+                'id'=>$book->plane_trips[1]->airport_source->id?? null,
+                'name'=>$book->plane_trips[1]->airport_source->name?? null,
+            ]??null,
+            'airport_destination'=>[
+                'id'=>$book->plane_trips[1]->airport_destination->id?? null,
+                'name'=>$book->plane_trips[1]->airport_destination->name?? null,
+            ]??null,
+        ];
+
+        return response()->json($trip,200);
 
     }
 

@@ -35,9 +35,13 @@ class Booking extends Model
     {
         return $this->belongsTo(User::class,'user_id');
     }
-    public function country():BelongsTo
+    public function source_trip():BelongsTo
     {
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Country::class,'source_trip_id');
+    }
+    public function destination_trip():BelongsTo
+    {
+        return $this->belongsTo(Country::class,'destination_trip_id');
     }
     public function rooms():BelongsToMany
     {
@@ -49,10 +53,6 @@ class Booking extends Model
         return $query->withCount(['rooms' => function ($query) {
                 $query->where('user_id',null);
         } ]);
-    }
-    public function scopeHotel($id)
-    {
-        return Hotel::where('id',$id)->first();
     }
 
     public function plane_trips():BelongsToMany
