@@ -31,10 +31,14 @@ class DynamicTripRequest extends FormRequest
             'trip_name'=>'string',
             'number_of_people'=>'required|min:1|numeric',
             'trip_note'=>'string',
-            'place_id'=>'array|min:1',
-            'place_id.*'=>'required|exists:places,id',
+            'place_ids'=>'array|min:1',
+            'place_ids.*'=>'required|exists:places,id',
             'plane_trip_id'=>'exists:plane_trips,id',
-            'hotel-id'=>'exists:hotels,id',
+            'plane_trip_away_id'=>'exists:plane_trips,id',
+            'hotel_id'=>'exists:hotels,id',
+            'count_room_C2'=>'numeric|min:0',
+            'count_room_C4'=>'numeric|min:0',
+            'count_room_C6'=>'numeric|min:0',
         ];
     }
 
@@ -50,4 +54,4 @@ class DynamicTripRequest extends FormRequest
     //         'body.required' => 'A message is required',
     //     ];
     // }
-}
+    }

@@ -9,6 +9,7 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\DynamicBookController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\PlaneController;
 use App\Http\Controllers\RoleController;
@@ -257,6 +258,11 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::post('edit-static-trip/{id}','update_Admin');
                 Route::get('all-static-trip','index');
                 Route::get('show-static-trip/{id}','showStaticTrip');
+            });
+            Route::controller(DynamicBookController::class)->group(function(){
+                Route::post('Add_booking_User','store_User');
+                Route::get('All_booking','index');
+                Route::get('show_booking/{id}','show');
             });
         });
 

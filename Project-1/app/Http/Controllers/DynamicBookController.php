@@ -14,32 +14,74 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Repositories\DynamicBookRepository; 
 
 class DynamicBookController extends Controller
 {
-    public function store_User(DynamicTripRequest $request)
+ 
+    private $bookrepository;
+
+    public function __construct(DynamicBookRepository $bookrepository)
     {
-        $date=Carbon::now()->format('Y-m-d');
-        try{
-           $booking=Booking::create([
-            'user_id'=>auth()->user()->id,
+        $this->bookrepository = $bookrepository;
+    }
+    public function store_User(DynamicTripRequest $request){
+        $data=[
             'source_trip_id'=>$request->source_trip_id,
             'destination_trip_id'=>$request->destination_trip_id,
+            'hotel_id'=>$request->hotel_id,
             'trip_name'=>$request->trip_name,
+            'price'=>$request->price,
             'number_of_people'=>$request->number_of_people,
-            'trip_note'=>$request->trip_note,
+            'trip_capacity'=>$request->trip_capacity,
             'start_date'=>$request->start_date,
             'end_date'=>$request->end_date,
-            'type'=>'dynamic'
-        ]);
-        }catch(Exception $exception){
+            'trip_note'=>$request->trip_note,
+            'place_ids'=>$request->place_ids,
+            'plane_trip_id'=>$request->plane_trip_id,
+            'plane_trip_away_id'=>$request->plane_trip_away_id,
+            'count_room_C2'=>$request->count_room_C2,
+            'count_room_C4'=>$request->count_room_C4,
+            'count_room_C6'=>$request->count_room_C6
+        ];
+        $Dynamic_book=$this->bookrepository->store_User($data);
+        if($Dynamic_book === 1){
             return response()->json([
-                'message'=>$exception->getMessage(),
-            ]);
-
+                'message'=>'there is not enough room in this hotel',
+            ],400);
+        }
+        if($Dynamic_book === 2){
+            return response()->json([
+                'message' => 'the seats of the going trip plane lower than number of person'
+            ], 400);
+        }
+        if($Dynamic_book === 3){
+            return response()->json([
+                'message' => 'the seats of the return trip plane lower than number of person'
+            ], 400);
+        }
+        if($Dynamic_book === 4){
+            return response()->json([
+                'message' => 'Failed to create a trip',
+            ], 400);
+        }
+        if($Dynamic_book === 5){
+            return response()->json([
+                'message'=>'the room count  of this capacity 2 not enough'
+            ],400);
+        }
+        if($Dynamic_book === 6){
+            return response()->json([
+                'message'=>'the room count  of this capacity 4 not enough'
+            ],400);
+        }
+        if($Dynamic_book === 7){
+            return response()->json([
+                'message'=>'the room count  of this capacity 6 not enough'
+            ],400);
         }
         return response()->json([
-            'data'=>$booking
+            'data'=>$Dynamic_book
         ],200);
     }
 
