@@ -54,7 +54,7 @@ class StaticBookController extends Controller
             'destination_trip_id'=>$request->destination_trip_id,
             'hotel_id'=>$request->hotel_id,
             'trip_name'=>$request->trip_name,
-            'price'=>$request->price,
+            'ratio'=>$request->ratio,
             'number_of_people'=>$request->number_of_people,
             'trip_capacity'=>$request->trip_capacity,
             'start_date'=>$request->start_date,
@@ -104,6 +104,13 @@ class StaticBookController extends Controller
             'plane_trip'=>$request->plane_trip,
             'plane_trip_away'=>$request->plane_trip_away,
         ];
+        $booking= Booking::findOrFail($id);
+        if(auth()->id() != $booking->user_id)
+        {
+            return response()->json([
+                'message'=>'You do not have the permission',
+            ],200);
+        }
         $edit=$this->bookrepository->editAdmin($data,$id);
         if($edit === 1){
             return response()->json([

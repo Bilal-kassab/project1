@@ -25,13 +25,13 @@ class UpdateStaticTripRequest extends FormRequest
         $date=Carbon::now()->format('Y-m-d');
         return [
             'trip_name'=>'string',
-            'price'=>'required|numeric',
+            'ratio'=>'required|decimal:0,1',
             'hotel_id'=>'required|exists:hotels,id',
             'add_new_people'=>'required|min:0|numeric',
             'start_date'=>"required|exists:plane_trips,flight_date|date|after_or_equal:$date",
             'end_date'=>'required|date|after_or_equal:start_date',
             'trip_note'=>'string',
-            'places'=>'required|array|min:1',
+            'places'=>'array|min:1',
             'places.*'=>"exists:places,id",
             'plane_trip'=>"required|exists:plane_trips,id",
             'plane_trip_away'=>'required|exists:plane_trips,id',

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\StaticBookController;
+use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -19,9 +20,26 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
 
-   // return Carbon::now()->format('Y-m-d');
-   $i=(3/2);
-   return ++$i;
+               $book=Booking::where('type','static')
+                        ->userRooms(2,null)
+                        ->findOrFail(1);
+
+                        $bookData=[
+                            'id'=>$book['id'],
+                            'source_trip_id'=>$book['source_trip_id'],
+                            'destination_trip_id'=>$book['destination_trip_id'],
+                            'trip_name'=>$book['trip_name'],
+                            'price'=>$book['price'],
+                            'number_of_people'=>$book['number_of_people'],
+                            // 'trip_capacity'=>$book['trip_capacity'],
+                            'start_date'=>$book['start_date'],
+                            'end_date'=>$book['end_date'],
+                            // 'stars'=>$book['stars'],
+                            'trip_note'=>$book['trip_note'],
+                            'type'=>$book['type'],
+                            // 'rooms_count'=>$book['rooms_count'],
+                        ];
+            return $bookData;
 });
 
 

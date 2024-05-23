@@ -54,6 +54,13 @@ class Booking extends Model
                 $query->where('user_id',null);
         } ]);
     }
+    public function scopeUserRooms($query,$capacity,$uesrID)
+    {
+        return $query->withCount(['rooms' => function ($query) use($capacity,$uesrID) {
+                $query->where('user_id',$uesrID)
+                      ->where('capacity',$capacity);
+        } ]);
+    }
 
     public function plane_trips():BelongsToMany
     {
