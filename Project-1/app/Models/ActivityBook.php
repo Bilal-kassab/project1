@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class ActivityBook extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'booking_id',
+        'activity_id'
+    ];
+    protected $hidden=[
+        'created_at',
+        'updated_at',
+        'pivot'
+    ];
 }

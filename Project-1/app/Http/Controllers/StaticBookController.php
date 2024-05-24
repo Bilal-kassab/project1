@@ -61,6 +61,7 @@ class StaticBookController extends Controller
             'end_date'=>$request->end_date,
             'trip_note'=>$request->trip_note,
             'places'=>$request->places,
+            'activities'=>$request->activities,##
             'plane_trip'=>$request->plane_trip,
             'plane_trip_away'=>$request->plane_trip_away,
         ];

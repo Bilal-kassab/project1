@@ -29,6 +29,7 @@ class Booking extends Model
     protected $hidden = [
         'created_at',
         'updated_at',
+        'pivot',
     ];
 
     public function user():BelongsTo
@@ -73,7 +74,7 @@ class Booking extends Model
 
     public function activities():BelongsToMany
     {
-       return $this->belongsToMany(Activity::class,'activity_books','activity_id');
+       return $this->belongsToMany(Activity::class,'activity_books','booking_id','activity_id');
     }
 
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\UserController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\AirportController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\DynamicBookController;
 use App\Http\Controllers\HotelController;
@@ -117,6 +119,10 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
          Route::controller(RoomController::class)->group(function(){
             Route::get('show_room/{id}','show');
             Route::get('get_all_room/{id}','index');
+        });
+        Route::controller(CommentController::class)->group(function(){
+            Route::post('add-comment','setComment');
+            Route::get('show-all-place-comments/{id}','showAllPlaceComment');
         });
 
     });
@@ -265,6 +271,15 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::post('Add_booking_User','store_User');
                 Route::get('All_booking','index');
                 Route::get('show_booking/{id}','show');
+            });
+            Route::controller(CommentController::class)->group(function(){
+                Route::post('add-comment','setComment');
+                Route::get('show-all-place-comments/{id}','showAllPlaceComment');
+            });
+            Route::controller(ActivityController::class)->group(function(){
+                Route::post('add-activity','addActivity');
+                Route::post('search-activity','searchActivity');
+                Route::get('get-all-activity','getAllActivity');
             });
         });
 

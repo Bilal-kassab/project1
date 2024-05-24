@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\ActivityBook;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 use App\Models\Booking;
 use App\Models\BookingRoom;
@@ -65,6 +66,13 @@ class BookRepository implements BookRepositoryInterface
                     'current_price' => Place::where('id', $place)->first()->place_price,
                 ]);
                 $trip_price+=$book_place['current_price'];
+            }
+            ###
+            foreach ($request['activities'] as $activity) {
+               ActivityBook::create([
+                    'booking_id' => $booking->id,
+                    'activity_id' => $activity,
+                ]);
             }
 
             // go away
@@ -254,7 +262,7 @@ class BookRepository implements BookRepositoryInterface
                 'type'=>$book['type'],
                 'rooms_count'=>$book['rooms_count'],
             ];
-
+            $activities=$book?->activities;
             $going_trip=[
                 'airport_source'=>[
                     'id'=>$book->plane_trips[0]->airport_source->id?? null,
@@ -281,6 +289,7 @@ class BookRepository implements BookRepositoryInterface
             ];
             $static_trip=[
                 'static_trip'=>$bookData,
+                'activities'=>$activities,
                 'source_trip'=>$book->source_trip,
                 'destination_trip'=>$book->destination_trip,
                 'places'=>$book->places,

@@ -6367,7 +6367,7 @@
 												},
 												{
 													"key": "flight_date",
-													"value": "2024-5-23",
+													"value": "2024-5-25",
 													"type": "text"
 												}
 											]
@@ -6389,7 +6389,104 @@
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "search-for-plane-trip",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "country_source_id",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "country_destination_id",
+															"value": "2",
+															"type": "text"
+														},
+														{
+															"key": "flight_date",
+															"value": "2024-5-25",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/search-for-plane-trip",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"search-for-plane-trip"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 24 May 2024 22:36:07 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 24 May 2024 22:36:07 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-25\",\n                \"landing_date\": \"2024-05-29\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            }\n        ],\n        \"return_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\"\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\"\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ]\n    }\n}"
+										}
+									]
 								},
 								{
 									"name": "get-all-plane-admin-trip",
@@ -9919,6 +10016,443 @@
 					]
 				},
 				{
+					"name": "Comment",
+					"item": [
+						{
+							"name": "add-comment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "place_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "comment",
+											"value": "The oldest place I have ever seen!!",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/add-comment",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"add-comment"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add-comment",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "place_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "comment",
+													"value": "The oldest place I have ever seen!!",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/add-comment",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"add-comment"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:20:34 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:20:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"place_id\": 3,\n        \"user_id\": 1,\n        \"comment\": \"The oldest place I have ever seen!!\",\n        \"created_at\": \"2024-05-24T22:20:34.000000Z\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Super Admin\",\n            \"image\": null\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "show-all-place-comments",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/show-all-place-comments/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"show-all-place-comments",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show-all-place-comments",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/show-all-place-comments/3",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"show-all-place-comments",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:18:15 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:18:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Umayyad Mosque\",\n        \"place_price\": \"5.00\",\n        \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n        \"area_id\": 1,\n        \"comments\": [\n            {\n                \"id\": 1,\n                \"place_id\": 3,\n                \"user_id\": 1,\n                \"comment\": \"the oldest place i have ever seen!!\",\n                \"created_at\": \"2024-05-24T22:00:03.000000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"Super Admin\",\n                    \"image\": null\n                }\n            },\n            {\n                \"id\": 2,\n                \"place_id\": 3,\n                \"user_id\": 1,\n                \"comment\": \"the oldest place i have ever seen!!\",\n                \"created_at\": \"2024-05-24T22:00:48.000000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"Super Admin\",\n                    \"image\": null\n                }\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "do not has comments",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/show-all-place-comments/2",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"show-all-place-comments",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:18:39 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:18:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Activity",
+					"item": [
+						{
+							"name": "add-activity",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Climbing",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/add-activity",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"add-activity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search-activity",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "e",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/search-activity",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"search-activity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/get-all-activity",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"get-all-activity"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Static Book",
 					"item": [
 						{
@@ -10003,6 +10537,16 @@
 										{
 											"key": "plane_trip_away",
 											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "activities[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "activities[1]",
+											"value": "2",
 											"type": "text"
 										}
 									]
@@ -10468,7 +11012,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/1",
+									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/3",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -10481,7 +11025,7 @@
 										"api",
 										"admin",
 										"show-static-trip",
-										"1"
+										"3"
 									]
 								}
 							},
@@ -15738,7 +16282,7 @@
 												},
 												{
 													"key": "flight_date",
-													"value": "2024-5-20",
+													"value": "2024-5-25",
 													"type": "text"
 												}
 											]
@@ -15760,7 +16304,98 @@
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "search-for-plane-trip",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "country_source_id",
+															"value": "2",
+															"type": "text"
+														},
+														{
+															"key": "country_destination_id",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "flight_date",
+															"value": "2024-5-25",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/user/search-for-plane-trip",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"user",
+														"search-for-plane-trip"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 24 May 2024 22:34:35 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 24 May 2024 22:34:35 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\"\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\"\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ],\n        \"return_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-25\",\n                \"landing_date\": \"2024-05-29\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            }\n        ]\n    }\n}"
+										}
+									]
 								},
 								{
 									"name": "show-plane-trip-details",
@@ -15791,7 +16426,85 @@
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "show-plane-trip-details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/user/show-plane-trip-details/1",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"user",
+														"show-plane-trip-details",
+														"1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 24 May 2024 22:35:23 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 24 May 2024 22:35:23 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "57"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"plane_id\": 1,\n        \"airport_source_id\": 1,\n        \"airport_destination_id\": 3,\n        \"country_source_id\": 1,\n        \"country_destination_id\": 2,\n        \"current_price\": \"200.00\",\n        \"available_seats\": 25,\n        \"flight_date\": \"2024-05-30\",\n        \"landing_date\": \"2024-06-01\",\n        \"plane\": {\n            \"id\": 1,\n            \"name\": \"Damas A1\",\n            \"number_of_seats\": 40,\n            \"visible\": 1,\n            \"ticket_price\": \"50.00\",\n            \"airport_id\": 1,\n            \"airport\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"country_source\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"country_destination\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"airport_source\": {\n            \"id\": 1,\n            \"name\": \"Syria A\"\n        },\n        \"airport_destination\": {\n            \"id\": 3,\n            \"name\": \"France A\"\n        }\n    }\n}"
+										}
+									]
 								}
 							]
 						},
@@ -17449,6 +18162,334 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Comment",
+					"item": [
+						{
+							"name": "add-comment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "place_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "comment",
+											"value": "i love this place!!!!!",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/add-comment",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"add-comment"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add-comment",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "place_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "comment",
+													"value": "The oldest place I have ever seen!!",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/add-comment",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"add-comment"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:20:34 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:20:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"place_id\": 3,\n        \"user_id\": 1,\n        \"comment\": \"The oldest place I have ever seen!!\",\n        \"created_at\": \"2024-05-24T22:20:34.000000Z\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Super Admin\",\n            \"image\": null\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "show-all-place-comments",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/show-all-place-comments/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"show-all-place-comments",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show-all-place-comments",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/show-all-place-comments/3",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"show-all-place-comments",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:27:46 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:27:46 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Umayyad Mosque\",\n        \"place_price\": \"5.00\",\n        \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n        \"area_id\": 1,\n        \"comments\": [\n            {\n                \"id\": 1,\n                \"place_id\": 3,\n                \"user_id\": 1,\n                \"comment\": \"the oldest place i have ever seen!!\",\n                \"created_at\": \"2024-05-24T22:00:03.000000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"Super Admin\",\n                    \"image\": null\n                }\n            },\n            {\n                \"id\": 2,\n                \"place_id\": 3,\n                \"user_id\": 1,\n                \"comment\": \"the oldest place i have ever seen!!\",\n                \"created_at\": \"2024-05-24T22:00:48.000000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"Super Admin\",\n                    \"image\": null\n                }\n            },\n            {\n                \"id\": 3,\n                \"place_id\": 3,\n                \"user_id\": 1,\n                \"comment\": \"The oldest place I have ever seen!!\",\n                \"created_at\": \"2024-05-24T22:20:34.000000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"Super Admin\",\n                    \"image\": null\n                }\n            },\n            {\n                \"id\": 4,\n                \"place_id\": 3,\n                \"user_id\": 5,\n                \"comment\": \"i love this place!!!!!\",\n                \"created_at\": \"2024-05-24T22:27:34.000000Z\",\n                \"user\": {\n                    \"id\": 5,\n                    \"name\": \"User\",\n                    \"image\": null\n                }\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "do not have comments",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/show-all-place-comments/2",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"show-all-place-comments",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:28:38 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 May 2024 22:28:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": null\n}"
+								}
+							]
+						}
+					]
 				}
 			],
 			"auth": {
@@ -17456,7 +18497,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "5|NtX5pWeClYC2rIMkvC7K71TSAi6DIIRCvyCQXCEFe33f866c",
+						"value": "3|2WeRY2BNZ2p6sTlGfYTnU7reToRg22hLRs7qjjSRd8f16d16",
 						"type": "string"
 					}
 				]
