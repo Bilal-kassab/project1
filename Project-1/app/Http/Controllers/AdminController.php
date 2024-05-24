@@ -182,11 +182,20 @@ class AdminController extends Controller
         $image->move('ProfileImage/',$image_name);
         $admin->image="ProfileImage/".$image_name;
         $admin->save();
+        // $data=[
+        //     'id'=>$admin->id,
+        //     'name'=>$admin->name,
+        //     'email'=> $admin->email,
+        //     'image'=> $admin->image,
+        // ];
+        $position=Country::where('id',$admin->position)->first();
         $data=[
-            'id'=>$admin->id,
-            'name'=>$admin->name,
+            'id'=> $admin->id,
+            'name'=> $admin->name,
             'email'=> $admin->email,
+            'phone_number'=>$admin->phone_number,
             'image'=> $admin->image,
+            'position'=>$position,
         ];
         return response()->json([
             'message'=>'photo updated successfully',
@@ -220,9 +229,9 @@ class AdminController extends Controller
             'image'=> $admin->image,
         ];
         return response()->json([
-            'message'=>'photo updated successfully',
+            'message'=>'photo deleted successfully',
             //'data'=>$user->get(['id','name','email','image'])
-            'data'=>$data,
+            //'data'=>$data,
         ],200);
 
     }
@@ -257,9 +266,19 @@ class AdminController extends Controller
     public function getAdmin($id)
     {
 
-        $user=User::where('id',$id)->get();
+        $user=User::where('id',$id)->first();
+        $position=Country::where('id',$user->position)->first();
+        $data=[
+            'id'=> $user->id,
+            'name'=> $user->name,
+            'email'=> $user->email,
+            'phone_number'=>$user->phone_number,
+            'image'=> $user->image,
+            'position'=>$position,
+        ];
+
         return response()->json([
-            'data'=> $user,
+            'data'=> $data,
         ],200);
 
     }
@@ -268,7 +287,9 @@ class AdminController extends Controller
     {
 
        $role=Role::query()->orderBy('id', 'asc')->where('id',$id)->first();
-       $admins=User::query()->Role($role->name)->select('id','name','email','phone_number','image','position','is_approved')->get();
+       $admins=User::query()->Role($role->name)->select('id','name','email','phone_number','image','position','is_approved')
+                    ->with('position')
+                    ->get();
 
        return response()->json([
         'data'=> $admins,
@@ -320,7 +341,8 @@ class AdminController extends Controller
                     return $q->orderBy('created_at','desc');
                 })
                 ->select('id','name','email','phone_number','image','position','is_approved')
-                ->with('roles:name')->get();
+                ->with('roles:id,name','position')
+                ->whereRelation('roles','name','!=','Super Admin')->get();
 
         return response()->json([
             'data'=>$users,
@@ -332,7 +354,7 @@ class AdminController extends Controller
         // $admins=User::query()->where();
         $user=User::whereHas("roles", function($q) {
             $q->whereIn("name", ["Trip manger","Hotel admin",'Airport admin']);
-            })->where('is_approved',false)->get();
+            })->where('is_approved',false)->with('position')->get();
 
             return response()->json([
                 'data'=>$user

@@ -19,7 +19,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('image')->nullable();
-            $table->integer('position')->nullable();
+            //$table->integer('position')->nullable();
+            $table->unsignedBigInteger('position')->nullable();
+            $table->foreign('position')->references('id')->on('countries')->onUpdate('cascade')->onDelete('cascade');
+
             $table->boolean('is_approved')->default(0);
             $table->rememberToken();
             $table->timestamps();

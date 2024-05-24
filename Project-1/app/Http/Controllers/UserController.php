@@ -231,11 +231,20 @@ class UserController extends Controller
         $user->image="ProfileImage/".$image_name;
         $user->save();
 
+        // $data=[
+        //     'id'=>$user->id,
+        //     'name'=>$user->name,
+        //     'email'=> $user->email,
+        //     'image'=> $user->image,
+        // ];
+        $position=Country::where('id',$user->position)->first();
         $data=[
-            'id'=>$user->id,
-            'name'=>$user->name,
+            'id'=> $user->id,
+            'name'=> $user->name,
             'email'=> $user->email,
+            'phone_number'=>$user->phone_number,
             'image'=> $user->image,
+            'position'=>$position,
         ];
         return response()->json([
             'message'=>'photo updated successfully',

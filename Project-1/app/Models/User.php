@@ -29,6 +29,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        //'pivot'
     ];
 
 
@@ -40,7 +41,7 @@ class User extends Authenticatable
     protected function getDefaultGuardName(): string
     {
         return 'user';
-     }
+    }
     public function airport(): HasOne
     {
         return $this->hasOne(Airport::class,'user_id');
@@ -53,6 +54,11 @@ class User extends Authenticatable
     public function comments():BelongsToMany
     {
         return $this->belongsToMany(Comment::class,'comments','user_id','place_id');
+    }
+
+    public function position()
+    {
+        return $this->belongsTo(Country::class,'position');
     }
 
 }
