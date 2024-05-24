@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +16,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('role:Super Admin', ['only'=> ['approveUser','getAllAdmin']]);
+        $this->middleware('role:Super Admin', ['only'=> ['approveUser','getAllAdmin','adminsRequests']]);
         //$this->middleware('', [''=> ['','']]);
 
     }
@@ -112,7 +113,7 @@ class AdminController extends Controller
     {
 
         $admin=auth()->user();
-
+        $position=Country::where('id',$admin->position)->first();
 
         $data=[
             'id'=> $admin->id,
@@ -120,7 +121,7 @@ class AdminController extends Controller
             'email'=> $admin->email,
             'phone_number'=>$admin->phone_number,
             'image'=> $admin->image,
-            'position'=>$admin->position,
+            'position'=>$position,
             'role'=> $admin->roles->pluck('name'),
         ];
 
@@ -149,14 +150,14 @@ class AdminController extends Controller
         $admin->position=$request['position'] ?? $admin['position'];
         $admin->name=$request['name'] ?? $admin['name'];
         $admin->save();
-
+        $position=Country::where('id',$admin->position)->first();
         $data=[
             'id'=> $admin->id,
             'name'=> $admin->name,
             'email'=> $admin->email,
             'phone_number'=>$admin->phone_number,
             'image'=> $admin->image,
-            'position'=>$admin->position,
+            'position'=>$position,
             'role'=> $admin->roles->pluck('name'),
         ];
 

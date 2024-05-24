@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bank;
 use App\Models\ConfirmCode;
+use App\Models\Country;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -194,6 +195,7 @@ class UserController extends Controller
     public function profile(){
 
         $user=auth()->user();
+        $position=Country::where('id',$user->position)->first();
 
         $data=[
             'id'=> $user->id,
@@ -201,7 +203,7 @@ class UserController extends Controller
             'email'=> $user->email,
             'phone_number'=>$user->phone_number,
             'image'=> $user->image,
-            'position'=>$user->position,
+            'position'=>$position,
         ];
 
         return response()->json([
@@ -246,7 +248,7 @@ class UserController extends Controller
     public function updateProfile(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name'=>'required|string',
+            'name'=>'string',
             'position'=>'numeric|exists:countries,id',
             'phone_number'=>'regex:/[0-9]{10}/|unique:users'
         ]);
@@ -259,18 +261,18 @@ class UserController extends Controller
 
         $user=User::findOrFail(auth()->user()->id);
 
-        $user->phone_number=$request['phone_number'] ??null;
-        $user->position=$request['position'] ?? null;
-        $user->name=$request['name'] ?? null;
+        $user->phone_number=$request['phone_number'] ??$user['phone_number'];
+        $user->position=$request['position'] ?? $user['position'];
+        $user->name=$request['name'] ?? $user['name'];
         $user->save();
-
+        $position=Country::where('id',$user->position)->first();
         $data=[
             'id'=> $user->id,
             'name'=> $user->name,
             'email'=> $user->email,
             'phone_number'=>$user->phone_number,
             'image'=> $user->image,
-            'position'=>$user->position,
+            'position'=>$position,
         ];
 
         return response()->json([
