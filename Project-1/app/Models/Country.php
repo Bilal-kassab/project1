@@ -20,6 +20,10 @@ class Country extends Model
     {
         return $this->hasMany(area::class);
     }
+    public function area_places(): HasMany
+    {
+        return $this->areas()->whereHas('places')->whereRelation('places','visible',true);
+    }
 
     public function airports()
     {

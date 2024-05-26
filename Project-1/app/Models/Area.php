@@ -13,7 +13,10 @@ class Area extends Model
     use HasFactory;
     protected $fillable=['name','country_id'];
 
-
+    protected $hidden=[
+        'created_at',
+        'updated_at'
+    ];
 
     public function country(): BelongsTo
     {
@@ -22,7 +25,7 @@ class Area extends Model
 
     public function places(): HasMany
     {
-        return $this->hasMany(Place::class,'area_id');
+        return $this->hasMany(Place::class,'area_id')->where('visible',true);
     }
 
     public function airports(): HasMany

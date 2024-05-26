@@ -17,7 +17,7 @@ class PlaceController extends Controller
     public function index()
     {
         return response()->json([
-            'data'=>Place::with('images:id,place_id,image','categories:id,name','area:id,name,country_id','area.country:id,name')
+            'data'=>Place::visible()->with('images:id,place_id,image','categories:id,name','area:id,name,country_id','area.country:id,name')
                            ->get()
         ]);
     }
@@ -211,9 +211,6 @@ class PlaceController extends Controller
                 'message'=> 'Not found'
             ],404);
          }
-
-
-
         if(File::exists($place_image->image))
         {
             File::delete($place_image->image);
@@ -280,7 +277,7 @@ class PlaceController extends Controller
     {
 
         try{
-            $place= Place::with(['images','categories:id,name','area:id,country_id,name','area.country:id,name'])
+            $place= Place::visible()->with(['comments','comments.user:id,name,image','images','categories:id,name','area:id,name,country_id','area.country:id,name'])
                             ->select('id','name','place_price','text','area_id')
                             ->findOrFail($id);
          }catch(\Exception $e){
@@ -297,15 +294,17 @@ class PlaceController extends Controller
     public function placesDependingOnArea($id)
     {
         try{
-                $places=Area::with(['country:id,name','places:id,name,place_price,text,area_id','places.categories:id,name'])
-                            ->select('id','name','country_id')
-                            ->findOrFail($id);
+            $places=Area::findOrFail($id);
         }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not Found'
+                'message'=> 'Not found'
             ],404);
         }
-
+        $places=Area::whereHas('places')
+                    ->with(['country:id,name','places.categories:id,name'])
+                    ->select('id','name','country_id')
+                    ->where('id',$id)
+                    ->first();
         return response()->json([
             'data'=> $places
         ],200);
@@ -315,14 +314,16 @@ class PlaceController extends Controller
     {
 
         try{
-            $places=Country::with(['areas:id,name,country_id','areas.places:id,name,place_price,text,area_id','areas.places.categories:id,name'])
-                            ->select('id','name')
-                            ->findOrFail($id);
+            $places=Country::findOrFail($id);
         }catch(\Exception $e){
             return response()->json([
                 'message'=>'Not found',
             ],404);
         }
+        $places=Country::whereHas('area_places')->with(['area_places.places:id,name,place_price,text,visible,area_id','area_places.places.categories:id,name'])
+                        ->select('id','name')
+                        ->where('id',$id)
+                        ->first();
         return response()->json([
             'data'=> $places
         ],200);
@@ -354,9 +355,14 @@ class PlaceController extends Controller
             ]);
         }
         try{
-        $places=Country::with(['areas:id,name,country_id','areas.places:id,name,place_price,text,area_id','areas.places.images:id,image','areas.places.categories:id,name'])
-                ->select('id','name')
-                ->findOrFail(auth()->user()->position);
+        // $placess=Country::with(['areas:id,name,country_id','areas.places:id,name,place_price,text,area_id','areas.places.images:id,image','areas.places.categories:id,name'])
+        //                 ->select('id','name')
+        //                 ->findOrFail(auth()->user()->position);
+
+        $places=Country::whereHas('area_places')->with(['area_places.places:id,name,place_price,text,visible,area_id','area_places.places.categories:id,name'])
+                        ->select('id','name')
+                        ->where('id',auth()->user()->position)
+                        ->first();
         }
         catch(\Exception $e){
             return response()->json([
@@ -378,9 +384,9 @@ class PlaceController extends Controller
                 'message'=> $validatedData->errors()->first(),
             ],422);
         }
-        $place=Place::with(['images','categories:id,name','area:id,country_id,name','area.country:id,name'])
-                     ->select('id','name','place_price','text','area_id')
-                    ->where('name','like','%'.$request->name.'%')->get();
+        $place=Place::visible()->with(['images','categories:id,name','area:id,country_id,name','area.country:id,name'])
+                     ->select('id','name','place_price','text','visible','area_id')
+                     ->where('name','like','%'.$request->name.'%')->get();
 
         return response()->json([
             'data'=>$place

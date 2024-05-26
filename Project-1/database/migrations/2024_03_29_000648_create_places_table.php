@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('area_id')->nullable();
             $table->foreign('area_id')->references('id')->on('areas')->onUpdate('cascade')->onDelete('cascade');
 
+            $table->boolean('visible')->default(true);
             // $table->unsignedBigInteger('category_id')->nullable();
             // $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
 

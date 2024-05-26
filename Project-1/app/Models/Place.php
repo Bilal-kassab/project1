@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Builder;
 
 class Place extends Model
 {
@@ -17,6 +18,7 @@ class Place extends Model
     'text',
     'area_id',
     'category_id',
+    'visible'
     ];
 
     protected $hidden = [
@@ -30,6 +32,10 @@ class Place extends Model
         return $this->BelongsToMany(Category::class,'place_categories');
     }
 
+    public function scopeVisible(Builder $query): void
+    {
+        $query->where('visible', '=', true);
+    }
     public function area(): BelongsTo
     {
         return $this->belongsTo(Area::class,'area_id');

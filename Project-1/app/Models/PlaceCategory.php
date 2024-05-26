@@ -12,7 +12,9 @@ class PlaceCategory extends Model
         'category_id',
         'place_id'
     ] ;
-
+    protected $hidden=[
+        'pivot'
+    ];
     public function place()
     {
         return $this->belongsTo(Place::class,'place_id');

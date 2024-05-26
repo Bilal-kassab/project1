@@ -12,6 +12,7 @@ class Category extends Model
 {
     use HasFactory;
     protected $fillable=['name'];
+    protected $hidden=['pivot'];
 
     // public function places(): hasMany
     // {
@@ -22,6 +23,6 @@ class Category extends Model
     {
         return $this->BelongsToMany(Place::class,'place_categories');
     }
-    
+
 
 }
