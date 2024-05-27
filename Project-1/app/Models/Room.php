@@ -14,7 +14,7 @@ class Room extends Model
     use HasFactory;
 
     protected $fillable=['hotel_id','capacity','price','status'];
-    protected $hidden=['created_at','updated_at'];
+    protected $hidden=['created_at','updated_at','pivot'];
     public function hotel():BelongsTo
     {
         return $this->belongsTo(Hotel::class,'hotel_id');

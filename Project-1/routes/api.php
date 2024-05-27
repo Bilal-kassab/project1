@@ -271,6 +271,8 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::post('Add_booking_User','store_User');
                 Route::get('All_booking','index');
                 Route::get('show_booking/{id}','show');
+                Route::post('hotel_book','hotel_book');
+                Route::post('plane_book','plane_book');
             });
             Route::controller(CommentController::class)->group(function(){
                 Route::post('add-comment','setComment');

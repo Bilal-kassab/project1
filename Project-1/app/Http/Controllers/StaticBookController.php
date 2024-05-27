@@ -86,6 +86,7 @@ class StaticBookController extends Controller
                 'message' => 'Failed to create a trip',
             ], 400);
         }
+        
         return response()->json([
             'data'=>$static_book
         ],200);
@@ -133,6 +134,12 @@ class StaticBookController extends Controller
             return response()->json([
                 'message'=>'updated failed'
             ],404);
+        }
+        if ($edit === 5) 
+        {
+            return response()->json([
+                'message' => 'You should choose a period similar to the ancient period'
+            ], 400);
         }
         return response()->json([
             'message'=> 'booking has been updated successfully',

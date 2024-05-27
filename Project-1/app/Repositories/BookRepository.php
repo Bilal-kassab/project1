@@ -131,6 +131,21 @@ class BookRepository implements BookRepositoryInterface
         {
             $booking= Booking::findOrFail($id);
             $trip_price=0;
+              // the old period
+            $datetime1 = new DateTime($booking['start_date']);
+            $datetime2 = new DateTime($booking['end_date']);
+            $interval = $datetime1->diff($datetime2);
+            $old_period = $interval->format('%a');
+            // the new period
+            $datetime3 = new DateTime($request['start_date']);
+            $datetime4 = new DateTime($request['end_date']);
+            $interval = $datetime3->diff($datetime4);
+            $new_period = $interval->format('%a');
+            //check if the new period a similar the ancient period 
+            if($old_period != $new_period){
+                return 5;
+            }
+            //$trip_price=0;
             // to check if there are an enough rooms in this hotel
             $bookRoomCount=BookingRoom::where('book_id',$booking['id'])->count();
             $numberOfOldSeat=$booking['number_of_people'];
