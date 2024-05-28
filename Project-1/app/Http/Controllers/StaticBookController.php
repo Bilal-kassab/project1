@@ -157,46 +157,46 @@ class StaticBookController extends Controller
             ],404);
         }
 
-        $book=Booking::where('type','static')
-                        ->AvailableRooms()
-                        ->findOrFail($id);
+        // $book=Booking::where('type','static')
+        //                 ->AvailableRooms()
+        //                 ->findOrFail($id);
 
-        $bookData=[
-            'id'=>$book['id'],
-            'source_trip_id'=>$book['source_trip_id'],
-            'destination_trip_id'=>$book['destination_trip_id'],
-            'trip_name'=>$book['trip_name'],
-            'price'=>$book['price'],
-            'number_of_people'=>$book['number_of_people'],
-            'trip_capacity'=>$book['trip_capacity'],
-            'start_date'=>$book['start_date'],
-            'end_date'=>$book['end_date'],
-            'stars'=>$book['stars'],
-            'trip_note'=>$book['trip_note'],
-            'type'=>$book['type'],
-            'rooms_count'=>$book['rooms_count'],
-        ];
+        // $bookData=[
+        //     'id'=>$book['id'],
+        //     'source_trip_id'=>$book['source_trip_id'],
+        //     'destination_trip_id'=>$book['destination_trip_id'],
+        //     'trip_name'=>$book['trip_name'],
+        //     'price'=>$book['price'],
+        //     'number_of_people'=>$book['number_of_people'],
+        //     'trip_capacity'=>$book['trip_capacity'],
+        //     'start_date'=>$book['start_date'],
+        //     'end_date'=>$book['end_date'],
+        //     'stars'=>$book['stars'],
+        //     'trip_note'=>$book['trip_note'],
+        //     'type'=>$book['type'],
+        //     'rooms_count'=>$book['rooms_count'],
+        // ];
 
-        $going_trip=[
-            'airport_source'=>[
-                'id'=>$book->plane_trips[0]->airport_source->id?? null,
-                'name'=>$book->plane_trips[0]->airport_source->name?? null,
-            ]??null,
-            'airport_destination'=>[
-                'id'=>$book->plane_trips[0]->airport_destination->id?? null,
-                'name'=>$book->plane_trips[0]->airport_destination->name?? null,
-            ]??null,
-        ];
-        $return_trip=[
-            'airport_source'=>[
-                'id'=>$book->plane_trips[1]->airport_source->id?? null,
-                'name'=>$book->plane_trips[1]->airport_source->name?? null,
-            ]??null,
-            'airport_destination'=>[
-                'id'=>$book->plane_trips[1]->airport_destination->id?? null,
-                'name'=>$book->plane_trips[1]->airport_destination->name?? null,
-            ]??null,
-        ];
+        // $going_trip=[
+        //     'airport_source'=>[
+        //         'id'=>$book->plane_trips[0]->airport_source->id?? null,
+        //         'name'=>$book->plane_trips[0]->airport_source->name?? null,
+        //     ]??null,
+        //     'airport_destination'=>[
+        //         'id'=>$book->plane_trips[0]->airport_destination->id?? null,
+        //         'name'=>$book->plane_trips[0]->airport_destination->name?? null,
+        //     ]??null,
+        // ];
+        // $return_trip=[
+        //     'airport_source'=>[
+        //         'id'=>$book->plane_trips[1]->airport_source->id?? null,
+        //         'name'=>$book->plane_trips[1]->airport_source->name?? null,
+        //     ]??null,
+        //     'airport_destination'=>[
+        //         'id'=>$book->plane_trips[1]->airport_destination->id?? null,
+        //         'name'=>$book->plane_trips[1]->airport_destination->name?? null,
+        //     ]??null,
+        // ];
 
         return response()->json($trip,200);
 

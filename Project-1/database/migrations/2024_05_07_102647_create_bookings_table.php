@@ -30,7 +30,7 @@ return new class extends Migration
             $table->date('end_date')->nullable();
             $table->decimal('stars')->default(0);
             $table->string('trip_note');
-            $table->enum('type',['static','dynamic']);
+            $table->enum('type',['static','dynamic','hotel','plane']);
             $table->timestamps();
         });
     }

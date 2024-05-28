@@ -301,7 +301,7 @@ class PlaceController extends Controller
             ],404);
         }
         $places=Area::whereHas('places')
-                    ->with(['country:id,name','places.categories:id,name'])
+                    ->with(['places.images','country:id,name','places.categories:id,name'])
                     ->select('id','name','country_id')
                     ->where('id',$id)
                     ->first();
@@ -320,7 +320,7 @@ class PlaceController extends Controller
                 'message'=>'Not found',
             ],404);
         }
-        $places=Country::whereHas('area_places')->with(['area_places.places:id,name,place_price,text,visible,area_id','area_places.places.categories:id,name'])
+        $places=Country::whereHas('area_places')->with(['area_places.places.images','area_places.places:id,name,place_price,text,visible,area_id','area_places.places.categories:id,name'])
                         ->select('id','name')
                         ->where('id',$id)
                         ->first();
@@ -359,7 +359,7 @@ class PlaceController extends Controller
         //                 ->select('id','name')
         //                 ->findOrFail(auth()->user()->position);
 
-        $places=Country::whereHas('area_places')->with(['area_places.places:id,name,place_price,text,visible,area_id','area_places.places.categories:id,name'])
+        $places=Country::whereHas('area_places')->with(['area_places.places.images','area_places.places:id,name,place_price,text,visible,area_id','area_places.places.categories:id,name'])
                         ->select('id','name')
                         ->where('id',auth()->user()->position)
                         ->first();

@@ -210,5 +210,51 @@ class DynamicBookController extends Controller
             'data'=>$Dynamic_book
         ],200);
     }
+    public function index(){
+        try{
+            $D_trips=$this->bookrepository->index();
+        }catch(Exception $e){
+            return response()->json([
+                'message'=>$e->getMessage(),
+            ],404);
+        }
+        return response()->json([
+            'data'=>$D_trips
+        ],200);
+        
+    }
 
+    public function showDynamicTrip($id){
+
+        $trip=$this->bookrepository->showDynamicTrip($id);
+        if($trip===1)
+        {
+            return response()->json([
+                'message'=>'Not Found'
+            ],404);
+        }
+        return response()->json($trip,200);
+    }
+
+
+    public function showHotelTrip($id){
+        $trip=$this->bookrepository->show_hotel_trip($id);
+        if($trip===1)
+        {
+            return response()->json([
+                'message'=>'Not Found'
+            ],404);
+        }
+        return response()->json($trip,200);
+    }
+    public function showPlaneTrip($id){
+        $trip=$this->bookrepository->show_plane_trip($id);
+        if($trip===1)
+        {
+            return response()->json([
+                'message'=>'Not Found'
+            ],404);
+        }
+        return response()->json($trip,200);
+    }
 }

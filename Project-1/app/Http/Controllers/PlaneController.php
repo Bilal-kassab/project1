@@ -294,30 +294,4 @@ class PlaneController extends Controller
         ],200);
 
     }
-    public function book_trip_plane(Request $request){
-                        $validatedData =Validator::make($request->all(),[
-                            'book_id'=>'required|numeric|exists:bookings,id',
-                            'plane_trip_id'=>'required|numeric|exists:plane_trips,id',
-                    ]);
-                    if( $validatedData->fails() ){
-                        return response()->json([
-                            'message'=> $validatedData->errors()->first(),
-                        ],422);
-                    }
-                    try{
-                    $book=BookPlane::create([
-                        'book_id'=>$request->book_id,
-                        'plane_trip_id'=>$request->plane_trip_id,
-                    ]);
-                }catch(Exception $e){
-                    return response()->json([
-                        'message'=>$e->getMessage(),
-                    ],404);
-                }
-                return response()->json([
-                    'data'=>$book
-                ],200);
-
-
-    }
 }

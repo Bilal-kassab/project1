@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             BasicInformationSeeder::class,
             PlaceSeeder::class,
             HotelSeeder::class,
-            PlaneTripSeeder::class
+            PlaneTripSeeder::class,
+            ActivitySeeder::class
         ]);
     }
 }

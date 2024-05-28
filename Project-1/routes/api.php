@@ -233,7 +233,6 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('get-all-plane-admin-trip','getAllPlaneAdminTrip');
                 Route::get('get-all-plane-trip','getAllPlaneTrip');
                 Route::get('show-plane-trip-details/{id}','showPlaneTripDetails');
-                Route::post('book_trip_plane','book_trip_plane');
             });
 
             Route::controller(HotelController::class)->group(function(){
@@ -273,6 +272,10 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('show_booking/{id}','show');
                 Route::post('hotel_book','hotel_book');
                 Route::post('plane_book','plane_book');
+                Route::get('all_my_dynamic_trip','index');
+                Route::get('show_dynamic_trip/{id}','showDynamicTrip');
+                Route::get('show_hotel_trip/{id}','showHotelTrip');
+                Route::get('show_plane_trip/{id}','showPlaneTrip');
             });
             Route::controller(CommentController::class)->group(function(){
                 Route::post('add-comment','setComment');

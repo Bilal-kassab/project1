@@ -261,7 +261,7 @@ class HotelController extends Controller
             'message'=>'photo updated successfully',
             'data'=>Hotel::with(['images'])
                           ->where('id',$hotel_image->hotel_id)
-                          ->select('id','name','stars','rooms','area_id','user_id')
+                          ->select('id','name','stars','number_rooms','area_id','user_id')
                           ->get(),
         ],200);
     }

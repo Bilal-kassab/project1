@@ -32,8 +32,8 @@ class PlaneTripSeeder extends Seeder
             'country_destination_id'=>2,
             'current_price'=>200,
             'available_seats'=>25,
-            'flight_date'=>"2024-5-25",
-            'landing_date'=>"2024-5-29"
+            'flight_date'=>"2024-6-1",
+            'landing_date'=>"2024-6-5"
         ]);
         PlaneTrip::create([
             'plane_id'=>3,
