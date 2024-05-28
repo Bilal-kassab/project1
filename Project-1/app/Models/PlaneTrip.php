@@ -33,7 +33,7 @@ class PlaneTrip extends Model
 
     public function scopeGetTripDetails(Builder $query): void
     {
-        $query->with('plane:id,name','country_source:id,name','country_destination:id,name','airport_source:id,name','airport_destination:id,name');
+        $query->with('plane:id,name','plane.images','country_source:id,name','country_destination:id,name','airport_source:id,name','airport_destination:id,name');
     }
     public function scopeDetails(Builder $query): void
     {

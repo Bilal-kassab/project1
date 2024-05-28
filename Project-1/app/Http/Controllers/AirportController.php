@@ -17,8 +17,9 @@ class AirportController extends Controller
 
     public function __construct()
     {
-        $this->middleware('role:Admin|Airport admin', ['only'=> ['store','update','updateExistAirportImage','addAirportImage']]);
+        $this->middleware('role:Admin|Airport admin', ['only'=> ['store','update','updateExistAirportImage','addAirportImage','getMyAirport']]);
         $this->middleware('role:Super Admin|Admin|Airport admin', ['only'=> ['getAirportDetails']]);
+        $this->middleware('role:Super Admin', ['only'=> ['allAirport']]);
     }
 
     public function getMyAirport()
@@ -91,9 +92,9 @@ class AirportController extends Controller
             ],404);
         }
         $validator = Validator::make($request->all(), [
-            'name'=> 'required|string',
+            'name'=> 'string',
             //'user_id'=>'required|numeric|exists:users,id',
-            'area_id'=> 'required|numeric|exists:areas,id'
+            'area_id'=> 'numeric|exists:areas,id'
           ]);
 
           if($validator->fails()){
@@ -102,17 +103,17 @@ class AirportController extends Controller
               ],422);
           }
 
-          $airport->name = $request->name;
+          $airport->name = $request->name??$airport['name'];
           //$airport->user_id = $request->user_id;
-          $airport->country_id=Area::find($request->area_id)['country_id'];
-          $airport->area_id = $request->area_id;
+          $airport->country_id=Area::find($request->area_id??$airport['area_id'])['country_id'];
+          $airport->area_id = $request->area_id??$airport['area_id'];
           $airport->save();
           return response()->json([
             'message'=> 'airport has been updated successfully',
             'data'=>Airport::with('country:id,name','area:id,name','user:id,name,email,image,position')
                             ->select('id','name','user_id','area_id','country_id')
                             ->where('id',$airport->id)
-                            ->get(),
+                            ->first(),
           ],200);
     }
 
@@ -289,8 +290,12 @@ class AirportController extends Controller
         }
 
          return response()->json([
-            'data'=>  Airport::airportWithAdmin()->visible()
-                                ->where('country_id',$country->id)->get()
+            'data'=> Airport::airportWithAdmin()->visible()
+                            ->where('country_id',$country->id)->get()
+            // 'data'=> Country::whereRelation('airports','visible',true)->whereHas('areas.airports')->with(['areas:id,country_id,name','areas.airports' => function (Builder $query) {
+            //                 $query->select('id','name','country_id','area_id','user_id','visible');
+            //             },'airports.user:id,name,email,image,position']) ->select('id','name')
+            //                 ->where('id',$country->id)->get()
          ],200);
     }
 
@@ -306,16 +311,16 @@ class AirportController extends Controller
 
         if($request->user()->hasRole('User')) {
             return response()->json([
-                'data'=>Area::whereHas('airports')->with(['country:id,name','airports' => function (Builder $query) {
-                    $query->where('visible',true)->select('id','name','country_id','area_id','user_id');
+                'data'=>Area::whereRelation('airports','visible',true)->whereHas('airports')->with(['country:id,name','airports' => function (Builder $query) {
+                    $query->select('id','name','country_id','area_id','user_id','visible');
                 }]) ->select('id','name','country_id')
                     ->where('id',$area->id)->get()
             ],200);
         }
        // 'airports.user:id,name,email,image,position'
          return response()->json([
-            'data'=> Area::whereHas('airports')->with(['country:id,name','airports' => function (Builder $query) {
-                            $query->where('visible',true)->select('id','name','country_id','area_id','user_id');
+            'data'=> Area::whereRelation('airports','visible',true)->whereHas('airports')->with(['country:id,name','airports' => function (Builder $query) {
+                            $query->select('id','name','country_id','area_id','user_id','visible');
                         },'airports.user:id,name,email,image,position']) ->select('id','name','country_id')
                             ->where('id',$area->id)->get()
          ],200);
@@ -324,7 +329,7 @@ class AirportController extends Controller
     public function getAirportDetails($id):JsonResponse
     {
         try{
-            $airport=Airport::airportWithoutAdmin()->findOrFail($id);
+            $airport=Airport::airportWithoutAdmin()->visible()->select('id','name','area_id','country_id','visible')->findOrFail($id);
             $planes=Plane::where('airport_id',$airport->id)->get()->count();
         }catch(\Exception $e){
             return response()->json([
@@ -334,14 +339,20 @@ class AirportController extends Controller
 
         $data=[
             'airport'=>$airport,
-            'palne_count'=>$planes
+            'plane_count'=>$planes
         ];
         return response()->json([
             'data'=>$data
         ],200);
     }
 
-
+    public function allAirport()
+    {
+        return response()->json([
+            'data'=> Airport::airportWithAdmin()
+                                ->get(),
+         ],200);
+    }
 
 
 

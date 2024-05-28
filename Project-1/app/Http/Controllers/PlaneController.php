@@ -31,15 +31,14 @@ class PlaneController extends Controller
 
     public function getMyPlane():JsonResponse
     {
-
         $palnes=Plane::whereHas('airport' , function (Builder $query) {
             $query->where('user_id',auth()->id())->select('id','name','country_id','area_id','user_id');
-        })->with('airport:id,name')->select('id','airport_id','name','number_of_seats','ticket_price')
+        })->with('airport:id,name','images')->select('id','airport_id','name','number_of_seats','ticket_price')
                         ->get();
 
         return response()->json([
             'data'=>$palnes
-         ],200);
+            ],200);
     }
     public function store(Request $request):JsonResponse
     {
@@ -86,10 +85,10 @@ class PlaneController extends Controller
         }
 
         return response()->json([
-            'date'=>Plane::with('airport:id,name')
+            'date'=>Plane::with(['airport:id,name','images:id,plane_id,image'])
                          ->select('id','airport_id','name','number_of_seats','ticket_price')
                          ->where('id',$plane->id)
-                         ->get(),
+                         ->first(),
         ],200);
     }
 
@@ -194,8 +193,8 @@ class PlaneController extends Controller
 
           return response()->json([
             'message'=> 'airport has been updated successfully',
-            'data'=>Plane::with('airport:id,name')
-                            ->select('id','name','user_id','area_id','country_id')
+            'data'=>Plane::with('airport:id,name','images:id,plane_id,image')
+                            ->select('id','name','airport_id','number_of_seats','ticket_price','visible')
                             ->where('id',$palne->id)
                             ->get(),
           ],200);
@@ -240,6 +239,7 @@ class PlaneController extends Controller
             'country_source_id'=> 'required|numeric|exists:countries,id',
             'country_destination_id'=> 'required|numeric|exists:countries,id',
             'flight_date' => "required|date|after_or_equal:$date",
+            'type' => 'required|in:1,2|numeric',
         ]);
           if($validator->fails()){
               return response()->json([
@@ -247,23 +247,30 @@ class PlaneController extends Controller
               ],422);
           }
         $trips=$this->planetriprepository->getAllTripForCountry($request->all());
-
+            if($request->type==1)
+            {
+            return response()->json([
+                'data'=> $trips['going_trip'],
+            ],200);
+            }
         return response()->json([
-            'data'=>$trips,
+            'data'=> $trips,
         ],200);
     }
 
     public function getAllPlaneAdminTrip():JsonResponse
     {
-        $trips=Airport::whereHas('trips')->with('trips')->where('user_id',auth()->id())->get();
+        $trips=Airport::whereHas('trips')
+                      ->with('trips.plane:id,name','trips.plane.images:id,plane_id,image','trips.airport_source:id,name','trips.airport_destination:id,name','trips.country_source:id,name','trips.country_destination:id,name')
+                      ->where('user_id',auth()->id())->get();
         return response()->json([
             'data'=>$trips
         ],200);
     }
-    
+
     public function getAllPlaneTrip(Request $request):JsonResponse
     {
-        $trips=PlaneTrip::getTripDetails()->with('plane.airport:id,name')->get();
+        $trips=PlaneTrip::getTripDetails()->with('plane:id,airport_id,name','plane.airport:id,name')->get();
         return response()->json([
             'data'=>$trips
         ],200);
@@ -288,7 +295,7 @@ class PlaneController extends Controller
             ],404);
         }
 
-        $trips=PlaneTrip::getTripDetails()->with('plane.airport:id,name')->where('id',$id)->first();
+        $trips=PlaneTrip::getTripDetails()->with('plane:id,airport_id,name','plane.airport:id,name')->where('id',$id)->first();
         return response()->json([
             'data'=>$trips,
         ],200);

@@ -216,6 +216,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::post('delete-airport/{id}','destroy');
                 Route::post('search-for-airport','search');
                 Route::get('get-my-airport','getMyAirport');
+                Route::get('all-airport','allAirport');
                 Route::get('get-airport-details/{id}','getAirportDetails');
                 Route::get('show-airport/{id}','show');
                 Route::get('get-all-country-airports/{id}','getAllCountryAirports');

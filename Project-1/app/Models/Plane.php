@@ -31,6 +31,9 @@ class Plane extends Model
     {
         return $this->hasMany(PlaneTrip::class,'plane_id');
     }
-   
 
+    public function images():HasMany
+    {
+        return $this->hasMany(AirportImage::class,'plane_id');
+    }
 }

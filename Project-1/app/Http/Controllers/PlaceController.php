@@ -301,7 +301,7 @@ class PlaceController extends Controller
             ],404);
         }
         $places=Area::whereHas('places')
-                    ->with(['places.images','country:id,name','places.categories:id,name'])
+                    ->with(['country:id,name','places.categories:id,name','places.images',])
                     ->select('id','name','country_id')
                     ->where('id',$id)
                     ->first();
@@ -332,7 +332,7 @@ class PlaceController extends Controller
     public function placesDependingOnCategory($id)
     {
         try{//
-            $places=Category::with(['places:id,name,place_price,text,area_id','places.images:id,image','places.area:id,name,country_id','places.area.country:id,name'])
+            $places=Category::whereHas('places')->with(['places:id,name,place_price,text,area_id','places.images:id,image','places.area:id,name,country_id','places.area.country:id,name'])
                                    ->where('id','=', $id)
                                    ->select('id','name')
                                    ->get();

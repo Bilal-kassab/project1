@@ -34,9 +34,8 @@ class Airport extends Model
     public function scopeAirportWithAdmin(Builder $query): void
     {
             $query->with('country:id,name','area:id,name','user:id,name,email,image,position')
-                    ->select('id','name','user_id','area_id','country_id');
+                    ->select('id','name','user_id','area_id','country_id','visible');
     }
-
     public function scopeAirportWithoutAdmin(Builder $query): void
     {
             $query->with('country:id,name','area:id,name')
