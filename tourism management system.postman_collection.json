@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f1329df3-1af3-4b9d-96e6-5076fe9f16be",
+		"_postman_id": "dba85689-4abc-472e-96e8-1075a58e2511",
 		"name": "tourism management system",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30821440"
+		"_exporter_id": "30377196"
 	},
 	"item": [
 		{
@@ -4398,7 +4398,7 @@
 											"formdata": [
 												{
 													"key": "name",
-													"value": "Example@@@@",
+													"value": "aleppoo2",
 													"type": "text"
 												},
 												{
@@ -4408,7 +4408,7 @@
 												},
 												{
 													"key": "text",
-													"value": "welcome to here",
+													"value": "welcome to older city",
 													"type": "text"
 												},
 												{
@@ -4417,24 +4417,19 @@
 													"type": "text"
 												},
 												{
-													"key": "images[0]",
-													"type": "file",
-													"src": "/C:/Users/Asus-/Desktop/1300701.png"
-												},
-												{
-													"key": "images[1]",
-													"type": "file",
-													"src": "/C:/Users/Asus-/Desktop/N1wl6Xvs49zb2revmBIPzKuO6uTp7pZDaqZKfFWg.jpg"
-												},
-												{
 													"key": "category_ids[0]",
 													"value": "1",
 													"type": "text"
 												},
 												{
-													"key": "",
-													"value": "",
-													"type": "text"
+													"key": "images[0]",
+													"type": "file",
+													"src": "/E:/BMW/FB_IMG_1604794757892.jpg"
+												},
+												{
+													"key": "images[1]",
+													"type": "file",
+													"src": "/E:/BMW/FB_IMG_1604766653133.jpg"
 												}
 											]
 										},
@@ -4465,11 +4460,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 02 Apr 2024 09:58:09 GMT"
+											"value": "Tue, 28 May 2024 21:55:40 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 02 Apr 2024 09:58:09 GMT"
+											"value": "Tue, 28 May 2024 21:55:40 GMT"
 										},
 										{
 											"key": "Connection",
@@ -4501,7 +4496,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"Example@@@@\",\n            \"place_price\": \"50.00\",\n            \"text\": \"welcome to here\",\n            \"area_id\": 1,\n            \"created_at\": \"2024-04-02T09:58:09.000000Z\",\n            \"updated_at\": \"2024-04-02T09:58:09.000000Z\",\n            \"images\": [\n                {\n                    \"id\": 13,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1712051889.png\"\n                },\n                {\n                    \"id\": 14,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1712051889.jpg\"\n                }\n            ],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\",\n                    \"pivot\": {\n                        \"place_id\": 5,\n                        \"category_id\": 1\n                    }\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1,\n                \"country\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                }\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 8,\n            \"name\": \"aleppoo2\",\n            \"place_price\": \"50.00\",\n            \"text\": \"welcome to older city\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"images\": [\n                {\n                    \"id\": 8,\n                    \"place_id\": 8,\n                    \"image\": \"PlaceImages/1716933340.jpg\"\n                },\n                {\n                    \"id\": 9,\n                    \"place_id\": 8,\n                    \"image\": \"PlaceImages/1716933340.jpg\"\n                }\n            ],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1,\n                \"country\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                }\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -4550,7 +4545,7 @@
 							},
 							"response": [
 								{
-									"name": "update exist Place Image",
+									"name": "update  exist Place Image",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -4566,7 +4561,7 @@
 												{
 													"key": "image",
 													"type": "file",
-													"src": "/C:/Users/Asus-/Desktop/1300701.png"
+													"src": "/E:/BMW/FB_IMG_1606402097015.jpg"
 												},
 												{
 													"key": "image_id",
@@ -4602,11 +4597,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 11:17:06 GMT"
+											"value": "Tue, 28 May 2024 22:00:42 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 11:17:06 GMT"
+											"value": "Tue, 28 May 2024 22:00:42 GMT"
 										},
 										{
 											"key": "Connection",
@@ -4630,7 +4625,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59"
+											"value": "58"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -4638,7 +4633,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"photo updated successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"The Brandenburg Gate\",\n            \"place_price\": \"50.00\",\n            \"text\": \"welcome to here\",\n            \"area_id\": 1,\n            \"category_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"place_id\": 1,\n                    \"image\": \"PlaceImages/1711797426.png\"\n                }\n            ]\n        }\n    ]\n}"
+									"body": "{\n    \"message\": \"photo updated successfully\",\n    \"data\": [\n        {\n            \"id\": 4,\n            \"name\": \"Aleppo1155\",\n            \"place_price\": \"100.00\",\n            \"text\": \"welcome to older city\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"place_id\": 4,\n                    \"image\": \"PlaceImages/1716933642.jpg\"\n                }\n            ],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1,\n                \"country\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                }\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -4718,17 +4713,17 @@
 											"formdata": [
 												{
 													"key": "name",
-													"value": "Example@@@",
+													"value": "Aleppoop",
 													"type": "text"
 												},
 												{
 													"key": "place_price",
-													"value": "100",
+													"value": "100.0",
 													"type": "text"
 												},
 												{
 													"key": "text",
-													"value": "welcome to",
+													"value": "welcome to older city",
 													"type": "text"
 												},
 												{
@@ -4738,11 +4733,6 @@
 												},
 												{
 													"key": "category_ids[0]",
-													"value": "2",
-													"type": "text"
-												},
-												{
-													"key": "category_ids[1]",
 													"value": "1",
 													"type": "text"
 												}
@@ -4776,11 +4766,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 02 Apr 2024 10:25:23 GMT"
+											"value": "Tue, 28 May 2024 22:02:42 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 02 Apr 2024 10:25:23 GMT"
+											"value": "Tue, 28 May 2024 22:02:42 GMT"
 										},
 										{
 											"key": "Connection",
@@ -4804,7 +4794,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -4812,7 +4802,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"updated successfully\",\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"Example@@@\",\n            \"place_price\": \"100.00\",\n            \"text\": \"welcome to\",\n            \"area_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 13,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1712051889.png\"\n                },\n                {\n                    \"id\": 14,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1712051889.jpg\"\n                }\n            ],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\",\n                    \"pivot\": {\n                        \"place_id\": 5,\n                        \"category_id\": 1\n                    }\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Cultural\",\n                    \"pivot\": {\n                        \"place_id\": 5,\n                        \"category_id\": 2\n                    }\n                }\n            ]\n        }\n    ]\n}"
+									"body": "{\n    \"message\": \"updated successfully\",\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"Aleppoop\",\n            \"place_price\": \"100.00\",\n            \"text\": \"welcome to older city\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"images\": [\n                {\n                    \"id\": 2,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716927878.jpg\"\n                },\n                {\n                    \"id\": 3,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716928067.jpg\"\n                },\n                {\n                    \"id\": 4,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716928089.jpg\"\n                },\n                {\n                    \"id\": 5,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716928098.jpg\"\n                },\n                {\n                    \"id\": 6,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716928163.jpg\"\n                },\n                {\n                    \"id\": 7,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716928200.jpg\"\n                }\n            ],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1,\n                \"country\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                }\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -4876,13 +4866,13 @@
 											"formdata": [
 												{
 													"key": "place_id",
-													"value": "2",
+													"value": "5",
 													"type": "text"
 												},
 												{
 													"key": "images[0]",
 													"type": "file",
-													"src": "/C:/Users/Asus-/Desktop/N1wl6Xvs49zb2revmBIPzKuO6uTp7pZDaqZKfFWg.jpg"
+													"src": "/E:/BMW/FB_IMG_1608254935339.jpg"
 												}
 											]
 										},
@@ -4913,11 +4903,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 11:21:34 GMT"
+											"value": "Tue, 28 May 2024 22:03:29 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 11:21:34 GMT"
+											"value": "Tue, 28 May 2024 22:03:29 GMT"
 										},
 										{
 											"key": "Connection",
@@ -4941,7 +4931,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "57"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -4949,7 +4939,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"Image Added successfully\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Museum Island\",\n            \"place_price\": \"50.00\",\n            \"text\": \"welcome to here\",\n            \"area_id\": 1,\n            \"category_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 4,\n                    \"place_id\": 2,\n                    \"image\": \"PlaceImages/1711797693.jpg\"\n                }\n            ]\n        }\n    ]\n}"
+									"body": "{\n    \"message\": \"Image Added successfully\",\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"Aleppoop\",\n            \"place_price\": \"100.00\",\n            \"text\": \"welcome to older city\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"images\": [\n                {\n                    \"id\": 2,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716927878.jpg\"\n                },\n                {\n                    \"id\": 3,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716928067.jpg\"\n                },\n                {\n                    \"id\": 4,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716928089.jpg\"\n                },\n                {\n                    \"id\": 5,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716928098.jpg\"\n                },\n                {\n                    \"id\": 6,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716928163.jpg\"\n                },\n                {\n                    \"id\": 7,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716928200.jpg\"\n                },\n                {\n                    \"id\": 10,\n                    \"place_id\": 5,\n                    \"image\": \"PlaceImages/1716933809.jpg\"\n                }\n            ],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1,\n                \"country\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                }\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -5315,83 +5305,6 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/show/3",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"show",
-												"3"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 26 May 2024 21:39:19 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 26 May 2024 21:39:19 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Umayyad Mosque\",\n        \"place_price\": \"5.00\",\n        \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n        \"area_id\": 1,\n        \"comments\": [],\n        \"images\": [],\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"Islamic\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Cultural\"\n            }\n        ],\n        \"area\": {\n            \"id\": 1,\n            \"name\": \"Damascus\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            }\n        }\n    }\n}"
-								},
-								{
-									"name": "show place",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
 											"raw": "http://127.0.0.1:8000/api/admin/show/10",
 											"protocol": "http",
 											"host": [
@@ -5456,6 +5369,83 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"message\": \"Not found\"\n}"
+								},
+								{
+									"name": "show place",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/show/1",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"show",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 22:09:08 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 22:09:08 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Eiffel Tower\",\n        \"place_price\": \"20.00\",\n        \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n        \"area_id\": 4,\n        \"visible\": 1,\n        \"comments\": [],\n        \"images\": [],\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"Islamic\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Cultural\"\n            }\n        ],\n        \"area\": {\n            \"id\": 4,\n            \"name\": \"Paris\",\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            }\n        }\n    }\n}"
 								}
 							]
 						},
@@ -9669,7 +9659,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/show_room/2",
+											"raw": "http://127.0.0.1:8000/api/admin/show_room/40",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -9682,7 +9672,7 @@
 												"api",
 												"admin",
 												"show_room",
-												"2"
+												"40"
 											]
 										}
 									},
@@ -10040,7 +10030,7 @@
 													"formdata": [
 														{
 															"key": "name",
-															"value": "hotel 7",
+															"value": "HotelSY",
 															"type": "text"
 														},
 														{
@@ -10049,24 +10039,26 @@
 															"type": "text"
 														},
 														{
-															"key": "rooms",
+															"key": "number_rooms",
 															"value": "10",
 															"type": "text"
 														},
 														{
 															"key": "stars",
 															"value": "4",
-															"type": "text"
+															"type": "text",
+															"disabled": true
 														},
 														{
 															"key": "user_id",
-															"value": "1",
+															"value": "3",
 															"type": "text"
 														},
 														{
 															"key": "images[0]",
 															"type": "file",
-															"src": "/E:/BMW/20210302_205610.jpg"
+															"src": [],
+															"disabled": true
 														}
 													]
 												},
@@ -10087,10 +10079,53 @@
 													]
 												}
 											},
-											"_postman_previewlanguage": "Text",
-											"header": [],
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 23:52:10 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 23:52:10 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n    \"message\": \"succesfully\",\n    \"data\": [\n        {\n            \"id\": 7,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"area_id\": 1,\n            \"name\": \"HotelSY\",\n            \"number_rooms\": 10,\n            \"stars\": \"3.00\",\n            \"visible\": 1,\n            \"created_at\": \"2024-05-28T23:52:10.000000Z\",\n            \"updated_at\": \"2024-05-28T23:52:10.000000Z\",\n            \"images\": [],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1\n            },\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"phone_number\": null,\n                \"email\": \"Hotel@gmail.com\"\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -10175,28 +10210,29 @@
 														},
 														{
 															"key": "area_id",
-															"value": "2",
+															"value": "1",
 															"type": "text"
 														},
 														{
 															"key": "user_id",
-															"value": "2",
+															"value": "3",
 															"type": "text"
 														},
 														{
-															"key": "rooms",
+															"key": "number_rooms",
 															"value": "11",
 															"type": "text"
 														},
 														{
 															"key": "stars",
 															"value": "5",
-															"type": "text"
+															"type": "text",
+															"disabled": true
 														}
 													]
 												},
 												"url": {
-													"raw": "http://127.0.0.1:8000/api/update_hotel/1",
+													"raw": "http://127.0.0.1:8000/api/admin/update_hotel/7",
 													"protocol": "http",
 													"host": [
 														"127",
@@ -10207,15 +10243,59 @@
 													"port": "8000",
 													"path": [
 														"api",
+														"admin",
 														"update_hotel",
-														"1"
+														"7"
 													]
 												}
 											},
-											"_postman_previewlanguage": "Text",
-											"header": [],
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 23:54:51 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 23:54:51 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "57"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n    \"message\": \"updated successfully\",\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"hotel_updated\",\n            \"stars\": \"3.00\",\n            \"number_rooms\": 11,\n            \"visible\": 1,\n            \"area_id\": 1,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"images\": [],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -10295,10 +10375,7 @@
 														{
 															"key": "image",
 															"type": "file",
-															"src": [
-																"E:\\BMW\\FB_IMG_1607168800753.jpg",
-																"/E:/BMW/FB_IMG_1606402097015.jpg"
-															]
+															"src": "/E:/BMW/FB_IMG_1610903706818.jpg"
 														},
 														{
 															"key": "image_id",
@@ -10324,10 +10401,53 @@
 													]
 												}
 											},
-											"_postman_previewlanguage": "Text",
-											"header": [],
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 21:28:39 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 21:28:39 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "57"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n    \"message\": \"photo updated successfully\",\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"Hotel\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 10,\n            \"area_id\": 1,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 5,\n                    \"image\": \"HotelImages/1716931719.jpg\"\n                }\n            ],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -10365,7 +10485,13 @@
 											"name": "show_hotel",
 											"originalRequest": {
 												"method": "GET",
-												"header": [],
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
 												"url": {
 													"raw": "http://127.0.0.1:8000/api/admin/show_hotel/1",
 													"protocol": "http",
@@ -10384,10 +10510,53 @@
 													]
 												}
 											},
-											"_postman_previewlanguage": "Text",
-											"header": [],
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 21:28:51 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 21:28:51 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "56"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"hotel_update2\",\n        \"number_rooms\": 11,\n        \"stars\": \"4.00\",\n        \"area_id\": 1,\n        \"user_id\": 3,\n        \"country_id\": 1,\n        \"images\": [],\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"area\": {\n            \"id\": 1,\n            \"country_id\": 1,\n            \"name\": \"Damascus\"\n        }\n    }\n}"
 										}
 									]
 								},
@@ -10446,7 +10615,7 @@
 													"formdata": [
 														{
 															"key": "stars",
-															"value": "5",
+															"value": "4",
 															"type": "text"
 														}
 													]
@@ -10468,10 +10637,53 @@
 													]
 												}
 											},
-											"_postman_previewlanguage": "Text",
-											"header": [],
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 21:41:54 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 21:41:54 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"hotel_update2\",\n            \"number_rooms\": 11,\n            \"stars\": \"4.00\",\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 3,\n            \"images\": [],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Al Marja Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 3,\n            \"images\": [],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"user_id\": 3,\n            \"images\": [],\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Paris_2_Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"user_id\": 3,\n            \"images\": [],\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Hotel\",\n            \"number_rooms\": 10,\n            \"stars\": \"4.00\",\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 3,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 5,\n                    \"image\": \"HotelImages/1716931719.jpg\"\n                }\n            ],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -10567,11 +10779,11 @@
 											"header": [
 												{
 													"key": "Date",
-													"value": "Tue, 16 Apr 2024 11:19:28 GMT"
+													"value": "Tue, 28 May 2024 21:42:15 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Apr 2024 11:19:28 GMT"
+													"value": "Tue, 28 May 2024 21:42:15 GMT"
 												},
 												{
 													"key": "Connection",
@@ -10603,7 +10815,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"hotel_updat\",\n            \"rooms\": 11,\n            \"stars\": \"5.00\",\n            \"area_id\": 2,\n            \"user_id\": 2,\n            \"country_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 1,\n                    \"image\": \"HotelImages/1713266114.jpg\"\n                }\n            ],\n            \"area\": {\n                \"id\": 2,\n                \"country_id\": 1,\n                \"name\": \"Aleppo\"\n            },\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"Admin\",\n                \"email\": \"Admin@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"hotel_update2\",\n            \"number_rooms\": 11,\n            \"stars\": \"4.00\",\n            \"area_id\": 1,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"images\": [],\n            \"area\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Al Marja Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"area_id\": 1,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"images\": [],\n            \"area\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"area_id\": 4,\n            \"user_id\": 3,\n            \"country_id\": 2,\n            \"images\": [],\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\"\n            },\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Paris_2_Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"area_id\": 4,\n            \"user_id\": 3,\n            \"country_id\": 2,\n            \"images\": [],\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\"\n            },\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Hotel\",\n            \"number_rooms\": 10,\n            \"stars\": \"4.00\",\n            \"area_id\": 1,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 5,\n                    \"image\": \"HotelImages/1716931719.jpg\"\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -10649,7 +10861,7 @@
 													}
 												],
 												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/Get_Hotel_By_Area/1",
+													"raw": "http://127.0.0.1:8000/api/admin/get_Hotel_By_Area/1",
 													"protocol": "http",
 													"host": [
 														"127",
@@ -10661,7 +10873,7 @@
 													"path": [
 														"api",
 														"admin",
-														"Get_Hotel_By_Area",
+														"get_Hotel_By_Area",
 														"1"
 													]
 												}
@@ -10676,11 +10888,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Apr 2024 11:48:24 GMT"
+													"value": "Tue, 28 May 2024 21:42:31 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Apr 2024 11:48:24 GMT"
+													"value": "Tue, 28 May 2024 21:42:31 GMT"
 												},
 												{
 													"key": "Connection",
@@ -10704,7 +10916,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "58"
+													"value": "57"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -10712,7 +10924,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"hotel 1\",\n            \"stars\": \"4.00\",\n            \"rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 1,\n            \"images\": [],\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"hotel_update2\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 11,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 3,\n            \"images\": [],\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Al Marja Hotel\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 30,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 3,\n            \"images\": [],\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Hotel\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 3,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 5,\n                    \"image\": \"HotelImages/1716931719.jpg\"\n                }\n            ],\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -10750,9 +10962,15 @@
 											"name": "Get_All_Hotel_By_Country",
 											"originalRequest": {
 												"method": "GET",
-												"header": [],
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
 												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/Get_Hotel_By_Country/1",
+													"raw": "http://127.0.0.1:8000/api/admin/get_Hotel_By_Country/1",
 													"protocol": "http",
 													"host": [
 														"127",
@@ -10764,7 +10982,7 @@
 													"path": [
 														"api",
 														"admin",
-														"Get_Hotel_By_Country",
+														"get_Hotel_By_Country",
 														"1"
 													]
 												}
@@ -10779,11 +10997,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Apr 2024 11:48:44 GMT"
+													"value": "Tue, 28 May 2024 21:42:45 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Apr 2024 11:48:44 GMT"
+													"value": "Tue, 28 May 2024 21:42:45 GMT"
 												},
 												{
 													"key": "Connection",
@@ -10815,7 +11033,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"hotel 1\",\n            \"stars\": \"4.00\",\n            \"rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 1,\n            \"images\": [],\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"hotel_update2\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 11,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 3,\n            \"images\": [],\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Al Marja Hotel\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 30,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 3,\n            \"images\": [],\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Hotel\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 3,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 5,\n                    \"image\": \"HotelImages/1716931719.jpg\"\n                }\n            ],\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\",\n                \"phone_number\": null,\n                \"image\": null\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -10847,9 +11065,15 @@
 											"name": "delete_hotel",
 											"originalRequest": {
 												"method": "GET",
-												"header": [],
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
 												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/delete_hotel/1",
+													"raw": "http://127.0.0.1:8000/api/admin/delete_hotel/2",
 													"protocol": "http",
 													"host": [
 														"127",
@@ -10862,7 +11086,7 @@
 														"api",
 														"admin",
 														"delete_hotel",
-														"1"
+														"2"
 													]
 												}
 											},
@@ -10876,11 +11100,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Apr 2024 11:34:24 GMT"
+													"value": "Tue, 28 May 2024 21:43:33 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Apr 2024 11:34:24 GMT"
+													"value": "Tue, 28 May 2024 21:43:33 GMT"
 												},
 												{
 													"key": "Connection",
@@ -10904,7 +11128,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "59"
+													"value": "57"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -13450,7 +13674,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|RmHopTXgn0WwZwnHy2ZVVMwtmPwmMnLdqxF84cyE8d4bc5e7",
+						"value": "10|QMtjDTehoNvtrSGXZ6u4jOo5JSZ94FaI7d3PUmZx6c825181",
 						"type": "string"
 					}
 				]
@@ -15606,11 +15830,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 11:42:50 GMT"
+											"value": "Tue, 28 May 2024 22:23:52 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 11:42:50 GMT"
+											"value": "Tue, 28 May 2024 22:23:52 GMT"
 										},
 										{
 											"key": "Connection",
@@ -15642,7 +15866,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Germany\",\n        \"created_at\": \"2024-03-30T00:42:24.000000Z\",\n        \"updated_at\": \"2024-03-30T00:42:24.000000Z\"\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Syria\"\n    }\n}"
 								}
 							]
 						},
@@ -15713,11 +15937,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 11:43:09 GMT"
+											"value": "Tue, 28 May 2024 22:25:23 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 11:43:09 GMT"
+											"value": "Tue, 28 May 2024 22:25:23 GMT"
 										},
 										{
 											"key": "Connection",
@@ -15741,7 +15965,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -15749,7 +15973,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Germany\",\n            \"created_at\": \"2024-03-30T00:42:24.000000Z\",\n            \"updated_at\": \"2024-03-30T00:42:24.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Syria\",\n            \"created_at\": \"2024-03-30T00:42:55.000000Z\",\n            \"updated_at\": \"2024-03-30T00:42:55.000000Z\"\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Germany\"\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -15840,11 +16064,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 01 Apr 2024 21:25:52 GMT"
+											"value": "Tue, 28 May 2024 22:27:32 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 01 Apr 2024 21:25:52 GMT"
+											"value": "Tue, 28 May 2024 22:27:32 GMT"
 										},
 										{
 											"key": "Connection",
@@ -15868,7 +16092,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "57"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -15876,7 +16100,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"France\",\n            \"created_at\": \"2024-04-01T20:12:34.000000Z\",\n            \"updated_at\": \"2024-04-01T20:12:34.000000Z\"\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"France\"\n        }\n    ]\n}"
 								}
 							]
 						}
@@ -15927,7 +16151,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/show_area/1",
+											"raw": "http://127.0.0.1:8000/api/user/show_area/2",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -15940,7 +16164,7 @@
 												"api",
 												"user",
 												"show_area",
-												"1"
+												"2"
 											]
 										}
 									},
@@ -15954,11 +16178,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 11:40:42 GMT"
+											"value": "Tue, 28 May 2024 22:28:26 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 11:40:42 GMT"
+											"value": "Tue, 28 May 2024 22:28:26 GMT"
 										},
 										{
 											"key": "Connection",
@@ -15982,7 +16206,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59"
+											"value": "58"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -15990,7 +16214,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"BAYRENN\",\n            \"country_id\": 1,\n            \"created_at\": \"2024-03-30T00:46:23.000000Z\",\n            \"updated_at\": \"2024-03-30T00:52:58.000000Z\",\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Germany\",\n                \"created_at\": \"2024-03-30T00:42:24.000000Z\",\n                \"updated_at\": \"2024-03-30T00:42:24.000000Z\"\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Aleppo\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -16315,11 +16539,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 01 Apr 2024 21:47:46 GMT"
+											"value": "Tue, 28 May 2024 22:31:06 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 01 Apr 2024 21:47:46 GMT"
+											"value": "Tue, 28 May 2024 22:31:06 GMT"
 										},
 										{
 											"key": "Connection",
@@ -16351,7 +16575,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Paris\",\n            \"country_id\": 1,\n            \"created_at\": \"2024-04-01T20:12:55.000000Z\",\n            \"updated_at\": \"2024-04-01T20:12:55.000000Z\"\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"name\": \"Paris\",\n            \"country_id\": 2\n        }\n    ]\n}"
 								}
 							]
 						}
@@ -16884,11 +17108,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 28 May 2024 20:31:15 GMT"
+											"value": "Tue, 28 May 2024 22:37:38 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 28 May 2024 20:31:15 GMT"
+											"value": "Tue, 28 May 2024 22:37:38 GMT"
 										},
 										{
 											"key": "Connection",
@@ -16920,7 +17144,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Eiffel Tower\",\n        \"place_price\": \"20.00\",\n        \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n        \"area_id\": 4,\n        \"comments\": [\n            {\n                \"id\": 1,\n                \"place_id\": 1,\n                \"user_id\": 5,\n                \"comment\": \"i love this place!!!!!\",\n                \"created_at\": \"2024-05-28T20:30:54.000000Z\",\n                \"user\": {\n                    \"id\": 5,\n                    \"name\": \"User\",\n                    \"image\": null\n                }\n            }\n        ],\n        \"images\": [],\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"Islamic\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Cultural\"\n            }\n        ],\n        \"area\": {\n            \"id\": 4,\n            \"name\": \"Paris\",\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            }\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Eiffel Tower\",\n        \"place_price\": \"20.00\",\n        \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n        \"area_id\": 4,\n        \"visible\": 1,\n        \"comments\": [],\n        \"images\": [],\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"Islamic\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Cultural\"\n            }\n        ],\n        \"area\": {\n            \"id\": 4,\n            \"name\": \"Paris\",\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            }\n        }\n    }\n}"
 								}
 							]
 						},
@@ -18004,596 +18228,6 @@
 					"name": "Airport",
 					"item": [
 						{
-							"name": "search-for-airport",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "fra",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/search-for-airport",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"user",
-										"search-for-airport"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "search",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text",
-												"id": 0
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "name",
-													"value": "fra",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/search",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"search"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "JSON",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000",
-											"type": "text"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 14 Apr 2024 23:05:04 GMT",
-											"type": "text"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 14 Apr 2024 23:05:04 GMT",
-											"type": "text"
-										},
-										{
-											"key": "Connection",
-											"value": "close",
-											"type": "text"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4",
-											"type": "text"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private",
-											"type": "text"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"type": "text"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60",
-											"type": "text"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "55",
-											"type": "text"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"France Airport\",\n            \"user_id\": 2,\n            \"area_id\": 4,\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\",\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"France A\",\n            \"user_id\": 2,\n            \"area_id\": 4,\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\",\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"France B\",\n            \"user_id\": 2,\n            \"area_id\": 4,\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\",\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
-							"name": "show-airport",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/show-airport/1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"user",
-										"show-airport",
-										"1"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get-all-country-airports",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/get-all-country-airports/1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"user",
-										"get-all-country-airports",
-										"1"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "get-all-country-airports test 1",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text",
-												"id": 0
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/get-all-country-airports/1",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"get-all-country-airports",
-												"1"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "JSON",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000",
-											"type": "text"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 14 Apr 2024 23:34:17 GMT",
-											"type": "text"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 14 Apr 2024 23:34:17 GMT",
-											"type": "text"
-										},
-										{
-											"key": "Connection",
-											"value": "close",
-											"type": "text"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4",
-											"type": "text"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private",
-											"type": "text"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"type": "text"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60",
-											"type": "text"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59",
-											"type": "text"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"There are no airports in this country\"\n}"
-								},
-								{
-									"name": "get-all-country-airports",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text",
-												"id": 0
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/get-all-country-airports/2",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"get-all-country-airports",
-												"2"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "JSON",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000",
-											"type": "text"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 15 Apr 2024 09:55:11 GMT",
-											"type": "text"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 15 Apr 2024 09:55:11 GMT",
-											"type": "text"
-										},
-										{
-											"key": "Connection",
-											"value": "close",
-											"type": "text"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4",
-											"type": "text"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private",
-											"type": "text"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"type": "text"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60",
-											"type": "text"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59",
-											"type": "text"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"France\",\n            \"airports\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"France Airport\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"France B\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"France C\"\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"France E\"\n                }\n            ]\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
-							"name": "get-all-area-airports",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/get-all-area-airports/1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"user",
-										"get-all-area-airports",
-										"1"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "get-all-area-airports test 1",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text",
-												"id": 0
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/get-all-area-airports/1",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"get-all-area-airports",
-												"1"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "JSON",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000",
-											"type": "text"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 15 Apr 2024 00:05:28 GMT",
-											"type": "text"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 15 Apr 2024 00:05:28 GMT",
-											"type": "text"
-										},
-										{
-											"key": "Connection",
-											"value": "close",
-											"type": "text"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4",
-											"type": "text"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private",
-											"type": "text"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"type": "text"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60",
-											"type": "text"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "57",
-											"type": "text"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"There are no airports in this area\"\n}"
-								},
-								{
-									"name": "get-all-area-airports test 2",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text",
-												"id": 0
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/get-all-area-airports/4",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"get-all-area-airports",
-												"4"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "JSON",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000",
-											"type": "text"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 15 Apr 2024 00:05:48 GMT",
-											"type": "text"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 15 Apr 2024 00:05:48 GMT",
-											"type": "text"
-										},
-										{
-											"key": "Connection",
-											"value": "close",
-											"type": "text"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4",
-											"type": "text"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private",
-											"type": "text"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"type": "text"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60",
-											"type": "text"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59",
-											"type": "text"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"name\": \"Paris\",\n            \"airports\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"France Airport\",\n                    \"area_id\": 4\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"France A\",\n                    \"area_id\": 4\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"France B\",\n                    \"area_id\": 4\n                }\n            ]\n        }\n    ]\n}"
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "Airport",
-					"item": [
-						{
 							"name": "Plane Trip",
 							"item": [
 								{
@@ -18616,7 +18250,12 @@
 												},
 												{
 													"key": "flight_date",
-													"value": "2024-5-25",
+													"value": "2024-5-30",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "2",
 													"type": "text"
 												}
 											]
@@ -18659,7 +18298,12 @@
 														},
 														{
 															"key": "flight_date",
-															"value": "2024-5-25",
+															"value": "2024-5-30",
+															"type": "text"
+														},
+														{
+															"key": "type",
+															"value": "1",
 															"type": "text"
 														}
 													]
@@ -18691,11 +18335,106 @@
 												},
 												{
 													"key": "Date",
-													"value": "Fri, 24 May 2024 22:34:35 GMT"
+													"value": "Tue, 28 May 2024 23:39:31 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Fri, 24 May 2024 22:34:35 GMT"
+													"value": "Tue, 28 May 2024 23:39:31 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"plane_id\": 3,\n            \"airport_source_id\": 3,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_date\": \"2024-06-05\",\n            \"landing_date\": \"2024-06-06\",\n            \"plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"plane_id\": 3,\n            \"airport_source_id\": 3,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_date\": \"2024-06-20\",\n            \"landing_date\": \"2024-06-22\",\n            \"plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        }\n    ]\n}"
+										},
+										{
+											"name": "search-for-plane-trip",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "country_source_id",
+															"value": "2",
+															"type": "text"
+														},
+														{
+															"key": "country_destination_id",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "flight_date",
+															"value": "2024-5-30",
+															"type": "text"
+														},
+														{
+															"key": "type",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/user/search-for-plane-trip",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"user",
+														"search-for-plane-trip"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 23:39:51 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 23:39:51 GMT"
 												},
 												{
 													"key": "Connection",
@@ -18727,7 +18466,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\"\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\"\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ],\n        \"return_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-25\",\n                \"landing_date\": \"2024-05-29\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            }\n        ]\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ],\n        \"return_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"update plane\",\n                    \"images\": [\n                        {\n                            \"id\": 1,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716930645.jpg\"\n                        }\n                    ]\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"update plane\",\n                    \"images\": [\n                        {\n                            \"id\": 1,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716930645.jpg\"\n                        }\n                    ]\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            }\n        ]\n    }\n}"
 										}
 									]
 								},
@@ -18800,11 +18539,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Fri, 24 May 2024 22:35:23 GMT"
+													"value": "Tue, 28 May 2024 23:40:21 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Fri, 24 May 2024 22:35:23 GMT"
+													"value": "Tue, 28 May 2024 23:40:21 GMT"
 												},
 												{
 													"key": "Connection",
@@ -18836,7 +18575,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"plane_id\": 1,\n        \"airport_source_id\": 1,\n        \"airport_destination_id\": 3,\n        \"country_source_id\": 1,\n        \"country_destination_id\": 2,\n        \"current_price\": \"200.00\",\n        \"available_seats\": 25,\n        \"flight_date\": \"2024-05-30\",\n        \"landing_date\": \"2024-06-01\",\n        \"plane\": {\n            \"id\": 1,\n            \"name\": \"Damas A1\",\n            \"number_of_seats\": 40,\n            \"visible\": 1,\n            \"ticket_price\": \"50.00\",\n            \"airport_id\": 1,\n            \"airport\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"country_source\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"country_destination\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"airport_source\": {\n            \"id\": 1,\n            \"name\": \"Syria A\"\n        },\n        \"airport_destination\": {\n            \"id\": 3,\n            \"name\": \"France A\"\n        }\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"plane_id\": 1,\n        \"airport_source_id\": 1,\n        \"airport_destination_id\": 3,\n        \"country_source_id\": 1,\n        \"country_destination_id\": 2,\n        \"current_price\": \"200.00\",\n        \"available_seats\": 25,\n        \"flight_date\": \"2024-05-30\",\n        \"landing_date\": \"2024-06-01\",\n        \"plane\": {\n            \"id\": 1,\n            \"airport_id\": 1,\n            \"name\": \"update plane\",\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"plane_id\": 1,\n                    \"image\": \"AirportImage/1716930645.jpg\"\n                }\n            ],\n            \"airport\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"country_source\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"country_destination\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"airport_source\": {\n            \"id\": 1,\n            \"name\": \"Syria A\"\n        },\n        \"airport_destination\": {\n            \"id\": 3,\n            \"name\": \"France A\"\n        }\n    }\n}"
 										}
 									]
 								}
@@ -18844,14 +18583,6 @@
 						},
 						{
 							"name": "search-for-airport",
-							"protocolProfileBehavior": {
-								"disabledSystemHeaders": {
-									"user-agent": true,
-									"accept": true,
-									"accept-encoding": true,
-									"connection": true
-								}
-							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -18866,7 +18597,7 @@
 									"formdata": [
 										{
 											"key": "name",
-											"value": "syr",
+											"value": "fra",
 											"type": "text"
 										}
 									]
@@ -18890,15 +18621,14 @@
 							},
 							"response": [
 								{
-									"name": "search",
+									"name": "search-for-airport",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
 											{
 												"key": "Accept",
 												"value": "application/json",
-												"type": "text",
-												"id": 0
+												"type": "text"
 											}
 										],
 										"body": {
@@ -18912,7 +18642,7 @@
 											]
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/search",
+											"raw": "http://127.0.0.1:8000/api/user/search-for-airport",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -18923,82 +18653,63 @@
 											"port": "8000",
 											"path": [
 												"api",
-												"admin",
-												"search"
+												"user",
+												"search-for-airport"
 											]
 										}
 									},
 									"status": "OK",
 									"code": 200,
-									"_postman_previewlanguage": "JSON",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Host",
-											"value": "127.0.0.1:8000",
-											"type": "text"
+											"value": "127.0.0.1:8000"
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 14 Apr 2024 23:05:04 GMT",
-											"type": "text"
+											"value": "Tue, 28 May 2024 23:41:08 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 14 Apr 2024 23:05:04 GMT",
-											"type": "text"
+											"value": "Tue, 28 May 2024 23:41:08 GMT"
 										},
 										{
 											"key": "Connection",
-											"value": "close",
-											"type": "text"
+											"value": "close"
 										},
 										{
 											"key": "X-Powered-By",
-											"value": "PHP/8.2.4",
-											"type": "text"
+											"value": "PHP/8.2.4"
 										},
 										{
 											"key": "Cache-Control",
-											"value": "no-cache, private",
-											"type": "text"
+											"value": "no-cache, private"
 										},
 										{
 											"key": "Content-Type",
-											"value": "application/json",
-											"type": "text"
+											"value": "application/json"
 										},
 										{
 											"key": "X-RateLimit-Limit",
-											"value": "60",
-											"type": "text"
+											"value": "60"
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "55",
-											"type": "text"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
-											"value": "*",
-											"type": "text"
+											"value": "*"
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"France Airport\",\n            \"user_id\": 2,\n            \"area_id\": 4,\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\",\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"France A\",\n            \"user_id\": 2,\n            \"area_id\": 4,\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\",\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"France B\",\n            \"user_id\": 2,\n            \"area_id\": 4,\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\",\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"France A\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"France B\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
 						{
 							"name": "show-airport",
-							"protocolProfileBehavior": {
-								"disabledSystemHeaders": {
-									"host": true,
-									"user-agent": true,
-									"accept": true,
-									"connection": true,
-									"accept-encoding": true
-								}
-							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -19009,7 +18720,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/show-airport/3",
+									"raw": "http://127.0.0.1:8000/api/user/show-airport/1",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -19022,7 +18733,7 @@
 										"api",
 										"user",
 										"show-airport",
-										"3"
+										"1"
 									]
 								}
 							},
@@ -19035,12 +18746,11 @@
 											{
 												"key": "Accept",
 												"value": "application/json",
-												"type": "text",
-												"id": 0
+												"type": "text"
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/show-airport/5",
+											"raw": "http://127.0.0.1:8000/api/user/show-airport/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -19051,83 +18761,64 @@
 											"port": "8000",
 											"path": [
 												"api",
-												"admin",
+												"user",
 												"show-airport",
-												"5"
+												"1"
 											]
 										}
 									},
 									"status": "OK",
 									"code": 200,
-									"_postman_previewlanguage": "JSON",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Host",
-											"value": "127.0.0.1:8000",
-											"type": "text"
+											"value": "127.0.0.1:8000"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 15 Apr 2024 09:25:35 GMT",
-											"type": "text"
+											"value": "Tue, 28 May 2024 22:54:34 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 15 Apr 2024 09:25:35 GMT",
-											"type": "text"
+											"value": "Tue, 28 May 2024 22:54:34 GMT"
 										},
 										{
 											"key": "Connection",
-											"value": "close",
-											"type": "text"
+											"value": "close"
 										},
 										{
 											"key": "X-Powered-By",
-											"value": "PHP/8.2.4",
-											"type": "text"
+											"value": "PHP/8.2.4"
 										},
 										{
 											"key": "Cache-Control",
-											"value": "no-cache, private",
-											"type": "text"
+											"value": "no-cache, private"
 										},
 										{
 											"key": "Content-Type",
-											"value": "application/json",
-											"type": "text"
+											"value": "application/json"
 										},
 										{
 											"key": "X-RateLimit-Limit",
-											"value": "60",
-											"type": "text"
+											"value": "60"
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58",
-											"type": "text"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
-											"value": "*",
-											"type": "text"
+											"value": "*"
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"France C\",\n            \"user_id\": 2,\n            \"area_id\": 4,\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\",\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            },\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"Admin\",\n                \"email\": \"Admin@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria A\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
 						{
 							"name": "get-all-country-airports",
-							"protocolProfileBehavior": {
-								"disabledSystemHeaders": {
-									"host": true,
-									"user-agent": true,
-									"accept": true,
-									"accept-encoding": true,
-									"connection": true
-								}
-							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -19252,12 +18943,11 @@
 											{
 												"key": "Accept",
 												"value": "application/json",
-												"type": "text",
-												"id": 0
+												"type": "text"
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/get-all-country-airports/2",
+											"raw": "http://127.0.0.1:8000/api/user/get-all-country-airports/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -19268,83 +18958,64 @@
 											"port": "8000",
 											"path": [
 												"api",
-												"admin",
+												"user",
 												"get-all-country-airports",
-												"2"
+												"1"
 											]
 										}
 									},
 									"status": "OK",
 									"code": 200,
-									"_postman_previewlanguage": "JSON",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Host",
-											"value": "127.0.0.1:8000",
-											"type": "text"
+											"value": "127.0.0.1:8000"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 15 Apr 2024 09:55:11 GMT",
-											"type": "text"
+											"value": "Tue, 28 May 2024 22:55:28 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 15 Apr 2024 09:55:11 GMT",
-											"type": "text"
+											"value": "Tue, 28 May 2024 22:55:28 GMT"
 										},
 										{
 											"key": "Connection",
-											"value": "close",
-											"type": "text"
+											"value": "close"
 										},
 										{
 											"key": "X-Powered-By",
-											"value": "PHP/8.2.4",
-											"type": "text"
+											"value": "PHP/8.2.4"
 										},
 										{
 											"key": "Cache-Control",
-											"value": "no-cache, private",
-											"type": "text"
+											"value": "no-cache, private"
 										},
 										{
 											"key": "Content-Type",
-											"value": "application/json",
-											"type": "text"
+											"value": "application/json"
 										},
 										{
 											"key": "X-RateLimit-Limit",
-											"value": "60",
-											"type": "text"
+											"value": "60"
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59",
-											"type": "text"
+											"value": "58"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
-											"value": "*",
-											"type": "text"
+											"value": "*"
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"France\",\n            \"airports\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"France Airport\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"France B\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"France C\"\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"France E\"\n                }\n            ]\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria A\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Syria B\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
 						{
 							"name": "get-all-area-airports",
-							"protocolProfileBehavior": {
-								"disabledSystemHeaders": {
-									"host": true,
-									"user-agent": true,
-									"accept": true,
-									"accept-encoding": true,
-									"connection": true
-								}
-							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -19462,19 +19133,18 @@
 									"body": "{\n    \"message\": \"There are no airports in this area\"\n}"
 								},
 								{
-									"name": "get-all-area-airports test 2",
+									"name": "get-all-area-airports",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
 											{
 												"key": "Accept",
 												"value": "application/json",
-												"type": "text",
-												"id": 0
+												"type": "text"
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/get-all-area-airports/4",
+											"raw": "http://127.0.0.1:8000/api/user/get-all-area-airports/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -19485,93 +19155,61 @@
 											"port": "8000",
 											"path": [
 												"api",
-												"admin",
+												"user",
 												"get-all-area-airports",
-												"4"
+												"1"
 											]
 										}
 									},
 									"status": "OK",
 									"code": 200,
-									"_postman_previewlanguage": "JSON",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Host",
-											"value": "127.0.0.1:8000",
-											"type": "text"
+											"value": "127.0.0.1:8000"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 15 Apr 2024 00:05:48 GMT",
-											"type": "text"
+											"value": "Tue, 28 May 2024 22:55:42 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 15 Apr 2024 00:05:48 GMT",
-											"type": "text"
+											"value": "Tue, 28 May 2024 22:55:42 GMT"
 										},
 										{
 											"key": "Connection",
-											"value": "close",
-											"type": "text"
+											"value": "close"
 										},
 										{
 											"key": "X-Powered-By",
-											"value": "PHP/8.2.4",
-											"type": "text"
+											"value": "PHP/8.2.4"
 										},
 										{
 											"key": "Cache-Control",
-											"value": "no-cache, private",
-											"type": "text"
+											"value": "no-cache, private"
 										},
 										{
 											"key": "Content-Type",
-											"value": "application/json",
-											"type": "text"
+											"value": "application/json"
 										},
 										{
 											"key": "X-RateLimit-Limit",
-											"value": "60",
-											"type": "text"
+											"value": "60"
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59",
-											"type": "text"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
-											"value": "*",
-											"type": "text"
+											"value": "*"
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"name\": \"Paris\",\n            \"airports\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"France Airport\",\n                    \"area_id\": 4\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"France A\",\n                    \"area_id\": 4\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"France B\",\n                    \"area_id\": 4\n                }\n            ]\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Damascus\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airports\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Syria A\",\n                    \"country_id\": 1,\n                    \"area_id\": 1,\n                    \"user_id\": 4,\n                    \"visible\": 1\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Syria B\",\n                    \"country_id\": 1,\n                    \"area_id\": 1,\n                    \"user_id\": 4,\n                    \"visible\": 1\n                }\n            ]\n        }\n    ]\n}"
 								}
 							]
-						}
-					],
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"type": "text/javascript",
-								"packages": {},
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"packages": {},
-								"exec": [
-									""
-								]
-							}
 						}
 					]
 				},
@@ -19617,7 +19255,7 @@
 									},
 									"response": [
 										{
-											"name": "New Request",
+											"name": "show room",
 											"originalRequest": {
 												"method": "GET",
 												"header": [
@@ -19625,10 +19263,15 @@
 														"key": "Accept",
 														"value": "application/json",
 														"type": "text"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
 													}
 												],
 												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/show_room/250",
+													"raw": "http://127.0.0.1:8000/api/user/show_room/40",
 													"protocol": "http",
 													"host": [
 														"127",
@@ -19639,9 +19282,9 @@
 													"port": "8000",
 													"path": [
 														"api",
-														"admin",
+														"user",
 														"show_room",
-														"250"
+														"40"
 													]
 												}
 											},
@@ -19655,11 +19298,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 29 Apr 2024 08:25:19 GMT"
+													"value": "Tue, 28 May 2024 23:35:40 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 29 Apr 2024 08:25:19 GMT"
+													"value": "Tue, 28 May 2024 23:35:40 GMT"
 												},
 												{
 													"key": "Connection",
@@ -19683,7 +19326,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "57"
+													"value": "58"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -19691,14 +19334,14 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"id\": 250,\n        \"capacity\": 6,\n        \"price\": \"100.00\",\n        \"hotel_id\": 1,\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"hotel 1\",\n            \"area_id\": 1,\n            \"user_id\": 1,\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\"\n            }\n        }\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"id\": 40,\n        \"capacity\": 2,\n        \"price\": \"20.00\",\n        \"hotel_id\": 3,\n        \"hotel\": {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\",\n            \"area_id\": 4,\n            \"user_id\": 3,\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"email\": \"Hotel@gmail.com\"\n            }\n        }\n    }\n}"
 										}
 									]
 								},
 								{
 									"name": "get-ALL_ROOM",
 									"request": {
-										"method": "GET",
+										"method": "POST",
 										"header": [
 											{
 												"key": "Accept",
@@ -19706,8 +19349,23 @@
 												"type": "text"
 											}
 										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "start_date",
+													"value": "2024-5-30",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-6-6",
+													"type": "text"
+												}
+											]
+										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/get_all_room/1",
+											"raw": "http://127.0.0.1:8000/api/user/get_all_room/3",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -19720,15 +19378,15 @@
 												"api",
 												"user",
 												"get_all_room",
-												"1"
+												"3"
 											]
 										}
 									},
 									"response": [
 										{
-											"name": "get_all_room",
+											"name": "get-ALL_ROOM",
 											"originalRequest": {
-												"method": "GET",
+												"method": "POST",
 												"header": [
 													{
 														"key": "Accept",
@@ -19736,8 +19394,23 @@
 														"type": "text"
 													}
 												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "start_date",
+															"value": "2024-5-30",
+															"type": "text"
+														},
+														{
+															"key": "end_date",
+															"value": "2024-6-6",
+															"type": "text"
+														}
+													]
+												},
 												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/get_all_room/1",
+													"raw": "http://127.0.0.1:8000/api/user/get_all_room/3",
 													"protocol": "http",
 													"host": [
 														"127",
@@ -19748,9 +19421,9 @@
 													"port": "8000",
 													"path": [
 														"api",
-														"admin",
+														"user",
 														"get_all_room",
-														"1"
+														"3"
 													]
 												}
 											},
@@ -19764,11 +19437,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Sun, 05 May 2024 09:29:41 GMT"
+													"value": "Tue, 28 May 2024 23:30:56 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Sun, 05 May 2024 09:29:41 GMT"
+													"value": "Tue, 28 May 2024 23:30:56 GMT"
 												},
 												{
 													"key": "Connection",
@@ -19792,7 +19465,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "59"
+													"value": "56"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -19800,7 +19473,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"capacity_2\": {\n            \"count\": 5,\n            \"price\": \"100.00\"\n        },\n        \"capacity_4\": {\n            \"count\": 5,\n            \"price\": \"100.00\"\n        },\n        \"capacity_6\": {\n            \"count\": 5,\n            \"price\": \"100.00\"\n        }\n    }\n}"
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 31,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 32,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 33,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 34,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 35,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 36,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 37,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 38,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 39,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 40,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 41,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 42,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 43,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 44,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 45,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 46,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 47,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 48,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 49,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 50,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 51,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 52,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 53,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 54,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 55,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 56,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 57,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 58,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 59,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 60,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        }\n    ]\n}"
 										}
 									]
 								}
@@ -19836,7 +19509,7 @@
 							},
 							"response": [
 								{
-									"name": "get_all_Hotel",
+									"name": "Get_All_Hotel",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -19873,11 +19546,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:40:08 GMT"
+											"value": "Tue, 28 May 2024 23:06:29 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:40:08 GMT"
+											"value": "Tue, 28 May 2024 23:06:29 GMT"
 										},
 										{
 											"key": "Connection",
@@ -19901,7 +19574,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -19909,7 +19582,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"user_id\": 1,\n            \"name\": \"hotel 1\",\n            \"rooms\": 10,\n            \"country_id\": 1,\n            \"area_id\": 1,\n            \"stars\": \"4.00\",\n            \"created_at\": \"2024-04-16T11:40:02.000000Z\",\n            \"updated_at\": \"2024-04-16T11:40:02.000000Z\",\n            \"images\": [],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1\n            },\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"position\": null,\n                \"email\": \"SA@gmail.com\"\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"user_id\": 3,\n            \"country_id\": 2,\n            \"area_id\": 4,\n            \"name\": \"Paris_1_Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"visible\": 0,\n            \"created_at\": \"2024-05-28T20:04:28.000000Z\",\n            \"updated_at\": \"2024-05-28T21:45:40.000000Z\",\n            \"images\": [],\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\",\n                \"country_id\": 2\n            },\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"user_id\": 3,\n            \"country_id\": 2,\n            \"area_id\": 4,\n            \"name\": \"Paris_2_Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"visible\": 1,\n            \"created_at\": \"2024-05-28T20:04:28.000000Z\",\n            \"updated_at\": \"2024-05-28T20:04:28.000000Z\",\n            \"images\": [],\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\",\n                \"country_id\": 2\n            },\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"area_id\": 1,\n            \"name\": \"Hotel\",\n            \"number_rooms\": 10,\n            \"stars\": \"4.00\",\n            \"visible\": 1,\n            \"created_at\": \"2024-05-28T21:24:36.000000Z\",\n            \"updated_at\": \"2024-05-28T21:24:36.000000Z\",\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 5,\n                    \"image\": \"HotelImages/1716931719.jpg\"\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1\n            },\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"Hotel admin\",\n                \"position\": null,\n                \"email\": \"Hotel@gmail.com\"\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -19962,7 +19635,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/show_hotel/2",
+											"raw": "http://127.0.0.1:8000/api/user/show_hotel/3",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -19975,7 +19648,14 @@
 												"api",
 												"user",
 												"show_hotel",
-												"2"
+												"3"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": null,
+													"disabled": true
+												}
 											]
 										}
 									},
@@ -19989,11 +19669,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:42:13 GMT"
+											"value": "Tue, 28 May 2024 23:07:19 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:42:13 GMT"
+											"value": "Tue, 28 May 2024 23:07:19 GMT"
 										},
 										{
 											"key": "Connection",
@@ -20017,7 +19697,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "57"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -20025,7 +19705,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"hotel 1\",\n        \"rooms\": 10,\n        \"stars\": \"4.00\",\n        \"area_id\": 1,\n        \"user_id\": 1,\n        \"country_id\": 1,\n        \"images\": [],\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"area\": {\n            \"id\": 1,\n            \"country_id\": 1,\n            \"name\": \"Damascus\"\n        },\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Super Admin\",\n            \"email\": \"SA@gmail.com\",\n            \"image\": null,\n            \"position\": null\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Paris_1_Hotel\",\n        \"number_rooms\": 30,\n        \"stars\": \"4.00\",\n        \"area_id\": 4,\n        \"user_id\": 3,\n        \"country_id\": 2,\n        \"images\": [],\n        \"country\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"area\": {\n            \"id\": 4,\n            \"country_id\": 2,\n            \"name\": \"Paris\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -20116,11 +19796,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:43:28 GMT"
+											"value": "Tue, 28 May 2024 23:08:51 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:43:28 GMT"
+											"value": "Tue, 28 May 2024 23:08:51 GMT"
 										},
 										{
 											"key": "Connection",
@@ -20144,7 +19824,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "57"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -20152,7 +19832,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"hotel 1\",\n            \"rooms\": 10,\n            \"stars\": \"4.00\",\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 1,\n            \"images\": [],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"images\": [],\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Paris_2_Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"images\": [],\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Hotel\",\n            \"number_rooms\": 10,\n            \"stars\": \"4.00\",\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 5,\n                    \"image\": \"HotelImages/1716931719.jpg\"\n                }\n            ],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"Damascus\"\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -20243,11 +19923,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:45:25 GMT"
+											"value": "Tue, 28 May 2024 23:09:19 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:45:25 GMT"
+											"value": "Tue, 28 May 2024 23:09:19 GMT"
 										},
 										{
 											"key": "Connection",
@@ -20279,7 +19959,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"hotel 1\",\n            \"rooms\": 10,\n            \"stars\": \"4.00\",\n            \"area_id\": 1,\n            \"user_id\": 1,\n            \"country_id\": 1,\n            \"images\": [],\n            \"area\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"images\": [],\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Paris_2_Hotel\",\n            \"number_rooms\": 30,\n            \"stars\": \"4.00\",\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"images\": [],\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Hotel\",\n            \"number_rooms\": 10,\n            \"stars\": \"4.00\",\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 5,\n                    \"image\": \"HotelImages/1716931719.jpg\"\n                }\n            ],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"country_id\": 1,\n                \"name\": \"Damascus\"\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -20314,12 +19994,18 @@
 							},
 							"response": [
 								{
-									"name": "Get_Hotel_By_Area",
+									"name": "get_Hotel_By_Area",
 									"originalRequest": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/Get_Hotel_By_Area/1",
+											"raw": "http://127.0.0.1:8000/api/user/get_Hotel_By_Area/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -20331,7 +20017,7 @@
 											"path": [
 												"api",
 												"user",
-												"Get_Hotel_By_Area",
+												"get_Hotel_By_Area",
 												"1"
 											]
 										}
@@ -20346,11 +20032,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:46:03 GMT"
+											"value": "Tue, 28 May 2024 23:10:17 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:46:03 GMT"
+											"value": "Tue, 28 May 2024 23:10:17 GMT"
 										},
 										{
 											"key": "Connection",
@@ -20374,7 +20060,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -20382,7 +20068,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"hotel 1\",\n            \"stars\": \"4.00\",\n            \"rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 1,\n            \"images\": [],\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"Hotel\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 3,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 5,\n                    \"image\": \"HotelImages/1716931719.jpg\"\n                }\n            ]\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -20417,7 +20103,7 @@
 							},
 							"response": [
 								{
-									"name": "Get_Hotel_By_Country",
+									"name": "get_Hotel_By_Country",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -20428,7 +20114,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/Get_Hotel_By_Country/1",
+											"raw": "http://127.0.0.1:8000/api/user/get_Hotel_By_Country/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -20440,7 +20126,7 @@
 											"path": [
 												"api",
 												"user",
-												"Get_Hotel_By_Country",
+												"get_Hotel_By_Country",
 												"1"
 											]
 										}
@@ -20455,11 +20141,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:47:35 GMT"
+											"value": "Tue, 28 May 2024 23:10:39 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Apr 2024 11:47:35 GMT"
+											"value": "Tue, 28 May 2024 23:10:39 GMT"
 										},
 										{
 											"key": "Connection",
@@ -20491,7 +20177,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"hotel 1\",\n            \"stars\": \"4.00\",\n            \"rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"user_id\": 1,\n            \"images\": [],\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Super Admin\",\n                \"email\": \"SA@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"Hotel\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 10,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 5,\n                    \"image\": \"HotelImages/1716931719.jpg\"\n                }\n            ]\n        }\n    ]\n}"
 								}
 							]
 						}
@@ -20831,7 +20517,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "3|kQ0FF1r1SqhOENIkzWywTM6UwymBidrKE6hvyxuF125a16df",
+						"value": "9|lCS3XVr1aj44hQ4Pq3g2sK1jKcOTxy9Pnl3xM7L886a13c15",
 						"type": "string"
 					}
 				]
