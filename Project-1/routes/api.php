@@ -118,7 +118,7 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
          });
          Route::controller(RoomController::class)->group(function(){
             Route::get('show_room/{id}','show');
-            Route::get('get_all_room/{id}','index');
+            Route::post('get_all_room/{id}','index');
         });
         Route::controller(CommentController::class)->group(function(){
             Route::post('add-comment','setComment');

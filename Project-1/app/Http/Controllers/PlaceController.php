@@ -125,9 +125,9 @@ class PlaceController extends Controller
 
         return response()->json([
             'message'=>'updated successfully',
-            'data'=>Place::with(['images','categories:id,name'])
+            'data'=>Place::with(['images','categories:id,name','area:id,name,country_id','area.country:id,name'])
                           ->where('id',$id)
-                          ->select('id','name','place_price','text','area_id')
+                          ->select('id','name','place_price','text','area_id','visible')
                           ->get(),
         ],200);
     }
@@ -231,9 +231,9 @@ class PlaceController extends Controller
         ];
         return response()->json([
             'message'=>'photo updated successfully',
-            'data'=>Place::with(['images','categories:id,name'])
+            'data'=>Place::with(['images','categories:id,name','area:id,name,country_id','area.country:id,name'])
                           ->where('id',$place_image->place_id)
-                          ->select('id','name','place_price','text','area_id')
+                          ->select('id','name','place_price','text','area_id','visible')
                           ->get(),
         ],200);
 
@@ -265,9 +265,9 @@ class PlaceController extends Controller
 
         return response()->json([
             "message"=> "Image Added successfully",
-            'data'=>Place::with(['images','categories:id,name'])
+            'data'=>Place::with(['images','categories:id,name','area:id,name,country_id','area.country:id,name'])
                           ->where('id',$request->place_id)
-                          ->select('id','name','place_price','text','area_id')
+                          ->select('id','name','place_price','text','area_id','visible')
                           ->get(),
         ]);
 
@@ -278,7 +278,7 @@ class PlaceController extends Controller
 
         try{
             $place= Place::visible()->with(['comments','comments.user:id,name,image','images','categories:id,name','area:id,name,country_id','area.country:id,name'])
-                            ->select('id','name','place_price','text','area_id')
+                            ->select('id','name','place_price','text','area_id','visible')
                             ->findOrFail($id);
          }catch(\Exception $e){
             return response()->json([
@@ -301,7 +301,7 @@ class PlaceController extends Controller
             ],404);
         }
         $places=Area::whereHas('places')
-                    ->with(['country:id,name','places.categories:id,name','places.images',])
+                    ->with(['country:id,name','places.images','places.categories:id,name',])
                     ->select('id','name','country_id')
                     ->where('id',$id)
                     ->first();
@@ -332,7 +332,7 @@ class PlaceController extends Controller
     public function placesDependingOnCategory($id)
     {
         try{//
-            $places=Category::whereHas('places')->with(['places:id,name,place_price,text,area_id','places.images:id,image','places.area:id,name,country_id','places.area.country:id,name'])
+            $places=Category::whereHas('places')->with(['places:id,name,place_price,text,visible,area_id','places.images:id,image','places.area:id,name,country_id','places.area.country:id,name'])
                                    ->where('id','=', $id)
                                    ->select('id','name')
                                    ->get();
@@ -385,7 +385,7 @@ class PlaceController extends Controller
             ],422);
         }
         $place=Place::visible()->with(['images','categories:id,name','area:id,country_id,name','area.country:id,name'])
-                     ->select('id','name','place_price','text','visible','area_id')
+                     ->select('id','name','place_price','text','area_id','visible')
                      ->where('name','like','%'.$request->name.'%')->get();
 
         return response()->json([

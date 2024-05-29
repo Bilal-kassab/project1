@@ -18,7 +18,7 @@ class HotelController extends Controller
     public function __construct()
     {
         $this->middleware('role:Admin|Hotel admin', ['only'=> ['store','update','update_Image_Hotel','addAirportImage']]);
-        $this->middleware('role:Super Admin|', ['only'=> ['index,destroy,changeVisible']]);
+        $this->middleware('role:Super Admin', ['only'=> ['index','destroy','changeVisible']]);
        
     }
     public function index()
@@ -51,7 +51,7 @@ class HotelController extends Controller
         }
         else{
             return response()->json([
-                'data'=>Hotel::with(['images','user'])
+                'data'=>Hotel::with(['images','user:id,name,position,email,phone_number,image'])
                 ->where('area_id',$id)
                 ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
                 ->get(),
@@ -87,7 +87,7 @@ class HotelController extends Controller
         }
         else{
             return response()->json([
-                'data'=>Hotel::with(['images','user'])
+                'data'=>Hotel::with(['images','user:id,name,position,email,phone_number,image'])
                 ->where('country_id',$id)
                 ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
                 ->get(),
@@ -103,7 +103,7 @@ class HotelController extends Controller
             // 'user_id'=>'required|numeric|exists:users,id',
              'area_id'=>'required|numeric|exists:areas,id',
              'number_rooms'=>'required|numeric|max:1000|min:10',
-             'stars'=>'required|numeric|min:0|max:5',
+            // 'stars'=>'required|numeric|min:0|max:5',
              'images'=> 'array',
              'images.*' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
@@ -120,7 +120,7 @@ class HotelController extends Controller
             'area_id'=> $request->area_id,
             'country_id'=>Area::find($request->area_id)['country_id'],
             'number_rooms'=> $request->number_rooms,
-            'stars'=> $request->stars,
+            'stars'=> 3,
         ]);
 
         if($request->hasFile('images')){
@@ -135,7 +135,7 @@ class HotelController extends Controller
         }
         return response()->json([
             'message'=>'succesfully',
-            'data'=>Hotel::with(['images:id,hotel_id,image','area:id,name,country_id','country:id,name','user:id,name,position,email'])
+            'data'=>Hotel::with(['images:id,hotel_id,image','area:id,name,country_id','country:id,name','user:id,name,position,phone_number,email'])
                     ->where('id', $hotel->id)->get()
             ],200);
     }
@@ -259,9 +259,9 @@ class HotelController extends Controller
         ];
         return response()->json([
             'message'=>'photo updated successfully',
-            'data'=>Hotel::with(['images'])
+            'data'=>Hotel::with(['images','country:id,name','area:id,name'])
                           ->where('id',$hotel_image->hotel_id)
-                          ->select('id','name','stars','number_rooms','area_id','user_id')
+                          ->select('id','name','stars','number_rooms','area_id','user_id','country_id')
                           ->get(),
         ],200);
     }
@@ -287,7 +287,7 @@ class HotelController extends Controller
                     }
                     else{
                         return response()->json([
-                            'data'=>Hotel::with(['images','area:id,country_id,name','country:id,name','user'])
+                            'data'=>Hotel::with(['images','area:id,country_id,name','country:id,name','user:id,name,position,email,phone_number,image'])
                             ->select('id','name','number_rooms','stars','area_id','user_id','country_id')
                             ->where('name','like','%'.$request->name.'%')
                             ->get()
@@ -316,7 +316,7 @@ class HotelController extends Controller
                     }
                     else{
                         return response()->json([
-                            'data'=>Hotel::with(['images','country:id,name','area:id,country_id,name','user'])
+                            'data'=>Hotel::with(['images','country:id,name','area:id,country_id,name','user:id,name,position,email,phone_number,image'])
                             ->select('id','name','number_rooms','stars','area_id','country_id','user_id')
                             ->where('stars','like','%'.$request->stars.'%')
                             ->get()
