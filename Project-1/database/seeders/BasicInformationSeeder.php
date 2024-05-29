@@ -53,7 +53,7 @@ class BasicInformationSeeder extends Seeder
             ]);
         }
 
-        $categorise=['Islamic','Cultural'];
+        $categorise=['Islamic','Cultural','Historical','Natural','Restaurant','Entertaining'];
 
         foreach ($categorise as $category) {
             Category::create([
