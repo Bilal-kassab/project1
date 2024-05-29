@@ -21,6 +21,13 @@ class PlaceController extends Controller
                            ->get()
         ]);
     }
+    public function unVisiblePlaces()
+    {
+        return response()->json([
+            'data'=>Place::where('visible',false)->with('images:id,place_id,image','categories:id,name','area:id,name,country_id','area.country:id,name')
+                           ->get()
+        ]);
+    }
 
     public function store(Request $request)
     {
@@ -79,14 +86,13 @@ class PlaceController extends Controller
 
     public function updatePlace(Request $request,$id)
     {
-
         $validator = Validator::make($request->all(), [
-            'name'=>'required|string|unique:places',
-            'area_id'=>'required|numeric|exists:areas,id',
-            'category_ids'=> 'present|array',
-            'category_ids.*'=> 'required|numeric|exists:categories,id',
-            'place_price'=> 'required|numeric|max:10000',
-            'text'=> 'required|string|max:1000',
+            'name'=>'string|unique:places',
+            'area_id'=>'numeric|exists:areas,id',
+            'category_ids'=> 'array',
+            'category_ids.*'=> 'numeric|exists:categories,id',
+            'place_price'=> 'numeric|max:10000',
+            'text'=> 'string|max:1000',
         ]);
 
         if( $validator->fails() ){
@@ -103,26 +109,31 @@ class PlaceController extends Controller
                 'message'=> 'Not found'
             ],404);
          }
-         $place->name = $request->name;
-         $place->area_id=$request->area_id;
-         $place->place_price = $request->place_price;
-         $place->text = $request->text;
+         $place->name = $request->name??$place['name'];
+         $place->area_id=$request->area_id??$place['area_id'];
+         $place->place_price = $request->place_price??$place['place_price'];
+         $place->text = $request->text??$place['text'];
+         $place->visible = $request->visible??$place['visible'];
          $place->save();
 
-        $place_categories=PlaceCategory::where('place_id',$place->id)->get();
-         foreach($place_categories as $place_category){
-            $place_category->delete();
-         }
-
-         foreach($request->category_ids as $category_id ){
-
-            PlaceCategory::create([
-                'place_id'=> $place->id,
-                'category_id'=> $category_id
-            ]);
+        //$place_categories=PlaceCategory::where('place_id',$place->id)->get();
+        //  foreach($place_categories as $place_category){
+        //     $place_category->delete();
+        //  }
+        if($request->has('category_ids'))
+        {
+            foreach($request->category_ids as $category_id ){
+              $placeca=PlaceCategory::firstOrCreate(
+               [
+                   'category_id'=>$category_id,
+                   'place_id'=>$place['id']
+               ],
+               [
+                   'place_id'=> $place->id,
+                   'category_id'=> $category_id
+               ]);
+           }
         }
-
-
         return response()->json([
             'message'=>'updated successfully',
             'data'=>Place::with(['images','categories:id,name','area:id,name,country_id','area.country:id,name'])

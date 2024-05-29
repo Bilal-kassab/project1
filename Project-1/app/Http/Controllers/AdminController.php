@@ -322,7 +322,8 @@ class AdminController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'by_name'=>'in:desc,asc',
-            'most_recent'=>'boolean'
+            'most_recent'=>'boolean',
+            'role_id'=>'numeric|exists:roles,id',
         ]);
 
         if($validator->fails()){
@@ -330,6 +331,7 @@ class AdminController extends Controller
                 'message'=> $validator->errors()->first(),
             ],422);
         }
+        $role=Role::where('id',$request['role_id'])->first();
         $users=User::query()
                 ->when($request['by_name'] == 'asc',function($q) {
                     return $q->orderBy('name','asc');
@@ -339,6 +341,9 @@ class AdminController extends Controller
                 })
                 ->when($request['most_recent'] == true ,function($q) {
                     return $q->orderBy('created_at','desc');
+                })
+                ->when($role,function($q) use ($role){
+                    return $q->Role($role->name);
                 })
                 ->select('id','name','email','phone_number','image','position','is_approved')
                 ->with('roles:id,name','position')

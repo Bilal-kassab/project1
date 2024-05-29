@@ -66,27 +66,27 @@ class StaticBookController extends Controller
             'plane_trip_away'=>$request->plane_trip_away,
         ];
         $static_book=$this->bookrepository->store_Admin($data);
-        if($static_book === 1){
+        if($static_book == 1){
             return response()->json([
                 'message'=>'there is not enough room in this hotel',
             ],400);
         }
-        if($static_book === 2){
+        if($static_book == 2){
             return response()->json([
                 'message' => 'the seats of the going trip plane lower than number of person'
             ], 400);
         }
-        if($static_book === 3){
+        if($static_book == 3){
             return response()->json([
                 'message' => 'the seats of the return trip plane lower than number of person'
             ], 400);
         }
-        if($static_book === 4){
+        if($static_book == 4){
             return response()->json([
                 'message' => 'Failed to create a trip',
             ], 400);
         }
-        
+
         return response()->json([
             'data'=>$static_book
         ],200);
@@ -135,7 +135,7 @@ class StaticBookController extends Controller
                 'message'=>'updated failed'
             ],404);
         }
-        if ($edit === 5) 
+        if ($edit === 5)
         {
             return response()->json([
                 'message' => 'You should choose a period similar to the ancient period'
@@ -198,7 +198,7 @@ class StaticBookController extends Controller
         //     ]??null,
         // ];
 
-        return response()->json($trip,200);
+        return response()->json(['data'=>$trip],200);
 
     }
 

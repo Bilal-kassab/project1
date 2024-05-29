@@ -24,11 +24,11 @@ class BookRepository implements BookRepositoryInterface
             $room_count = $request['number_of_people'] / $request['trip_capacity'];
             if ($request['number_of_people'] % $request['trip_capacity'] > 0) $room_count++;
             $rooms = Room::available($request['start_date'], $request['end_date'])
-                ->where('hotel_id', $request['hotel_id'])
-                ->where('capacity', $request['trip_capacity'])
-                ->count();
+                            ->where('hotel_id', $request['hotel_id'])
+                            ->where('capacity', $request['trip_capacity'])
+                            ->count();
             if ($rooms < $room_count) {
-               return 1;
+                return 1;
             }
         //}
 
@@ -141,7 +141,7 @@ class BookRepository implements BookRepositoryInterface
             $datetime4 = new DateTime($request['end_date']);
             $interval = $datetime3->diff($datetime4);
             $new_period = $interval->format('%a');
-            //check if the new period a similar the ancient period 
+            //check if the new period a similar the ancient period
             if($old_period != $new_period){
                 return 5;
             }

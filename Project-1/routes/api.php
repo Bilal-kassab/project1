@@ -172,6 +172,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
             Route::controller(PlaceController::class)->group(function () {
                 Route::post('add-place','store');
                 Route::get('places','index');
+                Route::get('un-visible-places','unVisiblePlaces');
                 Route::get('show/{id}','show');
                 Route::post('change-exist-place-image','updateExistPlaceImage');
                 Route::post('add-place-image','addPlaceImage');

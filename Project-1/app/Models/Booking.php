@@ -69,7 +69,7 @@ class Booking extends Model
     }
     public function places():BelongsToMany
     {
-        return $this->belongsToMany(Place::class,'book_places','book_id','place_id');
+        return $this->belongsToMany(Place::class,'book_places','book_id','place_id')->with(['images','area:id,name']);
     }
 
     public function activities():BelongsToMany

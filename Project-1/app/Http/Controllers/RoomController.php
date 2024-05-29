@@ -15,79 +15,9 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 class RoomController extends Controller
 {
 
-    // public function index($id)
-    // {
-    //     try{
-    //         $capacity_2_price=0;
-    //         $capacity_4_price=0;
-    //         $capacity_6_price=0;
-    //         $capacity_2_count=Room::query()->where([
-    //              ['capacity', '=', 2],
-    //              ['status', '=', 0],
-    //              ['hotel_id',$id],
-    //          ])->count();
-    //          if($capacity_2_count!=0){
-    //         $capacity_2_price=Room::query()->where([
-    //             ['capacity', '=', 2],
-    //             ['status', '=', 0],
-    //             ['hotel_id',$id],
-    //         ])->get('price')[0]['price'];
-    //          }
-    //         $capacity_4_count=Room::query()->where([
-    //             ['capacity', '=', 4],
-    //             ['status', '=', 0],
-    //             ['hotel_id',$id],
-    //         ])->count();
-    //             if($capacity_4_count!=0){
-    //                 $capacity_4_price=Room::query()->where([
-    //                     ['capacity', '=', 4],
-    //                     ['status', '=', 0],
-    //                     ['hotel_id',$id],
-    //                 ])->get('price')[0]['price'];
-
-    //             }
-
-    //     $capacity_6_count=Room::query()->where([
-    //         ['capacity', '=', 6],
-    //         ['status', '=', 0],
-    //         ['hotel_id',$id],
-    //     ])->count();
-    //     if($capacity_6_count!=0){
-    //                 $capacity_6_price=Room::query()->where([
-    //                 ['capacity', '=', 6],
-    //                 ['status', '=', 0],
-    //                 ['hotel_id',$id],
-    //             ])->get('price')[0]['price'];
-    //     }
-
-    //    $data=[
-    //     'capacity_2'=>[
-    //         'count'=>$capacity_2_count,
-    //         'price'=>$capacity_2_price
-    //     ],
-    //     'capacity_4'=>[
-    //         'count'=>$capacity_4_count,
-    //         'price'=>$capacity_4_price
-    //     ],
-    //     'capacity_6'=>[
-    //         'count'=>$capacity_6_count,
-    //         'price'=>$capacity_6_price
-    //     ],
-    //    ];
-
-    //     }catch(Exception $e){
-    //         return response()->json([
-    //             'message'=>$e->getMessage(),
-    //         ]);
-    //     }
-    //     return response()->json([
-    //         'data'=>$data,
-    //     ],200);
-
-    // }
-
-    public function index(Request $request,$id){
-        $date=Carbon::now()->format('Y-m-d');
+    public function index(Request $request,$id)
+    {
+             $date=Carbon::now()->format('Y-m-d');
         $validatedData =Validator::make($request->all(),[
             //'hotel_id'=>'required|numeric|exists:hotels,id',
             //'capacity'=>'required|numeric',
@@ -101,12 +31,96 @@ class RoomController extends Controller
        }
        $start=$request->start_date;
        $end=$request->end_date;
+        try{
+            $capacity_2_price=0;
+            $capacity_4_price=0;
+            $capacity_6_price=0;
+            $capacity_2_count=Room::query()->available($start,$end)->where([
+                 ['capacity', '=', 2],
+                 ['status', '=', 0],
+                 ['hotel_id',$id],
+             ])->count();
+             if($capacity_2_count!=0){
+            $capacity_2_price=Room::query()->available($start,$end)->where([
+                ['capacity', '=', 2],
+                ['status', '=', 0],
+                ['hotel_id',$id],
+            ])->get('price')[0]['price'];
+             }
+            $capacity_4_count=Room::query()->available($start,$end)->where([
+                ['capacity', '=', 4],
+                ['status', '=', 0],
+                ['hotel_id',$id],
+            ])->count();
+                if($capacity_4_count!=0){
+                    $capacity_4_price=Room::query()->available($start,$end)->where([
+                        ['capacity', '=', 4],
+                        ['status', '=', 0],
+                        ['hotel_id',$id],
+                    ])->get('price')[0]['price'];
 
-         return response()->json([
-            'data'=>Room::available($start,$end)->where('hotel_id',$id)->get(),
-            // 'data'=>Room::whereDoesntHave('bookingss')->where('hotel_id',$id)->get(),
-         ]);
+                }
+
+        $capacity_6_count=Room::query()->available($start,$end)->where([
+            ['capacity', '=', 6],
+            ['status', '=', 0],
+            ['hotel_id',$id],
+        ])->count();
+        if($capacity_6_count!=0){
+                    $capacity_6_price=Room::query()->available($start,$end)->where([
+                    ['capacity', '=', 6],
+                    ['status', '=', 0],
+                    ['hotel_id',$id],
+                ])->get('price')[0]['price'];
+        }
+
+       $data=[
+        'capacity_2'=>[
+            'count'=>$capacity_2_count,
+            'price'=>$capacity_2_price
+        ],
+        'capacity_4'=>[
+            'count'=>$capacity_4_count,
+            'price'=>$capacity_4_price
+        ],
+        'capacity_6'=>[
+            'count'=>$capacity_6_count,
+            'price'=>$capacity_6_price
+        ],
+       ];
+
+        }catch(Exception $e){
+            return response()->json([
+                'message'=>$e->getMessage(),
+            ]);
+        }
+        return response()->json([
+            'data'=>$data,
+        ],200);
+
     }
+
+    // public function index(Request $request,$id){
+    //     $date=Carbon::now()->format('Y-m-d');
+    //     $validatedData =Validator::make($request->all(),[
+    //         //'hotel_id'=>'required|numeric|exists:hotels,id',
+    //         //'capacity'=>'required|numeric',
+    //         'start_date'=>"required|date|after_or_equal:$date",
+    //         'end_date'=>'required|date|after_or_equal:start_date',
+    //    ]);
+    //    if( $validatedData->fails() ){
+    //        return response()->json([
+    //            'message'=> $validatedData->errors()->first(),
+    //        ],422);
+    //    }
+    //    $start=$request->start_date;
+    //    $end=$request->end_date;
+
+    //      return response()->json([
+    //         'data'=>Room::available($start,$end)->where('hotel_id',$id)->get(),
+    //         // 'data'=>Room::whereDoesntHave('bookingss')->where('hotel_id',$id)->get(),
+    //      ]);
+    // }
     public function get_My_Rooms()
     {
 

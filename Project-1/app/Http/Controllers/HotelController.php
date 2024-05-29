@@ -19,7 +19,7 @@ class HotelController extends Controller
     {
         $this->middleware('role:Admin|Hotel admin', ['only'=> ['store','update','update_Image_Hotel','addAirportImage']]);
         $this->middleware('role:Super Admin', ['only'=> ['index','destroy','changeVisible']]);
-       
+
     }
     public function index()
     {
@@ -79,7 +79,7 @@ class HotelController extends Controller
 
         if($request->user()->hasRole('User')){
             return response()->json([
-                'data'=>Hotel::with(['images'])
+                'data'=>Hotel::with(['images','area'])
                 ->where('country_id',$id)
                 ->select('id','name','stars','number_rooms','area_id','country_id')
                 ->get(),
@@ -87,7 +87,7 @@ class HotelController extends Controller
         }
         else{
             return response()->json([
-                'data'=>Hotel::with(['images','user:id,name,position,email,phone_number,image'])
+                'data'=>Hotel::with(['images','user:id,name,position,email,phone_number,image','area'])
                 ->where('country_id',$id)
                 ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
                 ->get(),
@@ -112,7 +112,7 @@ class HotelController extends Controller
                 'message'=> $validatedData->errors()->first(),
             ],422);
         }
-        
+
         $area=Area::find($request->area_id);
         $hotel= Hotel::Create([
             'name'=>$request->name,
