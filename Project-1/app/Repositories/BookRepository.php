@@ -3,14 +3,19 @@
 namespace App\Repositories;
 
 use App\Models\ActivityBook;
+use App\Models\Bank;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 use App\Models\Booking;
 use App\Models\BookingRoom;
+use App\Models\BookingStaticTrip;
 use App\Models\BookPlace;
 use App\Models\BookPlane;
 use App\Models\Place;
 use App\Models\PlaneTrip;
 use App\Models\Room;
+use App\Models\StaticTripRoom;
+use App\Models\User;
+use Carbon\Carbon;
 use DateTime;
 use Exception;
 
@@ -18,6 +23,7 @@ class BookRepository implements BookRepositoryInterface
 {
     public function store_Admin($request)
     {
+     try {
         $trip_price=0;
         // to check if there are an enough rooms in this hotel
         //if($request['hotel_id'] != null){
@@ -45,7 +51,6 @@ class BookRepository implements BookRepositoryInterface
         $plane_trip->save();
         $plane_trip_away['available_seats'] -= $request['number_of_people'];
         $plane_trip_away->save();
-        try {
             $booking = Booking::create([
                 'user_id' => auth()->user()->id,
                 'source_trip_id' => $request['source_trip_id'],
@@ -54,8 +59,10 @@ class BookRepository implements BookRepositoryInterface
                 //'price' => $request['price'],
                 'number_of_people' => $request['number_of_people'],
                 'trip_capacity' => $request['trip_capacity'],
-                'start_date' => $plane_trip['flight_date'],// to submit the flight date same as start date trip
-                'end_date' => $plane_trip_away['flight_date'],// to submit the flight date same as end date trip
+                'start_date' => $request['start_date'],// to submit the flight date same as start date trip
+                'end_date' => $request['end_date'],// to submit the flight date same as end date trip
+                // 'start_date' => $plane_trip['flight_date'],// to submit the flight date same as start date trip
+                // 'end_date' => $plane_trip_away['flight_date'],// to submit the flight date same as end date trip
                 'trip_note' => $request['trip_note'],
                 'type' => 'static',
             ]);
@@ -65,7 +72,7 @@ class BookRepository implements BookRepositoryInterface
                     'place_id' => $place,
                     'current_price' => Place::where('id', $place)->first()->place_price,
                 ]);
-                $trip_price+=$book_place['current_price'];
+                 $trip_price+=$book_place['current_price'];
             }
             ###
             foreach ($request['activities'] as $activity) {
@@ -107,7 +114,7 @@ class BookRepository implements BookRepositoryInterface
                 $trip_price+=$plane_trip_away['current_price'];
                 $datetime1 = new DateTime($booking['start_date']);
                 $datetime2 = new DateTime($booking['end_date']);
-                $interval = $datetime1->diff($datetime2);
+                $interval = $datetime2->diff($datetime1);
                 $days = $interval->format('%a');
                 $trip_price+=($book_room['current_price']*$days);
                 $trip_price-=($trip_price*$request['ratio']);// if there is an ratio from the price
@@ -115,9 +122,7 @@ class BookRepository implements BookRepositoryInterface
                 $booking->save();
             // }
         } catch (Exception $exception) {
-            return response()->json([
-                'message' => $exception->getMessage(),
-            ], 400);
+            return 4;
         }
 
          $static_book=Booking::where('id',$booking->id)->first();
@@ -279,6 +284,10 @@ class BookRepository implements BookRepositoryInterface
             ];
             $activities=$book?->activities;
             $going_trip=[
+                'going_plane'=>[
+                    'id'=>$book->plane_trips[0]->plane->id?? null,
+                    'name'=>$book->plane_trips[0]->plane->name?? null,
+                ]??null,
                 'airport_source'=>[
                     'id'=>$book->plane_trips[0]->airport_source->id?? null,
                     'name'=>$book->plane_trips[0]->airport_source->name?? null,
@@ -289,6 +298,10 @@ class BookRepository implements BookRepositoryInterface
                 ]??null,
             ];
             $return_trip=[
+                'return_plane'=>[
+                    'id'=>$book->plane_trips[1]->plane->id?? null,
+                    'name'=>$book->plane_trips[1]->plane->name?? null,
+                ]??null,
                 'airport_source'=>[
                     'id'=>$book->plane_trips[1]->airport_source->id?? null,
                     'name'=>$book->plane_trips[1]->airport_source->name?? null,
@@ -330,4 +343,172 @@ class BookRepository implements BookRepositoryInterface
 
     }
 
+    public function checkStaticTrip($request,$id)
+    {
+        try{
+            $static_trip=Booking::where('type','static')->findOrFail($id);
+            $rooms_needed=(int)($request['number_of_friend']/$static_trip['trip_capacity']);
+            if($request['number_of_friend'] % $static_trip['trip_capacity'] >0) $rooms_needed++;
+            $available_rooms=BookingRoom::where('book_id',$id)->where('user_id',null)->count();
+            $room=BookingRoom::where('book_id',$id)->first();
+            $plane_trip=$static_trip?->plane_trips;
+            if($static_trip['number_of_people'] < $request['number_of_friend']){
+                return 1;
+            }
+            if($available_rooms < $rooms_needed){
+                return 2;
+            }
+            $total_price=0;
+            $total_price+=($static_trip['price']-$room['current_price'])*$request['number_of_friend'];
+            $total_price+=$rooms_needed*$room['current_price'];
+            $price_after_discount=null;
+            if(auth()->user()->point >= 50)#################
+            {
+                $price_after_discount=$total_price-($total_price*0.5);
+            }
+            $data=[
+                'trip_id'=>(int)$id,
+                'number_of_friend'=>(int)$request['number_of_friend'],
+                'rooms_needed'=>$rooms_needed,
+                'total_price'=>$total_price,
+                'price_after_discount'=>$price_after_discount,
+            ];
+            return $data;
+        }catch(Exception $exception){
+            return 3;
+        }
+
+    }
+
+    public function bookStaticTrip($request)
+    {
+        $bank=Bank::where('email',auth()->user()->email)->first();
+        if($bank['money']<$request['total_price'] && $bank['money']<$request['price_after_discount'])
+        {
+            return 1;
+        }
+        $user=User::where('id',auth()->id())->first();
+        $book_price=$request['total_price'];###########
+        if($request['discount']){
+            $book_price=$request['price_after_discount'];
+            $user['point']-=50;
+        }
+        $user['point']+=5;
+        $user->save();
+        $book_static=BookingStaticTrip::create([
+            'user_id'=>auth()->id(),
+            'static_trip_id'=>$request['trip_id'],
+            'number_of_friend'=>$request['number_of_friend'],
+            'book_price'=>$book_price
+        ]);
+        $bank['money']=$bank['money']-$book_price;
+        $bank['payments']+=$book_price;
+        $bank->save();
+        $static_trip=Booking::where('type','static')->findOrFail($request['trip_id']);
+        $static_trip['number_of_people']=$static_trip['number_of_people']-$request['number_of_friend'];
+        $static_trip->save();
+
+         $rooms=BookingRoom::where('book_id',$request['trip_id'])->where('user_id',null)->get();
+        for($i=0;$i<$request['rooms_needed'];$i++)
+        {
+            StaticTripRoom::create([
+                'booking_static_trip_id'=>$book_static['id'],
+                'room_id'=>$rooms[$i]['room_id'],
+            ]);
+            $rooms[$i]->user_id=auth()->id();
+            $rooms[$i]->save();
+        }
+        return 2;
+    }
+
+    public function editBook($request,$id)
+    {
+        try{
+            // $data['number_of_friend']=$request['new_number_of_friend'];
+            $static_book=BookingStaticTrip::findOrFail($id);
+            $book=Booking::findOrFail($static_book['static_trip_id']);
+            $date=Carbon::now()->format('Y-m-d');
+            $trip_date = Carbon::createFromFormat('Y-m-d', $book['start_date']);
+            if($date>=$trip_date){
+                return 6;
+            }
+            $val=$this->checkStaticTrip($request,$static_book['static_trip_id']);
+            if($val==1 || $val==2){
+                return $val;
+            }
+            $bank=Bank::where('email',auth()->user()->email)->first();
+            if($bank['money']<$val['total_price'] && $bank['money']<$val['price_after_discount'])
+            {
+                return 3;
+            }
+            $book_price=$val['total_price'];###########
+            if($request['discount']){
+                $book_price=$val['price_after_discount'];
+                $user=User::where('id',auth()->id())->first();
+                $user['point']-=50;
+                $user->save();
+            }
+            $static_book['number_of_friend']+=$request['number_of_friend'];
+            $static_book['book_price']+=$book_price;
+            $static_book->save();
+
+            $bank['money']=$bank['money']-$book_price;
+            $bank['payments']+=$book_price;
+            $bank->save();
+
+            $trip=Booking::where('type','static')->findOrFail($static_book['static_trip_id']);
+            $trip['number_of_people']-=$request['number_of_friend'];
+            $trip->save();
+
+            $rooms=BookingRoom::where('book_id',$static_book['static_trip_id'])->where('user_id',null)->get();
+            for($i=0;$i<$val['rooms_needed'];$i++)
+            {
+                StaticTripRoom::create([
+                    'booking_static_trip_id'=>$static_book['id'],
+                    'room_id'=>$rooms[$i]['room_id'],
+                ]);
+                $rooms[$i]->user_id=auth()->id();
+                $rooms[$i]->save();
+            }
+
+            return 4;
+        }catch(Exception $exception){
+            return 5;
+        }
+    }
+
+    public function deleteBook($id)
+    {
+        try {
+            $static_book=BookingStaticTrip::findOrFail($id);
+            $book=Booking::findOrFail($static_book['static_trip_id']);
+            $date=Carbon::now()->format('Y-m-d');
+            $trip_date = Carbon::createFromFormat('Y-m-d', $book['start_date']);
+            if($date>=$trip_date){
+                return 1;
+            }
+            $book['number_of_people']+=$static_book['number_of_friend'];
+            $static_book_rooms=$static_book->rooms;
+            foreach($static_book_rooms as $room){
+                $myRoom=BookingRoom::where([
+                    ['room_id',$room['id']],
+                    ['book_id',$static_book['static_trip_id']]
+                    ])->first();
+                $myRoom->user_id=null;
+                $myRoom->save();
+            }
+             $book->save();
+             $static_book->delete();
+             $bank=Bank::where('email',auth()->user()->email)->first();
+             $bank['money']+=$static_book['book_price'];
+             $bank['payments']-=$static_book['book_price'];
+             $bank->save();
+             $user=User::where('id',auth()->id())->first();
+             $user['point']-=5;
+             $user->save();
+            return 2;
+        } catch (Exception $th) {
+           return 3;
+        }
+    }
 }

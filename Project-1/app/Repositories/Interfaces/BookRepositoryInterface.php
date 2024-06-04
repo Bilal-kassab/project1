@@ -10,5 +10,8 @@ Interface BookRepositoryInterface{
     public function editAdmin($request,$id);
     public function showStaticTrip($id);
     public function index();
-
+    public function checkStaticTrip($request,$id);
+    public function bookStaticTrip($request);
+    public function editBook($request,$id);
+    public function deleteBook($id);
 }

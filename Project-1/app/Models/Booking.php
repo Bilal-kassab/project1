@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Booking extends Model
@@ -48,7 +49,10 @@ class Booking extends Model
     {
         return $this->belongsToMany(Room::class,'booking_rooms','book_id','room_id');
     }
-
+    public function user_rooms():BelongsToMany
+    {
+        return $this->belongsToMany(Room::class,'booking_rooms','book_id','room_id')->where('user_id',auth()->id());
+    }
     public function scopeAvailableRooms($query)
     {
         return $query->withCount(['rooms' => function ($query) {
@@ -77,5 +81,15 @@ class Booking extends Model
        return $this->belongsToMany(Activity::class,'activity_books','booking_id','activity_id');
     }
 
+    // public function static_trips():BelongsToMany
+    // {
+    //     return $this->belongsToMany(BookingStaticTrip::class,'booking_static_trips','static_trip_id','user_id')
+    //                 ->where('user_id',auth()->id());
+    // }
+
+    // public function static_trip_rooms():BelongsToMany
+    // {
+    //     return $this->rooms()->whereRelation('rooms');
+    // }
 }
 

@@ -301,4 +301,18 @@ class PlaneController extends Controller
         ],200);
 
     }
+
+    public function getAllTripsPlane($id):JsonResponse
+    {
+        try {
+            $trips=Plane::with('tripss')->findOrFail($id);
+        } catch (Exception $exception) {
+            return response()->json([
+                'message'=>'Not Found'
+            ],404);
+        }
+        return response()->json([
+            'data'=>$trips
+        ],200);
+    }
 }

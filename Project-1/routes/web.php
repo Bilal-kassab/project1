@@ -20,26 +20,29 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
 
+             asset('PlaceImages/1716978205.jpg');
                $book=Booking::where('type','static')
-                        ->userRooms(2,null)
-                        ->findOrFail(1);
+                            ->findOrFail(1);
 
-                        $bookData=[
-                            'id'=>$book['id'],
-                            'source_trip_id'=>$book['source_trip_id'],
-                            'destination_trip_id'=>$book['destination_trip_id'],
-                            'trip_name'=>$book['trip_name'],
-                            'price'=>$book['price'],
-                            'number_of_people'=>$book['number_of_people'],
-                            // 'trip_capacity'=>$book['trip_capacity'],
-                            'start_date'=>$book['start_date'],
-                            'end_date'=>$book['end_date'],
-                            // 'stars'=>$book['stars'],
-                            'trip_note'=>$book['trip_note'],
-                            'type'=>$book['type'],
-                            // 'rooms_count'=>$book['rooms_count'],
-                        ];
-            return $bookData;
+                        // $bookData=[
+                        //     'id'=>$book['id'],
+                        //     'source_trip_id'=>$book['source_trip_id'],
+                        //     'destination_trip_id'=>$book['destination_trip_id'],
+                        //     'trip_name'=>$book['trip_name'],
+                        //     'price'=>$book['price'],
+                        //     'number_of_people'=>$book['number_of_people'],
+                        //     // 'trip_capacity'=>$book['trip_capacity'],
+                        //     'start_date'=>$book['start_date'],
+                        //     'end_date'=>$book['end_date'],
+                        //     // 'stars'=>$book['stars'],
+                        //     'trip_note'=>$book['trip_note'],
+                        //     'type'=>$book['type'],
+                        //     // 'rooms_count'=>$book['rooms_count'],
+                        // ];
+                        $date = Carbon::createFromFormat('Y.m.d', Carbon::now()->format('Y.m.d'));
+                        $daysToAdd = 5;
+                        $date = $date->addDays($daysToAdd)->format('Y-m-d');
+            return $book['end_date']->addDays(5);
 });
 
 

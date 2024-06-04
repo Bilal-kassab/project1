@@ -2,22 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Book\BookStaticTripRequest;
+use App\Http\Requests\Book\CheckStaticTripRequest;
+use App\Http\Requests\Book\EditStaticTripRequest;
 use App\Http\Requests\Trip\DynamicTripRequest;
 use App\Http\Requests\Trip\StoreStaticTripRequest;
 use App\Http\Requests\Trip\UpdateStaticTripRequest;
+use App\Models\Bank;
 use App\Models\Booking;
 use App\Models\BookingRoom;
+use App\Models\BookingStaticTrip;
 use App\Models\BookPlace;
 use App\Models\BookPlane;
 use App\Models\Place;
 use App\Models\PlaneTrip;
 use App\Models\Room;
+use App\Models\StaticTripRoom;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 use Carbon\Carbon;
 use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use function Laravel\Prompts\select;
 
 class StaticBookController extends Controller
 {
@@ -156,50 +164,126 @@ class StaticBookController extends Controller
                 'message'=>'Not Found'
             ],404);
         }
-
-        // $book=Booking::where('type','static')
-        //                 ->AvailableRooms()
-        //                 ->findOrFail($id);
-
-        // $bookData=[
-        //     'id'=>$book['id'],
-        //     'source_trip_id'=>$book['source_trip_id'],
-        //     'destination_trip_id'=>$book['destination_trip_id'],
-        //     'trip_name'=>$book['trip_name'],
-        //     'price'=>$book['price'],
-        //     'number_of_people'=>$book['number_of_people'],
-        //     'trip_capacity'=>$book['trip_capacity'],
-        //     'start_date'=>$book['start_date'],
-        //     'end_date'=>$book['end_date'],
-        //     'stars'=>$book['stars'],
-        //     'trip_note'=>$book['trip_note'],
-        //     'type'=>$book['type'],
-        //     'rooms_count'=>$book['rooms_count'],
-        // ];
-
-        // $going_trip=[
-        //     'airport_source'=>[
-        //         'id'=>$book->plane_trips[0]->airport_source->id?? null,
-        //         'name'=>$book->plane_trips[0]->airport_source->name?? null,
-        //     ]??null,
-        //     'airport_destination'=>[
-        //         'id'=>$book->plane_trips[0]->airport_destination->id?? null,
-        //         'name'=>$book->plane_trips[0]->airport_destination->name?? null,
-        //     ]??null,
-        // ];
-        // $return_trip=[
-        //     'airport_source'=>[
-        //         'id'=>$book->plane_trips[1]->airport_source->id?? null,
-        //         'name'=>$book->plane_trips[1]->airport_source->name?? null,
-        //     ]??null,
-        //     'airport_destination'=>[
-        //         'id'=>$book->plane_trips[1]->airport_destination->id?? null,
-        //         'name'=>$book->plane_trips[1]->airport_destination->name?? null,
-        //     ]??null,
-        // ];
-
         return response()->json(['data'=>$trip],200);
 
     }
 
+    public function checkStaticTrip(CheckStaticTripRequest $request,$id):JsonResponse
+    {
+        try{
+            $val=$this->bookrepository->checkStaticTrip($request->all(),$id);
+            if($val==1){
+                return response()->json([
+                    'message'=>'there are not enough members',
+                ],400);
+            }
+            if($val==2){
+                return response()->json([
+                    'message'=>'there are not enough rooms',
+                ],400);
+            }
+            if($val==3){
+                return response()->json([
+                    'message'=>'Error!',
+                ],400);
+            }
+            return response()->json([
+                'data'=>$val
+            ],200);
+        }catch(Exception $exception){
+            return response()->json([
+                'message'=>$exception->getMessage(),
+            ],400);
+        }
+    }
+
+    public function bookStaticTrip(BookStaticTripRequest $request):JsonResponse
+    {
+        $val=$this->bookrepository->bookStaticTrip($request->all());
+        if($val==1)
+        {
+            return response()->json([
+                'message'=>'You dont have the money for this trip',
+            ],400);
+        }
+        return response()->json([
+            'message'=>'Enjoy your trip'
+        ],200);
+    }
+
+    public function showAllMyStaicTrips()
+    {
+        //$static_trip=Booking::with('user_rooms')->get();
+        $static_trip=BookingStaticTrip::with('static_trip:id,trip_name,trip_capacity,start_date,end_date,stars,trip_note','rooms:id,capacity')
+                                        ->select('id','user_id','static_trip_id','number_of_friend','book_price')
+                                        ->where('user_id',auth()->id())
+                                        ->get();
+
+        return response()->json([
+            'data'=>$static_trip,
+        ],200);
+    }
+
+    public function editBook(EditStaticTripRequest $request,$id)
+    {
+        try{
+            $data=[
+                'number_of_friend'=>$request['new_number_of_friend'],
+                'discount'=>$request['discount']
+            ];
+           $val=$this->bookrepository->editBook($data,$id);
+           if($val==1){
+                return response()->json([
+                    'message'=>'there are not enough members',
+                ],400);
+            }
+            if($val==2){
+                return response()->json([
+                    'message'=>'there are not enough rooms',
+                ],400);
+            }
+            if($val==3){
+                return response()->json([
+                    'message'=>'You dont have the money for this trip',
+                ],400);
+            }
+            if($val==5){
+                return response()->json([
+                    'message'=>'Error int this trip',
+                ],400);
+            }
+            if($val==10){
+                return response()->json([
+                    'message'=>'Fail because of invaild Date'
+                ]);
+            }
+
+            return response()->json([
+                'message'=>'Changes saved successfully'
+            ],200);
+        }catch(Exception $exception){
+            return response()->json([
+                'message'=>$exception->getMessage()
+            ]);
+        }
+    }
+
+    public function deleteBook($id):JsonResponse
+    {
+        $val=$this->bookrepository->deleteBook($id);
+        if($val==1){
+            return response()->json([
+                'message'=>'Fail because of invaild Date'
+            ],400);
+        }
+
+        if($val==3){
+            return response()->json([
+                'message'=>'Not Found',
+            ],404);
+        }
+        return response()->json([
+            'message'=>'Deleted Done and your money has returned to your Account',
+        ],400);
+    }
 }

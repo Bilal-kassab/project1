@@ -235,6 +235,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('get-all-plane-admin-trip','getAllPlaneAdminTrip');
                 Route::get('get-all-plane-trip','getAllPlaneTrip');
                 Route::get('show-plane-trip-details/{id}','showPlaneTripDetails');
+                Route::get('get-all-trips-plane/{id}','getAllTripsPlane');
             });
 
             Route::controller(HotelController::class)->group(function(){
@@ -265,6 +266,13 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
             Route::controller(StaticBookController::class)->group(function(){
                 Route::post('Add_booking_Admin','store_Admin');
                 Route::post('edit-static-trip/{id}','update_Admin');
+                Route::post('check-static-trip/{id}','checkStaticTrip');
+                Route::post('edit-static-trip-book/{id}','editBook');
+                Route::post('book-static-trip','bookStaticTrip');
+                Route::delete('delete-static-trip-book/{id}','deleteBook');
+                Route::get('show-all-my-staic-trips','showAllMyStaicTrips');
+
+
                 Route::get('all-static-trip','index');
                 Route::get('show-static-trip/{id}','showStaticTrip');
             });

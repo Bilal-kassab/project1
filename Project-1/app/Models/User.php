@@ -23,7 +23,8 @@ class User extends Authenticatable
         'password',
         'image',
         'position',
-        'is_approved'
+        'is_approved',
+        'point'
     ];
 
     protected $hidden = [
@@ -54,6 +55,10 @@ class User extends Authenticatable
     public function comments():BelongsToMany
     {
         return $this->belongsToMany(Comment::class,'comments','user_id','place_id');
+    }
+    public function static_trips():BelongsToMany
+    {
+        return $this->belongsToMany(BookingStaticTrip::class,'booking_static_trips','user_id','static_trip_id');
     }
 
     public function position()

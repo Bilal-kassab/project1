@@ -4850,13 +4850,13 @@
 									"formdata": [
 										{
 											"key": "place_id",
-											"value": "5",
+											"value": "1",
 											"type": "text"
 										},
 										{
 											"key": "images[0]",
 											"type": "file",
-											"src": "/C:/Users/Asus-/Desktop/N1wl6Xvs49zb2revmBIPzKuO6uTp7pZDaqZKfFWg.jpg"
+											"src": "/C:/Users/Asus-/Desktop/1300701.png"
 										}
 									]
 								},
@@ -5278,6 +5278,82 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Eiffel Tower\",\n            \"place_price\": \"20.00\",\n            \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"place_id\": 1,\n                    \"image\": \"PlaceImages/1716978205.jpg\"\n                }\n            ],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Cultural\"\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1,\n                \"country\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                }\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Musée du Louvre\",\n            \"place_price\": \"20.00\",\n            \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"images\": [],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Cultural\"\n                }\n            ],\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\",\n                \"country_id\": 2,\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Umayyad Mosque\",\n            \"place_price\": \"5.00\",\n            \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"images\": [],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Cultural\"\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1,\n                \"country\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                }\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"aleppoooppp\",\n            \"place_price\": \"50.00\",\n            \"text\": \"welcome to older city\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"images\": [],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1,\n                \"country\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                }\n            }\n        }\n    ]\n}"
+								},
+								{
+									"name": "places",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/places",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"places"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 02 Jun 2024 10:21:21 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 02 Jun 2024 10:21:21 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Eiffel Tower\",\n            \"place_price\": \"20.00\",\n            \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"place_id\": 1,\n                    \"image\": \"PlaceImages/1717323667.png\"\n                }\n            ],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Cultural\"\n                }\n            ],\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\",\n                \"country_id\": 2,\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Musée du Louvre\",\n            \"place_price\": \"20.00\",\n            \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"images\": [],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Cultural\"\n                }\n            ],\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\",\n                \"country_id\": 2,\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Umayyad Mosque\",\n            \"place_price\": \"5.00\",\n            \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"images\": [],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Cultural\"\n                }\n            ],\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\",\n                \"country_id\": 1,\n                \"country\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                }\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -7008,6 +7084,103 @@
 											"body": "{\n    \"mesaage\": \"images added successfully\"\n}"
 										}
 									]
+								},
+								{
+									"name": "get-all-trips-plane",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-all-trips-plane/1",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-all-trips-plane",
+												"1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "get-all-trips-plane",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/get-all-trips-plane/1",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"get-all-trips-plane",
+														"1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 03 Jun 2024 21:41:59 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 03 Jun 2024 21:41:59 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Damas A1\",\n        \"number_of_seats\": 40,\n        \"visible\": 1,\n        \"ticket_price\": \"50.00\",\n        \"airport_id\": 1,\n        \"tripss\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\"\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 1,\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\"\n            }\n        ]\n    }\n}"
+										}
+									]
 								}
 							]
 						},
@@ -7227,7 +7400,7 @@
 												},
 												{
 													"key": "flight_date",
-													"value": "2024-5-28",
+													"value": "2024-06-1",
 													"type": "text"
 												},
 												{
@@ -12063,7 +12236,7 @@
 										},
 										{
 											"key": "start_date",
-											"value": "2024-06-01",
+											"value": "2024-06-05",
 											"type": "text"
 										},
 										{
@@ -12569,7 +12742,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/3",
+									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/1",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -12582,7 +12755,220 @@
 										"api",
 										"admin",
 										"show-static-trip",
-										"3"
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "check-static-trip",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "number_of_friend",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/check-static-trip/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"check-static-trip",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "book-static-trip",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "trip_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "number_of_friend",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "rooms_needed",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "total_price",
+											"value": "5395",
+											"type": "text"
+										},
+										{
+											"key": "price_after_discount",
+											"value": "2697.5",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/book-static-trip",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"book-static-trip"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show-all-my-staic-trips",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/show-all-my-staic-trips",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"show-all-my-staic-trips"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit-static-trip-book",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "new_number_of_friend",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip-book/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"edit-static-trip-book",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-static-trip-book",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/delete-static-trip-book/5",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"delete-static-trip-book",
+										"5"
 									]
 								}
 							},
@@ -13872,7 +14258,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|soWkLV8bvN2U3tsT9EhqWrd20zK5ost1ouZrxV6Wba0ec9ce",
+						"value": "1|jIqqpx4TcWJrZNVsq3nAs0Lh4WRdwZ82sLqnLqU892f7c7f9",
 						"type": "string"
 					}
 				]
