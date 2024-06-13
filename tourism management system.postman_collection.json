@@ -323,6 +323,11 @@
 										"key": "Accept",
 										"value": "application/json",
 										"type": "text"
+									},
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -330,12 +335,12 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "SA@gmail.com",
+											"value": "Airport55@gmail.com",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "123456789",
+											"value": "1234567899",
 											"type": "text"
 										}
 									]
@@ -12236,7 +12241,7 @@
 										},
 										{
 											"key": "start_date",
-											"value": "2024-06-05",
+											"value": "2024-06-06",
 											"type": "text"
 										},
 										{
@@ -12467,33 +12472,28 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "hotel_id",
-											"value": "3",
-											"type": "text"
-										},
-										{
 											"key": "trip_name",
-											"value": "to france",
+											"value": "France Hi",
 											"type": "text"
 										},
 										{
-											"key": "price",
-											"value": "100",
-											"type": "text"
-										},
-										{
-											"key": "add_new_people",
+											"key": "ratio",
 											"value": "0",
 											"type": "text"
 										},
 										{
+											"key": "add_new_people",
+											"value": "5",
+											"type": "text"
+										},
+										{
 											"key": "start_date",
-											"value": "2024-05-29",
+											"value": "2024-06-07",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-06-10",
+											"value": "2024-06-21",
 											"type": "text"
 										},
 										{
@@ -12504,7 +12504,8 @@
 										{
 											"key": "places[0]",
 											"value": "3",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "places[1]",
@@ -12529,7 +12530,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/1",
+									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/6",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -12542,7 +12543,7 @@
 										"api",
 										"admin",
 										"edit-static-trip",
-										"1"
+										"6"
 									]
 								}
 							},
@@ -12742,7 +12743,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/1",
+									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/5",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -12755,7 +12756,7 @@
 										"api",
 										"admin",
 										"show-static-trip",
-										"1"
+										"5"
 									]
 								}
 							},
@@ -12969,6 +12970,37 @@
 										"admin",
 										"delete-static-trip-book",
 										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "trip-cancellation",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/trip-cancellation/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"trip-cancellation",
+										"2"
 									]
 								}
 							},
@@ -14258,7 +14290,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|jIqqpx4TcWJrZNVsq3nAs0Lh4WRdwZ82sLqnLqU892f7c7f9",
+						"value": "\"4|MONk5sz66pVVQXWPwBM8WrQL1LjGm2WLm8V5pktv3c5a3ce6",
 						"type": "string"
 					}
 				]
@@ -14470,102 +14502,12 @@
 						{
 							"name": "logout",
 							"request": {
-								"auth": {
-									"type": "bearer"
-								},
 								"method": "GET",
 								"header": [
 									{
-										"name": "cache-control",
-										"sortOrder": 2,
-										"infoTitle": "We recommend using this header",
-										"info": "Postman added \"Cache-Control: no-cache\" as a precautionary measure to prevent the server from returning stale response when one makes repeated requests.\n\nYou can remove this header in the app settings or enter a new one with a different value.",
-										"allowedToToggle": false,
-										"disableEdit": true,
-										"previewSettingsLink": "Go to settings",
-										"key": "Cache-Control",
-										"value": "no-cache",
-										"system": true,
-										"type": "text"
-									},
-									{
-										"name": "postman-token",
-										"sortOrder": 3,
-										"infoTitle": "We recommend using this header",
-										"info": "The Postman-Token header appends a random UUID to every outgoing request. Postman adds this header for API developers to better debug requests sent and to ensure separate requests appear distinct to the receiving server.\n\nYou can remove this header in the app settings.",
-										"allowedToToggle": false,
-										"disableEdit": true,
-										"previewSettingsLink": "Go to settings",
-										"key": "Postman-Token",
-										"value": "<calculated when request is sent>",
-										"system": true,
-										"type": "text"
-									},
-									{
-										"name": "host",
-										"sortOrder": 6,
-										"infoTitle": "We recommend using this header",
-										"info": "The Host header is added to identify the domain name for which a request is being sent to the server. This header is implicitly sent by every HTTP client.\n\nYou can remove the header or enter a new one with a different value. It is most likely that without this header, your request will return an HTTP 400 error.",
-										"allowedToToggle": true,
-										"disableEdit": true,
-										"key": "Host",
-										"value": "<calculated when request is sent>",
-										"system": true,
-										"type": "text"
-									},
-									{
-										"name": "user-agent",
-										"sortOrder": 7,
-										"infoTitle": "We recommend using this header",
-										"info": "The User-Agent header is added to help the server identify Postman as the HTTP requesting application or client.\n\nIt is recommended that this header be sent, but you can remove the header or enter a new one with a different value.",
-										"allowedToToggle": true,
-										"disableEdit": true,
-										"key": "User-Agent",
-										"value": "PostmanRuntime/7.32.1",
-										"system": true,
-										"type": "text"
-									},
-									{
-										"name": "accept",
-										"sortOrder": 8,
-										"infoTitle": "We recommend using this header",
-										"info": "The \"Accept: */*\" header is added to tell the server that Postman can understand and process all forms of response content types.\n\nIt is recommended that this header be sent, but you can remove the header or enter a new one with a different value.",
-										"allowedToToggle": true,
-										"disableEdit": true,
-										"key": "Accept",
-										"value": "*/*",
-										"system": true,
-										"type": "text"
-									},
-									{
-										"name": "accept-encoding",
-										"sortOrder": 9,
-										"infoTitle": "We recommend using this header",
-										"info": "The Accept-Encoding header is added to indicate to the server that Postman HTTP client supports a defined list of content-encoding or compression algorithms as response.\n\nYou can remove the header or enter a new one with a different value. Doing that may not accurately render the response within the app.",
-										"allowedToToggle": true,
-										"disableEdit": true,
-										"key": "Accept-Encoding",
-										"value": "gzip, deflate, br",
-										"system": true,
-										"type": "text"
-									},
-									{
-										"name": "connection",
-										"sortOrder": 10,
-										"infoTitle": "We recommend using this header",
-										"info": "Postman added the Connection header to indicate the server to keep the underlying network connection open once the current response is received. This allows Postman to reuse the same connection for faster response times in subsequent requests to the same server.\n\nYou can remove this header or enter a new one with a different value, such as `Connection: Close` to control this behaviour.",
-										"allowedToToggle": true,
-										"disableEdit": true,
-										"key": "Connection",
-										"value": "keep-alive",
-										"system": true,
-										"type": "text"
-									},
-									{
 										"key": "Accept",
 										"value": "application/json",
-										"type": "text",
-										"id": 0
+										"type": "text"
 									}
 								],
 								"url": {
@@ -20994,7 +20936,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "3|O1UkoC3JH4KXXhd9mLFZDLhsHz3hDF1pYCyDx44Db0463592",
+						"value": "15|j9JsPjTWFJwfGwcqBDRO6ENzOpmMtdU3W8Thh1PUd0238d46",
 						"type": "string"
 					}
 				]

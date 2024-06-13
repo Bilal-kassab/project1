@@ -97,9 +97,9 @@ class BookRepository implements BookRepositoryInterface
             // if($request['hotel_id'] != null){
                 // rooms
                 $rooms = Room::available($request['start_date'], $request['end_date'])
-                ->where('hotel_id', $request['hotel_id'])
-                ->where('capacity', $request['trip_capacity'])
-                ->get();
+                                ->where('hotel_id', $request['hotel_id'])
+                                ->where('capacity', $request['trip_capacity'])
+                                ->get();
                 for ($i = 0; $i < $room_count; $i++) {
                     $book_room=BookingRoom::create([
                         'book_id' => $booking->id,
@@ -135,7 +135,11 @@ class BookRepository implements BookRepositoryInterface
         try
         {
             $booking= Booking::findOrFail($id);
-            $trip_price=0;
+            $date=Carbon::now()->format('Y-m-d');
+            $trip_date = Carbon::createFromFormat('Y-m-d', $booking['start_date']);
+            if($date>=$trip_date){
+                return 'This trip has already started';
+            }
               // the old period
             $datetime1 = new DateTime($booking['start_date']);
             $datetime2 = new DateTime($booking['end_date']);
@@ -148,9 +152,9 @@ class BookRepository implements BookRepositoryInterface
             $new_period = $interval->format('%a');
             //check if the new period a similar the ancient period
             if($old_period != $new_period){
-                return 5;
+                return 'You should choose a period similar to the ancient period';
             }
-            //$trip_price=0;
+            // $trip_price=0;
             // to check if there are an enough rooms in this hotel
             $bookRoomCount=BookingRoom::where('book_id',$booking['id'])->count();
             $numberOfOldSeat=$booking['number_of_people'];
@@ -168,19 +172,21 @@ class BookRepository implements BookRepositoryInterface
                                 ->where('capacity', $booking['trip_capacity'])
                                 ->count();
             if ($rooms < $room_count+$bookRoomCount) {
-                return 1;
+                return 'there is not enough room in this hotel';
             }
             // show if there are available_seats to book in going trip
             $plane_trip = PlaneTrip::where('id', $request['plane_trip'])->first();
-            if ($plane_trip['available_seats'] < $request['number_of_people']) {
-                 return 2;
+            if ($plane_trip['available_seats'] < $request['number_of_people']+$numberOfOldSeat) {
+                 return 'the seats of the going trip plane lower than number of person';
             }
             // show if there are available_seats to book in return trip
             $plane_trip_away = PlaneTrip::where('id', $request['plane_trip_away'])->first();
-            if ($plane_trip_away['available_seats'] < $request['number_of_people']) {
-                return 3;
+            if ($plane_trip_away['available_seats'] < $request['number_of_people']+$numberOfOldSeat)###
+            {
+                return 'the seats of the return trip plane lower than number of person';
             }
 
+            $bookRoom=BookingRoom::where('book_id',$booking['id'])->first();
             if(($request['start_date'] != $booking['start_date']) || ($request['end_date'] != $booking['end_date']))
             {
                 ##### delete old booking room
@@ -191,9 +197,8 @@ class BookRepository implements BookRepositoryInterface
                             ->where('hotel_id', $hotel_id)#####
                             ->where('capacity', $booking['trip_capacity'])
                             ->get();
-            $bookRoom=BookingRoom::where('book_id',$booking['id'])->first();
             for ($i = 0; $i < $room_count+$bookRoomCount; $i++) {
-                BookingRoom::create([
+                $book_room=BookingRoom::create([
                     'book_id' => $booking->id,
                     'room_id' => $rooms[$i]['id'],
                     'current_price' => $bookRoom['current_price'],
@@ -230,7 +235,6 @@ class BookRepository implements BookRepositoryInterface
                         'book_id' => $booking->id,
                         'current_price' => Place::where('id', $place)->first()->place_price,
                     ]);
-
                 }
             }
 
@@ -245,21 +249,53 @@ class BookRepository implements BookRepositoryInterface
                 'book_id' => $booking->id,
                 'plane_trip_id' => $request['plane_trip_away'],
             ]);
+            $booking->save();
+
         }catch(Exception $e){
-            //return 4;
-            return response()->json([
-                'message'=>$e->getMessage()
-            ]);
+            throw new Exception($e->getMessage());
         }
-          return Booking::with(['places:id,name,place_price,text','places.images:id,image',
-                                        'plane_trips:id,airport_source_id,airport_destination_id,current_price,available_seats,flight_date,landing_date',
-                                        'plane_trips.airport_source:id,name',
-                                        'plane_trips.airport_destination:id,name',
-                                    ])
-                                    ->AvailableRooms()
-                                    ->where('id',$booking->id)->get();
+          return $this->showStaticTrip($booking->id);
     }
 
+    public function tripCancellation($id)
+    {
+        try {
+            $trip=Booking::findOrFail($id);
+            $goingTrip=$trip->plane_trips[0]??null;
+            $returnTrip=$trip->plane_trips[1]??null;
+
+            $date=Carbon::now()->format('Y-m-d');
+            $trip_date = Carbon::createFromFormat('Y-m-d', $trip['start_date']);
+            if($date>=$trip_date){
+                return 'This trip has already started';
+            }
+            $staticBooks=BookingStaticTrip::where('static_trip_id',$trip['id'])->get();
+            // return the money to all users that booked in this trip
+            $seats=0; ## For calculating the total number of seats on this trip, including those taken by passengers.
+            foreach($staticBooks as $staticBook)
+            {
+                $seats+=$staticBook['number_of_friend'];
+                $user=User::where('id',$staticBook['user_id'])->first();
+                $userAccount=Bank::where('email',$user['email'])->first();
+                $userAccount['money']+=$staticBook['book_price'];
+                $userAccount['payments']-=$staticBook['book_price'];
+                $userAccount->save();
+            }
+            // Return the seates to the plane trips again
+            if($goingTrip){
+                $goingTrip['available_seats']+=$trip['number_of_people']+$seats;
+                $goingTrip->save();
+            }
+            if($returnTrip){
+                $returnTrip['available_seats']+=$trip['number_of_people']+$seats;
+                $returnTrip->save();
+            }
+            $trip->delete();
+            return 'Cancel successfully';
+        } catch (Exception $exception) {
+            return throw new Exception($exception->getMessage());
+        }
+    }
     public function showStaticTrip($id)
     {
         try{

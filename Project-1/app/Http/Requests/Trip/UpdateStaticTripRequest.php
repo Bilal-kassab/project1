@@ -26,7 +26,7 @@ class UpdateStaticTripRequest extends FormRequest
         return [
             'trip_name'=>'string',
             'ratio'=>'required|decimal:0,1',
-            'hotel_id'=>'required|exists:hotels,id',
+            // 'hotel_id'=>'required|exists:hotels,id',
             'add_new_people'=>'required|min:0|numeric',
             'start_date'=>"required|exists:plane_trips,flight_date|date|after_or_equal:$date",
             'end_date'=>'required|date|after_or_equal:start_date',

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\Country;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -20,17 +22,18 @@ class AdminController extends Controller
         //$this->middleware('', [''=> ['','']]);
 
     }
-    public function addAdmin(Request $request){
+    public function addAdmin(RegisterRequest $request){
 
-        $registerAdminData = $request->validate([
-            'name'=>'required|string',
-            'email'=>'required|string|email|unique:users',
-            'password'=>'required|min:8|confirmed',
-            'role_id'=>'required|numeric',
-            'image'=> 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            'position'=>'numeric|exists:countries,id',
-            'phone_number'=>'regex:/[0-9]{10}/|unique:users'
-        ]);
+        // $registerAdminData = $request->validate([
+        //     'name'=>'required|string',
+        //     'email'=>'required|string|email|unique:users',
+        //     'password'=>'required|min:8|confirmed',
+        //     'role_id'=>'required|numeric',
+        //     'image'=> 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        //     'position'=>'numeric|exists:countries,id',
+        //     'phone_number'=>'regex:/[0-9]{10}/|unique:users'
+        // ]);
+        $registerAdminData=$request->all();
         try{
             $role=Role::where('id',$request->role_id)->first();
         }catch(\Exception $exception){
@@ -77,23 +80,21 @@ class AdminController extends Controller
         ],200);
     }
 
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        $loginAdminData = $request->validate([
-            'email'=>'required|string|email',
-            'password'=>'required|min:8'
-        ]);
+        $loginAdminData =$request->all();
+
 
         $admin = User::where('email',$loginAdminData['email'])->first();
 
         if(!$admin || !Hash::check($loginAdminData['password'],$admin->password)){
             return response()->json([
-                'message' => 'Invalid Credentials'
-            ],401);
+                'message' => trans('auth.login')
+            ],422);
         }
         $token = $admin->createToken('token')->plainTextToken;
         return response()->json([
-            'message'=> 'login done',
+            'message'=> trans('auth.login'),
             'role'=>$admin->roles()->pluck('name'),
             'token' => $token,
         ],200);
@@ -105,7 +106,7 @@ class AdminController extends Controller
 
          $request->user()->tokens()->delete();
         return response()->json([
-            'message' => 'Successfully logged out'
+            'message' => trans('auth.logout')
         ],200);
     }
 
@@ -162,7 +163,7 @@ class AdminController extends Controller
         ];
 
         return response()->json([
-            'message'=> 'updated successfully',
+            'message'=> trans('auth.update-profile'),
             'data'=>$data
         ],200);
     }
@@ -211,7 +212,7 @@ class AdminController extends Controller
 
         if($admin->image==null){
             return response()->json([
-                'message'=> 'u do not has a profile image to delete'
+                'message'=> trans('auth.delete-profile-photo-does-not-exist')
             ],200);
         }
 
@@ -229,7 +230,7 @@ class AdminController extends Controller
             'image'=> $admin->image,
         ];
         return response()->json([
-            'message'=>'photo deleted successfully',
+            'message'=>trans('auth.delete-profile-photo'),
             //'data'=>$user->get(['id','name','email','image'])
             //'data'=>$data,
         ],200);
@@ -314,7 +315,7 @@ class AdminController extends Controller
         // Notification::send($user, new UserApprovedNotification());
 
         return response()->json([
-            'message'=>'Admin accepted'
+            'message'=>trans('auth.approve-admin'),
         ],200);
     }
 

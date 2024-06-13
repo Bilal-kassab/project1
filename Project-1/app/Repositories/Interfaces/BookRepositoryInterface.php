@@ -14,4 +14,6 @@ Interface BookRepositoryInterface{
     public function bookStaticTrip($request);
     public function editBook($request,$id);
     public function deleteBook($id);
+
+    public function tripCancellation($id);
 }

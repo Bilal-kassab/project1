@@ -16,7 +16,7 @@ class ApproveUser
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    {   
+    {
         $request->validate([
             'email'=>'required|string|email',
             'password'=>'required|min:8'
@@ -25,12 +25,12 @@ class ApproveUser
         $user=User::where('email',$request->email)->first();
         if(!$user || !Hash::check($request['password'],$user->password)){
             return response()->json([
-                'message' => 'Invalid Credentials'
+                'message' =>trans('auth.failed')
             ],401);
         }
         if(!$user->is_approved){
             return response()->json([
-                'message'=>'wait the accept'
+                'message'=>trans('auth.accept-admin')
             ],200);
         }
 

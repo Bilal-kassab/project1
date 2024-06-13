@@ -5,27 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Book\BookStaticTripRequest;
 use App\Http\Requests\Book\CheckStaticTripRequest;
 use App\Http\Requests\Book\EditStaticTripRequest;
-use App\Http\Requests\Trip\DynamicTripRequest;
 use App\Http\Requests\Trip\StoreStaticTripRequest;
 use App\Http\Requests\Trip\UpdateStaticTripRequest;
-use App\Models\Bank;
 use App\Models\Booking;
-use App\Models\BookingRoom;
 use App\Models\BookingStaticTrip;
-use App\Models\BookPlace;
-use App\Models\BookPlane;
-use App\Models\Place;
-use App\Models\PlaneTrip;
-use App\Models\Room;
-use App\Models\StaticTripRoom;
 use App\Repositories\Interfaces\BookRepositoryInterface;
-use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-
-use function Laravel\Prompts\select;
 
 class StaticBookController extends Controller
 {
@@ -102,11 +88,11 @@ class StaticBookController extends Controller
     public function update_Admin(UpdateStaticTripRequest $request,$id)
     {
         $data=[
-            'hotel_id'=>$request->hotel_id,
+            // 'hotel_id'=>$request->hotel_id,
             'trip_name'=>$request->trip_name,
             'price'=>$request->price,
             'number_of_people'=>$request->add_new_people,
-            'trip_capacity'=>$request->trip_capacity,
+            // 'trip_capacity'=>$request->trip_capacity,
             'start_date'=>$request->start_date,
             'end_date'=>$request->end_date,
             'trip_note'=>$request->trip_note,
@@ -114,45 +100,40 @@ class StaticBookController extends Controller
             'plane_trip'=>$request->plane_trip,
             'plane_trip_away'=>$request->plane_trip_away,
         ];
-        $booking= Booking::findOrFail($id);
-        if(auth()->id() != $booking->user_id)
-        {
+        try {
+
+            $booking= Booking::findOrFail($id);
+            if(auth()->id() != $booking->user_id)
+            {
+                return response()->json([
+                    'message'=>'You do not have the permission',
+                ],200);
+            }
+            $edit=$this->bookrepository->editAdmin($data,$id);
             return response()->json([
-                'message'=>'You do not have the permission',
+                'message'=> 'booking has been updated successfully',
+                'data'=>$edit,
+              ],200);
+        } catch (Exception $exception) {
+            return response()->json([
+                'message'=>'Update Fail',
+                // 'message'=>$exception->getMessage(),
+            ],422);
+        }
+    }
+
+    public function tripCancellation($id):JsonResponse
+    {
+        try {
+            $val=$this->bookrepository->tripCancellation($id);
+            return response()->json([
+                'message'=>$val
             ],200);
-        }
-        $edit=$this->bookrepository->editAdmin($data,$id);
-        if($edit === 1){
+        } catch (Exception $exception) {
             return response()->json([
-                'message'=>'there is not enough room in this hotel',
-            ],400);
+                'message'=>$exception->getMessage()
+            ],422);
         }
-        if($edit === 2){
-            return response()->json([
-                'message' => 'the seats of the going trip plane lower than number of person'
-            ], 400);
-        }
-        if($edit === 3){
-            return response()->json([
-                'message' => 'the seats of the return trip plane lower than number of person'
-            ], 400);
-        }
-        if($edit === 4)
-        {
-            return response()->json([
-                'message'=>'updated failed'
-            ],404);
-        }
-        if ($edit === 5)
-        {
-            return response()->json([
-                'message' => 'You should choose a period similar to the ancient period'
-            ], 400);
-        }
-        return response()->json([
-            'message'=> 'booking has been updated successfully',
-            'data'=>$edit,
-          ],200);
     }
 
     public function showStaticTrip($id)
