@@ -267,7 +267,7 @@ class BookRepository implements BookRepositoryInterface
             $date=Carbon::now()->format('Y-m-d');
             $trip_date = Carbon::createFromFormat('Y-m-d', $trip['start_date']);
             if($date>=$trip_date){
-                return 'This trip has already started';
+                return trans('trip.start-trip');
             }
             $staticBooks=BookingStaticTrip::where('static_trip_id',$trip['id'])->get();
             // return the money to all users that booked in this trip
@@ -291,7 +291,7 @@ class BookRepository implements BookRepositoryInterface
                 $returnTrip->save();
             }
             $trip->delete();
-            return 'Cancel successfully';
+            return trans('trip.cancel-successfully');
         } catch (Exception $exception) {
             return throw new Exception($exception->getMessage());
         }
@@ -383,6 +383,12 @@ class BookRepository implements BookRepositoryInterface
     {
         try{
             $static_trip=Booking::where('type','static')->findOrFail($id);
+            //days
+            $datetime1 = new DateTime($static_trip['start_date']);
+            $datetime2 = new DateTime($static_trip['end_date']);
+            $interval = $datetime1->diff($datetime2);
+            $days = $interval->format('%a');
+
             $rooms_needed=(int)($request['number_of_friend']/$static_trip['trip_capacity']);
             if($request['number_of_friend'] % $static_trip['trip_capacity'] >0) $rooms_needed++;
             $available_rooms=BookingRoom::where('book_id',$id)->where('user_id',null)->count();
@@ -405,13 +411,17 @@ class BookRepository implements BookRepositoryInterface
             $data=[
                 'trip_id'=>(int)$id,
                 'number_of_friend'=>(int)$request['number_of_friend'],
+                'room_price'=>$room['current_price']??null,
                 'rooms_needed'=>$rooms_needed,
+                'ticket_price_for_going_trip'=>$plane_trip[0]['current_price']*$request['number_of_friend']??null,
+                'ticket_price_for_return_trip'=>$plane_trip[1]['current_price']*$request['number_of_friend']??null,
+                'days'=>$days,
                 'total_price'=>$total_price,
                 'price_after_discount'=>$price_after_discount,
             ];
             return $data;
         }catch(Exception $exception){
-            return 3;
+            throw new Exception($exception->getMessage());
         }
 
     }
@@ -466,7 +476,7 @@ class BookRepository implements BookRepositoryInterface
             $date=Carbon::now()->format('Y-m-d');
             $trip_date = Carbon::createFromFormat('Y-m-d', $book['start_date']);
             if($date>=$trip_date){
-                return 6;
+                return 10;
             }
             $val=$this->checkStaticTrip($request,$static_book['static_trip_id']);
             if($val==1 || $val==2){
@@ -509,7 +519,7 @@ class BookRepository implements BookRepositoryInterface
 
             return 4;
         }catch(Exception $exception){
-            return 5;
+            throw new Exception($exception->getMessage());
         }
     }
 

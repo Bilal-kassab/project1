@@ -10,7 +10,7 @@ class PlaceCategory extends Model
     use HasFactory;
     protected $fillable = [
         'category_id',
-        'place_id'
+        'place_id',
     ] ;
     protected $hidden=[
         'pivot'

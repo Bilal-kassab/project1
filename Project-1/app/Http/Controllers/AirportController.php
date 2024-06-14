@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Airport\SearchAirportRequest;
+use App\Http\Requests\Airport\StoreAirportRequest;
+use App\Http\Requests\Airport\UpdateAirportRequest;
 use App\Models\Airport;
 use App\Models\AirportImage;
 use App\Models\Area;
@@ -31,22 +34,8 @@ class AirportController extends Controller
          ],200);
     }
 
-    public function store(Request $request):JsonResponse
+    public function store(StoreAirportRequest $request):JsonResponse
     {
-
-        $validator = Validator::make($request->all(), [
-          'name'=> 'required|string|unique:airports,name',
-          //'user_id'=>'required|numeric|exists:users,id',
-          'area_id'=> 'required|numeric|exists:areas,id',
-          'images'=> 'array',
-          'images.*' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-        ]);
-
-        if($validator->fails()){
-            return response()->json([
-                'message'=> $validator->errors()->first(),
-            ],422);
-        }
 
         $airport= Airport::create([
             'name'=> $request->name,
@@ -68,7 +57,7 @@ class AirportController extends Controller
 
 
         return response()->json([
-            'message'=> 'airport has been added successfully',
+            'message'=> trans('global.add'),
             'data'=>Airport::with('country:id,name','area:id,name','user:id,name,email,image,position')
                              ->select('id','name','user_id','area_id','country_id')
                              ->where('id',$airport->id)
@@ -76,40 +65,28 @@ class AirportController extends Controller
         ],200);
     }
 
-    public function update(Request $request, $id): JsonResponse
+    public function update(UpdateAirportRequest $request, $id): JsonResponse
     {
         try{
             $airport= Airport::findOrFail($id);
             if(auth()->id() != $airport->user_id)
             {
                 return response()->json([
-                    'message'=>'You do not have the permission'
-                ],200);
+                    'message'=>trans('global.not-permission')
+                ],403);
             }
         }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found',
+                'message'=> trans('global.notfound')
             ],404);
         }
-        $validator = Validator::make($request->all(), [
-            'name'=> 'string',
-            //'user_id'=>'required|numeric|exists:users,id',
-            'area_id'=> 'numeric|exists:areas,id'
-          ]);
-
-          if($validator->fails()){
-              return response()->json([
-                  'message'=> $validator->errors()->first(),
-              ],422);
-          }
-
           $airport->name = $request->name??$airport['name'];
           //$airport->user_id = $request->user_id;
           $airport->country_id=Area::find($request->area_id??$airport['area_id'])['country_id'];
           $airport->area_id = $request->area_id??$airport['area_id'];
           $airport->save();
           return response()->json([
-            'message'=> 'airport has been updated successfully',
+            'message'=> trans('global.update'),
             'data'=>Airport::with('country:id,name','area:id,name','user:id,name,email,image,position')
                             ->select('id','name','user_id','area_id','country_id')
                             ->where('id',$airport->id)
@@ -136,12 +113,12 @@ class AirportController extends Controller
             if(auth()->id() != $airport->user_id)
             {
                 return response()->json([
-                    'message'=>'You do not have the permission'
+                    'message'=>trans('global.not-permission')
                 ],200);
             }
          }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found'
+                'message'=> trans('global.notfound')
             ],404);
          }
 
@@ -157,7 +134,7 @@ class AirportController extends Controller
          $airport_image->save();
 
          return response()->json([
-            'message'=> 'The airport image has been updated successfully',
+            'message'=> trans('global.update'),
             'data'=>Airport::with('images:id,airport_id,image','country:id,name','area:id,name','user:id,name,email,image,position')
                              ->select('id','name','user_id','area_id','country_id')
                              ->where('id',$airport_image->airport_id)
@@ -183,7 +160,7 @@ class AirportController extends Controller
         if(auth()->id() != $airport->user_id)
         {
             return response()->json([
-                'message'=>'You do not have the permission'
+                'message'=>trans('global.not-permission')
             ],200);
         }
         foreach ($request->file('images') as $imagefile){
@@ -205,18 +182,18 @@ class AirportController extends Controller
 
     }
 
-    public function destroy(Request $request, $id): JsonResponse
+    public function destroy($id): JsonResponse
     {
         try{
             $airport= Airport::findOrFail($id);
         }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found',
+                'message'=> trans('global.notfound'),
             ],404);
         }
         $airport->delete();
         return response()->json([
-            'message'=> 'airport has been deleted successfully'
+            'message'=> trans('global.delete')
         ]);
     }
 
@@ -226,7 +203,7 @@ class AirportController extends Controller
             $airport= Airport::visible()->findOrFail($id);
         }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found',
+                'message'=> trans('global.notfound'),
             ],404);
         }
         if($request->user()->hasRole('User')) {
@@ -245,16 +222,8 @@ class AirportController extends Controller
 
     }
 
-    public function search(Request $request): JsonResponse
+    public function search(SearchAirportRequest $request): JsonResponse
     {
-        $validatedData = Validator::make($request->all(),[
-            'name' => ['required','string'],
-        ]);
-        if( $validatedData->fails() ){
-            return response()->json([
-                'message'=> $validatedData->errors()->first(),
-            ],422);
-        }
 
        if($request->user()->hasRole('User')) {
             return response()->json([
@@ -279,7 +248,7 @@ class AirportController extends Controller
 
         }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not Found',
+                'message'=> trans('global.notfound'),
             ],404);
         }
         if($request->user()->hasRole('User')) {
@@ -305,7 +274,7 @@ class AirportController extends Controller
             $area=Area::findOrFail($id);
         }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found',
+                'message'=> trans('global.notfound')
             ],404);
         }
 
@@ -333,7 +302,7 @@ class AirportController extends Controller
             $planes=Plane::where('airport_id',$airport->id)->get()->count();
         }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found',
+                'message'=> trans('global.notfound')
             ],404);
         }
 

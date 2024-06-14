@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ImageProcess;
+use App\Http\Requests\Plane\AddPlaneTripRequest;
+use App\Http\Requests\Plane\StorePlaneRequest;
+use App\Http\Requests\Plane\UpdatePlaneRequest;
 use App\Models\Airport;
 use App\Models\AirportImage;
 use App\Models\BookPlane;
@@ -40,29 +43,13 @@ class PlaneController extends Controller
             'data'=>$palnes
             ],200);
     }
-    public function store(Request $request):JsonResponse
+    public function store(StorePlaneRequest $request):JsonResponse
     {
-
-        $validator = Validator::make($request->all(), [
-            'name'=> 'required|string|unique:planes,name',
-            'airport_id'=>'required|numeric|exists:airports,id',
-            'number_of_seats'=>'required|numeric|gt:10',
-            'ticket_price'=> 'required|numeric|gt:0',
-            'images'=> 'array',
-            'images.*' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-          ]);
-
-          if($validator->fails()){
-              return response()->json([
-                  'message'=> $validator->errors()->first(),
-              ],422);
-          }
-
           $airport=Airport::where('id',$request->airport_id)->first();
 
           if(auth()->id() != $airport['user_id']){
                 return response()->json([
-                    'message'=>'You do not have the permission'
+                    'message'=>trans('global.not-permission')
                 ],200);
           }
 
@@ -110,7 +97,7 @@ class PlaneController extends Controller
         if(auth()->id() != $airport->user_id)
         {
             return response()->json([
-                'message'=>'You do not have the permission'
+                'message'=>trans('global.not-permission')
             ],403);
         }
 
@@ -122,7 +109,7 @@ class PlaneController extends Controller
         }
 
         return response()->json([
-            'mesaage'=>'images added successfully'
+            'mesaage'=>trans('global.add')
         ],200);
     }
 
@@ -145,18 +132,18 @@ class PlaneController extends Controller
         if(auth()->id() != $airport->user_id)
         {
             return response()->json([
-                'message'=>'You do not have the permission'
+                'message'=>trans('global.not-permission')
             ],200);
         }
         $plane_image->image=ImageProcess::updateImage($plane_image->image,$request->file('image'),'AirportImage');
         $plane_image->save();
 
         return response()->json([
-            'mesaage'=>'images updated successfully'
+            'mesaage'=>trans('global.update')
         ],200);
     }
 
-    public function update(Request $request,$id):JsonResponse
+    public function update(UpdatePlaneRequest $request,$id):JsonResponse
     {
         try{
             $palne= Plane::findOrFail($id);
@@ -164,27 +151,14 @@ class PlaneController extends Controller
             if(auth()->id() != $airport->user_id)
             {
                 return response()->json([
-                    'message'=>'You do not have the permission'
+                    'message'=>trans('global.not-permission')
                 ],200);
             }
         }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found',
+                'message'=> trans('global.notfound'),
             ],404);
         }
-        $validator = Validator::make($request->all(), [
-            'name'=> 'string',
-            'number_of_seats'=> 'numeric|gt:10',
-            'ticket_price'=> 'numeric|gt:0',
-            'visible'=>'boolean'
-          ]);
-
-          if($validator->fails()){
-              return response()->json([
-                  'message'=> $validator->errors()->first(),
-              ],422);
-          }
-
           $palne->name=$request->name;
           $palne->number_of_seats=$request->number_of_seats;
           $palne->ticket_price=$request->ticket_price;
@@ -192,7 +166,7 @@ class PlaneController extends Controller
           $palne->save();
 
           return response()->json([
-            'message'=> 'airport has been updated successfully',
+            'message'=> trans('global.update'),
             'data'=>Plane::with('airport:id,name','images:id,plane_id,image')
                             ->select('id','name','airport_id','number_of_seats','ticket_price','visible')
                             ->where('id',$palne->id)
@@ -200,35 +174,17 @@ class PlaneController extends Controller
           ],200);
     }
 
-    public function addTrip(Request $request):JsonResponse
+    public function addTrip(AddPlaneTripRequest $request):JsonResponse
     {
-        $date=Carbon::now()->format('Y-m-d');
-        $validator = Validator::make($request->all(), [
-            'plane_id'=> 'required|numeric|exists:planes,id',
-            'airport_source_id'=>'required|numeric|exists:airports,id',
-            'airport_destination_id'=>'required|numeric|exists:airports,id',
-            'current_price'=> 'required|numeric|gt:0',
-            'available_seats'=> 'required|numeric|gt:0',
-            'flight_date' => "required|date|after_or_equal:$date",
-            'landing_date' => 'required|date|after_or_equal:flight_date',
-          ]);
-          if($validator->fails()){
-              return response()->json([
-                  'message'=> $validator->errors()->first(),
-              ],422);
-          }
-
           $trip=$this->planetriprepository->addTrip($request->all());
-
           if($trip){
               return response()->json([
-                'message'=>'Trip added successfully',
+                'message'=>trans('global.add'),
                 'date'=>$trip,
               ]);
           }
-
           return response()->json([
-            'message'=>'Trip creation failed',
+            'message'=>trans('trip.trip-faild')
           ],400);
     }
 
@@ -268,7 +224,7 @@ class PlaneController extends Controller
         ],200);
     }
 
-    public function getAllPlaneTrip(Request $request):JsonResponse
+    public function getAllPlaneTrip():JsonResponse
     {
         $trips=PlaneTrip::getTripDetails()->with('plane:id,airport_id,name','plane.airport:id,name')->get();
         return response()->json([
@@ -291,7 +247,7 @@ class PlaneController extends Controller
             // }
         }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found',
+                'message'=> trans('global.notfound'),
             ],404);
         }
 
@@ -308,7 +264,7 @@ class PlaneController extends Controller
             $trips=Plane::with('tripss')->findOrFail($id);
         } catch (Exception $exception) {
             return response()->json([
-                'message'=>'Not Found'
+                'message'=>trans('global.notfound')
             ],404);
         }
         return response()->json([

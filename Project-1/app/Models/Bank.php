@@ -10,7 +10,9 @@ class Bank extends Model
     use HasFactory;
 
     protected $fillable=[
-        'email','money','payments'
+        'email',
+        'money',
+        'payments',
     ];
 
 

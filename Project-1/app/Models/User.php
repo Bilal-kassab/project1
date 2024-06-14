@@ -24,7 +24,7 @@ class User extends Authenticatable
         'image',
         'position',
         'is_approved',
-        'point'
+        'point',
     ];
 
     protected $hidden = [

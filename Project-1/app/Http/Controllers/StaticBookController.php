@@ -21,6 +21,7 @@ class StaticBookController extends Controller
 
     public function __construct(BookRepositoryInterface $bookrepository)
     {
+        $this->middleware('role:Admin|Super Admin', ['only'=> ['store_Admin','update_Admin','tripCancellation']]);
         $this->bookrepository = $bookrepository;
     }
     /**
@@ -62,22 +63,22 @@ class StaticBookController extends Controller
         $static_book=$this->bookrepository->store_Admin($data);
         if($static_book == 1){
             return response()->json([
-                'message'=>'there is not enough room in this hotel',
+                'message'=>trans('trip.not-enough-room'),
             ],400);
         }
         if($static_book == 2){
             return response()->json([
-                'message' => 'the seats of the going trip plane lower than number of person'
+                'message' =>trans('trip.not-enough-going-trip-plane')
             ], 400);
         }
         if($static_book == 3){
             return response()->json([
-                'message' => 'the seats of the return trip plane lower than number of person'
+                'message' =>trans('trip.not-enough-return-trip-plane')
             ], 400);
         }
         if($static_book == 4){
             return response()->json([
-                'message' => 'Failed to create a trip',
+                'message' => trans('trip.trip-faild')
             ], 400);
         }
 
@@ -106,12 +107,12 @@ class StaticBookController extends Controller
             if(auth()->id() != $booking->user_id)
             {
                 return response()->json([
-                    'message'=>'You do not have the permission',
+                    'message'=>trans('global.not-permission'),
                 ],200);
             }
             $edit=$this->bookrepository->editAdmin($data,$id);
             return response()->json([
-                'message'=> 'booking has been updated successfully',
+                'message'=>trans('global.update'),
                 'data'=>$edit,
               ],200);
         } catch (Exception $exception) {
@@ -142,7 +143,7 @@ class StaticBookController extends Controller
         if($trip===1)
         {
             return response()->json([
-                'message'=>'Not Found'
+                'message'=>trans('global.notfound')
             ],404);
         }
         return response()->json(['data'=>$trip],200);
@@ -155,12 +156,12 @@ class StaticBookController extends Controller
             $val=$this->bookrepository->checkStaticTrip($request->all(),$id);
             if($val==1){
                 return response()->json([
-                    'message'=>'there are not enough members',
+                    'message'=>trans('trip.not-enough-member'),
                 ],400);
             }
             if($val==2){
                 return response()->json([
-                    'message'=>'there are not enough rooms',
+                    'message'=>trans('trip.not-enough-room'),
                 ],400);
             }
             if($val==3){
@@ -184,11 +185,11 @@ class StaticBookController extends Controller
         if($val==1)
         {
             return response()->json([
-                'message'=>'You dont have the money for this trip',
+                'message'=>trans('trip.not-have-the-money'),
             ],400);
         }
         return response()->json([
-            'message'=>'Enjoy your trip'
+            'message'=>trans('trip.enjoy-trip')
         ],200);
     }
 
@@ -215,17 +216,17 @@ class StaticBookController extends Controller
            $val=$this->bookrepository->editBook($data,$id);
            if($val==1){
                 return response()->json([
-                    'message'=>'there are not enough members',
+                    'message'=>trans('trip.not-enough-member'),
                 ],400);
             }
             if($val==2){
                 return response()->json([
-                    'message'=>'there are not enough rooms',
+                    'message'=>trans('trip.not-enough-room'),
                 ],400);
             }
             if($val==3){
                 return response()->json([
-                    'message'=>'You dont have the money for this trip',
+                    'message'=>trans('trip.not-have-the-money'),
                 ],400);
             }
             if($val==5){
@@ -235,12 +236,12 @@ class StaticBookController extends Controller
             }
             if($val==10){
                 return response()->json([
-                    'message'=>'Fail because of invaild Date'
+                    'message'=>trans('trip.invaild-date')
                 ]);
             }
 
             return response()->json([
-                'message'=>'Changes saved successfully'
+                'message'=>trans('global.update')
             ],200);
         }catch(Exception $exception){
             return response()->json([
@@ -254,17 +255,18 @@ class StaticBookController extends Controller
         $val=$this->bookrepository->deleteBook($id);
         if($val==1){
             return response()->json([
-                'message'=>'Fail because of invaild Date'
+                'message'=>trans('trip.invaild-date')
             ],400);
         }
 
         if($val==3){
             return response()->json([
-                'message'=>'Not Found',
+                'message'=>trans('global.notfound'),
             ],404);
         }
         return response()->json([
-            'message'=>'Deleted Done and your money has returned to your Account',
+            'message'=>trans('trip.cancel-trip'),
         ],400);
+
     }
 }

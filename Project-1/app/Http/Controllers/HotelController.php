@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Hotel\StoreHotelRequest;
+use App\Http\Requests\Hotel\UpdateHotelRequest;
 use App\Models\Area;
 use App\Models\Country;
 use App\Models\Hotel;
@@ -25,10 +27,10 @@ class HotelController extends Controller
     {
 
         return response()->json(['data'=>Hotel::with(
-            'images:id,hotel_id,image',
-            'area:id,name,country_id',
-            'country:id,name',
-            'user:id,name,position,email')->get()
+                                                    'images:id,hotel_id,image',
+                                                    'area:id,name,country_id',
+                                                    'country:id,name',
+                                                    'user:id,name,position,email')->get()
         ],200);
     }
 
@@ -38,33 +40,25 @@ class HotelController extends Controller
             $area=Area::findOrFail($id);
         }catch(\Exception $e){
             return response()->json([
-                'message'=>'Not Found'
+                'message'=>trans('global.notfound')
             ]);
         }
         if($request->user()->hasRole('User')){
             return response()->json([
                 'data'=>Hotel::with(['images'])
-                ->where('area_id',$id)
-                ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
-                ->get(),
+                            ->where('area_id',$id)
+                            ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
+                            ->get(),
             ],200);
         }
         else{
             return response()->json([
                 'data'=>Hotel::with(['images','user:id,name,position,email,phone_number,image'])
-                ->where('area_id',$id)
-                ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
-                ->get(),
+                            ->where('area_id',$id)
+                            ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
+                            ->get(),
             ],200);
         }
-        // return response()->json([
-        //     'data'=>Hotel::with(['images'])
-        //                   ->where('area_id',$id)
-        //                   ->select('id','name','stars','rooms','area_id','country_id')
-        //                   ->get(),
-        // ]);
-
-
     }
 
     public function get_hotel_in_country(Request $request,$id)
@@ -73,16 +67,16 @@ class HotelController extends Controller
             $country=Country::findOrFail($id);
         }catch(\Exception $e){
             return response()->json([
-                'message'=>'Not Found'
+                'message'=>trans('global.notfound')
             ]);
         }
 
         if($request->user()->hasRole('User')){
             return response()->json([
                 'data'=>Hotel::with(['images','area'])
-                ->where('country_id',$id)
-                ->select('id','name','stars','number_rooms','area_id','country_id')
-                ->get(),
+                            ->where('country_id',$id)
+                            ->select('id','name','stars','number_rooms','area_id','country_id')
+                            ->get(),
             ],200);
         }
         else{
@@ -96,23 +90,8 @@ class HotelController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreHotelRequest $request)
     {
-        $validatedData =Validator::make($request->all(),[
-             'name'=>'required|string|unique:hotels',
-            // 'user_id'=>'required|numeric|exists:users,id',
-             'area_id'=>'required|numeric|exists:areas,id',
-             'number_rooms'=>'required|numeric|max:1000|min:10',
-            // 'stars'=>'required|numeric|min:0|max:5',
-             'images'=> 'array',
-             'images.*' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-        ]);
-        if( $validatedData->fails() ){
-            return response()->json([
-                'message'=> $validatedData->errors()->first(),
-            ],422);
-        }
-
         $area=Area::find($request->area_id);
         $hotel= Hotel::Create([
             'name'=>$request->name,
@@ -134,7 +113,7 @@ class HotelController extends Controller
             }
         }
         return response()->json([
-            'message'=>'succesfully',
+            'message'=>trans('global.add'),
             'data'=>Hotel::with(['images:id,hotel_id,image','area:id,name,country_id','country:id,name','user:id,name,position,phone_number,email'])
                     ->where('id', $hotel->id)->get()
             ],200);
@@ -150,7 +129,7 @@ class HotelController extends Controller
                                 ->findOrFail($id);
              }catch(\Exception $e){
                 return response()->json([
-                    'message'=> 'Not found'
+                    'message'=> trans('global.notfound')
                 ],404);
              }
 
@@ -159,26 +138,11 @@ class HotelController extends Controller
             ],200);
      }
 
-    public function update(Request $request, $id)
+    public function update(UpdateHotelRequest $request, $id)
     {
-        $validator = Validator::make($request->all(), [
-            'name'=>'required|string|unique:hotels',
-            'user_id'=>'required|numeric|exists:users,id',
-            'area_id'=>'required|numeric|exists:areas,id',
-            'number_rooms'=>'required|numeric|max:1000|min:10',
-           // 'stars'=>'required|numeric|min:0|max:5',
-            // 'visible'=>'required|numeric|boolean',
-        ]);
-
-        if( $validator->fails() ){
-            return response()->json([
-                'message'=> $validator->errors()->first(),
-            ],422);
-        }
-
         if(auth()->user()->id !=Hotel::where('id',$id)->first()->user_id ){
          return response()->json([
-             'message'=>'you dont have this hotel'
+             'message'=>trans('global.not-have-the-hotel')
          ]);
         }
         try{
@@ -186,7 +150,7 @@ class HotelController extends Controller
 
          }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found'
+                'message'=>trans('global.notfound')
             ],404);
          }
          $hotel->name = $request->name;
@@ -200,7 +164,7 @@ class HotelController extends Controller
 
 
         return response()->json([
-            'message'=>'updated successfully',
+            'message'=>trans('global.update'),
             'data'=>Hotel::with(['images','country:id,name','area:id,name'])
                           ->where('id',$id)
                           ->select('id','name','stars','number_rooms','visible','area_id','user_id','country_id')
@@ -225,7 +189,7 @@ class HotelController extends Controller
         if(auth()->user()->id != Hotel::where('id',$hotel->hotel_id)->first()->user_id)
         {
             return response()->json([
-                'message'=>'you dont have this hotel'
+                'message'=>trans('global.not-have-the-hotel')
             ]);
            }
 
@@ -233,7 +197,7 @@ class HotelController extends Controller
             $hotel_image = HotelImage::findOrFail($request->image_id);
          }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found'
+                'message'=> trans('global.notfound')
             ],404);
          }
 
@@ -258,7 +222,7 @@ class HotelController extends Controller
             'updated_at'=>$hotel_image->updated_at
         ];
         return response()->json([
-            'message'=>'photo updated successfully',
+            'message'=>trans('global.update'),
             'data'=>Hotel::with(['images','country:id,name','area:id,name'])
                           ->where('id',$hotel_image->hotel_id)
                           ->select('id','name','stars','number_rooms','area_id','user_id','country_id')
@@ -328,18 +292,18 @@ class HotelController extends Controller
     {
         if(auth()->user()->id !=Hotel::where('id',$id)->first()->user_id ){
             return response()->json([
-                'message'=>'you dont have this hotel'
+                'message'=>trans('global.not-have-the-hotel')
             ]);
            }
         try{
             Hotel::findOrFail($id)->delete();
             }catch(\Exception $exception){
                 return response()->json([
-                    'message'=>'Not Found'
+                    'message'=>trans('global.notfound')
                 ],404);
             }
             return response()->json([
-                'message'=>'delete done!!'
+                'message'=>trans('global.delete')
             ],200);
     }
 

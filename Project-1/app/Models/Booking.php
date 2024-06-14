@@ -25,7 +25,7 @@ class Booking extends Model
         'end_date',
         'stars',
         'trip_note',
-        'type'
+        'type',
     ];
     protected $hidden = [
         'created_at',

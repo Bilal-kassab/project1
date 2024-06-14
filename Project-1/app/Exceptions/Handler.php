@@ -28,10 +28,10 @@ class Handler extends ExceptionHandler
         });
         $this->renderable(function (\Spatie\Permission\Exceptions\UnauthorizedException $e, $request) {
             return response()->json([
-                'message' => 'You do not have the required authorization.',
+                'message' =>trans('global.not-authorization')
                //'responseStatus'  => 403,
             ],403);
         });
-    
+
     }
 }

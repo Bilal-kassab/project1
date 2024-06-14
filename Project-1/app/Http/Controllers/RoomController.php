@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Room\IndexRoomRequest;
+use App\Http\Requests\Room\StoreRoomRequest;
+use App\Http\Requests\Room\UpdateRoomRequest;
 use App\Models\BookingRoom;
 use App\Models\Hotel;
 use App\Models\Room;
@@ -15,20 +18,9 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 class RoomController extends Controller
 {
 
-    public function index(Request $request,$id)
+    public function index(IndexRoomRequest $request,$id)
     {
-             $date=Carbon::now()->format('Y-m-d');
-        $validatedData =Validator::make($request->all(),[
-            //'hotel_id'=>'required|numeric|exists:hotels,id',
-            //'capacity'=>'required|numeric',
-            'start_date'=>"required|date|after_or_equal:$date",
-            'end_date'=>'required|date|after_or_equal:start_date',
-       ]);
-       if( $validatedData->fails() ){
-           return response()->json([
-               'message'=> $validatedData->errors()->first(),
-           ],422);
-       }
+
        $start=$request->start_date;
        $end=$request->end_date;
         try{
@@ -136,25 +128,14 @@ class RoomController extends Controller
                 'data'=>Hotel::with('rooms')->where('user_id',auth()->user()->id)->get()
             ],200);
     }
-    public function store(Request $request)
+    public function store(StoreRoomRequest $request)
     {
         try{
-        $validatedData =Validator::make($request->all(),[
-            'hotel_id'=>'required|numeric|exists:hotels,id',
-            'capacity'=>'required|numeric',
-            'price'=>'required|numeric',
-            'count'=>'required|min:1|numeric',
-       ]);
-       if( $validatedData->fails() ){
-           return response()->json([
-               'message'=> $validatedData->errors()->first(),
-           ],422);
-       }
 
        $my_hotel=Hotel::where('id',$request->hotel_id)->first();
        if(auth()->user()->id != $my_hotel->user_id){
         return response()->json([
-            'message'=>'you dont have this hotel'
+            'message'=>trans('global.not-have-the-hotel')
         ]);
        }
 
@@ -175,7 +156,7 @@ class RoomController extends Controller
         ],404);
     }
         return response()->json([
-            'message'=>'added done',
+            'message'=>trans('global.add'),
         ],200);
     }
     public function show($id)
@@ -186,7 +167,7 @@ class RoomController extends Controller
             ->select('id','capacity','price','hotel_id')->findOrFail($id);
          }catch(Exception $e){
             return response()->json([
-                'message'=> 'Not found'
+                'message'=> trans('global.notfound')
             ],404);
          }
 
@@ -196,28 +177,13 @@ class RoomController extends Controller
 
     }
 
-    public function update(Request $request)
+    public function update(UpdateRoomRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'hotel_id'=>'required|numeric|exists:hotels,id',
-            'capacity'=>[
-                'required',Rule::exists('rooms')->where(function ($query) {
-                       return $query->where('hotel_id', request()->get('hotel_id'));
-                    }),],
-
-            'price'=>'required|numeric'
-        ]);
-
-        if( $validator->fails() ){
-            return response()->json([
-                'message'=> $validator->errors()->first(),
-            ],422);
-        }
 
         $my_hotel=Hotel::where('id',$request->hotel_id)->first();
         if(auth()->user()->id != $my_hotel->user_id){
          return response()->json([
-             'message'=>'you dont have this hotel'
+             'message'=>trans('global.not-have-the-hotel')
          ]);
         }
 
@@ -236,7 +202,7 @@ class RoomController extends Controller
             $r->save();
          }
         return response()->json([
-            'message'=>'updated successfully',
+            'message'=>trans('global.update'),
         ],200);
 
     }
@@ -244,18 +210,18 @@ class RoomController extends Controller
     {
         if(auth()->user()->id != Hotel::where('id',Room::where('id',$id)->first()->hotel_id)->first()->user_id ){
          return response()->json([
-             'message'=>'you dont have this room'
+             'message'=>trans('global.not-have-the-hotel')
          ]);
         }
         try{
             Room::findOrFail($id)->delete();
             }catch(Exception $exception){
                 return response()->json([
-                    'message'=>'Not Found'
+                    'message'=>trans('global.notfound')
                 ],404);
             }
             return response()->json([
-                'message'=>'delete done!!'
+                'message'=>trans('global.delete')
             ],200);
     }
     public function change_status_room(Request $request)

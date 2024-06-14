@@ -18,7 +18,7 @@ class Place extends Model
     'text',
     'area_id',
     'category_id',
-    'visible'
+    'visible',
     ];
 
     protected $hidden = [
@@ -26,7 +26,7 @@ class Place extends Model
         'updated_at',
         'pivot',
     ];
-    
+
     public function categories(): BelongsToMany
     {
         return $this->BelongsToMany(Category::class,'place_categories');

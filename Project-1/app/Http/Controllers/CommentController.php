@@ -34,7 +34,7 @@ class CommentController extends Controller
         if($comments===1)
         {
             return response()->json([
-                'message'=>'not found'
+                'message'=>trans('global.notfound')
             ],404);
         }
 

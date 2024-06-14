@@ -11,7 +11,7 @@ class AirportImage extends Model
     use HasFactory;
     protected $fillable = [
         'plane_id',
-        'image'
+        'image',
     ];
 
     protected $hidden = [

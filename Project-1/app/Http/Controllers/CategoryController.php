@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Category\SearchCategoryRequest;
+use App\Http\Requests\Category\StoreCategoryRequest;
 use App\Models\Category;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
@@ -25,24 +27,17 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {   
-        $validatedData = FacadesValidator::make($request->all(),[
-            'name' => ['required', 'unique:categories','string']
-        ]);
-        if( $validatedData->fails() ){
-            return response()->json([
-                'message'=> $validatedData->errors()->first(),
-            ],422);
-        }
+    public function store(StoreCategoryRequest $request)
+    {
+
         $category= Category::Create([
             'name'=>$request->name,
         ]);
         return response()->json([
-            'message'=>"succesfully",
+            'message'=>trans('global.add'),
             'data'=>$category
             ],200);
-        
+
     }
 
     /**
@@ -54,41 +49,33 @@ class CategoryController extends Controller
         $category=Category::findOrFail($id);
         }catch(\Exception $exception){
             return response()->json([
-                'message'=>'Not Found'
+                'message'=>trans('global.notfound')
             ],404);
         }
         return response()->json([
           'data'=>$category
-        ],200);   
+        ],200);
     }
 
-  
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update($id,Request $request)
+    public function update($id,SearchCategoryRequest $request)
     {
         try{
         $country=Category::findOrFail($id);
-    }catch(\Exception $exception){
-        return response()->json([
-            'message'=>'Not Found'
-        ],404);
-    }
-    $validatedData = FacadesValidator::make($request->all(),[
-        'name' => ['required', 'unique:categories','string']
-    ]);
-    if( $validatedData->fails() ){
-        return response()->json([
-            'message'=> $validatedData->errors()->first(),
-        ],422);
-    }
+        }catch(\Exception $exception){
+            return response()->json([
+                'message'=>trans('global.notfound')
+            ],404);
+        }
         $country->name=$request->name;
         $country->save();
-    
+
         return response()->json([
-            'message'=>'update succesfully',
+            'message'=>trans('global.update'),
             'data'=>$country
         ],200);
     }
@@ -102,27 +89,17 @@ class CategoryController extends Controller
         Category::findOrFail($id)->delete();
         }catch(\Exception $e){
             return response()->json([
-                'message'=>'Not Found'
+                'message'=>trans('global.notfound')
             ],404);
         }
         return response()->json([
-            'message'=>'delete done!!'
+            'message'=>trans('global.delete')
         ],200);
     }
 
-    public function search(Request $request)
+    public function search(SearchCategoryRequest $request)
     {
-        
-        $validatedData = FacadesValidator::make($request->all(),[
-            'name' => ['required'],
-        ]);
-        if( $validatedData->fails() ){
-            return response()->json([
-                'message'=> $validatedData->errors()->first(),
-            ],422);
-        }
         $category=Category::where('name','like','%'.$request->name.'%')->get();
-
         return response()->json([
             'data'=>$category
         ],200);

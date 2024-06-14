@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Place\StorePlaceRequest;
 use App\Models\Area;
 use App\Models\Category;
 use App\Models\Country;
@@ -29,25 +30,8 @@ class PlaceController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(StorePlaceRequest $request)
     {
-
-        $validator = Validator::make($request->all(), [
-            'name'=>'required|string|unique:places',
-            'area_id'=>'required|numeric|exists:areas,id',
-            'category_ids'=> 'present|array',
-            'category_ids.*'=> 'required|numeric|exists:categories,id',
-            'place_price'=> 'required|numeric|max:10000',
-            'text'=> 'string|max:1000',
-            'images'=> 'array',
-            'images.*' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-        ]);
-
-        if( $validator->fails() ){
-            return response()->json([
-                'message'=> $validator->errors()->first(),
-            ],422);
-        }
         $place = Place::create([
             'name'=> $request->name,
             'text'=> $request->text,
@@ -86,27 +70,13 @@ class PlaceController extends Controller
 
     public function updatePlace(Request $request,$id)
     {
-        $validator = Validator::make($request->all(), [
-            'name'=>'string|unique:places',
-            'area_id'=>'numeric|exists:areas,id',
-            'category_ids'=> 'array',
-            'category_ids.*'=> 'numeric|exists:categories,id',
-            'place_price'=> 'numeric|max:10000',
-            'text'=> 'string|max:1000',
-        ]);
 
-        if( $validator->fails() ){
-            return response()->json([
-                'message'=> $validator->errors()->first(),
-            ],422);
-        }
-
-        try{
+       try{
             $place = Place::findOrFail($id);
 
          }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found'
+                'message'=> trans('global.notfound')
             ],404);
          }
          $place->name = $request->name??$place['name'];
@@ -135,7 +105,7 @@ class PlaceController extends Controller
            }
         }
         return response()->json([
-            'message'=>'updated successfully',
+            'message'=>trans('global.update'),
             'data'=>Place::with(['images','categories:id,name','area:id,name,country_id','area.country:id,name'])
                           ->where('id',$id)
                           ->select('id','name','place_price','text','area_id','visible')
@@ -219,7 +189,7 @@ class PlaceController extends Controller
             $place_image = PlaceImage::findOrFail($request->image_id);
          }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found'
+                'message'=> trans('global.notfound')
             ],404);
          }
         if(File::exists($place_image->image))
@@ -241,7 +211,7 @@ class PlaceController extends Controller
             'updated_at'=>$place_image->updated_at
         ];
         return response()->json([
-            'message'=>'photo updated successfully',
+            'message'=>trans('global.update'),
             'data'=>Place::with(['images','categories:id,name','area:id,name,country_id','area.country:id,name'])
                           ->where('id',$place_image->place_id)
                           ->select('id','name','place_price','text','area_id','visible')
@@ -275,7 +245,7 @@ class PlaceController extends Controller
         }
 
         return response()->json([
-            "message"=> "Image Added successfully",
+            "message"=> trans('global.add'),
             'data'=>Place::with(['images','categories:id,name','area:id,name,country_id','area.country:id,name'])
                           ->where('id',$request->place_id)
                           ->select('id','name','place_price','text','area_id','visible')
@@ -308,7 +278,7 @@ class PlaceController extends Controller
             $places=Area::findOrFail($id);
         }catch(\Exception $e){
             return response()->json([
-                'message'=> 'Not found'
+                'message'=> trans('global.notfound')
             ],404);
         }
         $places=Area::whereHas('places')
@@ -328,7 +298,7 @@ class PlaceController extends Controller
             $places=Country::findOrFail($id);
         }catch(\Exception $e){
             return response()->json([
-                'message'=>'Not found',
+                'message'=>trans('global.notfound'),
             ],404);
         }
         $places=Country::whereHas('area_places')->with(['area_places.places.images','area_places.places:id,name,place_price,text,visible,area_id','area_places.places.categories:id,name'])
@@ -349,7 +319,7 @@ class PlaceController extends Controller
                                    ->get();
         }catch(\Exception $e){
             return response()->json([
-                'message'=> $e->getMessage(),
+                'message'=> trans('global.notfound')
             ]);
         }
         return response()->json([
@@ -362,7 +332,7 @@ class PlaceController extends Controller
 
         if(auth()->user()->position==null){
             return response()->json([
-                'message'=> 'Update your position'
+                'message'=>trans('global.update-position')
             ]);
         }
         try{
@@ -385,16 +355,8 @@ class PlaceController extends Controller
         ],200);
     }
 
-    public function search(Request $request){
-
-        $validatedData = Validator::make($request->all(),[
-            'name' => ['required','string'],
-        ]);
-        if( $validatedData->fails() ){
-            return response()->json([
-                'message'=> $validatedData->errors()->first(),
-            ],422);
-        }
+    public function search(Request $request)
+    {
         $place=Place::visible()->with(['images','categories:id,name','area:id,country_id,name','area.country:id,name'])
                      ->select('id','name','place_price','text','area_id','visible')
                      ->where('name','like','%'.$request->name.'%')->get();

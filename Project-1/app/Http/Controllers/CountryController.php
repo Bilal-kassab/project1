@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Country\SearchCountryRequest;
+use App\Http\Requests\Country\StoreCountryRequest;
+use App\Http\Requests\Country\UpdateCountryRequest;
 use App\Models\Country;
 use Carbon\Exceptions\Exception;
 use GuzzleHttp\Promise\Create;
@@ -27,32 +30,17 @@ class CountryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCountryRequest $request)
     {
 
-        
-        $validatedData = Validator::make($request->all(),[
-            'name' => ['required', 'unique:countries', 'string'],
-        ]);
-        if( $validatedData->fails() ){
-            return response()->json([
-                'message'=> $validatedData->errors()->first(),
-            ],422);
-        }
         $country= Country::Create([
             'name'=>$request->name,
         ]);
         return response()->json([
-            'message'=>'succesfully',
+            'message'=>trans('county.add-country'),
             'data'=>$country
             ],200);
-    
-        /*
-        $country = new country();
-        $country->name = $request->name;
-        $country->save();
-        */
-   
+
     }
     /**
      * Display the specified resource.
@@ -63,40 +51,32 @@ class CountryController extends Controller
       $country=Country::findOrFail($id);
         }catch(\Exception $exception){
             return response()->json([
-                'message'=>'Not Found'
+                'message'=>trans('global.notfound')
             ],404);
         }
-       
+
       return response()->json([
         'data'=>$country
       ],200);
     }
 
-   
+
     /**
      * Update the specified resource in storage.
      */
-    public function update($id,Request $request)
+    public function update($id,UpdateCountryRequest $request)
     {
         try{
         $country=Country::findOrFail($id);
         }catch(\Exception $exception){
             return response()->json([
-                'message'=>'Not Found'
+                'message'=>trans('global.notfound')
             ],404);
-        }
-        $validatedData = validator::make($request->all(),[
-            'name' => ['required', 'unique:countries', 'string']
-        ]);
-        if( $validatedData->fails() ){
-            return response()->json([
-                'message'=> $validatedData->errors()->first(),
-            ],422);
         }
         $country->name=$request->name;
         $country->save();
         return response()->json([
-            'message'=>'update succesfully',
+            'message'=>trans('county.update-country'),
             'data'=>$country
         ],200);
     }
@@ -110,25 +90,17 @@ class CountryController extends Controller
             Country::findOrFail($id)->delete();
         }catch(\Exception $exception){
             return response()->json([
-                'message'=>'Not Found'
+                'message'=>trans('global.notfound')
             ],404);
         }
-        
+
         return response()->json([
-            'message'=>'delete done!!'
+            'message'=>trans('county.delete-country')
         ],200);
     }
 
-    public function search(Request $request){
-        
-        $validatedData = Validator::make($request->all(),[
-            'name' => ['required','string'],
-        ]);
-        if( $validatedData->fails() ){
-            return response()->json([
-                'message'=> $validatedData->errors()->first(),
-            ],422);
-        }
+    public function search(SearchCountryRequest $request){
+
         $country=Country::where('name','like','%'.$request->name.'%')->get();
 
         return response()->json([
