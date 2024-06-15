@@ -22,14 +22,14 @@ return new class extends Migration
             $table->unsignedBigInteger('destination_trip_id')->nullable();
             $table->foreign('destination_trip_id')->references('id')->on('countries')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->string('trip_name');
+            $table->string('trip_name')->nullable();
             $table->decimal('price')->default(0);
             $table->integer('number_of_people')->default(1);
             $table->integer('trip_capacity')->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->decimal('stars')->default(0);
-            $table->string('trip_note');
+            $table->string('trip_note')->nullable();
             $table->enum('type',['static','dynamic','hotel','plane']);
             $table->timestamps();
         });

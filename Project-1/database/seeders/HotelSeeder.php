@@ -47,6 +47,28 @@ class HotelSeeder extends Seeder
             ]);
         }
 
+        for($i=0;$i<10;$i++){
+            Room::create([
+                'hotel_id'=>2,
+                'capacity'=>2,
+                'price'=>20
+            ]);
+        }
+        for($i=0;$i<10;$i++){
+            Room::create([
+                'hotel_id'=>2,
+                'capacity'=>4,
+                'price'=>28
+            ]);
+        }
+        for($i=0;$i<10;$i++){
+            Room::create([
+                'hotel_id'=>2,
+                'capacity'=>6,
+                'price'=>45
+            ]);
+        }
+
 
 
         $hotels=['Paris_1_Hotel','Paris_2_Hotel'];
@@ -77,6 +99,28 @@ class HotelSeeder extends Seeder
         for($i=0;$i<10;$i++){
             Room::create([
                 'hotel_id'=>3,
+                'capacity'=>6,
+                'price'=>40
+            ]);
+        }
+        
+        for($i=0;$i<10;$i++){
+            Room::create([
+                'hotel_id'=>4,
+                'capacity'=>2,
+                'price'=>20
+            ]);
+        }
+        for($i=0;$i<10;$i++){
+            Room::create([
+                'hotel_id'=>4,
+                'capacity'=>4,
+                'price'=>30
+            ]);
+        }
+        for($i=0;$i<10;$i++){
+            Room::create([
+                'hotel_id'=>4,
                 'capacity'=>6,
                 'price'=>40
             ]);

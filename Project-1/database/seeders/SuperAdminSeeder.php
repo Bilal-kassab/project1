@@ -24,7 +24,9 @@ class SuperAdminSeeder extends Seeder
         ]);
         $superAdmin->assignRole('Super Admin');
         Bank::create([
-            'email'=>$superAdmin->email
+            'email'=>$superAdmin->email,
+            'money'=>50000,
+            'payments'=>0,
         ]);
         // Creating Admin
         $admin = User::create([
@@ -58,5 +60,10 @@ class SuperAdminSeeder extends Seeder
             'is_approved'=>true
         ]);
         $user->assignRole('User');
+        Bank::create([
+            'email'=>$user->email,
+            'money'=>20000,
+            'payments'=>0,
+        ]);
     }
 }
