@@ -130,8 +130,7 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
             Route::post('edit-static-trip-book/{id}','editBook');
             Route::post('book-static-trip','bookStaticTrip');
             Route::delete('delete-static-trip-book/{id}','deleteBook');
-            Route::delete('trip-cancellation/{id}','tripCancellation');
-            Route::get('show-all-my-staic-trips','showAllMyStaicTrips');
+            Route::get('show-all-my-staic-trip-books','showAllMyStaicTrips');
             Route::get('all-static-trip','index');
             Route::get('show-static-trip/{id}','showStaticTrip');
         });
@@ -282,7 +281,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::post('book-static-trip','bookStaticTrip');
                 Route::delete('delete-static-trip-book/{id}','deleteBook');
                 Route::delete('trip-cancellation/{id}','tripCancellation');
-                Route::get('show-all-my-staic-trips','showAllMyStaicTrips');
+                Route::get('show-all-my-staic-trip-books','showAllMyStaicTrips');
                 Route::get('all-static-trip','index');
                 Route::get('show-static-trip/{id}','showStaticTrip');
             });

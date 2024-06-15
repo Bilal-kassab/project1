@@ -102,7 +102,6 @@ class StaticBookController extends Controller
             'plane_trip_away'=>$request->plane_trip_away,
         ];
         try {
-
             $booking= Booking::findOrFail($id);
             if(auth()->id() != $booking->user_id)
             {
@@ -111,14 +110,41 @@ class StaticBookController extends Controller
                 ],200);
             }
             $edit=$this->bookrepository->editAdmin($data,$id);
+            if($edit === 2){
+                return response()->json([
+                    'message' => trans('trip.not-enough-going-trip-plane')
+                ], 400);
+            }
+            if($edit === 6){
+                return response()->json([
+                    'message' => trans('trip.not-enough-room')
+                ], 400);
+            }
+            if($edit === 3){
+                return response()->json([
+                    'message' => trans('trip.not-enough-return-trip-plane')
+                ], 400);
+            }
+            if($edit === 4)
+            {
+                return response()->json([
+                    'message'=>trans('trip.start-trip')
+                ],404);
+            }
+            if ($edit === 5)
+            {
+                return response()->json([
+                    'message' => trans('trip.invaild-date')
+                ], 400);
+            }
             return response()->json([
                 'message'=>trans('global.update'),
                 'data'=>$edit,
               ],200);
         } catch (Exception $exception) {
             return response()->json([
-                'message'=>'Update Fail',
-                // 'message'=>$exception->getMessage(),
+                // 'message'=>'Update Fail',
+                'message'=>$exception->getMessage(),
             ],422);
         }
     }
@@ -181,7 +207,8 @@ class StaticBookController extends Controller
 
     public function bookStaticTrip(BookStaticTripRequest $request):JsonResponse
     {
-        $val=$this->bookrepository->bookStaticTrip($request->all());
+        try{
+            $val=$this->bookrepository->bookStaticTrip($request->all());
         if($val==1)
         {
             return response()->json([
@@ -191,6 +218,12 @@ class StaticBookController extends Controller
         return response()->json([
             'message'=>trans('trip.enjoy-trip')
         ],200);
+        }catch(Exception $exception){
+            return response()->json([
+                'message'=>$exception->getMessage()
+            ],400);
+        }
+
     }
 
     public function showAllMyStaicTrips()
@@ -246,7 +279,7 @@ class StaticBookController extends Controller
         }catch(Exception $exception){
             return response()->json([
                 'message'=>$exception->getMessage()
-            ]);
+            ],400);
         }
     }
 

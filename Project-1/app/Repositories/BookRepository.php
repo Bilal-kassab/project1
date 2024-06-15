@@ -138,7 +138,7 @@ class BookRepository implements BookRepositoryInterface
             $date=Carbon::now()->format('Y-m-d');
             $trip_date = Carbon::createFromFormat('Y-m-d', $booking['start_date']);
             if($date>=$trip_date){
-                return 'This trip has already started';
+                return 4;
             }
               // the old period
             $datetime1 = new DateTime($booking['start_date']);
@@ -152,7 +152,8 @@ class BookRepository implements BookRepositoryInterface
             $new_period = $interval->format('%a');
             //check if the new period a similar the ancient period
             if($old_period != $new_period){
-                return 'You should choose a period similar to the ancient period';
+                // return 'You should choose a period similar to the ancient period';
+                return 5;
             }
             // $trip_price=0;
             // to check if there are an enough rooms in this hotel
@@ -172,18 +173,18 @@ class BookRepository implements BookRepositoryInterface
                                 ->where('capacity', $booking['trip_capacity'])
                                 ->count();
             if ($rooms < $room_count+$bookRoomCount) {
-                return 'there is not enough room in this hotel';
+                return 6;
             }
             // show if there are available_seats to book in going trip
             $plane_trip = PlaneTrip::where('id', $request['plane_trip'])->first();
             if ($plane_trip['available_seats'] < $request['number_of_people']+$numberOfOldSeat) {
-                 return 'the seats of the going trip plane lower than number of person';
+                 return 2;
             }
             // show if there are available_seats to book in return trip
             $plane_trip_away = PlaneTrip::where('id', $request['plane_trip_away'])->first();
             if ($plane_trip_away['available_seats'] < $request['number_of_people']+$numberOfOldSeat)###
             {
-                return 'the seats of the return trip plane lower than number of person';
+                return 3;
             }
 
             $bookRoom=BookingRoom::where('book_id',$booking['id'])->first();
@@ -400,22 +401,27 @@ class BookRepository implements BookRepositoryInterface
             if($available_rooms < $rooms_needed){
                 return 2;
             }
-            $total_price=0;
-            $total_price+=($static_trip['price']-$room['current_price'])*$request['number_of_friend'];
-            $total_price+=$rooms_needed*$room['current_price'];
+            $goingPlaneTrip=$plane_trip[0]['current_price']*$request['number_of_friend']??null;
+            $returnPlaneTrip=$plane_trip[1]['current_price']*$request['number_of_friend']??null;
+            $total_price=0.0;
+            $total_price+=($static_trip['price']-($room['current_price']*$days))*$request['number_of_friend'];
+            $placePrice=$total_price-$goingPlaneTrip-$returnPlaneTrip;
+            $total_price+=$rooms_needed*$room['current_price']*$days;
             $price_after_discount=null;
             if(auth()->user()->point >= 50)#################
             {
                 $price_after_discount=$total_price-($total_price*0.5);
             }
+
             $data=[
                 'trip_id'=>(int)$id,
                 'number_of_friend'=>(int)$request['number_of_friend'],
-                'room_price'=>$room['current_price']??null,
                 'rooms_needed'=>$rooms_needed,
-                'ticket_price_for_going_trip'=>$plane_trip[0]['current_price']*$request['number_of_friend']??null,
-                'ticket_price_for_return_trip'=>$plane_trip[1]['current_price']*$request['number_of_friend']??null,
-                'days'=>$days,
+                'days'=>(int)$days,
+                'room_price'=>(doubleval($room['current_price']))??null,
+                'ticket_price_for_going_trip'=>$goingPlaneTrip,
+                'ticket_price_for_return_trip'=>$returnPlaneTrip,
+                'ticket_price_for_places'=>$placePrice,
                 'total_price'=>$total_price,
                 'price_after_discount'=>$price_after_discount,
             ];
@@ -428,7 +434,8 @@ class BookRepository implements BookRepositoryInterface
 
     public function bookStaticTrip($request)
     {
-        $bank=Bank::where('email',auth()->user()->email)->first();
+        try{
+            $bank=Bank::where('email',auth()->user()->email)->first();
         if($bank['money']<$request['total_price'] && $bank['money']<$request['price_after_discount'])
         {
             return 1;
@@ -465,7 +472,11 @@ class BookRepository implements BookRepositoryInterface
             $rooms[$i]->save();
         }
         return 2;
-    }
+
+        }catch(Exception $exception){
+            throw new Exception($exception->getMessage());
+        }
+     }
 
     public function editBook($request,$id)
     {

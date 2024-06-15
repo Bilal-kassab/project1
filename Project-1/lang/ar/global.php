@@ -18,5 +18,5 @@ return [
     'delete'=>'تم الحذف بنجاح',
     'update-position'=> 'حدّث موقعك رجاءً',
     'not-permission'=> 'ليس لديك الإذن لهذا',
-    'not-authorization'=> 'لبس لديك الإذن',
+    'not-authorization'=> 'ليس لديك الصلاحية للوصول',
 ];
