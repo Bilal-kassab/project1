@@ -64,7 +64,7 @@ return [
         'string' => 'الـ :attribute يجب ان يكون اكبر من او يساوي :value حروفٍ/حرفًا.',
     ],
     'image' => 'يجب أن يكون الحقل :attribute صورةً',
-    'in' => 'الحقل :attribute لاغٍ',
+    'in' => 'الحقل :attribute غير صالح',
     'in_array' => 'الحقل :attribute غير موجود في :other.',
     'integer' => 'يجب أن يكون الحقل :attribute عددًا صحيحًا',
     'ip' => 'يجب أن يكون الحقل :attribute عنوان IP ذا بُنية صحيحة',

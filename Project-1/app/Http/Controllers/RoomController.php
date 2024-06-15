@@ -113,20 +113,16 @@ class RoomController extends Controller
     //         // 'data'=>Room::whereDoesntHave('bookingss')->where('hotel_id',$id)->get(),
     //      ]);
     // }
-    public function get_My_Rooms()
-    {
-
+    public function get_My_Rooms(){
         try{
-
+            return response()->json([
+                    'data'=>Hotel::with('rooms')->where('user_id',auth()->user()->id)->get()
+                ],200);
         }catch(Exception $e){
             return response()->json([
                 'message'=>$e->getMessage()
             ],404);
         }
-
-        return response()->json([
-                'data'=>Hotel::with('rooms')->where('user_id',auth()->user()->id)->get()
-            ],200);
     }
     public function store(StoreRoomRequest $request)
     {
@@ -249,40 +245,7 @@ class RoomController extends Controller
 
     }
 
-    public function booking_room(Request $request)
-    {
-
-            $date=Carbon::now()->format('Y-m-d');
-            $validatedData =Validator::make($request->all(),[
-                'book_id'=>'required|numeric|exists:bookings,id',
-                'room_id'=>'required|numeric|exists:rooms,id',
-                //'current_price'=>'required|numeric|min:0',
-                'start_date'=>"required|date|after_or_equal:$date",
-                'end_date'=>'required|date|after_or_equal:end_date',
-           ]);
-           if( $validatedData->fails() ){
-               return response()->json([
-                   'message'=> $validatedData->errors()->first(),
-               ],422);
-           }
-           try{
-        $book=BookingRoom::create([
-            'book_id'=>$request->book_id,
-            'room_id'=>$request->room_id,
-            'current_price'=>Room::where('id',$request->room_id)->first()->price,
-            'start_date'=>$request->start_date,
-            'end_date'=>$request->end_date,
-        ]);
-    }catch(Exception $e){
-        return response()->json([
-            'message'=>$e->getMessage(),
-        ],404);
-    }
-    return response()->json([
-        'data'=>$book
-    ],200);
-
-    }
+    
 }
 
 

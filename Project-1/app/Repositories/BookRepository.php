@@ -294,7 +294,7 @@ class BookRepository implements BookRepositoryInterface
             $trip->delete();
             return trans('trip.cancel-successfully');
         } catch (Exception $exception) {
-            return throw new Exception($exception->getMessage());
+            throw new Exception($exception->getMessage());
         }
     }
     public function showStaticTrip($id)

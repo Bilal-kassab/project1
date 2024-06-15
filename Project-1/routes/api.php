@@ -135,6 +135,25 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
             Route::get('show-static-trip/{id}','showStaticTrip');
         });
 
+        Route::controller(DynamicBookController::class)->group(function(){
+            Route::post('Add_booking_User','store_User');
+            Route::get('All_booking','index');
+            Route::get('show_booking/{id}','show');
+            Route::post('hotel_book','hotel_book');
+            Route::post('plane_book','plane_book');
+            Route::get('all_my_trip','index');
+            Route::get('all_my_dynamic_trip','get_all_dynamic_trip');
+            Route::get('all_my_plane_trip','get_all_plane_trip');
+            Route::get('all_my_hotel_trip','get_all_hotel_trip');
+            Route::get('show_dynamic_trip/{id}','showDynamicTrip');
+            Route::get('show_hotel_trip/{id}','showHotelTrip');
+            Route::get('show_plane_trip/{id}','showPlaneTrip');
+            Route::post('update_dynamic_trip/{id}','update_dynamic_trip');
+            Route::post('update_hotel_book/{id}','updateHotelBook');
+            Route::post('update_plane_book/{id}','updatePlaneBook');
+            Route::delete('delete_dynamic_trip/{id}','delete_dynamic_trip');
+        });
+
     });
 
 });
@@ -258,7 +277,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::post('search_Hotel_by_stars','search_Hotel_by_Stars');
                 Route::get('get_Hotel_By_Area/{id}','get_hotel_in_area');
                 Route::get('get_Hotel_By_Country/{id}','get_hotel_in_country');
-                Route::get('delete_hotel/{id}','destroy');
+                Route::delete('delete_hotel/{id}','destroy');
                 Route::post('change_visible','changeVisible');
             });
 
@@ -285,17 +304,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('all-static-trip','index');
                 Route::get('show-static-trip/{id}','showStaticTrip');
             });
-            Route::controller(DynamicBookController::class)->group(function(){
-                Route::post('Add_booking_User','store_User');
-                Route::get('All_booking','index');
-                Route::get('show_booking/{id}','show');
-                Route::post('hotel_book','hotel_book');
-                Route::post('plane_book','plane_book');
-                Route::get('all_my_dynamic_trip','index');
-                Route::get('show_dynamic_trip/{id}','showDynamicTrip');
-                Route::get('show_hotel_trip/{id}','showHotelTrip');
-                Route::get('show_plane_trip/{id}','showPlaneTrip');
-            });
+            
             Route::controller(CommentController::class)->group(function(){
                 Route::post('add-comment','setComment');
                 Route::get('show-all-place-comments/{id}','showAllPlaceComment');

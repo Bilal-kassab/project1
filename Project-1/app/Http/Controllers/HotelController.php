@@ -30,7 +30,8 @@ class HotelController extends Controller
                                                     'images:id,hotel_id,image',
                                                     'area:id,name,country_id',
                                                     'country:id,name',
-                                                    'user:id,name,position,email')->get()
+                                                    'user:id,name,position,email')
+                                                    ->orderBy('stars','desc')->get()
         ],200);
     }
 
@@ -48,6 +49,7 @@ class HotelController extends Controller
                 'data'=>Hotel::with(['images'])
                             ->where('area_id',$id)
                             ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
+                            ->orderBy('stars','desc')
                             ->get(),
             ],200);
         }
@@ -56,6 +58,7 @@ class HotelController extends Controller
                 'data'=>Hotel::with(['images','user:id,name,position,email,phone_number,image'])
                             ->where('area_id',$id)
                             ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
+                            ->orderBy('stars','desc')
                             ->get(),
             ],200);
         }
@@ -76,6 +79,7 @@ class HotelController extends Controller
                 'data'=>Hotel::with(['images','area'])
                             ->where('country_id',$id)
                             ->select('id','name','stars','number_rooms','area_id','country_id')
+                            ->orderBy('stars','desc')
                             ->get(),
             ],200);
         }
@@ -84,6 +88,7 @@ class HotelController extends Controller
                 'data'=>Hotel::with(['images','user:id,name,position,email,phone_number,image','area'])
                 ->where('country_id',$id)
                 ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
+                ->orderBy('stars','desc')
                 ->get(),
             ],200);
         }
@@ -246,6 +251,7 @@ class HotelController extends Controller
                             'data'=>Hotel::with(['images','country:id,name','area:id,country_id,name'])
                             ->select('id','name','number_rooms','stars','area_id','country_id')
                             ->where('name','like','%'.$request->name.'%')
+                            ->orderBy('stars','desc')
                             ->get()
                         ],200);
                     }
@@ -254,6 +260,7 @@ class HotelController extends Controller
                             'data'=>Hotel::with(['images','area:id,country_id,name','country:id,name','user:id,name,position,email,phone_number,image'])
                             ->select('id','name','number_rooms','stars','area_id','user_id','country_id')
                             ->where('name','like','%'.$request->name.'%')
+                            ->orderBy('stars','desc')
                             ->get()
                         ],200);
                     }
@@ -290,11 +297,11 @@ class HotelController extends Controller
 
     public function destroy($id)
     {
-        if(auth()->user()->id !=Hotel::where('id',$id)->first()->user_id ){
-            return response()->json([
-                'message'=>trans('global.not-have-the-hotel')
-            ]);
-           }
+        // if(auth()->user()->id !=Hotel::where('id',$id)->first()->user_id ){
+        //     return response()->json([
+        //         'message'=>trans('global.not-have-the-hotel')
+        //     ]);
+        //    }
         try{
             Hotel::findOrFail($id)->delete();
             }catch(\Exception $exception){
@@ -331,21 +338,4 @@ class HotelController extends Controller
         ],200);
 
     }
-
-    // public function hotel_book(Request $request){
-    //     $validatedData =Validator::make($request->all(),[
-    //         'count'=>'required|decimal',]);
-    //         if($request->count> $hotel['rooms']){
-    //             return response()->json([
-    //                 'message'=>'this count is up of room_count'
-    //             ]);
-    //         }
-    //         else{
-    //             $request->count
-    //         }
-
-
-    // }
-
-
 }

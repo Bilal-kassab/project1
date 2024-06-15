@@ -24,10 +24,10 @@ class PlaneBookRequest extends FormRequest
     {
         $date=Carbon::now()->format('Y-m-d');
         return [
-           'source_trip_id'=>'required|exists:countries,id',
-            'destination_trip_id'=>'required|exists:countries,id',
-            'start_date'=>"required|date|after_or_equal:$date",
-            'end_date'=>'required|date|after_or_equal:start_date',
+        //    'source_trip_id'=>'required|exists:countries,id',
+        //     'destination_trip_id'=>'required|exists:countries,id',
+        //     'start_date'=>"required|date|after_or_equal:$date",
+        //     'end_date'=>'required|date|after_or_equal:start_date',
             'trip_name'=>'string',
             'number_of_people'=>'required|min:1|numeric',
             'trip_note'=>'string',
