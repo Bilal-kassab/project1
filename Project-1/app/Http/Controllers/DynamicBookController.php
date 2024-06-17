@@ -20,17 +20,17 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Repositories\DynamicBookRepository; 
+use App\Repositories\DynamicBookRepository;
 
 class DynamicBookController extends Controller
 {
- 
+
     private $bookrepository;
 
     public function __construct(DynamicBookRepository $bookrepository)
     {
         $this->bookrepository = $bookrepository;
-        
+
     }
     public function store_User(DynamicTripRequest $request){
         $data=[
@@ -236,7 +236,7 @@ class DynamicBookController extends Controller
         return response()->json([
             'data'=>$D_trips
         ],200);
-        
+
     }
     public function get_all_plane_trip(){
         try{
