@@ -14,16 +14,26 @@ class ActivitySeeder extends Seeder
     public function run(): void
     {
         Activity::create([
-            'id'=>1,
-            'name'=>'swimming',
+            'name'=>'Swimming',
         ]);
         Activity::create([
-            'id'=>2,
-            'name'=>'eating',
+            'name'=>'Eating',
         ]);
         Activity::create([
-            'id'=>3,
-            'name'=>'skating',
+            'name'=>'Skating',
         ]);
+        Activity::create([
+            'name'=>'Fishing',
+        ]);
+        Activity::create([
+            'name'=>'Camping',
+        ]);
+        Activity::create([
+            'name'=>'Cycling',
+        ]);
+        Activity::create([
+            'name'=>'Safari',
+        ]);
+
     }
 }
