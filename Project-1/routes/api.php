@@ -211,6 +211,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('places-depending-on-category/{id}','placesDependingOnCategory');
                 Route::get('places-depending-on-position','placesDependingOnPosition');
                 Route::post('search-for-place','search');
+                Route::post('change-visible-place/{id}','placeStatus');
             });
 
             Route::controller(CountryController::class)->group(function(){
@@ -304,7 +305,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('all-static-trip','index');
                 Route::get('show-static-trip/{id}','showStaticTrip');
             });
-            
+
             Route::controller(CommentController::class)->group(function(){
                 Route::post('add-comment','setComment');
                 Route::get('show-all-place-comments/{id}','showAllPlaceComment');

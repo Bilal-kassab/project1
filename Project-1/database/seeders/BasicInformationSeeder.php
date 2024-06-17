@@ -17,11 +17,7 @@ class BasicInformationSeeder extends Seeder
      */
     public function run(): void
     {
-        $countries=['Syria','France','Germany'];
-
-        foreach ($countries as $country) {
-            Country::create(['name' => $country]);
-        }
+        
 
         $areas=['Damascus','Aleppo','Latakia'];
 

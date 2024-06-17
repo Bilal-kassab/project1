@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             PlaceSeeder::class,
             HotelSeeder::class,
             PlaneTripSeeder::class,
-            ActivitySeeder::class
+            ActivitySeeder::class,
+            StaticTripSeeder::class
         ]);
     }
 }

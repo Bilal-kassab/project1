@@ -9,6 +9,8 @@ use App\Models\Country;
 use App\Models\Place;
 use App\Models\PlaceCategory;
 use App\Models\PlaceImage;
+use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
@@ -93,11 +95,7 @@ class PlaceController extends Controller
         if($request->has('category_ids'))
         {
             foreach($request->category_ids as $category_id ){
-              $placeca=PlaceCategory::firstOrCreate(
-               [
-                   'category_id'=>$category_id,
-                   'place_id'=>$place['id']
-               ],
+              $placeca=PlaceCategory::Create(
                [
                    'place_id'=> $place->id,
                    'category_id'=> $category_id
@@ -363,6 +361,29 @@ class PlaceController extends Controller
 
         return response()->json([
             'data'=>$place
+        ],200);
+    }
+
+    public function placeStatus($id):JsonResponse
+    {
+        try{
+            $place=Place::findOrFail($id);
+
+            if($place->visible)
+            {
+                $place->visible=false;
+            }else{
+                $place->visible=true;
+            }
+            $place->save();
+        }catch(Exception $exception)
+        {
+            return response()->json([
+                'message'=>$exception->getMessage()
+            ]);
+        }
+        return response()->json([
+            'message'=>trans('global.update')
         ],200);
     }
 }

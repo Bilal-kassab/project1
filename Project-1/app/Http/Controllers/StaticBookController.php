@@ -21,7 +21,7 @@ class StaticBookController extends Controller
 
     public function __construct(BookRepositoryInterface $bookrepository)
     {
-        $this->middleware('role:Admin|Super Admin', ['only'=> ['store_Admin','update_Admin','tripCancellation']]);
+        $this->middleware('role:Admin|Super Admin |Trip manger', ['only'=> ['store_Admin','update_Admin','tripCancellation']]);
         $this->bookrepository = $bookrepository;
     }
     /**
@@ -44,47 +44,52 @@ class StaticBookController extends Controller
 
     public function store_Admin(StoreStaticTripRequest $request)
     {
-        $data=[
-            'source_trip_id'=>$request->source_trip_id,
-            'destination_trip_id'=>$request->destination_trip_id,
-            'hotel_id'=>$request->hotel_id,
-            'trip_name'=>$request->trip_name,
-            'ratio'=>$request->ratio,
-            'number_of_people'=>$request->number_of_people,
-            'trip_capacity'=>$request->trip_capacity,
-            'start_date'=>$request->start_date,
-            'end_date'=>$request->end_date,
-            'trip_note'=>$request->trip_note,
-            'places'=>$request->places,
-            'activities'=>$request->activities,##
-            'plane_trip'=>$request->plane_trip,
-            'plane_trip_away'=>$request->plane_trip_away,
-        ];
-        $static_book=$this->bookrepository->store_Admin($data);
-        if($static_book == 1){
+        try{
+
+
+            $data=[
+                // 'source_trip_id'=>$request->source_trip_id,
+                'destination_trip_id'=>$request->destination_trip_id,
+                'hotel_id'=>$request->hotel_id,
+                'trip_name'=>$request->trip_name,
+                'ratio'=>$request->ratio,
+                'number_of_people'=>$request->number_of_people,
+                'trip_capacity'=>$request->trip_capacity,
+                // 'start_date'=>$request->start_date,
+                // 'end_date'=>$request->end_date,
+                'trip_note'=>$request->trip_note,
+                'places'=>$request->places,
+                'activities'=>$request->activities,##
+                'plane_trip'=>$request->plane_trip,
+                'plane_trip_away'=>$request->plane_trip_away,
+            ];
+
+            $static_book=$this->bookrepository->store_Admin($data);
+            if($static_book == 1){
+                return response()->json([
+                    'message'=>trans('trip.not-enough-room'),
+                ],400);
+            }
+            if($static_book == 2){
+                return response()->json([
+                    'message' =>trans('trip.not-enough-going-trip-plane')
+                ], 400);
+            }
+            if($static_book == 3){
+                return response()->json([
+                    'message' =>trans('trip.not-enough-return-trip-plane')
+                ], 400);
+            }
+
             return response()->json([
-                'message'=>trans('trip.not-enough-room'),
-            ],400);
-        }
-        if($static_book == 2){
-            return response()->json([
-                'message' =>trans('trip.not-enough-going-trip-plane')
-            ], 400);
-        }
-        if($static_book == 3){
-            return response()->json([
-                'message' =>trans('trip.not-enough-return-trip-plane')
-            ], 400);
-        }
-        if($static_book == 4){
-            return response()->json([
-                'message' => trans('trip.trip-faild')
-            ], 400);
+                'data'=>$static_book
+            ],200);
+        }catch(Exception $exception){
+                return response()->json([
+                    'message' =>$exception->getMessage()
+                ]);
         }
 
-        return response()->json([
-            'data'=>$static_book
-        ],200);
     }
     public function update_Admin(UpdateStaticTripRequest $request,$id)
     {

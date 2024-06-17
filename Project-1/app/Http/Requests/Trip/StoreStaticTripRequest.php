@@ -25,14 +25,14 @@ class StoreStaticTripRequest extends FormRequest
         $date=Carbon::now()->format('Y-m-d');
         return [
             'hotel_id'=>'required|exists:hotels,id',
-            'source_trip_id'=>'required|exists:countries,id',
+            // 'source_trip_id'=>'required|exists:countries,id',
             'destination_trip_id'=>'required|exists:countries,id',
             'trip_name'=>'required|string',
             'ratio'=>'required|decimal:0,1',
             'number_of_people'=>'required|min:3|numeric',
             'trip_capacity'=>'required|numeric',
-            'start_date'=>"required|exists:plane_trips,flight_date|date|after_or_equal:$date",
-            'end_date'=>'required|date|after_or_equal:start_date',
+            // 'start_date'=>"required|exists:plane_trips,flight_date|date|after_or_equal:$date",
+            // 'end_date'=>'required|date|after_or_equal:start_date',
             'trip_note'=>'string',
             'places'=>'required|array|min:1',
             'places.*'=>"required|exists:places,id",

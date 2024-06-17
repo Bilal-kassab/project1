@@ -29,7 +29,7 @@ class PlaneController extends Controller
         $this->planetriprepository = $planetriprepository;
         $this->middleware('role:Admin|Airport admin', ['only'=> ['addTrip','getMyPlane','store','update','updateExistPlaneImage','addPlaneImage']]);
         $this->middleware('role:Super Admin|Admin|Airport admin', ['only'=> ['getAirportDetails']]);
-        $this->middleware('role:Super Admin|Trip manger', ['only'=> ['getAllPlaneTrip']]);
+        $this->middleware('role:Super Admin|Airport admin', ['only'=> ['getAllPlaneTrip']]);
     }
 
     public function getMyPlane():JsonResponse
@@ -196,12 +196,14 @@ class PlaneController extends Controller
             'country_destination_id'=> 'required|numeric|exists:countries,id',
             'flight_date' => "required|date|after_or_equal:$date",
             'type' => 'required|in:1,2|numeric',
+            // 'end_date'  => 'required_if:type,2',
         ]);
           if($validator->fails()){
               return response()->json([
                   'message'=> $validator->errors()->first(),
               ],422);
           }
+        // $returnTrip=$this->planetriprepository->getAllTripForCountry($request->all());
         $trips=$this->planetriprepository->getAllTripForCountry($request->all());
             if($request->type==1)
             {

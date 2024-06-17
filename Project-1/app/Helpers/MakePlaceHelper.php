@@ -5,6 +5,7 @@ namespace App\Helpers;
 use App\Models\Place;
 use App\Models\PlaceCategories;
 use App\Models\PlaceCategory;
+use App\Models\PlaceImage;
 
 class MakePlaceHelper
 {
@@ -14,9 +15,14 @@ class MakePlaceHelper
             "name"=> $name,
             "place_price"=> $place_price,
             "area_id"=> $area_id,
-            'text'=> $text
+            'text'=> $text,
         ]);
-        
+
+        PlaceImage::create([
+            'place_id'=>$place->id,
+            'image'=>'PlaceImages/1718441623.png'
+        ]);
+
         foreach ($category_ids as $category_id) {
             PlaceCategory::create([
                 'place_id'=> $place->id,
