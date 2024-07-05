@@ -24,6 +24,10 @@ class BookingStaticTrip extends Model
     {
         return $this->belongsTo(Booking::class,'static_trip_id');
     }
+    public function user():BelongsTo
+    {
+        return $this->belongsTo(USer::class,'user_id');
+    }
 
     public function rooms():BelongsToMany
     {

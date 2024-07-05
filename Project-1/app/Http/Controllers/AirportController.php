@@ -30,7 +30,7 @@ class AirportController extends Controller
         return response()->json([
             'data'=> Airport::airportWithAdmin()
                                 ->where('user_id',auth()->id())
-                                ->get(),
+                                ->first(),
          ],200);
     }
 

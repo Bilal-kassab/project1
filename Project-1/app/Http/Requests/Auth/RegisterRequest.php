@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
             'password'=>'required|min:8|confirmed',
             'role_id'=>'required|numeric',
             'image'=> 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            'position'=>'numeric|exists:countries,id',
+            'position'=>'required|exists:countries,id',
             'phone_number'=>'regex:/[0-9]{10}/|unique:users'
         ];
     }

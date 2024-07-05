@@ -263,7 +263,10 @@ class PlaneController extends Controller
     public function getAllTripsPlane($id):JsonResponse
     {
         try {
-            $trips=Plane::with('tripss')->findOrFail($id);
+            $trips=Plane::whereHas('tripss')->with(['tripss','tripss.airport_source:id,name','tripss.airport_destination:id,name',
+                                                        'tripss.country_source:id,name','tripss.country_destination:id,name'
+                                                    ])
+                         ->where('id',$id)->first();
         } catch (Exception $exception) {
             return response()->json([
                 'message'=>trans('global.notfound')

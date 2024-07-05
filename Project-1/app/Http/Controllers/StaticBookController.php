@@ -21,7 +21,10 @@ class StaticBookController extends Controller
 
     public function __construct(BookRepositoryInterface $bookrepository)
     {
-        $this->middleware('role:Admin|Super Admin |Trip manger', ['only'=> ['store_Admin','update_Admin','tripCancellation']]);
+        $this->middleware('role:Admin|Super Admin|Trip manger', ['only'=> ['store_Admin','update_Admin','tripCancellation']]);
+        $this->middleware('role:Admin|Super Admin', ['only'=> ['getDetailsStaticTrip']]);
+        $this->middleware('role:Admin|Super Admin|User', ['only'=> ['index']]);
+        $this->middleware('role:Trip manger', ['only'=> ['getTripAdminTrips','getTripAdminTripDetails']]);
         $this->bookrepository = $bookrepository;
     }
     /**
@@ -55,8 +58,8 @@ class StaticBookController extends Controller
                 'ratio'=>$request->ratio,
                 'number_of_people'=>$request->number_of_people,
                 'trip_capacity'=>$request->trip_capacity,
-                // 'start_date'=>$request->start_date,
-                // 'end_date'=>$request->end_date,
+                'start_date'=>$request->start_date,
+                'end_date'=>$request->end_date,
                 'trip_note'=>$request->trip_note,
                 'places'=>$request->places,
                 'activities'=>$request->activities,##
@@ -78,6 +81,11 @@ class StaticBookController extends Controller
             if($static_book == 3){
                 return response()->json([
                     'message' =>trans('trip.not-enough-return-trip-plane')
+                ], 400);
+            }
+            if($static_book == 4){
+                return response()->json([
+                    'message' =>trans('trip.plane-trip-date')
                 ], 400);
             }
 
@@ -306,5 +314,48 @@ class StaticBookController extends Controller
             'message'=>trans('trip.cancel-trip'),
         ],400);
 
+    }
+
+    public function getDetailsStaticTrip($id):JsonResponse
+    {
+        try{
+            $details=$this->bookrepository->getDetailsStaticTrip($id);
+            return response()->json([
+                'data'=>$details
+            ],200);
+        }catch(Exception $ex){
+            return response()->json([
+                'message'=>$ex->getMessage()
+            ]);
+        }
+
+    }
+
+    public function getTripAdminTrips():JsonResponse
+    {
+        try{
+            $staticTrip=$this->bookrepository->getTripAdminTrips();
+            return response()->json([
+                'message'=>$staticTrip,
+            ]);
+        }catch(Exception $ex){
+            return response()->json([
+                'message'=>$ex->getMessage()
+            ]);
+        }
+    }
+
+    public function getTripAdminTripDetails($id):JsonResponse
+    {
+        try{
+            $staticTrip=$this->bookrepository->getTripAdminTripDetails($id);
+            return response()->json([
+                'message'=>$staticTrip,
+            ]);
+        }catch(Exception $ex){
+            return response()->json([
+                'message'=>$ex->getMessage()
+            ]);
+        }
     }
 }

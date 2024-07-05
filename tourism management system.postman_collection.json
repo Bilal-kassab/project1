@@ -33,7 +33,7 @@
 										},
 										{
 											"key": "email",
-											"value": "Airport2@gmail.com",
+											"value": "Airport9@gmail.com",
 											"type": "text"
 										},
 										{
@@ -60,7 +60,8 @@
 										{
 											"key": "position",
 											"value": "1",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "phone_number",
@@ -210,111 +211,6 @@
 							]
 						},
 						{
-							"name": "logout",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin-logout",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin-logout"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "logout",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin-logout",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin-logout"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 17 Mar 2024 15:44:08 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 17 Mar 2024 15:44:08 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"Successfully logged out\"\n}"
-								}
-							]
-						},
-						{
 							"name": "login",
 							"request": {
 								"method": "POST",
@@ -335,7 +231,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "Trip@gmail.com",
+											"value": "Airport@gmail.com",
 											"type": "text"
 										},
 										{
@@ -541,6 +437,111 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"message\": \"login done\",\n    \"role\": [\n        \"Super Admin\"\n    ],\n    \"token\": \"17|RdCQWhZQm1WYBAgAYWrv4geMS3IWQTCWEWzITGWc8b68ef61\"\n}"
+								}
+							]
+						},
+						{
+							"name": "logout",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin-logout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin-logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "logout",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin-logout",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin-logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 17 Mar 2024 15:44:08 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 17 Mar 2024 15:44:08 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully logged out\"\n}"
 								}
 							]
 						},
@@ -7316,7 +7317,13 @@
 									"name": "get-all-trips-plane",
 									"request": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
 										"url": {
 											"raw": "http://127.0.0.1:8000/api/admin/get-all-trips-plane/1",
 											"protocol": "http",
@@ -7340,7 +7347,13 @@
 											"name": "get-all-trips-plane",
 											"originalRequest": {
 												"method": "GET",
-												"header": [],
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
 												"url": {
 													"raw": "http://127.0.0.1:8000/api/admin/get-all-trips-plane/1",
 													"protocol": "http",
@@ -7369,11 +7382,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 03 Jun 2024 21:41:59 GMT"
+													"value": "Fri, 05 Jul 2024 14:15:38 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 03 Jun 2024 21:41:59 GMT"
+													"value": "Fri, 05 Jul 2024 14:15:38 GMT"
 												},
 												{
 													"key": "Connection",
@@ -7405,21 +7418,11 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Damas A1\",\n        \"number_of_seats\": 40,\n        \"visible\": 1,\n        \"ticket_price\": \"50.00\",\n        \"airport_id\": 1,\n        \"tripss\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\"\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 1,\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\"\n            }\n        ]\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Damas A1\",\n        \"number_of_seats\": 40,\n        \"visible\": 1,\n        \"ticket_price\": \"50.00\",\n        \"airport_id\": 1,\n        \"tripss\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 1,\n                \"flight_date\": \"2024-06-21\",\n                \"landing_date\": \"2024-06-05\",\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        ]\n    }\n}"
 										}
 									]
 								}
 							],
-							"auth": {
-								"type": "bearer",
-								"bearer": [
-									{
-										"key": "token",
-										"value": "19|Mp3bxuKmLdvnOqbSDiwY6MsyQCfpbgbZronqBidUe43de650",
-										"type": "string"
-									}
-								]
-							},
 							"event": [
 								{
 									"listen": "prerequest",
@@ -9411,11 +9414,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 20:04:20 GMT"
+													"value": "Fri, 05 Jul 2024 14:30:15 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 20:04:20 GMT"
+													"value": "Fri, 05 Jul 2024 14:30:15 GMT"
 												},
 												{
 													"key": "Connection",
@@ -9439,7 +9442,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "53"
+													"value": "59"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -9447,7 +9450,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria\",\n            \"user_id\": 4,\n            \"area_id\": 2,\n            \"country_id\": 1,\n            \"visible\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 2,\n                \"name\": \"Aleppo\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Syria B\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"visible\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"France A\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"visible\": 1,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"France B\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"visible\": 1,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
+											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Syria A\",\n        \"user_id\": 4,\n        \"area_id\": 1,\n        \"country_id\": 1,\n        \"visible\": 1,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"area\": {\n            \"id\": 1,\n            \"name\": \"Damascus\"\n        },\n        \"user\": {\n            \"id\": 4,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"image\": null,\n            \"position\": 1\n        }\n    }\n}"
 										}
 									]
 								},
@@ -9654,6 +9657,38 @@
 											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria A\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Syria B\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"France A\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"France B\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"adcd\",\n            \"user_id\": 6,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"Admin\",\n                \"email\": \"Airport2@gmail.com\",\n                \"image\": null,\n                \"position\": 1\n            }\n        }\n    ]\n}"
 										}
 									]
+								}
+							],
+							"auth": {
+								"type": "bearer",
+								"bearer": [
+									{
+										"key": "token",
+										"value": "8|iE2qZtquAk7TeCVmReMo1a6g35hS6HJiBuEyokbC2f921660",
+										"type": "string"
+									}
+								]
+							},
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										]
+									}
 								}
 							]
 						}
@@ -13832,6 +13867,506 @@
 					"name": "Static Book",
 					"item": [
 						{
+							"name": "Super Admin",
+							"item": [
+								{
+									"name": "show-details-trip",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/show-details-trip/1",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"show-details-trip",
+												"1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "show-details-trip",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/show-details-trip/1",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"show-details-trip",
+														"1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 05 Jul 2024 13:13:50 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 05 Jul 2024 13:13:50 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 5,\n            \"static_trip_id\": 1,\n            \"number_of_friend\": 2,\n            \"user\": {\n                \"id\": 5,\n                \"name\": \"User\",\n                \"phone_number\": \"1235486978\",\n                \"image\": \"ProfileImage/1720185209.png\"\n            }\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "all-static-trip",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "7|HvIq5Js5HgfWBrG7oRpWZ5ZYX67bbK0muAUeH7jz8e1be5fe",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/all-static-trip",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"all-static-trip"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "all-static-trip",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/all-static-trip",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"all-static-trip"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 05 Jul 2024 13:44:46 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 05 Jul 2024 13:44:46 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"trip_name\": \"Seeder Trip\",\n            \"price\": \"1295.00\",\n            \"number_of_people\": 10,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-01\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"This is the first Trip\"\n        },\n        {\n            \"id\": 2,\n            \"trip_name\": \"Seeder Trip 2\",\n            \"price\": \"1295.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-01\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"This is the second Trip\"\n        },\n        {\n            \"id\": 3,\n            \"trip_name\": \"to france\",\n            \"price\": \"485.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-21\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 4,\n            \"trip_name\": \"to france\",\n            \"price\": \"485.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-21\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        }\n    ]\n}"
+										}
+									]
+								}
+							],
+							"auth": {
+								"type": "bearer",
+								"bearer": [
+									{
+										"key": "token",
+										"value": "7|HvIq5Js5HgfWBrG7oRpWZ5ZYX67bbK0muAUeH7jz8e1be5fe",
+										"type": "string"
+									}
+								]
+							},
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Trip Admin",
+							"item": [
+								{
+									"name": "show-trip-admin-trip-details",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/show-trip-admin-trip-details/1",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"show-trip-admin-trip-details",
+												"1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "show-trip-admin-trip-details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/show-trip-admin-trip-details/1",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"show-trip-admin-trip-details",
+														"1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 05 Jul 2024 13:52:37 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 05 Jul 2024 13:52:37 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "57"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": [\n        {\n            \"id\": 1,\n            \"user_id\": 5,\n            \"static_trip_id\": 1,\n            \"number_of_friend\": 2,\n            \"user\": {\n                \"id\": 5,\n                \"name\": \"User\",\n                \"phone_number\": \"1235486978\",\n                \"image\": \"ProfileImage/1720185209.png\"\n            }\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "get-trip-admin-trips",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-trip-admin-trips",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-trip-admin-trips"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "get-trip-admin-trips",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/get-trip-admin-trips",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"get-trip-admin-trips"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 05 Jul 2024 13:44:32 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 05 Jul 2024 13:44:32 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": [\n        {\n            \"id\": 1,\n            \"trip_name\": \"Seeder Trip\",\n            \"price\": \"1295.00\",\n            \"number_of_people\": 10,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-01\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"This is the first Trip\"\n        },\n        {\n            \"id\": 2,\n            \"trip_name\": \"Seeder Trip 2\",\n            \"price\": \"1295.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-01\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"This is the second Trip\"\n        },\n        {\n            \"id\": 3,\n            \"trip_name\": \"to france\",\n            \"price\": \"485.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-21\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        }\n    ]\n}"
+										}
+									]
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						},
+						{
 							"name": "store_booking_admin",
 							"request": {
 								"method": "POST",
@@ -14347,113 +14882,6 @@
 							]
 						},
 						{
-							"name": "all-static-trip",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/all-static-trip",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"all-static-trip"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "all-static-trip",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/all-static-trip",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"all-static-trip"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 08:58:15 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 08:58:15 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"trip_name\": \"to france\",\n            \"price\": \"1070.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-06\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1070.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-06\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 3,\n            \"trip_name\": \"to france\",\n            \"price\": \"0.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-06\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 4,\n            \"trip_name\": \"to france\",\n            \"price\": \"0.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-06\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 5,\n            \"trip_name\": \"to france\",\n            \"price\": \"1070.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-06\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 6,\n            \"trip_name\": \"France Hi\",\n            \"price\": \"1070.00\",\n            \"number_of_people\": 17,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-07\",\n            \"end_date\": \"2024-06-21\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 7,\n            \"trip_name\": \"to france\",\n            \"price\": \"665.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 8,\n            \"trip_name\": \"France Hi\",\n            \"price\": \"665.00\",\n            \"number_of_people\": 20,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-20\",\n            \"end_date\": \"2024-06-25\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\"\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
 							"name": "show-static-trip",
 							"request": {
 								"method": "GET",
@@ -14563,817 +14991,6 @@
 							]
 						},
 						{
-							"name": "check-static-trip",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "lang",
-										"value": "en",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "number_of_friend",
-											"value": "2",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/check-static-trip/8",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"check-static-trip",
-										"8"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "check-static-trip",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "number_of_friend",
-													"value": "2",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/check-static-trip/8",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"check-static-trip",
-												"8"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 07:32:24 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 07:32:24 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"trip_id\": 8,\n        \"number_of_friend\": 2,\n        \"rooms_needed\": 1,\n        \"days\": 5,\n        \"room_price\": 45,\n        \"ticket_price_for_going_trip\": 400,\n        \"ticket_price_for_return_trip\": 400,\n        \"total_price\": 1105,\n        \"price_after_discount\": null\n    }\n}"
-								},
-								{
-									"name": "check-static-trip",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "lang",
-												"value": "en",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "number_of_friend",
-													"value": "18",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/check-static-trip/8",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"check-static-trip",
-												"8"
-											]
-										}
-									},
-									"status": "Bad Request",
-									"code": 400,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 07:33:56 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 07:33:56 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "57"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"there are not enough members\"\n}"
-								}
-							]
-						},
-						{
-							"name": "book-static-trip",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "lang",
-										"value": "en",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "trip_id",
-											"value": "8",
-											"type": "text"
-										},
-										{
-											"key": "number_of_friend",
-											"value": "2",
-											"type": "text"
-										},
-										{
-											"key": "rooms_needed",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "total_price",
-											"value": "1105",
-											"type": "text"
-										},
-										{
-											"key": "price_after_discount",
-											"value": "null",
-											"type": "text"
-										},
-										{
-											"key": "discount",
-											"value": "0",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/book-static-trip",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"book-static-trip"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "book-static-trip",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "lang",
-												"value": "en",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "trip_id",
-													"value": "8",
-													"type": "text"
-												},
-												{
-													"key": "number_of_friend",
-													"value": "2",
-													"type": "text"
-												},
-												{
-													"key": "rooms_needed",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "total_price",
-													"value": "1105",
-													"type": "text"
-												},
-												{
-													"key": "price_after_discount",
-													"value": "null",
-													"type": "text"
-												},
-												{
-													"key": "discount",
-													"value": "0",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/book-static-trip",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"book-static-trip"
-											]
-										}
-									},
-									"status": "Bad Request",
-									"code": 400,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:07:06 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:07:06 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"You dont have the money for this trip\"\n}"
-								},
-								{
-									"name": "book-static-trip",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "lang",
-												"value": "en",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "trip_id",
-													"value": "8",
-													"type": "text"
-												},
-												{
-													"key": "number_of_friend",
-													"value": "2",
-													"type": "text"
-												},
-												{
-													"key": "rooms_needed",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "total_price",
-													"value": "1105",
-													"type": "text"
-												},
-												{
-													"key": "price_after_discount",
-													"value": "null",
-													"type": "text"
-												},
-												{
-													"key": "discount",
-													"value": "0",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/book-static-trip",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"book-static-trip"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:07:43 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:07:43 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"Enjoy your trip!\"\n}"
-								}
-							]
-						},
-						{
-							"name": "show-all-my-staic-trips",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show-all-my-staic-trip-books",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"show-all-my-staic-trip-books"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "show-all-my-staic-trips",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/show-all-my-staic-trips",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"show-all-my-staic-trips"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:11:25 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:11:25 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"user_id\": 1,\n            \"static_trip_id\": 8,\n            \"number_of_friend\": 2,\n            \"book_price\": \"1105.00\",\n            \"static_trip\": {\n                \"id\": 8,\n                \"trip_name\": \"France Hi\",\n                \"trip_capacity\": 6,\n                \"start_date\": \"2024-06-20\",\n                \"end_date\": \"2024-06-25\",\n                \"stars\": \"0.00\",\n                \"trip_note\": \"hi my friend\"\n            },\n            \"rooms\": [\n                {\n                    \"id\": 21,\n                    \"capacity\": 6\n                }\n            ]\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
-							"name": "edit-static-trip-book",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "new_number_of_friend",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "discount",
-											"value": "1",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip-book/1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"edit-static-trip-book",
-										"1"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "edit-static-trip-book",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "lang",
-												"value": "ar",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "new_number_of_friend",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "discount",
-													"value": "0",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip-book/5",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"edit-static-trip-book",
-												"5"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:13:17 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:13:17 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "57"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"تم التعديل بنجاح\"\n}"
-								}
-							]
-						},
-						{
-							"name": "delete-static-trip-book",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/delete-static-trip-book/5",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"admin",
-										"delete-static-trip-book",
-										"5"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "trip-cancellation",
 							"request": {
 								"method": "DELETE",
@@ -15434,7 +15051,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|0wkS6nwOYpmlojd39JYo6jre2GfjiFxUkkiyhfsxb0528b25",
+						"value": "5|9i6pWp4gmZ6UxTycoGb8xK0dZffWXEXJTeNjn1Qo83fcc8e2",
 						"type": "string"
 					}
 				]
@@ -22089,7 +21706,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/all-static-trip",
+									"raw": "http://127.0.0.1:8000/api/user/all-static-trip",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -22100,7 +21717,7 @@
 									"port": "8000",
 									"path": [
 										"api",
-										"admin",
+										"user",
 										"all-static-trip"
 									]
 								}
@@ -22196,7 +21813,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/8",
+									"raw": "http://127.0.0.1:8000/api/user/show-static-trip/1",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -22207,9 +21824,9 @@
 									"port": "8000",
 									"path": [
 										"api",
-										"admin",
+										"user",
 										"show-static-trip",
-										"8"
+										"1"
 									]
 								}
 							},
@@ -22437,7 +22054,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/check-static-trip/8",
+									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/1",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -22448,9 +22065,9 @@
 									"port": "8000",
 									"path": [
 										"api",
-										"admin",
+										"user",
 										"check-static-trip",
-										"8"
+										"1"
 									]
 								}
 							},
@@ -22657,7 +22274,7 @@
 									"formdata": [
 										{
 											"key": "trip_id",
-											"value": "8",
+											"value": "1",
 											"type": "text"
 										},
 										{
@@ -22672,7 +22289,7 @@
 										},
 										{
 											"key": "total_price",
-											"value": "1105",
+											"value": "1735",
 											"type": "text"
 										},
 										{
@@ -22688,7 +22305,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/book-static-trip",
+									"raw": "http://127.0.0.1:8000/api/user/book-static-trip",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -22699,7 +22316,7 @@
 									"port": "8000",
 									"path": [
 										"api",
-										"admin",
+										"user",
 										"book-static-trip"
 									]
 								}
@@ -23100,7 +22717,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/delete-static-trip-book/5",
+									"raw": "http://127.0.0.1:8000/api/user/delete-static-trip-book/5",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -23111,13 +22728,2490 @@
 									"port": "8000",
 									"path": [
 										"api",
-										"admin",
+										"user",
 										"delete-static-trip-book",
 										"5"
 									]
 								}
 							},
 							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dynamic Book",
+					"item": [
+						{
+							"name": "store_booking_User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "source_trip_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "destination_trip_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "hotel_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "trip_name",
+											"value": "to france",
+											"type": "text"
+										},
+										{
+											"key": "number_of_people",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "start_date",
+											"value": "2024-06-15",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "2024-06-20",
+											"type": "text"
+										},
+										{
+											"key": "trip_note",
+											"value": "hi my friend ",
+											"type": "text"
+										},
+										{
+											"key": "place_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "place_ids[1]",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "plane_trip_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "plane_trip_away_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C2",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C4",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "count_room_C6",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "activities[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "activities[1]",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/Add_booking_User",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"Add_booking_User"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "store_booking_User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "source_trip_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "destination_trip_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "hotel_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "trip_name",
+													"value": "to france",
+													"type": "text"
+												},
+												{
+													"key": "number_of_people",
+													"value": "10",
+													"type": "text"
+												},
+												{
+													"key": "start_date",
+													"value": "2024-5-30",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-6-5",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend ",
+													"type": "text"
+												},
+												{
+													"key": "places[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "places[1]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip_away_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C2",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C4",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C6",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/Add_booking_User",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"Add_booking_User"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 25 May 2024 08:38:04 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 25 May 2024 08:38:04 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"0.00\",\n            \"number_of_people\": 10,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-06-05\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"dynamic\",\n            \"rooms_count\": 3,\n            \"places\": [],\n            \"plane_trips\": [\n                {\n                    \"id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 3,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 15,\n                    \"flight_date\": \"2024-05-30\",\n                    \"landing_date\": \"2024-06-01\",\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    }\n                },\n                {\n                    \"id\": 3,\n                    \"airport_source_id\": 3,\n                    \"airport_destination_id\": 1,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 15,\n                    \"flight_date\": \"2024-06-05\",\n                    \"landing_date\": \"2024-06-06\",\n                    \"airport_source\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "hotel_book",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "source_trip_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "destination_trip_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "hotel_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "trip_name",
+											"value": "to france",
+											"type": "text"
+										},
+										{
+											"key": "start_date",
+											"value": "2024-06-15",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "2024-06-30",
+											"type": "text"
+										},
+										{
+											"key": "trip_note",
+											"value": "hi my friend ",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C2",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C4",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C6",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/hotel_book",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"hotel_book"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "hotel_book",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "source_trip_id",
+													"value": "1",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "destination_trip_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "hotel_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "trip_name",
+													"value": "to france",
+													"type": "text"
+												},
+												{
+													"key": "number_of_people",
+													"value": "10",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "start_date",
+													"value": "2024-5-30",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-6-5",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend ",
+													"type": "text"
+												},
+												{
+													"key": "place_ids[0]",
+													"value": "1",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "place_ids[1]",
+													"value": "2",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "plane_trip_id",
+													"value": "1",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "plane_trip_away_id",
+													"value": "3",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "count_room_C2",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C4",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C6",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/hotel_book",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"hotel_book"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 10:52:24 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 10:52:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 12,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"540.00\",\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-06-05\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"hotel\",\n            \"rooms_count\": 3\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"hotel\": {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 32,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 42,\n                \"capacity\": 4,\n                \"price\": \"30.00\"\n            },\n            {\n                \"id\": 52,\n                \"capacity\": 6,\n                \"price\": \"40.00\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "plane_book",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "source_trip_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "destination_trip_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "trip_name",
+											"value": "to france",
+											"type": "text"
+										},
+										{
+											"key": "number_of_people",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "start_date",
+											"value": "2024-06-30",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "end_date",
+											"value": "2024-07-05",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trip_note",
+											"value": "hi my friend ",
+											"type": "text"
+										},
+										{
+											"key": "plane_trip_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "plane_trip_away_id",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/plane_book",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"plane_book"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "plane_book",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "source_trip_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "destination_trip_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "hotel_id",
+													"value": "3",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "trip_name",
+													"value": "to france",
+													"type": "text"
+												},
+												{
+													"key": "number_of_people",
+													"value": "10",
+													"type": "text"
+												},
+												{
+													"key": "start_date",
+													"value": "2024-5-30",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-6-5",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend ",
+													"type": "text"
+												},
+												{
+													"key": "place_ids[0]",
+													"value": "1",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "place_ids[1]",
+													"value": "2",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "plane_trip_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip_away_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C2",
+													"value": "1",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "count_room_C4",
+													"value": "1",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "count_room_C6",
+													"value": "1",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/plane_book",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"plane_book"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 12:16:35 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 12:16:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 4,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"0.00\",\n            \"number_of_people\": 10,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-06-05\",\n            \"trip_note\": \"hi my friend\"\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"going_trip\": {\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "show all my Dynamic_trip",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/all_my_trip",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"all_my_trip"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show all my Dynamic_trip",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/all_my_trip",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"all_my_trip"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 09:58:23 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 09:58:23 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france updated\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 2,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-06-01\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"plane\",\n            \"rooms_count\": 0\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-01\",\n            \"end_date\": \"2024-06-05\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"plane\",\n            \"rooms_count\": 0\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 1,\n            \"source_trip_id\": 2,\n            \"destination_trip_id\": 1,\n            \"trip_name\": \"to france\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-05\",\n            \"end_date\": \"2024-06-05\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"plane\",\n            \"rooms_count\": 0\n        },\n        {\n            \"id\": 4,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france with leader\",\n            \"price\": \"3240.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-07-03\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend again\",\n            \"type\": \"hotel\",\n            \"rooms_count\": 6\n        },\n        {\n            \"id\": 5,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"520.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"dynamic\",\n            \"rooms_count\": 1\n        },\n        {\n            \"id\": 6,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"520.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"dynamic\",\n            \"rooms_count\": 1\n        },\n        {\n            \"id\": 7,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1405.00\",\n            \"number_of_people\": 2,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"dynamic\",\n            \"rooms_count\": 4\n        },\n        {\n            \"id\": 8,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"520.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"dynamic\",\n            \"rooms_count\": 1\n        },\n        {\n            \"id\": 9,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1350.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-06-30\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"hotel\",\n            \"rooms_count\": 3\n        },\n        {\n            \"id\": 10,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-06-05\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"plane\",\n            \"rooms_count\": 0\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "show_Dynamic_trip",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/show_dynamic_trip/12",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"show_dynamic_trip",
+										"12"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show_Dynamic_trip",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/show_dynamic_trip/5",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"show_dynamic_trip",
+												"5"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 10:01:30 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 10:01:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"dynamic_trip\": {\n        \"id\": 5,\n        \"source_trip_id\": 1,\n        \"destination_trip_id\": 2,\n        \"trip_name\": \"to france\",\n        \"price\": \"520.00\",\n        \"number_of_people\": 1,\n        \"start_date\": \"2024-06-15\",\n        \"end_date\": \"2024-06-20\",\n        \"trip_note\": \"hi my friend\",\n        \"rooms_count\": 1\n    },\n    \"activities\": [\n        {\n            \"id\": 1,\n            \"name\": \"swimming\"\n        }\n    ],\n    \"source_trip\": {\n        \"id\": 1,\n        \"name\": \"Syria\"\n    },\n    \"destination_trip\": {\n        \"id\": 2,\n        \"name\": \"France\"\n    },\n    \"places\": [\n        {\n            \"id\": 1,\n            \"name\": \"Eiffel Tower\",\n            \"place_price\": \"20.00\",\n            \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"images\": [],\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            }\n        }\n    ],\n    \"going_trip\": {\n        \"airport_source\": {\n            \"id\": 1,\n            \"name\": \"Syria A\"\n        },\n        \"airport_destination\": {\n            \"id\": 3,\n            \"name\": \"France A\"\n        }\n    },\n    \"return_trip\": {\n        \"airport_source\": {\n            \"id\": 3,\n            \"name\": \"France A\"\n        },\n        \"airport_destination\": {\n            \"id\": 1,\n            \"name\": \"Syria A\"\n        }\n    },\n    \"hotel\": {\n        \"id\": 1,\n        \"name\": \"Damascus Hotel\"\n    },\n    \"rooms\": [\n        {\n            \"id\": 1,\n            \"capacity\": 2,\n            \"price\": \"20.00\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "show_hotel_trip",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/show_hotel_trip/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"show_hotel_trip",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show_hotel_trip",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/show_hotel_trip/4",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"show_hotel_trip",
+												"4"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 10:02:48 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 10:02:48 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"dynamic_trip\": {\n        \"id\": 4,\n        \"source_trip_id\": 1,\n        \"destination_trip_id\": 2,\n        \"trip_name\": \"to france with leader\",\n        \"price\": \"3240.00\",\n        \"start_date\": \"2024-06-15\",\n        \"end_date\": \"2024-07-03\",\n        \"trip_note\": \"hi my friend again\",\n        \"rooms_count\": 6\n    },\n    \"source_trip\": {\n        \"id\": 1,\n        \"name\": \"Syria\"\n    },\n    \"destination_trip\": {\n        \"id\": 2,\n        \"name\": \"France\"\n    },\n    \"hotel\": {\n        \"id\": 3,\n        \"name\": \"Paris_1_Hotel\"\n    },\n    \"rooms\": [\n        {\n            \"id\": 61,\n            \"capacity\": 2,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 62,\n            \"capacity\": 2,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 71,\n            \"capacity\": 4,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 72,\n            \"capacity\": 4,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 81,\n            \"capacity\": 6,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 82,\n            \"capacity\": 6,\n            \"price\": \"40.00\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "show_plane_trip",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/show_plane_trip/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"show_plane_trip",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show_plane_trip",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/show_plane_trip/1",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"show_plane_trip",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 10:03:16 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 10:03:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"dynamic_trip\": {\n        \"id\": 1,\n        \"source_trip_id\": 1,\n        \"destination_trip_id\": 2,\n        \"trip_name\": \"to france updated\",\n        \"price\": \"400.00\",\n        \"number_of_people\": 2,\n        \"start_date\": \"2024-05-30\",\n        \"end_date\": \"2024-06-01\",\n        \"trip_note\": \"hi my friend\"\n    },\n    \"source_trip\": {\n        \"id\": 1,\n        \"name\": \"Syria\"\n    },\n    \"destination_trip\": {\n        \"id\": 2,\n        \"name\": \"France\"\n    },\n    \"going_trip\": {\n        \"airport_source\": {\n            \"id\": 1,\n            \"name\": \"Syria A\"\n        },\n        \"airport_destination\": {\n            \"id\": 3,\n            \"name\": \"France A\"\n        }\n    },\n    \"return_trip\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "update_dynamic_trip",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "hotel_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "trip_name",
+											"value": "to france",
+											"type": "text"
+										},
+										{
+											"key": "number_of_people",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "2024-06-19",
+											"type": "text"
+										},
+										{
+											"key": "trip_note",
+											"value": "hi my friend ",
+											"type": "text"
+										},
+										{
+											"key": "place_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "place_ids[1]",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "plane_trip_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "plane_trip_away_id",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C2",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C4",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C6",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "activities[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "activities[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/update_dynamic_trip/7",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"update_dynamic_trip",
+										"7"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update_dynamic_trip",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "hotel_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "trip_name",
+													"value": "to france",
+													"type": "text"
+												},
+												{
+													"key": "number_of_people",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-06-20",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend ",
+													"type": "text"
+												},
+												{
+													"key": "place_ids[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "place_ids[1]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip_away_id",
+													"value": "4",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C2",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C4",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C6",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "activities[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "activities[1]",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/update_dynamic_trip/12",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"update_dynamic_trip",
+												"12"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Jun 2024 22:28:24 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Jun 2024 22:28:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 12,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1405.00\",\n            \"number_of_people\": 2,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-06-20\",\n            \"trip_note\": \"hi my friend\",\n            \"rooms_count\": 4\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 1,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 2,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 11,\n                \"capacity\": 4,\n                \"price\": \"28.00\"\n            },\n            {\n                \"id\": 21,\n                \"capacity\": 6,\n                \"price\": \"45.00\"\n            }\n        ]\n    },\n    \"added price\": 885\n}"
+								},
+								{
+									"name": "update_dynamic_trip",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "hotel_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "trip_name",
+													"value": "to france",
+													"type": "text"
+												},
+												{
+													"key": "number_of_people",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-06-19",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend ",
+													"type": "text"
+												},
+												{
+													"key": "place_ids[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "place_ids[1]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip_away_id",
+													"value": "4",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C2",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C4",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C6",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "activities[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "activities[1]",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/update_dynamic_trip/7",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"update_dynamic_trip",
+												"7"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:45:04 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:45:04 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"the new end date must be after or equal old end date\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete_dynamic_trip",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/delete_dynamic_trip/5",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"delete_dynamic_trip",
+										"5"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "delete_dynamic_trip",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/delete_dynamic_trip/5",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"delete_dynamic_trip",
+												"5"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Jun 2024 21:53:14 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Jun 2024 21:53:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"sorry but your trip have been started\"\n}"
+								},
+								{
+									"name": "delete_dynamic_trip",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/delete_dynamic_trip/7",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"delete_dynamic_trip",
+												"7"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Jun 2024 22:29:46 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Jun 2024 22:29:46 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "\"delete done\""
+								}
+							]
+						},
+						{
+							"name": "update_plane_book",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "trip_name",
+											"value": "to france updated",
+											"type": "text"
+										},
+										{
+											"key": "number_of_people",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "trip_note",
+											"value": "hi my friend",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/update_plane_book/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"update_plane_book",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update_plane_book",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "trip_name",
+													"value": "to france updated",
+													"type": "text"
+												},
+												{
+													"key": "number_of_people",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/update_plane_book/1",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"update_plane_book",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:13:36 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:13:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france updated\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 2,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-06-01\",\n            \"trip_note\": \"hi my friend\"\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"going_trip\": {\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": []\n    },\n    \"added_price\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "update_hotel_book",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "trip_name",
+											"value": "to france with leader",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "2024-07-03",
+											"type": "text"
+										},
+										{
+											"key": "trip_note",
+											"value": "hi my friend again",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C2",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C4",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "count_room_C6",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/update_hotel_book/4",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"update_hotel_book",
+										"4"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update_hotel_book",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "trip_name",
+													"value": "to france with leader",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-07-03",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend again",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C2",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C4",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C6",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/update_hotel_book/4",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"update_hotel_book",
+												"4"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:21:17 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:21:17 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 4,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france with leader\",\n            \"price\": \"3240.00\",\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-07-03\",\n            \"trip_note\": \"hi my friend again\",\n            \"rooms_count\": 6\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"hotel\": {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 61,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 62,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 71,\n                \"capacity\": 4,\n                \"price\": \"30.00\"\n            },\n            {\n                \"id\": 72,\n                \"capacity\": 4,\n                \"price\": \"30.00\"\n            },\n            {\n                \"id\": 81,\n                \"capacity\": 6,\n                \"price\": \"40.00\"\n            },\n            {\n                \"id\": 82,\n                \"capacity\": 6,\n                \"price\": \"40.00\"\n            }\n        ]\n    },\n    \"added price\": 1890\n}"
+								}
+							]
+						},
+						{
+							"name": "get_all_my_dynamic_trip",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/all_my_dynamic_trip",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"all_my_dynamic_trip"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get_all_my_dynamic_trip",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/all_my_dynamic_trip",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"all_my_dynamic_trip"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:43:38 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:43:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"520.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"dynamic\",\n            \"rooms_count\": 1\n        },\n        {\n            \"id\": 6,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"520.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"dynamic\",\n            \"rooms_count\": 1\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get_all_my_plane_trip",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/all_my_plane_trip",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"all_my_plane_trip"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/all_my_plane_trip",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"all_my_plane_trip"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:32:02 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:32:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france updated\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 2,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-06-01\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 1,\n            \"start_date\": \"2024-06-01\",\n            \"end_date\": \"2024-06-05\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 1,\n            \"source_trip_id\": 2,\n            \"destination_trip_id\": 1,\n            \"trip_name\": \"to france\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 1,\n            \"start_date\": \"2024-06-05\",\n            \"end_date\": \"2024-06-05\",\n            \"trip_note\": \"hi my friend\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get_all_my_hotel_trip",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/all_my_hotel_trip",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"all_my_hotel_trip"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/all_my_hotel_trip",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"all_my_hotel_trip"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:44:00 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:44:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france with leader\",\n            \"price\": \"3240.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-07-03\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend again\",\n            \"type\": \"hotel\",\n            \"rooms_count\": 6\n        }\n    ]\n}"
+								}
+							]
 						}
 					]
 				}
@@ -23127,7 +25221,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "21|aqEIdiDNOoMgMx7hGS1KgALEHEJWg5zn7zZPMjYk6320b924",
+						"value": "4|n868NXNUIUv9K6c2e7g9abEE4kbOscmdXzIofPwP84b85fb2",
 						"type": "string"
 					}
 				]

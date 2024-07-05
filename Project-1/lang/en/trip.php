@@ -22,6 +22,7 @@ return [
     'not-enough-member'=>'there are not enough members',
     'not-have-the-money'=>'You dont have the money for this trip',
     'enjoy-trip'=>'Enjoy your trip!',
+    'plane-trip-date'=>'The return date of the trip must be after the start date of the trip',
     'invaild-date'=>'Fail because of invaild Date',
     'cancel-trip'=>'Deleted Done and your money has returned to your Account',
 

@@ -27,11 +27,17 @@ class BookRepository implements BookRepositoryInterface
 
         $trip_price=0;
         $plane_trip = PlaneTrip::where('id', $request['plane_trip'])->first();
+        $plane_trip_away = PlaneTrip::where('id', $request['plane_trip_away'])->first();
+
+        // if($plane_trip['flight_date'] > $plane_trip_away['flight_date'])
+        // {
+        //     return 4;
+        // }
         if ($plane_trip['available_seats'] < $request['number_of_people']) {
              return 2;
         }
 
-        $plane_trip_away = PlaneTrip::where('id', $request['plane_trip_away'])->first();
+
         if ($plane_trip_away['available_seats'] < $request['number_of_people']) {
             return 3;
         }
@@ -40,7 +46,7 @@ class BookRepository implements BookRepositoryInterface
         //if($request['hotel_id'] != null){
             $room_count = $request['number_of_people'] / $request['trip_capacity'];
             if ($request['number_of_people'] % $request['trip_capacity'] > 0) $room_count++;
-            $rooms = Room::available($plane_trip['flight_date'], $plane_trip_away['flight_date'])
+            $rooms = Room::available($request['start_date'], $request['end_date'])
                             ->where('hotel_id', $request['hotel_id'])
                             ->where('capacity', $request['trip_capacity'])
                             ->count();
@@ -62,8 +68,8 @@ class BookRepository implements BookRepositoryInterface
                 //'price' => $request['price'],
                 'number_of_people' => $request['number_of_people'],
                 'trip_capacity' => $request['trip_capacity'],
-                'start_date' => $plane_trip['flight_date'],// to submit the flight date same as start date trip
-                'end_date' => $plane_trip_away['flight_date'],// to submit the flight date same as end date trip
+                'start_date' => $request['start_date'],// to submit the flight date same as start date trip
+                'end_date' => $request['end_date'],// to submit the flight date same as end date trip
                 // 'start_date' => $plane_trip['flight_date'],// to submit the flight date same as start date trip
                 // 'end_date' => $plane_trip_away['flight_date'],// to submit the flight date same as end date trip
                 'trip_note' => $request['trip_note'],
@@ -99,7 +105,7 @@ class BookRepository implements BookRepositoryInterface
 
             // if($request['hotel_id'] != null){
                 // rooms
-                $rooms = Room::available($plane_trip['flight_date'], $plane_trip_away['flight_date'])
+                $rooms = Room::available($request['start_date'], $request['end_date'])
                                 ->where('hotel_id', $request['hotel_id'])
                                 ->where('capacity', $request['trip_capacity'])
                                 ->get();
@@ -377,8 +383,8 @@ class BookRepository implements BookRepositoryInterface
     public function index()
     {
         $static_book=Booking::where('type','static')
-                             ->AvailableRooms()
-                             ->select('id','trip_name','price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
+                            ->AvailableRooms()
+                            ->select('id','trip_name','price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
                              ->get();
         return $static_book;
 
@@ -480,7 +486,7 @@ class BookRepository implements BookRepositoryInterface
         }catch(Exception $exception){
             throw new Exception($exception->getMessage());
         }
-     }
+    }
 
     public function editBook($request,$id)
     {
@@ -570,6 +576,57 @@ class BookRepository implements BookRepositoryInterface
             return 2;
         } catch (Exception $th) {
            return 3;
+        }
+    }
+
+    public function getDetailsStaticTrip($id)
+    {
+        try{
+
+            $staticTrip=Booking::where('id',$id)->first();
+            $details=BookingStaticTrip::where('static_trip_id',$staticTrip['id'])
+                                        ->with('user:id,name,phone_number,image')
+                                        ->select('id','user_id','static_trip_id','number_of_friend')
+                                        ->get();
+            return $details;
+
+        }catch(Exception $ex){
+            throw new Exception($ex);
+        }
+
+    }
+
+    public function getTripAdminTrips()
+    {
+        try{
+            $staticTrip=Booking::where('type','static')
+                             ->where('user_id',auth()->id())
+                             ->AvailableRooms()
+                             ->select('id','trip_name','price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
+                             ->get();
+            return $staticTrip;
+        }catch(Exception $exception){
+            throw new Exception($exception->getMessage());
+        }
+    }
+
+    public function getTripAdminTripDetails($id)
+    {
+        try{
+            $staticTrip=Booking::where('id',$id)
+                                ->where('user_id',auth()->id())
+                                ->first();
+            $details=[];
+            if($staticTrip)
+            {
+                $details=BookingStaticTrip::where('static_trip_id',$staticTrip['id'])
+                                            ->with('user:id,name,phone_number,image')
+                                            ->select('id','user_id','static_trip_id','number_of_friend')
+                                            ->get();
+            }
+            return $details;
+        }catch(Exception $ex){
+            throw new Exception($ex);
         }
     }
 }

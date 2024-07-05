@@ -17,7 +17,7 @@ class BasicInformationSeeder extends Seeder
      */
     public function run(): void
     {
-        
+
 
         $areas=['Damascus','Aleppo','Latakia'];
 

@@ -296,14 +296,17 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
             Route::controller(StaticBookController::class)->group(function(){
                 Route::post('Add_booking_Admin','store_Admin');
                 Route::post('edit-static-trip/{id}','update_Admin');
-                Route::post('check-static-trip/{id}','checkStaticTrip');
-                Route::post('edit-static-trip-book/{id}','editBook');
-                Route::post('book-static-trip','bookStaticTrip');
-                Route::delete('delete-static-trip-book/{id}','deleteBook');
+                Route::post('check-static-trip/{id}','checkStaticTrip');//
+                Route::post('edit-static-trip-book/{id}','editBook');//
+                Route::post('book-static-trip','bookStaticTrip');//
+                Route::delete('delete-static-trip-book/{id}','deleteBook');//
                 Route::delete('trip-cancellation/{id}','tripCancellation');
                 Route::get('show-all-my-staic-trip-books','showAllMyStaicTrips');
                 Route::get('all-static-trip','index');
                 Route::get('show-static-trip/{id}','showStaticTrip');
+                Route::get('show-details-trip/{id}','getDetailsStaticTrip');
+                Route::get('show-trip-admin-trip-details/{id}','getTripAdminTripDetails');
+                Route::get('get-trip-admin-trips','getTripAdminTrips');
             });
 
             Route::controller(CommentController::class)->group(function(){
