@@ -68,6 +68,11 @@ class DynamicBookController extends Controller
                 'message' => 'the seats of the return trip plane lower than number of person'
             ], 400);
         }
+        if($Dynamic_book === 3){
+            return response()->json([
+                'message' => 'the seats of the return trip plane lower than number of person'
+            ], 400);
+        }
         if($Dynamic_book === 4){
             return response()->json([
                 'message' => 'Failed to create a trip',
@@ -156,6 +161,11 @@ class DynamicBookController extends Controller
         if($Dynamic_book === 8){
             return response()->json([
                 'message' => 'bad request' ,
+            ], 400);
+        }
+        if($Dynamic_book === 55){
+            return response()->json([
+                'message' => 'your money dont enough for create your trip',
             ], 400);
         }
         return response()->json([
