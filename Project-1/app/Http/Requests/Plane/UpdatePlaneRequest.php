@@ -22,10 +22,10 @@ class UpdatePlaneRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=> 'string',
-            'number_of_seats'=> 'numeric|gt:10',
-            'ticket_price'=> 'numeric|gt:0',
-            'visible'=>'boolean'
+            'name'=> 'required|string',
+            'number_of_seats'=> 'required|numeric|gt:10',
+            'ticket_price'=> 'required|numeric|gt:0',
+            'visible'=>'required|boolean'
         ];
     }
 }

@@ -22,7 +22,7 @@ class StoreRoomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'hotel_id'=>'required|numeric|exists:hotels,id',
+            // 'hotel_id'=>'required|numeric|exists:hotels,id',
             'capacity'=>'required|numeric|in:2,4,6',
             'price'=>'required|numeric',
             'count'=>'required|min:1|numeric',

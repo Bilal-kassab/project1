@@ -143,15 +143,16 @@ class HotelController extends Controller
             ],200);
      }
 
-    public function update(UpdateHotelRequest $request, $id)
+    public function update(UpdateHotelRequest $request)
     {
-        if(auth()->user()->id !=Hotel::where('id',$id)->first()->user_id ){
-         return response()->json([
-             'message'=>trans('global.not-have-the-hotel')
-         ]);
-        }
+        // if(auth()->user()->id !=Hotel::where('id',$id)->first()->user_id ){
+        //  return response()->json([
+        //      'message'=>trans('global.not-have-the-hotel')
+        //  ]);
+        // }
         try{
-            $hotel =Hotel::findOrFail($id);
+            $hotel=Hotel::where('user_id',auth()->id())->first();
+            // $hotel =Hotel::findOrFail($id);
 
          }catch(\Exception $e){
             return response()->json([
@@ -162,7 +163,7 @@ class HotelController extends Controller
          $hotel->area_id=$request->area_id;
          $hotel->country_id=Area::find($request->area_id)['country_id'];
          $hotel->number_rooms = $request->number_rooms;
-         $hotel->user_id=$request->user_id;
+        //  $hotel->user_id=$request->user_id;
          // $hotel->stars = $request->stars;
         //  $hotel->visible=$request->visible;
          $hotel->save();
@@ -171,7 +172,7 @@ class HotelController extends Controller
         return response()->json([
             'message'=>trans('global.update'),
             'data'=>Hotel::with(['images','country:id,name','area:id,name'])
-                          ->where('id',$id)
+                          ->where('id',$hotel['id'])
                           ->select('id','name','stars','number_rooms','visible','area_id','user_id','country_id')
                           ->get(),
 

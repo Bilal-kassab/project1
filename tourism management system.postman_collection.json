@@ -6904,12 +6904,7 @@
 													"formdata": [
 														{
 															"key": "name",
-															"value": "Paris F",
-															"type": "text"
-														},
-														{
-															"key": "airport_id",
-															"value": "3",
+															"value": "Paris Z",
 															"type": "text"
 														},
 														{
@@ -6956,11 +6951,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 19:29:14 GMT"
+													"value": "Thu, 11 Jul 2024 22:29:48 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 19:29:14 GMT"
+													"value": "Thu, 11 Jul 2024 22:29:48 GMT"
 												},
 												{
 													"key": "Connection",
@@ -6984,7 +6979,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "57"
+													"value": "59"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -6992,7 +6987,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"date\": {\n        \"id\": 10,\n        \"airport_id\": 3,\n        \"name\": \"Paris F\",\n        \"number_of_seats\": 50,\n        \"ticket_price\": \"25.00\",\n        \"airport\": {\n            \"id\": 3,\n            \"name\": \"France A\"\n        },\n        \"images\": [\n            {\n                \"id\": 8,\n                \"plane_id\": 10,\n                \"image\": \"AirportImage/1716924554.png\"\n            }\n        ]\n    }\n}"
+											"body": "{\n    \"date\": {\n        \"id\": 6,\n        \"airport_id\": 1,\n        \"name\": \"Paris Z\",\n        \"number_of_seats\": 50,\n        \"visible\": 1,\n        \"ticket_price\": \"25.00\",\n        \"airport\": {\n            \"id\": 1,\n            \"name\": \"Syria A\"\n        },\n        \"images\": [\n            {\n                \"id\": 2,\n                \"plane_id\": 6,\n                \"image\": \"AirportImage/1720736988.png\"\n            }\n        ]\n    }\n}"
 										}
 									]
 								},
@@ -10056,6 +10051,16 @@
 							]
 						}
 					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "2|E3XJpPNXnE1rPhbdkIMaxUGkl1WQhjCbiVBb4KfYf5818aec",
+								"type": "string"
+							}
+						]
+					},
 					"event": [
 						{
 							"listen": "prerequest",
@@ -10154,29 +10159,18 @@
 													"mode": "formdata",
 													"formdata": [
 														{
-															"key": "hotel_id",
-															"value": "1",
-															"type": "text"
-														},
-														{
 															"key": "capacity",
-															"value": "4",
-															"type": "text"
-														},
-														{
-															"key": "",
-															"value": "",
-															"type": "text",
-															"disabled": true
-														},
-														{
-															"key": "price",
-															"value": "100",
+															"value": "2",
 															"type": "text"
 														},
 														{
 															"key": "count",
 															"value": "5",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "100",
 															"type": "text"
 														}
 													]
@@ -10208,11 +10202,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 29 Apr 2024 08:06:10 GMT"
+													"value": "Thu, 11 Jul 2024 22:21:01 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 29 Apr 2024 08:06:10 GMT"
+													"value": "Thu, 11 Jul 2024 22:21:01 GMT"
 												},
 												{
 													"key": "Connection",
@@ -10244,7 +10238,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"message\": \"added done\"\n}"
+											"body": "{\n    \"message\": \"Added succesfully\"\n}"
 										}
 									]
 								},
@@ -11344,7 +11338,7 @@
 													"formdata": [
 														{
 															"key": "name",
-															"value": "hotel_updated",
+															"value": "hotel_update",
 															"type": "text"
 														},
 														{
@@ -11353,25 +11347,14 @@
 															"type": "text"
 														},
 														{
-															"key": "user_id",
-															"value": "3",
-															"type": "text"
-														},
-														{
 															"key": "number_rooms",
 															"value": "11",
 															"type": "text"
-														},
-														{
-															"key": "stars",
-															"value": "5",
-															"type": "text",
-															"disabled": true
 														}
 													]
 												},
 												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/update_hotel/7",
+													"raw": "http://127.0.0.1:8000/api/admin/update_hotel",
 													"protocol": "http",
 													"host": [
 														"127",
@@ -11383,8 +11366,7 @@
 													"path": [
 														"api",
 														"admin",
-														"update_hotel",
-														"7"
+														"update_hotel"
 													]
 												}
 											},
@@ -11398,11 +11380,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 23:54:51 GMT"
+													"value": "Thu, 11 Jul 2024 22:25:14 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 23:54:51 GMT"
+													"value": "Thu, 11 Jul 2024 22:25:14 GMT"
 												},
 												{
 													"key": "Connection",
@@ -11426,7 +11408,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "57"
+													"value": "59"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -11434,7 +11416,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"message\": \"updated successfully\",\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"hotel_updated\",\n            \"stars\": \"3.00\",\n            \"number_rooms\": 11,\n            \"visible\": 1,\n            \"area_id\": 1,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"images\": [],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            }\n        }\n    ]\n}"
+											"body": "{\n    \"message\": \"updated succesfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"hotel_update\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 11,\n            \"visible\": 1,\n            \"area_id\": 1,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"images\": [],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -12419,6 +12401,16 @@
 							]
 						}
 					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "1|iZlidivLWvQkHeMIxg1046ffVmTm3h35mdJbAlMH3226ecc9",
+								"type": "string"
+							}
+						]
+					},
 					"event": [
 						{
 							"listen": "prerequest",
@@ -15414,7 +15406,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|YyvxS4KJ9PoH95kwSXUIRILcXA5StObrwh8bWVf617442382",
+						"value": "1|VnUU2eZMPYM0IPKUeCqYu0gPVhPpDwXVME0kwyH5e698d7e4",
 						"type": "string"
 					}
 				]

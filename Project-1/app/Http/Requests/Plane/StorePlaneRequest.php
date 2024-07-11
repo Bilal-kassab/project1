@@ -23,7 +23,7 @@ class StorePlaneRequest extends FormRequest
     {
         return [
             'name'=> 'required|string|unique:planes,name',
-            'airport_id'=>'required|numeric|exists:airports,id',
+            // 'airport_id'=>'required|numeric|exists:airports,id',
             'number_of_seats'=>'required|numeric|gt:10',
             'ticket_price'=> 'required|numeric|gt:0',
             'images'=> 'array',

@@ -15,55 +15,65 @@ class HotelSeeder extends Seeder
     public function run(): void
     {
         $hotels=['Damascus Hotel','Al Marja Hotel'];
-        foreach($hotels as $hotel){
-            Hotel::create([
+        //1
+           $hotel= Hotel::create([
                 'user_id'=>3,
-                'name'=>$hotel,
+                'name'=>$hotels[0],
                 'number_rooms'=>30,
                 'country_id'=>1,
                 'area_id'=>1,
                 'stars'=>4
             ]);
-        }
+
+
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>1,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>2,
                 'price'=>20
             ]);
         }
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>1,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>4,
                 'price'=>28
             ]);
         }
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>1,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>6,
                 'price'=>45
             ]);
         }
 
+        //2
+        $hotel=Hotel::create([
+            'user_id'=>4,
+            'name'=>$hotels[1],
+            'number_rooms'=>30,
+            'country_id'=>1,
+            'area_id'=>1,
+            'stars'=>4
+        ]);
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>2,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>2,
                 'price'=>20
             ]);
         }
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>2,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>4,
                 'price'=>28
             ]);
         }
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>2,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>6,
                 'price'=>45
             ]);
@@ -72,55 +82,67 @@ class HotelSeeder extends Seeder
 
 
         $hotels=['Paris_1_Hotel','Paris_2_Hotel'];
-        foreach($hotels as $hotel){
-            Hotel::create([
-                'user_id'=>3,
-                'name'=>$hotel,
+        //3
+            $hotel=Hotel::create([
+                'user_id'=>8,
+                'name'=>$hotels[0],
                 'number_rooms'=>30,
                 'country_id'=>2,
                 'area_id'=>4,
                 'stars'=>4
             ]);
-        }
+
+
+
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>3,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>2,
                 'price'=>20
             ]);
         }
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>3,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>4,
                 'price'=>30
             ]);
         }
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>3,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>6,
                 'price'=>40
             ]);
         }
-        
+
+        //4
+        $hotel=Hotel::create([
+            'user_id'=>9,
+            'name'=>$hotels[1],
+            'number_rooms'=>30,
+            'country_id'=>2,
+            'area_id'=>4,
+            'stars'=>4
+        ]);
+
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>4,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>2,
                 'price'=>20
             ]);
         }
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>4,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>4,
                 'price'=>30
             ]);
         }
         for($i=0;$i<10;$i++){
             Room::create([
-                'hotel_id'=>4,
+                'hotel_id'=>$hotel->id,
                 'capacity'=>6,
                 'price'=>40
             ]);

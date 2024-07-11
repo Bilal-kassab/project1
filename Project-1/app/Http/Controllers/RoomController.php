@@ -56,7 +56,7 @@ class RoomController extends Controller
                 ['capacity', '=', 6],
                 ['hotel_id',$id],
             ])->get('price')[0]['price'];
-            
+
         $data=[
         'capacity_2'=>[
             'count'=>$capacity_2_count,
@@ -119,7 +119,8 @@ class RoomController extends Controller
     {
         try{
 
-       $my_hotel=Hotel::where('id',$request->hotel_id)->first();
+       $my_hotel=Hotel::where('user_id',auth()->id())->first();
+
        if(auth()->user()->id != $my_hotel->user_id){
         return response()->json([
             'message'=>trans('global.not-have-the-hotel')
@@ -129,7 +130,7 @@ class RoomController extends Controller
     $co=$request->count;
       while($co){
             $data[]=[
-            'hotel_id'=>$request->hotel_id,
+            'hotel_id'=>$my_hotel->id,
             'capacity'=>$request->capacity,
             'price'=>$request->price
             ];

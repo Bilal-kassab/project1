@@ -274,7 +274,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
             Route::controller(HotelController::class)->group(function(){
                 Route::get('get_all_Hotel','index');
                 Route::post('add_hotel','store');
-                Route::post('update_hotel/{id}','update');
+                Route::post('update_hotel','update');
                 Route::post('change-exist-hotel-image','update_Image_Hotel');
                 Route::get('show_hotel/{id}','show');
                 Route::post('search_Hotel_by_name','search_Hotel_by_Name');

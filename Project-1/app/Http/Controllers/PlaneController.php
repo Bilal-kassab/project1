@@ -36,7 +36,7 @@ class PlaneController extends Controller
     {
         $palnes=Plane::whereHas('airport' , function (Builder $query) {
             $query->where('user_id',auth()->id())->select('id','name','country_id','area_id','user_id');
-        })->with('airport:id,name','images')->select('id','airport_id','name','number_of_seats','ticket_price')
+        })->with('airport:id,name','images')->select('id','airport_id','name','visible','number_of_seats','ticket_price')
                         ->get();
 
         return response()->json([
@@ -45,7 +45,7 @@ class PlaneController extends Controller
     }
     public function store(StorePlaneRequest $request):JsonResponse
     {
-          $airport=Airport::where('id',$request->airport_id)->first();
+          $airport=Airport::where('user_id',auth()->id())->first();
 
           if(auth()->id() != $airport['user_id']){
                 return response()->json([
@@ -55,7 +55,7 @@ class PlaneController extends Controller
 
           $plane=Plane::create([
             'name'=>$request->name,
-            'airport_id'=>$request->airport_id,
+            'airport_id'=>$airport['id'],
             'number_of_seats'=>$request->number_of_seats,
             'ticket_price'=>$request->ticket_price
           ]);
@@ -73,7 +73,7 @@ class PlaneController extends Controller
 
         return response()->json([
             'date'=>Plane::with(['airport:id,name','images:id,plane_id,image'])
-                         ->select('id','airport_id','name','number_of_seats','ticket_price')
+                         ->select('id','airport_id','name','number_of_seats','visible','ticket_price')
                          ->where('id',$plane->id)
                          ->first(),
         ],200);

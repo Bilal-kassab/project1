@@ -62,7 +62,7 @@ class BasicInformationSeeder extends Seeder
         foreach ($airports as $airport) {
             Airport::create([
                 'name'=> $airport,
-                'user_id'=>4,
+                'user_id'=>5,
                 'area_id'=>1,
                 'country_id'=>1
             ]);
@@ -72,7 +72,7 @@ class BasicInformationSeeder extends Seeder
         foreach ($airports as $airport) {
             Airport::create([
                 'name'=> $airport,
-                'user_id'=>4,
+                'user_id'=>6,
                 'area_id'=>4,
                 'country_id'=>2
             ]);
