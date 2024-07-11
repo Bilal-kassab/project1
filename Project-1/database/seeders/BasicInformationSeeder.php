@@ -57,7 +57,7 @@ class BasicInformationSeeder extends Seeder
             ]);
         }
 
-        $airports=['Syria A','Syria B'];
+        $airports=['Syria A'];
 
         foreach ($airports as $airport) {
             Airport::create([
@@ -68,7 +68,7 @@ class BasicInformationSeeder extends Seeder
             ]);
         }
 
-        $airports=['France A','France B'];
+        $airports=['France A'];
         foreach ($airports as $airport) {
             Airport::create([
                 'name'=> $airport,
@@ -93,7 +93,7 @@ class BasicInformationSeeder extends Seeder
         foreach ($planes as $plane) {
             Plane::create([
                 'name'=> $plane,
-                'airport_id'=>3,
+                'airport_id'=>2,
                 'number_of_seats'=>40,
                 'ticket_price'=>50
             ]);

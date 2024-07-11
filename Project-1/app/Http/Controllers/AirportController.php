@@ -10,6 +10,8 @@ use App\Models\AirportImage;
 use App\Models\Area;
 use App\Models\Country;
 use App\Models\Plane;
+use App\Models\PlaneTrip;
+use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -20,9 +22,9 @@ class AirportController extends Controller
 
     public function __construct()
     {
-        $this->middleware('role:Admin|Airport admin', ['only'=> ['store','update','updateExistAirportImage','addAirportImage','getMyAirport']]);
-        $this->middleware('role:Super Admin|Admin|Airport admin', ['only'=> ['getAirportDetails']]);
-        $this->middleware('role:Super Admin', ['only'=> ['allAirport']]);
+        $this->middleware('role:Admin|Airport admin', ['only'=> ['store','update','updateExistAirportImage','addAirportImage','getMyAirport','myAirportTrip']]);
+        $this->middleware('role:Super Admin|Admin|Airport admin', ['only'=> ['getAirportDetails','destroy']]);
+        $this->middleware('role:Super Admin', ['only'=> ['allAirport','airportTrip']]);
     }
 
     public function getMyAirport()
@@ -323,6 +325,43 @@ class AirportController extends Controller
          ],200);
     }
 
+    public function airportTrip($id):JsonResponse
+    {
+        try{
+            $airportTrip=Airport::where('id',$id)->first();
+            $data=[
+                // 'airport'=>$airportTrip,
+                'going_trip'=>Airport::where('id',$id)->with('tripss')->first()['tripss'],
+                'coming_trip'=>PlaneTrip::where('airport_destination_id',$id)->getTripDetails()->get(),
+            ];
+            return response()->json([
+                'data'=>$data
+            ],200);
+        }catch(Exception $exception){
+            return response()->json([
+                'message'=>trans('global.notfound')
+            ]);
+        }
+    }
+    public function myAirportTrip():JsonResponse
+    {
+        try{
+            $airportTrip=Airport::where('user_id',auth()->id())->first();
+            $data=[
+                // 'airport'=>$airportTrip,
+                'going_trip'=>Airport::where('user_id',auth()->id())->with('tripss')->first()['tripss']??null,
+                'coming_trip'=>PlaneTrip::where('airport_destination_id',$airportTrip['id'])->getTripDetails()->get()??null,
+            ];
+            return response()->json([
+                'data'=>$data
+            ],200);
+        }catch(Exception $exception){
+            return response()->json([
+                // 'message'=>trans('global.notfound')
+                'message'=>$exception->getMessage()
+            ]);
+        }
+    }
 
 
 }

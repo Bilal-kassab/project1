@@ -16,7 +16,7 @@ class PlaneTripSeeder extends Seeder
         PlaneTrip::create([
             'plane_id'=>1,
             'airport_source_id'=>1,
-            'airport_destination_id'=>3,
+            'airport_destination_id'=>2,
             'country_source_id'=>1,
             'country_destination_id'=>2,
             'current_price'=>200,
@@ -27,7 +27,7 @@ class PlaneTripSeeder extends Seeder
         PlaneTrip::create([
             'plane_id'=>1,
             'airport_source_id'=>1,
-            'airport_destination_id'=>3,
+            'airport_destination_id'=>2,
             'country_source_id'=>1,
             'country_destination_id'=>2,
             'current_price'=>200,
@@ -37,7 +37,7 @@ class PlaneTripSeeder extends Seeder
         ]);
         PlaneTrip::create([
             'plane_id'=>3,
-            'airport_source_id'=>3,
+            'airport_source_id'=>2,
             'airport_destination_id'=>1,
             'country_source_id'=>2,
             'country_destination_id'=>1,
@@ -48,7 +48,7 @@ class PlaneTripSeeder extends Seeder
         ]);
         PlaneTrip::create([
             'plane_id'=>3,
-            'airport_source_id'=>3,
+            'airport_source_id'=>2,
             'airport_destination_id'=>1,
             'country_source_id'=>2,
             'country_destination_id'=>1,

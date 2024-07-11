@@ -77,4 +77,8 @@ class Airport extends Model
     {
         return $this->hasManyThrough(PlaneTrip::class, Plane::class);
     }
+    public function tripss(): HasManyThrough
+    {
+        return $this->hasManyThrough(PlaneTrip::class, Plane::class)->getTripDetails();
+    }
 }

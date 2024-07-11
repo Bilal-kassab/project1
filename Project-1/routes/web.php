@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AirportController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\StaticBookController;
 use App\Mail\TestMail;
@@ -45,5 +46,9 @@ Route::controller(StaticBookController::class)->group(function(){
 
     Route::get('show-static-trip/{id}','showStaticTrip');
     Route::get('all-static-trip','index');
+});
+Route::controller(AirportController::class)->group(function(){
+
+    Route::get('airport-trip/{id}','airportTrip');
 });
 

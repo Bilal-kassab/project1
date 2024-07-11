@@ -70,11 +70,27 @@ class SuperAdminSeeder extends Seeder
             'position'=>1,
         ]);
         $user->assignRole('Airport admin');
+
         Bank::create([
             'email'=>$user->email,
             'money'=>20000,
             'payments'=>0,
         ]);
+        // $user = User::create([
+        //     'name' => 'Airport admin2',
+        //     'email' => 'Airport2@gmail.com',
+        //     'password' => Hash::make('123456789'),
+        //     'is_approved'=>true,
+        //     'position'=>2,
+        // ]);
+
+        // $user->assignRole('Airport admin');
+        // Bank::create([
+        //     'email'=>$user->email,
+        //     'money'=>20000,
+        //     'payments'=>0,
+        // ]);
+
         $user = User::create([
             'name' => 'User',
             'email' => 'User@gmail.com',

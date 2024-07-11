@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "49d9e0e3-4d0f-44d0-bde0-320102040f82",
+		"_postman_id": "451c9876-6e63-446a-b119-0428f545e9f9",
 		"name": "tourism management system",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30377196"
+		"_exporter_id": "30821440"
 	},
 	"item": [
 		{
@@ -231,7 +231,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "SA@gmail.com",
+											"value": "Airport@gmail.com",
 											"type": "text"
 										},
 										{
@@ -8358,52 +8358,232 @@
 							"name": "Airport Job",
 							"item": [
 								{
-									"name": "add-airport",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
+									"name": "Super Admin",
+									"item": [
+										{
+											"name": "airport-trips",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/airport-trips/1",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"airport-trips",
+														"1"
+													]
+												}
+											},
+											"response": [
 												{
-													"key": "name",
-													"value": "BNA",
-													"type": "text"
-												},
-												{
-													"key": "area_id",
-													"value": "1",
-													"type": "text"
+													"name": "airport-trips",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/airport-trips/1",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"airport-trips",
+																"1"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Thu, 11 Jul 2024 18:40:36 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Thu, 11 Jul 2024 18:40:36 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "59"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            }\n        ],\n        \"coming_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ]\n    }\n}"
 												}
 											]
 										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/add-airport",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"add-airport"
+										{
+											"name": "all-airport",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/all-airport",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"all-airport"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "New Request",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/all-airport",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"all-airport"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 28 May 2024 14:19:39 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 28 May 2024 14:19:39 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "59"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria A\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Syria B\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"France A\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"France B\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"adcd\",\n            \"user_id\": 6,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"Admin\",\n                \"email\": \"Airport2@gmail.com\",\n                \"image\": null,\n                \"position\": 1\n            }\n        }\n    ]\n}"
+												}
 											]
 										}
-									},
-									"response": [
+									]
+								},
+								{
+									"name": "Airport Admin",
+									"item": [
 										{
 											"name": "add-airport",
-											"originalRequest": {
+											"request": {
 												"method": "POST",
 												"header": [
 													{
@@ -8417,12 +8597,12 @@
 													"formdata": [
 														{
 															"key": "name",
-															"value": "Aleppo",
+															"value": "BNA",
 															"type": "text"
 														},
 														{
 															"key": "area_id",
-															"value": "2",
+															"value": "1",
 															"type": "text"
 														}
 													]
@@ -8444,106 +8624,103 @@
 													]
 												}
 											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
+											"response": [
 												{
-													"key": "Host",
-													"value": "127.0.0.1:8000"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:39:50 GMT"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:39:50 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "close"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/8.2.4"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache, private"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "X-RateLimit-Limit",
-													"value": "60"
-												},
-												{
-													"key": "X-RateLimit-Remaining",
-													"value": "59"
-												},
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"message\": \"airport has been added successfully\",\n    \"data\": [\n        {\n            \"id\": 6,\n            \"name\": \"Aleppo\",\n            \"user_id\": 4,\n            \"area_id\": 2,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 2,\n                \"name\": \"Aleppo\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
-										}
-									]
-								},
-								{
-									"name": "update-airport",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "name",
-													"value": "Syria AB",
-													"type": "text",
-													"disabled": true
-												},
-												{
-													"key": "area_id",
-													"value": "2",
-													"type": "text",
-													"disabled": true
+													"name": "add-airport",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "name",
+																	"value": "Aleppo",
+																	"type": "text"
+																},
+																{
+																	"key": "area_id",
+																	"value": "2",
+																	"type": "text"
+																}
+															]
+														},
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/add-airport",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"add-airport"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 28 May 2024 19:39:50 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 28 May 2024 19:39:50 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "59"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"message\": \"airport has been added successfully\",\n    \"data\": [\n        {\n            \"id\": 6,\n            \"name\": \"Aleppo\",\n            \"user_id\": 4,\n            \"area_id\": 2,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 2,\n                \"name\": \"Aleppo\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
 												}
 											]
 										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/update-airport/1",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"update-airport",
-												"1"
-											]
-										}
-									},
-									"response": [
 										{
 											"name": "update-airport",
-											"originalRequest": {
+											"request": {
 												"method": "POST",
 												"header": [
 													{
@@ -8587,58 +8764,200 @@
 													]
 												}
 											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
+											"response": [
 												{
-													"key": "Host",
-													"value": "127.0.0.1:8000"
+													"name": "update-airport",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "name",
+																	"value": "Syria AB",
+																	"type": "text",
+																	"disabled": true
+																},
+																{
+																	"key": "area_id",
+																	"value": "2",
+																	"type": "text",
+																	"disabled": true
+																}
+															]
+														},
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/update-airport/1",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"update-airport",
+																"1"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 28 May 2024 19:40:28 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 28 May 2024 19:40:28 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "58"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"message\": \"airport has been updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Syria AB\",\n        \"user_id\": 4,\n        \"area_id\": 2,\n        \"country_id\": 1,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"area\": {\n            \"id\": 2,\n            \"name\": \"Aleppo\"\n        },\n        \"user\": {\n            \"id\": 4,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"image\": null,\n            \"position\": null\n        }\n    }\n}"
 												},
 												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:40:28 GMT"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:40:28 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "close"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/8.2.4"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache, private"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "X-RateLimit-Limit",
-													"value": "60"
-												},
-												{
-													"key": "X-RateLimit-Remaining",
-													"value": "58"
-												},
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
+													"name": "update-airport",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "name",
+																	"value": "Syria ",
+																	"type": "text"
+																},
+																{
+																	"key": "area_id",
+																	"value": "2",
+																	"type": "text",
+																	"disabled": true
+																}
+															]
+														},
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/update-airport/1",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"update-airport",
+																"1"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 28 May 2024 19:40:52 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 28 May 2024 19:40:52 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "59"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"message\": \"airport has been updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Syria\",\n        \"user_id\": 4,\n        \"area_id\": 2,\n        \"country_id\": 1,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"area\": {\n            \"id\": 2,\n            \"name\": \"Aleppo\"\n        },\n        \"user\": {\n            \"id\": 4,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"image\": null,\n            \"position\": null\n        }\n    }\n}"
 												}
-											],
-											"cookie": [],
-											"body": "{\n    \"message\": \"airport has been updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Syria AB\",\n        \"user_id\": 4,\n        \"area_id\": 2,\n        \"country_id\": 1,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"area\": {\n            \"id\": 2,\n            \"name\": \"Aleppo\"\n        },\n        \"user\": {\n            \"id\": 4,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"image\": null,\n            \"position\": null\n        }\n    }\n}"
+											]
 										},
 										{
-											"name": "update-airport",
-											"originalRequest": {
-												"method": "POST",
+											"name": "get-my-airport",
+											"request": {
+												"method": "GET",
 												"header": [
 													{
 														"key": "Accept",
@@ -8646,24 +8965,8 @@
 														"type": "text"
 													}
 												],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "name",
-															"value": "Syria ",
-															"type": "text"
-														},
-														{
-															"key": "area_id",
-															"value": "2",
-															"type": "text",
-															"disabled": true
-														}
-													]
-												},
 												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/update-airport/1",
+													"raw": "http://127.0.0.1:8000/api/admin/get-my-airport",
 													"protocol": "http",
 													"host": [
 														"127",
@@ -8675,94 +8978,92 @@
 													"path": [
 														"api",
 														"admin",
-														"update-airport",
-														"1"
+														"get-my-airport"
 													]
 												}
 											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
+											"response": [
 												{
-													"key": "Host",
-													"value": "127.0.0.1:8000"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:40:52 GMT"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:40:52 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "close"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/8.2.4"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache, private"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "X-RateLimit-Limit",
-													"value": "60"
-												},
-												{
-													"key": "X-RateLimit-Remaining",
-													"value": "59"
-												},
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
+													"name": "get-my-airport",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/get-my-airport",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"get-my-airport"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Fri, 05 Jul 2024 14:30:15 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Fri, 05 Jul 2024 14:30:15 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "59"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Syria A\",\n        \"user_id\": 4,\n        \"area_id\": 1,\n        \"country_id\": 1,\n        \"visible\": 1,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"area\": {\n            \"id\": 1,\n            \"name\": \"Damascus\"\n        },\n        \"user\": {\n            \"id\": 4,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"image\": null,\n            \"position\": 1\n        }\n    }\n}"
 												}
-											],
-											"cookie": [],
-											"body": "{\n    \"message\": \"airport has been updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Syria\",\n        \"user_id\": 4,\n        \"area_id\": 2,\n        \"country_id\": 1,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"area\": {\n            \"id\": 2,\n            \"name\": \"Aleppo\"\n        },\n        \"user\": {\n            \"id\": 4,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"image\": null,\n            \"position\": null\n        }\n    }\n}"
-										}
-									]
-								},
-								{
-									"name": "delete-airport",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/delete-airport/6",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"delete-airport",
-												"6"
 											]
-										}
-									},
-									"response": [
+										},
 										{
 											"name": "delete-airport",
-											"originalRequest": {
+											"request": {
 												"method": "POST",
 												"header": [
 													{
@@ -8789,53 +9090,224 @@
 													]
 												}
 											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
+											"response": [
 												{
-													"key": "Host",
-													"value": "127.0.0.1:8000"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:42:05 GMT"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:42:05 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "close"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/8.2.4"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache, private"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "X-RateLimit-Limit",
-													"value": "60"
-												},
-												{
-													"key": "X-RateLimit-Remaining",
-													"value": "59"
-												},
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
+													"name": "delete-airport",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/delete-airport/6",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"delete-airport",
+																"6"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 28 May 2024 19:42:05 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 28 May 2024 19:42:05 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "59"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"message\": \"airport has been deleted successfully\"\n}"
 												}
-											],
-											"cookie": [],
-											"body": "{\n    \"message\": \"airport has been deleted successfully\"\n}"
+											]
+										},
+										{
+											"name": "my-airport-trip",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/my-airport-trip",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"my-airport-trip"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "my-airport-trip",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/my-airport-trip",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"my-airport-trip"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Thu, 11 Jul 2024 18:53:45 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Thu, 11 Jul 2024 18:53:45 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "59"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            }\n        ],\n        \"coming_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ]\n    }\n}"
+												}
+											]
+										}
+									],
+									"auth": {
+										"type": "bearer",
+										"bearer": [
+											{
+												"key": "token",
+												"value": "2|tgv1pPVTteRh11KmFm9mTqFhnYJdOY007bXbtMQY3e10a33f",
+												"type": "string"
+											}
+										]
+									},
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"type": "text/javascript",
+												"packages": {},
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"packages": {},
+												"exec": [
+													""
+												]
+											}
 										}
 									]
 								},
@@ -9463,113 +9935,6 @@
 									]
 								},
 								{
-									"name": "get-my-airport",
-									"request": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/get-my-airport",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"get-my-airport"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "get-my-airport",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/get-my-airport",
-													"protocol": "http",
-													"host": [
-														"127",
-														"0",
-														"0",
-														"1"
-													],
-													"port": "8000",
-													"path": [
-														"api",
-														"admin",
-														"get-my-airport"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Host",
-													"value": "127.0.0.1:8000"
-												},
-												{
-													"key": "Date",
-													"value": "Fri, 05 Jul 2024 14:30:15 GMT"
-												},
-												{
-													"key": "Date",
-													"value": "Fri, 05 Jul 2024 14:30:15 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "close"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/8.2.4"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache, private"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "X-RateLimit-Limit",
-													"value": "60"
-												},
-												{
-													"key": "X-RateLimit-Remaining",
-													"value": "59"
-												},
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Syria A\",\n        \"user_id\": 4,\n        \"area_id\": 1,\n        \"country_id\": 1,\n        \"visible\": 1,\n        \"country\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"area\": {\n            \"id\": 1,\n            \"name\": \"Damascus\"\n        },\n        \"user\": {\n            \"id\": 4,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"image\": null,\n            \"position\": 1\n        }\n    }\n}"
-										}
-									]
-								},
-								{
 									"name": "get-airport-details",
 									"request": {
 										"method": "GET",
@@ -9665,125 +10030,8 @@
 											"body": "{\n    \"data\": {\n        \"airport\": {\n            \"id\": 1,\n            \"name\": \"Syria\",\n            \"area_id\": 2,\n            \"country_id\": 1,\n            \"visible\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 2,\n                \"name\": \"Aleppo\"\n            }\n        },\n        \"plane_count\": 2\n    }\n}"
 										}
 									]
-								},
-								{
-									"name": "all-airport",
-									"request": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/all-airport",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"all-airport"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "New Request",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/all-airport",
-													"protocol": "http",
-													"host": [
-														"127",
-														"0",
-														"0",
-														"1"
-													],
-													"port": "8000",
-													"path": [
-														"api",
-														"admin",
-														"all-airport"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Host",
-													"value": "127.0.0.1:8000"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 14:19:39 GMT"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 14:19:39 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "close"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/8.2.4"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache, private"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "X-RateLimit-Limit",
-													"value": "60"
-												},
-												{
-													"key": "X-RateLimit-Remaining",
-													"value": "59"
-												},
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria A\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Syria B\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"France A\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"France B\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"adcd\",\n            \"user_id\": 6,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"Admin\",\n                \"email\": \"Airport2@gmail.com\",\n                \"image\": null,\n                \"position\": 1\n            }\n        }\n    ]\n}"
-										}
-									]
 								}
 							],
-							"auth": {
-								"type": "bearer",
-								"bearer": [
-									{
-										"key": "token",
-										"value": "8|iE2qZtquAk7TeCVmReMo1a6g35hS6HJiBuEyokbC2f921660",
-										"type": "string"
-									}
-								]
-							},
 							"event": [
 								{
 									"listen": "prerequest",
@@ -15166,7 +15414,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "11|kq9Bs6ke2NTk4hVN35thttwFkynOvfA7Nbgcrldtc4aa4322",
+						"value": "1|YyvxS4KJ9PoH95kwSXUIRILcXA5StObrwh8bWVf617442382",
 						"type": "string"
 					}
 				]
