@@ -28,11 +28,12 @@ use Illuminate\Support\Facades\Route;
 Route::post('register',[UserController::class,'register']);
 Route::post('login',[UserController::class,'login']);
 
+
 Route::post('confirm-Code',[UserController::class,'confirmCode']);
 Route::post('forget-password',[UserController::class,'forgetPassword_SendEmail']);
 Route::post('set-new-password',[UserController::class,'forgetPassword_SetPassword']);
 
-
+Route::get('get_all_country2',[CountryController::class,'index']);
 Route::group(['middleware'=>['auth:sanctum']], function () {
     /*
     Route::get('check', function () {

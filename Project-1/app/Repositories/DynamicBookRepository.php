@@ -518,7 +518,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 $price_rooms_2=Room::available($request['start_date'], $request['end_date'])
                 ->where('hotel_id', $request['hotel_id'])
                 ->where('capacity', 2)->first()['price']??null;
-                if ($request['count_room_C2'] > $rooms_2 || ($price_rooms_2==null && $request['count_room_C2']!=null) ) {
+                if ($request['count_room_C2'] > $rooms_2 || ($price_rooms_2==null && $request['count_room_C2']!=0) ) {
                     return 5;
                 }
                 $hotel_price+=$request['count_room_C2']*$price_rooms_2*$period;
@@ -529,7 +529,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 $price_rooms_4=Room::available($request['start_date'], $request['end_date'])
                 ->where('hotel_id', $request['hotel_id'])
                 ->where('capacity', 4)->first()['price']??null;
-                if ($request['count_room_C4'] > $rooms_4 || ($price_rooms_4==null && $request['count_room_C4']!=null)) {
+                if ($request['count_room_C4'] > $rooms_4 || ($price_rooms_4==null && $request['count_room_C4']!=0)) {
                     return 6;
                 }
                 $hotel_price+=$request['count_room_C4']*$price_rooms_4*$period;
@@ -541,7 +541,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 $price_rooms_6=Room::available($request['start_date'], $request['end_date'])
                 ->where('hotel_id', $request['hotel_id'])
                 ->where('capacity', 6)->first()['price']??null;
-                if ($request['count_room_C6'] > $rooms_6 || ($price_rooms_6==null && $request['count_room_C6']!=null)) {
+                if ($request['count_room_C6'] > $rooms_6 || ($price_rooms_6==null && $request['count_room_C6']!=0)) {
                     return 7;
                 }
                 $hotel_price+=$request['count_room_C6']*$price_rooms_6*$period;
@@ -1044,6 +1044,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     if($check==5 || $check==6 ||$check==7 ||$check==8){ return $check;}
                     $trip_price+=$check;
 
+
                     if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
                         return 55;
                     }
@@ -1090,6 +1091,9 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 $check =$this->checkHotel($data,$id);
                 if($check==5 || $check==6 ||$check==7 ||$check==8){ return $check;}
                 $trip_price+=$check;
+                if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
+                    return 55;
+                }
                 $this->bookHotel($data,$booking['id']);
                 }
             }else{ return 8;

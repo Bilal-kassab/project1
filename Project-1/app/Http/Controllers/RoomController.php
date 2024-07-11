@@ -21,52 +21,43 @@ class RoomController extends Controller
     public function index(IndexRoomRequest $request,$id)
     {
 
-       $start=$request->start_date;
-       $end=$request->end_date;
+    $start=$request->start_date;
+    $end=$request->end_date;
         try{
             $capacity_2_price=0;
             $capacity_4_price=0;
             $capacity_6_price=0;
             $capacity_2_count=Room::query()->available($start,$end)->where([
-                 ['capacity', '=', 2],
-                 ['status', '=', 0],
-                 ['hotel_id',$id],
-             ])->count();
-             if($capacity_2_count!=0){
-            $capacity_2_price=Room::query()->available($start,$end)->where([
                 ['capacity', '=', 2],
                 ['status', '=', 0],
                 ['hotel_id',$id],
+                ])->count();
+            $capacity_2_price=Room::where([
+                ['capacity', '=', 2],
+                ['hotel_id',$id],
             ])->get('price')[0]['price'];
-             }
+
             $capacity_4_count=Room::query()->available($start,$end)->where([
                 ['capacity', '=', 4],
                 ['status', '=', 0],
                 ['hotel_id',$id],
             ])->count();
-                if($capacity_4_count!=0){
-                    $capacity_4_price=Room::query()->available($start,$end)->where([
-                        ['capacity', '=', 4],
-                        ['status', '=', 0],
-                        ['hotel_id',$id],
-                    ])->get('price')[0]['price'];
+            $capacity_4_price=Room::where([
+                ['capacity', '=', 4],
+                ['hotel_id',$id],
+            ])->get('price')[0]['price'];
 
-                }
-
-        $capacity_6_count=Room::query()->available($start,$end)->where([
-            ['capacity', '=', 6],
-            ['status', '=', 0],
-            ['hotel_id',$id],
-        ])->count();
-        if($capacity_6_count!=0){
-                    $capacity_6_price=Room::query()->available($start,$end)->where([
-                    ['capacity', '=', 6],
-                    ['status', '=', 0],
-                    ['hotel_id',$id],
-                ])->get('price')[0]['price'];
-        }
-
-       $data=[
+            $capacity_6_count=Room::query()->available($start,$end)->where([
+                ['capacity', '=', 6],
+                ['status', '=', 0],
+                ['hotel_id',$id],
+            ])->count();
+            $capacity_6_price=Room::where([
+                ['capacity', '=', 6],
+                ['hotel_id',$id],
+            ])->get('price')[0]['price'];
+            
+        $data=[
         'capacity_2'=>[
             'count'=>$capacity_2_count,
             'price'=>$capacity_2_price
@@ -79,16 +70,16 @@ class RoomController extends Controller
             'count'=>$capacity_6_count,
             'price'=>$capacity_6_price
         ],
-       ];
+        ];
+        return response()->json([
+            'data'=>$data,
+        ],200);
 
         }catch(Exception $e){
             return response()->json([
                 'message'=>$e->getMessage(),
             ]);
         }
-        return response()->json([
-            'data'=>$data,
-        ],200);
 
     }
 
@@ -245,7 +236,7 @@ class RoomController extends Controller
 
     }
 
-    
+
 }
 
 

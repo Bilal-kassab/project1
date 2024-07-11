@@ -336,7 +336,7 @@ class StaticBookController extends Controller
         try{
             $staticTrip=$this->bookrepository->getTripAdminTrips();
             return response()->json([
-                'message'=>$staticTrip,
+                'data'=>$staticTrip,
             ]);
         }catch(Exception $ex){
             return response()->json([
