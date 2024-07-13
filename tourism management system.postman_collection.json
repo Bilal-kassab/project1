@@ -231,7 +231,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "Airport@gmail.com",
+											"value": "SA@gmail.com",
 											"type": "text"
 										},
 										{
@@ -548,6 +548,16 @@
 						{
 							"name": "profile",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "3|r5QcqeYA2ggHBFYc70LU4aqRvexyB1RQ22eUWjQUbf4f514c",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [
 									{
@@ -8358,7 +8368,17 @@
 										{
 											"name": "airport-trips",
 											"request": {
-												"method": "GET",
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "8|2ED9L62Zkv3z9IHceB5QwuJWxj2duIph8eKW7Dwkd3810569",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
 												"header": [
 													{
 														"key": "Accept",
@@ -8366,8 +8386,28 @@
 														"type": "text"
 													}
 												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "airport_id",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "flight_date",
+															"value": "2024-05-30",
+															"type": "text"
+														},
+														{
+															"key": "flight_date2",
+															"value": "2024-06-20",
+															"type": "text"
+														}
+													]
+												},
 												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/airport-trips/1",
+													"raw": "http://127.0.0.1:8000/api/admin/airport-trips",
 													"protocol": "http",
 													"host": [
 														"127",
@@ -8379,8 +8419,7 @@
 													"path": [
 														"api",
 														"admin",
-														"airport-trips",
-														"1"
+														"airport-trips"
 													]
 												}
 											},
@@ -8388,7 +8427,7 @@
 												{
 													"name": "airport-trips",
 													"originalRequest": {
-														"method": "GET",
+														"method": "POST",
 														"header": [
 															{
 																"key": "Accept",
@@ -8396,8 +8435,28 @@
 																"type": "text"
 															}
 														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "airport_id",
+																	"value": "1",
+																	"type": "text"
+																},
+																{
+																	"key": "flight_date",
+																	"value": "2024-05-30",
+																	"type": "text"
+																},
+																{
+																	"key": "flight_date2",
+																	"value": "2024-06-20",
+																	"type": "text"
+																}
+															]
+														},
 														"url": {
-															"raw": "http://127.0.0.1:8000/api/admin/airport-trips/1",
+															"raw": "http://127.0.0.1:8000/api/admin/airport-trips",
 															"protocol": "http",
 															"host": [
 																"127",
@@ -8409,8 +8468,7 @@
 															"path": [
 																"api",
 																"admin",
-																"airport-trips",
-																"1"
+																"airport-trips"
 															]
 														}
 													},
@@ -8424,11 +8482,11 @@
 														},
 														{
 															"key": "Date",
-															"value": "Thu, 11 Jul 2024 18:40:36 GMT"
+															"value": "Sat, 13 Jul 2024 13:02:45 GMT"
 														},
 														{
 															"key": "Date",
-															"value": "Thu, 11 Jul 2024 18:40:36 GMT"
+															"value": "Sat, 13 Jul 2024 13:02:45 GMT"
 														},
 														{
 															"key": "Connection",
@@ -8452,7 +8510,7 @@
 														},
 														{
 															"key": "X-RateLimit-Remaining",
-															"value": "59"
+															"value": "57"
 														},
 														{
 															"key": "Access-Control-Allow-Origin",
@@ -8461,113 +8519,6 @@
 													],
 													"cookie": [],
 													"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            }\n        ],\n        \"coming_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ]\n    }\n}"
-												}
-											]
-										},
-										{
-											"name": "all-airport",
-											"request": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/all-airport",
-													"protocol": "http",
-													"host": [
-														"127",
-														"0",
-														"0",
-														"1"
-													],
-													"port": "8000",
-													"path": [
-														"api",
-														"admin",
-														"all-airport"
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "New Request",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"key": "Accept",
-																"value": "application/json",
-																"type": "text"
-															}
-														],
-														"url": {
-															"raw": "http://127.0.0.1:8000/api/admin/all-airport",
-															"protocol": "http",
-															"host": [
-																"127",
-																"0",
-																"0",
-																"1"
-															],
-															"port": "8000",
-															"path": [
-																"api",
-																"admin",
-																"all-airport"
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "json",
-													"header": [
-														{
-															"key": "Host",
-															"value": "127.0.0.1:8000"
-														},
-														{
-															"key": "Date",
-															"value": "Tue, 28 May 2024 14:19:39 GMT"
-														},
-														{
-															"key": "Date",
-															"value": "Tue, 28 May 2024 14:19:39 GMT"
-														},
-														{
-															"key": "Connection",
-															"value": "close"
-														},
-														{
-															"key": "X-Powered-By",
-															"value": "PHP/8.2.4"
-														},
-														{
-															"key": "Cache-Control",
-															"value": "no-cache, private"
-														},
-														{
-															"key": "Content-Type",
-															"value": "application/json"
-														},
-														{
-															"key": "X-RateLimit-Limit",
-															"value": "60"
-														},
-														{
-															"key": "X-RateLimit-Remaining",
-															"value": "59"
-														},
-														{
-															"key": "Access-Control-Allow-Origin",
-															"value": "*"
-														}
-													],
-													"cookie": [],
-													"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria A\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Syria B\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"France A\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"France B\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"adcd\",\n            \"user_id\": 6,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"Admin\",\n                \"email\": \"Airport2@gmail.com\",\n                \"image\": null,\n                \"position\": 1\n            }\n        }\n    ]\n}"
 												}
 											]
 										}
@@ -9458,6 +9409,113 @@
 											],
 											"cookie": [],
 											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria\",\n            \"user_id\": 4,\n            \"area_id\": 2,\n            \"country_id\": 1,\n            \"visible\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 2,\n                \"name\": \"Aleppo\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Syria B\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"visible\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "all-airport",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/all-airport",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"all-airport"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "New Request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/all-airport",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"all-airport"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 14:19:39 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 28 May 2024 14:19:39 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria A\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Syria B\",\n            \"user_id\": 4,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"France A\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"France B\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"country\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\"\n            },\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"Airport admin\",\n                \"email\": \"Airport@gmail.com\",\n                \"image\": null,\n                \"position\": null\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"adcd\",\n            \"user_id\": 6,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            },\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"Admin\",\n                \"email\": \"Airport2@gmail.com\",\n                \"image\": null,\n                \"position\": 1\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -15426,7 +15484,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|VnUU2eZMPYM0IPKUeCqYu0gPVhPpDwXVME0kwyH5e698d7e4",
+						"value": "6|2ayUh7oPKM8oJniORrlag6htkERrKIC79nNGTtWce28e3272",
 						"type": "string"
 					}
 				]

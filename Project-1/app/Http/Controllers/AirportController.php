@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Airport\AirportTripRequest;
 use App\Http\Requests\Airport\SearchAirportRequest;
 use App\Http\Requests\Airport\StoreAirportRequest;
 use App\Http\Requests\Airport\UpdateAirportRequest;
@@ -23,8 +24,8 @@ class AirportController extends Controller
     public function __construct()
     {
         $this->middleware('role:Admin|Airport admin', ['only'=> ['store','update','updateExistAirportImage','addAirportImage','getMyAirport','myAirportTrip']]);
-        $this->middleware('role:Super Admin|Admin|Airport admin', ['only'=> ['getAirportDetails','destroy']]);
-        $this->middleware('role:Super Admin', ['only'=> ['allAirport','airportTrip']]);
+        $this->middleware('role:Super Admin|Admin|Airport admin', ['only'=> ['getAirportDetails','destroy','allAirport']]);
+        $this->middleware('role:Super Admin', ['only'=> ['airportTrip']]);
     }
 
     public function getMyAirport()
@@ -325,14 +326,19 @@ class AirportController extends Controller
          ],200);
     }
 
-    public function airportTrip($id):JsonResponse
+    public function airportTrip(AirportTripRequest $request):JsonResponse
     {
         try{
-            $airportTrip=Airport::where('id',$id)->first();
+            $airportTrip=Airport::where('id',$request->airport_id)->first();
             $data=[
                 // 'airport'=>$airportTrip,
-                'going_trip'=>Airport::where('id',$id)->with('tripss')->first()['tripss'],
-                'coming_trip'=>PlaneTrip::where('airport_destination_id',$id)->getTripDetails()->get(),
+                // 'going_trip'=>Airport::where('id',$id)->with('tripss')->first()['tripss'],
+                // 'coming_trip'=>PlaneTrip::where('airport_destination_id',$id)->getTripDetails()->get(),
+                'going_trip'=>Airport::where('id',$airportTrip['id'])->trip($request->flight_date,$request->flight_date2)->first()['tripss']??null,
+                'coming_trip'=>PlaneTrip::where('airport_destination_id',$airportTrip['id'])
+                                        ->where('flight_date','>=',$request->flight_date)
+                                        ->where('flight_date','<=',$request->flight_date2)
+                                        ->getTripDetails()->get()??null,
             ];
             return response()->json([
                 'data'=>$data

@@ -254,7 +254,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('show-airport/{id}','show');
                 Route::get('get-all-country-airports/{id}','getAllCountryAirports');
                 Route::get('get-all-area-airports/{id}','getAllAreaAirports');
-                Route::get('airport-trips/{id}','airportTrip');
+                Route::post('airport-trips','airportTrip');
                 Route::post('my-airport-trip','myAirportTrip');
              });
 
