@@ -1,3 +1,3 @@
-First run this command 
-> php artisan mi:f --seed
+# — First run this command.
+>php artisan mi:f --seed
 
