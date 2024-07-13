@@ -9168,7 +9168,7 @@
 										{
 											"name": "my-airport-trip",
 											"request": {
-												"method": "GET",
+												"method": "POST",
 												"header": [
 													{
 														"key": "Accept",
@@ -9176,6 +9176,21 @@
 														"type": "text"
 													}
 												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "flight_date",
+															"value": "2024-05-30",
+															"type": "text"
+														},
+														{
+															"key": "flight_date2",
+															"value": "2024-06-20",
+															"type": "text"
+														}
+													]
+												},
 												"url": {
 													"raw": "http://127.0.0.1:8000/api/admin/my-airport-trip",
 													"protocol": "http",
@@ -9197,7 +9212,7 @@
 												{
 													"name": "my-airport-trip",
 													"originalRequest": {
-														"method": "GET",
+														"method": "POST",
 														"header": [
 															{
 																"key": "Accept",
@@ -9205,6 +9220,21 @@
 																"type": "text"
 															}
 														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "flight_date",
+																	"value": "2024-05-30",
+																	"type": "text"
+																},
+																{
+																	"key": "flight_date2",
+																	"value": "2024-06-20",
+																	"type": "text"
+																}
+															]
+														},
 														"url": {
 															"raw": "http://127.0.0.1:8000/api/admin/my-airport-trip",
 															"protocol": "http",
@@ -9232,11 +9262,11 @@
 														},
 														{
 															"key": "Date",
-															"value": "Thu, 11 Jul 2024 18:53:45 GMT"
+															"value": "Sat, 13 Jul 2024 07:32:05 GMT"
 														},
 														{
 															"key": "Date",
-															"value": "Thu, 11 Jul 2024 18:53:45 GMT"
+															"value": "Sat, 13 Jul 2024 07:32:05 GMT"
 														},
 														{
 															"key": "Connection",
@@ -9273,16 +9303,6 @@
 											]
 										}
 									],
-									"auth": {
-										"type": "bearer",
-										"bearer": [
-											{
-												"key": "token",
-												"value": "2|tgv1pPVTteRh11KmFm9mTqFhnYJdOY007bXbtMQY3e10a33f",
-												"type": "string"
-											}
-										]
-									},
 									"event": [
 										{
 											"listen": "prerequest",
@@ -10056,7 +10076,7 @@
 						"bearer": [
 							{
 								"key": "token",
-								"value": "2|E3XJpPNXnE1rPhbdkIMaxUGkl1WQhjCbiVBb4KfYf5818aec",
+								"value": "3|r5QcqeYA2ggHBFYc70LU4aqRvexyB1RQ22eUWjQUbf4f514c",
 								"type": "string"
 							}
 						]
@@ -19962,6 +19982,90 @@
 									"body": "{\n    \"message\": \"removed from favorite successfully \"\n}"
 								}
 							]
+						},
+						{
+							"name": "get-trip-depending-on-favorite",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "get-trip-depending-on-favorite",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/get-trip-depending-on-favorite",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"get-trip-depending-on-favorite"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 13 Jul 2024 11:19:38 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 13 Jul 2024 11:19:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 1,\n        \"user_id\": 2,\n        \"source_trip_id\": 1,\n        \"destination_trip_id\": 2,\n        \"trip_name\": \"Seeder Trip\",\n        \"price\": \"1295.00\",\n        \"number_of_people\": 12,\n        \"trip_capacity\": 6,\n        \"start_date\": \"2024-06-01\",\n        \"end_date\": \"2024-06-20\",\n        \"stars\": \"0.00\",\n        \"trip_note\": \"This is the first Trip\",\n        \"type\": \"static\"\n    },\n    {\n        \"id\": 2,\n        \"user_id\": 2,\n        \"source_trip_id\": 1,\n        \"destination_trip_id\": 2,\n        \"trip_name\": \"Seeder Trip 2\",\n        \"price\": \"1295.00\",\n        \"number_of_people\": 12,\n        \"trip_capacity\": 6,\n        \"start_date\": \"2024-06-01\",\n        \"end_date\": \"2024-06-20\",\n        \"stars\": \"0.00\",\n        \"trip_note\": \"This is the second Trip\",\n        \"type\": \"static\"\n    }\n]"
+								}
+							]
 						}
 					]
 				},
@@ -25673,7 +25777,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "12|xjXvKScwDrRh36PrBToSkvGgDLOpahQd4eq84tVzf19e4894",
+						"value": "4|lLdBCHvkX31u2mhM6nGQW2l0aH1lD32R10eJiuCQd20c123f",
 						"type": "string"
 					}
 				]

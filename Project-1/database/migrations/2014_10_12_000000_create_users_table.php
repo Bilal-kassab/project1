@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreign('position')->references('id')->on('countries')->onUpdate('cascade')->onDelete('cascade');
 
             $table->boolean('is_approved')->default(0);
+            $table->string('fcm_token')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -80,5 +80,20 @@ class Airport extends Model
     public function tripss(): HasManyThrough
     {
         return $this->hasManyThrough(PlaneTrip::class, Plane::class)->getTripDetails();
+
     }
+
+    public function scopeTrip($query,$start,$end)
+    {
+        // return $query->whereRelation('tripss','id','=',3)
+        //             // ->whereRelation('tripss','flight_date','<=',$flight_date2)
+        //              ->with('tripss');
+
+        return $query->with('tripss', function ($query) use ($start, $end) {
+            $query->where('flight_date','<=',$end)
+                ->where('flight_date','>=',$start);
+                // $query->where('id',1);
+        });
+    }
+
 }

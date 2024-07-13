@@ -4,19 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Models\Favorite;
 use App\Models\Place;
+use App\Repositories\Interfaces\FavoriteRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class FavoriteController extends Controller
 {
+    private $favorite;
+
+    public function __construct(FavoriteRepositoryInterface $favorite)
+    {
+        $this->favorite = $favorite;
+    }
     public function index(){
-        
+
         return response()->json([
             "data"=>Favorite::with('place:id,name')
                     ->where('user_id',auth()->user()->id)
                     ->select('id','place_id')
                     ->get(),
-            
+
         ]);
     }
     public function setFavorite(Request $request){
@@ -78,4 +85,17 @@ class FavoriteController extends Controller
         ],200);
 
     }
+
+    public function getSuggest()
+    {
+        // to get all favorite places
+        $favoritePlaces=$this->favorite->favoritePlaces();
+        // to get all  categories id from the previous places
+        $categoryIds=$this->favorite->placesCategories($favoritePlaces);
+        //to get all places id that have a categories from the previous categories
+        $places = $this->favorite->placesDependingOnCategories($categoryIds);
+
+        return $places;
+    }
+
 }

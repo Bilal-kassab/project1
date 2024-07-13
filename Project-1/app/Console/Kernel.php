@@ -14,7 +14,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->call('App\Http\Controllers\BookingController@store_Admin')->everySecond();
+        // dd("fff");
+        $schedule->command('queue:work')->everySecond();
+        $schedule->command('queue:restart')->everyFiveMinutes();
+        // $schedule->call('App\Http\Controllers\BookingController@store_Admin')->everySecond();
 
     }
 

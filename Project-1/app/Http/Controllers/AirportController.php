@@ -343,14 +343,17 @@ class AirportController extends Controller
             ]);
         }
     }
-    public function myAirportTrip():JsonResponse
+    public function myAirportTrip(Request $request):JsonResponse
     {
         try{
             $airportTrip=Airport::where('user_id',auth()->id())->first();
             $data=[
                 // 'airport'=>$airportTrip,
-                'going_trip'=>Airport::where('user_id',auth()->id())->with('tripss')->first()['tripss']??null,
-                'coming_trip'=>PlaneTrip::where('airport_destination_id',$airportTrip['id'])->getTripDetails()->get()??null,
+                'going_trip'=>Airport::where('user_id',auth()->id())->trip($request->flight_date,$request->flight_date2)->first()['tripss']??null,
+                'coming_trip'=>PlaneTrip::where('airport_destination_id',$airportTrip['id'])
+                                        ->where('flight_date','>=',$request->flight_date)
+                                        ->where('flight_date','<=',$request->flight_date2)
+                                        ->getTripDetails()->get()??null,
             ];
             return response()->json([
                 'data'=>$data

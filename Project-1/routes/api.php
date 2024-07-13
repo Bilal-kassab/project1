@@ -50,6 +50,7 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
         Route::post('set-favorite','setFavorite');
         Route::post('delete-favorite','deleteFavorite');
         Route::get('get-all-favorite','index');
+        Route::get('get-trip-depending-on-favorite','getSuggest');
     });
 
     Route::prefix('user')->group(function () {
@@ -254,7 +255,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('get-all-country-airports/{id}','getAllCountryAirports');
                 Route::get('get-all-area-airports/{id}','getAllAreaAirports');
                 Route::get('airport-trips/{id}','airportTrip');
-                Route::get('my-airport-trip','myAirportTrip');
+                Route::post('my-airport-trip','myAirportTrip');
              });
 
             Route::controller(PlaneController::class)->group(function(){

@@ -1,10 +1,14 @@
 <?php
 
+use App\Events\PushWebNotification;
 use App\Http\Controllers\AirportController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\StaticBookController;
+use App\Listeners\SendWebNotification;
 use App\Mail\TestMail;
 use App\Models\Booking;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +30,17 @@ use Illuminate\Support\Facades\Mail;
 
 //     return "Done send";
 // });
+Route::get('/', function () {
+    // $user=User::get();
+    $user="exUehn31-o1OCef9EGnyZb:APA91bG7fofNirxQ0b4X5SJdZEHw3CpuoFgitsuLcSy9B2JTEQZxtXlYJuaCXUT6jpdjVG8CsP6JfJyQwYEJ1BH2ffq1CNHvm5UV4_ZgB-vskWUgqwVXDwD7_DhsX9lZMyG-GGx5zOPt";
+    $message=[
+        'title'=>'log in',
+        'body'=>'Hi My Friend'
+    ];
+    event(new PushWebNotification($user,$message));
+
+    return "Send";
+});
 
 
 Route::prefix('user')->group(function () {
@@ -50,5 +65,9 @@ Route::controller(StaticBookController::class)->group(function(){
 Route::controller(AirportController::class)->group(function(){
 
     Route::get('airport-trip/{id}','airportTrip');
+});
+Route::controller(FavoriteController::class)->group(function(){
+
+    Route::get('getSuggest','getSuggest');
 });
 
