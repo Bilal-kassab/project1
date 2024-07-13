@@ -2,7 +2,7 @@
 This command is used to install all the PHP dependencies listed in the composer.json file for your Laravel project.
 > #### composer install
 <br />
-##
+
 ## Second, rename the env file:
 > #### cp .env.example .env
 
