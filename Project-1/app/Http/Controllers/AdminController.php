@@ -106,7 +106,7 @@ class AdminController extends Controller
             'data'=>$admin,
             'role'=>$role,
             'token' => $token,
-            'object'=>($role[0] =="Super Admin") ? 'Owner' : ($object['name']??null)
+            'object'=>($role[0] ==("Super Admin" || "Trip manger")) ? 'Owner' : ($object['name']??null)
         ],200);
     }
 
