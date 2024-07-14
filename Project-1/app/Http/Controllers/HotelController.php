@@ -341,10 +341,10 @@ class HotelController extends Controller
         ],200);
 
     }
-    public function get_My_Rooms(){
+    public function get_my_hotel(){
         try{
             return response()->json([
-                    'data'=>Hotel::with('rooms')->where('user_id',auth()->user()->id)->get()
+                    'data'=>Hotel::where('user_id',auth()->user()->id)->get()
                 ],200);
         }catch(Exception $e){
             return response()->json([
