@@ -22,9 +22,9 @@ class StaticBookController extends Controller
 
     public function __construct(BookRepositoryInterface $bookrepository)
     {
-        $this->middleware('role:Admin|Super Admin|Trip manger', ['only'=> ['store_Admin','update_Admin','tripCancellation']]);
+        $this->middleware('role:Admin|Super Admin|Trip manger', ['only'=> ['store_Admin','update_Admin','tripCancellation','offer']]);
         $this->middleware('role:Admin|Super Admin', ['only'=> ['getDetailsStaticTrip']]);
-        $this->middleware('role:Admin|Super Admin|User', ['only'=> ['index','offer']]);
+        $this->middleware('role:Admin|Super Admin|User', ['only'=> ['index']]);
         $this->middleware('role:Trip manger', ['only'=> ['getTripAdminTrips','getTripAdminTripDetails']]);
         $this->bookrepository = $bookrepository;
     }

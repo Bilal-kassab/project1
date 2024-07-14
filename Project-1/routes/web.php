@@ -12,6 +12,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 /*
@@ -37,8 +39,7 @@ Route::get('/', function () {
         'title'=>'log in',
         'body'=>'Hi My Friend'
     ];
-    event(new PushWebNotification($user,$message));
-
+    // event(new PushWebNotification($user,$message));
     return "Send";
 });
 

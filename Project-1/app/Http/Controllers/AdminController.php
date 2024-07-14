@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
+use App\Models\Airport;
 use App\Models\Country;
+use App\Models\Hotel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -93,12 +95,19 @@ class AdminController extends Controller
             ],422);
         }
         $token = $admin->createToken('token')->plainTextToken;
+        $object=null;
+        $object=Hotel::where('user_id',$admin['id'])->first();
+        if($object==null){
+            $object=Airport::where('user_id',$admin['id'])->first();
+        }
+        $role=$admin->roles()->pluck('name');
         return response()->json([
             'message'=> trans('auth.login'),
-            'role'=>$admin->roles()->pluck('name'),
+            'data'=>$admin,
+            'role'=>$role,
             'token' => $token,
+            'object'=>($role[0] =="Super Admin") ? 'Owner' : ($object['name']??null)
         ],200);
-
     }
 
     public function logout(Request $request)

@@ -130,7 +130,7 @@ class RoomController extends Controller
             'message'=>trans('global.not-have-the-hotel')
         ]);
        }
-
+       $my_hotel['number_rooms']+=$request->count;
     $co=$request->count;
       while($co){
             $data[]=[
