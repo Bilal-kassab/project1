@@ -101,12 +101,15 @@ class AdminController extends Controller
             $object=Airport::where('user_id',$admin['id'])->first();
         }
         $role=$admin->roles()->pluck('name');
+        if($role[0]=="Super Admin"  || $role[0]=="Trip manger"){
+            $object['name']='Owner';
+        }
         return response()->json([
             'message'=> trans('auth.login'),
             'data'=>$admin,
             'role'=>$role,
             'token' => $token,
-            'object'=>($role[0] ==("Super Admin" || "Trip manger")) ? 'Owner' : ($object['name']??null)
+            'object'=>$object['name']??null
         ],200);
     }
 
