@@ -320,6 +320,7 @@ class BookRepository implements BookRepositoryInterface
                 'destination_trip_id'=>$book['destination_trip_id'],
                 'trip_name'=>$book['trip_name'],
                 'price'=>$book['price'],
+                'new_price'=>$book['new_price'],
                 'number_of_people'=>$book['number_of_people'],
                 'trip_capacity'=>$book['trip_capacity'],
                 'start_date'=>$book['start_date'],
@@ -384,8 +385,8 @@ class BookRepository implements BookRepositoryInterface
     {
         $static_book=Booking::where('type','static')
                             ->AvailableRooms()
-                            ->select('id','trip_name','price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
-                             ->get();
+                            ->select('id','trip_name','price','new_price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
+                            ->get();
         return $static_book;
 
     }
@@ -399,6 +400,10 @@ class BookRepository implements BookRepositoryInterface
             $datetime2 = new DateTime($static_trip['end_date']);
             $interval = $datetime1->diff($datetime2);
             $days = $interval->format('%a');
+            $discount=1;
+            if($static_trip['new_price']){
+                $discount=$static_trip['new_price']/$static_trip['price'];
+            }
 
             $rooms_needed=(int)($request['number_of_friend']/$static_trip['trip_capacity']);
             if($request['number_of_friend'] % $static_trip['trip_capacity'] >0) $rooms_needed++;
@@ -428,11 +433,11 @@ class BookRepository implements BookRepositoryInterface
                 'number_of_friend'=>(int)$request['number_of_friend'],
                 'rooms_needed'=>$rooms_needed,
                 'days'=>(int)$days,
-                'room_price'=>(doubleval($room['current_price']))??null,
-                'ticket_price_for_going_trip'=>$goingPlaneTrip,
-                'ticket_price_for_return_trip'=>$returnPlaneTrip,
-                'ticket_price_for_places'=>$placePrice,
-                'total_price'=>$total_price,
+                'room_price'=>(doubleval($room['current_price'])*$discount)??null,
+                'ticket_price_for_going_trip'=>$goingPlaneTrip*$discount,
+                'ticket_price_for_return_trip'=>$returnPlaneTrip*$discount,
+                'ticket_price_for_places'=>$placePrice*$discount,
+                'total_price'=>$total_price*$discount,
                 'price_after_discount'=>$price_after_discount,
             ];
             return $data;
@@ -602,7 +607,7 @@ class BookRepository implements BookRepositoryInterface
             $staticTrip=Booking::where('type','static')
                              ->where('user_id',auth()->id())
                              ->AvailableRooms()
-                             ->select('id','trip_name','price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
+                             ->select('id','trip_name','price','new_price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
                              ->get();
             return $staticTrip;
         }catch(Exception $exception){

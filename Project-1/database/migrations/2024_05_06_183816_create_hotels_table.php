@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('area_id')->nullable();
             $table->foreign('area_id')->references('id')->on('areas')->onUpdate('cascade')->onDelete('cascade');
             $table->string('name');
-            $table->integer('number_rooms');
+            $table->integer('number_rooms')->default(0);
             $table->decimal('stars')->default(0);
             $table->boolean('visible')->default(true);
             $table->timestamps();

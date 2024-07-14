@@ -284,6 +284,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('get_Hotel_By_Country/{id}','get_hotel_in_country');
                 Route::delete('delete_hotel/{id}','destroy');
                 Route::post('change_visible','changeVisible');
+                Route::get('get_my_hotel','get_my_hotel');
             });
 
             Route::controller(RoomController::class)->group(function(){
@@ -311,6 +312,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('show-details-trip/{id}','getDetailsStaticTrip');
                 Route::get('show-trip-admin-trip-details/{id}','getTripAdminTripDetails');
                 Route::get('get-trip-admin-trips','getTripAdminTrips');
+                Route::post('offer/{id}','offer');
             });
 
             Route::controller(CommentController::class)->group(function(){

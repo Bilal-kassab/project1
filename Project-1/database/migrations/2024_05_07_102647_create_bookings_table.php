@@ -24,6 +24,7 @@ return new class extends Migration
 
             $table->string('trip_name')->nullable();
             $table->decimal('price')->default(0);
+            $table->decimal('new_price')->nullable()->default(null);
             $table->integer('number_of_people')->default(1);
             $table->integer('trip_capacity')->nullable();
             $table->date('start_date')->nullable();

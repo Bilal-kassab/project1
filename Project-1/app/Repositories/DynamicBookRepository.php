@@ -84,6 +84,9 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             $trip_price=0;
             $plane_trip= PlaneTrip::where('id', $request['plane_trip_id'])->first();
             $plane_trip_away = PlaneTrip::where('id', $request['plane_trip_away_id'])->first()??null;
+            if($plane_trip['flight_date']>=$plane_trip_away['flight_date']){
+                return 27;
+            }
             $data=[
                 'plane_trip_id'=>$request['plane_trip_id']??null,
                 'number_of_people'=>$request['number_of_people'],

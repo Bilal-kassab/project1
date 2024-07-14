@@ -13,6 +13,7 @@ class Hotel extends Model
     use HasFactory;
 
     protected $fillable=['name','stars','area_id','number_rooms','user_id','country_id'];
+    protected $hidden=['created_at','updated_at'];
     public function area(): BelongsTo
     {
         return $this->belongsTo(Area::class,'area_id');

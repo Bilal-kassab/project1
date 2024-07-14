@@ -19,6 +19,7 @@ class Booking extends Model
         'destination_trip_id',
         'trip_name',
         'price',
+        'new_price',
         'number_of_people',
         'start_date',
         'trip_capacity',

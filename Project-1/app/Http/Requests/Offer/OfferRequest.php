@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Hotel;
+namespace App\Http\Requests\Offer;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreHotelRequest extends FormRequest
+class OfferRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,12 +21,8 @@ class StoreHotelRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'name'=>'required|string|unique:hotels',
-             'area_id'=>'required|numeric|exists:areas,id',
-            //  'number_rooms'=>'required|numeric|max:1000|min:10',
-             'images'=> 'array',
-             'images.*' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-        ];
+            return [
+                'ratio'=>'required|decimal:0,1'
+            ];
     }
 }

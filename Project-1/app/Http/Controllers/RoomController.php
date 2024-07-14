@@ -18,6 +18,10 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 class RoomController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('role:Admin|Hotel admin', ['only'=> ['store','update','get_My_Rooms','change_status_room','destroy']]);
+    }
     public function index(IndexRoomRequest $request,$id)
     {
 
@@ -167,32 +171,28 @@ class RoomController extends Controller
 
     public function update(UpdateRoomRequest $request)
     {
-
-        $my_hotel=Hotel::where('id',$request->hotel_id)->first();
-        if(auth()->user()->id != $my_hotel->user_id){
-         return response()->json([
-             'message'=>trans('global.not-have-the-hotel')
-         ]);
-        }
-
+        // if(auth()->user()->id != $my_hotel->user_id){
+        //  return response()->json([
+        //      'message'=>trans('global.not-have-the-hotel')
+        //  ]);
+        // }
         try{
-            $room=Room::where('hotel_id',$request->hotel_id)
+            $my_hotel=Hotel::where('user_id',auth()->user()->id)->first();
+            $room=Room::where('hotel_id',$my_hotel->id)
                         ->where('capacity',$request->capacity)
                         ->get();
-
+            foreach($room as $r){
+                $r->price=$request->price;
+                $r->save();
+                }
+            return response()->json([
+                'message'=>trans('global.update'),
+            ],200);
          }catch(Exception $e){
             return response()->json([
                 'message'=> $e->getMessage(),
             ],404);
          }
-         foreach($room as $r){
-            $r->price=$request->price;
-            $r->save();
-         }
-        return response()->json([
-            'message'=>trans('global.update'),
-        ],200);
-
     }
     public function destroy($id)
     {

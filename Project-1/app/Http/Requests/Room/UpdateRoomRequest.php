@@ -23,13 +23,12 @@ class UpdateRoomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'hotel_id'=>'required|numeric|exists:hotels,id',
-            'capacity'=>[
-                'required',Rule::exists('rooms')->where(function ($query) {
-                       return $query->where('hotel_id', request()->get('hotel_id'));
-                    }),],
-
+            // 'hotel_id'=>'required|numeric|exists:hotels,id',
+            'capacity'=>'required|in:2,4,6',
             'price'=>'required|numeric',
         ];
+        // Rule::exists('rooms')->where(function ($query) {
+        //     return $query->where('hotel_id', request()->get('hotel_id'));
+        //     }),
     }
 }

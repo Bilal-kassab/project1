@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Book\BookStaticTripRequest;
 use App\Http\Requests\Book\CheckStaticTripRequest;
 use App\Http\Requests\Book\EditStaticTripRequest;
+use App\Http\Requests\Offer\OfferRequest;
 use App\Http\Requests\Trip\StoreStaticTripRequest;
 use App\Http\Requests\Trip\UpdateStaticTripRequest;
 use App\Models\Booking;
@@ -23,7 +24,7 @@ class StaticBookController extends Controller
     {
         $this->middleware('role:Admin|Super Admin|Trip manger', ['only'=> ['store_Admin','update_Admin','tripCancellation']]);
         $this->middleware('role:Admin|Super Admin', ['only'=> ['getDetailsStaticTrip']]);
-        $this->middleware('role:Admin|Super Admin|User', ['only'=> ['index']]);
+        $this->middleware('role:Admin|Super Admin|User', ['only'=> ['index','offer']]);
         $this->middleware('role:Trip manger', ['only'=> ['getTripAdminTrips','getTripAdminTripDetails']]);
         $this->bookrepository = $bookrepository;
     }
@@ -355,6 +356,30 @@ class StaticBookController extends Controller
         }catch(Exception $ex){
             return response()->json([
                 'message'=>$ex->getMessage()
+            ]);
+        }
+    }
+    public function offer($id,OfferRequest $request):JsonResponse{
+        try{
+            $trip=booking::findOrFail($id);
+            $booking=BookingStaticTrip::where('static_trip_id',$id)->exists();
+            if(!$booking){
+                // $trip->price=$trip->new_price??$trip->price;
+                $trip['new_price']=$request['ratio']*$trip->price;
+                $trip->save();
+            }
+            else{
+                return response()->json([
+                    'message'=>trans('trip.offer')
+                ],400);
+            }
+            return response()->json([
+                'data'=>$this->bookrepository->showStaticTrip($id)
+            ],200);
+        }
+        catch(Exception $exception){
+            return response()->json([
+                'message'=>$exception->getMessage()
             ]);
         }
     }

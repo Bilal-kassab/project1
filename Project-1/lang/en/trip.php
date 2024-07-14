@@ -25,5 +25,6 @@ return [
     'plane-trip-date'=>'The return date of the trip must be after the start date of the trip',
     'invaild-date'=>'Fail because of invaild Date',
     'cancel-trip'=>'Deleted Done and your money has returned to your Account',
+    'offer'=>'you can not update trip price ,there are at least one booking '
 
 ];

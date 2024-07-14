@@ -231,6 +231,11 @@ class DynamicBookController extends Controller
                 'message' => 'your money dont enough for create your trip',
             ], 400);
         }
+        if($Dynamic_book === 27){
+            return response()->json([
+                'message' => 'The flight date of return plane trip must be after flight date of going plane trip',
+            ], 400);
+        }
         return response()->json([
             'data'=>$Dynamic_book
         ],200);

@@ -9,6 +9,7 @@ use App\Models\Country;
 use App\Models\Hotel;
 use App\Models\Hotel_Image;
 use App\Models\HotelImage;
+use Exception;
 use Illuminate\Contracts\Validation\Validator as ValidationValidator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +35,7 @@ class HotelController extends Controller
                                                     ->orderBy('stars','desc')->get()
         ],200);
     }
+
 
     public function get_hotel_in_area(Request $request,$id)
     {
@@ -103,7 +105,7 @@ class HotelController extends Controller
             'user_id'=> auth()->user()->id,
             'area_id'=> $request->area_id,
             'country_id'=>Area::find($request->area_id)['country_id'],
-            'number_rooms'=> $request->number_rooms,
+            // 'number_rooms'=> $request->number_rooms,
             'stars'=> 3,
         ]);
 
@@ -162,7 +164,7 @@ class HotelController extends Controller
          $hotel->name = $request->name;
          $hotel->area_id=$request->area_id;
          $hotel->country_id=Area::find($request->area_id)['country_id'];
-         $hotel->number_rooms = $request->number_rooms;
+         $hotel->number_rooms += $request->number_rooms;
         //  $hotel->user_id=$request->user_id;
          // $hotel->stars = $request->stars;
         //  $hotel->visible=$request->visible;
@@ -338,5 +340,16 @@ class HotelController extends Controller
             'data'=>$hotel
         ],200);
 
+    }
+    public function get_My_Rooms(){
+        try{
+            return response()->json([
+                    'data'=>Hotel::with('rooms')->where('user_id',auth()->user()->id)->get()
+                ],200);
+        }catch(Exception $e){
+            return response()->json([
+                'message'=>$e->getMessage()
+            ],404);
+        }
     }
 }
