@@ -131,6 +131,7 @@ class RoomController extends Controller
         ]);
        }
        $my_hotel['number_rooms']+=$request->count;
+       $my_hotel->save();
     $co=$request->count;
       while($co){
             $data[]=[
