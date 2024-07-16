@@ -23,6 +23,7 @@ class PlaneTrip extends Model
         'available_seats',
         'flight_date',
         'landing_date',
+        'flight_duration',
     ];
     protected $hidden = [
         'created_at',

@@ -27,13 +27,11 @@ class StaticTripSeeder extends Seeder
             'source_trip_id' => 1,
             'destination_trip_id' => 2,
             'trip_name' => 'Seeder Trip',
-            'price' => 1295,
+            'price' => 320,
             'number_of_people' => 12,
             'trip_capacity' => 6,
             'start_date' => $plane_trip['flight_date'],// to submit the flight date same as start date trip
             'end_date' => $plane_trip_away['flight_date'],// to submit the flight date same as end date trip
-            // 'start_date' => $plane_trip['flight_date'],// to submit the flight date same as start date trip
-            // 'end_date' => $plane_trip_away['flight_date'],// to submit the flight date same as end date trip
             'trip_note' => 'This is the first Trip',
             'type' => 'static',
         ]);
@@ -92,7 +90,7 @@ class StaticTripSeeder extends Seeder
             'source_trip_id' => 1,
             'destination_trip_id' => 2,
             'trip_name' => 'Seeder Trip 2',
-            'price' => 1295,
+            'price' => 320,
             'number_of_people' => 12,
             'trip_capacity' => 6,
             'start_date' => $plane_trip['flight_date'],// to submit the flight date same as start date trip

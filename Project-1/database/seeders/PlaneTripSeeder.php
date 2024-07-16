@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\PlaneTrip;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,49 +14,58 @@ class PlaneTripSeeder extends Seeder
      */
     public function run(): void
     {
+        $nowDate=Carbon::now()->format('Y-m-d');
+        $date= new Carbon($nowDate);
         PlaneTrip::create([
             'plane_id'=>1,
             'airport_source_id'=>1,
             'airport_destination_id'=>2,
             'country_source_id'=>1,
             'country_destination_id'=>2,
-            'current_price'=>200,
+            'current_price'=>50,
             'available_seats'=>25,
-            'flight_date'=>"2024-5-30",
-            'landing_date'=>"2024-6-1"
+            'flight_duration'=>24,
+            'flight_date'=>$date->format('Y-m-d'),
+            'landing_date'=>$date->addDays(1)->format('Y-m-d')
         ]);
+        $date->addDays(1);
         PlaneTrip::create([
             'plane_id'=>1,
             'airport_source_id'=>1,
             'airport_destination_id'=>2,
             'country_source_id'=>1,
             'country_destination_id'=>2,
-            'current_price'=>200,
+            'current_price'=>50,
             'available_seats'=>25,
-            'flight_date'=>"2024-6-1",
-            'landing_date'=>"2024-6-5"
+            'flight_duration'=>24,
+            'flight_date'=>$date->format('Y-m-d'),
+            'landing_date'=>$date->addDays(1)->format('Y-m-d')
         ]);
+        $date->addDays(1);
         PlaneTrip::create([
             'plane_id'=>3,
             'airport_source_id'=>2,
             'airport_destination_id'=>1,
             'country_source_id'=>2,
             'country_destination_id'=>1,
-            'current_price'=>200,
+            'current_price'=>50,
             'available_seats'=>25,
-            'flight_date'=>"2024-6-5",
-            'landing_date'=>"2024-6-6"
+            'flight_duration'=>24,
+            'flight_date'=>$date->format('Y-m-d'),
+            'landing_date'=>$date->addDays(1)->format('Y-m-d')
         ]);
+        $date->addDays(1);
         PlaneTrip::create([
             'plane_id'=>3,
             'airport_source_id'=>2,
             'airport_destination_id'=>1,
             'country_source_id'=>2,
             'country_destination_id'=>1,
-            'current_price'=>200,
+            'current_price'=>50,
             'available_seats'=>25,
-            'flight_date'=>"2024-6-20",
-            'landing_date'=>"2024-6-22"
+            'flight_duration'=>24,
+            'flight_date'=>$date->format('Y-m-d'),
+            'landing_date'=>$date->addDays(1)->format('Y-m-d')
         ]);
     }
 }

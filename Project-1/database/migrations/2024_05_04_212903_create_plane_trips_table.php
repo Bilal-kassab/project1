@@ -31,6 +31,7 @@ return new class extends Migration
 
             $table->decimal('current_price')->default(0);
             $table->integer('available_seats')->default(0);
+            $table->decimal('flight_duration')->default(0);
             $table->date('flight_date');
             $table->date('landing_date');
             $table->timestamps();

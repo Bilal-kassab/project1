@@ -20,23 +20,48 @@ class PlaneTripRepository implements PlaneTripRepositoryInterface
         $airport=Airport::where('id',$plane->airport_id)->first();
         if($plane['visible'] && $airport['visible'] && auth()->id() == $airport->user_id)
         {
-            $trip=PlaneTrip::create([
+            // create Going trip
+            $flightDate=new Carbon($data['going_flight_date']);
+            $landingDate=$flightDate->addHours($data['flight_duration']);
+            $goingTrip=PlaneTrip::create([
                 'plane_id'=>$data['plane_id'],
-                'airport_source_id'=>$data['airport_source_id'],
+                // 'airport_source_id'=>$data['airport_source_id'],
+                'airport_source_id'=>$airport['id'],
                 'airport_destination_id'=>$data['airport_destination_id'],
-                'country_source_id'=>Airport::where('id',$data['airport_source_id'])->first()['country_id'],
+                'country_source_id'=>Airport::where('id',$airport['id'])->first()['country_id'],
                 'country_destination_id'=>Airport::where('id',$data['airport_destination_id'])->first()['country_id'],
-                'current_price'=>$data['current_price'],
-                'available_seats'=>$data['available_seats'],
-                'flight_date'=>$data['flight_date'],
-                'landing_date'=>$data['landing_date'],
+                'current_price'=>$plane['ticket_price'],
+                'available_seats'=>$plane['number_of_seats'],
+                'flight_date'=>$data['going_flight_date'],
+                'landing_date'=>$landingDate,
+                'flight_duration'=>$data['flight_duration']
             ]);
-            $planetrip=PlaneTrip::getTripDetails()
-                                 ->where('id',$trip->id)->first();
-        }
-        // Airport::with('trips')->where('country_id',1)->get();
+            $planetrip1=PlaneTrip::getTripDetails()
+                                 ->where('id',$goingTrip->id)->first();
 
-        return $planetrip;
+            // create return trip
+            $flightDate=new Carbon($data['return_flight_date']);
+            $landingDate=$flightDate->addHours($data['flight_duration']);
+            $returnTrip=PlaneTrip::create([
+                'plane_id'=>$data['plane_id'],
+                // 'airport_source_id'=>$data['airport_source_id'],
+                'airport_source_id'=>$data['airport_destination_id'],
+                'airport_destination_id'=>$airport['id'],
+                'country_source_id'=>Airport::where('id',$data['airport_destination_id'])->first()['country_id'],
+                'country_destination_id'=>Airport::where('id',$airport['id'])->first()['country_id'],
+                'current_price'=>$plane['ticket_price'],
+                'available_seats'=>$plane['number_of_seats'],
+                'flight_date'=>$data['return_flight_date'],
+                'landing_date'=>$landingDate,
+                'flight_duration'=>$data['flight_duration']
+            ]);
+            $planetrip2=PlaneTrip::getTripDetails()
+                                 ->where('id',$returnTrip->id)->first();
+        }
+        return [
+            'going_trip'=>$planetrip1,
+            'return_trip'=>$planetrip2,
+        ];
 
     }
 

@@ -25,12 +25,13 @@ class AddPlaneTripRequest extends FormRequest
         $date=Carbon::now()->format('Y-m-d');
         return [
             'plane_id'=> 'required|numeric|exists:planes,id',
-            'airport_source_id'=>'required|numeric|exists:airports,id',
+            // 'airport_source_id'=>'required|numeric|exists:airports,id',
             'airport_destination_id'=>'required|numeric|exists:airports,id',
-            'current_price'=> 'required|numeric|gt:0',
-            'available_seats'=> 'required|numeric|gt:0',
-            'flight_date' => "required|date|after_or_equal:$date",
-            'landing_date' => 'required|date|after_or_equal:flight_date',
+            // 'current_price'=> 'required|numeric|gt:0',
+            // 'available_seats'=> 'required|numeric|gt:0',
+            'going_flight_date' => "required|date|after_or_equal:$date",
+            'return_flight_date' => 'required|date|after_or_equal:going_flight_date',
+            'flight_duration'=>'required|decimal:0,500',
         ];
     }
 }

@@ -27,9 +27,9 @@ class PlaneController extends Controller
     public function __construct(PlaneTripRepositoryInterface $planetriprepository)
     {
         $this->planetriprepository = $planetriprepository;
-        $this->middleware('role:Admin|Airport admin', ['only'=> ['addTrip','getMyPlane','store','update','updateExistPlaneImage','addPlaneImage']]);
+        $this->middleware('role:Admin|Airport admin', ['only'=> ['addTrip','getAllPlaneAdminTrip','getMyPlane','store','update','updateExistPlaneImage','addPlaneImage']]);
         $this->middleware('role:Super Admin|Admin|Airport admin', ['only'=> ['getAirportDetails']]);
-        $this->middleware('role:Super Admin|Airport admin', ['only'=> ['getAllPlaneTrip']]);
+        $this->middleware('role:Super Admin', ['only'=> ['getAllPlaneTrip']]);
     }
 
     public function getMyPlane():JsonResponse

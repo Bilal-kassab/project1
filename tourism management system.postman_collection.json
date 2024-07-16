@@ -231,7 +231,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "SA@gmail.com",
+											"value": "Airport@gmail.com",
 											"type": "text"
 										},
 										{
@@ -7602,11 +7602,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Fri, 05 Jul 2024 14:15:38 GMT"
+													"value": "Tue, 16 Jul 2024 20:19:59 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Fri, 05 Jul 2024 14:15:38 GMT"
+													"value": "Tue, 16 Jul 2024 20:19:59 GMT"
 												},
 												{
 													"key": "Connection",
@@ -7630,7 +7630,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "59"
+													"value": "58"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -7638,7 +7638,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Damas A1\",\n        \"number_of_seats\": 40,\n        \"visible\": 1,\n        \"ticket_price\": \"50.00\",\n        \"airport_id\": 1,\n        \"tripss\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 1,\n                \"flight_date\": \"2024-06-21\",\n                \"landing_date\": \"2024-06-05\",\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        ]\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Damas A1\",\n        \"number_of_seats\": 40,\n        \"visible\": 1,\n        \"ticket_price\": \"50.00\",\n        \"airport_id\": 1,\n        \"tripss\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"0.00\",\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"0.00\",\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            },\n            {\n                \"id\": 5,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-17\",\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            },\n            {\n                \"id\": 6,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-17\",\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            },\n            {\n                \"id\": 7,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            },\n            {\n                \"id\": 8,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            },\n            {\n                \"id\": 9,\n                \"plane_id\": 1,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                }\n            }\n        ]\n    }\n}"
 										}
 									]
 								}
@@ -7670,77 +7670,123 @@
 							"name": "Plane Trip",
 							"item": [
 								{
-									"name": "add-trip",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
+									"name": "For Super Admin only",
+									"item": [
+										{
+											"name": "get-all-plane-trip",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/get-all-plane-trip",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"get-all-plane-trip"
+													]
+												}
+											},
+											"response": [
 												{
-													"key": "plane_id",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "airport_source_id",
-													"value": "2",
-													"type": "text"
-												},
-												{
-													"key": "airport_destination_id",
-													"value": "4",
-													"type": "text"
-												},
-												{
-													"key": "current_price",
-													"value": "50",
-													"type": "text"
-												},
-												{
-													"key": "available_seats",
-													"value": "20",
-													"type": "text"
-												},
-												{
-													"key": "flight_date",
-													"value": "2024-06-07",
-													"type": "text"
-												},
-												{
-													"key": "landing_date",
-													"value": "2024-06-08",
-													"type": "text"
+													"name": "get-all-plane-trip",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/get-all-plane-trip",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"get-all-plane-trip"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 16 Jul 2024 19:54:18 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 16 Jul 2024 19:54:18 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "58"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_duration\": \"0.00\",\n            \"flight_date\": \"2024-05-30\",\n            \"landing_date\": \"2024-06-01\",\n            \"plane\": {\n                \"id\": 1,\n                \"airport_id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_duration\": \"0.00\",\n            \"flight_date\": \"2024-06-01\",\n            \"landing_date\": \"2024-06-05\",\n            \"plane\": {\n                \"id\": 1,\n                \"airport_id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"plane_id\": 3,\n            \"airport_source_id\": 2,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_duration\": \"0.00\",\n            \"flight_date\": \"2024-06-05\",\n            \"landing_date\": \"2024-06-06\",\n            \"plane\": {\n                \"id\": 3,\n                \"airport_id\": 2,\n                \"name\": \"PARIS A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"plane_id\": 3,\n            \"airport_source_id\": 2,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_duration\": \"0.00\",\n            \"flight_date\": \"2024-06-20\",\n            \"landing_date\": \"2024-06-22\",\n            \"plane\": {\n                \"id\": 3,\n                \"airport_id\": 2,\n                \"name\": \"PARIS A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"24.00\",\n            \"flight_date\": \"2024-07-16\",\n            \"landing_date\": \"2024-07-17\",\n            \"plane\": {\n                \"id\": 1,\n                \"airport_id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 6,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"24.00\",\n            \"flight_date\": \"2024-07-16\",\n            \"landing_date\": \"2024-07-17\",\n            \"plane\": {\n                \"id\": 1,\n                \"airport_id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 7,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-16\",\n            \"landing_date\": \"2024-07-16\",\n            \"plane\": {\n                \"id\": 1,\n                \"airport_id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 8,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-16\",\n            \"landing_date\": \"2024-07-16\",\n            \"plane\": {\n                \"id\": 1,\n                \"airport_id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 9,\n            \"plane_id\": 1,\n            \"airport_source_id\": 2,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-20\",\n            \"landing_date\": \"2024-07-20\",\n            \"plane\": {\n                \"id\": 1,\n                \"airport_id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        {\n            \"id\": 10,\n            \"plane_id\": 2,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-16\",\n            \"landing_date\": \"2024-07-16\",\n            \"plane\": {\n                \"id\": 2,\n                \"airport_id\": 1,\n                \"name\": \"Damas A2\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 11,\n            \"plane_id\": 2,\n            \"airport_source_id\": 2,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-20\",\n            \"landing_date\": \"2024-07-20\",\n            \"plane\": {\n                \"id\": 2,\n                \"airport_id\": 1,\n                \"name\": \"Damas A2\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        }\n    ]\n}"
 												}
 											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/add-trip",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"add-trip"
-											]
 										}
-									},
-									"response": [
+									]
+								},
+								{
+									"name": "For Airport Admin Only",
+									"item": [
 										{
 											"name": "add-trip",
-											"originalRequest": {
+											"request": {
 												"method": "POST",
 												"header": [
 													{
@@ -7754,37 +7800,27 @@
 													"formdata": [
 														{
 															"key": "plane_id",
-															"value": "1",
-															"type": "text"
-														},
-														{
-															"key": "airport_source_id",
 															"value": "2",
 															"type": "text"
 														},
 														{
 															"key": "airport_destination_id",
-															"value": "4",
+															"value": "2",
 															"type": "text"
 														},
 														{
-															"key": "current_price",
-															"value": "50",
+															"key": "going_flight_date",
+															"value": "2024-07-16",
 															"type": "text"
 														},
 														{
-															"key": "available_seats",
+															"key": "return_flight_date",
+															"value": "2024-07-20",
+															"type": "text"
+														},
+														{
+															"key": "flight_duration",
 															"value": "20",
-															"type": "text"
-														},
-														{
-															"key": "flight_date",
-															"value": "2024-06-07",
-															"type": "text"
-														},
-														{
-															"key": "landing_date",
-															"value": "2024-06-08",
 															"type": "text"
 														}
 													]
@@ -7806,53 +7842,221 @@
 													]
 												}
 											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
+											"response": [
 												{
-													"key": "Host",
-													"value": "127.0.0.1:8000"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 18:41:06 GMT"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 18:41:06 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "close"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/8.2.4"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache, private"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "X-RateLimit-Limit",
-													"value": "60"
-												},
-												{
-													"key": "X-RateLimit-Remaining",
-													"value": "59"
-												},
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
+													"name": "add-trip",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "plane_id",
+																	"value": "1",
+																	"type": "text"
+																},
+																{
+																	"key": "airport_destination_id",
+																	"value": "2",
+																	"type": "text"
+																},
+																{
+																	"key": "going_flight_date",
+																	"value": "2024-07-16",
+																	"type": "text"
+																},
+																{
+																	"key": "return_flight_date",
+																	"value": "2024-07-20",
+																	"type": "text"
+																},
+																{
+																	"key": "flight_duration",
+																	"value": "20",
+																	"type": "text"
+																}
+															]
+														},
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/add-trip",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"add-trip"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 16 Jul 2024 19:40:12 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 16 Jul 2024 19:40:12 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "59"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"message\": \"Added succesfully\",\n    \"date\": {\n        \"going_trip\": {\n            \"id\": 8,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-16\",\n            \"landing_date\": \"2024-07-16\",\n            \"plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"id\": 9,\n            \"plane_id\": 1,\n            \"airport_source_id\": 2,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-20\",\n            \"landing_date\": \"2024-07-20\",\n            \"plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        }\n    }\n}"
 												}
-											],
-											"cookie": [],
-											"body": "{\n    \"message\": \"Trip added successfully\",\n    \"date\": {\n        \"id\": 5,\n        \"plane_id\": 1,\n        \"airport_source_id\": 2,\n        \"airport_destination_id\": 4,\n        \"country_source_id\": 1,\n        \"country_destination_id\": 2,\n        \"current_price\": \"50.00\",\n        \"available_seats\": 20,\n        \"flight_date\": \"2024-06-07\",\n        \"landing_date\": \"2024-06-08\",\n        \"plane\": {\n            \"id\": 1,\n            \"name\": \"update plane\",\n            \"images\": [\n                {\n                    \"id\": 5,\n                    \"plane_id\": 1,\n                    \"image\": \"AirportImage/1716921592.png\"\n                },\n                {\n                    \"id\": 6,\n                    \"plane_id\": 1,\n                    \"image\": \"AirportImage/1716921593.jpg\"\n                }\n            ]\n        },\n        \"country_source\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"country_destination\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"airport_source\": {\n            \"id\": 2,\n            \"name\": \"Syria B\"\n        },\n        \"airport_destination\": {\n            \"id\": 4,\n            \"name\": \"France B\"\n        }\n    }\n}"
+											]
+										},
+										{
+											"name": "get-all-plane-admin-trip",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/get-all-plane-admin-trip",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"get-all-plane-admin-trip"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "get-all-plane-admin-trip",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "http://127.0.0.1:8000/api/admin/get-all-plane-admin-trip",
+															"protocol": "http",
+															"host": [
+																"127",
+																"0",
+																"0",
+																"1"
+															],
+															"port": "8000",
+															"path": [
+																"api",
+																"admin",
+																"get-all-plane-admin-trip"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "127.0.0.1:8000"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 16 Jul 2024 19:49:20 GMT"
+														},
+														{
+															"key": "Date",
+															"value": "Tue, 16 Jul 2024 19:49:20 GMT"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.4"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "60"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "58"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria A\",\n            \"user_id\": 5,\n            \"area_id\": 1,\n            \"country_id\": 1,\n            \"visible\": 1,\n            \"trips\": [\n                {\n                    \"id\": 1,\n                    \"plane_id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 2,\n                    \"country_source_id\": 1,\n                    \"country_destination_id\": 2,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 25,\n                    \"flight_duration\": \"0.00\",\n                    \"flight_date\": \"2024-05-30\",\n                    \"landing_date\": \"2024-06-01\",\n                    \"plane\": {\n                        \"id\": 1,\n                        \"name\": \"Damas A1\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                {\n                    \"id\": 2,\n                    \"plane_id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 2,\n                    \"country_source_id\": 1,\n                    \"country_destination_id\": 2,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 25,\n                    \"flight_duration\": \"0.00\",\n                    \"flight_date\": \"2024-06-01\",\n                    \"landing_date\": \"2024-06-05\",\n                    \"plane\": {\n                        \"id\": 1,\n                        \"name\": \"Damas A1\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                {\n                    \"id\": 5,\n                    \"plane_id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 2,\n                    \"country_source_id\": 1,\n                    \"country_destination_id\": 2,\n                    \"current_price\": \"50.00\",\n                    \"available_seats\": 40,\n                    \"flight_duration\": \"24.00\",\n                    \"flight_date\": \"2024-07-16\",\n                    \"landing_date\": \"2024-07-17\",\n                    \"plane\": {\n                        \"id\": 1,\n                        \"name\": \"Damas A1\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                {\n                    \"id\": 6,\n                    \"plane_id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 2,\n                    \"country_source_id\": 1,\n                    \"country_destination_id\": 2,\n                    \"current_price\": \"50.00\",\n                    \"available_seats\": 40,\n                    \"flight_duration\": \"24.00\",\n                    \"flight_date\": \"2024-07-16\",\n                    \"landing_date\": \"2024-07-17\",\n                    \"plane\": {\n                        \"id\": 1,\n                        \"name\": \"Damas A1\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                {\n                    \"id\": 7,\n                    \"plane_id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 2,\n                    \"country_source_id\": 1,\n                    \"country_destination_id\": 2,\n                    \"current_price\": \"50.00\",\n                    \"available_seats\": 40,\n                    \"flight_duration\": \"20.00\",\n                    \"flight_date\": \"2024-07-16\",\n                    \"landing_date\": \"2024-07-16\",\n                    \"plane\": {\n                        \"id\": 1,\n                        \"name\": \"Damas A1\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                {\n                    \"id\": 8,\n                    \"plane_id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 2,\n                    \"country_source_id\": 1,\n                    \"country_destination_id\": 2,\n                    \"current_price\": \"50.00\",\n                    \"available_seats\": 40,\n                    \"flight_duration\": \"20.00\",\n                    \"flight_date\": \"2024-07-16\",\n                    \"landing_date\": \"2024-07-16\",\n                    \"plane\": {\n                        \"id\": 1,\n                        \"name\": \"Damas A1\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                {\n                    \"id\": 9,\n                    \"plane_id\": 1,\n                    \"airport_source_id\": 2,\n                    \"airport_destination_id\": 1,\n                    \"country_source_id\": 2,\n                    \"country_destination_id\": 1,\n                    \"current_price\": \"50.00\",\n                    \"available_seats\": 40,\n                    \"flight_duration\": \"20.00\",\n                    \"flight_date\": \"2024-07-20\",\n                    \"landing_date\": \"2024-07-20\",\n                    \"plane\": {\n                        \"id\": 1,\n                        \"name\": \"Damas A1\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 2,\n                        \"name\": \"France A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    }\n                },\n                {\n                    \"id\": 10,\n                    \"plane_id\": 2,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 2,\n                    \"country_source_id\": 1,\n                    \"country_destination_id\": 2,\n                    \"current_price\": \"50.00\",\n                    \"available_seats\": 40,\n                    \"flight_duration\": \"20.00\",\n                    \"flight_date\": \"2024-07-16\",\n                    \"landing_date\": \"2024-07-16\",\n                    \"plane\": {\n                        \"id\": 2,\n                        \"name\": \"Damas A2\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                {\n                    \"id\": 11,\n                    \"plane_id\": 2,\n                    \"airport_source_id\": 2,\n                    \"airport_destination_id\": 1,\n                    \"country_source_id\": 2,\n                    \"country_destination_id\": 1,\n                    \"current_price\": \"50.00\",\n                    \"available_seats\": 40,\n                    \"flight_duration\": \"20.00\",\n                    \"flight_date\": \"2024-07-20\",\n                    \"landing_date\": \"2024-07-20\",\n                    \"plane\": {\n                        \"id\": 2,\n                        \"name\": \"Damas A2\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 2,\n                        \"name\": \"France A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+												}
+											]
 										}
 									]
 								},
@@ -7887,12 +8091,12 @@
 												},
 												{
 													"key": "flight_date",
-													"value": "2024-06-15",
+													"value": "2024-07-16",
 													"type": "text"
 												},
 												{
 													"key": "type",
-													"value": "1",
+													"value": "2",
 													"type": "text"
 												}
 											]
@@ -7924,6 +8128,11 @@
 														"key": "Accept",
 														"value": "application/json",
 														"type": "text"
+													},
+													{
+														"key": "lang",
+														"value": "en",
+														"type": "text"
 													}
 												],
 												"body": {
@@ -7941,12 +8150,12 @@
 														},
 														{
 															"key": "flight_date",
-															"value": "2024-5-28",
+															"value": "2024-07-16",
 															"type": "text"
 														},
 														{
 															"key": "type",
-															"value": "2",
+															"value": "1",
 															"type": "text"
 														}
 													]
@@ -7978,11 +8187,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 19:34:45 GMT"
+													"value": "Tue, 16 Jul 2024 19:43:28 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 19:34:45 GMT"
+													"value": "Tue, 16 Jul 2024 19:43:28 GMT"
 												},
 												{
 													"key": "Connection",
@@ -8006,7 +8215,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "59"
+													"value": "58"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -8014,7 +8223,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"update plane\",\n                    \"images\": [\n                        {\n                            \"id\": 5,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716924605.jpg\"\n                        },\n                        {\n                            \"id\": 6,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716921593.jpg\"\n                        },\n                        {\n                            \"id\": 9,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716924637.png\"\n                        },\n                        {\n                            \"id\": 10,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716924637.jpg\"\n                        }\n                    ]\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria AB\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"update plane\",\n                    \"images\": [\n                        {\n                            \"id\": 5,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716924605.jpg\"\n                        },\n                        {\n                            \"id\": 6,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716921593.jpg\"\n                        },\n                        {\n                            \"id\": 9,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716924637.png\"\n                        },\n                        {\n                            \"id\": 10,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716924637.jpg\"\n                        }\n                    ]\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria AB\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 5,\n                \"plane_id\": 1,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 4,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 20,\n                \"flight_date\": \"2024-06-07\",\n                \"landing_date\": \"2024-06-08\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"update plane\",\n                    \"images\": [\n                        {\n                            \"id\": 5,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716924605.jpg\"\n                        },\n                        {\n                            \"id\": 6,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716921593.jpg\"\n                        },\n                        {\n                            \"id\": 9,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716924637.png\"\n                        },\n                        {\n                            \"id\": 10,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716924637.jpg\"\n                        }\n                    ]\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"Syria B\"\n                },\n                \"airport_destination\": {\n                    \"id\": 4,\n                    \"name\": \"France B\"\n                }\n            }\n        ],\n        \"return_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria AB\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria AB\"\n                }\n            }\n        ]\n    }\n}"
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"24.00\",\n            \"flight_date\": \"2024-07-16\",\n            \"landing_date\": \"2024-07-17\",\n            \"plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 6,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"24.00\",\n            \"flight_date\": \"2024-07-16\",\n            \"landing_date\": \"2024-07-17\",\n            \"plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 7,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-16\",\n            \"landing_date\": \"2024-07-16\",\n            \"plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 8,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 2,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-16\",\n            \"landing_date\": \"2024-07-16\",\n            \"plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        }\n    ]\n}"
 										},
 										{
 											"name": "search-for-plane-trip",
@@ -8047,12 +8256,12 @@
 														},
 														{
 															"key": "flight_date",
-															"value": "2024-06-15",
+															"value": "2024-07-16",
 															"type": "text"
 														},
 														{
 															"key": "type",
-															"value": "1",
+															"value": "2",
 															"type": "text"
 														}
 													]
@@ -8084,11 +8293,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Sat, 15 Jun 2024 08:49:35 GMT"
+													"value": "Tue, 16 Jul 2024 19:47:28 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Sat, 15 Jun 2024 08:49:35 GMT"
+													"value": "Tue, 16 Jul 2024 19:47:28 GMT"
 												},
 												{
 													"key": "Connection",
@@ -8120,231 +8329,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 3,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 1499,\n            \"flight_date\": \"2024-06-15\",\n            \"landing_date\": \"2024-06-15\",\n            \"plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1718441349.png\"\n                    }\n                ]\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        }\n    ]\n}"
-										}
-									]
-								},
-								{
-									"name": "get-all-plane-admin-trip",
-									"request": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/get-all-plane-admin-trip",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"get-all-plane-admin-trip"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "get-all-plane-admin-trip",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/get-all-plane-admin-trip",
-													"protocol": "http",
-													"host": [
-														"127",
-														"0",
-														"0",
-														"1"
-													],
-													"port": "8000",
-													"path": [
-														"api",
-														"admin",
-														"get-all-plane-admin-trip"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Host",
-													"value": "127.0.0.1:8000"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:38:01 GMT"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:38:01 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "close"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/8.2.4"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache, private"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "X-RateLimit-Limit",
-													"value": "60"
-												},
-												{
-													"key": "X-RateLimit-Remaining",
-													"value": "58"
-												},
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria AB\",\n            \"user_id\": 4,\n            \"area_id\": 2,\n            \"country_id\": 1,\n            \"visible\": 1,\n            \"trips\": [\n                {\n                    \"id\": 1,\n                    \"plane_id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 3,\n                    \"country_source_id\": 1,\n                    \"country_destination_id\": 2,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 25,\n                    \"flight_date\": \"2024-05-30\",\n                    \"landing_date\": \"2024-06-01\",\n                    \"plane\": {\n                        \"id\": 1,\n                        \"name\": \"update plane\",\n                        \"images\": [\n                            {\n                                \"id\": 5,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716924605.jpg\"\n                            },\n                            {\n                                \"id\": 6,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716921593.jpg\"\n                            },\n                            {\n                                \"id\": 9,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716924637.png\"\n                            },\n                            {\n                                \"id\": 10,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716924637.jpg\"\n                            }\n                        ]\n                    },\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria AB\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                {\n                    \"id\": 2,\n                    \"plane_id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 3,\n                    \"country_source_id\": 1,\n                    \"country_destination_id\": 2,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 25,\n                    \"flight_date\": \"2024-06-01\",\n                    \"landing_date\": \"2024-06-05\",\n                    \"plane\": {\n                        \"id\": 1,\n                        \"name\": \"update plane\",\n                        \"images\": [\n                            {\n                                \"id\": 5,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716924605.jpg\"\n                            },\n                            {\n                                \"id\": 6,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716921593.jpg\"\n                            },\n                            {\n                                \"id\": 9,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716924637.png\"\n                            },\n                            {\n                                \"id\": 10,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716924637.jpg\"\n                            }\n                        ]\n                    },\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria AB\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    },\n                    \"country_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                {\n                    \"id\": 5,\n                    \"plane_id\": 1,\n                    \"airport_source_id\": 2,\n                    \"airport_destination_id\": 4,\n                    \"country_source_id\": 1,\n                    \"country_destination_id\": 2,\n                    \"current_price\": \"50.00\",\n                    \"available_seats\": 20,\n                    \"flight_date\": \"2024-06-07\",\n                    \"landing_date\": \"2024-06-08\",\n                    \"plane\": {\n                        \"id\": 1,\n                        \"name\": \"update plane\",\n                        \"images\": [\n                            {\n                                \"id\": 5,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716924605.jpg\"\n                            },\n                            {\n                                \"id\": 6,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716921593.jpg\"\n                            },\n                            {\n                                \"id\": 9,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716924637.png\"\n                            },\n                            {\n                                \"id\": 10,\n                                \"plane_id\": 1,\n                                \"image\": \"AirportImage/1716924637.jpg\"\n                            }\n                        ]\n                    },\n                    \"airport_source\": {\n                        \"id\": 2,\n                        \"name\": \"Syria B\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 4,\n                        \"name\": \"France B\"\n                    },\n                    \"country_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"France A\",\n            \"user_id\": 4,\n            \"area_id\": 4,\n            \"country_id\": 2,\n            \"visible\": 1,\n            \"trips\": [\n                {\n                    \"id\": 3,\n                    \"plane_id\": 3,\n                    \"airport_source_id\": 3,\n                    \"airport_destination_id\": 1,\n                    \"country_source_id\": 2,\n                    \"country_destination_id\": 1,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 25,\n                    \"flight_date\": \"2024-06-05\",\n                    \"landing_date\": \"2024-06-06\",\n                    \"plane\": {\n                        \"id\": 3,\n                        \"name\": \"PARIS A1\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria AB\"\n                    },\n                    \"country_source\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    }\n                },\n                {\n                    \"id\": 4,\n                    \"plane_id\": 3,\n                    \"airport_source_id\": 3,\n                    \"airport_destination_id\": 1,\n                    \"country_source_id\": 2,\n                    \"country_destination_id\": 1,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 25,\n                    \"flight_date\": \"2024-06-20\",\n                    \"landing_date\": \"2024-06-22\",\n                    \"plane\": {\n                        \"id\": 3,\n                        \"name\": \"PARIS A1\",\n                        \"images\": []\n                    },\n                    \"airport_source\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria AB\"\n                    },\n                    \"country_source\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    },\n                    \"country_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
-										}
-									]
-								},
-								{
-									"name": "get-all-plane-trip",
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "2|vBqdh1pIVQ9Gw1kGpQ6OcGITZmtJRCTNLqhYXrkw2abb7a90",
-													"type": "string"
-												}
-											]
-										},
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/get-all-plane-trip",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin",
-												"get-all-plane-trip"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "get-all-plane-trip",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/get-all-plane-trip",
-													"protocol": "http",
-													"host": [
-														"127",
-														"0",
-														"0",
-														"1"
-													],
-													"port": "8000",
-													"path": [
-														"api",
-														"admin",
-														"get-all-plane-trip"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Host",
-													"value": "127.0.0.1:8000"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:38:21 GMT"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 19:38:21 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "close"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/8.2.4"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache, private"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "X-RateLimit-Limit",
-													"value": "60"
-												},
-												{
-													"key": "X-RateLimit-Remaining",
-													"value": "59"
-												},
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 3,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_date\": \"2024-05-30\",\n            \"landing_date\": \"2024-06-01\",\n            \"plane\": {\n                \"id\": 1,\n                \"airport_id\": 1,\n                \"name\": \"update plane\",\n                \"images\": [\n                    {\n                        \"id\": 5,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716924605.jpg\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716921593.jpg\"\n                    },\n                    {\n                        \"id\": 9,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716924637.png\"\n                    },\n                    {\n                        \"id\": 10,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716924637.jpg\"\n                    }\n                ],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria AB\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria AB\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"plane_id\": 1,\n            \"airport_source_id\": 1,\n            \"airport_destination_id\": 3,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_date\": \"2024-06-01\",\n            \"landing_date\": \"2024-06-05\",\n            \"plane\": {\n                \"id\": 1,\n                \"airport_id\": 1,\n                \"name\": \"update plane\",\n                \"images\": [\n                    {\n                        \"id\": 5,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716924605.jpg\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716921593.jpg\"\n                    },\n                    {\n                        \"id\": 9,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716924637.png\"\n                    },\n                    {\n                        \"id\": 10,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716924637.jpg\"\n                    }\n                ],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria AB\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria AB\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"plane_id\": 3,\n            \"airport_source_id\": 3,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_date\": \"2024-06-05\",\n            \"landing_date\": \"2024-06-06\",\n            \"plane\": {\n                \"id\": 3,\n                \"airport_id\": 3,\n                \"name\": \"PARIS A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria AB\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"plane_id\": 3,\n            \"airport_source_id\": 3,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_date\": \"2024-06-20\",\n            \"landing_date\": \"2024-06-22\",\n            \"plane\": {\n                \"id\": 3,\n                \"airport_id\": 3,\n                \"name\": \"PARIS A1\",\n                \"images\": [],\n                \"airport\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria AB\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"plane_id\": 1,\n            \"airport_source_id\": 2,\n            \"airport_destination_id\": 4,\n            \"country_source_id\": 1,\n            \"country_destination_id\": 2,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 20,\n            \"flight_date\": \"2024-06-07\",\n            \"landing_date\": \"2024-06-08\",\n            \"plane\": {\n                \"id\": 1,\n                \"airport_id\": 1,\n                \"name\": \"update plane\",\n                \"images\": [\n                    {\n                        \"id\": 5,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716924605.jpg\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716921593.jpg\"\n                    },\n                    {\n                        \"id\": 9,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716924637.png\"\n                    },\n                    {\n                        \"id\": 10,\n                        \"plane_id\": 1,\n                        \"image\": \"AirportImage/1716924637.jpg\"\n                    }\n                ],\n                \"airport\": {\n                    \"id\": 1,\n                    \"name\": \"Syria AB\"\n                }\n            },\n            \"country_source\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"country_destination\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"Syria B\"\n            },\n            \"airport_destination\": {\n                \"id\": 4,\n                \"name\": \"France B\"\n            }\n        }\n    ]\n}"
+											"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 5,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-17\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 6,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-17\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 7,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 8,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            }\n        ],\n        \"return_trip\": [\n            {\n                \"id\": 9,\n                \"plane_id\": 1,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ]\n    }\n}"
 										}
 									]
 								},
@@ -8417,11 +8402,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 19:38:42 GMT"
+													"value": "Tue, 16 Jul 2024 20:16:10 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 19:38:42 GMT"
+													"value": "Tue, 16 Jul 2024 20:16:10 GMT"
 												},
 												{
 													"key": "Connection",
@@ -8453,7 +8438,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"plane_id\": 1,\n        \"airport_source_id\": 1,\n        \"airport_destination_id\": 3,\n        \"country_source_id\": 1,\n        \"country_destination_id\": 2,\n        \"current_price\": \"200.00\",\n        \"available_seats\": 25,\n        \"flight_date\": \"2024-05-30\",\n        \"landing_date\": \"2024-06-01\",\n        \"plane\": {\n            \"id\": 1,\n            \"airport_id\": 1,\n            \"name\": \"update plane\",\n            \"images\": [\n                {\n                    \"id\": 5,\n                    \"plane_id\": 1,\n                    \"image\": \"AirportImage/1716924605.jpg\"\n                },\n                {\n                    \"id\": 6,\n                    \"plane_id\": 1,\n                    \"image\": \"AirportImage/1716921593.jpg\"\n                },\n                {\n                    \"id\": 9,\n                    \"plane_id\": 1,\n                    \"image\": \"AirportImage/1716924637.png\"\n                },\n                {\n                    \"id\": 10,\n                    \"plane_id\": 1,\n                    \"image\": \"AirportImage/1716924637.jpg\"\n                }\n            ],\n            \"airport\": {\n                \"id\": 1,\n                \"name\": \"Syria AB\"\n            }\n        },\n        \"country_source\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"country_destination\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"airport_source\": {\n            \"id\": 1,\n            \"name\": \"Syria AB\"\n        },\n        \"airport_destination\": {\n            \"id\": 3,\n            \"name\": \"France A\"\n        }\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"plane_id\": 1,\n        \"airport_source_id\": 1,\n        \"airport_destination_id\": 2,\n        \"country_source_id\": 1,\n        \"country_destination_id\": 2,\n        \"current_price\": \"200.00\",\n        \"available_seats\": 25,\n        \"flight_duration\": \"0.00\",\n        \"flight_date\": \"2024-05-30\",\n        \"landing_date\": \"2024-06-01\",\n        \"plane\": {\n            \"id\": 1,\n            \"airport_id\": 1,\n            \"name\": \"Damas A1\",\n            \"images\": [],\n            \"airport\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"country_source\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"country_destination\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"airport_source\": {\n            \"id\": 1,\n            \"name\": \"Syria A\"\n        },\n        \"airport_destination\": {\n            \"id\": 2,\n            \"name\": \"France A\"\n        }\n    }\n}"
 										}
 									]
 								}
@@ -8468,16 +8453,6 @@
 										{
 											"name": "airport-trips",
 											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": [
-														{
-															"key": "token",
-															"value": "8|2ED9L62Zkv3z9IHceB5QwuJWxj2duIph8eKW7Dwkd3810569",
-															"type": "string"
-														}
-													]
-												},
 												"method": "POST",
 												"header": [
 													{
@@ -8501,7 +8476,7 @@
 														},
 														{
 															"key": "flight_date2",
-															"value": "2024-06-20",
+															"value": "2024-07-20",
 															"type": "text"
 														}
 													]
@@ -8550,7 +8525,7 @@
 																},
 																{
 																	"key": "flight_date2",
-																	"value": "2024-06-20",
+																	"value": "2024-07-20",
 																	"type": "text"
 																}
 															]
@@ -8582,11 +8557,11 @@
 														},
 														{
 															"key": "Date",
-															"value": "Sat, 13 Jul 2024 13:02:45 GMT"
+															"value": "Tue, 16 Jul 2024 20:17:37 GMT"
 														},
 														{
 															"key": "Date",
-															"value": "Sat, 13 Jul 2024 13:02:45 GMT"
+															"value": "Tue, 16 Jul 2024 20:17:37 GMT"
 														},
 														{
 															"key": "Connection",
@@ -8610,7 +8585,7 @@
 														},
 														{
 															"key": "X-RateLimit-Remaining",
-															"value": "57"
+															"value": "58"
 														},
 														{
 															"key": "Access-Control-Allow-Origin",
@@ -8618,7 +8593,7 @@
 														}
 													],
 													"cookie": [],
-													"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            }\n        ],\n        \"coming_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ]\n    }\n}"
+													"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"0.00\",\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"0.00\",\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 5,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-17\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 6,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-17\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 7,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 8,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 9,\n                \"plane_id\": 1,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 10,\n                \"plane_id\": 2,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 2,\n                    \"name\": \"Damas A2\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 11,\n                \"plane_id\": 2,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 2,\n                    \"name\": \"Damas A2\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ],\n        \"coming_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"0.00\",\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"0.00\",\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 9,\n                \"plane_id\": 1,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 11,\n                \"plane_id\": 2,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 2,\n                    \"name\": \"Damas A2\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ]\n    }\n}"
 												}
 											]
 										}
@@ -9237,7 +9212,7 @@
 														},
 														{
 															"key": "flight_date2",
-															"value": "2024-06-20",
+															"value": "2024-07-20",
 															"type": "text"
 														}
 													]
@@ -9281,7 +9256,7 @@
 																},
 																{
 																	"key": "flight_date2",
-																	"value": "2024-06-20",
+																	"value": "2024-07-20",
 																	"type": "text"
 																}
 															]
@@ -9313,11 +9288,11 @@
 														},
 														{
 															"key": "Date",
-															"value": "Sat, 13 Jul 2024 07:32:05 GMT"
+															"value": "Tue, 16 Jul 2024 20:19:17 GMT"
 														},
 														{
 															"key": "Date",
-															"value": "Sat, 13 Jul 2024 07:32:05 GMT"
+															"value": "Tue, 16 Jul 2024 20:19:17 GMT"
 														},
 														{
 															"key": "Connection",
@@ -9349,7 +9324,7 @@
 														}
 													],
 													"cookie": [],
-													"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            }\n        ],\n        \"coming_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ]\n    }\n}"
+													"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"0.00\",\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"0.00\",\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 5,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-17\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 6,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-17\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 7,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 8,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 9,\n                \"plane_id\": 1,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 10,\n                \"plane_id\": 2,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 2,\n                    \"name\": \"Damas A2\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 11,\n                \"plane_id\": 2,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 2,\n                    \"name\": \"Damas A2\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ],\n        \"coming_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"0.00\",\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"0.00\",\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 9,\n                \"plane_id\": 1,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 11,\n                \"plane_id\": 2,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 2,\n                    \"name\": \"Damas A2\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ]\n    }\n}"
 												}
 											]
 										}
@@ -10234,7 +10209,7 @@
 						"bearer": [
 							{
 								"key": "token",
-								"value": "3|r5QcqeYA2ggHBFYc70LU4aqRvexyB1RQ22eUWjQUbf4f514c",
+								"value": "1|Xb0LJGKa44a68IPCqHAeLLttEV1XXubUu9e55tqvfa131a33",
 								"type": "string"
 							}
 						]
@@ -20113,12 +20088,12 @@
 												},
 												{
 													"key": "flight_date",
-													"value": "2024-5-30",
+													"value": "2024-07-16",
 													"type": "text"
 												},
 												{
 													"key": "type",
-													"value": "2",
+													"value": "1",
 													"type": "text"
 												}
 											]
@@ -20161,102 +20136,7 @@
 														},
 														{
 															"key": "flight_date",
-															"value": "2024-5-30",
-															"type": "text"
-														},
-														{
-															"key": "type",
-															"value": "1",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "http://127.0.0.1:8000/api/user/search-for-plane-trip",
-													"protocol": "http",
-													"host": [
-														"127",
-														"0",
-														"0",
-														"1"
-													],
-													"port": "8000",
-													"path": [
-														"api",
-														"user",
-														"search-for-plane-trip"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Host",
-													"value": "127.0.0.1:8000"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 23:39:31 GMT"
-												},
-												{
-													"key": "Date",
-													"value": "Tue, 28 May 2024 23:39:31 GMT"
-												},
-												{
-													"key": "Connection",
-													"value": "close"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/8.2.4"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache, private"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "X-RateLimit-Limit",
-													"value": "60"
-												},
-												{
-													"key": "X-RateLimit-Remaining",
-													"value": "59"
-												},
-												{
-													"key": "Access-Control-Allow-Origin",
-													"value": "*"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"plane_id\": 3,\n            \"airport_source_id\": 3,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_date\": \"2024-06-05\",\n            \"landing_date\": \"2024-06-06\",\n            \"plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"plane_id\": 3,\n            \"airport_source_id\": 3,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"200.00\",\n            \"available_seats\": 25,\n            \"flight_date\": \"2024-06-20\",\n            \"landing_date\": \"2024-06-22\",\n            \"plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        }\n    ]\n}"
-										},
-										{
-											"name": "search-for-plane-trip",
-											"originalRequest": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "country_source_id",
-															"value": "2",
-															"type": "text"
-														},
-														{
-															"key": "country_destination_id",
-															"value": "1",
-															"type": "text"
-														},
-														{
-															"key": "flight_date",
-															"value": "2024-5-30",
+															"value": "2024-07-16",
 															"type": "text"
 														},
 														{
@@ -20293,11 +20173,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 23:39:51 GMT"
+													"value": "Tue, 16 Jul 2024 20:22:09 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 23:39:51 GMT"
+													"value": "Tue, 16 Jul 2024 20:22:09 GMT"
 												},
 												{
 													"key": "Connection",
@@ -20329,7 +20209,102 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-05\",\n                \"landing_date\": \"2024-06-06\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 3,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-20\",\n                \"landing_date\": \"2024-06-22\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ],\n        \"return_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-05-30\",\n                \"landing_date\": \"2024-06-01\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"update plane\",\n                    \"images\": [\n                        {\n                            \"id\": 1,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716930645.jpg\"\n                        }\n                    ]\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 3,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"200.00\",\n                \"available_seats\": 25,\n                \"flight_date\": \"2024-06-01\",\n                \"landing_date\": \"2024-06-05\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"update plane\",\n                    \"images\": [\n                        {\n                            \"id\": 1,\n                            \"plane_id\": 1,\n                            \"image\": \"AirportImage/1716930645.jpg\"\n                        }\n                    ]\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 3,\n                    \"name\": \"France A\"\n                }\n            }\n        ]\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 9,\n                \"plane_id\": 1,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            },\n            {\n                \"id\": 11,\n                \"plane_id\": 2,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-20\",\n                \"landing_date\": \"2024-07-20\",\n                \"plane\": {\n                    \"id\": 2,\n                    \"name\": \"Damas A2\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ],\n        \"return_trip\": [\n            {\n                \"id\": 5,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-17\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 6,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-17\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 7,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 8,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            },\n            {\n                \"id\": 10,\n                \"plane_id\": 2,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 40,\n                \"flight_duration\": \"20.00\",\n                \"flight_date\": \"2024-07-16\",\n                \"landing_date\": \"2024-07-16\",\n                \"plane\": {\n                    \"id\": 2,\n                    \"name\": \"Damas A2\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            }\n        ]\n    }\n}"
+										},
+										{
+											"name": "search-for-plane-trip",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "country_source_id",
+															"value": "2",
+															"type": "text"
+														},
+														{
+															"key": "country_destination_id",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "flight_date",
+															"value": "2024-07-16",
+															"type": "text"
+														},
+														{
+															"key": "type",
+															"value": "1",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/user/search-for-plane-trip",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"user",
+														"search-for-plane-trip"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 16 Jul 2024 20:22:56 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 16 Jul 2024 20:22:56 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 9,\n            \"plane_id\": 1,\n            \"airport_source_id\": 2,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-20\",\n            \"landing_date\": \"2024-07-20\",\n            \"plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        {\n            \"id\": 11,\n            \"plane_id\": 2,\n            \"airport_source_id\": 2,\n            \"airport_destination_id\": 1,\n            \"country_source_id\": 2,\n            \"country_destination_id\": 1,\n            \"current_price\": \"50.00\",\n            \"available_seats\": 40,\n            \"flight_duration\": \"20.00\",\n            \"flight_date\": \"2024-07-20\",\n            \"landing_date\": \"2024-07-20\",\n            \"plane\": {\n                \"id\": 2,\n                \"name\": \"Damas A2\",\n                \"images\": []\n            },\n            \"country_source\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"country_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -20402,11 +20377,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 23:40:21 GMT"
+													"value": "Tue, 16 Jul 2024 20:23:16 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 23:40:21 GMT"
+													"value": "Tue, 16 Jul 2024 20:23:16 GMT"
 												},
 												{
 													"key": "Connection",
@@ -20430,7 +20405,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "57"
+													"value": "58"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -20438,7 +20413,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"plane_id\": 1,\n        \"airport_source_id\": 1,\n        \"airport_destination_id\": 3,\n        \"country_source_id\": 1,\n        \"country_destination_id\": 2,\n        \"current_price\": \"200.00\",\n        \"available_seats\": 25,\n        \"flight_date\": \"2024-05-30\",\n        \"landing_date\": \"2024-06-01\",\n        \"plane\": {\n            \"id\": 1,\n            \"airport_id\": 1,\n            \"name\": \"update plane\",\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"plane_id\": 1,\n                    \"image\": \"AirportImage/1716930645.jpg\"\n                }\n            ],\n            \"airport\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"country_source\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"country_destination\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"airport_source\": {\n            \"id\": 1,\n            \"name\": \"Syria A\"\n        },\n        \"airport_destination\": {\n            \"id\": 3,\n            \"name\": \"France A\"\n        }\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"plane_id\": 1,\n        \"airport_source_id\": 1,\n        \"airport_destination_id\": 2,\n        \"country_source_id\": 1,\n        \"country_destination_id\": 2,\n        \"current_price\": \"200.00\",\n        \"available_seats\": 25,\n        \"flight_duration\": \"0.00\",\n        \"flight_date\": \"2024-05-30\",\n        \"landing_date\": \"2024-06-01\",\n        \"plane\": {\n            \"id\": 1,\n            \"airport_id\": 1,\n            \"name\": \"Damas A1\",\n            \"images\": [],\n            \"airport\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"country_source\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"country_destination\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"airport_source\": {\n            \"id\": 1,\n            \"name\": \"Syria A\"\n        },\n        \"airport_destination\": {\n            \"id\": 2,\n            \"name\": \"France A\"\n        }\n    }\n}"
 										}
 									]
 								},
@@ -25845,7 +25820,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|mhAL7KXt6QkM0nF2RM0qd0YfuimyFYcO9TEJ61mz88051dc9",
+						"value": "1|IVXA5ViuB4DybsmslJ3eGRTI6hsu7992m9Mx8YgG8956337a",
 						"type": "string"
 					}
 				]

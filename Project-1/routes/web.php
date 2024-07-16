@@ -8,6 +8,7 @@ use App\Http\Controllers\StaticBookController;
 use App\Listeners\SendWebNotification;
 use App\Mail\TestMail;
 use App\Models\Booking;
+use App\Models\PlaneTrip;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Carbon;
@@ -32,15 +33,36 @@ use Illuminate\Support\Facades\Mail;
 
 //     return "Done send";
 // });
+// Route::get('/', function () {
+//     // $user=User::get();
+//     $user="exUehn31-o1OCef9EGnyZb:APA91bG7fofNirxQ0b4X5SJdZEHw3CpuoFgitsuLcSy9B2JTEQZxtXlYJuaCXUT6jpdjVG8CsP6JfJyQwYEJ1BH2ffq1CNHvm5UV4_ZgB-vskWUgqwVXDwD7_DhsX9lZMyG-GGx5zOPt";
+//     $message=[
+//         'title'=>'log in',
+//         'body'=>'Hi My Friend'
+//     ];
+//     // event(new PushWebNotification($user,$message));
+//     return "Send";
+// });
 Route::get('/', function () {
-    // $user=User::get();
-    $user="exUehn31-o1OCef9EGnyZb:APA91bG7fofNirxQ0b4X5SJdZEHw3CpuoFgitsuLcSy9B2JTEQZxtXlYJuaCXUT6jpdjVG8CsP6JfJyQwYEJ1BH2ffq1CNHvm5UV4_ZgB-vskWUgqwVXDwD7_DhsX9lZMyG-GGx5zOPt";
-    $message=[
-        'title'=>'log in',
-        'body'=>'Hi My Friend'
-    ];
-    // event(new PushWebNotification($user,$message));
-    return "Send";
+
+    $planetrip=PlaneTrip::where('id',1)->first();
+        $date=new Carbon($planetrip['flight_date']);
+    //     return $date->addHours(48)->format('Y-m-d');
+    // $date= new DateTime(Carbon::now()->addHours(24));
+    // $date2= new DateTime(Carbon::now());
+    // $x= $date->diff($date2);
+        $nowDate=Carbon::now()->format('Y-m-d');
+        $date= new Carbon($nowDate);
+        $data=[
+            'flight_date'=>$date->format('Y-m-d'),
+            'landing_date'=>$date->addDays(1)->format('Y-m-d')
+        ];
+    // $data=[
+    //     '1'=>$planetrip['flight_date'],
+    //     '2'=>$date->addDays(2)->format('Y-m-d'),
+    //     '3'=>$date->diffInHours($planetrip['flight_date']),
+    // ];
+    return $data ;
 });
 
 
