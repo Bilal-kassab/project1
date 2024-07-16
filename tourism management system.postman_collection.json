@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "bb63fc29-91e2-415f-bc5a-004e8c9109aa",
-		"name": "tourism management system Copy 6",
+		"_postman_id": "8e00aa59-850a-4690-9bbc-e20e3af8cb8c",
+		"name": "tourism management system Copy 7",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30821440"
+		"_exporter_id": "30377196"
 	},
 	"item": [
 		{
@@ -13283,11 +13283,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Jul 2024 00:50:23 GMT"
+													"value": "Tue, 16 Jul 2024 23:04:18 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Jul 2024 00:50:23 GMT"
+													"value": "Tue, 16 Jul 2024 23:04:18 GMT"
 												},
 												{
 													"key": "Connection",
@@ -13319,7 +13319,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 6,\n            \"user_id\": 7,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 1,\n            \"trip_name\": \"to france\",\n            \"price\": \"520.00\",\n            \"new_price\": null,\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-08-15\",\n            \"end_date\": \"2024-08-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"dynamic\",\n            \"rooms_count\": 1\n        },\n        {\n            \"id\": 7,\n            \"user_id\": 7,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 1,\n            \"trip_name\": \"to france\",\n            \"price\": \"520.00\",\n            \"new_price\": null,\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-08-15\",\n            \"end_date\": \"2024-08-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"dynamic\",\n            \"rooms_count\": 1\n        },\n        {\n            \"id\": 4,\n            \"user_id\": 7,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"400.00\",\n            \"new_price\": null,\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-08-01\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"plane\",\n            \"rooms_count\": 0\n        }\n    ]\n}"
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"user_id\": 7,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1350.00\",\n            \"new_price\": null,\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-08-15\",\n            \"end_date\": \"2024-08-30\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"hotel\",\n            \"rooms_count\": 3,\n            \"user\": {\n                \"id\": 7,\n                \"name\": \"User\",\n                \"email\": \"User@gmail.com\",\n                \"phone_number\": null,\n                \"email_verified_at\": null,\n                \"image\": null,\n                \"point\": 0,\n                \"position\": 1,\n                \"is_approved\": 1,\n                \"fcm_token\": null,\n                \"created_at\": \"2024-07-16T22:45:51.000000Z\",\n                \"updated_at\": \"2024-07-16T22:45:51.000000Z\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"user_id\": 7,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"100.00\",\n            \"new_price\": null,\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-07-16\",\n            \"end_date\": \"2024-07-18\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"plane\",\n            \"rooms_count\": 0,\n            \"user\": {\n                \"id\": 7,\n                \"name\": \"User\",\n                \"email\": \"User@gmail.com\",\n                \"phone_number\": null,\n                \"email_verified_at\": null,\n                \"image\": null,\n                \"point\": 0,\n                \"position\": 1,\n                \"is_approved\": 1,\n                \"fcm_token\": null,\n                \"created_at\": \"2024-07-16T22:45:51.000000Z\",\n                \"updated_at\": \"2024-07-16T22:45:51.000000Z\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"user_id\": 7,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france updated\",\n            \"price\": \"200.00\",\n            \"new_price\": null,\n            \"number_of_people\": 2,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-07-16\",\n            \"end_date\": \"2024-07-18\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"plane\",\n            \"rooms_count\": 0,\n            \"user\": {\n                \"id\": 7,\n                \"name\": \"User\",\n                \"email\": \"User@gmail.com\",\n                \"phone_number\": null,\n                \"email_verified_at\": null,\n                \"image\": null,\n                \"point\": 0,\n                \"position\": 1,\n                \"is_approved\": 1,\n                \"fcm_token\": null,\n                \"created_at\": \"2024-07-16T22:45:51.000000Z\",\n                \"updated_at\": \"2024-07-16T22:45:51.000000Z\"\n            }\n        }\n    ]\n}"
 										}
 									]
 								}
@@ -15189,7 +15189,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "7|wSxnABNjsJ2MaCcXb9gc9wxXGoIU20htz1URKfkkb6289a56",
+						"value": "3|s961yXCPcpn2aSvp5zXZpPDaDsnkHk5tqFR54Luy846537d7",
 						"type": "string"
 					}
 				]
@@ -22994,6 +22994,118 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 4,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france with leader\",\n            \"price\": \"3240.00\",\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-07-03\",\n            \"trip_note\": \"hi my friend again\",\n            \"rooms_count\": 6\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"hotel\": {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 61,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 62,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 71,\n                \"capacity\": 4,\n                \"price\": \"30.00\"\n            },\n            {\n                \"id\": 72,\n                \"capacity\": 4,\n                \"price\": \"30.00\"\n            },\n            {\n                \"id\": 81,\n                \"capacity\": 6,\n                \"price\": \"40.00\"\n            },\n            {\n                \"id\": 82,\n                \"capacity\": 6,\n                \"price\": \"40.00\"\n            }\n        ]\n    },\n    \"added price\": 1890\n}"
+								},
+								{
+									"name": "update_hotel_book",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "trip_name",
+													"value": "to france with leader",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-08-03",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend again",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C2",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C4",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C6",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/update_hotel_book/3",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"update_hotel_book",
+												"3"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 16 Jul 2024 22:55:03 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 16 Jul 2024 22:55:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"the new end date must be after or equal old end date\"\n}"
 								}
 							]
 						},
@@ -23027,7 +23139,7 @@
 							},
 							"response": [
 								{
-									"name": "New Request",
+									"name": "get_all_my_hotel_book",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -23064,11 +23176,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Jun 2024 08:44:00 GMT"
+											"value": "Tue, 16 Jul 2024 22:55:48 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Jun 2024 08:44:00 GMT"
+											"value": "Tue, 16 Jul 2024 22:55:48 GMT"
 										},
 										{
 											"key": "Connection",
@@ -23092,7 +23204,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -23100,7 +23212,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france with leader\",\n            \"price\": \"3240.00\",\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-07-03\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend again\",\n            \"type\": \"hotel\",\n            \"rooms_count\": 6\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"user_id\": 7,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1350.00\",\n            \"new_price\": null,\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-08-15\",\n            \"end_date\": \"2024-08-30\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"hotel\",\n            \"rooms_count\": 3,\n            \"source_trip\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"destination_trip\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -25820,7 +25932,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|IVXA5ViuB4DybsmslJ3eGRTI6hsu7992m9Mx8YgG8956337a",
+						"value": "1|QyPPfOMfkdjTlnP8sFkEHsGhvHgXwQF6IezT1S58c85cbc77",
 						"type": "string"
 					}
 				]
