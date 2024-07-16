@@ -155,7 +155,10 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
             Route::post('update_plane_book/{id}','updatePlaneBook');
             Route::delete('delete_dynamic_trip/{id}','delete_dynamic_trip');
         });
-
+        Route::controller(ActivityController::class)->group(function(){
+            Route::post('search-activity','searchActivity');
+            Route::get('get-all-activity','getAllActivity');
+        });
     });
 
 });

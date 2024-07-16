@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6032bb81-f606-4552-ac42-86f07dfe0537",
+		"_postman_id": "bb63fc29-91e2-415f-bc5a-004e8c9109aa",
 		"name": "tourism management system Copy 6",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30377196"
+		"_exporter_id": "30821440"
 	},
 	"item": [
 		{
@@ -15572,96 +15572,6 @@
 							},
 							"response": [
 								{
-									"name": "login",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "email",
-													"value": "user@gmail.com",
-													"type": "text"
-												},
-												{
-													"key": "password",
-													"value": "123456789",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/login",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"login"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 17 Mar 2024 15:45:15 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 17 Mar 2024 15:45:15 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"email\": \"user@gmail.com\",\n        \"password\": \"123456789\"\n    },\n    \"token\": \"4|SfuFcogFsjRuwvaW8JOOEoofxD8lG3wGFO7QNQ4j6f868e44\"\n}"
-								},
-								{
 									"name": "password",
 									"originalRequest": {
 										"method": "POST",
@@ -15930,6 +15840,96 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"message\": \"login done\",\n    \"token\": \"4|uKKg8sKDygPdAAJ0GA2SZSHgkVrBcBb9B92IAVDP7b82c820\"\n}"
+								},
+								{
+									"name": "login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "user@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123456789",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/login",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 16 Jul 2024 11:34:25 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 16 Jul 2024 11:34:25 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"login done\",\n    \"token\": \"1|mhAL7KXt6QkM0nF2RM0qd0YfuimyFYcO9TEJ61mz88051dc9\"\n}"
 								}
 							]
 						},
@@ -18473,6 +18473,233 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Islamic\",\n            \"created_at\": \"2024-04-01T21:41:14.000000Z\",\n            \"updated_at\": \"2024-04-01T21:41:14.000000Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Activity",
+					"item": [
+						{
+							"name": "search-activity",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "e",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/search-activity",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"search-activity"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "search-activity",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "a",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/search-activity",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"search-activity"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 16 Jul 2024 11:37:27 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 16 Jul 2024 11:37:27 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Eating\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Skating\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Camping\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Safari\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get-all-activity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/get-all-activity",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"get-all-activity"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/get-all-activity",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"get-all-activity"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 14:22:53 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 14:22:53 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"swimming\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"eating\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"skating\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Climbing\"\n        }\n    ]\n}"
 								}
 							]
 						}
@@ -25618,7 +25845,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "4|uZgv7lUXEhdTay1tO5g4IDvPTbrxDC5JHNmCv7Ntf2fab010",
+						"value": "1|mhAL7KXt6QkM0nF2RM0qd0YfuimyFYcO9TEJ61mz88051dc9",
 						"type": "string"
 					}
 				]

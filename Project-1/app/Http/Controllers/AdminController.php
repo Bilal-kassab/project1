@@ -91,7 +91,7 @@ class AdminController extends Controller
 
         if(!$admin || !Hash::check($loginAdminData['password'],$admin->password)){
             return response()->json([
-                'message' => trans('auth.login')
+                'message' => trans('auth.failed')
             ],422);
         }
         $token = $admin->createToken('token')->plainTextToken;
