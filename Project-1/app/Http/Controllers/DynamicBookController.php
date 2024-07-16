@@ -413,7 +413,7 @@ class DynamicBookController extends Controller
             if( $trip==9){
                 return response()->json([
                     'message'=>'the new end date must be after or equal old end date'
-                ],404);
+                ],400);
             }
             if( $trip==1){
                 return response()->json([

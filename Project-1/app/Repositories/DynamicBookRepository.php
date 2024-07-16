@@ -460,7 +460,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     }
     public function get_all_hotel_trip()
     {
-        $dynamic_book=Booking::where('type','hotel')->where('user_id',auth()->id())
+        $dynamic_book=Booking::with('source_trip','destination_trip')->where('type','hotel')->where('user_id',auth()->id())
                              ->AvailableRooms()
                             //  ->select('id','user_id','source_trip_id','destination_trip_id','trip_name','price','number_of_people','start_date','end_date','trip_note','rooms_count')
                              ->get();
@@ -1014,7 +1014,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 $hotel_id=$booking->rooms->first()['hotel']['id'];// get hotel id from existing booking room
             }
             if($request['end_date']< $booking['end_date']){
-                return 8;
+                return 9;
             }
             if($hotel_id!=null){
                 $bookRoomCount=BookingRoom::where('book_id',$booking['id'])->get();
@@ -1167,7 +1167,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     }
     public function get_all_dynamic_book($request){
         if($request->user()->hasRole('Super Admin')){
-            $dynamic_book=Booking::where('type','dynamic')->orwhere('type','hotel')->orwhere('type','plane')
+            $dynamic_book=Booking::with('user')->where('type','dynamic')->orwhere('type','hotel')->orwhere('type','plane')
                             ->orderby('type')
                             ->AvailableRooms()
                             ->get();
