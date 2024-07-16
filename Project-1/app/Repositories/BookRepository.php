@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Activity;
 use App\Models\ActivityBook;
 use App\Models\Bank;
 use App\Repositories\Interfaces\BookRepositoryInterface;
@@ -10,6 +11,7 @@ use App\Models\BookingRoom;
 use App\Models\BookingStaticTrip;
 use App\Models\BookPlace;
 use App\Models\BookPlane;
+use App\Models\Country;
 use App\Models\Place;
 use App\Models\PlaneTrip;
 use App\Models\Room;
@@ -385,7 +387,7 @@ class BookRepository implements BookRepositoryInterface
     {
         $static_book=Booking::where('type','static')
                             ->AvailableRooms()
-                            ->select('id','trip_name','price','new_price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
+                            // ->select('id','trip_name','price','new_price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
                             ->get();
         return $static_book;
 
@@ -588,12 +590,15 @@ class BookRepository implements BookRepositoryInterface
     {
         try{
 
-            $staticTrip=Booking::where('id',$id)->first();
+            $staticTrip=Booking::where('id',$id)->with('user')->first();
             $details=BookingStaticTrip::where('static_trip_id',$staticTrip['id'])
                                         ->with('user:id,name,phone_number,image')
                                         ->select('id','user_id','static_trip_id','number_of_friend')
                                         ->get();
-            return $details;
+            return [
+              'trip_admin'=>$staticTrip['user'],
+              'details'=>$details,
+            ];
 
         }catch(Exception $ex){
             throw new Exception($ex);
@@ -607,7 +612,7 @@ class BookRepository implements BookRepositoryInterface
             $staticTrip=Booking::where('type','static')
                              ->where('user_id',auth()->id())
                              ->AvailableRooms()
-                             ->select('id','trip_name','price','new_price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
+                            //  ->select('id','trip_name','price','new_price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
                              ->get();
             return $staticTrip;
         }catch(Exception $exception){
@@ -630,6 +635,43 @@ class BookRepository implements BookRepositoryInterface
                                             ->get();
             }
             return $details;
+        }catch(Exception $ex){
+            throw new Exception($ex);
+        }
+    }
+
+    public function searchTrip($request)
+    {
+        try{
+            $bookings='';
+            //  Activity
+            if($request['type']=='activity'){
+                $activityIds=Activity::where('name','like','%'.$request['search_variable'].'%')->pluck('id')->toArray();
+                $bookings = Booking::whereHas('activities', function ($query) use ($activityIds) {
+                    $query->whereIn('activities.id', $activityIds);
+                })->get();
+            }
+            // Country
+            if($request['type']=='country'){
+                $countryIds=Country::where('name','like','%'.$request['search_variable'].'%')->pluck('id')->toArray();
+                $bookings = Booking::whereIn('destination_trip_id',$countryIds)->get();
+            }
+            // Place
+            if($request['type']=='place'){
+                $placeIds=Place::where('name','like','%'.$request['search_variable'].'%')->pluck('id')->toArray();
+                $bookings = Booking::whereHas('places', function ($query) use ($placeIds) {
+                    $query->whereIn('places.id', $placeIds);
+                })->get();
+            }
+
+            // Date
+            if($request['type']=='date'){
+                $bookings = Booking::where('start_date','>=',$request['first_date'])
+                                    ->where('end_date','<=',$request['second_date'])
+                                    ->get();
+            }
+            return $bookings;
+
         }catch(Exception $ex){
             throw new Exception($ex);
         }

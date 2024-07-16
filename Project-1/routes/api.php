@@ -131,6 +131,7 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
             Route::post('check-static-trip/{id}','checkStaticTrip');
             Route::post('edit-static-trip-book/{id}','editBook');
             Route::post('book-static-trip','bookStaticTrip');
+            Route::post('search-for-static-trip','searchTrip');
             Route::delete('delete-static-trip-book/{id}','deleteBook');
             Route::get('show-all-my-staic-trip-books','showAllMyStaicTrips');
             Route::get('all-static-trip','index');

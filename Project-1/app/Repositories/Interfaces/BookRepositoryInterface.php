@@ -21,4 +21,6 @@ Interface BookRepositoryInterface{
 
     public function getTripAdminTrips();
     public function getTripAdminTripDetails($id);
+
+    public function searchTrip($request);
 }

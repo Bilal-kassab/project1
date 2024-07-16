@@ -7,10 +7,14 @@ use App\Http\Requests\Book\CheckStaticTripRequest;
 use App\Http\Requests\Book\DestroyRequest;
 use App\Http\Requests\Book\EditStaticTripRequest;
 use App\Http\Requests\Offer\OfferRequest;
+use App\Http\Requests\Trip\SearchStaticBookRequest;
 use App\Http\Requests\Trip\StoreStaticTripRequest;
 use App\Http\Requests\Trip\UpdateStaticTripRequest;
+use App\Models\Activity;
 use App\Models\Booking;
 use App\Models\BookingStaticTrip;
+use App\Models\Country;
+use App\Models\Place;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -382,6 +386,21 @@ class StaticBookController extends Controller
             return response()->json([
                 'message'=>$exception->getMessage()
             ]);
+        }
+    }
+
+    public function searchTrip(SearchStaticBookRequest $request)
+    {
+        try{
+           $bookings=$this->bookrepository->searchTrip($request->all());
+
+            return response()->json([
+                'data'=>$bookings,
+            ],200);
+        }catch(Exception $ex){
+            return response()->json([
+                'message'=>$ex->getMessage(),
+            ],500);
         }
     }
 }
