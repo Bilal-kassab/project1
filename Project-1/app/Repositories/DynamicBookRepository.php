@@ -84,7 +84,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             $trip_price=0;
             $plane_trip= PlaneTrip::where('id', $request['plane_trip_id'])->first();
             $plane_trip_away = PlaneTrip::where('id', $request['plane_trip_away_id'])->first()??null;
-            if($plane_trip['flight_date']>=$plane_trip_away['flight_date']){
+            if($plane_trip_away && $plane_trip['flight_date']>=$plane_trip_away['flight_date']){
                 return 27;
             }
             $data=[
@@ -249,7 +249,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     {
         try{
         $book=Booking::where('type','dynamic')
-                    ->where('user_id',auth()->id())
+                    // ->where('user_id',auth()->id())
                     ->AvailableRooms()
                     ->findOrFail($id);
 
@@ -341,7 +341,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     public function show_hotel_trip($id){
         try{
             $book=Booking::where('type','hotel')
-                        ->where('user_id',auth()->id())
+                        // ->where('user_id',auth()->id())
                         ->AvailableRooms()
                         ->findOrFail($id);
 
@@ -382,7 +382,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     public function show_plane_trip($id){
         try{
             $book=Booking::where('type','plane')
-                        ->where('user_id',auth()->id())
+                        // ->where('user_id',auth()->id())
                         ->AvailableRooms()
                         ->findOrFail($id);
             $bookData=[
@@ -1164,5 +1164,47 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
         }catch(Exception $exception){
             throw new Exception($exception->getMessage());
         }
+    }
+    public function get_all_dynamic_book($request){
+        if($request->user()->hasRole('Super Admin')){
+            $dynamic_book=Booking::where('type','dynamic')->orwhere('type','hotel')->orwhere('type','plane')
+                            ->orderby('type')
+                            ->AvailableRooms()
+                            ->get();
+        }else if($request->user()->hasRole('Trip manger')){
+            $admin_trip=User::where('id',auth()->id())->first();
+            $dynamic_book=Booking::where('type','dynamic')->where('destination_trip_id',$admin_trip['position'])
+                            // ->orderby('type')
+                            ->AvailableRooms()
+                            ->get();
+        }
+        // $admin_trip=User::where('id',auth()->id())->first();
+
+
+        // $dynamic_book=Booking::where('type','dynamic')->orwhere('type','hotel')->orwhere('type','plane')
+        //                     ->orderby('type')
+        //                     ->AvailableRooms()
+        //                     ->get();
+        return $dynamic_book;
+    }
+    public function get_all_hotel_book(){
+        $hotel=Hotel::where('user_id',auth()->id())->first();
+
+        $booking_romm=BookingRoom::where('rooms',function ($query) use ($hotel){
+            $query->where('hotel_id',$hotel->id);})->get();
+
+        // $admin_trip=User::where('id',auth()->id())->first();
+        // $dynamic_book=Booking::where('type','hotel')->where('destination_trip_id',$admin_trip['position'])
+        //                     ->AvailableRooms()
+        //                     ->get();
+        return $booking_romm;
+    }
+    public function get_all_plane_book(){
+        $admin_trip=User::where('id',auth()->id())->first();
+        $dynamic_book=Booking::where('type','plane')->where('destination_trip_id',$admin_trip['position'])
+                            ->AvailableRooms()
+                            ->select('id','user_id','source_trip_id','destination_trip_id','trip_name','price','number_of_people','start_date','end_date','trip_note')
+                            ->get();
+        return $dynamic_book;
     }
 }

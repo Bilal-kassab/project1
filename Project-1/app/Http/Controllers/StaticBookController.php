@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Book\BookStaticTripRequest;
 use App\Http\Requests\Book\CheckStaticTripRequest;
+use App\Http\Requests\Book\DestroyRequest;
 use App\Http\Requests\Book\EditStaticTripRequest;
 use App\Http\Requests\Offer\OfferRequest;
 use App\Http\Requests\Trip\StoreStaticTripRequest;
@@ -163,10 +164,10 @@ class StaticBookController extends Controller
         }
     }
 
-    public function tripCancellation($id):JsonResponse
+    public function tripCancellation(DestroyRequest $request):JsonResponse
     {
         try {
-            $val=$this->bookrepository->tripCancellation($id);
+            $val=$this->bookrepository->tripCancellation($request['id']);
             return response()->json([
                 'message'=>$val
             ],200);

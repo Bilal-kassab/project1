@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('static_trip_id')->references('id')->on('bookings')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('number_of_friend')->default(1);
             $table->decimal('book_price')->default(0.0);
+            $table->boolean('evaluation')->default(0);
             $table->timestamps();
         });
     }

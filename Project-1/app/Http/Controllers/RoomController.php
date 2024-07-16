@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Room\DestroyRequest;
 use App\Http\Requests\Room\IndexRoomRequest;
 use App\Http\Requests\Room\StoreRoomRequest;
 use App\Http\Requests\Room\UpdateRoomRequest;
@@ -195,15 +196,15 @@ class RoomController extends Controller
             ],404);
          }
     }
-    public function destroy($id)
+    public function destroy(DestroyRequest $request)
     {
-        if(auth()->user()->id != Hotel::where('id',Room::where('id',$id)->first()->hotel_id)->first()->user_id ){
+        if(auth()->user()->id != Hotel::where('id',Room::where('id',$request['id'])->first()->hotel_id)->first()->user_id ){
          return response()->json([
              'message'=>trans('global.not-have-the-hotel')
          ]);
         }
         try{
-            Room::findOrFail($id)->delete();
+            Room::findOrFail($request['id'])->delete();
             }catch(Exception $exception){
                 return response()->json([
                     'message'=>trans('global.notfound')

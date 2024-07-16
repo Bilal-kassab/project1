@@ -552,4 +552,40 @@ class DynamicBookController extends Controller
 
         return response()->json($trip);
     }
+    public function get_all_dynamic_book(Request $request){
+        try{
+            $D_trips=$this->bookrepository->get_all_dynamic_book($request);
+        }catch(Exception $e){
+            return response()->json([
+                'message'=>$e->getMessage(),
+            ],404);
+        }
+        return response()->json([
+            'data'=>$D_trips
+        ],200);
+    }
+    public function get_all_hotel_book(){
+        try{
+            $D_trips=$this->bookrepository->get_all_hotel_book();
+        }catch(Exception $e){
+            return response()->json([
+                'message'=>$e->getMessage(),
+            ],404);
+        }
+        return response()->json([
+            'data'=>$D_trips
+        ],200);
+    }
+    public function get_all_plane_book(){
+        try{
+            $D_trips=$this->bookrepository->get_all_plane_book();
+        }catch(Exception $e){
+            return response()->json([
+                'message'=>$e->getMessage(),
+            ],404);
+        }
+        return response()->json([
+            'data'=>$D_trips
+        ],200);
+    }
 }

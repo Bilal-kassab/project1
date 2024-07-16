@@ -291,7 +291,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::post('Add_rooms','store');
                 Route::get('show_room/{id}','show');
                 Route::post('update_rooms','update');
-                Route::get('delete_room/{id}','destroy');
+                Route::post('delete_room','destroy');
                 Route::post('get_all_room/{id}','index');
                 Route::get('get_my_rooms','get_My_Rooms');
                 Route::post('change_status_room','change_status_room');
@@ -305,7 +305,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::post('edit-static-trip-book/{id}','editBook');//
                 Route::post('book-static-trip','bookStaticTrip');//
                 Route::delete('delete-static-trip-book/{id}','deleteBook');//
-                Route::delete('trip-cancellation/{id}','tripCancellation');
+                Route::post('trip-cancellation','tripCancellation');
                 Route::get('show-all-my-staic-trip-books','showAllMyStaicTrips');
                 Route::get('all-static-trip','index');
                 Route::get('show-static-trip/{id}','showStaticTrip');
@@ -323,6 +323,16 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::post('add-activity','addActivity');
                 Route::post('search-activity','searchActivity');
                 Route::get('get-all-activity','getAllActivity');
+            });
+
+            Route::controller(DynamicBookController::class)->group(function(){
+                Route::get('get_all_dynamic_book','get_all_dynamic_book');
+                // Route::get('get_all_hotel_book','get_all_hotel_book');
+                // Route::get('get_all_plane_book','get_all_plane_book');
+                Route::get('show_dynamic_trip/{id}','showDynamicTrip');
+                Route::get('show_hotel_trip/{id}','showHotelTrip');
+                Route::get('show_plane_trip/{id}','showPlaneTrip');
+                // Route::get('show_booking/{id}','show');
             });
         });
 
