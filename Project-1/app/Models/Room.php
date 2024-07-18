@@ -41,5 +41,4 @@ class Room extends Model
                                         // $query->where('id',1);
                                 });
     }
-
 }
