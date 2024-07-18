@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\ActivityBook;
+use App\Models\Airport;
 use App\Models\Bank;
 use App\Models\Booking;
 use App\Models\BookingRoom;
@@ -287,6 +288,10 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
         $going_trip=[];
         if($book->plane_trips[0]?->airport_source->id?? null){
             $going_trip=[
+                'going_plane'=>[
+                    'id'=>$book->plane_trips[0]->plane->id?? null,
+                    'name'=>$book->plane_trips[0]->plane->name?? null,
+                ]??null,
                 'airport_source'=>[
                     'id'=>$book->plane_trips[0]->airport_source->id?? null,
                     'name'=>$book->plane_trips[0]->airport_source->name?? null,
@@ -300,6 +305,10 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
         $return_trip=[];
         if($book->plane_trips[1]?->airport_source->id?? null){
             $return_trip=[
+                'return_plane'=>[
+                    'id'=>$book->plane_trips[1]->plane->id?? null,
+                    'name'=>$book->plane_trips[1]->plane->name?? null,
+                ]??null,
                 'airport_source'=>[
                     'id'=>$book->plane_trips[1]->airport_source->id?? null,
                     'name'=>$book->plane_trips[1]->airport_source->name?? null,
@@ -399,6 +408,10 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             $going_trip=[];
             if($book->plane_trips[0]?->airport_source->id?? null){
                 $going_trip=[
+                    'going_plane'=>[
+                    'id'=>$book->plane_trips[0]->plane->id?? null,
+                    'name'=>$book->plane_trips[0]->plane->name?? null,
+                    ]??null,
                     'airport_source'=>[
                         'id'=>$book->plane_trips[0]->airport_source->id?? null,
                         'name'=>$book->plane_trips[0]->airport_source->name?? null,
@@ -412,6 +425,10 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             $return_trip=[];
             if($book->plane_trips[1]?->airport_source->id?? null){
                 $return_trip=[
+                    'return_plane'=>[
+                    'id'=>$book->plane_trips[1]->plane->id?? null,
+                    'name'=>$book->plane_trips[1]->plane->name?? null,
+                    ]??null,
                     'airport_source'=>[
                         'id'=>$book->plane_trips[1]->airport_source->id?? null,
                         'name'=>$book->plane_trips[1]->airport_source->name?? null,
@@ -1188,23 +1205,22 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
         return $dynamic_book;
     }
     public function get_all_hotel_book(){
-        $hotel=Hotel::where('user_id',auth()->id())->first();
-
-        $booking_romm=BookingRoom::where('rooms',function ($query) use ($hotel){
-            $query->where('hotel_id',$hotel->id);})->get();
-
-        // $admin_trip=User::where('id',auth()->id())->first();
-        // $dynamic_book=Booking::where('type','hotel')->where('destination_trip_id',$admin_trip['position'])
-        //                     ->AvailableRooms()
-        //                     ->get();
-        return $booking_romm;
+        // $hotel=Hotel::with('rooms','rooms.bookingss')->where('user_id',auth()->id())->first();
+        // return $hotel;
+        $book=BookingRoom::with(['user','roomss.hotel'=> function($query) {
+            $query->where('user_id', auth()->id());
+        }])->get();
+        return $book;
     }
     public function get_all_plane_book(){
-        $admin_trip=User::where('id',auth()->id())->first();
-        $dynamic_book=Booking::where('type','plane')->where('destination_trip_id',$admin_trip['position'])
-                            ->AvailableRooms()
-                            ->select('id','user_id','source_trip_id','destination_trip_id','trip_name','price','number_of_people','start_date','end_date','trip_note')
-                            ->get();
-        return $dynamic_book;
+        $plane=BookPlane::with(['planetrip.booking.user',
+        'planetrip.airport_source','planetrip.airport_destination','planetrip.country_source','planetrip.country_destination',
+        'planetrip.plane'=> function($query) {
+            $query->where('airport_id',Airport::where('user_id',auth()->id())->first()->id);
+        }]
+        )
+        // ->first();
+        ->get();
+        return $plane;
     }
 }

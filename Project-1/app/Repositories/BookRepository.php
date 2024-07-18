@@ -639,34 +639,32 @@ class BookRepository implements BookRepositoryInterface
             throw new Exception($ex);
         }
     }
-
     public function searchTrip($request)
     {
         try{
-            $bookings='';
             //  Activity
             if($request['type']=='activity'){
                 $activityIds=Activity::where('name','like','%'.$request['search_variable'].'%')->pluck('id')->toArray();
-                $bookings = Booking::whereHas('activities', function ($query) use ($activityIds) {
+                $bookings = Booking::where('type','static')->whereHas('activities', function ($query) use ($activityIds) {
                     $query->whereIn('activities.id', $activityIds);
                 })->get();
             }
             // Country
             if($request['type']=='country'){
                 $countryIds=Country::where('name','like','%'.$request['search_variable'].'%')->pluck('id')->toArray();
-                $bookings = Booking::whereIn('destination_trip_id',$countryIds)->get();
+                $bookings = Booking::where('type','static')->whereIn('destination_trip_id',$countryIds)->get();
             }
             // Place
             if($request['type']=='place'){
                 $placeIds=Place::where('name','like','%'.$request['search_variable'].'%')->pluck('id')->toArray();
-                $bookings = Booking::whereHas('places', function ($query) use ($placeIds) {
+                $bookings = Booking::where('type','static')->whereHas('places', function ($query) use ($placeIds) {
                     $query->whereIn('places.id', $placeIds);
                 })->get();
             }
 
             // Date
             if($request['type']=='date'){
-                $bookings = Booking::where('start_date','>=',$request['first_date'])
+                $bookings = Booking::where('type','static')->where('start_date','>=',$request['first_date'])
                                     ->where('end_date','<=',$request['second_date'])
                                     ->get();
             }
@@ -676,4 +674,5 @@ class BookRepository implements BookRepositoryInterface
             throw new Exception($ex);
         }
     }
+
 }

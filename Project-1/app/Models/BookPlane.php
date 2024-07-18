@@ -25,8 +25,12 @@ class BookPlane extends Model
         return $this->belongsToMany(PlaneTrip::class,'plane_trip_id','book_id');
     }
 
-    public function plane():BelongsTo
+    public function planetrip():BelongsTo
     {
         return $this->belongsTo(PlaneTrip::class,'plane_trip_id');
+    }
+    public function books():BelongsTo
+    {
+        return $this->belongsTo(Booking::class,'book_id');
     }
 }

@@ -331,8 +331,8 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
 
             Route::controller(DynamicBookController::class)->group(function(){
                 Route::get('get_all_dynamic_book','get_all_dynamic_book');
-                // Route::get('get_all_hotel_book','get_all_hotel_book');
-                // Route::get('get_all_plane_book','get_all_plane_book');
+                Route::get('get_all_hotel_book','get_all_hotel_book');
+                Route::get('get_all_plane_book','get_all_plane_book');
                 Route::get('show_dynamic_trip/{id}','showDynamicTrip');
                 Route::get('show_hotel_trip/{id}','showHotelTrip');
                 Route::get('show_plane_trip/{id}','showPlaneTrip');

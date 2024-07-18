@@ -293,6 +293,7 @@ class DynamicBookController extends Controller
 
     public function showDynamicTrip($id){
 
+
         $trip=$this->bookrepository->showDynamicTrip($id);
         if($trip===1)
         {
@@ -300,7 +301,7 @@ class DynamicBookController extends Controller
                 'message'=>'Not Found'
             ],404);
         }
-        return response()->json($trip,200);
+        return response()->json(['data'=>$trip],200);
     }
     public function showHotelTrip($id){
         $trip=$this->bookrepository->show_hotel_trip($id);
@@ -310,7 +311,7 @@ class DynamicBookController extends Controller
                 'message'=>'Not Found'
             ],404);
         }
-        return response()->json($trip,200);
+        return response()->json(['data'=>$trip],200);
     }
     public function showPlaneTrip($id){
         $trip=$this->bookrepository->show_plane_trip($id);
@@ -320,7 +321,7 @@ class DynamicBookController extends Controller
                 'message'=>'Not Found'
             ],404);
         }
-        return response()->json($trip,200);
+        return response()->json(['data'=>$trip],200);
     }
     public function update_dynamic_trip(UpdateDynamicTripRequest $request,$id){
         $data=[
