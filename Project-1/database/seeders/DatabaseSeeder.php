@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             ActivitySeeder::class,
             StaticTripSeeder::class,
             BookStaticTripSeeder::class,
+            DynamicSeeder::class,
         ]);
     }
 }

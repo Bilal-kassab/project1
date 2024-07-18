@@ -291,6 +291,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 'going_plane'=>[
                     'id'=>$book->plane_trips[0]->plane->id?? null,
                     'name'=>$book->plane_trips[0]->plane->name?? null,
+                    'ticket_price'=>$book->plane_trips[0]->current_price??null,
                 ]??null,
                 'airport_source'=>[
                     'id'=>$book->plane_trips[0]->airport_source->id?? null,
@@ -308,6 +309,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 'return_plane'=>[
                     'id'=>$book->plane_trips[1]->plane->id?? null,
                     'name'=>$book->plane_trips[1]->plane->name?? null,
+                    'ticket_price'=>$book->plane_trips[1]->current_price??null,
                 ]??null,
                 'airport_source'=>[
                     'id'=>$book->plane_trips[1]->airport_source->id?? null,
@@ -411,6 +413,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     'going_plane'=>[
                     'id'=>$book->plane_trips[0]->plane->id?? null,
                     'name'=>$book->plane_trips[0]->plane->name?? null,
+                    'ticket_price'=>$book->plane_trips[0]->current_price??null,
                     ]??null,
                     'airport_source'=>[
                         'id'=>$book->plane_trips[0]->airport_source->id?? null,
@@ -428,6 +431,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     'return_plane'=>[
                     'id'=>$book->plane_trips[1]->plane->id?? null,
                     'name'=>$book->plane_trips[1]->plane->name?? null,
+                    'ticket_price'=>$book->plane_trips[1]->current_price??null,
                     ]??null,
                     'airport_source'=>[
                         'id'=>$book->plane_trips[1]->airport_source->id?? null,

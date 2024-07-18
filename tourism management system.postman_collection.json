@@ -13661,7 +13661,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show_dynamic_trip/7",
+									"raw": "http://127.0.0.1:8000/api/admin/show_dynamic_trip/3",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -13674,7 +13674,7 @@
 										"api",
 										"admin",
 										"show_dynamic_trip",
-										"7"
+										"3"
 									]
 								}
 							},
@@ -13691,7 +13691,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/show_dynamic_trip/7",
+											"raw": "http://127.0.0.1:8000/api/admin/show_dynamic_trip/3",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -13704,7 +13704,7 @@
 												"api",
 												"admin",
 												"show_dynamic_trip",
-												"7"
+												"3"
 											]
 										}
 									},
@@ -13718,11 +13718,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 17 Jul 2024 23:58:17 GMT"
+											"value": "Thu, 18 Jul 2024 02:03:42 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 17 Jul 2024 23:58:17 GMT"
+											"value": "Thu, 18 Jul 2024 02:03:42 GMT"
 										},
 										{
 											"key": "Connection",
@@ -13754,7 +13754,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 7,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1370.00\",\n            \"number_of_people\": 2,\n            \"start_date\": \"2024-08-15\",\n            \"end_date\": \"2024-08-25\",\n            \"trip_note\": \"hi my friend\",\n            \"rooms_count\": 4\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 1,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 2,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 11,\n                \"capacity\": 4,\n                \"price\": \"28.00\"\n            },\n            {\n                \"id\": 21,\n                \"capacity\": 6,\n                \"price\": \"45.00\"\n            }\n        ]\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 3,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"trip to France\",\n            \"price\": \"1350.00\",\n            \"number_of_people\": 5,\n            \"start_date\": \"2024-07-18\",\n            \"end_date\": \"2024-07-22\",\n            \"trip_note\": \"HI My friend\",\n            \"rooms_count\": 6\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"51.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"ticket_price\": \"5.00\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 1,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 2,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 11,\n                \"capacity\": 4,\n                \"price\": \"28.00\"\n            },\n            {\n                \"id\": 12,\n                \"capacity\": 4,\n                \"price\": \"28.00\"\n            },\n            {\n                \"id\": 25,\n                \"capacity\": 6,\n                \"price\": \"45.00\"\n            },\n            {\n                \"id\": 26,\n                \"capacity\": 6,\n                \"price\": \"45.00\"\n            }\n        ]\n    }\n}"
 								}
 							]
 						},
@@ -13879,7 +13879,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show_plane_trip/9",
+									"raw": "http://127.0.0.1:8000/api/admin/show_plane_trip/5",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -13892,7 +13892,7 @@
 										"api",
 										"admin",
 										"show_plane_trip",
-										"9"
+										"5"
 									]
 								}
 							},
@@ -13909,7 +13909,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/show_plane_trip/9",
+											"raw": "http://127.0.0.1:8000/api/admin/show_plane_trip/5",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -13922,7 +13922,7 @@
 												"api",
 												"admin",
 												"show_plane_trip",
-												"9"
+												"5"
 											]
 										}
 									},
@@ -13936,11 +13936,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Thu, 18 Jul 2024 00:00:04 GMT"
+											"value": "Thu, 18 Jul 2024 02:05:37 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Thu, 18 Jul 2024 00:00:04 GMT"
+											"value": "Thu, 18 Jul 2024 02:05:37 GMT"
 										},
 										{
 											"key": "Connection",
@@ -13964,7 +13964,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -13972,7 +13972,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 9,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france updated\",\n            \"price\": \"200.00\",\n            \"number_of_people\": 2,\n            \"start_date\": \"2024-07-17\",\n            \"end_date\": \"2024-07-19\",\n            \"trip_note\": \"hi my friend\"\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 5,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"101.00\",\n            \"number_of_people\": 1,\n            \"start_date\": \"2024-07-18\",\n            \"end_date\": \"2024-07-20\",\n            \"trip_note\": \"hi my friend\"\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"51.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        }\n    }\n}"
 								}
 							]
 						}
@@ -14631,12 +14631,12 @@
 												},
 												{
 													"key": "start_date",
-													"value": "2024-06-06",
+													"value": "2024-07-18",
 													"type": "text"
 												},
 												{
 													"key": "end_date",
-													"value": "2024-06-20",
+													"value": "2024-07-20",
 													"type": "text"
 												},
 												{
@@ -14652,7 +14652,8 @@
 												{
 													"key": "places[1]",
 													"value": "2",
-													"type": "text"
+													"type": "text",
+													"disabled": true
 												},
 												{
 													"key": "plane_trip",
@@ -14703,11 +14704,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 17 Jun 2024 11:05:42 GMT"
+											"value": "Thu, 18 Jul 2024 01:58:02 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 17 Jun 2024 11:05:42 GMT"
+											"value": "Thu, 18 Jul 2024 01:58:02 GMT"
 										},
 										{
 											"key": "Connection",
@@ -14731,7 +14732,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59"
+											"value": "58"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -14739,7 +14740,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"static_trip\": {\n            \"id\": 3,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1295.00\",\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-01\",\n            \"end_date\": \"2024-06-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"rooms_count\": 2\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\"\n            },\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"static_trip\": {\n            \"id\": 4,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"210.00\",\n            \"new_price\": null,\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-07-18\",\n            \"end_date\": \"2024-07-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"rooms_count\": 2\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -14839,7 +14840,7 @@
 							},
 							"response": [
 								{
-									"name": "store_booking_admin",
+									"name": "edit-static-trip",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -14847,54 +14848,39 @@
 												"key": "Accept",
 												"value": "application/json",
 												"type": "text"
+											},
+											{
+												"key": "lang",
+												"value": "en",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "formdata",
 											"formdata": [
 												{
-													"key": "source_trip_id",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "destination_trip_id",
-													"value": "2",
-													"type": "text"
-												},
-												{
-													"key": "hotel_id",
-													"value": "3",
-													"type": "text"
-												},
-												{
 													"key": "trip_name",
-													"value": "to france",
+													"value": "France Hi",
 													"type": "text"
 												},
 												{
-													"key": "price",
-													"value": "100",
+													"key": "ratio",
+													"value": "0",
 													"type": "text"
 												},
 												{
-													"key": "number_of_people",
-													"value": "10",
-													"type": "text"
-												},
-												{
-													"key": "trip_capacity",
-													"value": "2",
+													"key": "add_new_people",
+													"value": "4",
 													"type": "text"
 												},
 												{
 													"key": "start_date",
-													"value": "2024-5-30",
+													"value": "2024-07-18",
 													"type": "text"
 												},
 												{
 													"key": "end_date",
-													"value": "2024-5-6",
+													"value": "2024-07-20",
 													"type": "text"
 												},
 												{
@@ -14904,7 +14890,7 @@
 												},
 												{
 													"key": "places[0]",
-													"value": "1",
+													"value": "3",
 													"type": "text"
 												},
 												{
@@ -14913,19 +14899,24 @@
 													"type": "text"
 												},
 												{
+													"key": "places[2]",
+													"value": "3",
+													"type": "text"
+												},
+												{
 													"key": "plane_trip",
-													"value": "1",
+													"value": "2",
 													"type": "text"
 												},
 												{
 													"key": "plane_trip_away",
-													"value": "3",
+													"value": "4",
 													"type": "text"
 												}
 											]
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/Add_booking_Admin",
+											"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/4",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -14937,7 +14928,8 @@
 											"path": [
 												"api",
 												"admin",
-												"Add_booking_Admin"
+												"edit-static-trip",
+												"4"
 											]
 										}
 									},
@@ -14951,11 +14943,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 19 May 2024 14:41:39 GMT"
+											"value": "Thu, 18 Jul 2024 02:02:14 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 19 May 2024 14:41:39 GMT"
+											"value": "Thu, 18 Jul 2024 02:02:14 GMT"
 										},
 										{
 											"key": "Connection",
@@ -14987,7 +14979,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 13,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"100.00\",\n            \"number_of_people\": 10,\n            \"trip_capacity\": 2,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-05-06\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"places\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Eiffel Tower\",\n                    \"place_price\": \"20.00\",\n                    \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                    \"images\": []\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Musée du Louvre\",\n                    \"place_price\": \"20.00\",\n                    \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                    \"images\": []\n                }\n            ],\n            \"plane_trips\": [\n                {\n                    \"id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 3,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 40,\n                    \"flight_date\": \"2024-05-15\",\n                    \"landing_date\": \"2024-05-20\",\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    }\n                },\n                {\n                    \"id\": 3,\n                    \"airport_source_id\": 3,\n                    \"airport_destination_id\": 1,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 40,\n                    \"flight_date\": \"2024-05-15\",\n                    \"landing_date\": \"2024-05-20\",\n                    \"airport_source\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+									"body": "{\n    \"message\": \"updated succesfully\",\n    \"data\": {\n        \"static_trip\": {\n            \"id\": 4,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"France Hi\",\n            \"price\": \"210.00\",\n            \"new_price\": null,\n            \"number_of_people\": 16,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-07-18\",\n            \"end_date\": \"2024-07-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"rooms_count\": 4\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Umayyad Mosque\",\n                \"place_price\": \"5.00\",\n                \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n                \"area_id\": 1,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 3,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 1,\n                    \"name\": \"Damascus\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -15003,7 +14995,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/1",
+									"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/4",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -15016,7 +15008,7 @@
 										"api",
 										"admin",
 										"show-static-trip",
-										"1"
+										"4"
 									]
 								}
 							},
@@ -15033,7 +15025,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/8",
+											"raw": "http://127.0.0.1:8000/api/admin/show-static-trip/4",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -15046,7 +15038,7 @@
 												"api",
 												"admin",
 												"show-static-trip",
-												"8"
+												"4"
 											]
 										}
 									},
@@ -15060,11 +15052,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Jun 2024 08:57:57 GMT"
+											"value": "Thu, 18 Jul 2024 02:03:05 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Jun 2024 08:57:57 GMT"
+											"value": "Thu, 18 Jul 2024 02:03:05 GMT"
 										},
 										{
 											"key": "Connection",
@@ -15088,7 +15080,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59"
+											"value": "58"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -15096,7 +15088,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"static_trip\": {\n            \"id\": 8,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"France Hi\",\n            \"price\": \"665.00\",\n            \"number_of_people\": 20,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-20\",\n            \"end_date\": \"2024-06-25\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"rooms_count\": 10\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.jpg\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 3,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441633.png\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441633.jpg\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Umayyad Mosque\",\n                \"place_price\": \"5.00\",\n                \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n                \"area_id\": 1,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 5,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1718441637.png\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1718441637.jpg\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 1,\n                    \"name\": \"Damascus\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\"\n            },\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"static_trip\": {\n            \"id\": 4,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"France Hi\",\n            \"price\": \"210.00\",\n            \"new_price\": null,\n            \"number_of_people\": 16,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-07-18\",\n            \"end_date\": \"2024-07-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"rooms_count\": 4\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Umayyad Mosque\",\n                \"place_price\": \"5.00\",\n                \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n                \"area_id\": 1,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 3,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 1,\n                    \"name\": \"Damascus\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -15396,7 +15388,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "2|wGO2S2O4O6U5YIri2nlSBvqrNyZyPMtC61u9s1CL46ce0475",
+						"value": "1|hNOa8NkgWsiwUFdxYIkLhwF1kQ9XdzjB4YBaWnQF667371c4",
 						"type": "string"
 					}
 				]
@@ -24690,7 +24682,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/show_dynamic_trip/7",
+									"raw": "http://127.0.0.1:8000/api/user/show_dynamic_trip/3",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -24703,7 +24695,7 @@
 										"api",
 										"user",
 										"show_dynamic_trip",
-										"7"
+										"3"
 									]
 								}
 							},
@@ -25246,7 +25238,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/show-static-trip/8",
+											"raw": "http://127.0.0.1:8000/api/user/show-static-trip/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -25259,7 +25251,7 @@
 												"api",
 												"user",
 												"show-static-trip",
-												"8"
+												"1"
 											]
 										}
 									},
@@ -25273,11 +25265,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:27:32 GMT"
+											"value": "Thu, 18 Jul 2024 02:06:56 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:27:32 GMT"
+											"value": "Thu, 18 Jul 2024 02:06:56 GMT"
 										},
 										{
 											"key": "Connection",
@@ -25301,7 +25293,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "54"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -25309,7 +25301,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"static_trip\": {\n            \"id\": 8,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"France Hi\",\n            \"price\": \"665.00\",\n            \"number_of_people\": 16,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-20\",\n            \"end_date\": \"2024-06-25\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"rooms_count\": 7\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.jpg\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 3,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441633.png\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441633.jpg\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Umayyad Mosque\",\n                \"place_price\": \"5.00\",\n                \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n                \"area_id\": 1,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 5,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1718441637.png\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1718441637.jpg\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 1,\n                    \"name\": \"Damascus\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\"\n            },\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"static_trip\": {\n            \"id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"Seeder Trip\",\n            \"price\": \"320.00\",\n            \"new_price\": null,\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-07-20\",\n            \"end_date\": \"2024-07-24\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"This is the first Trip\",\n            \"type\": \"static\",\n            \"rooms_count\": 0\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -26604,7 +26596,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "3|WFywP1zUApG4RslAHoSNbRmw9OSvDIBkMzkIXkCQ791d73f4",
+						"value": "2|3ATwlGYaegSNobd4D6HAtWqa4gb8L3s6IdS2z9Oz1cb8acad",
 						"type": "string"
 					}
 				]
