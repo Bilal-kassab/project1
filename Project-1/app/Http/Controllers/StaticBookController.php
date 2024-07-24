@@ -234,6 +234,12 @@ class StaticBookController extends Controller
                 'message'=>trans('trip.not-have-the-money'),
             ],400);
         }
+        if($val==4)
+        {
+            return response()->json([
+                'message'=>'check from check api',
+            ],400);
+        }
         return response()->json([
             'message'=>trans('trip.enjoy-trip')
         ],200);

@@ -23,9 +23,9 @@ class AirportController extends Controller
 
     public function __construct()
     {
-        $this->middleware('role:Admin|Airport admin', ['only'=> ['store','update','updateExistAirportImage','addAirportImage','getMyAirport','myAirportTrip']]);
+        $this->middleware('role:Admin|Airport admin', ['only'=> ['store','update','updateExistAirportImage','addAirportImage','getMyAirport','myAirportTrip','invisibleAdminAirport','destroy']]);
         $this->middleware('role:Super Admin|Admin|Airport admin', ['only'=> ['getAirportDetails','destroy','allAirport']]);
-        $this->middleware('role:Super Admin', ['only'=> ['airportTrip']]);
+        $this->middleware('role:Super Admin', ['only'=> ['airportTrip','changeVisible','destroySuperAdmin']]);
     }
 
     public function getMyAirport()
@@ -96,6 +96,7 @@ class AirportController extends Controller
                             ->first(),
           ],200);
     }
+
 
     public function updateExistAirportImage(Request $request): JsonResponse
     {
@@ -185,10 +186,33 @@ class AirportController extends Controller
 
     }
 
-    public function destroy($id): JsonResponse
+    public function destroy(): JsonResponse
     {
         try{
-            $airport= Airport::findOrFail($id);
+            $airport= Airport::where('user_id',auth()->id())->first();
+        }catch(\Exception $e){
+            return response()->json([
+                'message'=> trans('global.notfound'),
+            ],404);
+        }
+        $airport->delete();
+        return response()->json([
+            'message'=> trans('global.delete')
+        ]);
+    }
+    public function destroySuperAdmin(Request $request): JsonResponse
+    {
+        try{
+            $validator = Validator::make($request->all(), [
+                'airport_id'=>'required|numeric|exists:airports,id',
+                // 'visible'=>'required|numeric|boolean',
+            ]);
+            if( $validator->fails() ){
+                return response()->json([
+                    'message'=> $validator->errors()->first(),
+                ],422);
+            }
+            $airport= Airport::where('id',$request->airport_id)->first();
         }catch(\Exception $e){
             return response()->json([
                 'message'=> trans('global.notfound'),
@@ -203,22 +227,23 @@ class AirportController extends Controller
     public function show(Request $request,$id): JsonResponse
     {
         try{
-            $airport= Airport::visible()->findOrFail($id);
+            $airport= Airport::findOrFail($id);
+            if($request->user()->hasRole('User')) {
+                return response()->json([
+                'data'=> Airport::airportWithoutAdmin()
+                                    ->visible()
+                                    ->where('id',$airport->id)
+                                    ->get(),
+                ],200);
+            }
         }catch(\Exception $e){
             return response()->json([
                 'message'=> trans('global.notfound'),
             ],404);
         }
-        if($request->user()->hasRole('User')) {
-            return response()->json([
-            'data'=> Airport::airportWithoutAdmin()
-                                ->visible()
-                                ->where('id',$airport->id)
-                                ->get(),
-            ],200);
-        }
+
          return response()->json([
-            'data'=> Airport::airportWithAdmin()->visible()
+            'data'=> Airport::airportWithAdmin()
                                 ->where('id',$airport->id)
                                 ->get(),
          ],200);
@@ -238,7 +263,7 @@ class AirportController extends Controller
 
          return response()->json([
             'data'=>  Airport::airportWithAdmin()
-                                ->visible()
+                                // ->visible()
                                 ->where('name','like','%'.$request->name.'%')->get(),
          ],200);
 
@@ -320,6 +345,7 @@ class AirportController extends Controller
 
     public function allAirport()
     {
+
         return response()->json([
             'data'=> Airport::airportWithAdmin()
                                 ->get(),
@@ -370,6 +396,53 @@ class AirportController extends Controller
                 'message'=>$exception->getMessage()
             ]);
         }
+    }
+
+    public function invisibleAdminAirport()
+    {
+        try{
+            $airport=Airport::where('user_id',auth()->id())->first();
+            if($airport->visible)
+            {
+                $airport->visible=false;
+            }else{
+                $airport->visible=true;
+            }
+            $airport->save();
+        }catch(Exception $exception)
+        {
+            return response()->json([
+                'message'=>$exception->getMessage()
+            ]);
+        }
+        return response()->json([
+            'message'=>trans('global.update')
+        ],200);
+    }
+
+    public function changeVisible(Request $request){
+        $validator = Validator::make($request->all(), [
+            'airport_id'=>'required|numeric|exists:airports,id',
+            // 'visible'=>'required|numeric|boolean',
+        ]);
+        if( $validator->fails() ){
+            return response()->json([
+                'message'=> $validator->errors()->first(),
+            ],422);
+        }
+        $airport=Airport::where('id',$request->airport_id)->with('user','area','country')->first();
+            if($airport->visible)
+            {
+                $airport->visible=false;
+            }else{
+                $airport->visible=true;
+            }
+        // $airport['visible']=$request->visible;
+        $airport->save();
+        return response()->json([
+            'data'=>$airport
+        ],200);
+
     }
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Admin\SearchByNameRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\Airport;
@@ -20,7 +21,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('role:Super Admin', ['only'=> ['approveUser','getAllAdmin','adminsRequests']]);
+        $this->middleware('role:Super Admin', ['only'=> ['searchByName','approveUser','getAllAdmin','adminsRequests']]);
         //$this->middleware('', [''=> ['','']]);
 
     }
@@ -377,6 +378,19 @@ class AdminController extends Controller
             return response()->json([
                 'data'=>$user
             ],200);
+    }
+
+    public function searchByName(SearchByNameRequest $request)
+    {
+        $users=User::where('name','like','%'.$request->name.'%')
+                    ->select('id','name','email','phone_number','image','position','is_approved')
+                    ->whereRelation('roles','name','!=','Super Admin')
+                    ->with('roles:id,name','position')
+                    ->get();
+          return response()->json([
+            'data'=>$users
+        ],200);
+
     }
 
 }

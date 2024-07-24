@@ -187,6 +187,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
             Route::post('delete-profile-photo','deleteProfilePhoto');
             Route::post('approve-user','approveUser');
             Route::post('update-profile','updateProfile');
+            Route::post('search-by-username','searchByName');
         });
 
 
@@ -217,7 +218,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('places-depending-on-category/{id}','placesDependingOnCategory');
                 Route::get('places-depending-on-position','placesDependingOnPosition');
                 Route::post('search-for-place','search');
-                Route::post('change-visible-place/{id}','placeStatus');
+                Route::post('change-visible-place','placeStatus');
             });
 
             Route::controller(CountryController::class)->group(function(){
@@ -260,6 +261,10 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('get-all-area-airports/{id}','getAllAreaAirports');
                 Route::post('airport-trips','airportTrip');
                 Route::post('my-airport-trip','myAirportTrip');
+                Route::post('invisible-admin-airport','invisibleAdminAirport');
+                Route::post('change-airport-visible','changeVisible');
+                Route::post('delete-airport-for-admin','destroy');##
+                Route::post('delete-airport-for-super-admin','destroySuperAdmin');##
              });
 
             Route::controller(PlaneController::class)->group(function(){
@@ -284,10 +289,12 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('show_hotel/{id}','show');
                 Route::post('search_Hotel_by_name','search_Hotel_by_Name');
                 Route::post('search_Hotel_by_stars','search_Hotel_by_Stars');
+                Route::post('change_visible','changeVisible');
+                Route::post('change-visible-for-admin','invisibleAdminHotel');
                 Route::get('get_Hotel_By_Area/{id}','get_hotel_in_area');
                 Route::get('get_Hotel_By_Country/{id}','get_hotel_in_country');
-                Route::delete('delete_hotel/{id}','destroy');
-                Route::post('change_visible','changeVisible');
+                Route::post('delete_hotel','destroy');##
+                Route::post('delete-hotel-for-super-admin','destroySuperAdmin');##
                 Route::get('get_my_hotel','get_my_hotel');
             });
 

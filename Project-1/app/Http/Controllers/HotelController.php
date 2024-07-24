@@ -11,6 +11,7 @@ use App\Models\Hotel_Image;
 use App\Models\HotelImage;
 use Exception;
 use Illuminate\Contracts\Validation\Validator as ValidationValidator;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -20,8 +21,8 @@ class HotelController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('role:Admin|Hotel admin', ['only'=> ['store','update','update_Image_Hotel','addAirportImage']]);
-        $this->middleware('role:Super Admin', ['only'=> ['index','destroy','changeVisible']]);
+        $this->middleware('role:Admin|Hotel admin', ['only'=> ['invisibleAdminHotel','store','update','update_Image_Hotel','addAirportImage','destroy']]);
+        $this->middleware('role:Super Admin', ['only'=> ['index','destroySuperAdmin','changeVisible']]);
 
     }
     public function index()
@@ -298,7 +299,7 @@ class HotelController extends Controller
                     }
     }
 
-    public function destroy($id)
+    public function destroy()
     {
         // if(auth()->user()->id !=Hotel::where('id',$id)->first()->user_id ){
         //     return response()->json([
@@ -306,7 +307,8 @@ class HotelController extends Controller
         //     ]);
         //    }
         try{
-            Hotel::findOrFail($id)->delete();
+            $hotel=Hotel::where('user_id',auth()->id())->first();
+            $hotel->delete();
             }catch(\Exception $exception){
                 return response()->json([
                     'message'=>trans('global.notfound')
@@ -315,6 +317,30 @@ class HotelController extends Controller
             return response()->json([
                 'message'=>trans('global.delete')
             ],200);
+    }
+
+    public function destroySuperAdmin(Request $request): JsonResponse
+    {
+        try{
+            $validator = Validator::make($request->all(), [
+                'hotel_id'=>'required|numeric|exists:hotels,id',
+                // 'visible'=>'required|numeric|boolean',
+            ]);
+            if( $validator->fails() ){
+                return response()->json([
+                    'message'=> $validator->errors()->first(),
+                ],422);
+            }
+            $hotel= Hotel::where('id',$request->hotel_id)->first();
+            $hotel->delete();
+        }catch(\Exception $e){
+            return response()->json([
+                'message'=> trans('global.notfound'),
+            ],404);
+        }
+        return response()->json([
+            'message'=> trans('global.delete')
+        ]);
     }
 
     public function changeVisible(Request $request){
@@ -351,5 +377,27 @@ class HotelController extends Controller
                 'message'=>$e->getMessage()
             ],404);
         }
+    }
+
+    public function invisibleAdminHotel()
+    {
+        try{
+            $hotel=Hotel::where('user_id',auth()->id())->first();
+            if($hotel->visible)
+            {
+                $hotel->visible=false;
+            }else{
+                $hotel->visible=true;
+            }
+            $hotel->save();
+        }catch(Exception $exception)
+        {
+            return response()->json([
+                'message'=>$exception->getMessage()
+            ]);
+        }
+        return response()->json([
+            'message'=>trans('global.update')
+        ],200);
     }
 }

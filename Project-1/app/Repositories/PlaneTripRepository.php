@@ -57,11 +57,14 @@ class PlaneTripRepository implements PlaneTripRepositoryInterface
             ]);
             $planetrip2=PlaneTrip::getTripDetails()
                                  ->where('id',$returnTrip->id)->first();
+            return [
+                'going_trip'=>$planetrip1,
+                'return_trip'=>$planetrip2,
+            ];
         }
-        return [
-            'going_trip'=>$planetrip1,
-            'return_trip'=>$planetrip2,
-        ];
+        else{
+            return null;
+        }
 
     }
 

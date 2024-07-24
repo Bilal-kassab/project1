@@ -45,25 +45,29 @@ use Illuminate\Support\Facades\Mail;
 // });
 Route::get('/', function () {
 
-    $planetrip=PlaneTrip::where('id',1)->first();
-        $date=new Carbon($planetrip['flight_date']);
-    //     return $date->addHours(48)->format('Y-m-d');
-    // $date= new DateTime(Carbon::now()->addHours(24));
-    // $date2= new DateTime(Carbon::now());
-    // $x= $date->diff($date2);
-        $nowDate=Carbon::now()->format('Y-m-d');
-        $date= new Carbon($nowDate);
-        $data=[
-            'flight_date'=>$date->format('Y-m-d'),
-            'landing_date'=>$date->addDays(1)->format('Y-m-d')
-        ];
-    // $data=[
-    //     '1'=>$planetrip['flight_date'],
-    //     '2'=>$date->addDays(2)->format('Y-m-d'),
-    //     '3'=>$date->diffInHours($planetrip['flight_date']),
-    // ];
-    return $data ;
+    return Carbon::now()->day;
 });
+// Route::get('/', function () {
+
+//     $planetrip=PlaneTrip::where('id',1)->first();
+//         $date=new Carbon($planetrip['flight_date']);
+//     //     return $date->addHours(48)->format('Y-m-d');
+//     // $date= new DateTime(Carbon::now()->addHours(24));
+//     // $date2= new DateTime(Carbon::now());
+//     // $x= $date->diff($date2);
+//         $nowDate=Carbon::now()->format('Y-m-d');
+//         $date= new Carbon($nowDate);
+//         $data=[
+//             'flight_date'=>$date->format('Y-m-d'),
+//             'landing_date'=>$date->addDays(1)->format('Y-m-d')
+//         ];
+//     // $data=[
+//     //     '1'=>$planetrip['flight_date'],
+//     //     '2'=>$date->addDays(2)->format('Y-m-d'),
+//     //     '3'=>$date->diffInHours($planetrip['flight_date']),
+//     // ];
+//     return $data ;
+// });
 
 
 Route::prefix('user')->group(function () {

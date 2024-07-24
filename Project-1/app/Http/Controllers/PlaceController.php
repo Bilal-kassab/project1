@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\place\ChangeStatusRequest;
 use App\Http\Requests\Place\StorePlaceRequest;
 use App\Models\Area;
 use App\Models\Category;
@@ -76,39 +77,42 @@ class PlaceController extends Controller
        try{
             $place = Place::findOrFail($id);
 
+            $place->name = $request->name??$place['name'];
+            $place->area_id=$request->area_id??$place['area_id'];
+            $place->place_price = $request->place_price??$place['place_price'];
+            $place->text = $request->text??$place['text'];
+            $place->visible = $request->visible??$place['visible'];
+            $place->save();
+            if($request->has('category_ids'))
+            {
+                if($place->categories()){
+                    $place->categories()->detach();
+                    // $place_categories=PlaceCategory::where('place_id',$place->id)->get();
+                    //  foreach($place_categories as $place_category){
+                    //         $place_category->delete();
+                    //      }
+                }
+               foreach($request->category_ids as $category_id ){
+                 $placeca=PlaceCategory::create(
+                  [
+                      'place_id'=> $place->id,
+                      'category_id'=> $category_id
+                  ]);
+              }
+           }
+           return response()->json([
+               'message'=>trans('global.update'),
+               'data'=>Place::with(['images','categories:id,name','area:id,name,country_id','area.country:id,name'])
+                             ->where('id',$id)
+                             ->select('id','name','place_price','text','area_id','visible')
+                             ->get(),
+           ],200);
+
          }catch(\Exception $e){
             return response()->json([
-                'message'=> trans('global.notfound')
+                'message'=> $e->getMessage()
             ],404);
          }
-         $place->name = $request->name??$place['name'];
-         $place->area_id=$request->area_id??$place['area_id'];
-         $place->place_price = $request->place_price??$place['place_price'];
-         $place->text = $request->text??$place['text'];
-         $place->visible = $request->visible??$place['visible'];
-         $place->save();
-
-        //$place_categories=PlaceCategory::where('place_id',$place->id)->get();
-        //  foreach($place_categories as $place_category){
-        //     $place_category->delete();
-        //  }
-        if($request->has('category_ids'))
-        {
-            foreach($request->category_ids as $category_id ){
-              $placeca=PlaceCategory::Create(
-               [
-                   'place_id'=> $place->id,
-                   'category_id'=> $category_id
-               ]);
-           }
-        }
-        return response()->json([
-            'message'=>trans('global.update'),
-            'data'=>Place::with(['images','categories:id,name','area:id,name,country_id','area.country:id,name'])
-                          ->where('id',$id)
-                          ->select('id','name','place_price','text','area_id','visible')
-                          ->get(),
-        ],200);
     }
 
    /* public function updatePlaceImage(Request $request){
@@ -256,7 +260,7 @@ class PlaceController extends Controller
     {
 
         try{
-            $place= Place::visible()->with(['comments','comments.user:id,name,image','images','categories:id,name','area:id,name,country_id','area.country:id,name'])
+            $place= Place::with(['comments','comments.user:id,name,image','images','categories:id,name','area:id,name,country_id','area.country:id,name'])
                             ->select('id','name','place_price','text','area_id','visible')
                             ->findOrFail($id);
          }catch(\Exception $e){
@@ -355,19 +359,29 @@ class PlaceController extends Controller
 
     public function search(Request $request)
     {
-        $place=Place::visible()->with(['images','categories:id,name','area:id,country_id,name','area.country:id,name'])
-                     ->select('id','name','place_price','text','area_id','visible')
-                     ->where('name','like','%'.$request->name.'%')->get();
+        if($request->user()->hasRole('Super Admin')){
+            return response()->json([
+                'data'=>Place::with(['images','categories:id,name','area:id,country_id,name','area.country:id,name'])
+                                        ->select('id','name','place_price','text','area_id','visible')
+                                        ->where('name','like','%'.$request->name.'%')->get(),
+            ],200);
+        }
+        else{
+            $place=Place::visible()->with(['images','categories:id,name','area:id,country_id,name','area.country:id,name'])
+                         ->select('id','name','place_price','text','area_id','visible')
+                         ->where('name','like','%'.$request->name.'%')->get();
 
-        return response()->json([
-            'data'=>$place
-        ],200);
+            return response()->json([
+                'data'=>$place
+            ],200);
+        }
+
     }
 
-    public function placeStatus($id):JsonResponse
+    public function placeStatus(ChangeStatusRequest $request):JsonResponse
     {
         try{
-            $place=Place::findOrFail($id);
+            $place=Place::findOrFail($request->place_id);
 
             if($place->visible)
             {

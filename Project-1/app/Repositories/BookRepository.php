@@ -459,6 +459,11 @@ class BookRepository implements BookRepositoryInterface
         {
             return 1;
         }
+        $val=$this->checkStaticTrip($request,$request['trip_id']);
+        if($val==1 || $val==2)
+        {
+            return 4;
+        }
         $user=User::where('id',auth()->id())->first();
         $book_price=$request['total_price'];###########
         if($request['discount']){
@@ -595,7 +600,7 @@ class BookRepository implements BookRepositoryInterface
             $staticTrip=Booking::where('id',$id)->with('user')->first();
             $details=BookingStaticTrip::where('static_trip_id',$staticTrip['id'])
                                         ->with('user:id,name,phone_number,image')
-                                        ->select('id','user_id','static_trip_id','number_of_friend')
+                                        //->select('id','user_id','static_trip_id','number_of_friend')
                                         ->get();
             return [
               'trip_admin'=>$staticTrip['user'],

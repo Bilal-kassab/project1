@@ -17,6 +17,7 @@ class Airport extends Model
         'name',
         'user_id',
         'area_id',
+        'visible',
         'country_id',
     ] ;
     protected $hidden = [
