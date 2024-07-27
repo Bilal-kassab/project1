@@ -44,6 +44,7 @@ class UserController extends Controller
 
         ###################
         $user->assignRole('User');
+        $user->givePermissionTo('unbanned');
         #######################
 
         $user->save();

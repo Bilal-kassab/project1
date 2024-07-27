@@ -31,6 +31,7 @@ class StaticBookController extends Controller
         $this->middleware('role:Admin|Super Admin', ['only'=> ['getDetailsStaticTrip']]);
         $this->middleware('role:Admin|Super Admin|User', ['only'=> ['index']]);
         $this->middleware('role:Trip manger', ['only'=> ['getTripAdminTrips','getTripAdminTripDetails']]);
+        $this->middleware('permission:unbanned', ['only' => ['checkStaticTrip','bookStaticTrip','editBook']]);
         $this->bookrepository = $bookrepository;
     }
     /**

@@ -231,7 +231,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "Airport@gmail.com",
+											"value": "SA@gmail.com",
 											"type": "text"
 										},
 										{
@@ -1835,6 +1835,11 @@
 											"value": "2",
 											"type": "text",
 											"disabled": true
+										},
+										{
+											"key": "user_type",
+											"value": "banned",
+											"type": "text"
 										}
 									]
 								},
@@ -1877,7 +1882,7 @@
 											"formdata": [
 												{
 													"key": "by_name",
-													"value": "asc",
+													"value": "desc",
 													"type": "text"
 												},
 												{
@@ -1888,6 +1893,12 @@
 												{
 													"key": "role_id",
 													"value": "2",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "user_type",
+													"value": "unbanned",
 													"type": "text"
 												}
 											]
@@ -1918,11 +1929,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 29 May 2024 13:30:27 GMT"
+											"value": "Sat, 27 Jul 2024 20:22:51 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 29 May 2024 13:30:27 GMT"
+											"value": "Sat, 27 Jul 2024 20:22:51 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1946,7 +1957,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "55"
+											"value": "58"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -1954,7 +1965,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"User\",\n            \"email\": \"User@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": null,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"User\"\n                }\n            ]\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"User\",\n            \"email\": \"User@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"User\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 7,\n                        \"role_id\": 2\n                    }\n                }\n            ],\n            \"permissions\": [\n                {\n                    \"id\": 12,\n                    \"name\": \"unbanned\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 7,\n                        \"permission_id\": 12\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Trip manger\",\n            \"email\": \"Trip@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"Trip manger\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 2,\n                        \"role_id\": 3\n                    }\n                }\n            ],\n            \"permissions\": [\n                {\n                    \"id\": 12,\n                    \"name\": \"unbanned\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 2,\n                        \"permission_id\": 12\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Hotel admin4\",\n            \"email\": \"Hotel4@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Hotel admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 9,\n                        \"role_id\": 4\n                    }\n                }\n            ],\n            \"permissions\": [\n                {\n                    \"id\": 12,\n                    \"name\": \"unbanned\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 9,\n                        \"permission_id\": 12\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Hotel admin3\",\n            \"email\": \"Hotel3@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Hotel admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 8,\n                        \"role_id\": 4\n                    }\n                }\n            ],\n            \"permissions\": [\n                {\n                    \"id\": 12,\n                    \"name\": \"unbanned\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 8,\n                        \"permission_id\": 12\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Hotel admin2\",\n            \"email\": \"Hotel2@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Hotel admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 4,\n                        \"role_id\": 4\n                    }\n                }\n            ],\n            \"permissions\": [\n                {\n                    \"id\": 12,\n                    \"name\": \"unbanned\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 4,\n                        \"permission_id\": 12\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Hotel admin\",\n            \"email\": \"Hotel@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Hotel admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 3,\n                        \"role_id\": 4\n                    }\n                }\n            ],\n            \"permissions\": [\n                {\n                    \"id\": 12,\n                    \"name\": \"unbanned\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 3,\n                        \"permission_id\": 12\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Airport admin2\",\n            \"email\": \"Airport2@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 5,\n                    \"name\": \"Airport admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 6,\n                        \"role_id\": 5\n                    }\n                }\n            ],\n            \"permissions\": [\n                {\n                    \"id\": 12,\n                    \"name\": \"unbanned\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 6,\n                        \"permission_id\": 12\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 5,\n                    \"name\": \"Airport admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 5,\n                        \"role_id\": 5\n                    }\n                }\n            ],\n            \"permissions\": [\n                {\n                    \"id\": 12,\n                    \"name\": \"unbanned\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 5,\n                        \"permission_id\": 12\n                    }\n                }\n            ]\n        }\n    ]\n}"
 								},
 								{
 									"name": "filter",
@@ -1991,6 +2002,11 @@
 													"value": "2",
 													"type": "text",
 													"disabled": true
+												},
+												{
+													"key": "user_type",
+													"value": "banned",
+													"type": "text"
 												}
 											]
 										},
@@ -2020,11 +2036,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 29 May 2024 13:32:58 GMT"
+											"value": "Sat, 27 Jul 2024 20:23:22 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 29 May 2024 13:32:58 GMT"
+											"value": "Sat, 27 Jul 2024 20:23:22 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2056,7 +2072,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"User\",\n            \"email\": \"User@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": null,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"User\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Trip manger\",\n            \"email\": \"Trip@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": null,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"Trip manger\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Hotel admin\",\n            \"email\": \"Hotel@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": null,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Hotel admin\"\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": null,\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 5,\n                    \"name\": \"Airport admin\"\n                }\n            ]\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Admin\",\n            \"email\": \"Airport2@gmail.com\",\n            \"phone_number\": \"1234567890123\",\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 0,\n            \"roles\": [\n                {\n                    \"id\": 5,\n                    \"name\": \"Airport admin\"\n                }\n            ]\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"User\",\n            \"email\": \"User@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"User\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 7,\n                        \"role_id\": 2\n                    }\n                }\n            ],\n            \"permissions\": [\n                {\n                    \"id\": 11,\n                    \"name\": \"banned\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 7,\n                        \"permission_id\": 11\n                    }\n                }\n            ]\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -2287,6 +2303,216 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Trip manger\",\n            \"email\": \"Trip@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"Trip manger\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 2,\n                        \"role_id\": 3\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Hotel admin\",\n            \"email\": \"Hotel@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Hotel admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 3,\n                        \"role_id\": 4\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Hotel admin2\",\n            \"email\": \"Hotel2@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Hotel admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 4,\n                        \"role_id\": 4\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Airport admin\",\n            \"email\": \"Airport@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 5,\n                    \"name\": \"Airport admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 5,\n                        \"role_id\": 5\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Airport admin2\",\n            \"email\": \"Airport2@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 5,\n                    \"name\": \"Airport admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 6,\n                        \"role_id\": 5\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Hotel admin3\",\n            \"email\": \"Hotel3@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Hotel admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 8,\n                        \"role_id\": 4\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Hotel admin4\",\n            \"email\": \"Hotel4@gmail.com\",\n            \"phone_number\": null,\n            \"image\": null,\n            \"position\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"is_approved\": 1,\n            \"roles\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Hotel admin\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 9,\n                        \"role_id\": 4\n                    }\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "ban-user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/ban-user",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"ban-user"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ban-user",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "user_id",
+													"value": "7",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/ban-user",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"ban-user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jul 2024 20:20:45 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jul 2024 20:20:45 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"The account has been banned\"\n}"
+								},
+								{
+									"name": "unblocked",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "user_id",
+													"value": "7",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/ban-user",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"ban-user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jul 2024 20:21:32 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jul 2024 20:21:32 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"The account has been unblocked.\"\n}"
 								}
 							]
 						}
@@ -16077,7 +16303,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "7|WKK4YBXrrQGKcH3sKyRaEweg31rNG5Q5I791wTd46f6b266d",
+						"value": "1|RnYLknJzle040KJ7JrYK2CngyTnGeQaWPL5V6Gaa6d88c097",
 						"type": "string"
 					}
 				]
@@ -26130,7 +26356,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/1",
+									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/2",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -26143,7 +26369,7 @@
 										"api",
 										"user",
 										"check-static-trip",
-										"1"
+										"2"
 									]
 								}
 							},
@@ -27277,7 +27503,82 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "5|rD7oMPgksrC1tJ5Z5YqAsMJwc4UkG2H0M0AIH0707dce1e31",
+						"value": "2|aou58GyMaZcu8WWeNWGqpNpVYbShIOm5lh5jUPkwfc42e0cb",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "push",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "device_token",
+									"value": "exUehn31-o1OCef9EGnyZb:APA91bG7fofNirxQ0b4X5SJdZEHw3CpuoFgitsuLcSy9B2JTEQZxtXlYJuaCXUT6jpdjVG8CsP6JfJyQwYEJ1BH2ffq1CNHvm5UV4_ZgB-vskWUgqwVXDwD7_DhsX9lZMyG-GGx5zOPt",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/push-noti",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"push-noti"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "2|aou58GyMaZcu8WWeNWGqpNpVYbShIOm5lh5jUPkwfc42e0cb",
 						"type": "string"
 					}
 				]

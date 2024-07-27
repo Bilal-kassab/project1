@@ -29,6 +29,9 @@ class DynamicBookController extends Controller
 
     public function __construct(DynamicBookRepository $bookrepository)
     {
+        $this->middleware('permission:unbanned', ['only' => ['store_User','hotel_book','plane_book',
+        'update_dynamic_trip','updateHotelBook','updatePlaneBook',
+        ]]);
         $this->bookrepository = $bookrepository;
 
     }

@@ -14,6 +14,7 @@ class FavoriteController extends Controller
 
     public function __construct(FavoriteRepositoryInterface $favorite)
     {
+        // $this->middleware('permission:unbanned', ['only' => ['']]);
         $this->favorite = $favorite;
     }
     public function index(){

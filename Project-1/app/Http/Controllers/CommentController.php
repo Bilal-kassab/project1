@@ -13,6 +13,7 @@ class CommentController extends Controller
 
     public function __construct(CommentRepository $commentrepository)
     {
+        $this->middleware('permission:unbanned', ['only' => ['setComment']]);
         $this->commentrepository = $commentrepository;
     }
     public function setComment(SetCommentRequest $request):JsonResponse

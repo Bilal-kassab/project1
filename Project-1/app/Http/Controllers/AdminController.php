@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Admin\BanRequest;
 use App\Http\Requests\Admin\SearchByNameRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
@@ -15,13 +16,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('role:Super Admin', ['only'=> ['searchByName','approveUser','getAllAdmin','adminsRequests']]);
+        $this->middleware('role:Super Admin', ['only'=> ['searchByName','approveUser','getAllAdmin','adminsRequests','ban']]);
         //$this->middleware('', [''=> ['','']]);
 
     }
@@ -61,7 +63,7 @@ class AdminController extends Controller
         // if($request->has('role')){
         //     $admin->assignRole($request->role);
         // }
-
+        $admin->givePermissionTo('unbanned');
         $admin->save();
 
         $token = $admin->createToken('token')->plainTextToken;
@@ -338,6 +340,7 @@ class AdminController extends Controller
             'by_name'=>'in:desc,asc',
             'most_recent'=>'boolean',
             'role_id'=>'numeric|exists:roles,id',
+            'user_type'=>'|in:banned,unbanned',
         ]);
 
         if($validator->fails()){
@@ -346,6 +349,7 @@ class AdminController extends Controller
             ],422);
         }
         $role=Role::where('id',$request['role_id'])->first();
+        $permission=Permission::where('name',$request['user_type'])->first();
         $users=User::query()
                 ->when($request['by_name'] == 'asc',function($q) {
                     return $q->orderBy('name','asc');
@@ -359,8 +363,11 @@ class AdminController extends Controller
                 ->when($role,function($q) use ($role){
                     return $q->Role($role->name);
                 })
+                ->when($permission,function($q) use ($permission){
+                    return $q->Permission($permission->name);
+                })
                 ->select('id','name','email','phone_number','image','position','is_approved')
-                ->with('roles:id,name','position')
+                ->with('roles:id,name','position','permissions:id,name')
                 ->whereRelation('roles','name','!=','Super Admin')->get();
 
         return response()->json([
@@ -390,6 +397,27 @@ class AdminController extends Controller
           return response()->json([
             'data'=>$users
         ],200);
+
+    }
+
+    public function ban(BanRequest $request)
+    {
+        $user=User::where('id',$request['user_id'])->first();
+
+        if($user->hasPermissionTo('unbanned')){
+            $user->revokePermissionTo('unbanned');
+            $user->givePermissionTo('banned');
+            return response()->json([
+                'message'=>'The account has been banned'
+            ],200);
+        }
+        else{
+            $user->revokePermissionTo('banned');
+            $user->givePermissionTo('unbanned');
+            return response()->json([
+                'message'=>'The account has been unblocked.'
+            ],200);
+        }
 
     }
 

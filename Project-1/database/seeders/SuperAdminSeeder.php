@@ -119,6 +119,7 @@ class SuperAdminSeeder extends Seeder
                 'money'=>20000,
                 'payments'=>0,
             ]);
+         $user->givePermissionTo('unbanned');
         }
     }
 }

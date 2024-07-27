@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\PushWebNotification;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\PlaceController;
@@ -18,9 +19,24 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\StaticBookController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 
+Route::post('/push-noti', function (Request $request) {
+    // $user=User::get();
+    $request->validate([
+        'device_token'=>'required'
+    ]);
 
+    // $user="exUehn31-o1OCef9EGnyZb:APA91bG7fofNirxQ0b4X5SJdZEHw3CpuoFgitsuLcSy9B2JTEQZxtXlYJuaCXUT6jpdjVG8CsP6JfJyQwYEJ1BH2ffq1CNHvm5UV4_ZgB-vskWUgqwVXDwD7_DhsX9lZMyG-GGx5zOPt";
+    $user=$request['device_token'];
+    $message=[
+        'title'=>'log in',
+        'body'=>'Hi My Friend'
+    ];
+    event(new PushWebNotification($user,$message));
+    return "Send";
+})->middleware('auth:sanctum');
 
 ################       users      ###########################
 
@@ -188,6 +204,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
             Route::post('approve-user','approveUser');
             Route::post('update-profile','updateProfile');
             Route::post('search-by-username','searchByName');
+            Route::post('ban-user','ban');
         });
 
 
@@ -195,9 +212,6 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
             Route::get('get-all-permission','getAllPermission');
             Route::get('get-all-permission-for-role/{id}','getAllPermissionForRole');
             Route::post('add-role','addRole');
-            // put this api in postman
-            Route::post('ban-user','banUser');
-            Route::post('un-ban-User','unbanUser');
         });
 
 
