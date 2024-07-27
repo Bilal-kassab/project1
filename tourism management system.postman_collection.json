@@ -27556,7 +27556,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/push-noti",
+							"raw": "http://127.0.0.1:8000/api/push-noti",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -27566,11 +27566,98 @@
 							],
 							"port": "8000",
 							"path": [
+								"api",
 								"push-noti"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "push",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "device_token",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/push-noti",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"push-noti"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 21:15:54 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 21:15:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "Send"
+						}
+					]
 				}
 			],
 			"auth": {
