@@ -52,8 +52,9 @@ class PlaceController extends Controller
         if($request->hasFile('images')){
             foreach ($request->file('images') as $imagefile){
                 $images = new PlaceImage;
-                $images->place_id= $place->id;
-                $image_name=time() . '.' . $imagefile->getClientOriginalExtension();
+                $images->place_id= $request->place_id;
+                $images->save();
+                $image_name=time().$images->id. '.' . $imagefile->getClientOriginalExtension();
                 $imagefile->move('PlaceImages/',$image_name);
                 $images->image = "PlaceImages/".$image_name;
                 $images->save();
@@ -240,7 +241,8 @@ class PlaceController extends Controller
         foreach ($request->file('images') as $imagefile){
             $images = new PlaceImage;
             $images->place_id= $request->place_id;
-            $image_name=time() . '.' . $imagefile->getClientOriginalExtension();
+            $images->save();
+            $image_name=time().$images->id. '.' . $imagefile->getClientOriginalExtension();
             $imagefile->move('PlaceImages/',$image_name);
             $images->image = "PlaceImages/".$image_name;
             $images->save();
