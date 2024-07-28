@@ -66,7 +66,12 @@ class PlaneController extends Controller
                 // $image_name=time() . '.' . $imagefile->getClientOriginalExtension();
                 // $imagefile->move('AirportImage/',$image_name);
                 // $images->image = "AirportImage/".$image_name;
-                $images->image =ImageProcess::storeImage($imagefile,'AirportImage');
+                // $images->image =ImageProcess::storeImage($imagefile,'AirportImage');
+                // $images->save();
+                $images->save();
+                $image_name=time().$images->id. '.' . $imagefile->getClientOriginalExtension();
+                $imagefile->move('AirportImage/',$image_name);
+                $images->image = "AirportImage/".$image_name;
                 $images->save();
             }
         }
@@ -102,9 +107,22 @@ class PlaneController extends Controller
         }
 
         foreach ($request->file('images') as $imagefile){
+            // $images = new AirportImage;
+            // $images->plane_id= $plane->id;
+            // $images->image =ImageProcess::storeImage($imagefile,'AirportImage');
+            // $images->save();
+
             $images = new AirportImage;
             $images->plane_id= $plane->id;
-            $images->image =ImageProcess::storeImage($imagefile,'AirportImage');
+            // $image_name=time() . '.' . $imagefile->getClientOriginalExtension();
+            // $imagefile->move('AirportImage/',$image_name);
+            // $images->image = "AirportImage/".$image_name;
+            // $images->image =ImageProcess::storeImage($imagefile,'AirportImage');
+            // $images->save();
+            $images->save();
+            $image_name=time().$images->id. '.' . $imagefile->getClientOriginalExtension();
+            $imagefile->move('AirportImage/',$image_name);
+            $images->image = "AirportImage/".$image_name;
             $images->save();
         }
 

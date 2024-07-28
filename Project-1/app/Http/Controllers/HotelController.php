@@ -114,7 +114,8 @@ class HotelController extends Controller
             foreach ($request->file('images') as $imagefile){
                 $images = new HotelImage;
                 $images->hotel_id= $hotel->id;
-                $image_name=time() . '.' . $imagefile->getClientOriginalExtension();
+                $images->save();
+                $image_name=time().$images->id. '.' . $imagefile->getClientOriginalExtension();
                 $imagefile->move('HotelImages/',$image_name);
                 $images->image = "HotelImages/".$image_name;
                 $images->save();
