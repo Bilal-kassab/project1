@@ -5457,7 +5457,7 @@
 									"formdata": [
 										{
 											"key": "place_id",
-											"value": "3",
+											"value": "1",
 											"type": "text"
 										},
 										{
@@ -20922,11 +20922,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 02 Apr 2024 11:26:52 GMT"
+											"value": "Sun, 28 Jul 2024 08:19:25 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 02 Apr 2024 11:26:52 GMT"
+											"value": "Sun, 28 Jul 2024 08:19:25 GMT"
 										},
 										{
 											"key": "Connection",
@@ -20958,7 +20958,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"place_id\": 1,\n            \"place\": {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"place_id\": 2,\n            \"place\": {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\"\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"place_id\": 1,\n            \"place\": {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"categories\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"Islamic\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"Cultural\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\",\n                    \"country_id\": 2,\n                    \"country\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1722154559.png\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1722154559.jpg\"\n                    }\n                ]\n            }\n        },\n        {\n            \"id\": 2,\n            \"place_id\": 2,\n            \"place\": {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"categories\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"Islamic\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"Cultural\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\",\n                    \"country_id\": 2,\n                    \"country\": {\n                        \"id\": 2,\n                        \"name\": \"France\"\n                    }\n                },\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ]\n            }\n        }\n    ]\n}"
 								}
 							]
 						},

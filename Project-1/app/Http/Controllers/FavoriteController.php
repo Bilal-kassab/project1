@@ -20,7 +20,7 @@ class FavoriteController extends Controller
     public function index(){
 
         return response()->json([
-            "data"=>Favorite::with('place:id,name')
+            "data"=>Favorite::with('place','place.categories:id,name','place.area.country','place.images:id,place_id,image')
                     ->where('user_id',auth()->user()->id)
                     ->select('id','place_id')
                     ->get(),
