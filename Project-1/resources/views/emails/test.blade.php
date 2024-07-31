@@ -46,10 +46,10 @@
         <div class="header">
             <h2>Verify Your Email</h2>
         </div>
-        <p>Dear Bilal Kassab</p>
+        <p>Dear {{$user->name}}</p>
         <p>Thank you for registering on our application. We hope you have a great experience! </p>
         <div class="code">
-            {{ 564897 }}
+            {{ $code->code }}
         </div>
         <p>Greetings,<br>Support team</p>
         <div class="footer">

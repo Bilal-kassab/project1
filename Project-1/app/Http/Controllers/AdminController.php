@@ -59,12 +59,13 @@ class AdminController extends Controller
         $admin->password= Hash::make($registerAdminData['password']);
         $admin->phone_number=$registerAdminData['phone_number'] ?? null;
         $admin->position=$registerAdminData['position'] ?? null;
+        $admin->fcm_token=$registerAdminData['fcm_token']??null;
         $admin->assignRole($role->name);
         // if($request->has('role')){
         //     $admin->assignRole($request->role);
         // }
-        $admin->givePermissionTo('unbanned');
         $admin->save();
+        $admin->givePermissionTo('unbanned');
 
         $token = $admin->createToken('token')->plainTextToken;
         $data=[
@@ -73,7 +74,7 @@ class AdminController extends Controller
             'email'=> $admin->email,
             'phone_number'=>$admin->phone_number,
             'image'=> $admin->image,
-            'position'=>$admin->position,
+            'position'=>Country::where('id',$admin->position)->first(),
             'role'=>$role->name,
             'is_approved'=>$admin->is_approved,
             //'token'=> $token,
@@ -81,7 +82,7 @@ class AdminController extends Controller
         return response()->json([
              //'data'=>$admin,
              //'token'=>$token
-            'data'=>$data,
+            'data'=>User::where('id',$admin->id)->with('position:id,name')->first(),
         ],200);
     }
 
@@ -90,7 +91,7 @@ class AdminController extends Controller
         $loginAdminData =$request->all();
 
 
-        $admin = User::where('email',$loginAdminData['email'])->first();
+        $admin = User::where('email',$loginAdminData['email'])->with('position:id,name')->first();
 
         if(!$admin || !Hash::check($loginAdminData['password'],$admin->password)){
             return response()->json([
@@ -98,6 +99,8 @@ class AdminController extends Controller
             ],422);
         }
         $token = $admin->createToken('token')->plainTextToken;
+        $admin->fcm_token=$loginAdminData['fcm_token']??null;
+        $admin->save();
         $object=null;
         $object=Hotel::where('user_id',$admin['id'])->first();
         if($object==null){

@@ -33,7 +33,7 @@
 										},
 										{
 											"key": "email",
-											"value": "Airport9@gmail.com",
+											"value": "Airport98@gmail.com",
 											"type": "text"
 										},
 										{
@@ -54,19 +54,23 @@
 										{
 											"key": "image",
 											"type": "file",
-											"src": [],
-											"disabled": true
+											"src": "/C:/Users/Asus-/Desktop/1300701.png"
 										},
 										{
 											"key": "position",
 											"value": "1",
-											"type": "text",
-											"disabled": true
+											"type": "text"
 										},
 										{
 											"key": "phone_number",
-											"value": "1234567890123",
+											"value": "1234567890123537",
 											"type": "text"
+										},
+										{
+											"key": "fcm_token",
+											"value": "",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -108,7 +112,7 @@
 												},
 												{
 													"key": "email",
-													"value": "Airport2@gmail.com",
+													"value": "Airport98@gmail.com",
 													"type": "text"
 												},
 												{
@@ -129,8 +133,7 @@
 												{
 													"key": "image",
 													"type": "file",
-													"src": [],
-													"disabled": true
+													"src": "/C:/Users/Asus-/Desktop/1300701.png"
 												},
 												{
 													"key": "position",
@@ -139,8 +142,14 @@
 												},
 												{
 													"key": "phone_number",
-													"value": "1234567890123",
+													"value": "1234567890123537",
 													"type": "text"
+												},
+												{
+													"key": "fcm_token",
+													"value": "",
+													"type": "text",
+													"disabled": true
 												}
 											]
 										},
@@ -170,11 +179,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 15 May 2024 15:31:06 GMT"
+											"value": "Wed, 31 Jul 2024 15:59:45 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 15 May 2024 15:31:06 GMT"
+											"value": "Wed, 31 Jul 2024 15:59:45 GMT"
 										},
 										{
 											"key": "Connection",
@@ -206,7 +215,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"Admin\",\n        \"email\": \"Airport2@gmail.com\",\n        \"phone_number\": \"1234567890123\",\n        \"image\": null,\n        \"position\": \"1\",\n        \"role\": \"Airport admin\",\n        \"is_approved\": null\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 13,\n        \"name\": \"Admin\",\n        \"email\": \"Airport98@gmail.com\",\n        \"phone_number\": \"1234567890123537\",\n        \"email_verified_at\": null,\n        \"image\": \"ProfileImage/1722441584.png\",\n        \"point\": 0,\n        \"position\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"is_approved\": 0,\n        \"fcm_token\": null,\n        \"created_at\": \"2024-07-31T15:59:45.000000Z\",\n        \"updated_at\": \"2024-07-31T15:59:45.000000Z\"\n    }\n}"
 								}
 							]
 						},
@@ -267,96 +276,6 @@
 												"key": "Accept",
 												"value": "application/json",
 												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "email",
-													"value": "Admin2@gmail.com",
-													"type": "text"
-												},
-												{
-													"key": "password",
-													"value": "123456789",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin-login",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin-login"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 26 Apr 2024 21:12:29 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 26 Apr 2024 21:12:29 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"wait the accept\"\n}"
-								},
-								{
-									"name": "login",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
 											},
 											{
 												"key": "lang",
@@ -405,11 +324,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 14 Jul 2024 10:35:31 GMT"
+											"value": "Wed, 31 Jul 2024 15:57:28 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 14 Jul 2024 10:35:31 GMT"
+											"value": "Wed, 31 Jul 2024 15:57:28 GMT"
 										},
 										{
 											"key": "Connection",
@@ -433,7 +352,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "55"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -441,102 +360,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \".تم تسجيل الدخول بنجاح\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Super Admin\",\n        \"email\": \"SA@gmail.com\",\n        \"phone_number\": null,\n        \"email_verified_at\": null,\n        \"image\": \"ProfileImage/1720953323.png\",\n        \"point\": 0,\n        \"position\": 1,\n        \"is_approved\": 1,\n        \"created_at\": \"2024-07-11T22:08:15.000000Z\",\n        \"updated_at\": \"2024-07-14T10:35:23.000000Z\"\n    },\n    \"role\": [\n        \"Super Admin\"\n    ],\n    \"token\": \"31|aHCk6g3cmWxER0oajzE3Z2Fc9wQ19alAaFT1uZXLe2279429\",\n    \"object\": \"Owner\"\n}"
-								},
-								{
-									"name": "login",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "lang",
-												"value": "ar",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "email",
-													"value": "Airport9@gmail.com",
-													"type": "text"
-												},
-												{
-													"key": "password",
-													"value": "123456789",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin-login",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"admin-login"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 14 Jul 2024 10:36:00 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 14 Jul 2024 10:36:00 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "57"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \".تم تسجيل الدخول بنجاح\",\n    \"data\": {\n        \"id\": 10,\n        \"name\": \"Admin\",\n        \"email\": \"Airport9@gmail.com\",\n        \"phone_number\": \"1234567890123\",\n        \"email_verified_at\": null,\n        \"image\": null,\n        \"point\": 0,\n        \"position\": 1,\n        \"is_approved\": 1,\n        \"created_at\": \"2024-07-14T10:08:02.000000Z\",\n        \"updated_at\": \"2024-07-14T10:08:02.000000Z\"\n    },\n    \"role\": [\n        \"Airport admin\"\n    ],\n    \"token\": \"32|tD4iT5KRIMe9ltWTwt6gxOgcmDiGoOY9DRCMfyx42a812c0e\",\n    \"object\": null\n}"
+									"body": "{\n    \"message\": \".تم تسجيل الدخول بنجاح\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Super Admin\",\n        \"email\": \"SA@gmail.com\",\n        \"phone_number\": \"0000000000000\",\n        \"email_verified_at\": null,\n        \"image\": \"ProfileImage/1722441393.png\",\n        \"point\": 0,\n        \"position\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"is_approved\": 1,\n        \"fcm_token\": null,\n        \"created_at\": \"2024-07-28T10:33:54.000000Z\",\n        \"updated_at\": \"2024-07-31T15:56:41.000000Z\"\n    },\n    \"role\": [\n        \"Super Admin\"\n    ],\n    \"token\": \"13|sHX0Msx98rPDKuid06UNJvjFmDm0c2gPM9rTQjiQ17648239\",\n    \"object\": \"Owner\"\n}"
 								}
 							]
 						},
@@ -648,16 +472,6 @@
 						{
 							"name": "profile",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "3|r5QcqeYA2ggHBFYc70LU4aqRvexyB1RQ22eUWjQUbf4f514c",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [
 									{
@@ -1131,7 +945,7 @@
 										},
 										{
 											"key": "phone_number",
-											"value": "00000000000",
+											"value": "0000000000000",
 											"type": "text"
 										}
 									]
@@ -14557,6 +14371,218 @@
 							]
 						},
 						{
+							"name": "Airport Admin",
+							"item": [
+								{
+									"name": "get_all_plane_book",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get_all_plane_book",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get_all_plane_book"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "New Request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/get_all_plane_book",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"get_all_plane_book"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 17 Jul 2024 23:44:11 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 17 Jul 2024 23:44:11 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"book_id\": 1,\n            \"plane_trip_id\": 2,\n            \"planetrip\": {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-19\",\n                \"landing_date\": \"2024-07-20\",\n                \"booking\": [\n                    {\n                        \"id\": 1,\n                        \"user_id\": 2,\n                        \"source_trip_id\": 1,\n                        \"destination_trip_id\": 2,\n                        \"trip_name\": \"Seeder Trip\",\n                        \"price\": \"320.00\",\n                        \"new_price\": null,\n                        \"number_of_people\": 12,\n                        \"trip_capacity\": 6,\n                        \"start_date\": \"2024-07-19\",\n                        \"end_date\": \"2024-07-23\",\n                        \"stars\": \"0.00\",\n                        \"trip_note\": \"This is the first Trip\",\n                        \"type\": \"static\",\n                        \"user\": {\n                            \"id\": 2,\n                            \"name\": \"Trip manger\",\n                            \"email\": \"Trip@gmail.com\",\n                            \"phone_number\": null,\n                            \"email_verified_at\": null,\n                            \"image\": null,\n                            \"point\": 0,\n                            \"position\": 1,\n                            \"is_approved\": 1,\n                            \"fcm_token\": null,\n                            \"created_at\": \"2024-07-17T23:43:43.000000Z\",\n                            \"updated_at\": \"2024-07-17T23:43:43.000000Z\"\n                        }\n                    },\n                    {\n                        \"id\": 2,\n                        \"user_id\": 2,\n                        \"source_trip_id\": 1,\n                        \"destination_trip_id\": 2,\n                        \"trip_name\": \"Seeder Trip 2\",\n                        \"price\": \"320.00\",\n                        \"new_price\": null,\n                        \"number_of_people\": 12,\n                        \"trip_capacity\": 6,\n                        \"start_date\": \"2024-07-19\",\n                        \"end_date\": \"2024-07-23\",\n                        \"stars\": \"0.00\",\n                        \"trip_note\": \"This is the second Trip\",\n                        \"type\": \"static\",\n                        \"user\": {\n                            \"id\": 2,\n                            \"name\": \"Trip manger\",\n                            \"email\": \"Trip@gmail.com\",\n                            \"phone_number\": null,\n                            \"email_verified_at\": null,\n                            \"image\": null,\n                            \"point\": 0,\n                            \"position\": 1,\n                            \"is_approved\": 1,\n                            \"fcm_token\": null,\n                            \"created_at\": \"2024-07-17T23:43:43.000000Z\",\n                            \"updated_at\": \"2024-07-17T23:43:43.000000Z\"\n                        }\n                    }\n                ],\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\",\n                    \"user_id\": 5,\n                    \"area_id\": 1,\n                    \"country_id\": 1,\n                    \"visible\": 1\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\",\n                    \"user_id\": 6,\n                    \"area_id\": 4,\n                    \"country_id\": 2,\n                    \"visible\": 1\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"number_of_seats\": 40,\n                    \"visible\": 1,\n                    \"ticket_price\": \"50.00\",\n                    \"airport_id\": 1\n                }\n            }\n        },\n        {\n            \"id\": 2,\n            \"book_id\": 1,\n            \"plane_trip_id\": 4,\n            \"planetrip\": {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-23\",\n                \"landing_date\": \"2024-07-24\",\n                \"booking\": [\n                    {\n                        \"id\": 1,\n                        \"user_id\": 2,\n                        \"source_trip_id\": 1,\n                        \"destination_trip_id\": 2,\n                        \"trip_name\": \"Seeder Trip\",\n                        \"price\": \"320.00\",\n                        \"new_price\": null,\n                        \"number_of_people\": 12,\n                        \"trip_capacity\": 6,\n                        \"start_date\": \"2024-07-19\",\n                        \"end_date\": \"2024-07-23\",\n                        \"stars\": \"0.00\",\n                        \"trip_note\": \"This is the first Trip\",\n                        \"type\": \"static\",\n                        \"user\": {\n                            \"id\": 2,\n                            \"name\": \"Trip manger\",\n                            \"email\": \"Trip@gmail.com\",\n                            \"phone_number\": null,\n                            \"email_verified_at\": null,\n                            \"image\": null,\n                            \"point\": 0,\n                            \"position\": 1,\n                            \"is_approved\": 1,\n                            \"fcm_token\": null,\n                            \"created_at\": \"2024-07-17T23:43:43.000000Z\",\n                            \"updated_at\": \"2024-07-17T23:43:43.000000Z\"\n                        }\n                    },\n                    {\n                        \"id\": 2,\n                        \"user_id\": 2,\n                        \"source_trip_id\": 1,\n                        \"destination_trip_id\": 2,\n                        \"trip_name\": \"Seeder Trip 2\",\n                        \"price\": \"320.00\",\n                        \"new_price\": null,\n                        \"number_of_people\": 12,\n                        \"trip_capacity\": 6,\n                        \"start_date\": \"2024-07-19\",\n                        \"end_date\": \"2024-07-23\",\n                        \"stars\": \"0.00\",\n                        \"trip_note\": \"This is the second Trip\",\n                        \"type\": \"static\",\n                        \"user\": {\n                            \"id\": 2,\n                            \"name\": \"Trip manger\",\n                            \"email\": \"Trip@gmail.com\",\n                            \"phone_number\": null,\n                            \"email_verified_at\": null,\n                            \"image\": null,\n                            \"point\": 0,\n                            \"position\": 1,\n                            \"is_approved\": 1,\n                            \"fcm_token\": null,\n                            \"created_at\": \"2024-07-17T23:43:43.000000Z\",\n                            \"updated_at\": \"2024-07-17T23:43:43.000000Z\"\n                        }\n                    }\n                ],\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\",\n                    \"user_id\": 6,\n                    \"area_id\": 4,\n                    \"country_id\": 2,\n                    \"visible\": 1\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\",\n                    \"user_id\": 5,\n                    \"area_id\": 1,\n                    \"country_id\": 1,\n                    \"visible\": 1\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"plane\": null\n            }\n        },\n        {\n            \"id\": 3,\n            \"book_id\": 2,\n            \"plane_trip_id\": 2,\n            \"planetrip\": {\n                \"id\": 2,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-19\",\n                \"landing_date\": \"2024-07-20\",\n                \"booking\": [\n                    {\n                        \"id\": 1,\n                        \"user_id\": 2,\n                        \"source_trip_id\": 1,\n                        \"destination_trip_id\": 2,\n                        \"trip_name\": \"Seeder Trip\",\n                        \"price\": \"320.00\",\n                        \"new_price\": null,\n                        \"number_of_people\": 12,\n                        \"trip_capacity\": 6,\n                        \"start_date\": \"2024-07-19\",\n                        \"end_date\": \"2024-07-23\",\n                        \"stars\": \"0.00\",\n                        \"trip_note\": \"This is the first Trip\",\n                        \"type\": \"static\",\n                        \"user\": {\n                            \"id\": 2,\n                            \"name\": \"Trip manger\",\n                            \"email\": \"Trip@gmail.com\",\n                            \"phone_number\": null,\n                            \"email_verified_at\": null,\n                            \"image\": null,\n                            \"point\": 0,\n                            \"position\": 1,\n                            \"is_approved\": 1,\n                            \"fcm_token\": null,\n                            \"created_at\": \"2024-07-17T23:43:43.000000Z\",\n                            \"updated_at\": \"2024-07-17T23:43:43.000000Z\"\n                        }\n                    },\n                    {\n                        \"id\": 2,\n                        \"user_id\": 2,\n                        \"source_trip_id\": 1,\n                        \"destination_trip_id\": 2,\n                        \"trip_name\": \"Seeder Trip 2\",\n                        \"price\": \"320.00\",\n                        \"new_price\": null,\n                        \"number_of_people\": 12,\n                        \"trip_capacity\": 6,\n                        \"start_date\": \"2024-07-19\",\n                        \"end_date\": \"2024-07-23\",\n                        \"stars\": \"0.00\",\n                        \"trip_note\": \"This is the second Trip\",\n                        \"type\": \"static\",\n                        \"user\": {\n                            \"id\": 2,\n                            \"name\": \"Trip manger\",\n                            \"email\": \"Trip@gmail.com\",\n                            \"phone_number\": null,\n                            \"email_verified_at\": null,\n                            \"image\": null,\n                            \"point\": 0,\n                            \"position\": 1,\n                            \"is_approved\": 1,\n                            \"fcm_token\": null,\n                            \"created_at\": \"2024-07-17T23:43:43.000000Z\",\n                            \"updated_at\": \"2024-07-17T23:43:43.000000Z\"\n                        }\n                    }\n                ],\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\",\n                    \"user_id\": 5,\n                    \"area_id\": 1,\n                    \"country_id\": 1,\n                    \"visible\": 1\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\",\n                    \"user_id\": 6,\n                    \"area_id\": 4,\n                    \"country_id\": 2,\n                    \"visible\": 1\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"number_of_seats\": 40,\n                    \"visible\": 1,\n                    \"ticket_price\": \"50.00\",\n                    \"airport_id\": 1\n                }\n            }\n        },\n        {\n            \"id\": 4,\n            \"book_id\": 2,\n            \"plane_trip_id\": 4,\n            \"planetrip\": {\n                \"id\": 4,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-07-23\",\n                \"landing_date\": \"2024-07-24\",\n                \"booking\": [\n                    {\n                        \"id\": 1,\n                        \"user_id\": 2,\n                        \"source_trip_id\": 1,\n                        \"destination_trip_id\": 2,\n                        \"trip_name\": \"Seeder Trip\",\n                        \"price\": \"320.00\",\n                        \"new_price\": null,\n                        \"number_of_people\": 12,\n                        \"trip_capacity\": 6,\n                        \"start_date\": \"2024-07-19\",\n                        \"end_date\": \"2024-07-23\",\n                        \"stars\": \"0.00\",\n                        \"trip_note\": \"This is the first Trip\",\n                        \"type\": \"static\",\n                        \"user\": {\n                            \"id\": 2,\n                            \"name\": \"Trip manger\",\n                            \"email\": \"Trip@gmail.com\",\n                            \"phone_number\": null,\n                            \"email_verified_at\": null,\n                            \"image\": null,\n                            \"point\": 0,\n                            \"position\": 1,\n                            \"is_approved\": 1,\n                            \"fcm_token\": null,\n                            \"created_at\": \"2024-07-17T23:43:43.000000Z\",\n                            \"updated_at\": \"2024-07-17T23:43:43.000000Z\"\n                        }\n                    },\n                    {\n                        \"id\": 2,\n                        \"user_id\": 2,\n                        \"source_trip_id\": 1,\n                        \"destination_trip_id\": 2,\n                        \"trip_name\": \"Seeder Trip 2\",\n                        \"price\": \"320.00\",\n                        \"new_price\": null,\n                        \"number_of_people\": 12,\n                        \"trip_capacity\": 6,\n                        \"start_date\": \"2024-07-19\",\n                        \"end_date\": \"2024-07-23\",\n                        \"stars\": \"0.00\",\n                        \"trip_note\": \"This is the second Trip\",\n                        \"type\": \"static\",\n                        \"user\": {\n                            \"id\": 2,\n                            \"name\": \"Trip manger\",\n                            \"email\": \"Trip@gmail.com\",\n                            \"phone_number\": null,\n                            \"email_verified_at\": null,\n                            \"image\": null,\n                            \"point\": 0,\n                            \"position\": 1,\n                            \"is_approved\": 1,\n                            \"fcm_token\": null,\n                            \"created_at\": \"2024-07-17T23:43:43.000000Z\",\n                            \"updated_at\": \"2024-07-17T23:43:43.000000Z\"\n                        }\n                    }\n                ],\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\",\n                    \"user_id\": 6,\n                    \"area_id\": 4,\n                    \"country_id\": 2,\n                    \"visible\": 1\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\",\n                    \"user_id\": 5,\n                    \"area_id\": 1,\n                    \"country_id\": 1,\n                    \"visible\": 1\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"plane\": null\n            }\n        }\n    ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Hotel Admin",
+							"item": [
+								{
+									"name": "get_all_hotel_book",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get_all_hotel_book",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get_all_hotel_book"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "New Request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/get_all_hotel_book",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"get_all_hotel_book"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 17 Jul 2024 23:45:37 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 17 Jul 2024 23:45:37 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"book_id\": 1,\n            \"user_id\": 7,\n            \"room_id\": 21,\n            \"current_price\": \"45.00\",\n            \"start_date\": \"2024-07-19\",\n            \"end_date\": \"2024-07-23\",\n            \"created_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"updated_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"user\": {\n                \"id\": 7,\n                \"name\": \"User\",\n                \"email\": \"User@gmail.com\",\n                \"phone_number\": null,\n                \"email_verified_at\": null,\n                \"image\": null,\n                \"point\": 0,\n                \"position\": 1,\n                \"is_approved\": 1,\n                \"fcm_token\": null,\n                \"created_at\": \"2024-07-17T23:43:44.000000Z\",\n                \"updated_at\": \"2024-07-17T23:43:44.000000Z\"\n            },\n            \"roomss\": {\n                \"id\": 21,\n                \"hotel_id\": 1,\n                \"capacity\": 6,\n                \"status\": 0,\n                \"price\": \"45.00\",\n                \"hotel\": {\n                    \"id\": 1,\n                    \"user_id\": 3,\n                    \"country_id\": 1,\n                    \"area_id\": 1,\n                    \"name\": \"Damascus Hotel\",\n                    \"number_rooms\": 30,\n                    \"stars\": \"4.00\",\n                    \"visible\": 1\n                }\n            }\n        },\n        {\n            \"id\": 2,\n            \"book_id\": 1,\n            \"user_id\": 7,\n            \"room_id\": 22,\n            \"current_price\": \"45.00\",\n            \"start_date\": \"2024-07-19\",\n            \"end_date\": \"2024-07-23\",\n            \"created_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"updated_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"user\": {\n                \"id\": 7,\n                \"name\": \"User\",\n                \"email\": \"User@gmail.com\",\n                \"phone_number\": null,\n                \"email_verified_at\": null,\n                \"image\": null,\n                \"point\": 0,\n                \"position\": 1,\n                \"is_approved\": 1,\n                \"fcm_token\": null,\n                \"created_at\": \"2024-07-17T23:43:44.000000Z\",\n                \"updated_at\": \"2024-07-17T23:43:44.000000Z\"\n            },\n            \"roomss\": {\n                \"id\": 22,\n                \"hotel_id\": 1,\n                \"capacity\": 6,\n                \"status\": 0,\n                \"price\": \"45.00\",\n                \"hotel\": {\n                    \"id\": 1,\n                    \"user_id\": 3,\n                    \"country_id\": 1,\n                    \"area_id\": 1,\n                    \"name\": \"Damascus Hotel\",\n                    \"number_rooms\": 30,\n                    \"stars\": \"4.00\",\n                    \"visible\": 1\n                }\n            }\n        },\n        {\n            \"id\": 3,\n            \"book_id\": 2,\n            \"user_id\": null,\n            \"room_id\": 23,\n            \"current_price\": \"45.00\",\n            \"start_date\": \"2024-07-19\",\n            \"end_date\": \"2024-07-23\",\n            \"created_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"updated_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"user\": null,\n            \"roomss\": {\n                \"id\": 23,\n                \"hotel_id\": 1,\n                \"capacity\": 6,\n                \"status\": 0,\n                \"price\": \"45.00\",\n                \"hotel\": {\n                    \"id\": 1,\n                    \"user_id\": 3,\n                    \"country_id\": 1,\n                    \"area_id\": 1,\n                    \"name\": \"Damascus Hotel\",\n                    \"number_rooms\": 30,\n                    \"stars\": \"4.00\",\n                    \"visible\": 1\n                }\n            }\n        },\n        {\n            \"id\": 4,\n            \"book_id\": 2,\n            \"user_id\": null,\n            \"room_id\": 24,\n            \"current_price\": \"45.00\",\n            \"start_date\": \"2024-07-19\",\n            \"end_date\": \"2024-07-23\",\n            \"created_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"updated_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"user\": null,\n            \"roomss\": {\n                \"id\": 24,\n                \"hotel_id\": 1,\n                \"capacity\": 6,\n                \"status\": 0,\n                \"price\": \"45.00\",\n                \"hotel\": {\n                    \"id\": 1,\n                    \"user_id\": 3,\n                    \"country_id\": 1,\n                    \"area_id\": 1,\n                    \"name\": \"Damascus Hotel\",\n                    \"number_rooms\": 30,\n                    \"stars\": \"4.00\",\n                    \"visible\": 1\n                }\n            }\n        }\n    ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
 							"name": "show_Dynamic_trip",
 							"request": {
 								"method": "GET",
@@ -14948,11 +14974,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Jul 2024 22:02:49 GMT"
+													"value": "Wed, 31 Jul 2024 15:40:38 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 16 Jul 2024 22:02:49 GMT"
+													"value": "Wed, 31 Jul 2024 15:40:38 GMT"
 												},
 												{
 													"key": "Connection",
@@ -14984,7 +15010,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"trip_admin\": {\n            \"id\": 2,\n            \"name\": \"Trip manger\",\n            \"email\": \"Trip@gmail.com\",\n            \"phone_number\": null,\n            \"email_verified_at\": null,\n            \"image\": null,\n            \"point\": 0,\n            \"position\": 1,\n            \"is_approved\": 1,\n            \"fcm_token\": null,\n            \"created_at\": \"2024-07-16T21:18:27.000000Z\",\n            \"updated_at\": \"2024-07-16T21:18:27.000000Z\"\n        },\n        \"details\": [\n            {\n                \"id\": 1,\n                \"user_id\": 7,\n                \"static_trip_id\": 1,\n                \"number_of_friend\": 2,\n                \"user\": {\n                    \"id\": 7,\n                    \"name\": \"User\",\n                    \"phone_number\": null,\n                    \"image\": null\n                }\n            },\n            {\n                \"id\": 2,\n                \"user_id\": 7,\n                \"static_trip_id\": 1,\n                \"number_of_friend\": 2,\n                \"user\": {\n                    \"id\": 7,\n                    \"name\": \"User\",\n                    \"phone_number\": null,\n                    \"image\": null\n                }\n            }\n        ]\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"trip_admin\": {\n            \"id\": 2,\n            \"name\": \"Trip manger\",\n            \"email\": \"Trip@gmail.com\",\n            \"phone_number\": null,\n            \"email_verified_at\": null,\n            \"image\": null,\n            \"point\": 0,\n            \"position\": 1,\n            \"is_approved\": 1,\n            \"fcm_token\": null,\n            \"created_at\": \"2024-07-28T10:33:54.000000Z\",\n            \"updated_at\": \"2024-07-28T10:33:54.000000Z\"\n        },\n        \"details\": [\n            {\n                \"id\": 1,\n                \"user_id\": 7,\n                \"static_trip_id\": 1,\n                \"number_of_friend\": 2,\n                \"book_price\": \"460.00\",\n                \"evaluation\": 0,\n                \"created_at\": \"2024-07-28T10:33:57.000000Z\",\n                \"updated_at\": \"2024-07-28T10:33:57.000000Z\",\n                \"user\": {\n                    \"id\": 7,\n                    \"name\": \"User\",\n                    \"email\": \"User@gmail.com\",\n                    \"phone_number\": null,\n                    \"email_verified_at\": null,\n                    \"image\": null,\n                    \"point\": 0,\n                    \"position\": 1,\n                    \"is_approved\": 1,\n                    \"fcm_token\": null,\n                    \"created_at\": \"2024-07-28T10:33:56.000000Z\",\n                    \"updated_at\": \"2024-07-28T10:33:56.000000Z\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"user_id\": 7,\n                \"static_trip_id\": 1,\n                \"number_of_friend\": 2,\n                \"book_price\": \"460.00\",\n                \"evaluation\": 0,\n                \"created_at\": \"2024-07-28T10:33:57.000000Z\",\n                \"updated_at\": \"2024-07-28T10:33:57.000000Z\",\n                \"user\": {\n                    \"id\": 7,\n                    \"name\": \"User\",\n                    \"email\": \"User@gmail.com\",\n                    \"phone_number\": null,\n                    \"email_verified_at\": null,\n                    \"image\": null,\n                    \"point\": 0,\n                    \"position\": 1,\n                    \"is_approved\": 1,\n                    \"fcm_token\": null,\n                    \"created_at\": \"2024-07-28T10:33:56.000000Z\",\n                    \"updated_at\": \"2024-07-28T10:33:56.000000Z\"\n                }\n            }\n        ]\n    }\n}"
 										}
 									]
 								},
@@ -15096,16 +15122,6 @@
 									]
 								}
 							],
-							"auth": {
-								"type": "bearer",
-								"bearer": [
-									{
-										"key": "token",
-										"value": "1|9Kyw0tploMq9bRisHoxdz2OWTALdLd5xgSaa4EFfb9ba80be",
-										"type": "string"
-									}
-								]
-							},
 							"event": [
 								{
 									"listen": "prerequest",
@@ -16353,12 +16369,12 @@
 									"formdata": [
 										{
 											"key": "name",
-											"value": "mohamad",
+											"value": "User",
 											"type": "text"
 										},
 										{
 											"key": "email",
-											"value": "bilalk@gmail.com",
+											"value": "user4@gmail.com",
 											"type": "text"
 										},
 										{
@@ -16378,13 +16394,19 @@
 										},
 										{
 											"key": "phone_number",
-											"value": "1234567890",
+											"value": "123456789012",
 											"type": "text"
 										},
 										{
 											"key": "position",
 											"value": "1",
 											"type": "text"
+										},
+										{
+											"key": "fcm_token",
+											"value": "",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -16426,7 +16448,7 @@
 												},
 												{
 													"key": "email",
-													"value": "user@gmail.com",
+													"value": "user4@gmail.com",
 													"type": "text"
 												},
 												{
@@ -16443,6 +16465,22 @@
 													"key": "image",
 													"type": "file",
 													"src": "/C:/Users/Asus-/Desktop/1300701.png"
+												},
+												{
+													"key": "phone_number",
+													"value": "123456789012",
+													"type": "text"
+												},
+												{
+													"key": "position",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "fcm_token",
+													"value": "",
+													"type": "text",
+													"disabled": true
 												}
 											]
 										},
@@ -16472,11 +16510,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 17 Mar 2024 21:36:05 GMT"
+											"value": "Wed, 31 Jul 2024 16:04:37 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 17 Mar 2024 21:36:05 GMT"
+											"value": "Wed, 31 Jul 2024 16:04:37 GMT"
 										},
 										{
 											"key": "Connection",
@@ -16508,7 +16546,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"image\": \"ProfileImage/1710711364.png\",\n        \"name\": \"User\",\n        \"email\": \"user@gmail.com\",\n        \"updated_at\": \"2024-03-17T21:36:05.000000Z\",\n        \"created_at\": \"2024-03-17T21:36:05.000000Z\",\n        \"id\": 1\n    },\n    \"code\": 774284,\n    \"token\": \"1|SZSzN6WRBthSqzfpXLiJWhBlCrdqyBWj2tIJo5tKb117b5d4\"\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 16,\n        \"name\": \"User\",\n        \"email\": \"user4@gmail.com\",\n        \"phone_number\": \"123456789012\",\n        \"image\": \"ProfileImage/1722441876.png\",\n        \"position\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"token\": \"18|UM98X5Gm5J6PowrZTXLxeBfM9fpKFj3Zz9vpH3yS376100ee\",\n        \"code\": 642408\n    }\n}"
 								}
 							]
 						},
@@ -16953,6 +16991,12 @@
 													"key": "password",
 													"value": "123456789",
 													"type": "text"
+												},
+												{
+													"key": "fcm_token",
+													"value": "",
+													"type": "text",
+													"disabled": true
 												}
 											]
 										},
@@ -16982,11 +17026,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Jul 2024 11:34:25 GMT"
+											"value": "Wed, 31 Jul 2024 16:05:19 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Jul 2024 11:34:25 GMT"
+											"value": "Wed, 31 Jul 2024 16:05:19 GMT"
 										},
 										{
 											"key": "Connection",
@@ -17010,7 +17054,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59"
+											"value": "57"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -17018,7 +17062,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"login done\",\n    \"token\": \"1|mhAL7KXt6QkM0nF2RM0qd0YfuimyFYcO9TEJ61mz88051dc9\"\n}"
+									"body": "{\n    \"message\": \"login done\",\n    \"token\": \"20|zfheEFyeJi6CG05Hlq8QEPLnJXfm3RufmVlbiIJX0d12de53\"\n}"
 								}
 							]
 						},
@@ -17087,11 +17131,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Fri, 24 May 2024 06:40:47 GMT"
+											"value": "Wed, 31 Jul 2024 15:44:45 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Fri, 24 May 2024 06:40:47 GMT"
+											"value": "Wed, 31 Jul 2024 15:44:45 GMT"
 										},
 										{
 											"key": "Connection",
@@ -17115,7 +17159,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59"
+											"value": "56"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -17123,7 +17167,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"user user\",\n        \"email\": \"User@gmail.com\",\n        \"phone_number\": \"099999999999\",\n        \"image\": null,\n        \"position\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 7,\n        \"name\": \"User\",\n        \"email\": \"User@gmail.com\",\n        \"phone_number\": \"099999999999\",\n        \"image\": \"ProfileImage/1722440665.png\",\n        \"point\": 0,\n        \"fcm_token\": null,\n        \"position\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -20748,7 +20792,7 @@
 									"formdata": [
 										{
 											"key": "place_id",
-											"value": "1",
+											"value": "3",
 											"type": "text"
 										}
 									]
@@ -20977,8 +21021,8 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "favorite_id",
-											"value": "1",
+											"key": "place_id",
+											"value": "2",
 											"type": "text"
 										}
 									]
@@ -21015,7 +21059,92 @@
 											"mode": "formdata",
 											"formdata": [
 												{
-													"key": "favorite_id",
+													"key": "place_id",
+													"value": "3",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/delete-favorite",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"delete-favorite"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 31 Jul 2024 15:11:34 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 31 Jul 2024 15:11:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"this place does not in favorite\"\n}"
+								},
+								{
+									"name": "delete favorite",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "place_id",
 													"value": "2",
 													"type": "text"
 												}
@@ -21047,11 +21176,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 02 Apr 2024 11:27:25 GMT"
+											"value": "Wed, 31 Jul 2024 15:12:00 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 02 Apr 2024 11:27:25 GMT"
+											"value": "Wed, 31 Jul 2024 15:12:00 GMT"
 										},
 										{
 											"key": "Connection",
@@ -27658,6 +27787,269 @@
 							"body": "Send"
 						}
 					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lat",
+									"value": "33.54937317903254",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "36.39669465069943",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/test",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-notification",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get-notification",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get-notification"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get-notification",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/get-notification",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"get-notification"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jul 2024 15:38:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jul 2024 15:38:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 7,\n            \"title\": \"log in\",\n            \"body\": \"Hi My Friend\",\n            \"created_at\": \"2024-07-31T15:37:43.000000Z\",\n            \"updated_at\": \"2024-07-31T15:37:43.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 7,\n            \"title\": \"test\",\n            \"body\": \"body\",\n            \"created_at\": \"2024-07-31T15:38:35.000000Z\",\n            \"updated_at\": \"2024-07-31T15:38:35.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get-notes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get-notes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get-notes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get-notes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/get-notes",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"get-notes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jul 2024 16:21:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jul 2024 16:21:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"trip_name\": \"trip to France\",\n            \"trip_note\": \"HI My friend\",\n            \"type\": \"dynamic\"\n        }\n    ]\n}"
+						}
+					]
 				}
 			],
 			"auth": {
@@ -27665,7 +28057,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "2|aou58GyMaZcu8WWeNWGqpNpVYbShIOm5lh5jUPkwfc42e0cb",
+						"value": "4|iaEKXWJTdzCdOFPP5ZMh1ntOZIj7DNgQUmrykbmV1143e54a",
 						"type": "string"
 					}
 				]

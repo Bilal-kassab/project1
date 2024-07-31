@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Validator;
 
 /*
@@ -37,18 +38,48 @@ use Illuminate\Support\Facades\Validator;
 // });
 
 Route::get('/', function () {
-
-    $user=User::where('id',8)->first();
-    $user->givePermissionTo('banned');
-    // $user->revokePermissionTo('unbanned');
-    // if($user->hasPermissionTo('banned')){
-    // // if($user->hasRole('User')){
-    //     return "banned";
-    // }
-
-    return empty($user['permissions'][0]);
-
+    return Lang::locale();
 });
+
+// Route::get('/', function () {
+
+//     try{
+//         $apiUrl = 'https://fcm.googleapis.com/v1/projects/test-49b2e/messages:send';
+//         $access_token = Cache::remember('access_token', now()->addHour(), function () use ($apiUrl) {
+//             $credentialsFilePath = storage_path('app/fcm.json');
+//             // dd($credentialsFilePath);
+//             $client = new \Google_Client();
+//             $client->setAuthConfig($credentialsFilePath);
+//             $client->addScope('https://www.googleapis.com/auth/firebase.messaging');
+//             // dd($client);
+//             $client->fetchAccessTokenWithAssertion();
+//             $token = $client->getAccessToken();
+//             return $token['access_token'];
+//         });
+//         $fcm_token='exUehn31-o1OCef9EGnyZb:APA91bG7fofNirxQ0b4X5SJdZEHw3CpuoFgitsuLcSy9B2JTEQZxtXlYJuaCXUT6jpdjVG8CsP6JfJyQwYEJ1BH2ffq1CNHvm5UV4_ZgB-vskWUgqwVXDwD7_DhsX9lZMyG-GGx5zOPt';
+//         $message = [
+//             "message" => [
+//                 "token" => $fcm_token,
+//                 "notification" => [
+//                     "title" => 'title',
+//                     "body" => 'text',
+//                 ]
+//             ]
+//         ];
+
+//         $response = Http::withHeader('Authorization', "Bearer $access_token")->post($apiUrl, $message);
+//         dd($response);
+//         return "sent";
+
+//     }catch(Exception $ex){
+//         return response()->json([
+//             'message'=>$ex->getMessage(),
+//         ]);
+//     }
+
+// });
+
+
 // Route::get('/', function () {
 
 //     $planetrip=PlaneTrip::where('id',1)->first();

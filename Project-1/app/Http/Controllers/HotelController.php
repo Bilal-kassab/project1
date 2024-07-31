@@ -107,7 +107,7 @@ class HotelController extends Controller
             'area_id'=> $request->area_id,
             'country_id'=>Area::find($request->area_id)['country_id'],
             // 'number_rooms'=> $request->number_rooms,
-            'stars'=> 3,
+            'stars'=> $request->stars??3,
         ]);
 
         if($request->hasFile('images')){

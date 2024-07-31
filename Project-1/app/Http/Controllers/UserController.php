@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\VerfiyEmail;
 use App\Models\Bank;
 use App\Models\ConfirmCode;
 use App\Models\Country;
@@ -11,6 +12,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -24,8 +26,9 @@ class UserController extends Controller
             'email'=>'required|string|email|unique:users',
             'password'=>'required|min:8|confirmed',
             'image'=> 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            'position'=>'numeric|exists:countries,id',
-            'phone_number'=>'regex:/[0-9]{10}/|unique:users'
+            'position'=>'required|numeric|exists:countries,id',
+            'phone_number'=>'regex:/[0-9]{10}/|unique:users',
+            'fcm_token'=>'string'
         ]);
         $user=new User;
         if($request->hasFile('image')){
@@ -41,7 +44,7 @@ class UserController extends Controller
         $user->password= Hash::make($registerUserData['password']);
         $user->phone_number=$registerUserData['phone_number'] ?? null;
         $user->position=$registerUserData['position'] ?? null;
-
+        $user->fcm_token=$registerUserData['fcm_token']??null;
         ###################
         $user->assignRole('User');
         $user->givePermissionTo('unbanned');
@@ -65,14 +68,15 @@ class UserController extends Controller
             'email'=>$registerUserData['email'],
         ]);
 
-        //Mail::to($registerUserData['email'])->send(new ConfirmationEmail($confdeatiles));
+
+        // Mail::to($registerUserData['email'])->send(new VerfiyEmail($user,$confdetails));
         $all=[
             'id'=> $user->id,
             'name'=> $user->name,
             'email'=> $user->email,
             'phone_number'=>$user->phone_number,
             'image'=> $user->image,
-            'position'=>$user->position,
+            'position'=>Country::where('id',$user->position)->first(),
             'token'=> $token,
             'code'=>$registerUserData['code'],
         ];
@@ -90,7 +94,8 @@ class UserController extends Controller
     {
         $loginUserData = $request->validate([
             'email'=>'required|string|email',
-            'password'=>'required|min:8'
+            'password'=>'required|min:8',
+            'fcm_token'=>'string'
         ]);
 
         $user = User::where('email',$loginUserData['email'])->first();
@@ -101,6 +106,8 @@ class UserController extends Controller
             ],401);
         }
         $token = $user->createToken('token')->plainTextToken;
+        $user->fcm_token=$loginUserData['fcm_token']??null;
+        $user->save();
         return response()->json([
             'message'=> 'login done',
             'token' => $token,
@@ -204,6 +211,8 @@ class UserController extends Controller
             'email'=> $user->email,
             'phone_number'=>$user->phone_number,
             'image'=> $user->image,
+            'point'=>$user->point,
+            'fcm_token'=>$user->fcm_token,
             'position'=>$position,
         ];
 

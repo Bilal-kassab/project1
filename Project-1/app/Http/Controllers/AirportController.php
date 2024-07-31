@@ -343,9 +343,15 @@ class AirportController extends Controller
         ],200);
     }
 
-    public function allAirport()
+    public function allAirport(Request $request)
     {
-
+        if($request->user()->hasRole('Airport admin')){
+            return response()->json([
+                'data'=> Airport::airportWithAdmin()
+                                    ->where('user_id','!=',auth()->id())
+                                    ->get(),
+             ],200);
+        }
         return response()->json([
             'data'=> Airport::airportWithAdmin()
                                 ->get(),

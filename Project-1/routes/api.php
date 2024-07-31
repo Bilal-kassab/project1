@@ -3,6 +3,7 @@
 use App\Events\PushWebNotification;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
@@ -20,7 +21,8 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\StaticBookController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 Route::post('/push-noti', function (Request $request) {
     // $user=User::get();
@@ -31,13 +33,48 @@ Route::post('/push-noti', function (Request $request) {
     // $user="exUehn31-o1OCef9EGnyZb:APA91bG7fofNirxQ0b4X5SJdZEHw3CpuoFgitsuLcSy9B2JTEQZxtXlYJuaCXUT6jpdjVG8CsP6JfJyQwYEJ1BH2ffq1CNHvm5UV4_ZgB-vskWUgqwVXDwD7_DhsX9lZMyG-GGx5zOPt";
     $user=$request['device_token'];
     $message=[
-        'title'=>'log in',
-        'body'=>'Hi My Friend'
+        'title'=>'test',
+        'body'=>'body'
     ];
     event(new PushWebNotification($user,$message));
     return "Send";
 })->middleware('auth:sanctum');
 
+// Route::post('/test', function (Request $request) {
+
+//     $long = $request->long;
+//     $lat  = $request->lat;
+
+//     $url = "https://nominatim.openstreetmap.org/reverse?lat=$lat&lon=$long&format=json";
+//     // $url = "https://nominatim.openstreetmap.org/reverse?lat=33.511599&lon=36.306669&format=json";
+//     $response = Http::get($url);
+//     $data = $response->json();
+//     return response()->json([
+//         'data'=>$url,
+//     ],200);
+//     if ($response->successful()) {
+//         dd($data);
+//     }
+//     return 55;
+// })->middleware('auth:sanctum');
+
+Route::post('/test', function (Request $request) {
+
+    $long = $request->long;
+    $lat  = $request->lat;
+
+    $url = "https://nominatim.openstreetmap.org/reverse?lat=$lat&lon=$long&format=json";
+    // return $url;
+    $response = Http::withHeaders([
+        'User-Agent' => 'Tourism-App/1.0',
+        'Accept-Language' => 'en'
+    ])->get($url);
+    $data = $response->json();
+    return response()->json([
+        'data' => $data,
+    ], 200);
+
+})->middleware('auth:sanctum');
 ################       users      ###########################
 
 
@@ -175,6 +212,11 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
         Route::controller(ActivityController::class)->group(function(){
             Route::post('search-activity','searchActivity');
             Route::get('get-all-activity','getAllActivity');
+        });
+
+        Route::controller(NotificationController::class)->group(function(){
+            Route::get('get-notification','index');
+            Route::get('get-notes','getNotes');
         });
     });
 

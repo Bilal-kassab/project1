@@ -58,7 +58,7 @@ class FavoriteController extends Controller
 
     public function deleteFavorite(Request $request){
         $validator = Validator::make($request->all(), [
-            'favorite_id' => 'required|numeric|exists:favorites,id',
+            'place_id' => 'required|numeric|exists:favorites,place_id',
         ],
         [
             'exists'=> 'Not found',
@@ -72,12 +72,12 @@ class FavoriteController extends Controller
 
         $favorite=Favorite::query()
                   ->where('user_id', auth()->user()->id)
-                  ->where('id', $request->favorite_id)
+                  ->where('place_id', $request->place_id)
                   ->first();
         if(!$favorite){
             return response()->json([
                 'message'=> 'this place does not in favorite'
-            ],200);
+            ],404);
         }
         $favorite->delete();
 

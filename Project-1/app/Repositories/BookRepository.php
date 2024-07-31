@@ -152,7 +152,7 @@ class BookRepository implements BookRepositoryInterface
             if($date>=$trip_date){
                 return 4;
             }
-              // the old period
+             // the old period
             $datetime1 = new DateTime($booking['start_date']);
             $datetime2 = new DateTime($booking['end_date']);
             $interval = $datetime1->diff($datetime2);
@@ -420,10 +420,10 @@ class BookRepository implements BookRepositoryInterface
             if($available_rooms < $rooms_needed){
                 return 2;
             }
-            $goingPlaneTrip=$plane_trip[0]['current_price']*$request['number_of_friend']??0;
-            $returnPlaneTrip=$plane_trip[1]['current_price']*$request['number_of_friend']??0;
+            $goingPlaneTrip=$plane_trip[0]['current_price']??0;
+            $returnPlaneTrip=$plane_trip[1]['current_price']??0;
             $total_price=0.0;
-            $total_price+=(($static_trip['price']-($room['current_price']*$days))*$request['number_of_friend']);
+            $total_price+=(($static_trip['price']-($room['current_price']*$days)));
             $placePrice=$total_price-$goingPlaneTrip-$returnPlaneTrip;
             $total_price+=$rooms_needed*$room['current_price']*$days;
             $price_after_discount=null;
@@ -599,7 +599,7 @@ class BookRepository implements BookRepositoryInterface
 
             $staticTrip=Booking::where('id',$id)->with('user')->first();
             $details=BookingStaticTrip::where('static_trip_id',$staticTrip['id'])
-                                        ->with('user:id,name,phone_number,image')
+                                        ->with('user')
                                         //->select('id','user_id','static_trip_id','number_of_friend')
                                         ->get();
             return [

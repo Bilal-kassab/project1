@@ -317,7 +317,7 @@ class PlaceController extends Controller
     public function placesDependingOnCategory($id)
     {
         try{//
-            $places=Category::whereHas('places')->with(['places:id,name,place_price,text,visible,area_id','places.images:id,image','places.area:id,name,country_id','places.area.country:id,name'])
+            $places=Category::whereHas('places')->with(['places:id,name,place_price,text,visible,area_id','places.images','places.area:id,name,country_id','places.area.country:id,name'])
                                    ->where('id','=', $id)
                                    ->select('id','name')
                                    ->get();

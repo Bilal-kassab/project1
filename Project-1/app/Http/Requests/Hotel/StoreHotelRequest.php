@@ -23,7 +23,8 @@ class StoreHotelRequest extends FormRequest
     {
         return [
             'name'=>'required|string|unique:hotels',
-             'area_id'=>'required|numeric|exists:areas,id',
+            'area_id'=>'required|numeric|exists:areas,id',
+            'stars'=>'decimal:0,5',
             //  'number_rooms'=>'required|numeric|max:1000|min:10',
              'images'=> 'array',
              'images.*' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
