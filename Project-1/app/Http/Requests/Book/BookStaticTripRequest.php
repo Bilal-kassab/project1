@@ -25,6 +25,8 @@ class BookStaticTripRequest extends FormRequest
            'number_of_friend'=>'required|numeric|min:1',
            'trip_id'=>'required|numeric|exists:bookings,id',
            'rooms_needed'=>'required|numeric|min:1',
+           'room_price'=>'decimal:0,1000000|numeric',
+           'days'=>'required|numeric',
            'total_price'=>'required|numeric|min:1',
            'price_after_discount'=>'nullable|min:1',
            'discount'=>'boolean'

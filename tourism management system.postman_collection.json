@@ -26512,93 +26512,6 @@
 												"key": "Accept",
 												"value": "application/json",
 												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "number_of_friend",
-													"value": "2",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/check-static-trip/8",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"user",
-												"check-static-trip",
-												"8"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 07:32:24 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 07:32:24 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"trip_id\": 8,\n        \"number_of_friend\": 2,\n        \"rooms_needed\": 1,\n        \"days\": 5,\n        \"room_price\": 45,\n        \"ticket_price_for_going_trip\": 400,\n        \"ticket_price_for_return_trip\": 400,\n        \"total_price\": 1105,\n        \"price_after_discount\": null\n    }\n}"
-								},
-								{
-									"name": "check-static-trip",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
 											},
 											{
 												"key": "lang",
@@ -26681,6 +26594,98 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"message\": \"there are not enough members\"\n}"
+								},
+								{
+									"name": "check-static-trip",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "lang",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "number_of_friend",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/check-static-trip/2",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"check-static-trip",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 31 Jul 2024 18:33:09 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 31 Jul 2024 18:33:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"trip_id\": 2,\n        \"number_of_friend\": 2,\n        \"rooms_needed\": 1,\n        \"days\": 4,\n        \"room_price\": 45,\n        \"ticket_price_for_going_trip\": 50,\n        \"ticket_price_for_return_trip\": 50,\n        \"ticket_price_for_places\": 40,\n        \"total_price\": 320,\n        \"price_after_discount\": null\n    }\n}"
 								}
 							]
 						},
@@ -26705,7 +26710,7 @@
 									"formdata": [
 										{
 											"key": "trip_id",
-											"value": "1",
+											"value": "2",
 											"type": "text"
 										},
 										{
@@ -26719,8 +26724,18 @@
 											"type": "text"
 										},
 										{
+											"key": "room_price",
+											"value": "45",
+											"type": "text"
+										},
+										{
+											"key": "days",
+											"value": "4",
+											"type": "text"
+										},
+										{
 											"key": "total_price",
-											"value": "1735",
+											"value": "320",
 											"type": "text"
 										},
 										{
@@ -26774,7 +26789,7 @@
 											"formdata": [
 												{
 													"key": "trip_id",
-													"value": "8",
+													"value": "2",
 													"type": "text"
 												},
 												{
@@ -26788,124 +26803,18 @@
 													"type": "text"
 												},
 												{
-													"key": "total_price",
-													"value": "1105",
+													"key": "room_price",
+													"value": "45",
 													"type": "text"
 												},
 												{
-													"key": "price_after_discount",
-													"value": "null",
-													"type": "text"
-												},
-												{
-													"key": "discount",
-													"value": "0",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/book-static-trip",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"user",
-												"book-static-trip"
-											]
-										}
-									},
-									"status": "Bad Request",
-									"code": 400,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:07:06 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:07:06 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"You dont have the money for this trip\"\n}"
-								},
-								{
-									"name": "book-static-trip",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "lang",
-												"value": "en",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "trip_id",
-													"value": "8",
-													"type": "text"
-												},
-												{
-													"key": "number_of_friend",
-													"value": "2",
-													"type": "text"
-												},
-												{
-													"key": "rooms_needed",
-													"value": "1",
+													"key": "days",
+													"value": "4",
 													"type": "text"
 												},
 												{
 													"key": "total_price",
-													"value": "1105",
+													"value": "320",
 													"type": "text"
 												},
 												{
@@ -26947,11 +26856,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:07:43 GMT"
+											"value": "Wed, 31 Jul 2024 18:49:52 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:07:43 GMT"
+											"value": "Wed, 31 Jul 2024 18:49:52 GMT"
 										},
 										{
 											"key": "Connection",
@@ -26975,7 +26884,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",

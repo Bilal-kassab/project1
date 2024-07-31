@@ -433,16 +433,16 @@ class BookRepository implements BookRepositoryInterface
             }
 
             $data=[
-                'trip_id'=>(int)$id,
-                'number_of_friend'=>(int)$request['number_of_friend'],
-                'rooms_needed'=>$rooms_needed,
-                'days'=>(int)$days,
-                'room_price'=>(doubleval($room['current_price'])*$discount)??null,
+                'trip_id'=>(int)$id,#
+                'number_of_friend'=>(int)$request['number_of_friend'],#
+                'rooms_needed'=>$rooms_needed,#
+                'days'=>(int)$days,#
+                'room_price'=>(doubleval($room['current_price'])*$discount)??null,#
                 'ticket_price_for_going_trip'=>$goingPlaneTrip*$discount,
                 'ticket_price_for_return_trip'=>$returnPlaneTrip*$discount,
                 'ticket_price_for_places'=>$placePrice*$discount,
-                'total_price'=>$total_price*$discount,
-                'price_after_discount'=>$price_after_discount,
+                'total_price'=>$total_price*$discount,#
+                'price_after_discount'=>$price_after_discount,#
             ];
             return $data;
         }catch(Exception $exception){
@@ -465,7 +465,8 @@ class BookRepository implements BookRepositoryInterface
             return 4;
         }
         $user=User::where('id',auth()->id())->first();
-        $book_price=$request['total_price'];###########
+        $book_price=($request['total_price']-($request['room_price']*$request['days']))*$request['number_of_friend'];###########
+        $book_price+=($request['room_price']*$request['days']);
         if($request['discount']){
             $book_price=$request['price_after_discount'];
             $user['point']-=50;
