@@ -33,9 +33,10 @@ use Illuminate\Support\Facades\Validator;
 */
 
 // Route::get('/', function () {
-//     Mail::to('bilalkassab70@gmail.com')->send(new TestMail());
+    // Mail::to('bilalkassab70@gmail.com')->send(new TestMail());
 
-//     return "Done send";
+    // return "Done send";
+    // return $date=Carbon::now()->format('Y-m-d');
 // });
 
 // Route::post('/', function (Request $request) {

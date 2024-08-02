@@ -16,8 +16,11 @@ use App\Models\BookingStaticTrip;
 use App\Models\Country;
 use App\Models\Place;
 use App\Repositories\Interfaces\BookRepositoryInterface;
+use Carbon\Carbon;
 use Exception;
+use Google\Service\CloudSearch\Resource\Query;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class StaticBookController extends Controller
 {
@@ -37,10 +40,10 @@ class StaticBookController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         try{
-            $static_trips=$this->bookrepository->index();
+            $static_trips=$this->bookrepository->index($request);
             return response()->json([
                 'data'=>$static_trips
             ],200);
@@ -260,14 +263,25 @@ class StaticBookController extends Controller
 
     public function showAllMyStaicTrips()
     {
-        //$static_trip=Booking::with('user_rooms')->get();
-        $static_trip=BookingStaticTrip::with('static_trip:id,trip_name,trip_capacity,start_date,end_date,stars,trip_note','rooms:id,capacity')
+        // $static_trip=Booking::with('user_rooms')->get();
+        $date=Carbon::now()->format('Y-m-d');
+        $finishedTrips=BookingStaticTrip::whereRelation('static_trip','start_date','<',$date)
+                                        ->with('static_trip:id,trip_name,trip_capacity,start_date,end_date,stars,trip_note','rooms:id,capacity')
+                                        ->select('id','user_id','static_trip_id','number_of_friend','book_price')
+                                        ->where('user_id',auth()->id())
+                                        ->get();
+        $futureTrips=BookingStaticTrip::whereRelation('static_trip','start_date','>',$date)
+                                        ->with('static_trip:id,trip_name,trip_capacity,start_date,end_date,stars,trip_note','rooms:id,capacity')
                                         ->select('id','user_id','static_trip_id','number_of_friend','book_price')
                                         ->where('user_id',auth()->id())
                                         ->get();
 
+
         return response()->json([
-            'data'=>$static_trip,
+            'data'=>[
+                'finished_trips'=>$finishedTrips,
+                'future_trips'=>$futureTrips,
+            ],
         ],200);
     }
 

@@ -16,6 +16,7 @@ return [
     'login'=>'.تم تسجيل الدخول بنجاح',
     'failed' => '.البيانات هذه لا تتطابق مع سجلاتنا',
     'accept-admin'=>'انتظر القبول',
+    'reject-admin'=>'تم الرفض ',
     'update-profile'=>'تم التحديث بنجاح',
     'update-profile-photo'=>'تم تحديث الصورة بنجاح',
     'delete-profile-photo-does-not-exist'=>'.ليس لديك صورة شخصية لحذفها',

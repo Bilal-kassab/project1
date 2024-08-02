@@ -16,6 +16,7 @@ return [
     'login'=>'Login Successfully.',
     'accept-admin'=>'Wait the accept.',
     'approve-admin'=>'Admin accepted.',
+    'reject-admin'=>'Admin rejected',
     'update-profile'=>'updated successfully.',
     'update-profile-photo'=>'photo updated successfully.',
     'delete-profile-photo-does-not-exist'=>'u do not has a profile image to delete.',

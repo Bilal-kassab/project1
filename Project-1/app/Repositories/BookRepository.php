@@ -20,6 +20,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use DateTime;
 use Exception;
+use Illuminate\Http\Request;
 
 class BookRepository implements BookRepositoryInterface
 {
@@ -393,8 +394,23 @@ class BookRepository implements BookRepositoryInterface
         return $static_trip;
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $date=Carbon::now()->format('Y-m-d');
+        // if($request->user()->hasRole('User')){
+        //    $finishedTrips=Booking::where('type','static')
+        //                     ->where('start_date','<',$date)
+        //                     ->AvailableRooms()
+        //                     ->get();
+        //     $futureTrips=Booking::where('type','static')
+        //                     ->where('start_date','>=',$date)
+        //                     ->AvailableRooms()
+        //                     ->get();
+        //     return [
+        //         'ended_trip'=>$finishedTrips,
+        //         'future_trips'=>$futureTrips
+        //     ];
+        // }
         $static_book=Booking::where('type','static')
                             ->AvailableRooms()
                             // ->select('id','trip_name','price','new_price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
@@ -626,16 +642,25 @@ class BookRepository implements BookRepositoryInterface
     public function getTripAdminTrips()
     {
         try{
-            $staticTrip=Booking::where('type','static')
+            $date=Carbon::now()->format('Y-m-d');
+            $staticTrips=Booking::where('type','static')
                              ->where('user_id',auth()->id())
                              ->AvailableRooms()
                             //  ->select('id','trip_name','price','new_price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
                              ->get();
 
-            foreach($staticTrip as $s){
-                $s['ability']=1;
+            foreach($staticTrips as $staticTrip){
+                if($staticTrip['start_date'] <= $date || Booking::whereHas('bookings')->where('id',$staticTrip['id'])->first())
+                {
+
+                    $staticTrip['ability']=0;
+                }
+                else
+                {
+                    $staticTrip['ability']=1;
+                }
             }
-            return $staticTrip;
+            return $staticTrips;
         }catch(Exception $exception){
             throw new Exception($exception->getMessage());
         }

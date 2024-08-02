@@ -319,7 +319,8 @@ class AdminController extends Controller
     public function approveUser(Request $request)
     {
         $validatedData = Validator::make($request->all(),[
-            'user_id' => 'required|numeric|exists:users,id'
+            'user_id' => 'required|numeric|exists:users,id',
+            'status'=>'required|in:0,1'
         ]);
         if( $validatedData->fails() ){
             return response()->json([
@@ -327,14 +328,21 @@ class AdminController extends Controller
             ],422);
         }
         $user=User::where('id',$request->user_id)->first();
-        $user->is_approved = true;
-        $user->save();
+        if($request->status){
+            $user->is_approved = true;
+            $user->save();
+            return response()->json([
+                'message'=>trans('auth.approve-admin'),
+            ],200);
+        }else{
+            $user->delete();
+            return response()->json([
+                'message'=>trans('auth.reject-admin'),
+            ],200);
+        }
 
         // Notification::send($user, new UserApprovedNotification());
 
-        return response()->json([
-            'message'=>trans('auth.approve-admin'),
-        ],200);
     }
 
     public function filter(Request $request)

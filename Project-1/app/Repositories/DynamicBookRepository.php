@@ -461,11 +461,40 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     }
     public function index()
     {//where('type','dynamic')->
-        $dynamic_book=Booking::where('user_id',auth()->id())
+        $date=Carbon::now()->format('Y-m-d');
+        //data for dynamic trip
+        $dynamicBookFinished=Booking::where('user_id',auth()->id())->where('start_date','<',$date)->where('type','dynamic')
                              ->AvailableRooms()
-                            //   ->select('id','trip_name','price','number_of_people','start_date','end_date','trip_note')
                              ->get();
-        return $dynamic_book;
+        $dynamicBookFuture=Booking::where('user_id',auth()->id())->where('start_date','>=',$date)->where('type','dynamic')
+                             ->AvailableRooms()
+                             ->get();
+        //data for hotel trip
+        $hotelBookFinished=Booking::where('user_id',auth()->id())->where('start_date','<',$date)->where('type','hotel')
+                             ->AvailableRooms()
+                             ->get();
+        $hotelBookFuture=Booking::where('user_id',auth()->id())->where('start_date','>=',$date)->where('type','hotel')
+                             ->AvailableRooms()
+                             ->get();
+        //data for plane trip
+        $planeBookFinished=Booking::where('user_id',auth()->id())->where('start_date','<',$date)->where('type','plane')
+                             ->AvailableRooms()
+                             ->get();
+        $planeBookFuture=Booking::where('user_id',auth()->id())->where('start_date','>=',$date)->where('type','plane')
+                             ->AvailableRooms()
+                             ->get();
+        return [
+            'finished_trip'=>[
+                'dynamic_trips'=>$dynamicBookFinished,
+                'hotel_trip'=>$hotelBookFinished,
+                'plane_trip'=>$planeBookFinished,
+            ],
+            'future_trip'=>[
+                'dynamic_trips'=>$dynamicBookFuture,
+                'hotel_trip'=>$hotelBookFuture,
+                'plane_trip'=>$planeBookFuture,
+            ]
+        ];
 
         // with('rooms:id,capacity,hotel_id','rooms.hotel:id,name','source_trip:id,name',
         //                             'destination_trip','plane_trips:id,plane_id,current_price,flight_date,landing_date',
@@ -491,10 +520,19 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     }
     public function get_all_dynamic_trip()
     {
-        $dynamic_book=Booking::where('type','dynamic')->where('user_id',auth()->id())
+        $date=Carbon::now()->format('Y-m-d');
+        //data for dynamic trip
+        $dynamicBookFinished=Booking::where('user_id',auth()->id())->where('start_date','<',$date)->where('type','dynamic')
                              ->AvailableRooms()
                              ->get();
-        return $dynamic_book;
+        $dynamicBookFuture=Booking::where('user_id',auth()->id())->where('start_date','>=',$date)->where('type','dynamic')
+                             ->AvailableRooms()
+                             ->get();
+
+            return [
+                'finished_trip'=>$dynamicBookFinished,
+                'future_trip'=>$dynamicBookFuture
+        ];
     }
     public function checkPlaneTrip($request,$id){
          try{

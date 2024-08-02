@@ -41,6 +41,7 @@ class UserController extends Controller
 
         $user->name=$registerUserData['name'];
         $user->email=$registerUserData['email'];
+        $user->is_approved=1;
         $user->password= Hash::make($registerUserData['password']);
         $user->phone_number=$registerUserData['phone_number'] ?? null;
         $user->position=$registerUserData['position'] ?? null;
