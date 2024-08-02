@@ -15,6 +15,7 @@ class BookingRoom extends Model
     protected $fillable = [
         'book_id',
         'room_id',
+        'user_id',
         'current_price',
         'start_date',
         'end_date'

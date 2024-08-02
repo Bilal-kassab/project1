@@ -4656,7 +4656,7 @@
 									"formdata": [
 										{
 											"key": "name",
-											"value": "aleppoooppp",
+											"value": "example",
 											"type": "text"
 										},
 										{
@@ -15370,7 +15370,7 @@
 								"bearer": [
 									{
 										"key": "token",
-										"value": "4|gaMPuahUZRBQgpORV3a7uVv8qQM4XaERAn9zjkKS2017993d",
+										"value": "21|o40PRlxpqNaB9UiwU9ejClfCYXYN32NtGFLKxYFnbe075fab",
 										"type": "string"
 									}
 								]
@@ -15429,7 +15429,7 @@
 										},
 										{
 											"key": "ratio",
-											"value": "0",
+											"value": "0.2",
 											"type": "text"
 										},
 										{
@@ -15444,17 +15444,17 @@
 										},
 										{
 											"key": "start_date",
-											"value": "2024-07-18",
+											"value": "2024-08-02",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-07-20",
+											"value": "2024-08-05",
 											"type": "text"
 										},
 										{
 											"key": "trip_note",
-											"value": "hi my friend ",
+											"value": "Trip 3",
 											"type": "text"
 										},
 										{
@@ -15465,8 +15465,7 @@
 										{
 											"key": "places[1]",
 											"value": "2",
-											"type": "text",
-											"disabled": true
+											"type": "text"
 										},
 										{
 											"key": "plane_trip",
@@ -15686,28 +15685,8 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "trip_name",
-											"value": "France Hi",
-											"type": "text"
-										},
-										{
-											"key": "ratio",
-											"value": "0",
-											"type": "text"
-										},
-										{
 											"key": "add_new_people",
 											"value": "4",
-											"type": "text"
-										},
-										{
-											"key": "start_date",
-											"value": "2024-06-20",
-											"type": "text"
-										},
-										{
-											"key": "end_date",
-											"value": "2024-06-25",
 											"type": "text"
 										},
 										{
@@ -15729,21 +15708,11 @@
 											"key": "places[2]",
 											"value": "3",
 											"type": "text"
-										},
-										{
-											"key": "plane_trip",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "plane_trip_away",
-											"value": "3",
-											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/8",
+									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/9",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -15756,13 +15725,13 @@
 										"api",
 										"admin",
 										"edit-static-trip",
-										"8"
+										"9"
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "store_booking_admin",
+									"name": "edit-static-trip",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -15770,54 +15739,19 @@
 												"key": "Accept",
 												"value": "application/json",
 												"type": "text"
+											},
+											{
+												"key": "lang",
+												"value": "en",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "formdata",
 											"formdata": [
 												{
-													"key": "source_trip_id",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "destination_trip_id",
-													"value": "2",
-													"type": "text"
-												},
-												{
-													"key": "hotel_id",
-													"value": "3",
-													"type": "text"
-												},
-												{
-													"key": "trip_name",
-													"value": "to france",
-													"type": "text"
-												},
-												{
-													"key": "price",
-													"value": "100",
-													"type": "text"
-												},
-												{
-													"key": "number_of_people",
-													"value": "10",
-													"type": "text"
-												},
-												{
-													"key": "trip_capacity",
-													"value": "2",
-													"type": "text"
-												},
-												{
-													"key": "start_date",
-													"value": "2024-5-30",
-													"type": "text"
-												},
-												{
-													"key": "end_date",
-													"value": "2024-5-6",
+													"key": "add_new_people",
+													"value": "4",
 													"type": "text"
 												},
 												{
@@ -15827,7 +15761,7 @@
 												},
 												{
 													"key": "places[0]",
-													"value": "1",
+													"value": "3",
 													"type": "text"
 												},
 												{
@@ -15836,19 +15770,14 @@
 													"type": "text"
 												},
 												{
-													"key": "plane_trip",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "plane_trip_away",
+													"key": "places[2]",
 													"value": "3",
 													"type": "text"
 												}
 											]
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/admin/Add_booking_Admin",
+											"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/9",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -15860,7 +15789,8 @@
 											"path": [
 												"api",
 												"admin",
-												"Add_booking_Admin"
+												"edit-static-trip",
+												"9"
 											]
 										}
 									},
@@ -15874,11 +15804,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 19 May 2024 14:41:39 GMT"
+											"value": "Fri, 02 Aug 2024 15:35:34 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 19 May 2024 14:41:39 GMT"
+											"value": "Fri, 02 Aug 2024 15:35:34 GMT"
 										},
 										{
 											"key": "Connection",
@@ -15902,7 +15832,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59"
+											"value": "58"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -15910,7 +15840,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 13,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"100.00\",\n            \"number_of_people\": 10,\n            \"trip_capacity\": 2,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-05-06\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"places\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Eiffel Tower\",\n                    \"place_price\": \"20.00\",\n                    \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                    \"images\": []\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Musée du Louvre\",\n                    \"place_price\": \"20.00\",\n                    \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                    \"images\": []\n                }\n            ],\n            \"plane_trips\": [\n                {\n                    \"id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 3,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 40,\n                    \"flight_date\": \"2024-05-15\",\n                    \"landing_date\": \"2024-05-20\",\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    }\n                },\n                {\n                    \"id\": 3,\n                    \"airport_source_id\": 3,\n                    \"airport_destination_id\": 1,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 40,\n                    \"flight_date\": \"2024-05-15\",\n                    \"landing_date\": \"2024-05-20\",\n                    \"airport_source\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+									"body": "{\n    \"message\": \"updated succesfully\",\n    \"data\": {\n        \"static_trip\": {\n            \"id\": 9,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"9\",\n            \"price\": \"220.00\",\n            \"new_price\": null,\n            \"number_of_people\": 28,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-08-02\",\n            \"end_date\": \"2024-08-05\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"rooms_count\": 6\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Umayyad Mosque\",\n                \"place_price\": \"5.00\",\n                \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n                \"area_id\": 1,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 3,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1722164060.png\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1722164060.jpg\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1722168220.png\"\n                    },\n                    {\n                        \"id\": 7,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1722168220.jpg\"\n                    },\n                    {\n                        \"id\": 8,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1722168249.png\"\n                    },\n                    {\n                        \"id\": 9,\n                        \"place_id\": 3,\n                        \"image\": null\n                    },\n                    {\n                        \"id\": 10,\n                        \"place_id\": 3,\n                        \"image\": null\n                    },\n                    {\n                        \"id\": 11,\n                        \"place_id\": 3,\n                        \"image\": null\n                    },\n                    {\n                        \"id\": 12,\n                        \"place_id\": 3,\n                        \"image\": null\n                    },\n                    {\n                        \"id\": 13,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/172217012713.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 1,\n                    \"name\": \"Damascus\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -16290,6 +16220,1120 @@
 							]
 						}
 					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "21|o40PRlxpqNaB9UiwU9ejClfCYXYN32NtGFLKxYFnbe075fab",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Report",
+					"item": [
+						{
+							"name": "get-topPlaces",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "year",
+											"value": "2024",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "month",
+											"value": "7",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/get-topPlaces",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"get-topPlaces"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get-topPlaces",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "year",
+													"value": "2024",
+													"type": "text"
+												},
+												{
+													"key": "month",
+													"value": "7",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-topPlaces",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-topPlaces"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:03:58 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:03:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Eiffel Tower\",\n            \"place_price\": \"20.00\",\n            \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"bookings_count\": 3\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Musée du Louvre\",\n            \"place_price\": \"20.00\",\n            \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"bookings_count\": 3\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Umayyad Mosque\",\n            \"place_price\": \"5.00\",\n            \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"bookings_count\": 1\n        }\n    ]\n}"
+								},
+								{
+									"name": "get-topPlaces",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "year",
+													"value": "2024",
+													"type": "text"
+												},
+												{
+													"key": "month",
+													"value": "7",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-topPlaces",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-topPlaces"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:04:16 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:04:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "54"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Eiffel Tower\",\n            \"place_price\": \"20.00\",\n            \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"bookings_count\": 3\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Musée du Louvre\",\n            \"place_price\": \"20.00\",\n            \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"bookings_count\": 3\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Umayyad Mosque\",\n            \"place_price\": \"5.00\",\n            \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"bookings_count\": 1\n        }\n    ]\n}"
+								},
+								{
+									"name": "get-topPlaces",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "year",
+													"value": "2024",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "month",
+													"value": "7",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-topPlaces",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-topPlaces"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:04:25 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:04:25 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Eiffel Tower\",\n            \"place_price\": \"20.00\",\n            \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"bookings_count\": 3\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Musée du Louvre\",\n            \"place_price\": \"20.00\",\n            \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"bookings_count\": 3\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Umayyad Mosque\",\n            \"place_price\": \"5.00\",\n            \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n            \"area_id\": 1,\n            \"visible\": 1,\n            \"bookings_count\": 1\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get-profits",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "year",
+											"value": "2024",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/get-profits",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"get-profits"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get-profits",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "year",
+													"value": "2024",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-profits",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-profits"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:14:32 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:14:32 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"month\": 1,\n            \"price\": 0\n        },\n        {\n            \"month\": 2,\n            \"price\": 0\n        },\n        {\n            \"month\": 3,\n            \"price\": 0\n        },\n        {\n            \"month\": 4,\n            \"price\": 0\n        },\n        {\n            \"month\": 5,\n            \"price\": 0\n        },\n        {\n            \"month\": 6,\n            \"price\": 0\n        },\n        {\n            \"month\": 7,\n            \"price\": 3025\n        },\n        {\n            \"month\": 8,\n            \"price\": 4050\n        },\n        {\n            \"month\": 9,\n            \"price\": 0\n        },\n        {\n            \"month\": 10,\n            \"price\": 0\n        },\n        {\n            \"month\": 11,\n            \"price\": 0\n        },\n        {\n            \"month\": 12,\n            \"price\": 0\n        }\n    ]\n}"
+								},
+								{
+									"name": "get-profits",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "year",
+													"value": "2024",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-profits",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-profits"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:37:39 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:37:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"month\": 1,\n            \"price\": 0\n        },\n        {\n            \"month\": 2,\n            \"price\": 0\n        },\n        {\n            \"month\": 3,\n            \"price\": 0\n        },\n        {\n            \"month\": 4,\n            \"price\": 0\n        },\n        {\n            \"month\": 5,\n            \"price\": 0\n        },\n        {\n            \"month\": 6,\n            \"price\": 0\n        },\n        {\n            \"month\": 7,\n            \"price\": 3025\n        },\n        {\n            \"month\": 8,\n            \"price\": 4050\n        },\n        {\n            \"month\": 9,\n            \"price\": 0\n        },\n        {\n            \"month\": 10,\n            \"price\": 0\n        },\n        {\n            \"month\": 11,\n            \"price\": 0\n        },\n        {\n            \"month\": 12,\n            \"price\": 0\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get-users-with-the-most-bookings",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/get-users-with-the-most-bookings",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"get-users-with-the-most-bookings"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get-users-with-the-most-bookings",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-users-with-the-most-bookings",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-users-with-the-most-bookings"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:21:52 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:21:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"User\",\n            \"email\": \"User@gmail.com\",\n            \"phone_number\": \"099999999999\",\n            \"image\": \"ProfileImage/1722440665.png\",\n            \"point\": 15,\n            \"position\": 1,\n            \"number_of_trips\": 8\n        },\n        {\n            \"id\": 15,\n            \"name\": \"User\",\n            \"email\": \"user3@gmail.com\",\n            \"phone_number\": \"12345678901\",\n            \"image\": \"ProfileImage/1722441777.png\",\n            \"point\": 0,\n            \"position\": 1,\n            \"number_of_trips\": 1\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get-countries-with-the-most-registered",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "year",
+											"value": "2024",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/get-countries-with-the-most-registered",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"get-countries-with-the-most-registered"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get-countries-with-the-most-registered",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "year",
+													"value": "2024",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-countries-with-the-most-registered",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-countries-with-the-most-registered"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:42:56 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:42:56 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria\",\n            \"users_count\": 2\n        },\n        {\n            \"id\": 2,\n            \"name\": \"France\",\n            \"users_count\": 1\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Germany\",\n            \"users_count\": 1\n        }\n    ]\n}"
+								},
+								{
+									"name": "get-countries-with-the-most-registered",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "year",
+													"value": "2024",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-countries-with-the-most-registered",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-countries-with-the-most-registered"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:43:08 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:43:08 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Syria\",\n            \"users_count\": 2\n        },\n        {\n            \"id\": 2,\n            \"name\": \"France\",\n            \"users_count\": 1\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Germany\",\n            \"users_count\": 1\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get-the-most-visited-countries",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "year",
+											"value": "2024",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/get-the-most-visited-countries",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"get-the-most-visited-countries"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get-the-most-visited-countries",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-the-most-visited-countries",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-the-most-visited-countries"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:47:16 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:47:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"France\",\n            \"destination_bookings_count\": 5\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Germany\",\n            \"destination_bookings_count\": 1\n        }\n    ]\n}"
+								},
+								{
+									"name": "get-the-most-visited-countries",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "year",
+													"value": "2024",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/get-the-most-visited-countries",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"get-the-most-visited-countries"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:47:42 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 02 Aug 2024 14:47:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"France\",\n            \"destination_bookings_count\": 5\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Germany\",\n            \"destination_bookings_count\": 1\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "24|wQBah6u1l1YEpURXEpdXHqsZu1R9XSQmuxcEOSN9ec23804b",
+								"type": "string"
+							}
+						]
+					},
 					"event": [
 						{
 							"listen": "prerequest",
@@ -16319,7 +17363,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "2|TFwVTPGX77eXg5RQmXf9S97uBqxAQHfIoUFB6SCXaf5dac23",
+						"value": "24|wQBah6u1l1YEpURXEpdXHqsZu1R9XSQmuxcEOSN9ec23804b",
 						"type": "string"
 					}
 				]
@@ -26479,13 +27523,13 @@
 									"formdata": [
 										{
 											"key": "number_of_friend",
-											"value": "2",
+											"value": "5",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/2",
+									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/1",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -26498,7 +27542,7 @@
 										"api",
 										"user",
 										"check-static-trip",
-										"2"
+										"1"
 									]
 								}
 							},
@@ -26710,12 +27754,12 @@
 									"formdata": [
 										{
 											"key": "trip_id",
-											"value": "2",
+											"value": "1",
 											"type": "text"
 										},
 										{
 											"key": "number_of_friend",
-											"value": "2",
+											"value": "5",
 											"type": "text"
 										},
 										{
@@ -26735,7 +27779,7 @@
 										},
 										{
 											"key": "total_price",
-											"value": "320",
+											"value": "880",
 											"type": "text"
 										},
 										{
@@ -27698,55 +28742,6 @@
 					]
 				},
 				{
-					"name": "New Request",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "lat",
-									"value": "33.54937317903254",
-									"type": "text"
-								},
-								{
-									"key": "long",
-									"value": "36.39669465069943",
-									"type": "text"
-								},
-								{
-									"key": "",
-									"value": "",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/test",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"test"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "get-notification",
 					"request": {
 						"method": "GET",
@@ -27991,6 +28986,40 @@
 							""
 						]
 					}
+				}
+			]
+		},
+		{
+			"name": "Stripe",
+			"item": [
+				{
+					"name": "payment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/payment",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"payment"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

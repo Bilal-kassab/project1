@@ -176,10 +176,11 @@ class BookRepository implements BookRepositoryInterface
                 $numberOfOldSeat=0;
             }
             $hotel_id=$booking->rooms->first()['hotel']['id'];// get hotel id from existing booking room
+
+
             $room_count = $request['number_of_people'] / $booking['trip_capacity'];
             // show if there are rooms to book
             if ($request['number_of_people'] % $booking['trip_capacity'] > 0) $room_count++;
-
                 $rooms = Room::available($request['start_date'], $request['end_date'])
                                 ->where('hotel_id', $hotel_id)
                                 ->where('capacity', $booking['trip_capacity'])
@@ -187,11 +188,13 @@ class BookRepository implements BookRepositoryInterface
             if ($rooms < $room_count+$bookRoomCount) {
                 return 6;
             }
+            // return $request['plane_trip_away'];
             // show if there are available_seats to book in going trip
             $plane_trip = PlaneTrip::where('id', $request['plane_trip'])->first();
             if ($plane_trip['available_seats'] < $request['number_of_people']+$numberOfOldSeat) {
                  return 2;
             }
+
             // show if there are available_seats to book in return trip
             $plane_trip_away = PlaneTrip::where('id', $request['plane_trip_away'])->first();
             if ($plane_trip_away['available_seats'] < $request['number_of_people']+$numberOfOldSeat)###
@@ -282,6 +285,7 @@ class BookRepository implements BookRepositoryInterface
             if($date>=$trip_date){
                 return trans('trip.start-trip');
             }
+
             $staticBooks=BookingStaticTrip::where('static_trip_id',$trip['id'])->get();
             // return the money to all users that booked in this trip
             $seats=0; ## For calculating the total number of seats on this trip, including those taken by passengers.
@@ -425,6 +429,7 @@ class BookRepository implements BookRepositoryInterface
             $total_price=0.0;
             $total_price+=(($static_trip['price']-($room['current_price']*$days)));
             $placePrice=$total_price-$goingPlaneTrip-$returnPlaneTrip;
+            $total_price*=$request['number_of_friend'];
             $total_price+=$rooms_needed*$room['current_price']*$days;
             $price_after_discount=null;
             if(auth()->user()->point >= 50)#################
@@ -622,6 +627,10 @@ class BookRepository implements BookRepositoryInterface
                              ->AvailableRooms()
                             //  ->select('id','trip_name','price','new_price','number_of_people','trip_capacity','start_date','end_date','stars','trip_note')
                              ->get();
+
+            foreach($staticTrip as $s){
+                $s['ability']=1;
+            }
             return $staticTrip;
         }catch(Exception $exception){
             throw new Exception($exception->getMessage());

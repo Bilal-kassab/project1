@@ -8,6 +8,7 @@ use App\Http\Controllers\StaticBookController;
 use App\Listeners\SendWebNotification;
 use App\Mail\TestMail;
 use App\Models\Booking;
+use App\Models\Place;
 use App\Models\PlaneTrip;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -37,9 +38,16 @@ use Illuminate\Support\Facades\Validator;
 //     return "Done send";
 // });
 
-Route::get('/', function () {
-    return Lang::locale();
-});
+// Route::post('/', function (Request $request) {
+//     // return Lang::locale();
+//     $topPlaces = Place::withCount('bookings')
+//                         ->whereHas('bookings')
+//                         ->orderBy('bookings_count', 'desc')
+//                         ->take(10)
+//                         ->get();
+
+//     return $topPlaces;
+// })->middleware('auth:sanctum');
 
 // Route::get('/', function () {
 

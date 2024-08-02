@@ -12,17 +12,108 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\DynamicBookController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\PlaneController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\StaticBookController;
+use App\Models\Booking;
+use App\Models\Country;
+use App\Models\Place;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+
+
+
+Route::post('/', function (Request $request) {
+    ######### get the top 10 places ##################
+    // $topPlaces = Place::withCount('bookings')
+    //                     ->whereHas('bookings')
+    //                     ->orderBy('bookings_count', 'desc')
+    //                     ->take(10)
+    //                     ->get();
+    // return $topPlaces;
+
+            ############  get the profit of every month in the year  ##############
+    // $arr=[];
+    // for($i=1;$i<=12;$i++){
+    //     $price=0;
+    //     $bookings=Booking::whereyear('start_date',$request->year)->whereMonth('start_date',"0$i")
+    //                     ->with('bookings')
+    //                     ->get();
+
+    //     foreach($bookings as $booking){
+    //         $price+=$booking?->totalBookPrice()??0;
+    //     }
+    //     $arr[]=[
+    //         'month'=>$i,
+    //         'price'=>$price
+    //     ];
+    // }
+    // return response()->json([
+    //     'data'=>$arr
+    // ],200);
+
+            ### get users that have most bookings ###
+    // $mostBookingUsers = User::withCount('bookings')->withCount('myStaticTrip')
+    //                                 ->whereHas('roles', function($query) {
+    //                                     $query->where('name', 'User');
+    //                                 })
+    //                                 ->with('position')
+    //                                 ->whereHas('bookings')->orWhereHas('myStaticTrip')
+    //                                 ->orderBy('bookings_count', 'desc')
+    //                                 ->get();
+    // $data=[];
+    // foreach($mostBookingUsers as $mostBookingUser){
+    //     $data[]=[
+    //         'id'=>$mostBookingUser->id,
+    //         'name'=>$mostBookingUser->name,
+    //         'email'=>$mostBookingUser->email,
+    //         'phone_number'=>$mostBookingUser->phone_number,
+    //         'image'=>$mostBookingUser->image,
+    //         'point'=>$mostBookingUser->point,
+    //         'position'=>$mostBookingUser->position,
+    //         'number_of_trips'=>$mostBookingUser->bookings_count+$mostBookingUser->my_static_trip_count,
+    //     ];
+    // }
+    // return $data;
+
+    ###  get the most countries that the users registertion ####
+    // $topRegistertionCountry=Country::withCount('users')
+    //                         ->whereHas('users')
+    //                         ->orderBy('users_count', 'desc')
+    //                         ->take(10)
+    //                         ->get();
+    // return $topRegistertionCountry;
+
+    ### get the most visited countries ###
+    // $topVisitorCountry=Country::withCount('destination_bookings')
+    //                         ->whereHas('destination_bookings')
+    //                         ->orderBy('destination_bookings_count', 'desc')
+    //                         ->take(10)
+    //                         ->get();
+    // return $topVisitorCountry;
+
+    #### get the number of trips and there profit according to year/month #####
+
+        // $bookings=Booking::whereyear('start_date',$request->year)->whereMonth('start_date',"07")
+        //                 ->count();
+            $year=$request->year;
+            $month=$request->month;
+                  $bookings=Booking::query()->whereyear('start_date',$year)
+                        ->when($month,function($q) use ($month){
+                            return $q->whereMonth('start_date',"0$month");
+                        })->count();
+        return $bookings;
+
+})->middleware('auth:sanctum');
 
 Route::post('/push-noti', function (Request $request) {
     // $user=User::get();
@@ -75,6 +166,10 @@ Route::post('/test', function (Request $request) {
     ], 200);
 
 })->middleware('auth:sanctum');
+
+Route::get('payment',[Controller::class,'payment']);
+Route::get('success',[Controller::class,'success'])->name('success');
+Route::get('cancel',[Controller::class,'cancel'])->name('cancel');
 ################       users      ###########################
 
 
@@ -400,6 +495,16 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::get('show_hotel_trip/{id}','showHotelTrip');
                 Route::get('show_plane_trip/{id}','showPlaneTrip');
                 // Route::get('show_booking/{id}','show');
+            });
+
+            Route::controller(ReportController::class)->group(function () {
+                Route::post('get-topPlaces','topPlaces');
+                Route::post('get-profits','getTheProfits');
+                Route::get('get-users-with-the-most-bookings','getUsersWithTheMostBookings');
+
+                Route::post('get-countries-with-the-most-registered','getCountriesWithTheMostRegistered');
+                Route::post('get-the-most-visited-countries','getTheMostVisitedCountries');
+                // Route::post('get-the-number-of-trips-and-their-profit','getTheNumberOfTripsAndTheirProfit');
             });
         });
 

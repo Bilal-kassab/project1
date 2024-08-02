@@ -615,6 +615,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                                 $book_room=BookingRoom::create([
                                     'book_id' => $booking->id,
                                     'room_id' => $rooms[$i]['id'],
+                                    'user_id'=> auth()->id(),
                                     'current_price' => $rooms[$i]['price'],
                                     'start_date' => $request['start_date'],
                                     'end_date' => $request['end_date']

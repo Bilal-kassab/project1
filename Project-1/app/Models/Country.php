@@ -43,4 +43,11 @@ class Country extends Model
     {
         return $this->hasMany(Booking::class,'destination_trip_id');
     }
+
+    public function users():HasMany
+    {
+        return $this->hasMany(User::class,'position')->whereHas('roles', function($query) {
+                                                $query->where('name', 'User');
+                                            });
+    }
 }

@@ -60,6 +60,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(BookingStaticTrip::class,'booking_static_trips','user_id','static_trip_id');
     }
+    public function myStaticTrip():HasMany
+    {
+        return $this->HasMany(BookingStaticTrip::class,'user_id');
+    }
 
     public function position()
     {

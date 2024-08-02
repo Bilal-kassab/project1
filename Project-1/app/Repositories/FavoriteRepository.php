@@ -57,4 +57,6 @@ class FavoriteRepository implements FavoriteRepositoryInterface
         return $trips;
 
     }
+
+    
 }

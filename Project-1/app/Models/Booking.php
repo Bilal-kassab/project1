@@ -84,9 +84,16 @@ class Booking extends Model
 
     // public function static_trips():BelongsToMany
     // {
-    //     return $this->belongsToMany(BookingStaticTrip::class,'booking_static_trips','static_trip_id','user_id')
-    //                 ->where('user_id',auth()->id());
+    //     return $this->belongsToMany(BookingStaticTrip::class,'booking_static_trips','static_trip_id','user_id');
     // }
+    public function bookings():HasMany
+    {
+        return $this->HasMany(BookingStaticTrip::class,'static_trip_id');
+    }
+    public function totalBookPrice()
+    {
+        return $this->bookings()->sum('book_price');
+    }
 
     // public function static_trip_rooms():BelongsToMany
     // {

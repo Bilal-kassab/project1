@@ -28,7 +28,7 @@ class StoreStaticTripRequest extends FormRequest
             // 'source_trip_id'=>'required|exists:countries,id',
             'destination_trip_id'=>'required|exists:countries,id',
             'trip_name'=>'required|string',
-            'ratio'=>'required|decimal:0,1',
+            'ratio'=>'required|decimal:0,1|min:0|max:1',
             'number_of_people'=>'required|min:3|numeric',
             'trip_capacity'=>'required|numeric',
             'start_date'=>"required|exists:plane_trips,flight_date|date|after_or_equal:$date",

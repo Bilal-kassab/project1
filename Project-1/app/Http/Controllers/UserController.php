@@ -26,7 +26,7 @@ class UserController extends Controller
             'email'=>'required|string|email|unique:users',
             'password'=>'required|min:8|confirmed',
             'image'=> 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            'position'=>'required|numeric|exists:countries,id',
+            'position'=>'numeric|exists:countries,id',
             'phone_number'=>'regex:/[0-9]{10}/|unique:users',
             'fcm_token'=>'string'
         ]);

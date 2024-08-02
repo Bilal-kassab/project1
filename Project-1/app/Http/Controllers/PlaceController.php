@@ -52,7 +52,7 @@ class PlaceController extends Controller
         if($request->hasFile('images')){
             foreach ($request->file('images') as $imagefile){
                 $images = new PlaceImage;
-                $images->place_id= $request->place_id;
+                $images->place_id= $place->id;
                 $images->save();
                 $image_name=time().$images->id. '.' . $imagefile->getClientOriginalExtension();
                 $imagefile->move('PlaceImages/',$image_name);
@@ -77,7 +77,6 @@ class PlaceController extends Controller
 
        try{
             $place = Place::findOrFail($id);
-
             $place->name = $request->name??$place['name'];
             $place->area_id=$request->area_id??$place['area_id'];
             $place->place_price = $request->place_price??$place['place_price'];
