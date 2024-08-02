@@ -29,6 +29,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     public function hotel_book($request){
         try {
             $trip_price=0;
+
         if($request['hotel_id'] != null)
         {
             if($request['count_room_C2']==0 && $request['count_room_C4']==0 &&$request['count_room_C6']==0){
@@ -228,12 +229,14 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             'count_room_C6'=>$request['count_room_C6']
         ];
         $this->bookHotel($data,$booking->id);
+        if($request['activities']){
         foreach ($request['activities'] as $activity) {
             ActivityBook::create([
                  'booking_id' => $booking->id,
                  'activity_id' => $activity,
              ]);
          }
+        }
         $booking->price=$trip_price;
         $booking->save();
         $my_account=Bank::where('email',auth()->user()['email'])->first();
@@ -284,7 +287,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             'rooms_count'=>$book['rooms_count'],
            // 'total_price'=>$price,
         ];
-        $activities=$book?->activities;
+        $activities=$book?->activities??null;
         $going_trip=[];
         if($book->plane_trips[0]?->airport_source->id?? null){
             $going_trip=[
@@ -331,13 +334,12 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
         }
         $dynamic_trip=[
             'dynamic_trip'=>$bookData,
-             'activities'=>$activities,
+            'activities'=>$activities,
             'source_trip'=>$book->source_trip,
             'destination_trip'=>$book->destination_trip,
             'places'=>$book->places,
             'going_trip'=>$going_trip,
             'return_trip'=>$return_trip,
-            // 'activities'=>$activities,
             'hotel'=>$hotel,
             'rooms'=>$book->rooms->select('id','capacity','price'),
         ];
@@ -615,7 +617,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                                 $book_room=BookingRoom::create([
                                     'book_id' => $booking->id,
                                     'room_id' => $rooms[$i]['id'],
-                                    'user_id'=> auth()->id(),
+                                    'user_id' => auth()->user()->id,
                                     'current_price' => $rooms[$i]['price'],
                                     'start_date' => $request['start_date'],
                                     'end_date' => $request['end_date']
@@ -634,6 +636,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                                 $book_room=BookingRoom::create([
                                     'book_id' => $booking->id,
                                     'room_id' => $rooms[$i]['id'],
+                                    'user_id' => auth()->id(),
                                     'current_price' => $rooms[$i]['price'],
                                     'start_date' => $request['start_date'],
                                     'end_date' => $request['end_date']
@@ -651,6 +654,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                                 $book_room=BookingRoom::create([
                                     'book_id' => $booking->id,
                                     'room_id' => $rooms[$i]['id'],
+                                    'user_id' => auth()->id(),
                                     'current_price' => $rooms[$i]['price'],
                                     'start_date' => $request['start_date'],
                                     'end_date' => $request['end_date']
@@ -666,6 +670,10 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     public function update_dynamic_trip($request,$id){
         try{
             $booking =Booking::findOrFail($id);
+            $current_time =Carbon::now()->format('Y-m-d');
+            if($booking['start_date']<=$current_time){
+                return 66;
+            }
             if($request['end_date'] < $booking['end_date']){
                 return 9;
             }
@@ -926,13 +934,17 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 }
             }
             // booking activity
-            ActivityBook::where('booking_id',$booking['id'])->delete();
+            if(ActivityBook::where('booking_id',$booking['id'])!=null){
+                ActivityBook::where('booking_id',$booking['id'])->delete();
+            }
+            if($request['activities']){
             foreach ($request['activities'] as $activity) {
                 ActivityBook::create([
-                     'booking_id' => $booking->id,
-                     'activity_id' => $activity,
-                 ]);
-             }
+                    'booking_id' => $booking->id,
+                    'activity_id' => $activity,
+                ]);
+            }
+            }
                 $booking['end_date']=$request['end_date'];
                 $booking['number_of_people']+=$request['number_of_people'];
                 $booking['price']+=$trip_price;
@@ -957,6 +969,10 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     public function updatePlaneBook($request,$id){
         try{
             $booking =Booking::findOrFail($id);
+            $current_time =Carbon::now()->format('Y-m-d');
+            if($booking['start_date']<=$current_time){
+                return 66;
+            }
             $plane_trip_id=null;
             $plane_trip_away_id=null;
             $trip_price=0;
@@ -1029,6 +1045,10 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             $datetime2 = new DateTime($request['end_date']);
             $interval = $datetime1->diff($datetime2);
             $period = $interval->format('%a');
+            $current_time =Carbon::now()->format('Y-m-d');
+            if($booking['start_date']<=$current_time){
+                return 66;
+            }
             $hotel_id=null;
             $trip_price=0;
             $last_price=$booking['price'];
@@ -1147,7 +1167,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
         {
             $date=Carbon::now()->format('Y-m-d');
             $booking =Booking::findOrFail($id);
-            if($date>$booking['start_date']){
+            if($date>=$booking['start_date']){
                 return 20;
             }
             if(auth()->id()!= $booking['user_id']){

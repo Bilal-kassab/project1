@@ -50,17 +50,12 @@ class DynamicBookController extends Controller
             'place_ids'=>$request->place_ids,
             'plane_trip_id'=>$request->plane_trip_id,
             'plane_trip_away_id'=>$request->plane_trip_away_id,
-            'activities'=>$request->activities,##
+            'activities'=>$request->activities??null,##
             'count_room_C2'=>$request->count_room_C2,
             'count_room_C4'=>$request->count_room_C4,
             'count_room_C6'=>$request->count_room_C6
         ];
         $Dynamic_book=$this->bookrepository->store_User($data);
-        // if($Dynamic_book === 1){
-        //     return response()->json([
-        //         'message'=>'there is not enough room in this hotel',
-        //     ],400);
-        // }
         if($Dynamic_book === 1){
             return response()->json([
                 'message' => 'the seats of the going trip plane lower than number of person'
@@ -113,7 +108,7 @@ class DynamicBookController extends Controller
 
     public function hotel_book(HotelBookRequest $request){
         $data=[
-             'source_trip_id'=>$request->source_trip_id,
+            'source_trip_id'=>$request->source_trip_id,
             'destination_trip_id'=>$request->destination_trip_id,
             'hotel_id'=>$request->hotel_id,
             'trip_name'=>$request->trip_name,
@@ -341,7 +336,7 @@ class DynamicBookController extends Controller
             'place_ids'=>$request->place_ids,
             'plane_trip_id'=>$request->plane_trip_id,
             'plane_trip_away_id'=>$request->plane_trip_away_id,
-            'activities'=>$request->activities,##
+            'activities'=>$request->activities??null,##
             'count_room_C2'=>$request->count_room_C2??null,
             'count_room_C4'=>$request->count_room_C4??null,
             'count_room_C6'=>$request->count_room_C6??null
@@ -389,6 +384,11 @@ class DynamicBookController extends Controller
                     'message' => 'your money dont enough for update your trip',
                 ], 400);
             }
+            if($trip === 66){
+                return response()->json([
+                    'message' => 'sorry but your trip have been started',
+                ], 400);
+            }
             return response()->json($trip,200);
         }catch(Exception $exception){
             return response()->json([
@@ -399,11 +399,7 @@ class DynamicBookController extends Controller
 
     public function updateHotelBook(UpdateHotelBookRequest $request,$id){
         $data=[
-            // 'hotel_id'=>$request->hotel_id??null,
             'trip_name'=>$request->trip_name,
-            // 'price'=>$request->price,
-            // 'number_of_people'=>$request->number_of_people,
-            // 'trip_capacity'=>$request->trip_capacity,
             'start_date'=>$request->start_date,
             'end_date'=>$request->end_date,
             'trip_note'=>$request->trip_note,
@@ -454,6 +450,11 @@ class DynamicBookController extends Controller
                     'message' => 'your money dont enough for update your trip',
                 ], 400);
             }
+            if($trip === 66){
+                return response()->json([
+                    'message' => 'sorry but your trip have been started',
+                ], 400);
+            }
             return response()->json($trip);
         }catch(Exception $exception){
             return response()->json([
@@ -501,20 +502,9 @@ class DynamicBookController extends Controller
 
     public function updatePlaneBook(UpdatePlaneBookRequest $request,$id){
         $data=[
-            //'hotel_id'=>$request->hotel_id??null,
             'trip_name'=>$request->trip_name,
-            //'price'=>$request->price,
             'number_of_people'=>$request->number_of_people,
-            //'trip_capacity'=>$request->trip_capacity,
-            // 'start_date'=>$request->start_date,
-            // 'end_date'=>$request->end_date,
             'trip_note'=>$request->trip_note,
-            // 'place_ids'=>$request->place_ids,
-            // 'plane_trip_id'=>$request->plane_trip_id,
-            // 'plane_trip_away_id'=>$request->plane_trip_away_id,
-            // 'count_room_C2'=>$request->count_room_C2??null,
-            // 'count_room_C4'=>$request->count_room_C4??null,
-            // 'count_room_C6'=>$request->count_room_C6??null
         ];
         $booking =Booking::findOrFail($id);
         $trip=$this->bookrepository->updatePlaneBook($data,$booking->id);
@@ -536,6 +526,11 @@ class DynamicBookController extends Controller
         if($trip === 55){
             return response()->json([
                 'message' => 'your money dont enough for update your trip',
+            ], 400);
+        }
+        if($trip === 66){
+            return response()->json([
+                'message' => 'sorry but your trip have been started',
             ], 400);
         }
         return response()->json($trip);

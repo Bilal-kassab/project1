@@ -108,8 +108,19 @@ class StaticBookController extends Controller
     }
     public function update_Admin(UpdateStaticTripRequest $request,$id)
     {
-
-
+        $data=[
+            // 'hotel_id'=>$request->hotel_id,
+            'trip_name'=>$request->trip_name,
+            'price'=>$request->price,
+            'number_of_people'=>$request->add_new_people,
+            // 'trip_capacity'=>$request->trip_capacity,
+            'start_date'=>$request->start_date,
+            'end_date'=>$request->end_date,
+            'trip_note'=>$request->trip_note,
+            'places'=>$request->places,
+            'plane_trip'=>$request->plane_trip,
+            'plane_trip_away'=>$request->plane_trip_away,
+        ];
         try {
             $booking= Booking::findOrFail($id);
             if(auth()->id() != $booking->user_id)
@@ -118,25 +129,13 @@ class StaticBookController extends Controller
                     'message'=>trans('global.not-permission'),
                 ],200);
             }
-            $bookplane=$booking->plane_trips;
-
-            $data=[
-                // 'hotel_id'=>$request->hotel_id,
-                'price'=>$request->price,
-                'number_of_people'=>$request->add_new_people,
-                // 'trip_capacity'=>$request->trip_capacity,
-                'trip_note'=>$request->trip_note,
-                'places'=>$request->places,
-
-                'trip_name'=>$booking->id,
-                'start_date'=>$booking->start_date,
-                'end_date'=>$booking->end_date,
-                'plane_trip'=>$bookplane[0]->id,
-                'plane_trip_away'=>$bookplane[1]->id,
-            ];
-
-
-              $edit=$this->bookrepository->editAdmin($data,$id);
+            $edit=$this->bookrepository->editAdmin($data,$id);
+            if ($edit === 8)
+            {
+                return response()->json([
+                    'message' => trans('trip.haveBook')
+                ], 400);
+            }
             if($edit === 2){
                 return response()->json([
                     'message' => trans('trip.not-enough-going-trip-plane')
