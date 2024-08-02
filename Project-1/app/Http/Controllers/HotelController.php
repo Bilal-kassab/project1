@@ -51,6 +51,7 @@ class HotelController extends Controller
             return response()->json([
                 'data'=>Hotel::with(['images'])
                             ->where('area_id',$id)
+                            ->where('visible',true)
                             ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
                             ->orderBy('stars','desc')
                             ->get(),
@@ -60,7 +61,7 @@ class HotelController extends Controller
             return response()->json([
                 'data'=>Hotel::with(['images','user:id,name,position,email,phone_number,image'])
                             ->where('area_id',$id)
-                            ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
+                            ->select('id','name','stars','number_rooms','area_id','country_id','user_id','visible')
                             ->orderBy('stars','desc')
                             ->get(),
             ],200);
@@ -81,6 +82,7 @@ class HotelController extends Controller
             return response()->json([
                 'data'=>Hotel::with(['images','area'])
                             ->where('country_id',$id)
+                            ->where('visible',true)
                             ->select('id','name','stars','number_rooms','area_id','country_id')
                             ->orderBy('stars','desc')
                             ->get(),
@@ -90,7 +92,7 @@ class HotelController extends Controller
             return response()->json([
                 'data'=>Hotel::with(['images','user:id,name,position,email,phone_number,image','area'])
                 ->where('country_id',$id)
-                ->select('id','name','stars','number_rooms','area_id','country_id','user_id')
+                ->select('id','name','stars','number_rooms','area_id','country_id','user_id','visible')
                 ->orderBy('stars','desc')
                 ->get(),
             ],200);
@@ -256,6 +258,7 @@ class HotelController extends Controller
                             'data'=>Hotel::with(['images','country:id,name','area:id,country_id,name'])
                             ->select('id','name','number_rooms','stars','area_id','country_id')
                             ->where('name','like','%'.$request->name.'%')
+                            ->where('visible',true)
                             ->orderBy('stars','desc')
                             ->get()
                         ],200);
@@ -263,7 +266,7 @@ class HotelController extends Controller
                     else{
                         return response()->json([
                             'data'=>Hotel::with(['images','area:id,country_id,name','country:id,name','user:id,name,position,email,phone_number,image'])
-                            ->select('id','name','number_rooms','stars','area_id','user_id','country_id')
+                            ->select('id','name','number_rooms','stars','area_id','user_id','country_id','visible')
                             ->where('name','like','%'.$request->name.'%')
                             ->orderBy('stars','desc')
                             ->get()
@@ -287,13 +290,14 @@ class HotelController extends Controller
                             'data'=>Hotel::with(['images','country:id,name','area:id,country_id,name'])
                             ->select('id','name','number_rooms','stars','area_id','country_id')
                             ->where('stars','like','%'.$request->stars.'%')
+                            ->where('visible',true)
                             ->get()
                         ],200);
                     }
                     else{
                         return response()->json([
                             'data'=>Hotel::with(['images','country:id,name','area:id,country_id,name','user:id,name,position,email,phone_number,image'])
-                            ->select('id','name','number_rooms','stars','area_id','country_id','user_id')
+                            ->select('id','name','number_rooms','stars','area_id','country_id','user_id','visible')
                             ->where('stars','like','%'.$request->stars.'%')
                             ->get()
                         ],200);
