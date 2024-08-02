@@ -277,6 +277,10 @@ class BookRepository implements BookRepositoryInterface
     {
         try {
             $trip=Booking::findOrFail($id);
+            $booking_trip=BookingStaticTrip::where('static_trip_id',$id)->first();
+            if($booking_trip){
+                return trans('trip.haveBook');
+            }
             $goingTrip=$trip->plane_trips[0]??null;
             $returnTrip=$trip->plane_trips[1]??null;
 
