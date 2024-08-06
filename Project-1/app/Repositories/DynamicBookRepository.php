@@ -252,9 +252,9 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     public function showDynamicTrip($id)
     {
         try{
-        $book=Booking::where('type','dynamic')
+        $book=Booking::WithCount('rooms')->where('type','dynamic')
                     // ->where('user_id',auth()->id())
-                    ->AvailableRooms()
+                    // ->AvailableRooms()
                     ->findOrFail($id);
 
                     // $place_cost=0;
@@ -353,9 +353,9 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     }
     public function show_hotel_trip($id){
         try{
-            $book=Booking::where('type','hotel')
+            $book=Booking::WithCount('rooms')->where('type','hotel')
                         // ->where('user_id',auth()->id())
-                        ->AvailableRooms()
+                        // ->AvailableRooms()
                         ->findOrFail($id);
 
             $bookData=[
@@ -396,7 +396,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
         try{
             $book=Booking::where('type','plane')
                         // ->where('user_id',auth()->id())
-                        ->AvailableRooms()
+                        // ->AvailableRooms()
                         ->findOrFail($id);
             $bookData=[
                 'id'=>$book['id'],
