@@ -12,11 +12,13 @@ use App\Http\Requests\Trip\StoreStaticTripRequest;
 use App\Http\Requests\Trip\UpdateStaticTripRequest;
 use App\Models\Activity;
 use App\Models\Booking;
+use App\Models\BookingRoom;
 use App\Models\BookingStaticTrip;
 use App\Models\Country;
 use App\Models\Place;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 use Carbon\Carbon;
+use DateTime;
 use Exception;
 use Google\Service\CloudSearch\Resource\Query;
 use Illuminate\Http\JsonResponse;
@@ -283,6 +285,64 @@ class StaticBookController extends Controller
                 'future_trips'=>$futureTrips,
             ],
         ],200);
+    }
+
+    public function showPriceDetails($id)
+    {
+        try{
+            $bookStaticTrip=BookingStaticTrip::findOrFail($id);
+            if($bookStaticTrip['user_id']!= auth()->id()){
+                return response()->json([
+                    'message'=>trans('global.not-permission')
+                ],403);
+            }
+            //get the trip
+            $static_trip=Booking::where('type','static')->where('id',$bookStaticTrip['static_trip_id'])->first();
+            //days
+            $datetime1 = new DateTime($static_trip['start_date']);
+            $datetime2 = new DateTime($static_trip['end_date']);
+            $interval = $datetime1->diff($datetime2);
+            $days = $interval->format('%a');
+            //rooms_needed
+            $rooms_needed=(int)($bookStaticTrip['number_of_friend']/$static_trip['trip_capacity']);
+            if($bookStaticTrip['number_of_friend'] % $static_trip['trip_capacity'] >0) $rooms_needed++;
+            //room price
+            $room=BookingRoom::where([
+                ['book_id',$static_trip['id']],
+                ['user_id',auth()->id()]
+                ])->first();
+            //plane trip
+            $plane_trip=$static_trip?->plane_trips;
+            $goingPlaneTrip=$plane_trip[0]['current_price']??0;
+            $returnPlaneTrip=$plane_trip[1]['current_price']??0;
+            //place price
+            $total_price=0.0;
+
+            $total_price+=(($static_trip['price']-($room['current_price']*$days)));
+            $placePrice=$total_price-$goingPlaneTrip-$returnPlaneTrip;
+            $total_price*=$bookStaticTrip['number_of_friend'];
+            $total_price+=$rooms_needed*$room['current_price']*$days;
+            $data=[
+                'trip_id'=>(int)$id,#
+                'number_of_friend'=>(int)$bookStaticTrip['number_of_friend'],#
+                'rooms_needed'=>$rooms_needed,#
+                'days'=>(int)$days,#
+                'room_price'=>(doubleval($room['current_price']))??null,#
+                'ticket_price_for_going_trip'=>$goingPlaneTrip,#
+                'ticket_price_for_return_trip'=>$returnPlaneTrip,#
+                'ticket_price_for_places'=>$placePrice,#
+                'total_price'=>$total_price,#
+                // 'price_after_discount'=>$price_after_discount,
+            ];
+            return response()->json([
+                'data'=>$data
+            ],200);
+        }catch(Exception $exception){
+
+            return response()->json([
+                'message'=>$exception->getMessage()
+            ],404);
+        }
     }
 
     public function editBook(EditStaticTripRequest $request,$id)

@@ -27398,7 +27398,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/show-static-trip/1",
+									"raw": "http://127.0.0.1:8000/api/user/show-static-trip/2",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -27411,7 +27411,7 @@
 										"api",
 										"user",
 										"show-static-trip",
-										"1"
+										"2"
 									]
 								}
 							},
@@ -27639,7 +27639,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/1",
+									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/2",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -27652,7 +27652,7 @@
 										"api",
 										"user",
 										"check-static-trip",
-										"1"
+										"2"
 									]
 								}
 							},
@@ -27864,7 +27864,7 @@
 									"formdata": [
 										{
 											"key": "trip_id",
-											"value": "1",
+											"value": "2",
 											"type": "text"
 										},
 										{
@@ -28071,7 +28071,7 @@
 									"formdata": [
 										{
 											"key": "new_number_of_friend",
-											"value": "1",
+											"value": "5",
 											"type": "text"
 										},
 										{
@@ -28082,7 +28082,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/edit-static-trip-book/5",
+									"raw": "http://127.0.0.1:8000/api/user/edit-static-trip-book/3",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -28095,7 +28095,7 @@
 										"api",
 										"user",
 										"edit-static-trip-book",
-										"5"
+										"3"
 									]
 								}
 							},
@@ -28686,6 +28686,115 @@
 									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"user_id\": 2,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"210.00\",\n            \"new_price\": null,\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-07-18\",\n            \"end_date\": \"2024-07-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\"\n        }\n    ]\n}"
 								}
 							]
+						},
+						{
+							"name": "show-price-details",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/show-price-details/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"show-price-details",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show-price-details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/show-price-details/3",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"show-price-details",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 06 Aug 2024 22:26:03 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 06 Aug 2024 22:26:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"trip_id\": 3,\n        \"number_of_friend\": 10,\n        \"rooms_needed\": 2,\n        \"days\": 4,\n        \"room_price\": 45,\n        \"ticket_price_for_going_trip\": \"50.00\",\n        \"ticket_price_for_return_trip\": \"50.00\",\n        \"ticket_price_for_places\": 40,\n        \"total_price\": 1760\n    }\n}"
+								}
+							]
 						}
 					]
 				}
@@ -28695,7 +28804,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|fzAQefBky2GXKQAtO5ESnIS9aSMsIKEqsKbp8DPf0e7da07d",
+						"value": "1|iDZnHM9Ajznf14nkbqMhw1hWAVa2wzbfYLWFqwiNb7390e27",
 						"type": "string"
 					}
 				]

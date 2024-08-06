@@ -490,8 +490,9 @@ class BookRepository implements BookRepositoryInterface
             return 4;
         }
         $user=User::where('id',auth()->id())->first();
-        $book_price=($request['total_price']-($request['room_price']*$request['days']))*$request['number_of_friend'];###########
-        $book_price+=($request['room_price']*$request['days']);
+        // $book_price=($request['total_price']-($request['room_price']*$request['days']))*$request['number_of_friend'];###########
+        // $book_price+=($request['room_price']*$request['days']);
+        $book_price=$request['total_price'];
         if($request['discount']){
             $book_price=$request['price_after_discount'];
             $user['point']-=50;

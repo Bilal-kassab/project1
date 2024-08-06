@@ -284,6 +284,7 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
             Route::get('show-all-my-staic-trip-books','showAllMyStaicTrips');
             Route::get('all-static-trip','index');
             Route::get('show-static-trip/{id}','showStaticTrip');
+            Route::get('show-price-details/{id}','showPriceDetails');
         });
 
         Route::controller(DynamicBookController::class)->group(function(){
