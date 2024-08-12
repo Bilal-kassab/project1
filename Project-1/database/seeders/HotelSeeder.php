@@ -29,6 +29,13 @@ class HotelSeeder extends Seeder
         for($i=0;$i<10;$i++){
             Room::create([
                 'hotel_id'=>$hotel->id,
+                'capacity'=>1,
+                'price'=>10
+            ]);
+        }
+        for($i=0;$i<10;$i++){
+            Room::create([
+                'hotel_id'=>$hotel->id,
                 'capacity'=>2,
                 'price'=>20
             ]);
@@ -57,6 +64,13 @@ class HotelSeeder extends Seeder
             'area_id'=>1,
             'stars'=>4
         ]);
+        for($i=0;$i<10;$i++){
+            Room::create([
+                'hotel_id'=>$hotel->id,
+                'capacity'=>1,
+                'price'=>15
+            ]);
+        }
         for($i=0;$i<10;$i++){
             Room::create([
                 'hotel_id'=>$hotel->id,
@@ -97,6 +111,13 @@ class HotelSeeder extends Seeder
         for($i=0;$i<10;$i++){
             Room::create([
                 'hotel_id'=>$hotel->id,
+                'capacity'=>1,
+                'price'=>10
+            ]);
+        }
+        for($i=0;$i<10;$i++){
+            Room::create([
+                'hotel_id'=>$hotel->id,
                 'capacity'=>2,
                 'price'=>20
             ]);
@@ -126,6 +147,13 @@ class HotelSeeder extends Seeder
             'stars'=>4
         ]);
 
+        for($i=0;$i<10;$i++){
+            Room::create([
+                'hotel_id'=>$hotel->id,
+                'capacity'=>1,
+                'price'=>10
+            ]);
+        }
         for($i=0;$i<10;$i++){
             Room::create([
                 'hotel_id'=>$hotel->id,

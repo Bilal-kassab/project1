@@ -29,9 +29,21 @@ class RoomController extends Controller
     $start=$request->start_date;
     $end=$request->end_date;
         try{
+            $capacity_1_price=0;
             $capacity_2_price=0;
             $capacity_4_price=0;
             $capacity_6_price=0;
+
+            $capacity_1_count=Room::query()->available($start,$end)->where([
+                ['capacity', '=', 1],
+                ['status', '=', 0],
+                ['hotel_id',$id],
+                ])->count();
+            $capacity_1_price=Room::where([
+                ['capacity', '=', 1],
+                ['hotel_id',$id],
+            ])->get('price')[0]['price'];
+
             $capacity_2_count=Room::query()->available($start,$end)->where([
                 ['capacity', '=', 2],
                 ['status', '=', 0],
@@ -63,6 +75,10 @@ class RoomController extends Controller
             ])->get('price')[0]['price'];
 
         $data=[
+        'capacity_1'=>[
+            'count'=>$capacity_1_count,
+            'price'=>$capacity_1_price
+        ],
         'capacity_2'=>[
             'count'=>$capacity_2_count,
             'price'=>$capacity_2_price
@@ -109,7 +125,8 @@ class RoomController extends Controller
     //         // 'data'=>Room::whereDoesntHave('bookingss')->where('hotel_id',$id)->get(),
     //      ]);
     // }
-    public function get_My_Rooms(){
+    public function get_My_Rooms()
+    {
         try{
             return response()->json([
                     'data'=>Hotel::with('rooms')->where('user_id',auth()->user()->id)->get()
@@ -124,17 +141,17 @@ class RoomController extends Controller
     {
         try{
 
-       $my_hotel=Hotel::where('user_id',auth()->id())->first();
+        $my_hotel=Hotel::where('user_id',auth()->id())->first();
 
-       if(auth()->user()->id != $my_hotel->user_id){
+        if(auth()->user()->id != $my_hotel->user_id){
         return response()->json([
             'message'=>trans('global.not-have-the-hotel')
         ]);
-       }
-       $my_hotel['number_rooms']+=$request->count;
-       $my_hotel->save();
-    $co=$request->count;
-      while($co){
+        }
+        $my_hotel['number_rooms']+=$request->count;
+        $my_hotel->save();
+        $co=$request->count;
+        while($co){
             $data[]=[
             'hotel_id'=>$my_hotel->id,
             'capacity'=>$request->capacity,
@@ -153,17 +170,18 @@ class RoomController extends Controller
             'message'=>trans('global.add'),
         ],200);
     }
+
     public function show($id)
     {
 
         try{
             $room= Room::with(['hotel:id,name,area_id,user_id','hotel.user:id,name,email'])
             ->select('id','capacity','price','hotel_id')->findOrFail($id);
-         }catch(Exception $e){
+        }catch(Exception $e){
             return response()->json([
                 'message'=> trans('global.notfound')
             ],404);
-         }
+        }
 
         return response()->json([
             'data'=> $room
@@ -190,18 +208,19 @@ class RoomController extends Controller
             return response()->json([
                 'message'=>trans('global.update'),
             ],200);
-         }catch(Exception $e){
+        }catch(Exception $e){
             return response()->json([
                 'message'=> $e->getMessage(),
             ],404);
-         }
+        }
     }
+
     public function destroy(DestroyRequest $request)
     {
         if(auth()->user()->id != Hotel::where('id',Room::where('id',$request['id'])->first()->hotel_id)->first()->user_id ){
-         return response()->json([
-             'message'=>trans('global.not-have-the-hotel')
-         ]);
+        return response()->json([
+            'message'=>trans('global.not-have-the-hotel')
+        ]);
         }
         try{
             Room::findOrFail($request['id'])->delete();
@@ -214,6 +233,7 @@ class RoomController extends Controller
                 'message'=>trans('global.delete')
             ],200);
     }
+
     public function change_status_room(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -239,7 +259,4 @@ class RoomController extends Controller
 
     }
 
-
 }
-
-

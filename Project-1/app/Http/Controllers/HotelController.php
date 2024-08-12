@@ -25,6 +25,7 @@ class HotelController extends Controller
         $this->middleware('role:Super Admin', ['only'=> ['index','destroySuperAdmin','changeVisible']]);
 
     }
+    
     public function index()
     {
 
@@ -36,7 +37,6 @@ class HotelController extends Controller
                                                     ->orderBy('stars','desc')->get()
         ],200);
     }
-
 
     public function get_hotel_in_area(Request $request,$id)
     {
@@ -130,24 +130,22 @@ class HotelController extends Controller
             ],200);
     }
 
-
     public function show($id)
-     {
-
+    {
             try{
                 $hotel= Hotel::with(['images','country:id,name','area:id,country_id,name'])
                                 ->select('id','name','number_rooms','stars','area_id','user_id','country_id')
                                 ->findOrFail($id);
-             }catch(\Exception $e){
+            }catch(\Exception $e){
                 return response()->json([
                     'message'=> trans('global.notfound')
                 ],404);
-             }
+            }
 
             return response()->json([
                 'data'=> $hotel
             ],200);
-     }
+    }
 
     public function update(UpdateHotelRequest $request)
     {
@@ -185,8 +183,52 @@ class HotelController extends Controller
         ],200);
     }
 
+    public function add_Hotel_Image(Request $request):JsonResponse
+    {
+        $validator = Validator::make($request->all(), [
+            'images'=> 'present|array|min:1',
+            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'hotel_id'=>'required|numeric|exists:hotels,id'
+        ]);
+
+        if($validator->fails()){
+            return response()->json([
+                'message'=> $validator->errors()->first(),
+            ],422);
+        }
+        $hotel=Hotel::where('id',$request->hotel_id)->first();
+        if(auth()->id() != $hotel->user_id)
+        {
+            return response()->json([
+                'message'=>trans('global.not-permission')
+            ],403);
+        }
+
+        foreach ($request->file('images') as $imagefile){
+            $images = new HotelImage;
+            $images->hotel_id= $hotel->id;
+            $images->save();
+            $image_name=time().$images->id. '.' . $imagefile->getClientOriginalExtension();
+            $imagefile->move('HotelImages/',$image_name);
+            $images->image = "HotelImages/".$image_name;
+            $images->save();
+        }
+
+        // return response()->json([
+        //     'mesaage'=>trans('global.add')
+        // ],200);
+        return response()->json([
+            'message'=>trans('global.add'),
+            'data'=>Hotel::with(['images','country:id,name','area:id,name'])
+                        ->where('id',$images->hotel_id)
+                        ->select('id','name','stars','number_rooms','area_id','user_id','country_id')
+                        ->get(),
+        ],200);
+    }
+
     public function update_Image_Hotel(Request $request)
     {
+        try{
         $validator = Validator::make($request->all(), [
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'image_id'=>'required|numeric|exists:hotel_images,id'
@@ -203,42 +245,37 @@ class HotelController extends Controller
             return response()->json([
                 'message'=>trans('global.not-have-the-hotel')
             ]);
-           }
+        }
+        $hotel_image = HotelImage::findOrFail($request->image_id);
 
-        try{
-            $hotel_image = HotelImage::findOrFail($request->image_id);
-         }catch(\Exception $e){
+        }catch(\Exception $e){
             return response()->json([
                 'message'=> trans('global.notfound')
             ],404);
-         }
-
-
-
+        }
         if(File::exists($hotel_image->image))
         {
             File::delete($hotel_image->image);
         }
-
         $image = $request->file('image');
         $image_name=time() . '.' . $image->getClientOriginalExtension();
         $image->move('HotelImages/',$image_name);
         $hotel_image->image="HotelImages/".$image_name;
         $hotel_image->save();
 
-        $data=[
-            'id'=>$hotel_image->id,
-            'hotel_id'=>$hotel_image->hotel_id,
-            'hotel'=>Hotel::where('id',$hotel_image->hotel_id)->pluck('name'),
-            'image'=> $hotel_image->image,
-            'updated_at'=>$hotel_image->updated_at
-        ];
+        // $data=[
+        //     'id'=>$hotel_image->id,
+        //     'hotel_id'=>$hotel_image->hotel_id,
+        //     'hotel'=>Hotel::where('id',$hotel_image->hotel_id)->pluck('name'),
+        //     'image'=> $hotel_image->image,
+        //     'updated_at'=>$hotel_image->updated_at
+        // ];
         return response()->json([
             'message'=>trans('global.update'),
             'data'=>Hotel::with(['images','country:id,name','area:id,name'])
-                          ->where('id',$hotel_image->hotel_id)
-                          ->select('id','name','stars','number_rooms','area_id','user_id','country_id')
-                          ->get(),
+                        ->where('id',$hotel_image->hotel_id)
+                        ->select('id','name','stars','number_rooms','area_id','user_id','country_id')
+                        ->get(),
         ],200);
     }
 
@@ -372,6 +409,7 @@ class HotelController extends Controller
         ],200);
 
     }
+
     public function get_my_hotel(){
         try{
             return response()->json([

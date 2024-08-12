@@ -23,7 +23,7 @@ class StoreRoomRequest extends FormRequest
     {
         return [
             // 'hotel_id'=>'required|numeric|exists:hotels,id',
-            'capacity'=>'required|numeric|in:2,4,6',
+            'capacity'=>'required|numeric|in:1,2,4,6',
             'price'=>'required|numeric',
             'count'=>'required|min:1|numeric',
         ];

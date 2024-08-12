@@ -448,6 +448,7 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
                 Route::post('delete_hotel','destroy');##
                 Route::post('delete-hotel-for-super-admin','destroySuperAdmin');##
                 Route::get('get_my_hotel','get_my_hotel');
+                Route::post('add_hotel_image','add_Hotel_Image');
             });
 
             Route::controller(RoomController::class)->group(function(){

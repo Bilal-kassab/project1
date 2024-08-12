@@ -31,7 +31,7 @@ class PlaneBookRequest extends FormRequest
             'trip_name'=>'string',
             'number_of_people'=>'required|min:1|numeric',
             'trip_note'=>'string',
-            'plane_trip_id'=>'exists:plane_trips,id',
+            'plane_trip_id'=>'required|exists:plane_trips,id',
             'plane_trip_away_id'=>'exists:plane_trips,id',
         ];
     }

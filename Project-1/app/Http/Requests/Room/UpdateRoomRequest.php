@@ -24,7 +24,7 @@ class UpdateRoomRequest extends FormRequest
     {
         return [
             // 'hotel_id'=>'required|numeric|exists:hotels,id',
-            'capacity'=>'required|in:2,4,6',
+            'capacity'=>'required|in:1,2,4,6',
             'price'=>'required|numeric',
         ];
         // Rule::exists('rooms')->where(function ($query) {

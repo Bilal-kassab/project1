@@ -186,7 +186,7 @@ class DynamicBookController extends Controller
         $Dynamic_book=$this->bookrepository->plane_book($data);
         if($Dynamic_book === 1){
             return response()->json([
-                'message'=>'there is not enough room in this hotel',
+                'message'=>'There are not available seats',
             ],400);
         }
         if($Dynamic_book === 2){
@@ -204,21 +204,21 @@ class DynamicBookController extends Controller
                 'message' => 'Failed to create a trip',
             ], 400);
         }
-        if($Dynamic_book === 5){
-            return response()->json([
-                'message'=>'the room count  of this capacity 2 not enough'
-            ],400);
-        }
-        if($Dynamic_book === 6){
-            return response()->json([
-                'message'=>'the room count  of this capacity 4 not enough'
-            ],400);
-        }
-        if($Dynamic_book === 7){
-            return response()->json([
-                'message'=>'the room count  of this capacity 6 not enough'
-            ],400);
-        }
+        // if($Dynamic_book === 5){
+        //     return response()->json([
+        //         'message'=>'the room count  of this capacity 2 not enough'
+        //     ],400);
+        // }
+        // if($Dynamic_book === 6){
+        //     return response()->json([
+        //         'message'=>'the room count  of this capacity 4 not enough'
+        //     ],400);
+        // }
+        // if($Dynamic_book === 7){
+        //     return response()->json([
+        //         'message'=>'the room count  of this capacity 6 not enough'
+        //     ],400);
+        // }
         if($Dynamic_book === 8){
             return response()->json([
                 'message' => 'bad request',
@@ -376,7 +376,7 @@ class DynamicBookController extends Controller
             }
             if($trip===8){
                 return response()->json([
-                    'message'=>'bad request'
+                    'message'=>'You can not book the return plane trip without going plane trip'
                 ],400);
             }
             if($trip === 55){
@@ -533,7 +533,7 @@ class DynamicBookController extends Controller
                 'message' => 'sorry but your trip have been started',
             ], 400);
         }
-        return response()->json($trip);
+        return response()->json([$trip]);
     }
 
     public function delete_dynamic_trip($id){
