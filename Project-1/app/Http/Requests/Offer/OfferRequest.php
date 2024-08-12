@@ -22,7 +22,7 @@ class OfferRequest extends FormRequest
     public function rules(): array
     {
             return [
-                'ratio'=>'required|decimal:0,1'
+                // 'ratio'=>'required|decimal:0,1'
             ];
     }
 }

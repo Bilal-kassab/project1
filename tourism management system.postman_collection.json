@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "385a96b2-d2f9-424b-918c-6ed7a2b3f978",
+		"_postman_id": "5183f8aa-afe4-48e1-901c-42307bc66765",
 		"name": "tourism management system Copy 12",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30821440"
 	},
 	"item": [
 		{
@@ -19612,6 +19613,36 @@
 									"body": "{\n    \"message\": \"photo updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Super Admin\",\n        \"email\": \"SA@gmail.com\",\n        \"image\": null\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "payment-inofo",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/payment-inofo",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"payment-inofo"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -22042,6 +22073,113 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Eiffel Tower\",\n            \"place_price\": \"20.00\",\n            \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n            \"visible\": 1,\n            \"area_id\": 4,\n            \"images\": [],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Cultural\"\n                }\n            ],\n            \"area\": {\n                \"id\": 4,\n                \"country_id\": 2,\n                \"name\": \"Paris\",\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get-top-places",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/get-top-places",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"get-top-places"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get-top-places",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/get-top-places",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"get-top-places"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 11 Aug 2024 23:04:58 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 11 Aug 2024 23:04:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Eiffel Tower\",\n            \"place_price\": \"20.00\",\n            \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"bookings_count\": 3,\n            \"comments\": [\n                {\n                    \"id\": 1,\n                    \"place_id\": 1,\n                    \"user_id\": 7,\n                    \"comment\": \"i love this place!!!!!\",\n                    \"created_at\": \"2024-08-11T23:02:42.000000Z\",\n                    \"user\": {\n                        \"id\": 7,\n                        \"name\": \"User\",\n                        \"image\": \"ProfileImage/1723417492.png\"\n                    }\n                }\n            ],\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"place_id\": 1,\n                    \"image\": \"PlaceImages/1718441623.png\"\n                }\n            ],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Cultural\"\n                }\n            ],\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\",\n                \"country_id\": 2,\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Musée du Louvre\",\n            \"place_price\": \"20.00\",\n            \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n            \"area_id\": 4,\n            \"visible\": 1,\n            \"bookings_count\": 3,\n            \"comments\": [\n                {\n                    \"id\": 2,\n                    \"place_id\": 2,\n                    \"user_id\": 7,\n                    \"comment\": \"nice!\",\n                    \"created_at\": \"2024-08-11T23:03:45.000000Z\",\n                    \"user\": {\n                        \"id\": 7,\n                        \"name\": \"User\",\n                        \"image\": \"ProfileImage/1723417492.png\"\n                    }\n                }\n            ],\n            \"images\": [\n                {\n                    \"id\": 2,\n                    \"place_id\": 2,\n                    \"image\": \"PlaceImages/1718441623.png\"\n                }\n            ],\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Islamic\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Cultural\"\n                }\n            ],\n            \"area\": {\n                \"id\": 4,\n                \"name\": \"Paris\",\n                \"country_id\": 2,\n                \"country\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                }\n            }\n        }\n    ]\n}"
 								}
 							]
 						}

@@ -456,8 +456,8 @@ class StaticBookController extends Controller
             $trip=booking::findOrFail($id);
             $booking=BookingStaticTrip::where('static_trip_id',$id)->exists();
             if(!$booking){
-                // $trip->price=$trip->new_price??$trip->price;
-                $trip['new_price']=$request['ratio']*$trip->price;
+                $price=$trip['new_price']??$trip['price'];
+                $trip['new_price']=$price-($request['ratio']*$price);
                 $trip->save();
             }
             else{

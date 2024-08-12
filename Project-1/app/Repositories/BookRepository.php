@@ -449,6 +449,9 @@ class BookRepository implements BookRepositoryInterface
             $total_price=0.0;
             $total_price+=(($static_trip['price']-($room['current_price']*$days)));
             $placePrice=$total_price-$goingPlaneTrip-$returnPlaneTrip;
+
+            $placePrice+=($placePrice*0.2);
+            
             $total_price*=$request['number_of_friend'];
             $total_price+=$rooms_needed*$room['current_price']*$days;
             $price_after_discount=null;
@@ -456,7 +459,24 @@ class BookRepository implements BookRepositoryInterface
             {
                 $price_after_discount=$total_price-($total_price*0.5);
             }
-
+            // $ratio=0.2;
+            // $room_price=$room['current_price']-($room['current_price']*$ratio);
+            // $ticket_price_for_going_trip=$room['current_price']-($room['current_price']*$ratio);
+            // $ticket_price_for_return_trip=$room['current_price']-($room['current_price']*$ratio);
+            // $ticket_price_for_places=$room['current_price']-($room['current_price']*$ratio);
+            // $room_price=$room['current_price']-($room['current_price']*$ratio);
+            // $data=[
+            //     'trip_id'=>(int)$id,#
+            //     'number_of_friend'=>(int)$request['number_of_friend'],#
+            //     'rooms_needed'=>$rooms_needed,#
+            //     'days'=>(int)$days,#
+            //     'room_price'=>(doubleval($room_price)*$discount)??null,#
+            //     'ticket_price_for_going_trip'=>$goingPlaneTrip*$discount,
+            //     'ticket_price_for_return_trip'=>$returnPlaneTrip*$discount,
+            //     'ticket_price_for_places'=>$placePrice*$discount,
+            //     'total_price'=>$total_price*$discount,#
+            //     'price_after_discount'=>$price_after_discount,#
+            // ];
             $data=[
                 'trip_id'=>(int)$id,#
                 'number_of_friend'=>(int)$request['number_of_friend'],#

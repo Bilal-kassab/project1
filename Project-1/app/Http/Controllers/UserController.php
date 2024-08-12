@@ -7,6 +7,7 @@ use App\Models\Bank;
 use App\Models\ConfirmCode;
 use App\Models\Country;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -330,5 +331,19 @@ class UserController extends Controller
             'data'=>$data,
         ],200);
 
+    }
+
+    public function paymentInof()
+    {
+        try{
+            $info=Bank::where('email',auth()->user()->email)->first();
+             return response()->json([
+                'data'=>$info
+             ],200);
+        }catch(Exception $ex){
+            return response()->json([
+                'message'=>$ex->getMessage()
+            ]);
+        }
     }
 }

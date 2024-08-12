@@ -156,4 +156,17 @@ class ReportController extends Controller
         ],200);
     }
 
+    public function getTheTopVisitedPlaces()
+    {
+            $topPlaces = Place::withCount(['bookings'])
+                            ->whereHas('bookings')
+                            ->orderBy('bookings_count', 'desc')
+                            ->take(10)
+                            ->with(['comments','comments.user:id,name,image','images','categories:id,name','area:id,name,country_id','area.country:id,name'])
+                            ->get();
+        return response()->json([
+            'data'=>$topPlaces
+        ],200);
+    }
+
 }
