@@ -27,7 +27,7 @@ class StaticTripSeeder extends Seeder
             'source_trip_id' => 1,
             'destination_trip_id' => 2,
             'trip_name' => 'Seeder Trip',
-            'price' => 320,
+            'price' => 320*0.2,
             'number_of_people' => 12,
             'trip_capacity' => 6,
             'start_date' => $plane_trip['flight_date'],// to submit the flight date same as start date trip
@@ -39,13 +39,13 @@ class StaticTripSeeder extends Seeder
         $book_place = BookPlace::create([
             'book_id' => $booking->id,
             'place_id' => 1,
-            'current_price' => Place::where('id', 1)->first()->place_price,
+            'current_price' => Place::where('id', 1)->first()->place_price*0.2,
         ]);
 
         $book_place = BookPlace::create([
             'book_id' => $booking->id,
             'place_id' => 2,
-            'current_price' => Place::where('id', 2)->first()->place_price,
+            'current_price' => Place::where('id', 2)->first()->place_price*0.2,
         ]);
 
         ActivityBook::create([

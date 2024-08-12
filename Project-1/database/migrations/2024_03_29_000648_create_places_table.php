@@ -23,7 +23,8 @@ return new class extends Migration
             $table->boolean('visible')->default(true);
             // $table->unsignedBigInteger('category_id')->nullable();
             // $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
-
+            $table->string('lat')->nullable();
+            $table->string('long')->nullable();
             $table->timestamps();
         });
     }

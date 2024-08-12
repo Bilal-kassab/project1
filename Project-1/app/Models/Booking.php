@@ -26,6 +26,7 @@ class Booking extends Model
         'end_date',
         'stars',
         'trip_note',
+        'telegram_link',
         'type',
     ];
     protected $hidden = [
@@ -74,8 +75,9 @@ class Booking extends Model
     }
     public function places():BelongsToMany
     {
-        return $this->belongsToMany(Place::class,'book_places','book_id','place_id')->with(['images','area:id,name']);
+        return $this->belongsToMany(Place::class,'book_places','book_id','place_id')->with(['images','area:id,name'])->withPivot('current_price');
     }
+
 
     public function activities():BelongsToMany
     {

@@ -68,6 +68,7 @@ class StaticBookController extends Controller
                 'hotel_id'=>$request->hotel_id,
                 'trip_name'=>$request->trip_name,
                 'ratio'=>$request->ratio,
+                'telegram_link'=>$request->telegram_link,
                 'number_of_people'=>$request->number_of_people,
                 'trip_capacity'=>$request->trip_capacity,
                 'start_date'=>$request->start_date,
@@ -113,21 +114,22 @@ class StaticBookController extends Controller
     }
     public function update_Admin(UpdateStaticTripRequest $request,$id)
     {
+        try{
+            $booking= Booking::findOrFail($id);
         $data=[
             // 'hotel_id'=>$request->hotel_id,
-            'trip_name'=>$request->trip_name,
-            'price'=>$request->price,
             'number_of_people'=>$request->add_new_people,
-            // 'trip_capacity'=>$request->trip_capacity,
-            'start_date'=>$request->start_date,
-            'end_date'=>$request->end_date,
-            'trip_note'=>$request->trip_note,
             'places'=>$request->places,
-            'plane_trip'=>$request->plane_trip,
-            'plane_trip_away'=>$request->plane_trip_away,
+            'trip_note'=>$request->trip_note,
+            // 'trip_capacity'=>$request->trip_capacity,
+            'trip_name'=>$booking->trip_name,
+            // 'price'=>$request->price,
+            'start_date'=>$booking->start_date,
+            'end_date'=>$booking->end_date,
+            'plane_trip'=>$booking?->plane_trips[0]['id'],
+            'plane_trip_away'=>$booking?->plane_trips[1]['id'],
         ];
-        try {
-            $booking= Booking::findOrFail($id);
+
             if(auth()->id() != $booking->user_id)
             {
                 return response()->json([

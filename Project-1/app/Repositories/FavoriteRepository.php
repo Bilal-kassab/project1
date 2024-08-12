@@ -12,7 +12,7 @@ class FavoriteRepository implements FavoriteRepositoryInterface
     public function favoritePlaces()
     {
        return Favorite::with('place.categories')
-                    ->where('user_id',7)
+                    ->where('user_id',auth()->id())
                     ->select('id','place_id')
                     ->get();
     }
@@ -52,11 +52,11 @@ class FavoriteRepository implements FavoriteRepositoryInterface
 
         $trips = Booking::whereHas('places', function ($query) use ($placeIds) {
             $query->whereIn('places.id', $placeIds);
-        })->get();
+        })->where('type','static')->get();
 
         return $trips;
 
     }
 
-    
+
 }

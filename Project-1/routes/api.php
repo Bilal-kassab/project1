@@ -99,14 +99,8 @@ Route::post('forget-password',[UserController::class,'forgetPassword_SendEmail']
 Route::post('set-new-password',[UserController::class,'forgetPassword_SetPassword']);
 
 Route::get('get_all_country2',[CountryController::class,'index']);
-Route::group(['middleware'=>['auth:sanctum']], function () {
-    /*
-    Route::get('check', function () {
-        return response()->json([
-            'Message'=> 'Check',
-        ],200);
-    });
-    */
+
+Route::group(['middleware'=>['auth:sanctum','role:User']], function () {
 
     Route::get('logout',[UserController::class,'logout']);
     Route::get('profile',[UserController::class,'profile']);
@@ -124,13 +118,13 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
             Route::post('update-profile','updateProfile');
             Route::post('delete-profile-photo','deleteProfilePhoto');
             Route::post('change-profile-photo','changeProfilePhoto');
+            Route::get('payment-inofo','paymentInof');
         });
 
         Route::controller(CountryController::class)->group(function(){
             Route::get('show_country/{id}','show');
             Route::get('get_all_country','index');
             Route::post('search-for-country','search');
-            Route::get('payment-inofo','paymentInof');
         });
 
         Route::controller(CategoryController::class)->group(function(){
@@ -245,7 +239,8 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
 
 ################       Admin      ###########################
 
-Route::post('admin-login',[AdminController::class,'login'])->middleware('approve-admin');
+Route::post('admin-login',[AdminController::class,'login']);
+// ->middleware('approve-admin','role:super admin|trip manger|Hotel admin|Airport admin|Admin');/
 Route::post('add-admin',[AdminController::class,'addAdmin']);
 Route::controller(RoleController::class)->group(function () {
     Route::get('get-all-roles','getAllRoles');

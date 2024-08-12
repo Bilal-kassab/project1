@@ -76,6 +76,7 @@ class BookRepository implements BookRepositoryInterface
                 // 'start_date' => $plane_trip['flight_date'],// to submit the flight date same as start date trip
                 // 'end_date' => $plane_trip_away['flight_date'],// to submit the flight date same as end date trip
                 'trip_note' => $request['trip_note'],
+                'telegram_link'=>$request['telegram_link'],
                 'type' => 'static',
             ]);
             foreach ($request['places'] as $place) {
@@ -153,21 +154,21 @@ class BookRepository implements BookRepositoryInterface
             if($date>=$trip_date){
                 return 4;
             }
-             // the old period
-            $datetime1 = new DateTime($booking['start_date']);
-            $datetime2 = new DateTime($booking['end_date']);
-            $interval = $datetime1->diff($datetime2);
-            $old_period = $interval->format('%a');
-            // the new period
-            $datetime3 = new DateTime($request['start_date']);
-            $datetime4 = new DateTime($request['end_date']);
-            $interval = $datetime3->diff($datetime4);
-            $new_period = $interval->format('%a');
-            //check if the new period a similar the ancient period
-            if($old_period != $new_period){
-                // return 'You should choose a period similar to the ancient period';
-                return 5;
-            }
+            //  // the old period
+            // $datetime1 = new DateTime($booking['start_date']);
+            // $datetime2 = new DateTime($booking['end_date']);
+            // $interval = $datetime1->diff($datetime2);
+            // $old_period = $interval->format('%a');
+            // // the new period
+            // $datetime3 = new DateTime($request['start_date']);
+            // $datetime4 = new DateTime($request['end_date']);
+            // $interval = $datetime3->diff($datetime4);
+            // $new_period = $interval->format('%a');
+            // //check if the new period a similar the ancient period
+            // if($old_period != $new_period){
+            //     // return 'You should choose a period similar to the ancient period';
+            //     return 5;
+            // }
             // $trip_price=0;
             // to check if there are an enough rooms in this hotel
             $bookRoomCount=BookingRoom::where('book_id',$booking['id'])->count();
@@ -177,7 +178,6 @@ class BookRepository implements BookRepositoryInterface
                 $numberOfOldSeat=0;
             }
             $hotel_id=$booking->rooms->first()['hotel']['id'];// get hotel id from existing booking room
-
 
             $room_count = $request['number_of_people'] / $booking['trip_capacity'];
             // show if there are rooms to book
@@ -193,15 +193,15 @@ class BookRepository implements BookRepositoryInterface
             // show if there are available_seats to book in going trip
             $plane_trip = PlaneTrip::where('id', $request['plane_trip'])->first();
             if ($plane_trip['available_seats'] < $request['number_of_people']+$numberOfOldSeat) {
-                 return 2;
+                return 2;
             }
-
             // show if there are available_seats to book in return trip
             $plane_trip_away = PlaneTrip::where('id', $request['plane_trip_away'])->first();
             if ($plane_trip_away['available_seats'] < $request['number_of_people']+$numberOfOldSeat)###
             {
                 return 3;
             }
+
 
             $bookRoom=BookingRoom::where('book_id',$booking['id'])->first();
             if(($request['start_date'] != $booking['start_date']) || ($request['end_date'] != $booking['end_date']))
@@ -338,6 +338,7 @@ class BookRepository implements BookRepositoryInterface
                 'end_date'=>$book['end_date'],
                 'stars'=>$book['stars'],
                 'trip_note'=>$book['trip_note'],
+                'telegram_link'=>$book['telegram_link'],
                 'type'=>$book['type'],
                 'rooms_count'=>$book['rooms_count'],
             ];
@@ -381,7 +382,18 @@ class BookRepository implements BookRepositoryInterface
                 'activities'=>$activities,
                 'source_trip'=>$book->source_trip,
                 'destination_trip'=>$book->destination_trip,
-                'places'=>$book->places,
+                'places'=>$book->places->map(function($place) {
+                    return [
+                        'id' => $place->id,
+                        'name' => $place->name,
+                        'place_price' => $place->pivot->current_price,
+                        'text' => $place->text,
+                        //'area_id' => $place->area_id,
+                        'visible' => $place->visible,
+                        'images'=>$place->images,
+                        'area'=>$place->area
+                    ];
+                }),
                 'going_trip'=>$going_trip,
                 'return_trip'=>$return_trip,
                 'hotel'=>$hotel
@@ -448,10 +460,11 @@ class BookRepository implements BookRepositoryInterface
             $returnPlaneTrip=$plane_trip[1]['current_price']??0;
             $total_price=0.0;
             $total_price+=(($static_trip['price']-($room['current_price']*$days)));
+
             $placePrice=$total_price-$goingPlaneTrip-$returnPlaneTrip;
 
-            $placePrice+=($placePrice*0.2);
-            
+            //$placePrice+=($placePrice*0.2);
+
             $total_price*=$request['number_of_friend'];
             $total_price+=$rooms_needed*$room['current_price']*$days;
             $price_after_discount=null;
@@ -459,12 +472,6 @@ class BookRepository implements BookRepositoryInterface
             {
                 $price_after_discount=$total_price-($total_price*0.5);
             }
-            // $ratio=0.2;
-            // $room_price=$room['current_price']-($room['current_price']*$ratio);
-            // $ticket_price_for_going_trip=$room['current_price']-($room['current_price']*$ratio);
-            // $ticket_price_for_return_trip=$room['current_price']-($room['current_price']*$ratio);
-            // $ticket_price_for_places=$room['current_price']-($room['current_price']*$ratio);
-            // $room_price=$room['current_price']-($room['current_price']*$ratio);
             // $data=[
             //     'trip_id'=>(int)$id,#
             //     'number_of_friend'=>(int)$request['number_of_friend'],#
@@ -477,15 +484,21 @@ class BookRepository implements BookRepositoryInterface
             //     'total_price'=>$total_price*$discount,#
             //     'price_after_discount'=>$price_after_discount,#
             // ];
+            $ratio=0.2;
+            $room_price=$room['current_price']-($room['current_price']*$ratio);
+            $ticket_price_for_going_trip=$goingPlaneTrip-($goingPlaneTrip*$ratio);
+            $ticket_price_for_return_trip=$returnPlaneTrip-($returnPlaneTrip*$ratio);
+            $ticket_price_for_places=$placePrice-($placePrice*$ratio);
+            $total_price=$room_price+$ticket_price_for_going_trip+$ticket_price_for_return_trip+$ticket_price_for_places;
             $data=[
                 'trip_id'=>(int)$id,#
                 'number_of_friend'=>(int)$request['number_of_friend'],#
                 'rooms_needed'=>$rooms_needed,#
                 'days'=>(int)$days,#
-                'room_price'=>(doubleval($room['current_price'])*$discount)??null,#
-                'ticket_price_for_going_trip'=>$goingPlaneTrip*$discount,
-                'ticket_price_for_return_trip'=>$returnPlaneTrip*$discount,
-                'ticket_price_for_places'=>$placePrice*$discount,
+                'room_price'=>(doubleval($room_price)*$discount)??null,#
+                'ticket_price_for_going_trip'=>$ticket_price_for_going_trip*$discount,
+                'ticket_price_for_return_trip'=>$ticket_price_for_return_trip*$discount,
+                'ticket_price_for_places'=>$ticket_price_for_places*$discount,
                 'total_price'=>$total_price*$discount,#
                 'price_after_discount'=>$price_after_discount,#
             ];

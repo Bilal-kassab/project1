@@ -14,9 +14,9 @@ class CheckVerfiyCode
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    {   
+    {
         $user=auth()->user();
-        if ( is_null($user['email_verified_at'])) {
+        if (is_null($user['email_verified_at'])) {
             return response()->json([
                 'message'=>'verfiy ur email plz'
             ],200);

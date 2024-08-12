@@ -28,6 +28,8 @@ class StorePlaceRequest extends FormRequest
             'category_ids.*'=> 'required|numeric|exists:categories,id',
             'place_price'=> 'required|numeric|max:10000',
             'text'=> 'string|max:1000',
+            'lat'=> 'string',
+            'long'=> 'string',
             'images'=> 'required|array|min:2',
             'images.*' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];

@@ -40,6 +40,8 @@ class PlaceController extends Controller
             'text'=> $request->text,
             'place_price'=> $request->place_price,
             'area_id'=> $request->area_id,
+            'lat'=>$request->lat,
+            'long'=>$request->long,
         ]);
 
         foreach( $request->category_ids as $category_id ){
@@ -262,7 +264,7 @@ class PlaceController extends Controller
 
         try{
             $place= Place::with(['comments','comments.user:id,name,image','images','categories:id,name','area:id,name,country_id','area.country:id,name'])
-                            ->select('id','name','place_price','text','area_id','visible')
+                            ->select('id','name','place_price','text','area_id','visible','lat','long')
                             ->findOrFail($id);
          }catch(\Exception $e){
             return response()->json([

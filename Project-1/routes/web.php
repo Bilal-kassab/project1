@@ -8,6 +8,7 @@ use App\Http\Controllers\StaticBookController;
 use App\Listeners\SendWebNotification;
 use App\Mail\TestMail;
 use App\Models\Booking;
+use App\Models\BookPlace;
 use App\Models\Place;
 use App\Models\PlaneTrip;
 use App\Models\User;
@@ -38,6 +39,29 @@ use Illuminate\Support\Facades\Validator;
     // return "Done send";
     // return $date=Carbon::now()->format('Y-m-d');
 // });
+Route::get('/', function () {
+    $book=Booking::where('type','static')
+    ->AvailableRooms()->with('placesss')
+    ->findOrFail(1);
+    $places=BookPlace::where('book_id',$book->id)->with('places')->get();
+
+    $result = [
+        'trip_id' => $book->id,
+        'trip_name' => $book->name,
+        'places' => $book->placesss->map(function($place) {
+            return [
+                'id' => $place->id,
+                'name' => $place->name,
+                'current_price' => $place->pivot->current_price,
+                'text' => $place->text,
+                'area_id' => $place->area_id,
+                'visible' => $place->visible,
+            ];
+        })
+    ];
+
+    return $result['places'];
+});
 
 // Route::post('/', function (Request $request) {
 //     // return Lang::locale();

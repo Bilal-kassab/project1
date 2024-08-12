@@ -19,6 +19,8 @@ class Place extends Model
     'area_id',
     'category_id',
     'visible',
+    'lat',
+    'long'
     ];
 
     protected $hidden = [

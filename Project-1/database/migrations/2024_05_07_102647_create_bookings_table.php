@@ -31,6 +31,7 @@ return new class extends Migration
             $table->date('end_date')->nullable();
             $table->decimal('stars')->default(0);
             $table->string('trip_note')->nullable();
+            $table->string('telegram_link')->nullable();
             $table->enum('type',['static','dynamic','hotel','plane']);
             $table->timestamps();
         });

@@ -107,6 +107,11 @@ class UserController extends Controller
                 'message' => trans('auth.failed')
             ],401);
         }
+        if(!$user['email_verified_at']){
+            return response()->json([
+                'message'=>trans('global.not-authorization')
+            ],200);
+        }
         $token = $user->createToken('token')->plainTextToken;
         $user->fcm_token=$loginUserData['fcm_token']??null;
         $user->save();

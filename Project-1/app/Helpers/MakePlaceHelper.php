@@ -9,13 +9,15 @@ use App\Models\PlaceImage;
 
 class MakePlaceHelper
 {
-    public static function makePlace($name,$place_price,$text,$area_id,$category_ids)
+    public static function makePlace($name,$place_price,$text,$area_id,$category_ids,$lat,$long)
     {
         $place=Place::create([
             "name"=> $name,
             "place_price"=> $place_price,
             "area_id"=> $area_id,
             'text'=> $text,
+            'lat'=>$lat,
+            'long'=>$long,
         ]);
 
         PlaceImage::create([
