@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "f4808f28-c046-4ea1-89b2-c241fb9260ae",
-		"name": "tourism management system Copy 7",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30821440"
+		"_postman_id": "385a96b2-d2f9-424b-918c-6ed7a2b3f978",
+		"name": "tourism management system Copy 12",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -3793,7 +3792,7 @@
 									"query": [
 										{
 											"key": "",
-											"value": null,
+											"value": "",
 											"disabled": true
 										}
 									]
@@ -11785,18 +11784,18 @@
 													"formdata": [
 														{
 															"key": "start_date",
-															"value": "2024-06-21",
+															"value": "2024-08-14",
 															"type": "text"
 														},
 														{
 															"key": "end_date",
-															"value": "2024-06-26",
+															"value": "2024-08-20",
 															"type": "text"
 														}
 													]
 												},
 												"url": {
-													"raw": "http://127.0.0.1:8000/api/admin/get_all_room/3",
+													"raw": "http://127.0.0.1:8000/api/admin/get_all_room/1",
 													"protocol": "http",
 													"host": [
 														"127",
@@ -11809,7 +11808,7 @@
 														"api",
 														"admin",
 														"get_all_room",
-														"3"
+														"1"
 													]
 												}
 											},
@@ -11823,11 +11822,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Wed, 29 May 2024 11:39:29 GMT"
+													"value": "Sun, 11 Aug 2024 23:36:01 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Wed, 29 May 2024 11:39:29 GMT"
+													"value": "Sun, 11 Aug 2024 23:36:01 GMT"
 												},
 												{
 													"key": "Connection",
@@ -11851,7 +11850,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "58"
+													"value": "59"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -11859,7 +11858,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"capacity_2\": {\n            \"count\": 10,\n            \"price\": \"20.00\"\n        },\n        \"capacity_4\": {\n            \"count\": 10,\n            \"price\": \"30.00\"\n        },\n        \"capacity_6\": {\n            \"count\": 10,\n            \"price\": \"40.00\"\n        }\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"capacity_1\": {\n            \"count\": 5,\n            \"price\": \"100.00\"\n        },\n        \"capacity_2\": {\n            \"count\": 1,\n            \"price\": \"20.00\"\n        },\n        \"capacity_4\": {\n            \"count\": 9,\n            \"price\": \"28.00\"\n        },\n        \"capacity_6\": {\n            \"count\": 7,\n            \"price\": \"45.00\"\n        }\n    }\n}"
 										}
 									]
 								}
@@ -12536,6 +12535,153 @@
 											],
 											"cookie": [],
 											"body": "{\n    \"message\": \"updated succesfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"hotel_update\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 11,\n            \"visible\": 1,\n            \"area_id\": 1,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"images\": [],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            }\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "add_image_Hotel",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "hotel_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "images[0]",
+													"type": "file",
+													"src": "/E:/BMW/FB_IMG_1608255373496.jpg"
+												},
+												{
+													"key": "images[1]",
+													"type": "file",
+													"src": "/E:/BMW/FB_IMG_1611096347203.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/add_hotel_image",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"add_hotel_image"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "add_image_Hotel",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "hotel_id",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "images[0]",
+															"type": "file",
+															"src": "/E:/BMW/FB_IMG_1608255373496.jpg"
+														},
+														{
+															"key": "images[1]",
+															"type": "file",
+															"src": "/E:/BMW/FB_IMG_1611096347203.jpg"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/admin/add_hotel_image",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"admin",
+														"add_hotel_image"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Sun, 11 Aug 2024 23:18:19 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Sun, 11 Aug 2024 23:18:19 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Added succesfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\",\n            \"stars\": \"4.00\",\n            \"number_rooms\": 30,\n            \"area_id\": 1,\n            \"user_id\": 3,\n            \"country_id\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"hotel_id\": 1,\n                    \"image\": \"HotelImages/1723417856.jpg\"\n                },\n                {\n                    \"id\": 2,\n                    \"hotel_id\": 1,\n                    \"image\": \"HotelImages/17234180322.jpg\"\n                },\n                {\n                    \"id\": 3,\n                    \"hotel_id\": 1,\n                    \"image\": \"HotelImages/17234182653.jpg\"\n                },\n                {\n                    \"id\": 4,\n                    \"hotel_id\": 1,\n                    \"image\": \"HotelImages/17234182994.jpg\"\n                },\n                {\n                    \"id\": 5,\n                    \"hotel_id\": 1,\n                    \"image\": \"HotelImages/17234182995.jpg\"\n                }\n            ],\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"area\": {\n                \"id\": 1,\n                \"name\": \"Damascus\"\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -15475,22 +15621,11 @@
 									]
 								}
 							],
-							"auth": {
-								"type": "bearer",
-								"bearer": [
-									{
-										"key": "token",
-										"value": "21|o40PRlxpqNaB9UiwU9ejClfCYXYN32NtGFLKxYFnbe075fab",
-										"type": "string"
-									}
-								]
-							},
 							"event": [
 								{
 									"listen": "prerequest",
 									"script": {
 										"type": "text/javascript",
-										"packages": {},
 										"exec": [
 											""
 										]
@@ -15500,7 +15635,6 @@
 									"listen": "test",
 									"script": {
 										"type": "text/javascript",
-										"packages": {},
 										"exec": [
 											""
 										]
@@ -16330,22 +16464,11 @@
 							]
 						}
 					],
-					"auth": {
-						"type": "bearer",
-						"bearer": [
-							{
-								"key": "token",
-								"value": "21|o40PRlxpqNaB9UiwU9ejClfCYXYN32NtGFLKxYFnbe075fab",
-								"type": "string"
-							}
-						]
-					},
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
 								"type": "text/javascript",
-								"packages": {},
 								"exec": [
 									""
 								]
@@ -16355,7 +16478,6 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"packages": {},
 								"exec": [
 									""
 								]
@@ -17473,7 +17595,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "24|wQBah6u1l1YEpURXEpdXHqsZu1R9XSQmuxcEOSN9ec23804b",
+						"value": "1|Oftb20peE7Pk6xlMc2cJ3teOnPsIJhfaLRUvLJQ263facbb2",
 						"type": "string"
 					}
 				]
@@ -17483,7 +17605,6 @@
 					"listen": "prerequest",
 					"script": {
 						"type": "text/javascript",
-						"packages": {},
 						"exec": [
 							""
 						]
@@ -17493,7 +17614,6 @@
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
-						"packages": {},
 						"exec": [
 							""
 						]
@@ -20093,7 +20213,7 @@
 									"query": [
 										{
 											"key": "",
-											"value": null,
+											"value": "",
 											"disabled": true
 										}
 									]
@@ -23397,7 +23517,7 @@
 									},
 									"response": [
 										{
-											"name": "New Request",
+											"name": "get_all_my_plane_book",
 											"originalRequest": {
 												"method": "GET",
 												"header": [
@@ -23434,11 +23554,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Sat, 15 Jun 2024 08:32:02 GMT"
+													"value": "Mon, 12 Aug 2024 00:23:12 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Sat, 15 Jun 2024 08:32:02 GMT"
+													"value": "Mon, 12 Aug 2024 00:23:12 GMT"
 												},
 												{
 													"key": "Connection",
@@ -23462,7 +23582,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "59"
+													"value": "57"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -23470,7 +23590,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france updated\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 2,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-06-01\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 1,\n            \"start_date\": \"2024-06-01\",\n            \"end_date\": \"2024-06-05\",\n            \"trip_note\": \"hi my friend\"\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 1,\n            \"source_trip_id\": 2,\n            \"destination_trip_id\": 1,\n            \"trip_name\": \"to france\",\n            \"price\": \"400.00\",\n            \"number_of_people\": 1,\n            \"start_date\": \"2024-06-05\",\n            \"end_date\": \"2024-06-05\",\n            \"trip_note\": \"hi my friend\"\n        }\n    ]\n}"
+											"body": "{\n    \"data\": {\n        \"finished_trip\": [\n            {\n                \"id\": 8,\n                \"user_id\": 7,\n                \"source_trip_id\": 1,\n                \"destination_trip_id\": 2,\n                \"trip_name\": \"to france\",\n                \"price\": \"100.00\",\n                \"number_of_people\": 1,\n                \"start_date\": \"2024-08-11\",\n                \"end_date\": \"2024-08-14\",\n                \"trip_note\": \"hi my friend\"\n            }\n        ],\n        \"future_trip\": [\n            {\n                \"id\": 7,\n                \"user_id\": 7,\n                \"source_trip_id\": 1,\n                \"destination_trip_id\": 2,\n                \"trip_name\": \"to france\",\n                \"price\": \"100.00\",\n                \"number_of_people\": 1,\n                \"start_date\": \"2024-08-12\",\n                \"end_date\": \"2024-08-14\",\n                \"trip_note\": \"hi my friend\"\n            }\n        ]\n    }\n}"
 										}
 									]
 								}
@@ -24292,12 +24412,12 @@
 													"formdata": [
 														{
 															"key": "start_date",
-															"value": "2024-5-30",
+															"value": "2024-08-15",
 															"type": "text"
 														},
 														{
 															"key": "end_date",
-															"value": "2024-6-6",
+															"value": "2024-08-28",
 															"type": "text"
 														}
 													]
@@ -24330,11 +24450,11 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 23:30:56 GMT"
+													"value": "Mon, 12 Aug 2024 00:34:38 GMT"
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 28 May 2024 23:30:56 GMT"
+													"value": "Mon, 12 Aug 2024 00:34:38 GMT"
 												},
 												{
 													"key": "Connection",
@@ -24358,7 +24478,7 @@
 												},
 												{
 													"key": "X-RateLimit-Remaining",
-													"value": "56"
+													"value": "57"
 												},
 												{
 													"key": "Access-Control-Allow-Origin",
@@ -24366,7 +24486,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": 31,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 32,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 33,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 34,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 35,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 36,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 37,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 38,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 39,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 40,\n            \"hotel_id\": 3,\n            \"capacity\": 2,\n            \"status\": 0,\n            \"price\": \"20.00\"\n        },\n        {\n            \"id\": 41,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 42,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 43,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 44,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 45,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 46,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 47,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 48,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 49,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 50,\n            \"hotel_id\": 3,\n            \"capacity\": 4,\n            \"status\": 0,\n            \"price\": \"30.00\"\n        },\n        {\n            \"id\": 51,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 52,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 53,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 54,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 55,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 56,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 57,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 58,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 59,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        },\n        {\n            \"id\": 60,\n            \"hotel_id\": 3,\n            \"capacity\": 6,\n            \"status\": 0,\n            \"price\": \"40.00\"\n        }\n    ]\n}"
+											"body": "{\n    \"data\": {\n        \"capacity_1\": {\n            \"count\": 10,\n            \"price\": \"10.00\"\n        },\n        \"capacity_2\": {\n            \"count\": 8,\n            \"price\": \"20.00\"\n        },\n        \"capacity_4\": {\n            \"count\": 8,\n            \"price\": \"30.00\"\n        },\n        \"capacity_6\": {\n            \"count\": 8,\n            \"price\": \"40.00\"\n        }\n    }\n}"
 										}
 									]
 								}
@@ -24402,7 +24522,7 @@
 									"query": [
 										{
 											"key": "",
-											"value": null,
+											"value": "",
 											"disabled": true
 										}
 									]
@@ -25003,12 +25123,12 @@
 										},
 										{
 											"key": "start_date",
-											"value": "2024-06-15",
+											"value": "2024-08-15",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-06-30",
+											"value": "2024-08-30",
 											"type": "text"
 										},
 										{
@@ -25573,11 +25693,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Jul 2024 22:55:48 GMT"
+											"value": "Mon, 12 Aug 2024 00:19:45 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 16 Jul 2024 22:55:48 GMT"
+											"value": "Mon, 12 Aug 2024 00:19:45 GMT"
 										},
 										{
 											"key": "Connection",
@@ -25609,7 +25729,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"user_id\": 7,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1350.00\",\n            \"new_price\": null,\n            \"number_of_people\": 1,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-08-15\",\n            \"end_date\": \"2024-08-30\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"hotel\",\n            \"rooms_count\": 3,\n            \"source_trip\": {\n                \"id\": 1,\n                \"name\": \"Syria\"\n            },\n            \"destination_trip\": {\n                \"id\": 2,\n                \"name\": \"France\"\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"data\": {\n        \"finished_trip\": [\n            {\n                \"id\": 6,\n                \"user_id\": 7,\n                \"source_trip_id\": 1,\n                \"destination_trip_id\": 2,\n                \"trip_name\": \"to france\",\n                \"price\": \"1350.00\",\n                \"new_price\": null,\n                \"number_of_people\": 1,\n                \"trip_capacity\": null,\n                \"start_date\": \"2024-08-11\",\n                \"end_date\": \"2024-08-30\",\n                \"stars\": \"0.00\",\n                \"trip_note\": \"hi my friend\",\n                \"type\": \"hotel\",\n                \"created_at\": \"2024-08-12T00:18:54.000000Z\",\n                \"updated_at\": \"2024-08-12T00:18:54.000000Z\",\n                \"rooms_count\": 0\n            }\n        ],\n        \"future_trip\": [\n            {\n                \"id\": 5,\n                \"user_id\": 7,\n                \"source_trip_id\": 1,\n                \"destination_trip_id\": 2,\n                \"trip_name\": \"to france\",\n                \"price\": \"1350.00\",\n                \"new_price\": null,\n                \"number_of_people\": 1,\n                \"trip_capacity\": null,\n                \"start_date\": \"2024-08-15\",\n                \"end_date\": \"2024-08-30\",\n                \"stars\": \"0.00\",\n                \"trip_note\": \"hi my friend\",\n                \"type\": \"hotel\",\n                \"created_at\": \"2024-08-12T00:18:50.000000Z\",\n                \"updated_at\": \"2024-08-12T00:18:50.000000Z\",\n                \"rooms_count\": 0\n            }\n        ]\n    }\n}"
 								}
 							]
 						},
@@ -27398,7 +27518,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/show-static-trip/2",
+									"raw": "http://127.0.0.1:8000/api/user/show-static-trip/1",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -27411,7 +27531,7 @@
 										"api",
 										"user",
 										"show-static-trip",
-										"2"
+										"1"
 									]
 								}
 							},
@@ -27639,7 +27759,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/2",
+									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/1",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -27652,7 +27772,7 @@
 										"api",
 										"user",
 										"check-static-trip",
-										"2"
+										"1"
 									]
 								}
 							},
@@ -27864,7 +27984,7 @@
 									"formdata": [
 										{
 											"key": "trip_id",
-											"value": "2",
+											"value": "1",
 											"type": "text"
 										},
 										{
@@ -28071,7 +28191,7 @@
 									"formdata": [
 										{
 											"key": "new_number_of_friend",
-											"value": "5",
+											"value": "1",
 											"type": "text"
 										},
 										{
@@ -28082,7 +28202,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/edit-static-trip-book/3",
+									"raw": "http://127.0.0.1:8000/api/user/edit-static-trip-book/5",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -28095,7 +28215,7 @@
 										"api",
 										"user",
 										"edit-static-trip-book",
-										"3"
+										"5"
 									]
 								}
 							},
@@ -28686,115 +28806,6 @@
 									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"user_id\": 2,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"210.00\",\n            \"new_price\": null,\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-07-18\",\n            \"end_date\": \"2024-07-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\"\n        }\n    ]\n}"
 								}
 							]
-						},
-						{
-							"name": "show-price-details",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/show-price-details/1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"user",
-										"show-price-details",
-										"1"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "show-price-details",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/show-price-details/3",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"user",
-												"show-price-details",
-												"3"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 06 Aug 2024 22:26:03 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 06 Aug 2024 22:26:03 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.4"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"trip_id\": 3,\n        \"number_of_friend\": 10,\n        \"rooms_needed\": 2,\n        \"days\": 4,\n        \"room_price\": 45,\n        \"ticket_price_for_going_trip\": \"50.00\",\n        \"ticket_price_for_return_trip\": \"50.00\",\n        \"ticket_price_for_places\": 40,\n        \"total_price\": 1760\n    }\n}"
-								}
-							]
 						}
 					]
 				}
@@ -28804,7 +28815,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|iDZnHM9Ajznf14nkbqMhw1hWAVa2wzbfYLWFqwiNb7390e27",
+						"value": "2|uYIvqXIcN9JYNtPKYVgQQm3LxAIKe2NFaBTJOR1ub3cc2059",
 						"type": "string"
 					}
 				]
@@ -28814,7 +28825,6 @@
 					"listen": "prerequest",
 					"script": {
 						"type": "text/javascript",
-						"packages": {},
 						"exec": [
 							""
 						]
@@ -28824,7 +28834,6 @@
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
-						"packages": {},
 						"exec": [
 							""
 						]
