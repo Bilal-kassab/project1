@@ -51,6 +51,8 @@ class UserController extends Controller
         $user->assignRole('User');
         $user->givePermissionTo('unbanned');
         #######################
+        ########################لا تنسى تشيلها
+        $user->email_verified_at=Carbon::now()->format('Y-m-d');
 
         $user->save();
 

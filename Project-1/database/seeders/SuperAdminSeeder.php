@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Bank;
 use App\Models\Country;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -90,11 +91,12 @@ class SuperAdminSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'is_approved'=>true,
             'position'=>1,
+            'email_verified_at'=>Carbon::now()->format('Y-m-d')
         ]);
         $user->assignRole('User');
 
          // Hotel Admin
-         $admin = User::create([
+        $admin = User::create([
             'name' => 'Hotel admin3',
             'email' => 'Hotel3@gmail.com',
             'password' => Hash::make('123456789'),
@@ -119,7 +121,7 @@ class SuperAdminSeeder extends Seeder
                 'money'=>20000,
                 'payments'=>0,
             ]);
-         $user->givePermissionTo('unbanned');
+        $user->givePermissionTo('unbanned');
         }
     }
 }
