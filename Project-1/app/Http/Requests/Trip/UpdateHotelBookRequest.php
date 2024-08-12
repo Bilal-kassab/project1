@@ -35,6 +35,7 @@ class UpdateHotelBookRequest extends FormRequest
                 // 'plane_trip_id'=>'exists:plane_trips,id',
                 // 'plane_trip_away_id'=>'exists:plane_trips,id',
                 //'hotel_id'=>'exists:hotels,id',
+                'count_room_C1'=>'numeric|min:0',
                 'count_room_C2'=>'numeric|min:0',
                 'count_room_C4'=>'numeric|min:0',
                 'count_room_C6'=>'numeric|min:0',

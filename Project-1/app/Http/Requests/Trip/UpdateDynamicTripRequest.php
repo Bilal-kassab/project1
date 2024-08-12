@@ -37,6 +37,7 @@ class UpdateDynamicTripRequest extends FormRequest
                 'hotel_id'=>'exists:hotels,id',
                 'activities'=>'array|min:1',
                 'activities.*'=>"exists:activities,id",
+                'count_room_C1'=>'numeric|min:0',
                 'count_room_C2'=>'numeric|min:0',
                 'count_room_C4'=>'numeric|min:0',
                 'count_room_C6'=>'numeric|min:0',

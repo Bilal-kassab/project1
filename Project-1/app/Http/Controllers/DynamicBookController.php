@@ -51,6 +51,7 @@ class DynamicBookController extends Controller
             'plane_trip_id'=>$request->plane_trip_id,
             'plane_trip_away_id'=>$request->plane_trip_away_id,
             'activities'=>$request->activities??null,##
+            'count_room_C1'=>$request->count_room_C1,
             'count_room_C2'=>$request->count_room_C2,
             'count_room_C4'=>$request->count_room_C4,
             'count_room_C6'=>$request->count_room_C6
@@ -75,6 +76,11 @@ class DynamicBookController extends Controller
             return response()->json([
                 'message' => 'Failed to create a trip',
             ], 400);
+        }
+        if($Dynamic_book === 111){
+            return response()->json([
+                'message'=>'the room count  of this capacity 1 not enough'
+            ],400);
         }
         if($Dynamic_book === 5){
             return response()->json([
@@ -116,6 +122,7 @@ class DynamicBookController extends Controller
             'start_date'=>$request->start_date,
             'end_date'=>$request->end_date,
             'trip_note'=>$request->trip_note,
+            'count_room_C1'=>$request->count_room_C1,
             'count_room_C2'=>$request->count_room_C2,
             'count_room_C4'=>$request->count_room_C4,
             'count_room_C6'=>$request->count_room_C6
@@ -140,6 +147,11 @@ class DynamicBookController extends Controller
             return response()->json([
                 'message' => 'Failed to create a trip',
             ], 400);
+        }
+        if($Dynamic_book === 111){
+            return response()->json([
+                'message'=>'the room count  of this capacity 1 not enough'
+            ],400);
         }
         if($Dynamic_book === 5){
             return response()->json([
@@ -288,7 +300,6 @@ class DynamicBookController extends Controller
         ],200);
     }
 
-
     public function showDynamicTrip($id){
 
 
@@ -337,6 +348,7 @@ class DynamicBookController extends Controller
             'plane_trip_id'=>$request->plane_trip_id,
             'plane_trip_away_id'=>$request->plane_trip_away_id,
             'activities'=>$request->activities??null,##
+            'count_room_C1'=>$request->count_room_C1??null,
             'count_room_C2'=>$request->count_room_C2??null,
             'count_room_C4'=>$request->count_room_C4??null,
             'count_room_C6'=>$request->count_room_C6??null
@@ -358,6 +370,11 @@ class DynamicBookController extends Controller
                 return response()->json([
                     'message'=>'the number of people is biggest of number of seats in return trip'
                 ],404);
+            }
+            if($trip === 111){
+                return response()->json([
+                    'message'=>'the room count  of this capacity 1 not enough'
+                ],400);
             }
             if($trip === 5){
                 return response()->json([
@@ -403,6 +420,7 @@ class DynamicBookController extends Controller
             'start_date'=>$request->start_date,
             'end_date'=>$request->end_date,
             'trip_note'=>$request->trip_note,
+            'count_room_C1'=>$request->count_room_C1??null,
             'count_room_C2'=>$request->count_room_C2??null,
             'count_room_C4'=>$request->count_room_C4??null,
             'count_room_C6'=>$request->count_room_C6??null
@@ -424,6 +442,11 @@ class DynamicBookController extends Controller
                 return response()->json([
                     'message'=>'the number of people is biggest of number of seats in return trip'
                 ],404);
+            }
+            if($trip === 111){
+                return response()->json([
+                    'message'=>'the room count  of this capacity 1 not enough'
+                ],400);
             }
             if($trip === 5){
                 return response()->json([
@@ -478,6 +501,7 @@ class DynamicBookController extends Controller
             'place_ids'=>$request->place_ids,
             'plane_trip_id'=>$request->plane_trip_id,
             'plane_trip_away_id'=>$request->plane_trip_away_id,
+            'count_room_C1'=>$request->count_room_C1??null,
             'count_room_C2'=>$request->count_room_C2??null,
             'count_room_C4'=>$request->count_room_C4??null,
             'count_room_C6'=>$request->count_room_C6??null

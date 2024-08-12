@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\ActivityBook;
 use App\Models\Airport;
+use App\Models\Area;
 use App\Models\Bank;
 use App\Models\Booking;
 use App\Models\BookingRoom;
@@ -32,13 +33,14 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
 
         if($request['hotel_id'] != null)
         {
-            if($request['count_room_C2']==0 && $request['count_room_C4']==0 &&$request['count_room_C6']==0){
+            if($request['count_room_C1']==0 && $request['count_room_C2']==0 && $request['count_room_C4']==0 &&$request['count_room_C6']==0){
                 return 8;
             }
                 $data=[
                     'start_date'=>$request['start_date'],
                     'end_date'=>$request['end_date'],
                     'hotel_id'=>$request['hotel_id'],
+                    'count_room_C1'=>$request['count_room_C1'],
                     'count_room_C2'=>$request['count_room_C2'],
                     'count_room_C4'=>$request['count_room_C4'],
                     'count_room_C6'=>$request['count_room_C6'],
@@ -63,6 +65,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                         'start_date'=>$request['start_date'],
                         'end_date'=>$request['end_date'],
                         'hotel_id'=>$request['hotel_id'],
+                        'count_room_C1'=>$request['count_room_C1'],
                         'count_room_C2'=>$request['count_room_C2'],
                         'count_room_C4'=>$request['count_room_C4'],
                         'count_room_C6'=>$request['count_room_C6']
@@ -152,12 +155,13 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             'start_date'=>$request['start_date'],
             'end_date'=>$request['end_date'],
             'hotel_id'=>$request['hotel_id'],
+            'count_room_C1'=>$request['count_room_C1'],
             'count_room_C2'=>$request['count_room_C2'],
             'count_room_C4'=>$request['count_room_C4'],
             'count_room_C6'=>$request['count_room_C6'],
         ];
         $check=$this->checkHotel($data,null);
-        if($check==5 || $check==6 ||$check==7 ||$check==8){ return $check;}
+        if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
         $trip_price+=$check;
 
         $data=[
@@ -224,6 +228,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             'start_date'=>$request['start_date'],
             'end_date'=>$request['end_date'],
             'hotel_id'=>$request['hotel_id'],
+            'count_room_C1'=>$request['count_room_C1'],
             'count_room_C2'=>$request['count_room_C2'],
             'count_room_C4'=>$request['count_room_C4'],
             'count_room_C6'=>$request['count_room_C6']
@@ -232,15 +237,16 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
         if($request['activities']){
         foreach ($request['activities'] as $activity) {
             ActivityBook::create([
-                 'booking_id' => $booking->id,
-                 'activity_id' => $activity,
-             ]);
-         }
+                'booking_id' => $booking->id,
+                'activity_id' => $activity,
+            ]);
+        }
         }
         $booking->price=$trip_price;
         $booking->save();
         $my_account=Bank::where('email',auth()->user()['email'])->first();
         $my_account['money']-=$booking->price;
+        $my_account['payments']+=$booking->price;
         $my_account->save();
         $dynamic_trip=$this->showDynamicTrip($booking['id']);
         return $dynamic_trip;
@@ -337,19 +343,37 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             'activities'=>$activities,
             'source_trip'=>$book->source_trip,
             'destination_trip'=>$book->destination_trip,
-            'places'=>$book->places,
+            // 'places'=>$book->places,
+            'places'=>$book->places->map(function($place) {
+                return [
+                    'id' => $place->id,
+                    'name' => $place->name,
+                    'current_price' => $place->pivot->current_price,
+                    'text' => $place->text,
+                    'area_id' => $place->area_id,
+                    'visible' => $place->visible,
+                    'images'=>$place->images,
+                    'area'=>$place->area,
+                ];
+            }),
             'going_trip'=>$going_trip,
             'return_trip'=>$return_trip,
             'hotel'=>$hotel,
-            'rooms'=>$book->rooms->select('id','capacity','price'),
+            // 'rooms'=>$book->rooms->select(['id','capacity','price']),
+            'rooms'=>$book->rooms->map(function($room) {
+                return [
+                    'id' => $room->id,
+                    'capacity'=>$room->capacity,
+                    'price' => $room->pivot->current_price,
+                ];
+            })
+
         ];
+        return $dynamic_trip;
     }catch(Exception $e)
     {
         throw new Exception($e->getMessage());
-        //return 1;
     }
-
-    return $dynamic_trip;
     }
     public function show_hotel_trip($id){
         try{
@@ -383,7 +407,13 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 'source_trip'=>$book->source_trip,
                 'destination_trip'=>$book->destination_trip,
                 'hotel'=>$hotel,
-                'rooms'=>$book->rooms->select('id','capacity','price'),
+                'rooms'=>$book->rooms->map(function($room) {
+                    return [
+                        'id' => $room->id,
+                        'capacity'=>$room->capacity,
+                        'price' => $room->pivot->current_price,
+                    ];
+                })
 
             ];
             return $dynamic_trip;
@@ -610,6 +640,18 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 $interval = $datetime1->diff($datetime2);
                 $period = $interval->format('%a');
                 $hotel_price=0;
+
+                $rooms_1 = Room::available($request['start_date'], $request['end_date'])
+                            ->where('hotel_id', $request['hotel_id'])
+                            ->where('capacity', 1)
+                            ->count();
+                $price_rooms_1=Room::available($request['start_date'], $request['end_date'])
+                ->where('hotel_id', $request['hotel_id'])
+                ->where('capacity', 1)->first()['price']??null;
+                if ($request['count_room_C1'] > $rooms_1 || ($price_rooms_1==null && $request['count_room_C1']!=0) ) {
+                    return 111;
+                }
+                $hotel_price+=$request['count_room_C1']*$price_rooms_1*$period;
                 $rooms_2 = Room::available($request['start_date'], $request['end_date'])
                             ->where('hotel_id', $request['hotel_id'])
                             ->where('capacity', 2)
@@ -680,6 +722,25 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             $period = $interval->format('%a');
             if($request['hotel_id'] != null)
             {   // rooms
+                            if($request['count_room_C1']!=null)
+                            {
+                            $rooms = Room::available($request['start_date'], $request['end_date'])
+                            ->where('hotel_id', $request['hotel_id'])
+                            ->where('capacity', 1)
+                            ->get();
+                            for ($i = 0; $i < $request['count_room_C1']; $i++) {
+                                $book_room=BookingRoom::create([
+                                    'book_id' => $booking->id,
+                                    'room_id' => $rooms[$i]['id'],
+                                    'user_id' => auth()->user()->id,
+                                    'current_price' => $rooms[$i]['price'],
+                                    'start_date' => $request['start_date'],
+                                    'end_date' => $request['end_date']
+                                ]);
+                            $trip_price+=($book_room['current_price']*$period);
+                            }
+                            }
+
                             if($request['count_room_C2']!=null)
                             {
                             $rooms = Room::available($request['start_date'], $request['end_date'])
@@ -841,6 +902,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             {
                 // to check if there are an enough rooms in this hotel
                 $bookRoomCount=BookingRoom::where('book_id',$booking['id'])->get();
+                $count_1=0;
                 $count_2=0;
                 $count_4=0;
                 $count_6=0;
@@ -850,6 +912,9 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 if($request['end_date'] != $booking['end_date'])
                 {
                     foreach($bookRoomCount as $count){
+                        if(Room::where('id',$count->room_id)->first()->capacity ==1){
+                            $count_1++;
+                        }
                         if(Room::where('id',$count->room_id)->first()->capacity ==2){
                             $count_2++;
                         }
@@ -865,12 +930,13 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                         'start_date'=>$booking['end_date'],
                         'end_date'=>$request['end_date'],
                         'hotel_id'=>$hotel_id,
+                        'count_room_C1'=>$count_1,
                         'count_room_C2'=>$count_2,
                         'count_room_C4'=>$count_4,
                         'count_room_C6'=>$count_6,
                     ];
                     $check=$this->checkHotel($data,$booking->id);
-                    if($check==5 || $check==6 ||$check==7 ||$check==8){ return $check;}
+                    if($check==5 || $check==6 ||$check==7 ||$check==8 ||$check==111){ return $check;}
                     $trip_price+=$check;
 
                     if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
@@ -883,12 +949,13 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     'start_date'=>$booking['start_date'],
                     'end_date'=>$request['end_date'],
                     'hotel_id'=>$hotel_id,
+                    'count_room_C1'=>$request['count_room_C1'],
                     'count_room_C2'=>$request['count_room_C2'],
                     'count_room_C4'=>$request['count_room_C4'],
                     'count_room_C6'=>$request['count_room_C6']
                 ];
                 $check =$this->checkHotel($data,$booking->id);
-                if($check==5 || $check==6 ||$check==7 ||$check==8){ return $check;}
+                if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
                 $trip_price+=$check;
                 if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
                     return 55;
@@ -903,6 +970,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                         'start_date'=>$booking['start_date'],
                         'end_date'=>$request['end_date'],
                         'hotel_id'=>$hotel_id,
+                        'count_room_C1'=>$request['count_room_C1']+$count_1,
                         'count_room_C2'=>$request['count_room_C2']+$count_2,
                         'count_room_C4'=>$request['count_room_C4']+$count_4,
                         'count_room_C6'=>$request['count_room_C6']+$count_6
@@ -912,19 +980,20 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             }else{
                     if($request['hotel_id'] != null)
                     {
-                        if($request['count_room_C2']==null && $request['count_room_C4']==null &&$request['count_room_C6']==null){
+                        if($request['count_room_C1']==null && $request['count_room_C2']==null && $request['count_room_C4']==null &&$request['count_room_C6']==null){
                             return 8;
                         }
                         $data=[
                             'start_date'=>$booking['start_date'],
                             'end_date'=>$request['end_date'],
                             'hotel_id'=>$request['hotel_id'],
+                            'count_room_C1'=>$request['count_room_C1'],
                             'count_room_C2'=>$request['count_room_C2'],
                             'count_room_C4'=>$request['count_room_C4'],
                             'count_room_C6'=>$request['count_room_C6']
                         ];
                         $check=$this->checkHotel($data,$booking->id);
-                        if($check==5 || $check==6 ||$check==7 ||$check==8){ return $check;}
+                        if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
                         $trip_price+=$check;
                         if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
                             return 55;
@@ -942,6 +1011,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                             'hotel_id'=>$request['hotel_id'],
                             'start_date'=>$booking['start_date'],
                             'end_date'=>$request['end_date'],
+                            'count_room_C1'=>$request['count_room_C1'],
                             'count_room_C2'=>$request['count_room_C2'],
                             'count_room_C4'=>$request['count_room_C4'],
                             'count_room_C6'=>$request['count_room_C6']
@@ -1128,12 +1198,16 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             }
             if($hotel_id!=null){
                 $bookRoomCount=BookingRoom::where('book_id',$booking['id'])->get();
+                $count_1=0;
                 $count_2=0;
                 $count_4=0;
                 $count_6=0;
                 $date = Carbon::createFromFormat('Y-m-d',$booking['end_date']);
                 if($request['end_date']!=$booking['end_date']){
                     foreach($bookRoomCount as $count){
+                        if(Room::where('id',$count->room_id)->first()->capacity ==1){
+                            $count_1++;
+                        }
                         if(Room::where('id',$count->room_id)->first()->capacity ==2){
                             $count_2++;
                         }
@@ -1145,16 +1219,17 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                         }
                     }
                      // calculate date for old room
-                     $data=[
+                    $data=[
                         'start_date'=>$booking['end_date'],
                         'end_date'=>$request['end_date'],
                         'hotel_id'=>$hotel_id,
+                        'count_room_C1'=>$count_1,
                         'count_room_C2'=>$count_2,
                         'count_room_C4'=>$count_4,
                         'count_room_C6'=>$count_6,
                     ];
                     $check=$this->checkHotel($data,$booking->id);
-                    if($check==5 || $check==6 ||$check==7 ||$check==8){ return $check;}
+                    if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
                     $trip_price+=$check;
 
 
@@ -1166,12 +1241,13 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                         'start_date'=>$booking['start_date'],
                         'end_date'=>$request['end_date'],
                         'hotel_id'=>$hotel_id,
+                        'count_room_C1'=>$request['count_room_C1'],
                         'count_room_C2'=>$request['count_room_C2'],
                         'count_room_C4'=>$request['count_room_C4'],
                         'count_room_C6'=>$request['count_room_C6']
                     ];
                     $check =$this->checkHotel($data,$booking->id);
-                    if($check==5 || $check==6 ||$check==7 ||$check==8){ return $check;}
+                    if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
                     $trip_price+=$check;
                     if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
                         return 55;
@@ -1182,27 +1258,29 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     }
 
                     // booking hotel
-                    $data=[
-                       'start_date'=>$booking['start_date'],
-                       'end_date'=>$request['end_date'],
-                       'hotel_id'=>$hotel_id,
-                       'count_room_C2'=>$request['count_room_C2']+$count_2,
-                       'count_room_C4'=>$request['count_room_C4']+$count_4,
-                       'count_room_C6'=>$request['count_room_C6']+$count_6
-                   ];
-                   $this->bookHotel($data,$booking['id']);
+                $data=[
+                    'start_date'=>$booking['start_date'],
+                    'end_date'=>$request['end_date'],
+                    'hotel_id'=>$hotel_id,
+                    'count_room_C1'=>$request['count_room_C1']+$count_1,
+                    'count_room_C2'=>$request['count_room_C2']+$count_2,
+                    'count_room_C4'=>$request['count_room_C4']+$count_4,
+                    'count_room_C6'=>$request['count_room_C6']+$count_6
+                ];
+                $this->bookHotel($data,$booking['id']);
 
                 }else{
                 $data=[
                     'start_date'=>$booking['start_date'],
                     'end_date'=>$booking['end_date'],
                     'hotel_id'=>$hotel_id,
+                    'count_room_C1'=>$request['count_room_C1'],
                     'count_room_C2'=>$request['count_room_C2'],
                     'count_room_C4'=>$request['count_room_C4'],
                     'count_room_C6'=>$request['count_room_C6']
                 ];
                 $check =$this->checkHotel($data,$id);
-                if($check==5 || $check==6 ||$check==7 ||$check==8){ return $check;}
+                if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
                 $trip_price+=$check;
                 if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
                     return 55;
@@ -1264,9 +1342,11 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             $bank=Bank::where('email',auth()->user()['email'])->first();
             if($period>7){
                     $bank->money+=$booking['price'];
+                    $bank->payments-=$booking['price'];
             }
             elseif($period>1){
                     $bank->money+=(0.5*$booking['price']);
+                    $bank->payments-=(0.5*$booking['price']);
             }
             $bank->save();
             $booking->delete();
