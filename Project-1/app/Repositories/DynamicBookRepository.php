@@ -46,7 +46,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     'count_room_C6'=>$request['count_room_C6'],
                 ];
                 $check=$this->checkHotel($data,null);
-                if($check==5 || $check==6 ||$check==7 ||$check==8){ return $check;}
+                if($check==5 || $check==6 ||$check==7 ||$check==11){ return $check;}
                 $trip_price+=$check;
                 if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
                     return 55;
@@ -97,7 +97,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 'number_of_people'=>$request['number_of_people'],
             ];
             $check =$this->checkPlaneTrip($data,null);
-            if($check==1 ||$check==8){
+            if($check==1){
                 return $check;
             }
             $trip_price+=$check;
@@ -106,7 +106,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 'number_of_people'=>$request['number_of_people'],
             ];
             $check =$this->checkPlaneTripaway($data,null);
-            if($check==2 ||$check==8){
+            if($check==2){
                 return $check;
             }
             $trip_price+=$check;
@@ -150,6 +150,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     }
     public function store_User($request){
         try {
+
         $trip_price=0;
         $data=[
             'start_date'=>$request['start_date'],
@@ -161,7 +162,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             'count_room_C6'=>$request['count_room_C6'],
         ];
         $check=$this->checkHotel($data,null);
-        if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
+        if($check==5 || $check==6 ||$check==7 || $check==11){ return $check;}
         $trip_price+=$check;
 
         $data=[
@@ -169,7 +170,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             'number_of_people'=>$request['number_of_people'],
         ];
         $check =$this->checkPlaneTrip($data,null);
-        if($check==1 ||$check==8){
+        if($check==1){
             return $check;
         }
         $trip_price+=$check;
@@ -177,8 +178,14 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             'plane_trip_id'=>$request['plane_trip_away_id'],
             'number_of_people'=>$request['number_of_people'],
         ];
+        if($request['plane_trip_away_id']){
+            $return =PlaneTrip::where('id',$request['plane_trip_away_id'])->first();
+                if($return['flight_date']<$request['end_date']){
+                    return 13;
+                }
+        }
         $check =$this->checkPlaneTripaway($data,null);
-        if($check==2 ||$check==8){
+        if($check==2){
             return $check;
         }
         $trip_price+=$check;
@@ -262,20 +269,6 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     // ->where('user_id',auth()->id())
                     // ->AvailableRooms()
                     ->findOrFail($id);
-
-                    // $place_cost=0;
-                    // $plane_cost=0;
-                    // if($book->plane_trips){
-                    // $plane_cost=$book['number_of_people']*($book->plane_trips[0]['current_price']??null+$book->plane_trips[1]['current_price']??null)??null;
-                    // }
-                    // foreach($book->places as $place){
-                    //      $place_cost+=$place['place_price'];
-                    // }
-                    // $price=[
-                    //     'plane_cost'=>$plane_cost??null,
-                    //     'places_cost'=>$place_cost??null,
-                    //     'hotel_cost'=>$book['price']-$plane_cost??null-$place_cost??null,
-                    // ];
 
         $bookData=[
             'id'=>$book['id'],
@@ -618,7 +611,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     public function checkPlaneTripaway($request,$id){
         try{
             $plane_price=0;
-             $numberOfSeat=$request['number_of_people'];
+            $numberOfSeat=$request['number_of_people'];
             if($request['plane_trip_id'] != null){
             $plane_trip = PlaneTrip::where('id', $request['plane_trip_id'])->first();
             $plane_price+=($plane_trip['current_price']*$numberOfSeat);
@@ -627,9 +620,9 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             }
             return $plane_price;
         }
-       }catch(Exception $exception){
-        throw new Exception($exception->getMessage());
-       }
+        }catch(Exception $exception){
+            throw new Exception($exception->getMessage());
+        }
     }
     public function checkHotel($request,$id){
         try{
@@ -649,7 +642,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 ->where('hotel_id', $request['hotel_id'])
                 ->where('capacity', 1)->first()['price']??null;
                 if ($request['count_room_C1'] > $rooms_1 || ($price_rooms_1==null && $request['count_room_C1']!=0) ) {
-                    return 111;
+                    return 11;
                 }
                 $hotel_price+=$request['count_room_C1']*$price_rooms_1*$period;
                 $rooms_2 = Room::available($request['start_date'], $request['end_date'])
@@ -689,7 +682,6 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 return $hotel_price;
             }
             }catch(Exception $exception){
-                //return 8;
                 throw new Exception($exception->getMessage());
             }
     }
@@ -760,6 +752,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                             $trip_price+=($book_room['current_price']*$period);
                             }
                             }
+
                             if($request['count_room_C4']!=null)
                             {
                             $rooms = Room::available($request['start_date'], $request['end_date'])
@@ -778,6 +771,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                                 $trip_price+=($book_room['current_price']*$period);
                             }
                             }
+
                             if($request['count_room_C6']!=null)
                             {
                             $rooms = Room::available($request['start_date'], $request['end_date'])
@@ -825,7 +819,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             }
             if($plane_trip_id ==null && $request['plane_trip_away_id']!=null){
                     if($request['plane_trip_id']==null){
-                        return 8;
+                        return 14;
                     }
             }
             //check places
@@ -857,7 +851,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     'number_of_people'=>$request['number_of_people']+$booking['number_of_people'],
                 ];
                 $check =$this->checkPlaneTrip($data,$booking->id);
-                if($check==1 ||$check==8){
+                if($check==1){
                     return $check;
                 }
                 $trip_price+=$check;
@@ -865,12 +859,20 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             // check return trip
             if($plane_trip_away_id!=null){
                 if($request['end_date'] != $booking['end_date']){
+                    if($request['plane_trip_away_id']==null){
+                        return 12;
+                    }else{
+                        $return=PlaneTrip::where('id',$request['plane_trip_away_id'])->first();
+                        if($return['flight_date']<$request['end_date']){
+                            return 13;
+                        }
+                    }
                     $data=[
                         'plane_trip_id'=>$request['plane_trip_away_id']??null,
                         'number_of_people'=>$request['number_of_people']+$booking['number_of_people'],
                     ];
                     $check=$this->checkPlaneTripaway($data,$booking->id);
-                    if($check==2 ||$check==8){
+                    if($check==2){
                         return $check;
                     }
                     $trip_price+=$check;
@@ -881,18 +883,24 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                         'number_of_people'=>$request['number_of_people'],
                     ];
                     $check=$this->checkPlaneTripaway($data,$booking->id);
-                    if($check==2 ||$check==8){
+                    if($check==2){
                         return $check;
                     }
                     $trip_price+=$check;
                 }
             }else{
+                if($request['plane_trip_away_id']){
+                    $return =PlaneTrip::where('id',$request['plane_trip_away_id'])->first();
+                        if($return['flight_date']<$request['end_date']){
+                            return 13;
+                        }
+                }
                 $data=[
                     'plane_trip_id'=>$request['plane_trip_away_id']??null,
                     'number_of_people'=>$request['number_of_people']+$booking['number_of_people'],
                 ];
                 $check=$this->checkPlaneTripaway($data,$booking->id);
-                if($check==2 ||$check==8){
+                if($check==2){
                     return $check;
                 }
                 $trip_price+=$check;
@@ -936,7 +944,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                         'count_room_C6'=>$count_6,
                     ];
                     $check=$this->checkHotel($data,$booking->id);
-                    if($check==5 || $check==6 ||$check==7 ||$check==8 ||$check==111){ return $check;}
+                    if($check==5 || $check==6 ||$check==7||$check==11){ return $check;}
                     $trip_price+=$check;
 
                     if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
@@ -955,7 +963,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     'count_room_C6'=>$request['count_room_C6']
                 ];
                 $check =$this->checkHotel($data,$booking->id);
-                if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
+                if($check==5 || $check==6 ||$check==7 || $check==11){ return $check;}
                 $trip_price+=$check;
                 if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
                     return 55;
@@ -993,7 +1001,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                             'count_room_C6'=>$request['count_room_C6']
                         ];
                         $check=$this->checkHotel($data,$booking->id);
-                        if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
+                        if($check==5 || $check==6 ||$check==7 || $check==11){ return $check;}
                         $trip_price+=$check;
                         if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
                             return 55;
@@ -1035,7 +1043,8 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             if($plane_trip_away_id!=null){
                 // if the date is changed
                 if($request['end_date'] != $booking['end_date']){
-                    BookPlane::where('plane_trip_id',$plane_trip_away_id)->delete();
+                    // BookPlane::where('plane_trip_id',$plane_trip_away_id)->delete();
+                    BookPlane::where('book_id',$booking->id)->where('plane_trip_id',$plane_trip_away_id)->delete();
                     $data=[
                         'plane_trip_id'=>$request['plane_trip_away_id']??null,
                         'number_of_people'=>$request['number_of_people']+$booking['number_of_people'],
@@ -1126,7 +1135,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 'plane_trip_id'=>$plane_trip_id
             ];
             $check=$this->checkPlaneTrip($data,$id);
-            if($check==1 ||$check==8){
+            if($check==1){
                 return $check;
             }
             $trip_price+= $check;
@@ -1135,7 +1144,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                 'plane_trip_id'=>$plane_trip_away_id
             ];
             $check=$this->checkPlaneTripaway($data,$id);
-            if($check==1 ||$check==8){
+            if($check==1){
                 return $check;
             }
             $trip_price+= $check;
@@ -1229,7 +1238,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                         'count_room_C6'=>$count_6,
                     ];
                     $check=$this->checkHotel($data,$booking->id);
-                    if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
+                    if($check==5 || $check==6 ||$check==7|| $check==11){ return $check;}
                     $trip_price+=$check;
 
 
@@ -1247,7 +1256,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                         'count_room_C6'=>$request['count_room_C6']
                     ];
                     $check =$this->checkHotel($data,$booking->id);
-                    if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
+                    if($check==5 || $check==6 ||$check==7|| $check==11){ return $check;}
                     $trip_price+=$check;
                     if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
                         return 55;
@@ -1280,7 +1289,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     'count_room_C6'=>$request['count_room_C6']
                 ];
                 $check =$this->checkHotel($data,$id);
-                if($check==5 || $check==6 ||$check==7 ||$check==8 || $check==111){ return $check;}
+                if($check==5 || $check==6 ||$check==7|| $check==11){ return $check;}
                 $trip_price+=$check;
                 if($trip_price>Bank::where('email',auth()->user()['email'])->first()->money){
                     return 55;

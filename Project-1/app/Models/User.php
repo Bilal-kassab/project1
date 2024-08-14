@@ -25,6 +25,8 @@ class User extends Authenticatable
         'position',
         'is_approved',
         'point',
+        'phone_number',
+        'email_verified_at'
     ];
 
     protected $hidden = [

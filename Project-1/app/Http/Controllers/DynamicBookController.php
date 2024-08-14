@@ -36,6 +36,11 @@ class DynamicBookController extends Controller
 
     }
     public function store_User(DynamicTripRequest $request){
+        // $rooms = Room::available($request['start_date'], $request['end_date'])
+        //                     ->where('hotel_id', $request['hotel_id'])
+        //                     ->where('capacity', 1)
+        //                     ->get();
+        //                     return $rooms[0]['price'];
         $data=[
             'source_trip_id'=>$request->source_trip_id,
             'destination_trip_id'=>$request->destination_trip_id,
@@ -77,7 +82,7 @@ class DynamicBookController extends Controller
                 'message' => 'Failed to create a trip',
             ], 400);
         }
-        if($Dynamic_book === 111){
+        if($Dynamic_book === 11){
             return response()->json([
                 'message'=>'the room count  of this capacity 1 not enough'
             ],400);
@@ -105,6 +110,11 @@ class DynamicBookController extends Controller
         if($Dynamic_book === 55){
             return response()->json([
                 'message' => 'your money dont enough for create your trip',
+            ], 400);
+        }
+        if($Dynamic_book === 13){
+            return response()->json([
+                'message' => 'The flight date of return plane trip must be a date after or equal to end date.',
             ], 400);
         }
         return response()->json([
@@ -148,7 +158,7 @@ class DynamicBookController extends Controller
                 'message' => 'Failed to create a trip',
             ], 400);
         }
-        if($Dynamic_book === 111){
+        if($Dynamic_book === 11){
             return response()->json([
                 'message'=>'the room count  of this capacity 1 not enough'
             ],400);
@@ -243,7 +253,7 @@ class DynamicBookController extends Controller
         }
         if($Dynamic_book === 27){
             return response()->json([
-                'message' => 'The flight date of return plane trip must be after flight date of going plane trip',
+                'message' => 'The flight date of return plane trip must be a date  after flight date of going plane trip',
             ], 400);
         }
         return response()->json([
@@ -371,7 +381,7 @@ class DynamicBookController extends Controller
                     'message'=>'the number of people is biggest of number of seats in return trip'
                 ],404);
             }
-            if($trip === 111){
+            if($trip === 11){
                 return response()->json([
                     'message'=>'the room count  of this capacity 1 not enough'
                 ],400);
@@ -391,7 +401,12 @@ class DynamicBookController extends Controller
                     'message'=>'the room count  of this capacity 6 not enough'
                 ],400);
             }
-            if($trip===8){
+            if($trip === 8){
+                return response()->json([
+                    'message' => 'bad request',
+                ], 400);
+            }
+            if($trip === 14){
                 return response()->json([
                     'message'=>'You can not book the return plane trip without going plane trip'
                 ],400);
@@ -404,6 +419,16 @@ class DynamicBookController extends Controller
             if($trip === 66){
                 return response()->json([
                     'message' => 'sorry but your trip have been started',
+                ], 400);
+            }
+            if($trip === 12){
+                return response()->json([
+                    'message' => 'The plane_trip_away_id field is required.',
+                ], 400);
+            }
+            if($trip === 13){
+                return response()->json([
+                    'message' => 'The flight date of return plane trip must be a date after or equal to end date.',
                 ], 400);
             }
             return response()->json($trip,200);
@@ -443,7 +468,7 @@ class DynamicBookController extends Controller
                     'message'=>'the number of people is biggest of number of seats in return trip'
                 ],404);
             }
-            if($trip === 111){
+            if($trip === 11){
                 return response()->json([
                     'message'=>'the room count  of this capacity 1 not enough'
                 ],400);
