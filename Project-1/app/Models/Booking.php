@@ -49,7 +49,7 @@ class Booking extends Model
     }
     public function rooms():BelongsToMany
     {
-        return $this->belongsToMany(Room::class,'booking_rooms','book_id','room_id');
+        return $this->belongsToMany(Room::class,'booking_rooms','book_id','room_id')->withPivot('current_price');
     }
     public function user_rooms():BelongsToMany
     {

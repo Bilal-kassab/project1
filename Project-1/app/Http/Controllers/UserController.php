@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Mail\VerfiyEmail;
 use App\Models\Bank;
+use App\Models\Booking;
+use App\Models\BookingRoom;
 use App\Models\ConfirmCode;
 use App\Models\Country;
 use App\Models\User;
@@ -344,13 +346,82 @@ class UserController extends Controller
     {
         try{
             $info=Bank::where('email',auth()->user()->email)->first();
+            $data=[
+                'id'=>$info['id'],
+                'email'=>$info['email'],
+                'money'=>$info['money'],
+                'payments'=>$info['payments'],
+                'point'=>User::where('id',auth()->id())->first()['point'],
+                'created_at'=>$info['created_at'],
+                'updated_at'=>$info['updated_at'],
+            ];
              return response()->json([
-                'data'=>$info
+                'data'=>$data
              ],200);
         }catch(Exception $ex){
             return response()->json([
                 'message'=>$ex->getMessage()
             ]);
         }
+    }
+
+    public function deleteAccount()
+    {
+        $rooms=BookingRoom::where('user_id',auth()->id())->whereRelation('book','type','static')->get();
+        foreach($rooms as $room){
+            $room['user_id']=null;
+            $room->save();
+        }
+        User::where('id',auth()->id())->delete();
+        return response()->json([
+            // 'message'=>$book
+            'message'=>trans('global.delete')
+        ],200);
+    }
+
+    public function chargeAccount(Request $request)
+    {
+        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
+        $response=$stripe->checkout->sessions->create([
+        'line_items' => [
+            [
+                'price_data' => [
+                    'currency' => 'usd',
+                    'product_data' => [
+                            'name' =>'Charge Account',
+                    ],
+                    //trip price
+                    'unit_amount' =>$request['money']*100 ,
+                    // 'unit_amount' =>$request['money']*100 ,
+                ],
+                'quantity' => 1,
+            ]
+        ],
+        'mode' => 'payment',
+        // 'success_url' => route('success').'?session_id={CHECKOUT_SESSION_ID}',
+        // 'success_url' => self::success($request),
+        'success_url' =>route('success-charge',$request),
+        'cancel_url' => route('cancel'),
+        ]);
+        if(isset($response->id)&& $response->id != ''){
+            return redirect($response->url);
+        }else{
+            return redirect()->route('cancel');
+        }
+    }
+    public function success(Request $request)
+    {
+            $bank=Bank::where('id',auth()->user()->email)->first();
+            $bank->money+=$request['money'];
+            return response()->json([
+                'message'=>'Enjoy Trip'
+            ],200);
+    }
+
+    public function cancel()
+    {
+        return response()->json([
+            'message'=>'failed plz try again'
+        ],422);
     }
 }

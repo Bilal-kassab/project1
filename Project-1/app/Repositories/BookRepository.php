@@ -458,20 +458,22 @@ class BookRepository implements BookRepositoryInterface
             }
             $goingPlaneTrip=$plane_trip[0]['current_price']??0;
             $returnPlaneTrip=$plane_trip[1]['current_price']??0;
-            $total_price=0.0;
-            $total_price+=(($static_trip['price']-($room['current_price']*$days)));
+            // $total_price=0.0;
+            // $total_price+=(($static_trip['price']-($room['current_price']*$days)));
 
-            $placePrice=$total_price-$goingPlaneTrip-$returnPlaneTrip;
-
-            //$placePrice+=($placePrice*0.2);
-
-            $total_price*=$request['number_of_friend'];
-            $total_price+=$rooms_needed*$room['current_price']*$days;
-            $price_after_discount=null;
-            if(auth()->user()->point >= 50)#################
-            {
-                $price_after_discount=$total_price-($total_price*0.5);
+            // $placePrice=$total_price-$goingPlaneTrip-$returnPlaneTrip;
+            $places=$static_trip?->places;
+            $placePrice=0;
+            foreach($places as $place){
+                $placePrice+=$place['pivot']['current_price'];
             }
+            // // return $placePrice;
+
+            // //$placePrice+=($placePrice*0.2);
+
+            // $total_price*=$request['number_of_friend'];
+            // $total_price+=$rooms_needed*$room['current_price']*$days;
+
             // $data=[
             //     'trip_id'=>(int)$id,#
             //     'number_of_friend'=>(int)$request['number_of_friend'],#
@@ -484,12 +486,26 @@ class BookRepository implements BookRepositoryInterface
             //     'total_price'=>$total_price*$discount,#
             //     'price_after_discount'=>$price_after_discount,#
             // ];
+            // $ratio=0.2;
+            // $room_price=$room['current_price']-($room['current_price']*$ratio);
+            // $ticket_price_for_going_trip=$goingPlaneTrip-($goingPlaneTrip*$ratio);
+            // $ticket_price_for_return_trip=$returnPlaneTrip-($returnPlaneTrip*$ratio);
+            // $ticket_price_for_places=$placePrice-($placePrice*$ratio);
+            // $total_price=$room_price+$ticket_price_for_going_trip+$ticket_price_for_return_trip+$ticket_price_for_places;
+
             $ratio=0.2;
-            $room_price=$room['current_price']-($room['current_price']*$ratio);
-            $ticket_price_for_going_trip=$goingPlaneTrip-($goingPlaneTrip*$ratio);
-            $ticket_price_for_return_trip=$returnPlaneTrip-($returnPlaneTrip*$ratio);
+            $room_price=$room['current_price'];
+            $ticket_price_for_going_trip=$goingPlaneTrip;
+            $ticket_price_for_return_trip=$returnPlaneTrip;
             $ticket_price_for_places=$placePrice-($placePrice*$ratio);
-            $total_price=$room_price+$ticket_price_for_going_trip+$ticket_price_for_return_trip+$ticket_price_for_places;
+
+            $total_price=($ticket_price_for_going_trip+$ticket_price_for_return_trip+$ticket_price_for_places)*$request['number_of_friend'];
+            $total_price+=($room_price*$days);
+            $price_after_discount=null;
+            if(auth()->user()->point >= 50)#################
+            {
+                $price_after_discount=$total_price-($total_price*0.5);
+            }
             $data=[
                 'trip_id'=>(int)$id,#
                 'number_of_friend'=>(int)$request['number_of_friend'],#
@@ -531,6 +547,9 @@ class BookRepository implements BookRepositoryInterface
             $user['point']-=50;
         }
         $user['point']+=5;
+            $bank['money']=$bank['money']-$book_price;
+            $bank['payments']+=$book_price;
+            $bank->save();
         $user->save();
         $book_static=BookingStaticTrip::create([
             'user_id'=>auth()->id(),

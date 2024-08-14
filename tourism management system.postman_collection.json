@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "385a96b2-d2f9-424b-918c-6ed7a2b3f978",
+		"_postman_id": "5183f8aa-afe4-48e1-901c-42307bc66765",
 		"name": "tourism management system Copy 12",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30821440"
 	},
 	"item": [
 		{
@@ -5381,7 +5382,8 @@
 										{
 											"key": "images[1]",
 											"type": "file",
-											"src": "/C:/Users/Asus-/Desktop/N1wl6Xvs49zb2revmBIPzKuO6uTp7pZDaqZKfFWg.jpg"
+											"src": "/C:/Users/Asus-/Desktop/N1wl6Xvs49zb2revmBIPzKuO6uTp7pZDaqZKfFWg.jpg",
+											"disabled": true
 										}
 									]
 								},
@@ -15663,7 +15665,7 @@
 										},
 										{
 											"key": "hotel_id",
-											"value": "1",
+											"value": "2",
 											"type": "text"
 										},
 										{
@@ -15688,18 +15690,25 @@
 										},
 										{
 											"key": "start_date",
-											"value": "2024-08-02",
+											"value": "2024-08-15",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-08-05",
+											"value": "2024-08-19",
 											"type": "text"
 										},
 										{
 											"key": "trip_note",
 											"value": "Trip 3",
-											"type": "text"
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "telegram_link",
+											"value": "",
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "places[0]",
@@ -15935,7 +15944,7 @@
 										},
 										{
 											"key": "trip_note",
-											"value": "hi my friend ",
+											"value": "edit",
 											"type": "text"
 										},
 										{
@@ -15956,7 +15965,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/9",
+									"raw": "http://127.0.0.1:8000/api/admin/edit-static-trip/4",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -15969,7 +15978,7 @@
 										"api",
 										"admin",
 										"edit-static-trip",
-										"9"
+										"4"
 									]
 								}
 							},
@@ -17595,7 +17604,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "5|KEoWpgs7AsLTElup1wEnN7kjHJ3bZHhXhdEfNGtNfa1ad1c3",
+						"value": "1|38lKexXgX9zAyuuKxmwOmu2F0Y2YQ0JkSUTBoUoA50757274",
 						"type": "string"
 					}
 				]
@@ -17643,12 +17652,12 @@
 									"formdata": [
 										{
 											"key": "name",
-											"value": "leader",
+											"value": "User",
 											"type": "text"
 										},
 										{
 											"key": "email",
-											"value": "mohammad@gmail.com",
+											"value": "user4@gmail.com",
 											"type": "text"
 										},
 										{
@@ -17664,11 +17673,11 @@
 										{
 											"key": "image",
 											"type": "file",
-											"src": []
+											"src": "/C:/Users/Asus-/Desktop/1300701.png"
 										},
 										{
 											"key": "phone_number",
-											"value": "09999999999",
+											"value": "123456789012",
 											"type": "text"
 										},
 										{
@@ -19680,11 +19689,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 12 Aug 2024 20:45:42 GMT"
+											"value": "Tue, 13 Aug 2024 20:38:22 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 12 Aug 2024 20:45:42 GMT"
+											"value": "Tue, 13 Aug 2024 20:38:22 GMT"
 										},
 										{
 											"key": "Connection",
@@ -19716,7 +19725,114 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 7,\n        \"email\": \"User@gmail.com\",\n        \"money\": \"20000.00\",\n        \"payments\": \"0.00\",\n        \"created_at\": \"2024-08-12T20:44:36.000000Z\",\n        \"updated_at\": \"2024-08-12T20:44:36.000000Z\"\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 7,\n        \"email\": \"User@gmail.com\",\n        \"money\": \"20000.00\",\n        \"payments\": \"0.00\",\n        \"point\": 50,\n        \"created_at\": \"2024-08-13T13:44:41.000000Z\",\n        \"updated_at\": \"2024-08-13T13:44:41.000000Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "delete-account",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/delete-account",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"delete-account"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "delete-account",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/delete-account",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"delete-account"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 13 Aug 2024 21:14:46 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 13 Aug 2024 21:14:46 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"delete done!!\"\n}"
 								}
 							]
 						}
@@ -22280,7 +22396,7 @@
 									"formdata": [
 										{
 											"key": "place_id",
-											"value": "3",
+											"value": "2",
 											"type": "text"
 										}
 									]
@@ -22708,9 +22824,27 @@
 							"name": "get-trip-depending-on-favorite",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
 								"url": {
-									"raw": ""
+									"raw": "http://127.0.0.1:8000/api/get-trip-depending-on-favorite",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get-trip-depending-on-favorite"
+									]
 								}
 							},
 							"response": [
@@ -23179,12 +23313,12 @@
 												},
 												{
 													"key": "plane_trip_id",
-													"value": "2",
+													"value": "1",
 													"type": "text"
 												},
 												{
 													"key": "plane_trip_away_id",
-													"value": "4",
+													"value": "2",
 													"type": "text"
 												}
 											]
@@ -24581,18 +24715,18 @@
 											"formdata": [
 												{
 													"key": "start_date",
-													"value": "2024-08-15",
+													"value": "2024-5-30",
 													"type": "text"
 												},
 												{
 													"key": "end_date",
-													"value": "2024-08-28",
+													"value": "2024-6-6",
 													"type": "text"
 												}
 											]
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/get_all_room/1",
+											"raw": "http://127.0.0.1:8000/api/user/get_all_room/3",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -24605,7 +24739,7 @@
 												"api",
 												"user",
 												"get_all_room",
-												"1"
+												"3"
 											]
 										}
 									},
@@ -25351,11 +25485,6 @@
 											"type": "text"
 										},
 										{
-											"key": "count_room_C1",
-											"value": "1",
-											"type": "text"
-										},
-										{
 											"key": "count_room_C2",
 											"value": "1",
 											"type": "text"
@@ -25407,7 +25536,8 @@
 												{
 													"key": "source_trip_id",
 													"value": "1",
-													"type": "text"
+													"type": "text",
+													"disabled": true
 												},
 												{
 													"key": "destination_trip_id",
@@ -25425,13 +25555,19 @@
 													"type": "text"
 												},
 												{
+													"key": "number_of_people",
+													"value": "10",
+													"type": "text",
+													"disabled": true
+												},
+												{
 													"key": "start_date",
-													"value": "2024-08-15",
+													"value": "2024-5-30",
 													"type": "text"
 												},
 												{
 													"key": "end_date",
-													"value": "2024-08-30",
+													"value": "2024-6-5",
 													"type": "text"
 												},
 												{
@@ -25440,9 +25576,28 @@
 													"type": "text"
 												},
 												{
-													"key": "count_room_C1",
+													"key": "place_ids[0]",
 													"value": "1",
-													"type": "text"
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "place_ids[1]",
+													"value": "2",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "plane_trip_id",
+													"value": "1",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "plane_trip_away_id",
+													"value": "3",
+													"type": "text",
+													"disabled": true
 												},
 												{
 													"key": "count_room_C2",
@@ -25488,11 +25643,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 12 Aug 2024 14:48:21 GMT"
+											"value": "Tue, 28 May 2024 10:52:24 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 12 Aug 2024 14:48:21 GMT"
+											"value": "Tue, 28 May 2024 10:52:24 GMT"
 										},
 										{
 											"key": "Connection",
@@ -25516,7 +25671,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59"
+											"value": "57"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -25524,7 +25679,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 21,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1500.00\",\n            \"start_date\": \"2024-08-15\",\n            \"end_date\": \"2024-08-30\",\n            \"trip_note\": \"hi my friend\",\n            \"rooms_count\": 4\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"hotel\": {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 83,\n                \"capacity\": 1,\n                \"price\": \"10.00\"\n            },\n            {\n                \"id\": 94,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 104,\n                \"capacity\": 4,\n                \"price\": \"30.00\"\n            },\n            {\n                \"id\": 114,\n                \"capacity\": 6,\n                \"price\": \"40.00\"\n            }\n        ]\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 12,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"540.00\",\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-06-05\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"hotel\",\n            \"rooms_count\": 3\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"hotel\": {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 32,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 42,\n                \"capacity\": 4,\n                \"price\": \"30.00\"\n            },\n            {\n                \"id\": 52,\n                \"capacity\": 6,\n                \"price\": \"40.00\"\n            }\n        ]\n    }\n}"
 								}
 							]
 						},
@@ -25549,7 +25704,7 @@
 										},
 										{
 											"key": "end_date",
-											"value": "2024-08-30",
+											"value": "2024-07-03",
 											"type": "text"
 										},
 										{
@@ -25558,29 +25713,24 @@
 											"type": "text"
 										},
 										{
-											"key": "count_room_C1",
+											"key": "count_room_C2",
 											"value": "1",
 											"type": "text"
 										},
 										{
-											"key": "count_room_C2",
-											"value": "0",
-											"type": "text"
-										},
-										{
 											"key": "count_room_C4",
-											"value": "0",
+											"value": "1",
 											"type": "text"
 										},
 										{
 											"key": "count_room_C6",
-											"value": "0",
+											"value": "1",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/update_hotel_book/21",
+									"raw": "http://127.0.0.1:8000/api/user/update_hotel_book/4",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -25593,7 +25743,7 @@
 										"api",
 										"user",
 										"update_hotel_book",
-										"21"
+										"4"
 									]
 								}
 							},
@@ -25619,7 +25769,7 @@
 												},
 												{
 													"key": "end_date",
-													"value": "2024-08-30",
+													"value": "2024-07-03",
 													"type": "text"
 												},
 												{
@@ -25628,29 +25778,24 @@
 													"type": "text"
 												},
 												{
-													"key": "count_room_C1",
+													"key": "count_room_C2",
 													"value": "1",
 													"type": "text"
 												},
 												{
-													"key": "count_room_C2",
-													"value": "0",
-													"type": "text"
-												},
-												{
 													"key": "count_room_C4",
-													"value": "0",
+													"value": "1",
 													"type": "text"
 												},
 												{
 													"key": "count_room_C6",
-													"value": "0",
+													"value": "1",
 													"type": "text"
 												}
 											]
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/update_hotel_book/21",
+											"raw": "http://127.0.0.1:8000/api/user/update_hotel_book/4",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -25663,7 +25808,7 @@
 												"api",
 												"user",
 												"update_hotel_book",
-												"21"
+												"4"
 											]
 										}
 									},
@@ -25677,11 +25822,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 12 Aug 2024 14:54:57 GMT"
+											"value": "Sat, 15 Jun 2024 08:21:17 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 12 Aug 2024 14:54:57 GMT"
+											"value": "Sat, 15 Jun 2024 08:21:17 GMT"
 										},
 										{
 											"key": "Connection",
@@ -25705,7 +25850,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "57"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -25713,7 +25858,119 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 21,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france with leader\",\n            \"price\": \"1650.00\",\n            \"start_date\": \"2024-08-15\",\n            \"end_date\": \"2024-08-30\",\n            \"trip_note\": \"hi my friend again\",\n            \"rooms_count\": 5\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"hotel\": {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 83,\n                \"capacity\": 1,\n                \"price\": \"10.00\"\n            },\n            {\n                \"id\": 94,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 104,\n                \"capacity\": 4,\n                \"price\": \"30.00\"\n            },\n            {\n                \"id\": 114,\n                \"capacity\": 6,\n                \"price\": \"40.00\"\n            },\n            {\n                \"id\": 85,\n                \"capacity\": 1,\n                \"price\": \"10.00\"\n            }\n        ]\n    },\n    \"added price\": 150\n}"
+									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 4,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france with leader\",\n            \"price\": \"3240.00\",\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-07-03\",\n            \"trip_note\": \"hi my friend again\",\n            \"rooms_count\": 6\n        },\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"hotel\": {\n            \"id\": 3,\n            \"name\": \"Paris_1_Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 61,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 62,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 71,\n                \"capacity\": 4,\n                \"price\": \"30.00\"\n            },\n            {\n                \"id\": 72,\n                \"capacity\": 4,\n                \"price\": \"30.00\"\n            },\n            {\n                \"id\": 81,\n                \"capacity\": 6,\n                \"price\": \"40.00\"\n            },\n            {\n                \"id\": 82,\n                \"capacity\": 6,\n                \"price\": \"40.00\"\n            }\n        ]\n    },\n    \"added price\": 1890\n}"
+								},
+								{
+									"name": "update_hotel_book",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "trip_name",
+													"value": "to france with leader",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-08-03",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend again",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C2",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C4",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C6",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/update_hotel_book/3",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"update_hotel_book",
+												"3"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 16 Jul 2024 22:55:03 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 16 Jul 2024 22:55:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"the new end date must be after or equal old end date\"\n}"
 								}
 							]
 						},
@@ -26307,12 +26564,12 @@
 										},
 										{
 											"key": "start_date",
-											"value": "2024-08-20",
+											"value": "2024-06-15",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-08-25",
+											"value": "2024-06-20",
 											"type": "text"
 										},
 										{
@@ -26342,15 +26599,9 @@
 											"type": "text"
 										},
 										{
-											"key": "count_room_C1",
-											"value": "1",
-											"type": "text"
-										},
-										{
 											"key": "count_room_C2",
 											"value": "1",
-											"type": "text",
-											"disabled": true
+											"type": "text"
 										},
 										{
 											"key": "count_room_C4",
@@ -26421,7 +26672,7 @@
 												},
 												{
 													"key": "hotel_id",
-													"value": "1",
+													"value": "3",
 													"type": "text"
 												},
 												{
@@ -26431,17 +26682,17 @@
 												},
 												{
 													"key": "number_of_people",
-													"value": "1",
+													"value": "10",
 													"type": "text"
 												},
 												{
 													"key": "start_date",
-													"value": "2024-08-20",
+													"value": "2024-5-30",
 													"type": "text"
 												},
 												{
 													"key": "end_date",
-													"value": "2024-08-25",
+													"value": "2024-6-5",
 													"type": "text"
 												},
 												{
@@ -26450,15 +26701,14 @@
 													"type": "text"
 												},
 												{
-													"key": "place_ids[0]",
+													"key": "places[0]",
 													"value": "1",
 													"type": "text"
 												},
 												{
-													"key": "place_ids[1]",
+													"key": "places[1]",
 													"value": "2",
-													"type": "text",
-													"disabled": true
+													"type": "text"
 												},
 												{
 													"key": "plane_trip_id",
@@ -26471,36 +26721,23 @@
 													"type": "text"
 												},
 												{
-													"key": "count_room_C1",
-													"value": "1",
-													"type": "text"
-												},
-												{
 													"key": "count_room_C2",
 													"value": "1",
-													"type": "text",
-													"disabled": true
+													"type": "text"
 												},
 												{
 													"key": "count_room_C4",
 													"value": "1",
-													"type": "text",
-													"disabled": true
+													"type": "text"
 												},
 												{
 													"key": "count_room_C6",
 													"value": "1",
-													"type": "text",
-													"disabled": true
-												},
-												{
-													"key": "activities[0]",
-													"value": "1",
 													"type": "text"
 												},
 												{
-													"key": "activities[1]",
-													"value": "2",
+													"key": "",
+													"value": "",
 													"type": "text",
 													"disabled": true
 												}
@@ -26533,11 +26770,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 12 Aug 2024 14:49:34 GMT"
+											"value": "Sat, 25 May 2024 08:38:04 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 12 Aug 2024 14:49:34 GMT"
+											"value": "Sat, 25 May 2024 08:38:04 GMT"
 										},
 										{
 											"key": "Connection",
@@ -26561,7 +26798,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -26569,7 +26806,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 23,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"170.00\",\n            \"number_of_people\": 1,\n            \"start_date\": \"2024-08-20\",\n            \"end_date\": \"2024-08-25\",\n            \"trip_note\": \"hi my friend\",\n            \"rooms_count\": 1\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Swimming\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"current_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 1,\n                \"capacity\": 1,\n                \"price\": \"10.00\"\n            }\n        ]\n    }\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"0.00\",\n            \"number_of_people\": 10,\n            \"trip_capacity\": null,\n            \"start_date\": \"2024-05-30\",\n            \"end_date\": \"2024-06-05\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"dynamic\",\n            \"rooms_count\": 3,\n            \"places\": [],\n            \"plane_trips\": [\n                {\n                    \"id\": 1,\n                    \"airport_source_id\": 1,\n                    \"airport_destination_id\": 3,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 15,\n                    \"flight_date\": \"2024-05-30\",\n                    \"landing_date\": \"2024-06-01\",\n                    \"airport_source\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    }\n                },\n                {\n                    \"id\": 3,\n                    \"airport_source_id\": 3,\n                    \"airport_destination_id\": 1,\n                    \"current_price\": \"200.00\",\n                    \"available_seats\": 15,\n                    \"flight_date\": \"2024-06-05\",\n                    \"landing_date\": \"2024-06-06\",\n                    \"airport_source\": {\n                        \"id\": 3,\n                        \"name\": \"France A\"\n                    },\n                    \"airport_destination\": {\n                        \"id\": 1,\n                        \"name\": \"Syria A\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -26604,7 +26841,7 @@
 										},
 										{
 											"key": "end_date",
-											"value": "2024-09-01",
+											"value": "2024-06-19",
 											"type": "text"
 										},
 										{
@@ -26630,11 +26867,6 @@
 										{
 											"key": "plane_trip_away_id",
 											"value": "4",
-											"type": "text"
-										},
-										{
-											"key": "count_room_C1",
-											"value": "1",
 											"type": "text"
 										},
 										{
@@ -26665,7 +26897,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/update_dynamic_trip/23",
+									"raw": "http://127.0.0.1:8000/api/user/update_dynamic_trip/7",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -26678,7 +26910,7 @@
 										"api",
 										"user",
 										"update_dynamic_trip",
-										"23"
+										"7"
 									]
 								}
 							},
@@ -26714,7 +26946,7 @@
 												},
 												{
 													"key": "end_date",
-													"value": "2024-09-01",
+													"value": "2024-06-20",
 													"type": "text"
 												},
 												{
@@ -26740,11 +26972,6 @@
 												{
 													"key": "plane_trip_away_id",
 													"value": "4",
-													"type": "text"
-												},
-												{
-													"key": "count_room_C1",
-													"value": "1",
 													"type": "text"
 												},
 												{
@@ -26775,7 +27002,7 @@
 											]
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/update_dynamic_trip/23",
+											"raw": "http://127.0.0.1:8000/api/user/update_dynamic_trip/12",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -26788,7 +27015,7 @@
 												"api",
 												"user",
 												"update_dynamic_trip",
-												"23"
+												"12"
 											]
 										}
 									},
@@ -26802,11 +27029,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 12 Aug 2024 14:51:28 GMT"
+											"value": "Fri, 14 Jun 2024 22:28:24 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 12 Aug 2024 14:51:28 GMT"
+											"value": "Fri, 14 Jun 2024 22:28:24 GMT"
 										},
 										{
 											"key": "Connection",
@@ -26830,7 +27057,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "59"
+											"value": "57"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -26838,7 +27065,159 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 23,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1596.00\",\n            \"number_of_people\": 2,\n            \"start_date\": \"2024-08-20\",\n            \"end_date\": \"2024-09-01\",\n            \"trip_note\": \"hi my friend\",\n            \"rooms_count\": 5\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"current_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"current_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 1,\n                \"capacity\": 1,\n                \"price\": \"10.00\"\n            },\n            {\n                \"id\": 2,\n                \"capacity\": 1,\n                \"price\": \"10.00\"\n            },\n            {\n                \"id\": 11,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 21,\n                \"capacity\": 4,\n                \"price\": \"28.00\"\n            },\n            {\n                \"id\": 31,\n                \"capacity\": 6,\n                \"price\": \"45.00\"\n            }\n        ]\n    },\n    \"added price\": 1426\n}"
+									"body": "{\n    \"data\": {\n        \"dynamic_trip\": {\n            \"id\": 12,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"1405.00\",\n            \"number_of_people\": 2,\n            \"start_date\": \"2024-06-15\",\n            \"end_date\": \"2024-06-20\",\n            \"trip_note\": \"hi my friend\",\n            \"rooms_count\": 4\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        },\n        \"rooms\": [\n            {\n                \"id\": 1,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 2,\n                \"capacity\": 2,\n                \"price\": \"20.00\"\n            },\n            {\n                \"id\": 11,\n                \"capacity\": 4,\n                \"price\": \"28.00\"\n            },\n            {\n                \"id\": 21,\n                \"capacity\": 6,\n                \"price\": \"45.00\"\n            }\n        ]\n    },\n    \"added price\": 885\n}"
+								},
+								{
+									"name": "update_dynamic_trip",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "hotel_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "trip_name",
+													"value": "to france",
+													"type": "text"
+												},
+												{
+													"key": "number_of_people",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-06-19",
+													"type": "text"
+												},
+												{
+													"key": "trip_note",
+													"value": "hi my friend ",
+													"type": "text"
+												},
+												{
+													"key": "place_ids[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "place_ids[1]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "plane_trip_away_id",
+													"value": "4",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C2",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C4",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "count_room_C6",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "activities[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "activities[1]",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/update_dynamic_trip/7",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"update_dynamic_trip",
+												"7"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:45:04 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Jun 2024 08:45:04 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"the new end date must be after or equal old end date\"\n}"
 								}
 							]
 						},
@@ -26961,7 +27340,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/show_dynamic_trip/10",
+									"raw": "http://127.0.0.1:8000/api/user/show_dynamic_trip/12",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -26974,7 +27353,7 @@
 										"api",
 										"user",
 										"show_dynamic_trip",
-										"10"
+										"12"
 									]
 								}
 							},
@@ -27181,7 +27560,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/delete_dynamic_trip/18",
+									"raw": "http://127.0.0.1:8000/api/user/delete_dynamic_trip/5",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -27194,7 +27573,7 @@
 										"api",
 										"user",
 										"delete_dynamic_trip",
-										"18"
+										"5"
 									]
 								}
 							},
@@ -27487,7 +27866,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/show-static-trip/1",
+									"raw": "http://127.0.0.1:8000/api/user/show-static-trip/2",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -27500,7 +27879,7 @@
 										"api",
 										"user",
 										"show-static-trip",
-										"1"
+										"2"
 									]
 								}
 							},
@@ -27517,7 +27896,7 @@
 											}
 										],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/user/show-static-trip/8",
+											"raw": "http://127.0.0.1:8000/api/user/show-static-trip/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -27530,7 +27909,7 @@
 												"api",
 												"user",
 												"show-static-trip",
-												"8"
+												"1"
 											]
 										}
 									},
@@ -27544,11 +27923,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:27:32 GMT"
+											"value": "Mon, 12 Aug 2024 11:50:05 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Jun 2024 09:27:32 GMT"
+											"value": "Mon, 12 Aug 2024 11:50:05 GMT"
 										},
 										{
 											"key": "Connection",
@@ -27572,7 +27951,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "54"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -27580,7 +27959,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"static_trip\": {\n            \"id\": 8,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"France Hi\",\n            \"price\": \"665.00\",\n            \"number_of_people\": 16,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-06-20\",\n            \"end_date\": \"2024-06-25\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\",\n            \"rooms_count\": 7\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"20.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.jpg\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"20.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 3,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441633.png\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441633.jpg\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Umayyad Mosque\",\n                \"place_price\": \"5.00\",\n                \"text\": \"The Umayyad Mosque, also known as the Great Mosque of Damascus, is one of the most significant Islamic architectural masterpieces in the world. Located in the heart of Damascus, Syria, it is a testament to the grandeur and architectural prowess of the Umayyad Caliphate, which ruled from the 7th to the 8th century.\",\n                \"area_id\": 1,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 5,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1718441637.png\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"place_id\": 3,\n                        \"image\": \"PlaceImages/1718441637.jpg\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 1,\n                    \"name\": \"Damascus\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\"\n            },\n            \"airport_source\": {\n                \"id\": 3,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"static_trip\": {\n            \"id\": 1,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"Seeder Trip\",\n            \"price\": \"320.00\",\n            \"new_price\": null,\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-08-14\",\n            \"end_date\": \"2024-08-18\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"This is the first Trip\",\n            \"telegram_link\": null,\n            \"type\": \"static\",\n            \"rooms_count\": 0\n        },\n        \"activities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Swimming\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Eating\"\n            }\n        ],\n        \"source_trip\": {\n            \"id\": 1,\n            \"name\": \"Syria\"\n        },\n        \"destination_trip\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"places\": [\n            {\n                \"id\": 1,\n                \"name\": \"Eiffel Tower\",\n                \"place_price\": \"100.00\",\n                \"text\": \"This iconic iron lattice tower in Paris is not only a famous landmark but also an engineering marvel. Climb to the top for breathtaking views of the city and beyond\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/17234631174.png\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"place_id\": 1,\n                        \"image\": \"PlaceImages/17234631895.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Musée du Louvre\",\n                \"place_price\": \"200.00\",\n                \"text\": \"Located in Paris, the Louvre is one of the world's most prestigious museums. It houses masterpieces like the Mona Lisa and the Venus de Milo\",\n                \"area_id\": 4,\n                \"visible\": 1,\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"place_id\": 2,\n                        \"image\": \"PlaceImages/1718441623.png\"\n                    }\n                ],\n                \"area\": {\n                    \"id\": 4,\n                    \"name\": \"Paris\"\n                }\n            }\n        ],\n        \"going_trip\": {\n            \"going_plane\": {\n                \"id\": 1,\n                \"name\": \"Damas A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            },\n            \"airport_destination\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            }\n        },\n        \"return_trip\": {\n            \"return_plane\": {\n                \"id\": 3,\n                \"name\": \"PARIS A1\",\n                \"ticket_price\": \"50.00\"\n            },\n            \"airport_source\": {\n                \"id\": 2,\n                \"name\": \"France A\"\n            },\n            \"airport_destination\": {\n                \"id\": 1,\n                \"name\": \"Syria A\"\n            }\n        },\n        \"hotel\": {\n            \"id\": 1,\n            \"name\": \"Damascus Hotel\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -27728,7 +28107,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/1",
+									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/2",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -27741,7 +28120,7 @@
 										"api",
 										"user",
 										"check-static-trip",
-										"1"
+										"2"
 									]
 								}
 							},
@@ -28784,7 +29163,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "3|DB7aK5WkeNAMONUl5IUwimijhBrUj8ACnBa75Bqh5abaad78",
+						"value": "1|crMMKIQKD8OZqgnxWUlmo2eRT7m3yy2x3VukXWHF20c912a5",
 						"type": "string"
 					}
 				]
@@ -29213,6 +29592,60 @@
 							"path": [
 								"api",
 								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|hRo4tWRHdl6q190F1iTVI2n3GchH0iAlB3KIViUsd1406724",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lat",
+									"value": "48.14839618985294",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "11.569970545868486",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/test",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"test"
 							]
 						}
 					},

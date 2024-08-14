@@ -29,7 +29,8 @@ class BookStaticTripRequest extends FormRequest
            'days'=>'required|numeric',
            'total_price'=>'required|numeric|min:1',
            'price_after_discount'=>'nullable|min:1',
-           'discount'=>'boolean'
+           'discount'=>'boolean',
+        //    'payment_type'=>'required|in:stripe,wallet',
         ];
     }
 }

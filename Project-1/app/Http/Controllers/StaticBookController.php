@@ -11,6 +11,7 @@ use App\Http\Requests\Trip\SearchStaticBookRequest;
 use App\Http\Requests\Trip\StoreStaticTripRequest;
 use App\Http\Requests\Trip\UpdateStaticTripRequest;
 use App\Models\Activity;
+use App\Models\Bank;
 use App\Models\Booking;
 use App\Models\BookingRoom;
 use App\Models\BookingStaticTrip;
@@ -254,6 +255,12 @@ class StaticBookController extends Controller
                 'message'=>'check from check api',
             ],400);
         }
+        // if($val['payment_type']=='wallet'){
+        //     $bank=Bank::where('email',auth()->user()->email)->first();
+        //     $bank['money']=$bank['money']-$val['book_price'];
+        //     $bank['payments']+=$val['book_price'];
+        //     $bank->save();
+        // }
         return response()->json([
             'message'=>trans('trip.enjoy-trip')
         ],200);
@@ -263,6 +270,68 @@ class StaticBookController extends Controller
             ],400);
         }
 
+    }
+
+    public function stripePayment(BookStaticTripRequest $request)
+    {
+        try{
+
+            $book_price=$request['total_price'];
+            if($request['discount']){
+                $book_price=$request['price_after_discount'];
+            }
+
+            $staticTrip=Booking::where([['id',$request['trip_id']],['type','static']])->first();
+            // return $staticTrip;
+        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
+        $response=$stripe->checkout->sessions->create([
+        'line_items' => [
+            [
+                'price_data' => [
+                    'currency' => 'usd',
+                    'product_data' => [
+                            'name' => $staticTrip['trip_name'],
+                    ],
+                    //trip price
+                    'unit_amount' =>$book_price*100 ,
+                ],
+                'quantity' => 1,
+            ]
+        ],
+        'mode' => 'payment',
+        // 'success_url' => route('success').'?session_id={CHECKOUT_SESSION_ID}',
+        // 'success_url' => self::success($request),
+        'success_url' =>route('success',$request),
+        'cancel_url' => route('cancel'),
+        ]);
+        if(isset($response->id)&& $response->id != ''){
+            return redirect($response->url);
+        }else{
+            return redirect()->route('cancel');
+        }
+        }catch(Exception $ex){
+            return response()->json([
+                'message'=>$ex->getMessage()
+            ],);
+        }
+
+
+    }
+
+    public function success(Request $request){
+
+        $val=$this->bookrepository->bookStaticTrip($request->all());
+        // return $request;
+            return response()->json([
+                'message'=>'Enjoy Trip'
+            ],200);
+    }
+
+    public function cancel()
+    {
+        return response()->json([
+            'message'=>'failed plz try again'
+        ],422);
     }
 
     public function showAllMyStaicTrips()
