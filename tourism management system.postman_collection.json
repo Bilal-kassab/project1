@@ -24090,6 +24090,163 @@
 											"body": "{\n    \"data\": {\n        \"finished_trip\": [\n            {\n                \"id\": 8,\n                \"user_id\": 7,\n                \"source_trip_id\": 1,\n                \"destination_trip_id\": 2,\n                \"trip_name\": \"to france\",\n                \"price\": \"100.00\",\n                \"number_of_people\": 1,\n                \"start_date\": \"2024-08-11\",\n                \"end_date\": \"2024-08-14\",\n                \"trip_note\": \"hi my friend\"\n            }\n        ],\n        \"future_trip\": [\n            {\n                \"id\": 7,\n                \"user_id\": 7,\n                \"source_trip_id\": 1,\n                \"destination_trip_id\": 2,\n                \"trip_name\": \"to france\",\n                \"price\": \"100.00\",\n                \"number_of_people\": 1,\n                \"start_date\": \"2024-08-12\",\n                \"end_date\": \"2024-08-14\",\n                \"trip_note\": \"hi my friend\"\n            }\n        ]\n    }\n}"
 										}
 									]
+								},
+								{
+									"name": "search-for-plane-trip-second",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "country_source_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "country_destination_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "flight_date",
+													"value": "2024-08-14",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "2024-08-18",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/search-for-plane-trip-second",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"search-for-plane-trip-second"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "search-for-plane-trip-second",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "country_source_id",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "country_destination_id",
+															"value": "2",
+															"type": "text"
+														},
+														{
+															"key": "flight_date",
+															"value": "2024-08-14",
+															"type": "text"
+														},
+														{
+															"key": "end_date",
+															"value": "2024-08-18",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/user/search-for-plane-trip-second",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"user",
+														"search-for-plane-trip-second"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "127.0.0.1:8000"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 14 Aug 2024 11:31:27 GMT"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 14 Aug 2024 11:31:27 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.4"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "57"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"going_trip\": [\n            {\n                \"id\": 1,\n                \"plane_id\": 1,\n                \"airport_source_id\": 1,\n                \"airport_destination_id\": 2,\n                \"country_source_id\": 1,\n                \"country_destination_id\": 2,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-08-14\",\n                \"landing_date\": \"2024-08-15\",\n                \"plane\": {\n                    \"id\": 1,\n                    \"name\": \"Damas A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"country_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"airport_source\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                }\n            }\n        ],\n        \"return_trip\": [\n            {\n                \"id\": 3,\n                \"plane_id\": 3,\n                \"airport_source_id\": 2,\n                \"airport_destination_id\": 1,\n                \"country_source_id\": 2,\n                \"country_destination_id\": 1,\n                \"current_price\": \"50.00\",\n                \"available_seats\": 25,\n                \"flight_duration\": \"24.00\",\n                \"flight_date\": \"2024-08-18\",\n                \"landing_date\": \"2024-08-19\",\n                \"plane\": {\n                    \"id\": 3,\n                    \"name\": \"PARIS A1\",\n                    \"images\": []\n                },\n                \"country_source\": {\n                    \"id\": 2,\n                    \"name\": \"France\"\n                },\n                \"country_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria\"\n                },\n                \"airport_source\": {\n                    \"id\": 2,\n                    \"name\": \"France A\"\n                },\n                \"airport_destination\": {\n                    \"id\": 1,\n                    \"name\": \"Syria A\"\n                }\n            }\n        ]\n    }\n}"
+										}
+									]
 								}
 							]
 						},
@@ -29312,7 +29469,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "3|UrojEFlSDLEzQAnAa7MUaegUpCZf3BRJOXPKTOenbd1bb3a2",
+						"value": "1|QenN7M1Ew0i9NaeoObeA694HSBtPGk7M0CfA8MBjf67ff505",
 						"type": "string"
 					}
 				]

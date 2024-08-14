@@ -171,6 +171,7 @@ Route::group(['middleware'=>['auth:sanctum','role:User']], function () {
 
         Route::controller(PlaneController::class)->group(function(){
             Route::post('search-for-plane-trip','searchForPlaneTrip');
+            Route::post('search-for-plane-trip-second','getAllTripForCountry');
             Route::get('show-plane-trip-details/{id}','showPlaneTripDetails');
         });
 

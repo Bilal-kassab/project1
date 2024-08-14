@@ -294,4 +294,36 @@ class PlaneController extends Controller
             'data'=>$trips
         ],200);
     }
+
+    public function getAllTripForCountry(Request $request)
+    {
+        $date=Carbon::now()->format('Y-m-d');
+        $validator = Validator::make($request->all(), [
+            'country_source_id'=> 'required|numeric|exists:countries,id',
+            'country_destination_id'=> 'required|numeric|exists:countries,id',
+            'flight_date' => "required|date|after_or_equal:$date",
+            'end_date' => "required|date|after_or_equal:flight_date",
+        ]);
+          if($validator->fails()){
+              return response()->json([
+                  'message'=> $validator->errors()->first(),
+              ],422);
+          }
+        $going_trip= PlaneTrip::getTripDetails()
+                            ->where('country_source_id',$request['country_source_id'])
+                            ->where('country_destination_id',$request['country_destination_id'])
+                            ->where('flight_date','=',$request['flight_date'])
+                            ->get();
+        $return_trip= PlaneTrip::getTripDetails()
+                            ->where('country_source_id',$request['country_destination_id'])
+                            ->where('country_destination_id',$request['country_source_id'])
+                            ->where('flight_date','=',$request['end_date'])
+                            ->get();
+        return response()->json([
+            'data'=> [
+                'going_trip'=>$going_trip,
+                'return_trip'=>$return_trip
+              ],
+        ],200);
+    }
 }
