@@ -1360,6 +1360,115 @@
 									"body": "{\n    \"message\": \"updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Super Admin\",\n        \"email\": \"SA@gmail.com\",\n        \"phone_number\": \"00000000000\",\n        \"image\": null,\n        \"position\": {\n            \"id\": 2,\n            \"name\": \"France\"\n        },\n        \"role\": [\n            \"Super Admin\"\n        ]\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "delete-account-by-SA",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/delete-account-by-SA/10",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"delete-account-by-SA",
+										"10"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "delete-account-by-SA",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/delete-account-by-SA/11",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"delete-account-by-SA",
+												"11"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 14 Aug 2024 10:36:55 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 14 Aug 2024 10:36:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"delete done!!\"\n}"
+								}
+							]
 						}
 					],
 					"event": [
@@ -17604,7 +17713,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|38lKexXgX9zAyuuKxmwOmu2F0Y2YQ0JkSUTBoUoA50757274",
+						"value": "2|qMJWtUzOJSI5pU5njfVQCBd5fdS1Hn5Sv9jDh9EJcef4cb31",
 						"type": "string"
 					}
 				]
@@ -19835,6 +19944,46 @@
 									"body": "{\n    \"message\": \"delete done!!\"\n}"
 								}
 							]
+						},
+						{
+							"name": "charge-account",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "money",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/charge-account",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"charge-account"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -28332,7 +28481,7 @@
 									"formdata": [
 										{
 											"key": "trip_id",
-											"value": "1",
+											"value": "2",
 											"type": "text"
 										},
 										{
@@ -28357,7 +28506,7 @@
 										},
 										{
 											"key": "total_price",
-											"value": "880",
+											"value": "840",
 											"type": "text"
 										},
 										{
@@ -29163,7 +29312,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|crMMKIQKD8OZqgnxWUlmo2eRT7m3yy2x3VukXWHF20c912a5",
+						"value": "3|UrojEFlSDLEzQAnAa7MUaegUpCZf3BRJOXPKTOenbd1bb3a2",
 						"type": "string"
 					}
 				]
@@ -29537,7 +29686,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "4|iaEKXWJTdzCdOFPP5ZMh1ntOZIj7DNgQUmrykbmV1143e54a",
+						"value": "2|qMJWtUzOJSI5pU5njfVQCBd5fdS1Hn5Sv9jDh9EJcef4cb31",
 						"type": "string"
 					}
 				]

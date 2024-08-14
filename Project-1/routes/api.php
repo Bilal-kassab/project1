@@ -84,8 +84,7 @@ Route::post('/test', function (Request $request) {
 
 })->middleware('auth:sanctum');
 
-Route::get('chargeAccount',[UserController::class,'chargeAccount']);
-Route::get('success-charge',[UserController::class,'success'])->name('success-charge');
+
 
 Route::get('payment',[StaticBookController::class,'stripePayment']);
 // Route::get('success',[StaticBookController::class,'success'])->name('success');
@@ -123,6 +122,8 @@ Route::group(['middleware'=>['auth:sanctum','role:User']], function () {
             Route::post('change-profile-photo','changeProfilePhoto');
             Route::get('payment-inofo','paymentInof');
             Route::post('delete-account','deleteAccount');
+            Route::post('charge-account',[UserController::class,'chargeAccount']);
+            Route::get('success-charge',[UserController::class,'success'])->name('success-charge');
         });
 
         Route::controller(CountryController::class)->group(function(){
@@ -278,6 +279,9 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
         Route::prefix('admin')->group(function () {
 
 
+            Route::controller(UserController::class)->group(function () {
+                Route::post('delete-account-by-SA/{id}','deleteAccountBySA');
+            });
             Route::controller(PlaceController::class)->group(function () {
                 Route::post('add-place','store');
                 Route::get('places','index');

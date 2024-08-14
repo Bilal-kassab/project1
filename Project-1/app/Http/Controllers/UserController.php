@@ -21,6 +21,10 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:Super Admin', ['only' => ['deleteAccountBySA']]);
+    }
     public function register(Request $request)
     {
 
@@ -372,7 +376,23 @@ class UserController extends Controller
             $room['user_id']=null;
             $room->save();
         }
-        User::where('id',auth()->id())->delete();
+       $user=User::where('id',auth()->id())->first();
+       Bank::where('email',$user->email)->delete();
+       $user->delete();
+        return response()->json([
+            // 'message'=>$book
+            'message'=>trans('global.delete')
+        ],200);
+    }
+    public function deleteAccountBySA($id)
+    {
+        $rooms=BookingRoom::where('user_id',$id)->whereRelation('book','type','static')->get();
+        foreach($rooms as $room){
+            $room['user_id']=null;
+            $room->save();
+        }
+       $user=User::where('id',$id)->delete();
+
         return response()->json([
             // 'message'=>$book
             'message'=>trans('global.delete')
@@ -381,6 +401,9 @@ class UserController extends Controller
 
     public function chargeAccount(Request $request)
     {
+        $request->validate([
+            'money'=>'required|numeric',
+        ]);
         $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
         $response=$stripe->checkout->sessions->create([
         'line_items' => [
@@ -391,7 +414,7 @@ class UserController extends Controller
                             'name' =>'Charge Account',
                     ],
                     //trip price
-                    'unit_amount' =>$request['money']*100 ,
+                    'unit_amount' =>$request->money*100 ,
                     // 'unit_amount' =>$request['money']*100 ,
                 ],
                 'quantity' => 1,
@@ -412,7 +435,8 @@ class UserController extends Controller
     public function success(Request $request)
     {
             $bank=Bank::where('id',auth()->user()->email)->first();
-            $bank->money+=$request['money'];
+            $bank->money+=$request->money;
+            $bank->save();
             return response()->json([
                 'message'=>'Enjoy Trip'
             ],200);
