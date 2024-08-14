@@ -427,7 +427,9 @@ class UserController extends Controller
         'cancel_url' => route('cancel'),
         ]);
         if(isset($response->id)&& $response->id != ''){
-            return redirect($response->url);
+            return response()->json([
+                'link'=>$response->url
+            ],200);
         }else{
             return redirect()->route('cancel');
         }

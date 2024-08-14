@@ -14,6 +14,7 @@ use App\Models\BookPlane;
 use App\Models\Country;
 use App\Models\Place;
 use App\Models\PlaneTrip;
+use App\Models\RateBooking;
 use App\Models\Room;
 use App\Models\StaticTripRoom;
 use App\Models\User;
@@ -324,7 +325,10 @@ class BookRepository implements BookRepositoryInterface
             $book=Booking::where('type','static')
                         ->AvailableRooms()
                         ->findOrFail($id);
-
+            // $totalRatings = RateBooking::where('booking_id', $id)->sum('rate');
+            // $ratingSum = $totalRatings== 0 ? 1:$totalRatings;##
+            // $ratingsCount = RateBooking::where('booking_id', $id)->count();
+            // $ratingsCount = $ratingsCount==0 ? 1:$ratingsCount;
             $bookData=[
                 'id'=>$book['id'],
                 'source_trip_id'=>$book['source_trip_id'],
@@ -337,6 +341,7 @@ class BookRepository implements BookRepositoryInterface
                 'start_date'=>$book['start_date'],
                 'end_date'=>$book['end_date'],
                 'stars'=>$book['stars'],
+                // 'stars'=>$ratingSum/$ratingsCount,
                 'trip_note'=>$book['trip_note'],
                 'telegram_link'=>$book['telegram_link'],
                 'type'=>$book['type'],

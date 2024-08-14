@@ -11,6 +11,7 @@ use App\Models\Booking;
 use App\Models\BookPlace;
 use App\Models\Place;
 use App\Models\PlaneTrip;
+use App\Models\RateBooking;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Carbon;
@@ -40,27 +41,30 @@ use Illuminate\Support\Facades\Validator;
     // return $date=Carbon::now()->format('Y-m-d');
 // });
 Route::get('/', function () {
-    $book=Booking::where('type','static')
-    ->AvailableRooms()->with('placesss')
-    ->findOrFail(1);
-    $places=BookPlace::where('book_id',$book->id)->with('places')->get();
+    // $book=Booking::where('type','static')
+    //             ->AvailableRooms()->with('places')
+    //             ->findOrFail(1);
+    // $places=BookPlace::where('book_id',$book->id)->with('places')->get();
 
-    $result = [
-        'trip_id' => $book->id,
-        'trip_name' => $book->name,
-        'places' => $book->placesss->map(function($place) {
-            return [
-                'id' => $place->id,
-                'name' => $place->name,
-                'current_price' => $place->pivot->current_price,
-                'text' => $place->text,
-                'area_id' => $place->area_id,
-                'visible' => $place->visible,
-            ];
-        })
-    ];
+    $totalRatings = RateBooking::where('booking_id', 2)->sum('rate')== 0 ? 1:1;
+    $ratingsCount = RateBooking::where('booking_id', 2)->count() == 0 ? 1:1;
+    return $totalRatings/$ratingsCount;
+    // $result = [
+    //     'trip_id' => $book->id,
+    //     'trip_name' => $book->name,
+    //     'places' => $book->placesss->map(function($place) {
+    //         return [
+    //             'id' => $place->id,
+    //             'name' => $place->name,
+    //             'current_price' => $place->pivot->current_price,
+    //             'text' => $place->text,
+    //             'area_id' => $place->area_id,
+    //             'visible' => $place->visible,
+    //         ];
+    //     })
+    // ];
 
-    return $result['places'];
+    // return $result['places'];
 });
 
 // Route::post('/', function (Request $request) {

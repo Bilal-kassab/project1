@@ -19983,7 +19983,94 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "charge-account",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "money",
+													"value": "100",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/charge-account",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"charge-account"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 14 Aug 2024 13:27:11 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 14 Aug 2024 13:27:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"link\": \"https://checkout.stripe.com/c/pay/cs_test_a1MbHSNN8lsDORWYfxPYRGpxDbuctmcLd99Y3hSqtQrw2xLnm6fIwiYzOm#fidkdWxOYHwnPyd1blpxYHZxWjA0VWZyREJXczdjYkZ2aUFgNTdWNWtVQHNuSmMwb0RsPHVrZE01TnVyc0lfNmpcTXNSal9AU25EfUZMXDJfaTMzS3BCdTM1X2djSGA3Rz1qcG5IYnVjY0MwNTU3M0tddjd2aycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl\"\n}"
+								}
+							]
 						}
 					]
 				},
@@ -29469,7 +29556,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "1|QenN7M1Ew0i9NaeoObeA694HSBtPGk7M0CfA8MBjf67ff505",
+						"value": "1|UbD17NUUoMWDAT7JErLWLkNDKl7ASptDxt74zxjH0c75ef57",
 						"type": "string"
 					}
 				]
