@@ -1389,9 +1389,12 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
     public function get_all_hotel_book(){
         // $hotel=Hotel::with('rooms','rooms.bookingss')->where('user_id',auth()->id())->first();
         // return $hotel;
-        $book=BookingRoom::with(['user','roomss.hotel'=> function($query) {
-            $query->where('user_id', auth()->id());
-        }])->get();
+        // $book=BookingRoom::with(['user','roomss.hotel'=> function($query) {
+        //     $query->where('user_id', auth()->id())->whereRelation('rooms','hotel_id','=',$query->id);
+        // }])->get();
+        $book=BookingRoom::whereHas('roomss.hotel',function($query) {
+                $query->where('user_id', auth()->id());
+            })->with(['user','roomss'])->get();
         return $book;
     }
     public function get_all_plane_book(){
