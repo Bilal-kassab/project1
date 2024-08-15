@@ -10,11 +10,7 @@ use Illuminate\Support\Facades\Lang;
 class Notification extends Model
 {
     use HasFactory;
-    protected $fillable=[
-        'user_id',
-        'title',
-        'body',
-    ];
+    protected $fillable = ['user_id', 'title', 'body'];
 
     public function user():BelongsTo
     {

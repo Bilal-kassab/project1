@@ -35,7 +35,7 @@ class PushNotificationWeb
             ];
 
             $response = Http::withHeader('Authorization', "Bearer $access_token")->post($apiUrl, $message);
-            return "sent";
+            // return "sent";
 
         }catch(Exception $ex){
             return response()->json([

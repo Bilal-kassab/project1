@@ -23,6 +23,7 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\StaticBookController;
 use App\Models\Booking;
 use App\Models\Country;
+use App\Models\Notification;
 use App\Models\Place;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -37,14 +38,19 @@ Route::post('/push-noti', function (Request $request) {
     $request->validate([
         'device_token'=>'required'
     ]);
-
     // $user="exUehn31-o1OCef9EGnyZb:APA91bG7fofNirxQ0b4X5SJdZEHw3CpuoFgitsuLcSy9B2JTEQZxtXlYJuaCXUT6jpdjVG8CsP6JfJyQwYEJ1BH2ffq1CNHvm5UV4_ZgB-vskWUgqwVXDwD7_DhsX9lZMyG-GGx5zOPt";
     $user=$request['device_token'];
     $message=[
         'title'=>'test',
         'body'=>'body'
     ];
-    event(new PushWebNotification($user,$message));
+    // Notification::create([
+    //     'user_id'=>2,
+    //     'title'=>$message['title'],
+    //     'body'=>$message['body'],
+    // ]);
+    //
+    event(new PushWebNotification(User::where('id',2)->get(),$message));
     return "Send";
 })->middleware('auth:sanctum');
 

@@ -81,10 +81,11 @@ class BookRepository implements BookRepositoryInterface
                 'type' => 'static',
             ]);
             foreach ($request['places'] as $place) {
+                $placePrice=Place::where('id', $place)->first()->place_price;
                 $book_place = BookPlace::create([
                     'book_id' => $booking->id,
                     'place_id' => $place,
-                    'current_price' => Place::where('id', $place)->first()->place_price,
+                    'current_price' =>$placePrice-($placePrice*$request['ratio']),
                 ]);
                  $trip_price+=$book_place['current_price'];
             }
@@ -502,7 +503,8 @@ class BookRepository implements BookRepositoryInterface
             $room_price=$room['current_price'];
             $ticket_price_for_going_trip=$goingPlaneTrip;
             $ticket_price_for_return_trip=$returnPlaneTrip;
-            $ticket_price_for_places=$placePrice-($placePrice*$ratio);
+            // $ticket_price_for_places=$placePrice-($placePrice*$ratio);
+            $ticket_price_for_places=$placePrice;
 
             $total_price=($ticket_price_for_going_trip+$ticket_price_for_return_trip+$ticket_price_for_places)*$request['number_of_friend'];
             $total_price+=($room_price*$days);

@@ -3,8 +3,8 @@
 namespace App\Listeners;
 
 use App\Events\PushWebNotification;
-use App\Helpers\PushNotificationWeb;
 use App\Jobs\SendWebNotification as JobsSendWebNotification;
+use App\Models\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
@@ -25,7 +25,16 @@ class SendWebNotification
     {
          $users=$event->users;
          $message=$event->message;
-        //  PushNotificationWeb::sendNotification($message,$users);
+        //  throw new \Exception('jjj');
+         foreach($users as $user){
+            if($user->fcm_token){
+                $notification=new Notification();
+                $notification->user_id=$user->id;
+                $notification->title=$message['title'];
+                $notification->body=$message['body'];
+                $notification->save();
+            }
+        }
          dispatch(new JobsSendWebNotification($users,$message));
     }
 }

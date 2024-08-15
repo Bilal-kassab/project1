@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PushWebNotification;
 use App\Mail\VerfiyEmail;
 use App\Models\Bank;
 use App\Models\Booking;
@@ -439,6 +440,13 @@ class UserController extends Controller
             $bank=Bank::where('id',auth()->user()->email)->first();
             $bank->money+=$request->money;
             $bank->save();
+            $user=User::where('id',auth()->id())->get();
+            $message=[
+                'title'=>'Account Recharge',
+                'body'=>"Your account has been credited with ". $request->money ."$ Enjoy!",
+            ];
+
+        event(new PushWebNotification($user,$message));
             return response()->json([
                 'message'=>'Enjoy Trip'
             ],200);

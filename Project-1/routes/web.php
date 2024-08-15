@@ -46,9 +46,17 @@ Route::get('/', function () {
     //             ->findOrFail(1);
     // $places=BookPlace::where('book_id',$book->id)->with('places')->get();
 
-    $totalRatings = RateBooking::where('booking_id', 2)->sum('rate')== 0 ? 1:1;
-    $ratingsCount = RateBooking::where('booking_id', 2)->count() == 0 ? 1:1;
-    return $totalRatings/$ratingsCount;
+
+    $dateTomorrow = now()->addDay()->format('Y-m-d');
+    $trips = Booking::whereHas('bookings.user')->whereDate('start_date', $dateTomorrow)->where('type','static')->with('bookings.user')->get();
+    $arr=[];
+    foreach($trips as $trip){
+        foreach($trip['bookings'] as $users){
+            $arr[]=$users['user'];
+        }
+            //  $arr[]=$trip['bookings'];
+    }
+    return $arr;
     // $result = [
     //     'trip_id' => $book->id,
     //     'trip_name' => $book->name,

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Events\PushWebNotification;
 use App\Http\Requests\Book\BookStaticTripRequest;
 use App\Http\Requests\Book\CheckStaticTripRequest;
 use App\Http\Requests\Book\DestroyRequest;
@@ -10,6 +10,7 @@ use App\Http\Requests\Offer\OfferRequest;
 use App\Http\Requests\Trip\SearchStaticBookRequest;
 use App\Http\Requests\Trip\StoreStaticTripRequest;
 use App\Http\Requests\Trip\UpdateStaticTripRequest;
+use App\Jobs\SendStaticTripReminder;
 use App\Models\Activity;
 use App\Models\Bank;
 use App\Models\Booking;
@@ -17,6 +18,7 @@ use App\Models\BookingRoom;
 use App\Models\BookingStaticTrip;
 use App\Models\Country;
 use App\Models\Place;
+use App\Models\User;
 use App\Repositories\Interfaces\BookRepositoryInterface;
 use Carbon\Carbon;
 use DateTime;
@@ -242,6 +244,9 @@ class StaticBookController extends Controller
     public function bookStaticTrip(BookStaticTripRequest $request):JsonResponse
     {
         try{
+            $trip=Booking::where('id',$request->trip_id)->first();
+
+
             $val=$this->bookrepository->bookStaticTrip($request->all());
         if($val==1)
         {
@@ -255,12 +260,33 @@ class StaticBookController extends Controller
                 'message'=>'check from check api',
             ],400);
         }
-        // if($val['payment_type']=='wallet'){
-        //     $bank=Bank::where('email',auth()->user()->email)->first();
-        //     $bank['money']=$bank['money']-$val['book_price'];
-        //     $bank['payments']+=$val['book_price'];
-        //     $bank->save();
-        // }
+        if($val['payment_type']=='wallet'){
+            $bank=Bank::where('email',auth()->user()->email)->first();
+            $bank['money']=$bank['money']-$val['book_price'];
+            $bank['payments']+=$val['book_price'];
+            $bank->save();
+        }
+
+        // message to trip admin
+        $user=User::where('id',$trip['user_id'])->get();
+
+        $message=[
+            'title'=>'New registration for a trip',
+            'body'=>auth()->user()->name." has registered for a trip",
+        ];
+
+        event(new PushWebNotification($user,$message));
+
+
+        // message to user
+        $user2=User::where('id',auth()->id())->get();
+        $message=[
+            'title'=>'Enjoy your trip!',
+            'body'=>"You have earned 5 points for registering for a trip within the app. You can use them to get a discount once you reach the required points.",
+        ];
+
+        event(new PushWebNotification($user2,$message));
+
         return response()->json([
             'message'=>trans('trip.enjoy-trip')
         ],200);
@@ -387,24 +413,57 @@ class StaticBookController extends Controller
             $goingPlaneTrip=$plane_trip[0]['current_price']??0;
             $returnPlaneTrip=$plane_trip[1]['current_price']??0;
             //place price
-            $total_price=0.0;
+            $places=$static_trip?->places;
+            $placePrice=0;
+            foreach($places as $place){
+                $placePrice+=$place['pivot']['current_price'];
+            }
+            // $total_price=0.0;
 
-            $total_price+=(($static_trip['price']-($room['current_price']*$days)));
-            $placePrice=$total_price-$goingPlaneTrip-$returnPlaneTrip;
-            $total_price*=$bookStaticTrip['number_of_friend'];
-            $total_price+=$rooms_needed*$room['current_price']*$days;
+            // $total_price+=(($static_trip['price']-($room['current_price']*$days)));
+            // $placePrice=$total_price-$goingPlaneTrip-$returnPlaneTrip;
+            // $total_price*=$bookStaticTrip['number_of_friend'];
+            // $total_price+=$rooms_needed*$room['current_price']*$days;
+
+            $ratio=0.2;
+            $room_price=$room['current_price'];
+            $ticket_price_for_going_trip=$goingPlaneTrip;
+            $ticket_price_for_return_trip=$returnPlaneTrip;
+            // $ticket_price_for_places=$placePrice-($placePrice*$ratio);
+            $ticket_price_for_places=$placePrice;
+
+            $total_price=($ticket_price_for_going_trip+$ticket_price_for_return_trip+$ticket_price_for_places)*$bookStaticTrip['number_of_friend'];
+            $total_price+=($room_price*$days);
+            $price_after_discount=null;
+            if(auth()->user()->point >= 50)#################
+            {
+                $price_after_discount=$total_price-($total_price*0.5);
+            }
             $data=[
                 'trip_id'=>(int)$id,#
                 'number_of_friend'=>(int)$bookStaticTrip['number_of_friend'],#
                 'rooms_needed'=>$rooms_needed,#
                 'days'=>(int)$days,#
-                'room_price'=>(doubleval($room['current_price']))??null,#
-                'ticket_price_for_going_trip'=>$goingPlaneTrip,#
-                'ticket_price_for_return_trip'=>$returnPlaneTrip,#
-                'ticket_price_for_places'=>$placePrice,#
+                'room_price'=>(doubleval($room_price))??null,#
+                'ticket_price_for_going_trip'=>$ticket_price_for_going_trip,
+                'ticket_price_for_return_trip'=>$ticket_price_for_return_trip,
+                'ticket_price_for_places'=>$ticket_price_for_places,
                 'total_price'=>$total_price,#
-                // 'price_after_discount'=>$price_after_discount,
             ];
+
+
+            // $data=[
+            //     'trip_id'=>(int)$id,#
+            //     'number_of_friend'=>(int)$bookStaticTrip['number_of_friend'],#
+            //     'rooms_needed'=>$rooms_needed,#
+            //     'days'=>(int)$days,#
+            //     'room_price'=>(doubleval($room['current_price']))??null,#
+            //     'ticket_price_for_going_trip'=>$goingPlaneTrip,#
+            //     'ticket_price_for_return_trip'=>$returnPlaneTrip,#
+            //     'ticket_price_for_places'=>$placePrice,#
+            //     'total_price'=>$total_price,#
+            //     // 'price_after_discount'=>$price_after_discount,
+            // ];
             return response()->json([
                 'data'=>$data
             ],200);
@@ -560,5 +619,26 @@ class StaticBookController extends Controller
                 'message'=>$ex->getMessage(),
             ],500);
         }
+    }
+
+    public function sendStaticTripReminder()
+    {
+        $dateTomorrow = now()->addDay()->format('Y-m-d');
+        $trips = Booking::whereHas('bookings.user')->whereDate('start_date', $dateTomorrow)->where('type','static')->with('bookings.user')->get();
+        $arr=[];
+        foreach($trips as $trip){
+            foreach($trip['bookings'] as $users){
+                $arr[]=$users['user'];
+            }
+                //  $arr[]=$trip['bookings'];
+        }
+
+        $message=[
+            'title'=>'Trip Reminder',
+            'body'=>"Dear ".auth()->user()->name.", you have a journey starting tomorrow. Be prepared!.",
+        ];
+        dispatch(new SendStaticTripReminder($arr,$message));
+        // event(new PushWebNotification($arr,$message));
+     return "done";
     }
 }

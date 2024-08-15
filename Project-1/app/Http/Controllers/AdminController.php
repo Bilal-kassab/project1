@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PushWebNotification;
 use App\Http\Requests\Admin\BanRequest;
 use App\Http\Requests\Admin\SearchByNameRequest;
 use App\Http\Requests\Auth\LoginRequest;
@@ -79,6 +80,14 @@ class AdminController extends Controller
             'is_approved'=>$admin->is_approved,
             //'token'=> $token,
         ];
+        $user=User::where('id',1)->get();
+            $message=[
+                'title'=>'Admin Request',
+                // 'body'=>auth()->user()->name." has registered for a trip",
+                'body'=>"The admin ".$admin->name." has registered on the app and is awaiting approval.",
+            ];
+
+            event(new PushWebNotification($user,$message));
         return response()->json([
              //'data'=>$admin,
              //'token'=>$token
@@ -328,18 +337,34 @@ class AdminController extends Controller
             ],422);
         }
         $user=User::where('id',$request->user_id)->first();
+        $role=$user->roles[0]['name'];
+
+        $userNoti=User::where('id',$request->user_id)->get();
         if($request->status){
             $user->is_approved = true;
             $user->save();
+            $message=[
+                'title'=>'Request Approval',
+                'body'=>"Your request to apply as a ". $role ." within the app has been accepted.",
+            ];
+            event(new PushWebNotification($userNoti,$message));
+
             return response()->json([
                 'message'=>trans('auth.approve-admin'),
             ],200);
         }else{
+            $message=[
+                'title'=>'Request Rejection',
+                'body'=>"Sorry, your request has been rejected.",
+            ];
+            event(new PushWebNotification($userNoti,$message));
             $user->delete();
             return response()->json([
                 'message'=>trans('auth.reject-admin'),
             ],200);
         }
+
+
 
         // Notification::send($user, new UserApprovedNotification());
 

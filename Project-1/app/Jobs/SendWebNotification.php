@@ -9,6 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class SendWebNotification implements ShouldQueue
 {
@@ -31,19 +32,23 @@ class SendWebNotification implements ShouldQueue
     {
         $users=$this->users;
         $message=$this->message;
-            // Notification::create([
-            //     'user_id'=>7,
-            //     'title'=>$message['title'],
-            //     'body'=>$message['body'],
-            // ]);
-         PushNotificationWeb::sendNotification($message,$users);
-        // foreach($users as $user){
-        //     Notification::create([
-        //         'user_id'=>$user->id,
-        //         'title'=>$message['title'],
-        //         'body'=>$message['body'],
-        //     ]);
-        //     PushNotificationWeb::sendNotification($message,$user->fcm_token);
-        // }
+
+        //  PushNotificationWeb::sendNotification($message,$users);
+        foreach($users as $user){
+            // $notification=new Notification();
+            // $notification->user_id=2;
+            // $notification->title="bb";
+            // $notification->body='hjk';
+            // // $notification->user_id=$user->id;
+            // // $notification->title=$message['title'];
+            // // $notification->body=$message['body'];
+            // $notification->save();
+            // // Notification::create([
+            // //     'user_id'=>$user->id,
+            // //     'title'=>$message['title'],
+            // //     'body'=>$message['body'],
+            // // ]);
+            PushNotificationWeb::sendNotification($message,$user->fcm_token);
+        }
     }
 }

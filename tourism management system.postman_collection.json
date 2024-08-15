@@ -33,7 +33,7 @@
 										},
 										{
 											"key": "email",
-											"value": "Airport988@gmail.com",
+											"value": "bn@gmail.com",
 											"type": "text"
 										},
 										{
@@ -48,7 +48,7 @@
 										},
 										{
 											"key": "role_id",
-											"value": "5",
+											"value": "4",
 											"type": "text"
 										},
 										{
@@ -63,7 +63,7 @@
 										},
 										{
 											"key": "phone_number",
-											"value": "123456789855",
+											"value": "1234567898554",
 											"type": "text"
 										},
 										{
@@ -808,12 +808,12 @@
 									"formdata": [
 										{
 											"key": "user_id",
-											"value": "12",
+											"value": "11",
 											"type": "text"
 										},
 										{
 											"key": "status",
-											"value": "0",
+											"value": "1",
 											"type": "text"
 										}
 									]
@@ -14840,7 +14840,13 @@
 									"name": "get_all_hotel_book",
 									"request": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
 										"url": {
 											"raw": "http://127.0.0.1:8000/api/admin/get_all_hotel_book",
 											"protocol": "http",
@@ -14936,6 +14942,38 @@
 											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"book_id\": 1,\n            \"user_id\": 7,\n            \"room_id\": 21,\n            \"current_price\": \"45.00\",\n            \"start_date\": \"2024-07-19\",\n            \"end_date\": \"2024-07-23\",\n            \"created_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"updated_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"user\": {\n                \"id\": 7,\n                \"name\": \"User\",\n                \"email\": \"User@gmail.com\",\n                \"phone_number\": null,\n                \"email_verified_at\": null,\n                \"image\": null,\n                \"point\": 0,\n                \"position\": 1,\n                \"is_approved\": 1,\n                \"fcm_token\": null,\n                \"created_at\": \"2024-07-17T23:43:44.000000Z\",\n                \"updated_at\": \"2024-07-17T23:43:44.000000Z\"\n            },\n            \"roomss\": {\n                \"id\": 21,\n                \"hotel_id\": 1,\n                \"capacity\": 6,\n                \"status\": 0,\n                \"price\": \"45.00\",\n                \"hotel\": {\n                    \"id\": 1,\n                    \"user_id\": 3,\n                    \"country_id\": 1,\n                    \"area_id\": 1,\n                    \"name\": \"Damascus Hotel\",\n                    \"number_rooms\": 30,\n                    \"stars\": \"4.00\",\n                    \"visible\": 1\n                }\n            }\n        },\n        {\n            \"id\": 2,\n            \"book_id\": 1,\n            \"user_id\": 7,\n            \"room_id\": 22,\n            \"current_price\": \"45.00\",\n            \"start_date\": \"2024-07-19\",\n            \"end_date\": \"2024-07-23\",\n            \"created_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"updated_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"user\": {\n                \"id\": 7,\n                \"name\": \"User\",\n                \"email\": \"User@gmail.com\",\n                \"phone_number\": null,\n                \"email_verified_at\": null,\n                \"image\": null,\n                \"point\": 0,\n                \"position\": 1,\n                \"is_approved\": 1,\n                \"fcm_token\": null,\n                \"created_at\": \"2024-07-17T23:43:44.000000Z\",\n                \"updated_at\": \"2024-07-17T23:43:44.000000Z\"\n            },\n            \"roomss\": {\n                \"id\": 22,\n                \"hotel_id\": 1,\n                \"capacity\": 6,\n                \"status\": 0,\n                \"price\": \"45.00\",\n                \"hotel\": {\n                    \"id\": 1,\n                    \"user_id\": 3,\n                    \"country_id\": 1,\n                    \"area_id\": 1,\n                    \"name\": \"Damascus Hotel\",\n                    \"number_rooms\": 30,\n                    \"stars\": \"4.00\",\n                    \"visible\": 1\n                }\n            }\n        },\n        {\n            \"id\": 3,\n            \"book_id\": 2,\n            \"user_id\": null,\n            \"room_id\": 23,\n            \"current_price\": \"45.00\",\n            \"start_date\": \"2024-07-19\",\n            \"end_date\": \"2024-07-23\",\n            \"created_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"updated_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"user\": null,\n            \"roomss\": {\n                \"id\": 23,\n                \"hotel_id\": 1,\n                \"capacity\": 6,\n                \"status\": 0,\n                \"price\": \"45.00\",\n                \"hotel\": {\n                    \"id\": 1,\n                    \"user_id\": 3,\n                    \"country_id\": 1,\n                    \"area_id\": 1,\n                    \"name\": \"Damascus Hotel\",\n                    \"number_rooms\": 30,\n                    \"stars\": \"4.00\",\n                    \"visible\": 1\n                }\n            }\n        },\n        {\n            \"id\": 4,\n            \"book_id\": 2,\n            \"user_id\": null,\n            \"room_id\": 24,\n            \"current_price\": \"45.00\",\n            \"start_date\": \"2024-07-19\",\n            \"end_date\": \"2024-07-23\",\n            \"created_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"updated_at\": \"2024-07-17T23:43:46.000000Z\",\n            \"user\": null,\n            \"roomss\": {\n                \"id\": 24,\n                \"hotel_id\": 1,\n                \"capacity\": 6,\n                \"status\": 0,\n                \"price\": \"45.00\",\n                \"hotel\": {\n                    \"id\": 1,\n                    \"user_id\": 3,\n                    \"country_id\": 1,\n                    \"area_id\": 1,\n                    \"name\": \"Damascus Hotel\",\n                    \"number_rooms\": 30,\n                    \"stars\": \"4.00\",\n                    \"visible\": 1\n                }\n            }\n        }\n    ]\n}"
 										}
 									]
+								}
+							],
+							"auth": {
+								"type": "bearer",
+								"bearer": [
+									{
+										"key": "token",
+										"value": "2|2QtQAtshOyh7ng4siOathfUFjCmYiKGlTbwAqk418cce479a",
+										"type": "string"
+									}
+								]
+							},
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										]
+									}
 								}
 							]
 						},
@@ -15799,12 +15837,12 @@
 										},
 										{
 											"key": "start_date",
-											"value": "2024-08-15",
+											"value": "2024-08-16",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "2024-08-19",
+											"value": "2024-08-20",
 											"type": "text"
 										},
 										{
@@ -17713,7 +17751,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "2|qMJWtUzOJSI5pU5njfVQCBd5fdS1Hn5Sv9jDh9EJcef4cb31",
+						"value": "6|aYpxvMDwEZE1IR1hyQXphbiQSn6QcPSd3ai9W2Uh9507622d",
 						"type": "string"
 					}
 				]
@@ -19961,7 +19999,7 @@
 									"formdata": [
 										{
 											"key": "money",
-											"value": "",
+											"value": "100",
 											"type": "text"
 										}
 									]
@@ -28259,7 +28297,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/show-static-trip/2",
+									"raw": "http://127.0.0.1:8000/api/user/show-static-trip/1",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -28272,7 +28310,7 @@
 										"api",
 										"user",
 										"show-static-trip",
-										"2"
+										"1"
 									]
 								}
 							},
@@ -28494,13 +28532,13 @@
 									"formdata": [
 										{
 											"key": "number_of_friend",
-											"value": "5",
+											"value": "7",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/2",
+									"raw": "http://127.0.0.1:8000/api/user/check-static-trip/5",
 									"protocol": "http",
 									"host": [
 										"127",
@@ -28513,7 +28551,7 @@
 										"api",
 										"user",
 										"check-static-trip",
-										"2"
+										"5"
 									]
 								}
 							},
@@ -28725,7 +28763,7 @@
 									"formdata": [
 										{
 											"key": "trip_id",
-											"value": "2",
+											"value": "4",
 											"type": "text"
 										},
 										{
@@ -29547,6 +29585,115 @@
 									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"user_id\": 2,\n            \"source_trip_id\": 1,\n            \"destination_trip_id\": 2,\n            \"trip_name\": \"to france\",\n            \"price\": \"210.00\",\n            \"new_price\": null,\n            \"number_of_people\": 12,\n            \"trip_capacity\": 6,\n            \"start_date\": \"2024-07-18\",\n            \"end_date\": \"2024-07-20\",\n            \"stars\": \"0.00\",\n            \"trip_note\": \"hi my friend\",\n            \"type\": \"static\"\n        }\n    ]\n}"
 								}
 							]
+						},
+						{
+							"name": "show-price-details",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/show-price-details/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"show-price-details",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show-price-details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/user/show-price-details/3",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user",
+												"show-price-details",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 06 Aug 2024 22:26:03 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 06 Aug 2024 22:26:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.4"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"trip_id\": 3,\n        \"number_of_friend\": 10,\n        \"rooms_needed\": 2,\n        \"days\": 4,\n        \"room_price\": 45,\n        \"ticket_price_for_going_trip\": \"50.00\",\n        \"ticket_price_for_return_trip\": \"50.00\",\n        \"ticket_price_for_places\": 40,\n        \"total_price\": 1760\n    }\n}"
+								}
+							]
 						}
 					]
 				}
@@ -29930,7 +30077,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "2|qMJWtUzOJSI5pU5njfVQCBd5fdS1Hn5Sv9jDh9EJcef4cb31",
+						"value": "1|UbD17NUUoMWDAT7JErLWLkNDKl7ASptDxt74zxjH0c75ef57",
 						"type": "string"
 					}
 				]
