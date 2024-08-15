@@ -18,7 +18,12 @@ This command executes Laravel's scheduled tasks
 > #### php artisan schedule:run
  <br />
 
-## Fifth, run the project by running this command:
+## Fifth, open a new terminal and run this command: 
+This command executes Laravel's scheduled tasks
+> #### php artisan queue:work
+ <br />
+ 
+## sixth, run the project by running this command:
 >#### php artisan ser
  <br />
 
