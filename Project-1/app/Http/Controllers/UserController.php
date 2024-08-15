@@ -404,7 +404,9 @@ class UserController extends Controller
     {
         $request->validate([
             'money'=>'required|numeric',
+            'email'=>'required|email'
         ]);
+
         $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
         $response=$stripe->checkout->sessions->create([
         'line_items' => [
@@ -424,7 +426,10 @@ class UserController extends Controller
         'mode' => 'payment',
         // 'success_url' => route('success').'?session_id={CHECKOUT_SESSION_ID}',
         // 'success_url' => self::success($request),
-        'success_url' =>route('success-charge',$request),
+        'success_url' =>route('success-charge',[
+            'email' => $request->email,
+            'money' => $request->money,
+        ]),
         'cancel_url' => route('cancel'),
         ]);
         if(isset($response->id)&& $response->id != ''){
@@ -437,10 +442,11 @@ class UserController extends Controller
     }
     public function success(Request $request)
     {
-            $bank=Bank::where('id',auth()->user()->email)->first();
+            // dd($request->email);
+            $bank=Bank::where('email',$request->email)->first();
             $bank->money+=$request->money;
             $bank->save();
-            $user=User::where('id',auth()->id())->get();
+            $user=User::where('email',$request->email)->get();
             $message=[
                 'title'=>'Account Recharge',
                 'body'=>"Your account has been credited with ". $request->money ."$ Enjoy!",

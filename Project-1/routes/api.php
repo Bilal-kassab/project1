@@ -96,7 +96,8 @@ Route::get('payment',[StaticBookController::class,'stripePayment']);
 // Route::get('success',[StaticBookController::class,'success'])->name('success');
 Route::get('cancel',[StaticBookController::class,'cancel'])->name('cancel');
 ################       users      ###########################
-
+Route::post('charge-account',[UserController::class,'chargeAccount']);
+Route::get('success-charge',[UserController::class,'success'])->name('success-charge');
 
 Route::post('register',[UserController::class,'register']);
 Route::post('login',[UserController::class,'login']);
@@ -128,8 +129,6 @@ Route::group(['middleware'=>['auth:sanctum','role:User']], function () {
             Route::post('change-profile-photo','changeProfilePhoto');
             Route::get('payment-inofo','paymentInof');
             Route::post('delete-account','deleteAccount');
-            Route::post('charge-account',[UserController::class,'chargeAccount']);
-            Route::get('success-charge',[UserController::class,'success'])->name('success-charge');
         });
 
         Route::controller(CountryController::class)->group(function(){
