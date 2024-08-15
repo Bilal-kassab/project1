@@ -22,10 +22,16 @@ class SendTripReminderController extends Controller
 
         $message=[
             'title'=>'Trip Reminder',
-            'body'=>"Dear ".auth()->user()->name.", you have a journey starting tomorrow. Be prepared!.",
+            'body'=>"Dear , you have a journey starting tomorrow. Be prepared!.",
         ];
+        // $notification=Notification::create([
+        //     'user_id'=>7,
+        //     'title'=>$message['title'],
+        //     'body'=>$message['body'],
+        // ]);
+        // return $notification;
         dispatch(new SendStaticTripReminder($arr,$message));
         // event(new PushWebNotification($arr,$message));
-     return "done";
+    //  return "done";
     }
 }
