@@ -288,6 +288,12 @@ Route::group(['middleware'=>['auth:sanctum','role:Super Admin|Trip manger|Hotel 
             Route::controller(UserController::class)->group(function () {
                 Route::post('delete-account-by-SA/{id}','deleteAccountBySA');
             });
+
+            Route::controller(NotificationController::class)->group(function(){
+                Route::get('get-notification','index');
+                Route::get('get-notes','getNotes');
+            });
+
             Route::controller(PlaceController::class)->group(function () {
                 Route::post('add-place','store');
                 Route::get('places','index');
