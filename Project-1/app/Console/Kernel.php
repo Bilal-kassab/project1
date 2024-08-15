@@ -16,7 +16,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('my:schedule')->everyFiveSeconds();
+        $schedule->command('my:schedule')->daily();
+        $schedule->command('schedule:run')->everyMinute();
         // $schedule->call(function () {
         //     $controller = new SendTripReminderController();
         //     $controller->sendStaticTripReminder();

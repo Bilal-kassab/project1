@@ -32,6 +32,10 @@ class SendStaticTripReminder implements ShouldQueue
         $users=$this->users;
         $message=$this->message;
         foreach($users as $user){
+            $message=[
+                'title'=>'Trip Reminder',
+                'body'=>"Dear".$user->name .", you have a journey starting tomorrow. Be prepared!.",
+            ];
             Notification::create([
                 'user_id'=>$user->id,
                 'title'=>$message['title'],
