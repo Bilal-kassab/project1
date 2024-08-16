@@ -16,6 +16,7 @@ use App\Models\Comment;
 use App\Models\Country;
 use App\Models\Favorite;
 use App\Models\Hotel;
+use App\Models\HotelImage;
 use App\Models\Place;
 use App\Models\PlaceCategory;
 use App\Models\PlaceImage;
@@ -181,6 +182,13 @@ class FileSeeder extends Seeder
                 'number_rooms'=>$record['number_rooms'],
                 'stars'=>$record['stars'],
                 'visible'=>$record['visible'],
+            ]);
+        }
+        $records_area=Storage::json('/public/Hotel_image.json');
+        foreach($records_area as $record){
+            HotelImage::create([
+                'hotel_id'=>$record['hotel_id'],
+                'image'=>$record['image'],
             ]);
         }
         $records_area=Storage::json('/public/Rooms.json');
