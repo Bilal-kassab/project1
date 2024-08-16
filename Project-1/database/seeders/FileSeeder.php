@@ -90,6 +90,7 @@ class FileSeeder extends Seeder
             'position'=>$record['position'],
             ]);
             $user->assignRole('Super Admin');
+            $user->givePermissionTo('unbanned');;
         }
         $records=Storage::json('/public/users.json');
         foreach($records as $record){
@@ -105,6 +106,7 @@ class FileSeeder extends Seeder
             'position'=>$record['position'],
             ]);
             $user->assignRole('User');
+            $user->givePermissionTo('unbanned');;
         }
         $records=Storage::json('/public/hotel_admins.json');
         foreach($records as $record){
@@ -117,6 +119,7 @@ class FileSeeder extends Seeder
             'position'=>$record['position'],
             ]);
             $user->assignRole('Hotel admin');
+            $user->givePermissionTo('unbanned');;
         }
         $records=Storage::json('/public/Airport_admins.json');
         foreach($records as $record){
@@ -129,6 +132,7 @@ class FileSeeder extends Seeder
             'position'=>$record['position'],
             ]);
             $user->assignRole('Airport admin');
+            $user->givePermissionTo('unbanned');;
         }
         $records=Storage::json('/public/Trip_admins.json');
         foreach($records as $record){
@@ -141,6 +145,7 @@ class FileSeeder extends Seeder
             'position'=>$record['position'],
             ]);
             $user->assignRole('Trip manger');
+            $user->givePermissionTo('unbanned');;
         }
         $records=Storage::json('/public/User2.json');
         foreach($records as $record){
@@ -156,6 +161,8 @@ class FileSeeder extends Seeder
             'position'=>$record['position'],
             ]);
             $user->assignRole('User');
+            $user->givePermissionTo('unbanned');;
+
         }
         $records_area=Storage::json('/public/Banks.json');
         foreach($records_area as $record){

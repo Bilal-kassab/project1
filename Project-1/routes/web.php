@@ -35,45 +35,44 @@ use Illuminate\Support\Facades\Validator;
 */
 
 // Route::get('/', function () {
-    // Mail::to('bilalkassab70@gmail.com')->send(new TestMail());
+//     Mail::to('bilalkassab70@gmail.com')->send(new TestMail());
 
-    // return "Done send";
-    // return $date=Carbon::now()->format('Y-m-d');
+//     return "Done send";
 // });
-Route::get('/', function () {
-    // $book=Booking::where('type','static')
-    //             ->AvailableRooms()->with('places')
-    //             ->findOrFail(1);
-    // $places=BookPlace::where('book_id',$book->id)->with('places')->get();
+// Route::get('/', function () {
+//     // $book=Booking::where('type','static')
+//     //             ->AvailableRooms()->with('places')
+//     //             ->findOrFail(1);
+//     // $places=BookPlace::where('book_id',$book->id)->with('places')->get();
 
 
-    $dateTomorrow = now()->addDay()->format('Y-m-d');
-    $trips = Booking::whereHas('bookings.user')->whereDate('start_date', $dateTomorrow)->where('type','static')->with('bookings.user')->get();
-    $arr=[];
-    foreach($trips as $trip){
-        foreach($trip['bookings'] as $users){
-            $arr[]=$users['user'];
-        }
-            //  $arr[]=$trip['bookings'];
-    }
-    return $arr;
-    // $result = [
-    //     'trip_id' => $book->id,
-    //     'trip_name' => $book->name,
-    //     'places' => $book->placesss->map(function($place) {
-    //         return [
-    //             'id' => $place->id,
-    //             'name' => $place->name,
-    //             'current_price' => $place->pivot->current_price,
-    //             'text' => $place->text,
-    //             'area_id' => $place->area_id,
-    //             'visible' => $place->visible,
-    //         ];
-    //     })
-    // ];
+//     $dateTomorrow = now()->addDay()->format('Y-m-d');
+//     $trips = Booking::whereHas('bookings.user')->whereDate('start_date', $dateTomorrow)->where('type','static')->with('bookings.user')->get();
+//     $arr=[];
+//     foreach($trips as $trip){
+//         foreach($trip['bookings'] as $users){
+//             $arr[]=$users['user'];
+//         }
+//             //  $arr[]=$trip['bookings'];
+//     }
+//     return $arr;
+//     // $result = [
+//     //     'trip_id' => $book->id,
+//     //     'trip_name' => $book->name,
+//     //     'places' => $book->placesss->map(function($place) {
+//     //         return [
+//     //             'id' => $place->id,
+//     //             'name' => $place->name,
+//     //             'current_price' => $place->pivot->current_price,
+//     //             'text' => $place->text,
+//     //             'area_id' => $place->area_id,
+//     //             'visible' => $place->visible,
+//     //         ];
+//     //     })
+//     // ];
 
-    // return $result['places'];
-});
+//     // return $result['places'];
+// });
 
 // Route::post('/', function (Request $request) {
 //     // return Lang::locale();

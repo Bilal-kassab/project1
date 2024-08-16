@@ -16,14 +16,14 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('my:schedule')->daily();
-        $schedule->command('schedule:run')->everyMinute();
+        // $schedule->command('my:schedule')->daily();
+        // $schedule->command('schedule:run')->everyMinute();
         // $schedule->call(function () {
         //     $controller = new SendTripReminderController();
         //     $controller->sendStaticTripReminder();
         // })->everyMinute(); // Adjust the frequency as needed
-        // $schedule->command('queue:work')->everySecond();
-        // $schedule->command('queue:restart')->everyFiveMinutes();
+        $schedule->command('queue:work')->everySecond();
+        $schedule->command('queue:restart')->everyFiveMinutes();
         // $schedule->call('App\Http\Controllers\BookingController@store_Admin')->everySecond();
         // $schedule->call('App\Http\Controllers\StaticBookController@sendStaticTripReminder')->everySecond();
 

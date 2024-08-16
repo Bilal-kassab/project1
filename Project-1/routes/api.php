@@ -1,6 +1,7 @@
 <?php
 
 use App\Events\PushWebNotification;
+use App\Helpers\PushNotificationWeb;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\NotificationController;
@@ -50,7 +51,8 @@ Route::post('/push-noti', function (Request $request) {
     //     'body'=>$message['body'],
     // ]);
     //
-    event(new PushWebNotification(User::where('id',2)->get(),$message));
+    PushNotificationWeb::sendNotification($message,$user);
+    // event(new PushWebNotification(User::where('id',123)->get(),$message));
     return "Send";
 })->middleware('auth:sanctum');
 

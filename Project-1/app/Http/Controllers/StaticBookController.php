@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Events\PushWebNotification;
+use App\Helpers\PushNotificationWeb;
 use App\Http\Requests\Book\BookStaticTripRequest;
 use App\Http\Requests\Book\CheckStaticTripRequest;
 use App\Http\Requests\Book\DestroyRequest;
@@ -124,6 +125,7 @@ class StaticBookController extends Controller
             'number_of_people'=>$request->add_new_people,
             'places'=>$request->places,
             'trip_note'=>$request->trip_note,
+            'telegram_link'=>$request->telegram_link,
             // 'trip_capacity'=>$request->trip_capacity,
             'trip_name'=>$booking->trip_name,
             // 'price'=>$request->price,
@@ -189,6 +191,16 @@ class StaticBookController extends Controller
     {
         try {
             $val=$this->bookrepository->tripCancellation($request['id']);
+            if($val==100){
+                return response()->json([
+                    'message'=>trans('trip.haveBook')
+                ],400);
+            }
+            if($val==101){
+                return response()->json([
+                    'message'=>trans('trip.start-trip')
+                ],400);
+            }
             return response()->json([
                 'message'=>$val
             ],200);
@@ -260,12 +272,6 @@ class StaticBookController extends Controller
                 'message'=>'check from check api',
             ],400);
         }
-        if($val['payment_type']=='wallet'){
-            $bank=Bank::where('email',auth()->user()->email)->first();
-            $bank['money']=$bank['money']-$val['book_price'];
-            $bank['payments']+=$val['book_price'];
-            $bank->save();
-        }
 
         // message to trip admin
         $user=User::where('id',$trip['user_id'])->get();
@@ -275,8 +281,8 @@ class StaticBookController extends Controller
             'body'=>auth()->user()->name." has registered for a trip",
         ];
 
+        // PushNotificationWeb::sendNotification($message,$user[0]->fcm_token);
         event(new PushWebNotification($user,$message));
-
 
         // message to user
         $user2=User::where('id',auth()->id())->get();
@@ -284,7 +290,10 @@ class StaticBookController extends Controller
             'title'=>'Enjoy your trip!',
             'body'=>"You have earned 5 points for registering for a trip within the app. You can use them to get a discount once you reach the required points.",
         ];
-
+        // return response()->json([
+        //     'message'=>$user2[0]->fcm_token
+        // ],200);
+        // PushNotificationWeb::sendNotification($message,$user2[0]->fcm_token);
         event(new PushWebNotification($user2,$message));
 
         return response()->json([
@@ -298,67 +307,67 @@ class StaticBookController extends Controller
 
     }
 
-    public function stripePayment(BookStaticTripRequest $request)
-    {
-        try{
+    // public function stripePayment(BookStaticTripRequest $request)
+    // {
+    //     try{
 
-            $book_price=$request['total_price'];
-            if($request['discount']){
-                $book_price=$request['price_after_discount'];
-            }
+    //         $book_price=$request['total_price'];
+    //         if($request['discount']){
+    //             $book_price=$request['price_after_discount'];
+    //         }
 
-            $staticTrip=Booking::where([['id',$request['trip_id']],['type','static']])->first();
-            // return $staticTrip;
-        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
-        $response=$stripe->checkout->sessions->create([
-        'line_items' => [
-            [
-                'price_data' => [
-                    'currency' => 'usd',
-                    'product_data' => [
-                            'name' => $staticTrip['trip_name'],
-                    ],
-                    //trip price
-                    'unit_amount' =>$book_price*100 ,
-                ],
-                'quantity' => 1,
-            ]
-        ],
-        'mode' => 'payment',
-        // 'success_url' => route('success').'?session_id={CHECKOUT_SESSION_ID}',
-        // 'success_url' => self::success($request),
-        'success_url' =>route('success',$request),
-        'cancel_url' => route('cancel'),
-        ]);
-        if(isset($response->id)&& $response->id != ''){
-            return redirect($response->url);
-        }else{
-            return redirect()->route('cancel');
-        }
-        }catch(Exception $ex){
-            return response()->json([
-                'message'=>$ex->getMessage()
-            ],);
-        }
+    //         $staticTrip=Booking::where([['id',$request['trip_id']],['type','static']])->first();
+    //         // return $staticTrip;
+    //     $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
+    //     $response=$stripe->checkout->sessions->create([
+    //     'line_items' => [
+    //         [
+    //             'price_data' => [
+    //                 'currency' => 'usd',
+    //                 'product_data' => [
+    //                         'name' => $staticTrip['trip_name'],
+    //                 ],
+    //                 //trip price
+    //                 'unit_amount' =>$book_price*100 ,
+    //             ],
+    //             'quantity' => 1,
+    //         ]
+    //     ],
+    //     'mode' => 'payment',
+    //     // 'success_url' => route('success').'?session_id={CHECKOUT_SESSION_ID}',
+    //     // 'success_url' => self::success($request),
+    //     'success_url' =>route('success',$request),
+    //     'cancel_url' => route('cancel'),
+    //     ]);
+    //     if(isset($response->id)&& $response->id != ''){
+    //         return redirect($response->url);
+    //     }else{
+    //         return redirect()->route('cancel');
+    //     }
+    //     }catch(Exception $ex){
+    //         return response()->json([
+    //             'message'=>$ex->getMessage()
+    //         ],);
+    //     }
 
 
-    }
+    // }
 
-    public function success(Request $request){
+    // public function success(Request $request){
 
-        $val=$this->bookrepository->bookStaticTrip($request->all());
-        // return $request;
-            return response()->json([
-                'message'=>'Enjoy Trip'
-            ],200);
-    }
+    //     $val=$this->bookrepository->bookStaticTrip($request->all());
+    //     // return $request;
+    //         return response()->json([
+    //             'message'=>'Enjoy Trip'
+    //         ],200);
+    // }
 
-    public function cancel()
-    {
-        return response()->json([
-            'message'=>'failed plz try again'
-        ],422);
-    }
+    // public function cancel()
+    // {
+    //     return response()->json([
+    //         'message'=>'failed plz try again'
+    //     ],422);
+    // }
 
     public function showAllMyStaicTrips()
     {
@@ -433,7 +442,7 @@ class StaticBookController extends Controller
             $ticket_price_for_places=$placePrice;
 
             $total_price=($ticket_price_for_going_trip+$ticket_price_for_return_trip+$ticket_price_for_places)*$bookStaticTrip['number_of_friend'];
-            $total_price+=($room_price*$days);
+            $total_price+=($room_price*$days*$rooms_needed);
             $price_after_discount=null;
             if(auth()->user()->point >= 50)#################
             {
@@ -448,7 +457,7 @@ class StaticBookController extends Controller
                 'ticket_price_for_going_trip'=>$ticket_price_for_going_trip,
                 'ticket_price_for_return_trip'=>$ticket_price_for_return_trip,
                 'ticket_price_for_places'=>$ticket_price_for_places,
-                'total_price'=>$total_price,#
+                'total_price'=>$bookStaticTrip['book_price'],#
             ];
 
 

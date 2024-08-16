@@ -26,6 +26,6 @@ return [
     'invaild-date'=>'Fail because of invaild Date',
     'cancel-trip'=>'Deleted Done and your money has returned to your Account',
     'offer'=>'you can not update trip price ,there are at least one booking ',
-    'haveBook'=>'you can not edit trip ,there are at least one booking'
+    'haveBook'=>'You cannot cancel the trip because there is a reservation in it.'
 
 ];

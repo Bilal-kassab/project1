@@ -16,9 +16,11 @@ class TestMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public $user,$code;
+    public function __construct($user,$code)
     {
-        //
+        $this->user=$user;
+        $this->code=$code;
     }
 
     /**

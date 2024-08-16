@@ -28,6 +28,7 @@ class UpdateStaticTripRequest extends FormRequest
             // 'hotel_id'=>'required|exists:hotels,id',
             'add_new_people'=>'required|min:0|numeric',
             'trip_note'=>'string',
+            'telegram_link'=>'string',
             'places'=>'array|min:1',
             'places.*'=>"exists:places,id",
 

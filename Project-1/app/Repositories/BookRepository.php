@@ -85,7 +85,7 @@ class BookRepository implements BookRepositoryInterface
                 $book_place = BookPlace::create([
                     'book_id' => $booking->id,
                     'place_id' => $place,
-                    'current_price' =>$placePrice-($placePrice*$request['ratio']),
+                    'current_price' =>($placePrice-($placePrice*$request['ratio'])),
                 ]);
                  $trip_price+=$book_place['current_price'];
             }
@@ -132,7 +132,6 @@ class BookRepository implements BookRepositoryInterface
                 $interval = $datetime2->diff($datetime1);
                 $days = $interval->format('%a');
                 $trip_price+=($book_room['current_price']*$days);
-                $trip_price-=($trip_price*$request['ratio']);// if there is an ratio from the price
                 $booking['price']=$trip_price;
                 $booking->save();
             // }
@@ -244,6 +243,7 @@ class BookRepository implements BookRepositoryInterface
             $booking->start_date = $request['start_date']?? $booking['start_date'];
             $booking->end_date = $request['end_date']?? $booking['end_date'];
             $booking->trip_note = $request['trip_note']?? $booking['trip_note'];
+            $booking->telegram_link = $request['telegram_link']?? $booking['telegram_link'];
             $booking->save();
 
             if($request['places'] != null){
@@ -282,7 +282,7 @@ class BookRepository implements BookRepositoryInterface
             $trip=Booking::findOrFail($id);
             $booking_trip=BookingStaticTrip::where('static_trip_id',$id)->first();
             if($booking_trip){
-                return trans('trip.haveBook');
+                return 100;
             }
             $goingTrip=$trip->plane_trips[0]??null;
             $returnTrip=$trip->plane_trips[1]??null;
@@ -290,7 +290,7 @@ class BookRepository implements BookRepositoryInterface
             $date=Carbon::now()->format('Y-m-d');
             $trip_date = Carbon::createFromFormat('Y-m-d', $trip['start_date']);
             if($date>=$trip_date){
-                return trans('trip.start-trip');
+                return 101;
             }
 
             $staticBooks=BookingStaticTrip::where('static_trip_id',$trip['id'])->get();
@@ -507,7 +507,7 @@ class BookRepository implements BookRepositoryInterface
             $ticket_price_for_places=$placePrice;
 
             $total_price=($ticket_price_for_going_trip+$ticket_price_for_return_trip+$ticket_price_for_places)*$request['number_of_friend'];
-            $total_price+=($room_price*$days);
+            $total_price+=($room_price*$days*$rooms_needed);
             $price_after_discount=null;
             if(auth()->user()->point >= 50)#################
             {
@@ -553,7 +553,7 @@ class BookRepository implements BookRepositoryInterface
             $book_price=$request['price_after_discount'];
             $user['point']-=50;
         }
-        $user['point']+=5;
+            $user['point']+=5;
             $bank['money']=$bank['money']-$book_price;
             $bank['payments']+=$book_price;
             $bank->save();
@@ -564,9 +564,6 @@ class BookRepository implements BookRepositoryInterface
             'number_of_friend'=>$request['number_of_friend'],
             'book_price'=>$book_price
         ]);
-        $bank['money']=$bank['money']-$book_price;
-        $bank['payments']+=$book_price;
-        $bank->save();
         $static_trip=Booking::where('type','static')->findOrFail($request['trip_id']);
         $static_trip['number_of_people']=$static_trip['number_of_people']-$request['number_of_friend'];
         $static_trip->save();
@@ -676,12 +673,12 @@ class BookRepository implements BookRepositoryInterface
              $period = $interval->format('%a');
              $bank=Bank::where('email',auth()->user()['email'])->first();
             if($period>3){
-                    $bank->money+=$static_book['price'];
-                    $bank->payments-=$static_book['price'];
+                    $bank->money+=$static_book['book_price'];
+                    $bank->payments-=$static_book['book_price'];
             }
             elseif($period>=1){
-                    $bank->money+=(0.5*$static_book['price']);
-                    $bank->payments-=(0.5*$static_book['price']);
+                    $bank->money+=(0.5*$static_book['book_price']);
+                    $bank->payments-=(0.5*$static_book['book_price']);
             }
             $bank->save();
             $static_book->delete();

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Events\PushWebNotification;
+use App\Jobs\SendEmail;
+use App\Mail\TestMail;
 use App\Mail\VerfiyEmail;
 use App\Models\Bank;
 use App\Models\Booking;
@@ -80,7 +82,8 @@ class UserController extends Controller
         ]);
 
 
-        // Mail::to($registerUserData['email'])->send(new VerfiyEmail($user,$confdetails));
+        // Mail::to($registerUserData['email'])->send(new TestMail($user,$confdetails));
+        dispatch(new SendEmail($user,$confdetails));
         $all=[
             'id'=> $user->id,
             'name'=> $user->name,

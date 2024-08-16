@@ -25,7 +25,7 @@ class HotelController extends Controller
         $this->middleware('role:Super Admin', ['only'=> ['index','destroySuperAdmin','changeVisible']]);
 
     }
-    
+
     public function index()
     {
 
@@ -413,7 +413,7 @@ class HotelController extends Controller
     public function get_my_hotel(){
         try{
             return response()->json([
-                    'data'=>Hotel::with('area','country')->where('user_id',auth()->user()->id)->get()
+                    'data'=>Hotel::with('area','country','images')->where('user_id',auth()->user()->id)->get()
                 ],200);
         }catch(Exception $e){
             return response()->json([

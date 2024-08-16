@@ -79,8 +79,8 @@ class ReportController extends Controller
                                     })
                                     ->with('position')
                                     ->whereHas('bookings')->orWhereHas('myStaticTrip')
-                                    ->orderBy('bookings_count', 'desc')
                                     ->take(10)
+                                    ->orderByRaw('(bookings_count + my_static_trip_count) DESC')
                                     ->get();
         $data=[];
         foreach($mostBookingUsers as $mostBookingUser){
