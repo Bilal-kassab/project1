@@ -157,6 +157,7 @@ class FileSeeder extends Seeder
             'password'=>bcrypt(str($record['password'])),
             'image'=>$record['image'],
             'point'=>$record['point'],
+            'created_at'=>'2023-11-19',
             'is_approved'=>$record['is_approved'],
             'position'=>$record['position'],
             ]);
