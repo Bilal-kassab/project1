@@ -11,9 +11,13 @@ use App\Models\BookingRoom;
 use App\Models\BookingStaticTrip;
 use App\Models\BookPlace;
 use App\Models\BookPlane;
+use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Country;
+use App\Models\Favorite;
 use App\Models\Hotel;
 use App\Models\Place;
+use App\Models\PlaceCategory;
 use App\Models\PlaceImage;
 use App\Models\Plane;
 use App\Models\PlaneTrip;
@@ -59,6 +63,19 @@ class FileSeeder extends Seeder
         foreach($records_area as $record){
             Activity::create([
                 'name'=>$record['name'],
+            ]);
+        }
+        $records_area=Storage::json('/public/category.json');
+        foreach($records_area as $record){
+            Category::create([
+                'name'=>$record['name'],
+            ]);
+        }
+        $records_area=Storage::json('/public/place_categories.json');
+        foreach($records_area as $record){
+            PlaceCategory::create([
+                'category_id'=>$record['category_id'],
+                'place_id'=>$record['place_id'],
             ]);
         }
         $records=Storage::json('/public/SA.json');
@@ -315,6 +332,21 @@ class FileSeeder extends Seeder
             StaticTripRoom::create([
                 'booking_static_trip_id'=>$record['booking_static_trip_id'],
                 'room_id'=>$record['room_id'],
+            ]);
+        }
+        $records=Storage::json('/public/comment.json');
+        foreach($records as $record){
+            Comment::create([
+                'place_id'=>$record['place_id'],
+                'user_id'=>$record['user_id'],
+                'comment'=>$record['comment'],
+            ]);
+        }
+        $records=Storage::json('/public/favorite.json');
+        foreach($records as $record){
+            Favorite::create([
+                'place_id'=>$record['place_id'],
+                'user_id'=>$record['user_id']
             ]);
         }
     }

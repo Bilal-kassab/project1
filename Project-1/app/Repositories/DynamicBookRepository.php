@@ -1349,7 +1349,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
             $interval = $datetime1->diff($datetime2);
             $period = $interval->format('%a');
             $bank=Bank::where('email',auth()->user()['email'])->first();
-            if($period>7){
+            if($period>3){
                     $bank->money+=$booking['price'];
                     $bank->payments-=$booking['price'];
             }

@@ -15,15 +15,16 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PermissionSeeder::class,
             RoleSeeder::class,
-            SuperAdminSeeder::class,
-            BasicInformationSeeder::class,
-            PlaceSeeder::class,
-            HotelSeeder::class,
-            PlaneTripSeeder::class,
-            ActivitySeeder::class,
-            StaticTripSeeder::class,
-            BookStaticTripSeeder::class,
-            DynamicSeeder::class,
+            // SuperAdminSeeder::class,
+            // BasicInformationSeeder::class,
+            // PlaceSeeder::class,
+            // HotelSeeder::class,
+            // PlaneTripSeeder::class,
+            // ActivitySeeder::class,
+            // StaticTripSeeder::class,
+            // BookStaticTripSeeder::class,
+            // DynamicSeeder::class,
+            FileSeeder::class
         ]);
     }
 }
