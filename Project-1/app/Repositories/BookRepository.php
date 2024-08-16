@@ -665,11 +665,30 @@ class BookRepository implements BookRepositoryInterface
                 $myRoom->save();
             }
              $book->save();
-             $static_book->delete();
-             $bank=Bank::where('email',auth()->user()->email)->first();
-             $bank['money']+=$static_book['book_price'];
-             $bank['payments']-=$static_book['book_price'];
-             $bank->save();
+            //  $static_book->delete();
+            //  $bank=Bank::where('email',auth()->user()->email)->first();
+            //  $bank['money']+=$static_book['book_price'];
+            //  $bank['payments']-=$static_book['book_price'];
+            //  $bank->save();
+            $datetime1 = new DateTime($book['start_date']);
+             $datetime2 = new DateTime($date);
+             $interval = $datetime1->diff($datetime2);
+             $period = $interval->format('%a');
+             $bank=Bank::where('email',auth()->user()['email'])->first();
+            if($period>3){
+                    $bank->money+=$static_book['price'];
+                    $bank->payments-=$static_book['price'];
+            }
+            elseif($period>=1){
+                    $bank->money+=(0.5*$static_book['price']);
+                    $bank->payments-=(0.5*$static_book['price']);
+            }
+            $bank->save();
+            $static_book->delete();
+            //  $bank=Bank::where('email',auth()->user()->email)->first();
+            //  $bank['money']+=$static_book['book_price'];
+            //  $bank['payments']-=$static_book['book_price'];
+            //  $bank->save();
              $user=User::where('id',auth()->id())->first();
              $user['point']-=5;
              $user->save();

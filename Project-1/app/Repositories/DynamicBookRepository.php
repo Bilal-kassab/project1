@@ -1353,7 +1353,7 @@ class DynamicBookRepository implements DynamicBookRepositoryInterface
                     $bank->money+=$booking['price'];
                     $bank->payments-=$booking['price'];
             }
-            elseif($period>1){
+            elseif($period>=1){
                     $bank->money+=(0.5*$booking['price']);
                     $bank->payments-=(0.5*$booking['price']);
             }
